@@ -1,0 +1,10 @@
+extend type Query {
+    pokemon(id: ID!): Pokemon
+    pokemonList(limit: Int!): [Pokemon]
+}
+
+type Pokemon {
+    id: ID!
+    name: String!
+    slug: String!
+}
