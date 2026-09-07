@@ -1,6 +1,6 @@
 extend type Query {
     pokemon(id: ID!): Pokemon
-    pokemonList(limit: Int!): [Pokemon]
+    pokemonList(offset: Int!, limit: Int!): [Pokemon]
 }
 
 type Pokemon {

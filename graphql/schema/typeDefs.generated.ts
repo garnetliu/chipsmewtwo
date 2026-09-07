@@ -32,6 +32,14 @@ export const typeDefs = {
           arguments: [
             {
               kind: "InputValueDefinition",
+              name: { kind: "Name", value: "offset" },
+              type: {
+                kind: "NonNullType",
+                type: { kind: "NamedType", name: { kind: "Name", value: "Int" } },
+              },
+            },
+            {
+              kind: "InputValueDefinition",
               name: { kind: "Name", value: "limit" },
               type: {
                 kind: "NonNullType",

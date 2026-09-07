@@ -39,6 +39,7 @@ export type QuerypokemonArgs = {
 
 export type QuerypokemonListArgs = {
   limit: Scalars["Int"]["input"];
+  offset: Scalars["Int"]["input"];
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -189,7 +190,7 @@ export type QueryResolvers<
     Maybe<Array<Maybe<ResolversTypes["Pokemon"]>>>,
     ParentType,
     ContextType,
-    RequireFields<QuerypokemonListArgs, "limit">
+    RequireFields<QuerypokemonListArgs, "limit" | "offset">
   >;
 };
 
