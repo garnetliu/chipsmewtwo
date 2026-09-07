@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 
+import { RootHeader } from "@/components/root-header";
 import { RootProvider } from "@/components/root-privider";
 import { cn } from "@/lib/utils";
 
@@ -45,7 +46,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="zh-CN"
+      suppressHydrationWarning
       className={cn(
         "h-full",
         "antialiased",
@@ -55,7 +57,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="flex min-h-full flex-col">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <RootHeader />
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
