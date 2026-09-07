@@ -1,0 +1,14 @@
+{
+  "name": "chipsmewtwo",
+  "short_name": "chipsmewtwo",
+  "description": "宝可梦资料查询与小工具",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "theme_color": "#6D28D9",
+  "background_color": "#1C0B3A",
+  "display": "standalone",
+  "start_url": "/"
+}
