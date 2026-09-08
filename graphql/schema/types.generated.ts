@@ -31,6 +31,7 @@ export type Query = {
   checks?: Maybe<Scalars["Boolean"]["output"]>;
   pokemon?: Maybe<Pokemon>;
   pokemonList?: Maybe<Array<Maybe<Pokemon>>>;
+  users: Array<User>;
 };
 
 export type QuerypokemonArgs = {
@@ -40,6 +41,14 @@ export type QuerypokemonArgs = {
 export type QuerypokemonListArgs = {
   limit: Scalars["Int"]["input"];
   offset: Scalars["Int"]["input"];
+};
+
+export type User = {
+  __typename?: "User";
+  age: Scalars["Int"]["output"];
+  email: Scalars["String"]["output"];
+  id: Scalars["Int"]["output"];
+  name: Scalars["String"]["output"];
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -146,6 +155,7 @@ export type ResolversTypes = {
   String: ResolverTypeWrapper<Scalars["String"]["output"]>;
   Query: ResolverTypeWrapper<Record<PropertyKey, never>>;
   Int: ResolverTypeWrapper<Scalars["Int"]["output"]>;
+  User: ResolverTypeWrapper<User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -157,6 +167,7 @@ export type ResolversParentTypes = {
   String: Scalars["String"]["output"];
   Query: Record<PropertyKey, never>;
   Int: Scalars["Int"]["output"];
+  User: User;
 };
 
 export type MutationResolvers<
@@ -192,10 +203,22 @@ export type QueryResolvers<
     ContextType,
     RequireFields<QuerypokemonListArgs, "limit" | "offset">
   >;
+  users?: Resolver<Array<ResolversTypes["User"]>, ParentType, ContextType>;
+};
+
+export type UserResolvers<
+  ContextType = MyContext,
+  ParentType extends ResolversParentTypes["User"] = ResolversParentTypes["User"],
+> = {
+  age?: Resolver<ResolversTypes["Int"], ParentType, ContextType>;
+  email?: Resolver<ResolversTypes["String"], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes["Int"], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes["String"], ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = MyContext> = {
   Mutation?: MutationResolvers<ContextType>;
   Pokemon?: PokemonResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  User?: UserResolvers<ContextType>;
 };
