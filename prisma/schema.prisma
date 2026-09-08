@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
@@ -76,4 +75,610 @@ model Verification {
 
   @@index([identifier])
   @@map("verification")
+}
+
+// ─────────────────────────────────────────────────────────────
+// 宝可梦图鉴
+//
+// 宝可梦的数据几乎每一项都随游戏版本变，而且不同数据跟着不同层级变：
+//   属性、种族值、特性、相克表、招式数值 → 跟世代变
+//   可学招式、进化条件                   → 跟版本组变
+//   图鉴描述                             → 跟具体版本变
+// 所以这些量都不是实体的固有字段，而是拆到带 generationId / versionGroupId
+// 的关联表里，每个世代（版本组）存一份完整值。
+// ─────────────────────────────────────────────────────────────
+
+/// 招式的伤害分类，决定伤害用哪组种族值算。
+/// 注意它是招式在某个世代的分类而非固有属性：Gen4 之前分类跟着属性走
+/// （火水草电超冰龙恶一律特殊，其余一律物理），Gen4 才改成每个招式自己定。
+/// 因为这个字段本来就挂在 MoveGeneration 上按世代存，老世代照实填即可
+enum DamageClass {
+  PHYSICAL // 物理。攻击 打 防御
+  SPECIAL // 特殊。特攻 打 特防
+  STATUS // 变化。不直接造成伤害，只加减能力或上异常状态
+}
+
+/// 种族值的项目。一只宝可梦每个世代六项各存一行
+enum StatKind {
+  HP // 体力
+  ATTACK // 攻击
+  DEFENSE // 防御
+  SPECIAL_ATTACK // 特攻
+  SPECIAL_DEFENSE // 特防
+  SPEED // 速度
+  SPECIAL // 特殊。只有 Gen1 用，那时特攻特防还是同一项，没有拆开
+}
+
+/// 语言。加新语言只要往这张表 insert 一行，不用改 schema 也不用跑迁移
+model Language {
+  code       String @id // BCP 47，"zh-Hans" / "zh-Hant" / "en" / "ja"
+  nameNative String // "简体中文" / "English" / "日本語"
+  sortOrder  Int    @default(0)
+
+  generationNames       GenerationName[]
+  versionGroupNames     VersionGroupName[]
+  versionNames          VersionName[]
+  colorNames            PokemonColorName[]
+  pokedexNames          PokedexName[]
+  pokemonNames          PokemonName[]
+  formNames             PokemonFormName[]
+  typeNames             TypeName[]
+  abilityNames          AbilityName[]
+  abilityEffects        AbilityEffectText[]
+  moveNames             MoveName[]
+  moveEffects           MoveEffectText[]
+  moveLearnMethodNames  MoveLearnMethodName[]
+  evolutionTriggerNames EvolutionTriggerName[]
+  evolutionConditions   PokemonEvolutionConditionText[]
+  flavorTexts           PokemonFlavorText[]
+
+  @@map("language")
+}
+
+/// 招式的学习方式。同一只宝可梦的同一招式可以有多种学法
+/// （皮卡丘的电击既能升级学也能用 TM 学），所以它进了 MoveLearn 的唯一键。
+/// 做成表而不是 enum：现在只用四种，PokeAPI 实际有 11 种，加值不该要迁移
+model MoveLearnMethod {
+  slug String @id // "level-up" 升级 / "egg" 蛋招式 / "tutor" 教学 / "machine" 招式学习器
+
+  names  MoveLearnMethodName[]
+  learns MoveLearn[]
+
+  @@map("move_learn_method")
+}
+
+model MoveLearnMethodName {
+  methodSlug   String
+  method       MoveLearnMethod @relation(fields: [methodSlug], references: [slug], onDelete: Cascade)
+  languageCode String
+  language     Language        @relation(fields: [languageCode], references: [code])
+  name         String // 「升级学会」/「蛋招式」
+
+  @@id([methodSlug, languageCode])
+  @@map("move_learn_method_name")
+}
+
+/// 进化的触发方式。同样做成表：实际有 13 种且每代都在加
+/// （剑盾加了两座塔，传说阿尔宙斯加了敏捷/刚猛招式）
+model EvolutionTrigger {
+  slug String @id // "level-up" 升级 / "trade" 通信交换 / "use-item" 用道具 / "other" 其余
+
+  names      EvolutionTriggerName[]
+  evolutions PokemonEvolution[]
+
+  @@map("evolution_trigger")
+}
+
+model EvolutionTriggerName {
+  triggerSlug  String
+  trigger      EvolutionTrigger @relation(fields: [triggerSlug], references: [slug], onDelete: Cascade)
+  languageCode String
+  language     Language         @relation(fields: [languageCode], references: [code])
+  name         String // 「通信交换进化」
+
+  @@id([triggerSlug, languageCode])
+  @@map("evolution_trigger_name")
+}
+
+/// 世代。属性、种族值、特性、相克表、招式数值的变更都以世代为单位
+model Generation {
+  id   Int    @id
+  slug String @unique // "generation-vi"
+
+  names             GenerationName[]
+  versionGroups     VersionGroup[]
+  formTypes         PokemonFormType[]
+  formStats         PokemonFormStat[]
+  formAbilities     PokemonFormAbility[]
+  moveStats         MoveGeneration[]
+  moveEffects       MoveEffectText[]
+  abilityEffects    AbilityEffectText[]
+  introducedTypes   Type[]
+  typeEffectiveness TypeEffectiveness[]
+
+  @@map("generation")
+}
+
+model GenerationName {
+  generationId Int
+  generation   Generation @relation(fields: [generationId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language   @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([generationId, languageCode])
+  @@map("generation_name")
+}
+
+/// 版本组。招式表和进化条件以版本组为单位，红/蓝共用一份
+model VersionGroup {
+  id           Int        @id @default(autoincrement())
+  slug         String     @unique // "red-blue"
+  generationId Int
+  generation   Generation @relation(fields: [generationId], references: [id])
+
+  names      VersionGroupName[]
+  versions   Version[]
+  moveLearns MoveLearn[]
+  evolutions PokemonEvolution[]
+
+  @@index([generationId])
+  @@map("version_group")
+}
+
+model VersionGroupName {
+  versionGroupId Int
+  versionGroup   VersionGroup @relation(fields: [versionGroupId], references: [id], onDelete: Cascade)
+  languageCode   String
+  language       Language     @relation(fields: [languageCode], references: [code])
+  name           String
+
+  @@id([versionGroupId, languageCode])
+  @@map("version_group_name")
+}
+
+/// 具体版本。图鉴描述以版本为单位
+model Version {
+  id             Int          @id @default(autoincrement())
+  slug           String       @unique // "red"
+  versionGroupId Int
+  versionGroup   VersionGroup @relation(fields: [versionGroupId], references: [id])
+
+  names       VersionName[]
+  flavorTexts PokemonFlavorText[]
+
+  @@index([versionGroupId])
+  @@map("version")
+}
+
+model VersionName {
+  versionId    Int
+  version      Version  @relation(fields: [versionId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([versionId, languageCode])
+  @@map("version_name")
+}
+
+/// 图鉴颜色，固定十种
+model PokemonColor {
+  id   Int    @id @default(autoincrement())
+  slug String @unique // "red"
+
+  names    PokemonColorName[]
+  pokemons Pokemon[]
+
+  @@map("pokemon_color")
+}
+
+model PokemonColorName {
+  colorId      Int
+  color        PokemonColor @relation(fields: [colorId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language     @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([colorId, languageCode])
+  @@map("pokemon_color_name")
+}
+
+/// 进化链。一句 where evolutionChainId 就能捞出整条链的所有成员
+model EvolutionChain {
+  id Int @id @default(autoincrement())
+
+  pokemons Pokemon[]
+
+  @@map("evolution_chain")
+}
+
+/// 地区图鉴。同一地区可能有多本，城都就有原版和更新版
+model Pokedex {
+  id     Int     @id @default(autoincrement())
+  slug   String  @unique // "kanto" / "updated-johto"
+  region String? // "kanto"
+
+  names   PokedexName[]
+  entries PokemonDexNumber[]
+
+  @@map("pokedex")
+}
+
+model PokedexName {
+  pokedexId    Int
+  pokedex      Pokedex  @relation(fields: [pokedexId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([pokedexId, languageCode])
+  @@map("pokedex_name")
+}
+
+/// 物种。名字在 PokemonName 里，实体表不留 name 列
+model Pokemon {
+  id               Int             @id // 全国图鉴编号
+  slug             String          @unique // "vulpix"
+  colorId          Int?
+  color            PokemonColor?   @relation(fields: [colorId], references: [id])
+  evolutionChainId Int?
+  evolutionChain   EvolutionChain? @relation(fields: [evolutionChainId], references: [id])
+
+  names       PokemonName[]
+  forms       PokemonForm[]
+  dexNumbers  PokemonDexNumber[]
+  evolvesTo   PokemonEvolution[] @relation("EvolutionFrom")
+  evolvesFrom PokemonEvolution[] @relation("EvolutionTo")
+
+  @@index([colorId])
+  @@index([evolutionChainId])
+  @@map("pokemon")
+}
+
+model PokemonName {
+  pokemonId    Int
+  pokemon      Pokemon  @relation(fields: [pokemonId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+  genus        String? // 「小鼠宝可梦」这种分类
+
+  @@id([pokemonId, languageCode])
+  @@index([name])
+  @@map("pokemon_name")
+}
+
+/// 地区图鉴里的编号。全国编号是 Pokemon.id，这张表存各地区的
+model PokemonDexNumber {
+  pokemonId Int
+  pokemon   Pokemon @relation(fields: [pokemonId], references: [id], onDelete: Cascade)
+  pokedexId Int
+  pokedex   Pokedex @relation(fields: [pokedexId], references: [id])
+  number    Int
+
+  @@id([pokemonId, pokedexId])
+  @@unique([pokedexId, number])
+  @@map("pokemon_dex_number")
+}
+
+/// 进化关系。一条边表示「在某个版本组里，from 按某种条件进化成 to」。
+/// 条件是版本组级的：磁怪→自爆磁怪在 Gen4 是神奥特定地点、Gen5 换了地点、剑盾改成雷之石；
+/// 伊布→叶伊布 Gen4 要在苔石旁升级，剑盾改成用苔之石。Let's Go 和传说阿尔宙斯也各有一套。
+///
+/// 做在物种级而不是形态级，所以伽勒尔呆呆兽那种「形态决定进化去向」表达不了，遇到再改
+model PokemonEvolution {
+  id             Int              @id @default(autoincrement())
+  fromId         Int
+  from           Pokemon          @relation("EvolutionFrom", fields: [fromId], references: [id], onDelete: Cascade)
+  toId           Int
+  to             Pokemon          @relation("EvolutionTo", fields: [toId], references: [id], onDelete: Cascade)
+  versionGroupId Int
+  versionGroup   VersionGroup     @relation(fields: [versionGroupId], references: [id])
+  triggerSlug    String
+  trigger        EvolutionTrigger @relation(fields: [triggerSlug], references: [slug])
+  minLevel       Int? // trigger = level-up 时的等级门槛
+  itemName       String? // trigger = use-item 时的道具名，"冰之石"
+
+  conditions PokemonEvolutionConditionText[]
+
+  @@unique([fromId, toId, versionGroupId])
+  @@index([toId])
+  @@index([versionGroupId])
+  @@index([triggerSlug])
+  @@map("pokemon_evolution")
+}
+
+/// 进化条件的补充说明，按语言存。亲密度、时间段、携带物、特定地点这类
+/// 结构化不完的条件写在这里，trigger = other 的边基本都要有
+model PokemonEvolutionConditionText {
+  evolutionId  Int
+  evolution    PokemonEvolution @relation(fields: [evolutionId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language         @relation(fields: [languageCode], references: [code])
+  text         String // 「在磁场区域升级」/「携带王者之证通信交换」
+
+  @@id([evolutionId, languageCode])
+  @@map("pokemon_evolution_condition_text")
+}
+
+/// 形态。属性、种族值、特性、描述、招式都挂这里。
+/// 默认形态也占一行（isDefault = true），这样模型只有一套路径，
+/// 不用为「有形态」和「没形态」写两种查询
+model PokemonForm {
+  id        Int     @id @default(autoincrement())
+  pokemonId Int
+  pokemon   Pokemon @relation(fields: [pokemonId], references: [id], onDelete: Cascade)
+  slug      String  @unique // "vulpix-alola"
+  isDefault Boolean @default(false)
+
+  names       PokemonFormName[]
+  types       PokemonFormType[]
+  stats       PokemonFormStat[]
+  abilities   PokemonFormAbility[]
+  flavorTexts PokemonFlavorText[]
+  moveLearns  MoveLearn[]
+
+  @@index([pokemonId])
+  @@map("pokemon_form")
+}
+
+model PokemonFormName {
+  formId       Int
+  form         PokemonForm @relation(fields: [formId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language    @relation(fields: [languageCode], references: [code])
+  name         String // 「阿罗拉的样子」
+
+  @@id([formId, languageCode])
+  @@index([name])
+  @@map("pokemon_form_name")
+}
+
+model Type {
+  id    Int    @id @default(autoincrement())
+  slug  String @unique // "fire"
+  color String @db.VarChar(7) // "#EE8130"，属性徽章的主题色
+
+  /// 从哪一代开始存在。钢和恶是 Gen2，仙子是 Gen6。
+  /// 跟相克表有点冗余（distinct 一下也能推出来），但列属性清单是高频操作，
+  /// 为它扫两千多行不划算
+  introducedInGenerationId Int
+  introducedInGeneration   Generation @relation(fields: [introducedInGenerationId], references: [id])
+
+  names            TypeName[]
+  pokemonForms     PokemonFormType[]
+  moveGenerations  MoveGeneration[]
+  attackingAgainst TypeEffectiveness[] @relation("AttackingType")
+  defendingAgainst TypeEffectiveness[] @relation("DefendingType")
+
+  @@index([introducedInGenerationId])
+  @@map("type")
+}
+
+model TypeName {
+  typeId       Int
+  type         Type     @relation(fields: [typeId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([typeId, languageCode])
+  @@index([name])
+  @@map("type_name")
+}
+
+/// 属性相克表，按世代整表存 attacker 打 defender 的倍率。
+/// Gen1 幽灵对超能力是 0 倍（著名的实现 bug）、毒对虫 2 倍，Gen2 改成 2 倍 / 0.5 倍；
+/// Gen2 引入钢和恶，Gen6 引入仙子并把钢对幽灵和恶从 0.5 改回 1。
+///
+/// 存全量（含 1 倍的组合），一代 18×18 = 324 行、九代约 2500 行。
+/// 这样查询没有缺省规则，不用记「查不到就按 1 倍算」—— 那条隐含约定谁忘了谁算错倍率
+model TypeEffectiveness {
+  generationId   Int
+  generation     Generation @relation(fields: [generationId], references: [id])
+  attackerTypeId Int
+  attacker       Type       @relation("AttackingType", fields: [attackerTypeId], references: [id], onDelete: Cascade)
+  defenderTypeId Int
+  defender       Type       @relation("DefendingType", fields: [defenderTypeId], references: [id], onDelete: Cascade)
+
+  /// 取值只有 0、0.5、1、2 四种。双属性的叠加倍率（水+飞行挨电击 = 4 倍）
+  /// 是两条记录相乘算出来的，不入库
+  multiplier Float
+
+  @@id([generationId, attackerTypeId, defenderTypeId])
+  @@index([defenderTypeId])
+  @@map("type_effectiveness")
+}
+
+/// 形态 × 世代的属性。slot 1 是第一属性，2 是第二属性
+model PokemonFormType {
+  formId       Int
+  form         PokemonForm @relation(fields: [formId], references: [id], onDelete: Cascade)
+  generationId Int
+  generation   Generation  @relation(fields: [generationId], references: [id])
+  typeId       Int
+  type         Type        @relation(fields: [typeId], references: [id])
+  slot         Int
+
+  @@id([formId, generationId, slot])
+  @@index([typeId])
+  @@map("pokemon_form_type")
+}
+
+/// 形态 × 世代的种族值，一项一行。
+/// Gen1 用 StatKind.SPECIAL，不用 SPECIAL_ATTACK / SPECIAL_DEFENSE
+model PokemonFormStat {
+  formId       Int
+  form         PokemonForm @relation(fields: [formId], references: [id], onDelete: Cascade)
+  generationId Int
+  generation   Generation  @relation(fields: [generationId], references: [id])
+  stat         StatKind
+  baseValue    Int
+
+  @@id([formId, generationId, stat])
+  @@map("pokemon_form_stat")
+}
+
+/// 特性。名字不随世代变，效果会，所以效果拆去 AbilityEffectText
+model Ability {
+  id   Int    @id @default(autoincrement())
+  slug String @unique // "flash-fire"
+
+  names        AbilityName[]
+  effects      AbilityEffectText[]
+  pokemonForms PokemonFormAbility[]
+
+  @@map("ability")
+}
+
+model AbilityName {
+  abilityId    Int
+  ability      Ability  @relation(fields: [abilityId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([abilityId, languageCode])
+  @@index([name])
+  @@map("ability_name")
+}
+
+/// 特性 × 世代 × 语言的效果说明。蓄电 Gen4 起才改成吸引电系招式，这类变更靠它记录
+model AbilityEffectText {
+  abilityId    Int
+  ability      Ability    @relation(fields: [abilityId], references: [id], onDelete: Cascade)
+  generationId Int
+  generation   Generation @relation(fields: [generationId], references: [id])
+  languageCode String
+  language     Language   @relation(fields: [languageCode], references: [code])
+  shortEffect  String? // 一句话版，列表里用
+  effect       String // 完整说明
+
+  @@id([abilityId, generationId, languageCode])
+  @@map("ability_effect_text")
+}
+
+/// 形态 × 世代的特性。Gen1/Gen2 没有特性，那两代直接不插行
+model PokemonFormAbility {
+  formId       Int
+  form         PokemonForm @relation(fields: [formId], references: [id], onDelete: Cascade)
+  generationId Int
+  generation   Generation  @relation(fields: [generationId], references: [id])
+  abilityId    Int
+  ability      Ability     @relation(fields: [abilityId], references: [id])
+
+  /// 1 = 第一普特，2 = 第二普特，3 = 梦特。
+  /// 槽位号固定，缺哪个就没那一行：皮卡丘只有 slot 1（静电）和 slot 3（避雷针），
+  /// 梦特不会因为没有第二普特就顶上来变成 2。
+  /// 所以不另设 isHidden 列 —— 它和 slot = 3 完全等价，查梦特直接 where slot: 3
+  slot Int
+
+  @@id([formId, generationId, slot])
+  @@index([abilityId])
+  @@map("pokemon_form_ability")
+}
+
+/// 招式。只留跨世代不变的身份，属性、伤害分类、威力、命中、PP 全在 MoveGeneration
+model Move {
+  id   Int    @id @default(autoincrement())
+  slug String @unique // "knock-off"
+
+  names       MoveName[]
+  generations MoveGeneration[]
+  effects     MoveEffectText[]
+  learns      MoveLearn[]
+
+  @@map("move")
+}
+
+model MoveName {
+  moveId       Int
+  move         Move     @relation(fields: [moveId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([moveId, languageCode])
+  @@index([name])
+  @@map("move_name")
+}
+
+/// 招式 × 世代的数值。拍落 Gen6 威力从 20 提到 65、十万伏特 Gen6 命中从 95 降到 90、
+/// 神秘守护的属性也改过，所以这些全是世代级的量，不是招式的固有字段。
+///
+/// 主键 [moveId, generationId] 的 moveId 打头，所以 where moveId = ? 吃得到索引前缀，
+/// 一次就能把这招从登场到现在的所有版本按世代有序拿全（最多 9 行）
+model MoveGeneration {
+  moveId       Int
+  move         Move        @relation(fields: [moveId], references: [id], onDelete: Cascade)
+  generationId Int
+  generation   Generation  @relation(fields: [generationId], references: [id])
+  typeId       Int
+  type         Type        @relation(fields: [typeId], references: [id])
+  damageClass  DamageClass
+  power        Int? // 变化招式为空
+  accuracy     Int? // 必中招式为空
+  pp           Int?
+
+  @@id([moveId, generationId])
+  @@index([typeId])
+  @@map("move_generation")
+}
+
+/// 招式 × 世代 × 语言的效果说明。
+/// 这里存的是机制说明；游戏图鉴上那句介绍文案是按版本组变的，不是一回事，暂未建模
+model MoveEffectText {
+  moveId       Int
+  move         Move       @relation(fields: [moveId], references: [id], onDelete: Cascade)
+  generationId Int
+  generation   Generation @relation(fields: [generationId], references: [id])
+  languageCode String
+  language     Language   @relation(fields: [languageCode], references: [code])
+  shortEffect  String? // 一句话版，列表里用
+  effect       String // 完整说明
+
+  @@id([moveId, generationId, languageCode])
+  @@map("move_effect_text")
+}
+
+/// 形态 × 版本组 × 学习方式
+model MoveLearn {
+  id             Int             @id @default(autoincrement())
+  formId         Int
+  form           PokemonForm     @relation(fields: [formId], references: [id], onDelete: Cascade)
+  moveId         Int
+  move           Move            @relation(fields: [moveId], references: [id])
+  versionGroupId Int
+  versionGroup   VersionGroup    @relation(fields: [versionGroupId], references: [id])
+  methodSlug     String
+  method         MoveLearnMethod @relation(fields: [methodSlug], references: [slug])
+
+  /// 升级学会的等级要求，只有 level-up 有意义，其中 0 表示进化时学会。
+  /// egg / tutor / machine 一律填 0：这个字段进了唯一键，
+  /// 而 Postgres 里 NULL 互不相等，可空的话唯一键对这几类行等于失效，同一条招式能重复插
+  level Int @default(0)
+
+  machineNumber String? // 只有 machine 有意义，如 "TM01"
+
+  @@unique([formId, moveId, versionGroupId, methodSlug, level])
+  @@index([moveId])
+  @@index([versionGroupId])
+  @@index([methodSlug])
+  @@map("move_learn")
+}
+
+/// 形态 × 版本 × 语言的图鉴描述
+model PokemonFlavorText {
+  id           Int         @id @default(autoincrement())
+  formId       Int
+  form         PokemonForm @relation(fields: [formId], references: [id], onDelete: Cascade)
+  versionId    Int
+  version      Version     @relation(fields: [versionId], references: [id])
+  languageCode String
+  language     Language    @relation(fields: [languageCode], references: [code])
+  text         String
+
+  @@unique([formId, versionId, languageCode])
+  @@map("pokemon_flavor_text")
 }
