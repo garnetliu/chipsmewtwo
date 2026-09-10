@@ -12,6 +12,7 @@
  * 世代是唯一的例外，它的 id 就是「第几世代」这个官方编号。
  */
 import type { LanguageCode } from "@/lib/pokeapi/language";
+import type { Snapshot } from "@/lib/pokeapi/pokemon";
 
 /** 译名。缺的语言是数据源没收录，不是漏了 */
 export type Localized = Partial<Record<LanguageCode, string>>;
@@ -102,6 +103,23 @@ export type VersionSnapshot = {
   names: Localized;
 };
 
+/**
+ * 宝可梦快照里的一条。形状直接用 lib/pokeapi/pokemon.ts 的 Snapshot，
+ * 只是把图鉴说明摘出去单独存 —— 说明有十万多条、二十多兆，跟本体放一起的话
+ * 每次刷新整个文件都要重写，diff 也没法看。
+ *
+ * 只收默认形态：地区形态还是按需拉（PokeAPISource），没进快照。
+ */
+export type PokemonSnapshot = Omit<Snapshot, "form"> & {
+  form: Omit<Snapshot["form"], "descriptions">;
+};
+
+/** 图鉴说明。按物种 slug 分组，一只一条记录 */
+export type PokemonDescriptionSnapshot = {
+  slug: string;
+  descriptions: Snapshot["form"]["descriptions"];
+};
+
 /** 文件名（不含扩展名）→ 内容类型。刷新脚本和 seed 都按这张表对齐 */
 export type SeedData = {
   regions: RegionSnapshot[];
@@ -114,6 +132,8 @@ export type SeedData = {
   pokedexes: PokedexSnapshot[];
   groups: GroupSnapshot[];
   versions: VersionSnapshot[];
+  pokemon: PokemonSnapshot[];
+  "pokemon-descriptions": PokemonDescriptionSnapshot[];
 };
 
 /**
