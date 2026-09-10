@@ -6,5 +6,5 @@ import type { FormColorResolvers } from "./../../types.generated";
  */
 export const FormColor: FormColorResolvers = {
   name: (parent, { language }, ctx) =>
-    ctx.dataSources.pokemonDb.colorNameOf(Number(parent.id), language ?? ctx.language),
+    ctx.dataSources.form.colorNameOf(Number(parent.id), language ?? ctx.language),
 };

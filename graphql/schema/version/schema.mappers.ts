@@ -1,2 +1,4 @@
-/** 查库只给 id 和 slug，译名由字段 resolver 走 loader 取 */
-export type VersionMapper = { id: string; slug: string };
+import type { VersionRow } from "@/graphql/context/version-source";
+
+/** 跟着图鉴说明一起 join 出来。译名由 Version.name 走 loader 取 */
+export type VersionMapper = VersionRow;

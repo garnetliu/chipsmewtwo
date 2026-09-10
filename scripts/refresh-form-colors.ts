@@ -19,12 +19,12 @@
  */
 import { writeFile } from "node:fs/promises";
 
-import type { FormColorData } from "@/lib/pokemon/form-colors";
+import type { FormColorData } from "@/prisma/seed-data/form-colors";
 
 /** 只 import type，不 import 那个常量 —— 值导入会把 lib 模块连带它读的
  *  form-colors.json 一起加载进来，而这个脚本正是用来覆写那个文件的，
  *  JSON 一坏脚本就跑不起来，等于把修复工具锁在了故障后面 */
-const OUT_FILE = "lib/pokemon/form-colors.json";
+const OUT_FILE = "prisma/seed-data/form-colors.json";
 
 const WIKI_API = "https://wiki.52poke.com/api.php";
 const WIKI_PAGE = "宝可梦列表（按颜色分类）";

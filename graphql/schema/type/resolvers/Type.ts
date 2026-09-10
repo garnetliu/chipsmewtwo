@@ -5,6 +5,7 @@ import type { TypeResolvers } from "./../../types.generated";
  * 只有 name 要单独查译名，因为它带 language 参数
  */
 export const Type: TypeResolvers = {
-  name: (parent, { language }, ctx) =>
-    ctx.dataSources.pokemonDb.typeNameOf(Number(parent.id), language ?? ctx.language),
+  name: (parent, { language }, ctx) => {
+    return ctx.dataSources.type.nameOf(Number(parent.id), language ?? ctx.language);
+  },
 };

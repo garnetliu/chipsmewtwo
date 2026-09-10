@@ -4,9 +4,9 @@ import type { QueryResolvers } from "./../../../types.generated";
 
 export const pokemon: NonNullable<QueryResolvers["pokemon"]> = async (_parent, arg, ctx) => {
   const idOrSlug = String(arg.id);
-  const { pokemonDb } = ctx.dataSources;
+  const { pokemon: pokemonSource } = ctx.dataSources;
 
-  const row = await pokemonDb.findOne(idOrSlug);
+  const row = await pokemonSource.findOne(idOrSlug);
 
   if (!row) {
     throw new GraphQLError(`找不到宝可梦 ${idOrSlug}`, {

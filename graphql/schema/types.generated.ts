@@ -8,6 +8,7 @@ import type {
   FormColorMapper,
   FormDescriptionMapper,
   FormMapper,
+  FormStatsMapper,
 } from "./form/schema.mappers";
 import type { PokemonListMapper, PokemonMapper } from "./pokemon/schema.mappers";
 import type { TypeMapper } from "./type/schema.mappers";
@@ -149,8 +150,6 @@ export type FormAbility = {
   ability: Ability;
   /** formId:generationId:slot 拼成的缓存键，例如 1:9:3 */
   id: Scalars["ID"]["output"];
-  /** 等价于 slot == 3 */
-  isHidden: Scalars["Boolean"]["output"];
   /**
    * 1、2 是普通特性，3 是隐藏特性。编号固定，缺哪个就没那一项 ——
    * 皮卡丘只有 slot 1 和 slot 3，隐藏特性不会顶上来变成 2
@@ -438,7 +437,7 @@ export type ResolversTypes = {
   FormAbility: ResolverTypeWrapper<FormAbilityMapper>;
   FormColor: ResolverTypeWrapper<FormColorMapper>;
   FormDescription: ResolverTypeWrapper<FormDescriptionMapper>;
-  FormStats: ResolverTypeWrapper<FormStats>;
+  FormStats: ResolverTypeWrapper<FormStatsMapper>;
   Mutation: ResolverTypeWrapper<Record<PropertyKey, never>>;
   PaginationMeta: ResolverTypeWrapper<PaginationMeta>;
   Pokemon: ResolverTypeWrapper<PokemonMapper>;
@@ -459,7 +458,7 @@ export type ResolversParentTypes = {
   FormAbility: FormAbilityMapper;
   FormColor: FormColorMapper;
   FormDescription: FormDescriptionMapper;
-  FormStats: FormStats;
+  FormStats: FormStatsMapper;
   Mutation: Record<PropertyKey, never>;
   PaginationMeta: PaginationMeta;
   Pokemon: PokemonMapper;
@@ -531,7 +530,6 @@ export type FormAbilityResolvers<
 > = {
   ability?: Resolver<ResolversTypes["Ability"], ParentType, ContextType>;
   id?: Resolver<ResolversTypes["ID"], ParentType, ContextType>;
-  isHidden?: Resolver<ResolversTypes["Boolean"], ParentType, ContextType>;
   slot?: Resolver<ResolversTypes["Int"], ParentType, ContextType>;
 };
 

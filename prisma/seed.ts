@@ -20,7 +20,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { type LanguageCode, LANGUAGES } from "@/lib/pokeapi/language";
+import { type LanguageCode, LANGUAGES } from "@/lib/pokemon/language";
 import { prisma } from "@/lib/prisma";
 import {
   type DamageTo,

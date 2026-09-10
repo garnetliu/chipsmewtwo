@@ -1,15 +1,16 @@
-import type { PokemonDbSource } from "@/graphql/context/PokemonDbSource";
-import type { LanguageCode } from "@/lib/pokeapi/language";
+import type { LanguageCode } from "@/lib/pokemon/language";
 
-/**
- * 库里数据不足时用来补库。唯一实现是 graphql/context/PokeAPISource.ts，
- * 等数据全导进库之后连这个接口一起删掉，查询主线不受影响。
- */
-export interface PokemonImporter {
-  /** 拉一只并写库。返回 false 表示外部数据源里也没有这只 */
-  importPokemon(idOrSlug: string): Promise<boolean>;
-  importPokemonPage(offset: number, limit: number): Promise<void>;
-}
+import type { AbilitySource } from "./ability-source";
+import type { FormSource } from "./form-source";
+import type { PokemonSource } from "./pokemon-source";
+import type { TypeSource } from "./type-source";
+import type { VersionSource } from "./version-source";
+
+export * from "./ability-source";
+export * from "./form-source";
+export * from "./pokemon-source";
+export * from "./type-source";
+export * from "./version-source";
 
 export interface MyContext {
   userID: string;
@@ -18,10 +19,15 @@ export interface MyContext {
    * 字段上的 language 参数优先级更高，用来单点覆盖（同一页里显示一个日文名之类）
    */
   language: LanguageCode;
-  /** 两个都必须每请求新建，实例化在 app/api/graphql/route.ts */
+  /**
+   * 按 GraphQL 的域一个 source，字段 resolver 找自己域那个。
+   * 全都必须每请求新建 —— DataLoader 的缓存按实例存，实例化在 app/api/graphql/route.ts
+   */
   dataSources: {
-    pokemonDb: PokemonDbSource;
-    /** POKEMON_FETCH_MODE=db-only 时不实例化，所以是可选的 */
-    pokemonImporter?: PokemonImporter;
+    pokemon: PokemonSource;
+    form: FormSource;
+    type: TypeSource;
+    ability: AbilitySource;
+    version: VersionSource;
   };
 }

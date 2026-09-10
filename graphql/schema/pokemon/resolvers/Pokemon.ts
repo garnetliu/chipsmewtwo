@@ -11,21 +11,21 @@ import type { PokemonResolvers } from "./../../types.generated";
  */
 export const Pokemon: PokemonResolvers = {
   name: async (parent, { language }, ctx) => {
-    const row = await ctx.dataSources.pokemonDb.nameOf(Number(parent.id), language ?? ctx.language);
+    const row = await ctx.dataSources.pokemon.nameOf(Number(parent.id), language ?? ctx.language);
     return row?.name ?? null;
   },
 
   genus: async (parent, { language }, ctx) => {
-    const row = await ctx.dataSources.pokemonDb.nameOf(Number(parent.id), language ?? ctx.language);
+    const row = await ctx.dataSources.pokemon.nameOf(Number(parent.id), language ?? ctx.language);
     return row?.genus ?? null;
   },
 
   // formsOf 已经把默认形态排在第一位，这里再 find 一次而不是取 [0]：
   // 数据库没约束一个物种只能有一条 isDefault，排序靠不住时宁可返回 null
   defaultForm: async (parent, _args, ctx) => {
-    const forms = await ctx.dataSources.pokemonDb.formsOf(Number(parent.id));
+    const forms = await ctx.dataSources.form.ofPokemon(parent.id);
     return forms.find((f) => f.isDefault) ?? null;
   },
 
-  forms: (parent, _args, ctx) => ctx.dataSources.pokemonDb.formsOf(Number(parent.id)),
+  forms: (parent, _args, ctx) => ctx.dataSources.form.ofPokemon(parent.id),
 };

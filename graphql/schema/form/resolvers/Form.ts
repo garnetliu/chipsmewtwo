@@ -11,24 +11,24 @@ import type { FormResolvers } from "./../../types.generated";
  */
 export const Form: FormResolvers = {
   name: (parent, { language }, ctx) =>
-    ctx.dataSources.pokemonDb.formNameOf(Number(parent.id), language ?? ctx.language),
+    ctx.dataSources.form.nameOf(Number(parent.id), language ?? ctx.language),
 
   fullImageUrl: (parent) => (parent.fullImage ? fullImageUrl(parent.fullImage) : null),
 
   detailImageUrl: (parent) => (parent.detailImage ? detailImageUrl(parent.detailImage) : null),
 
   types: (parent, { generation }, ctx) =>
-    ctx.dataSources.pokemonDb.typesOf(Number(parent.id), generation ?? LATEST_GENERATION),
+    ctx.dataSources.form.typesOf(Number(parent.id), generation ?? LATEST_GENERATION),
 
   stats: (parent, { generation }, ctx) =>
-    ctx.dataSources.pokemonDb.statsOf(Number(parent.id), generation ?? LATEST_GENERATION),
+    ctx.dataSources.form.statsOf(Number(parent.id), generation ?? LATEST_GENERATION),
 
   color: (parent, { generation }, ctx) =>
-    ctx.dataSources.pokemonDb.colorOf(Number(parent.id), generation ?? LATEST_GENERATION),
+    ctx.dataSources.form.colorOf(Number(parent.id), generation ?? LATEST_GENERATION),
 
   abilities: (parent, { generation }, ctx) =>
-    ctx.dataSources.pokemonDb.abilitiesOf(Number(parent.id), generation ?? LATEST_GENERATION),
+    ctx.dataSources.form.abilitiesOf(Number(parent.id), generation ?? LATEST_GENERATION),
 
   descriptions: (parent, { language }, ctx) =>
-    ctx.dataSources.pokemonDb.descriptionsOf(Number(parent.id), language ?? ctx.language),
+    ctx.dataSources.form.descriptionsOf(Number(parent.id), language ?? ctx.language),
 };
