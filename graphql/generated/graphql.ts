@@ -9,7 +9,7 @@ export type Get_PokemonQueryVariables = Exact<{
 }>;
 
 
-export type Get_PokemonQuery = { pokemon: { id: string, name: string, slug: string } | null };
+export type Get_PokemonQuery = { pokemon: { id: string, name: string | null, slug: string } | null };
 
 export type Get_Pokemon_ListQueryVariables = Exact<{
   offset: number;
@@ -17,7 +17,7 @@ export type Get_Pokemon_ListQueryVariables = Exact<{
 }>;
 
 
-export type Get_Pokemon_ListQuery = { pokemonList: Array<{ id: string, name: string, slug: string } | null> | null };
+export type Get_Pokemon_ListQuery = { pokemonList: Array<{ id: string, name: string | null, slug: string }> | null };
 
 
 export const Get_PokemonDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GET_POKEMON"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pokemon"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<Get_PokemonQuery, Get_PokemonQueryVariables>;

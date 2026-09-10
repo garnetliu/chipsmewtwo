@@ -8,6 +8,9 @@ export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
     path: "prisma/migrations",
+    // 用 tsx 而不是 node：generated/prisma/client.ts 内部 import './enums'
+    // 不带扩展名，Node 的 ESM 解析器不认
+    seed: "tsx prisma/seed.ts",
   },
   datasource: {
     url: process.env["DATABASE_URL"],

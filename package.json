@@ -9,12 +9,15 @@
     "start": "next start",
     "lint": "eslint --fix",
     "codegen": "graphql-codegen --config codegen.ts",
+    "seed:refresh": "tsx scripts/refresh-seed-data.ts",
+    "form-colors:refresh": "tsx scripts/refresh-form-colors.ts",
     "migrate": "prisma migrate dev",
     "postinstall": "prisma generate"
   },
   "dependencies": {
     "@apollo/client": "^4.2.12",
     "@apollo/client-integration-nextjs": "^0.14.5",
+    "@apollo/datasource-rest": "^6.4.1",
     "@apollo/server": "^5.5.1",
     "@as-integrations/next": "^4.1.0",
     "@base-ui/react": "^1.7.0",
@@ -23,6 +26,7 @@
     "better-auth": "^1.7.3",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.2.4",
+    "dataloader": "^2.2.3",
     "dotenv": "^17.4.2",
     "graphql": "^17.0.2",
     "lucide-react": "^1.39.0",
@@ -51,6 +55,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "prisma": "^7.10.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   },
   "packageManager": "pnpm@12.3.4+sha512.961aa41fb077da3a04a441d9f8e15ebc0c96da8ef710b2eb67bf9ee7cb0610eabd48f1fd85f51cffe73846785fa0f87c56a3a872a1d893f8446741b5cce45457"

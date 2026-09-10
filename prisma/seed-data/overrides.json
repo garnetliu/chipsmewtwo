@@ -1,0 +1,249 @@
+{
+  "pokedexes": {
+    "blueberry": {
+      "names": { "zh-Hans": "蓝莓图鉴", "zh-Hant": "藍莓圖鑑", "ja": "ブルーベリー図鑑" },
+      "descriptions": {
+        "zh-Hans": "蓝莓学园的图鉴",
+        "zh-Hant": "藍莓學園的圖鑑"
+      }
+    },
+    "champions": {
+      "names": { "zh-Hans": "冠军图鉴", "zh-Hant": "冠軍圖鑑", "ja": "チャンピオン図鑑" },
+      "descriptions": {
+        "zh-Hans": "《宝可梦传说 Z-A》的冠军图鉴",
+        "zh-Hant": "《寶可夢傳說 Z-A》的冠軍圖鑑"
+      }
+    },
+    "conquest-gallery": {
+      "names": { "zh-Hans": "图鉴一览", "zh-Hant": "圖鑑一覽", "ja": "ギャラリー" },
+      "descriptions": {
+        "zh-Hans": "《宝可梦 + 信长的野望》的图鉴排列顺序",
+        "zh-Hant": "《寶可夢 + 信長之野望》的圖鑑排列順序"
+      }
+    },
+    "crown-tundra": {
+      "names": { "zh-Hans": "冠雪原图鉴", "zh-Hant": "冠雪原圖鑑", "ja": "カンムリ雪原図鑑" },
+      "descriptions": {
+        "zh-Hans": "冠之雪原的图鉴",
+        "zh-Hant": "冠之雪原的圖鑑"
+      }
+    },
+    "extended-sinnoh": {
+      "names": { "zh-Hans": "神奥图鉴（扩充版）", "zh-Hant": "神奧圖鑑（擴充版）", "ja": "シンオウ図鑑（拡張版）" },
+      "descriptions": {
+        "zh-Hans": "白金版本中的神奥地区图鉴，在钻石/珍珠的基础上扩充",
+        "zh-Hant": "白金版本中的神奧地區圖鑑，在鑽石/珍珠的基礎上擴充"
+      }
+    },
+    "galar": {
+      "names": { "zh-Hans": "伽勒尔图鉴", "zh-Hant": "伽勒爾圖鑑", "ja": "ガラル図鑑" },
+      "descriptions": {
+        "zh-Hans": "剑/盾版本中的伽勒尔地区图鉴",
+        "zh-Hant": "劍/盾版本中的伽勒爾地區圖鑑"
+      }
+    },
+    "hisui": {
+      "names": { "zh-Hans": "洗翠图鉴", "zh-Hant": "洗翠圖鑑", "ja": "ヒスイ図鑑" },
+      "descriptions": {
+        "zh-Hans": "《宝可梦传说 阿尔宙斯》的洗翠地区图鉴",
+        "zh-Hant": "《寶可夢傳說 阿爾宙斯》的洗翠地區圖鑑"
+      }
+    },
+    "hoenn": {
+      "names": { "zh-Hans": "丰缘图鉴", "zh-Hant": "豐緣圖鑑", "ja": "ホウエン図鑑" },
+      "descriptions": {
+        "zh-Hans": "红宝石/蓝宝石/绿宝石版本中的丰缘地区图鉴",
+        "zh-Hant": "紅寶石/藍寶石/綠寶石版本中的豐緣地區圖鑑"
+      }
+    },
+    "hyperspace": {
+      "names": { "zh-Hans": "异空间图鉴", "zh-Hant": "異空間圖鑑", "ja": "異空間図鑑" },
+      "descriptions": {
+        "zh-Hans": "异空间的图鉴",
+        "zh-Hant": "異空間的圖鑑"
+      }
+    },
+    "isle-of-armor": {
+      "names": { "zh-Hans": "铠岛图鉴", "zh-Hant": "鎧島圖鑑", "ja": "ヨロイ島図鑑" },
+      "descriptions": {
+        "zh-Hans": "铠之孤岛的图鉴",
+        "zh-Hant": "鎧之孤島的圖鑑"
+      }
+    },
+    "kalos-central": {
+      "names": { "zh-Hans": "卡洛斯图鉴 中央篇", "zh-Hant": "卡洛斯圖鑑 中央篇", "ja": "カロス図鑑 セントラル" },
+      "descriptions": {
+        "zh-Hans": "X/Y 版本中的卡洛斯地区图鉴，中央区域",
+        "zh-Hant": "X/Y 版本中的卡洛斯地區圖鑑，中央區域"
+      }
+    },
+    "kalos-coastal": {
+      "names": { "zh-Hans": "卡洛斯图鉴 海岸篇", "zh-Hant": "卡洛斯圖鑑 海岸篇", "ja": "カロス図鑑 コースト" },
+      "descriptions": {
+        "zh-Hans": "X/Y 版本中的卡洛斯地区图鉴，海岸区域",
+        "zh-Hant": "X/Y 版本中的卡洛斯地區圖鑑，海岸區域"
+      }
+    },
+    "kalos-mountain": {
+      "names": { "zh-Hans": "卡洛斯图鉴 山岳篇", "zh-Hant": "卡洛斯圖鑑 山岳篇", "ja": "カロス図鑑 マウンテン" },
+      "descriptions": {
+        "zh-Hans": "X/Y 版本中的卡洛斯地区图鉴，山岳区域",
+        "zh-Hant": "X/Y 版本中的卡洛斯地區圖鑑，山岳區域"
+      }
+    },
+    "kanto": {
+      "names": { "zh-Hans": "关都图鉴", "zh-Hant": "關都圖鑑", "ja": "カントー図鑑" },
+      "descriptions": {
+        "zh-Hans": "红/蓝/黄版本中的关都地区图鉴",
+        "zh-Hant": "紅/藍/黃版本中的關都地區圖鑑"
+      }
+    },
+    "kitakami": {
+      "names": { "zh-Hans": "北上图鉴", "zh-Hant": "北上圖鑑", "ja": "キタカミ図鑑" },
+      "descriptions": {
+        "zh-Hans": "北上乡的图鉴",
+        "zh-Hant": "北上鄉的圖鑑"
+      }
+    },
+    "letsgo-kanto": {
+      "names": { "zh-Hans": "关都图鉴（Let's Go）", "zh-Hant": "關都圖鑑（Let's Go）", "ja": "カントー図鑑（Let's Go）" },
+      "descriptions": {
+        "zh-Hans": "Let's Go! 皮卡丘/Let's Go! 伊布中的关都地区图鉴",
+        "zh-Hant": "Let's Go! 皮卡丘/Let's Go! 伊布中的關都地區圖鑑"
+      }
+    },
+    "lumiose-city": {
+      "names": { "zh-Hans": "密阿雷图鉴", "zh-Hant": "密阿雷圖鑑", "ja": "ミアレ図鑑" },
+      "descriptions": {
+        "zh-Hans": "密阿雷市的图鉴",
+        "zh-Hant": "密阿雷市的圖鑑"
+      }
+    },
+    "national": {
+      "names": { "zh-Hans": "全国图鉴", "zh-Hant": "全國圖鑑", "ja": "全国図鑑" },
+      "descriptions": {
+        "zh-Hans": "收录全部宝可梦的全国图鉴",
+        "zh-Hant": "收錄全部寶可夢的全國圖鑑"
+      }
+    },
+    "original-akala": {
+      "names": { "zh-Hans": "阿卡拉图鉴", "zh-Hant": "阿卡拉圖鑑", "ja": "アーカラ図鑑" },
+      "descriptions": {
+        "zh-Hans": "太阳/月亮版本中的阿卡拉岛图鉴",
+        "zh-Hant": "太陽/月亮版本中的阿卡拉島圖鑑"
+      }
+    },
+    "original-alola": {
+      "names": { "zh-Hans": "阿罗拉图鉴", "zh-Hant": "阿羅拉圖鑑", "ja": "アローラ図鑑" },
+      "descriptions": {
+        "zh-Hans": "太阳/月亮版本中的阿罗拉地区图鉴",
+        "zh-Hant": "太陽/月亮版本中的阿羅拉地區圖鑑"
+      }
+    },
+    "original-johto": {
+      "names": { "zh-Hans": "城都图鉴", "zh-Hant": "城都圖鑑", "ja": "ジョウト図鑑" },
+      "descriptions": {
+        "zh-Hans": "金/银/水晶版本中的城都地区图鉴，游戏里称作「新图鉴」",
+        "zh-Hant": "金/銀/水晶版本中的城都地區圖鑑，遊戲裡稱作「新圖鑑」"
+      }
+    },
+    "original-melemele": {
+      "names": { "zh-Hans": "美乐美乐图鉴", "zh-Hant": "美樂美樂圖鑑", "ja": "メレメレ図鑑" },
+      "descriptions": {
+        "zh-Hans": "太阳/月亮版本中的美乐美乐岛图鉴",
+        "zh-Hant": "太陽/月亮版本中的美樂美樂島圖鑑"
+      }
+    },
+    "original-poni": {
+      "names": { "zh-Hans": "波尼图鉴", "zh-Hant": "波尼圖鑑", "ja": "ポニ図鑑" },
+      "descriptions": {
+        "zh-Hans": "太阳/月亮版本中的波尼岛图鉴",
+        "zh-Hant": "太陽/月亮版本中的波尼島圖鑑"
+      }
+    },
+    "original-sinnoh": {
+      "names": { "zh-Hans": "神奥图鉴", "zh-Hant": "神奧圖鑑", "ja": "シンオウ図鑑" },
+      "descriptions": {
+        "zh-Hans": "钻石/珍珠版本中的神奥地区图鉴",
+        "zh-Hant": "鑽石/珍珠版本中的神奧地區圖鑑"
+      }
+    },
+    "original-ulaula": {
+      "names": { "zh-Hans": "乌拉乌拉图鉴", "zh-Hant": "烏拉烏拉圖鑑", "ja": "ウラウラ図鑑" },
+      "descriptions": {
+        "zh-Hans": "太阳/月亮版本中的乌拉乌拉岛图鉴",
+        "zh-Hant": "太陽/月亮版本中的烏拉烏拉島圖鑑"
+      }
+    },
+    "original-unova": {
+      "names": { "zh-Hans": "合众图鉴", "zh-Hant": "合眾圖鑑", "ja": "イッシュ図鑑" },
+      "descriptions": {
+        "zh-Hans": "黑/白版本中的合众地区图鉴",
+        "zh-Hant": "黑/白版本中的合眾地區圖鑑"
+      }
+    },
+    "paldea": {
+      "names": { "zh-Hans": "帕底亚图鉴", "zh-Hant": "帕底亞圖鑑", "ja": "パルデア図鑑" },
+      "descriptions": {
+        "zh-Hans": "朱/紫版本中的帕底亚地区图鉴",
+        "zh-Hant": "朱/紫版本中的帕底亞地區圖鑑"
+      }
+    },
+    "updated-akala": {
+      "names": { "zh-Hans": "阿卡拉图鉴（更新版）", "zh-Hant": "阿卡拉圖鑑（更新版）", "ja": "アーカラ図鑑（更新版）" },
+      "descriptions": {
+        "zh-Hans": "究极之日/究极之月中的阿卡拉岛图鉴",
+        "zh-Hant": "究極之日/究極之月中的阿卡拉島圖鑑"
+      }
+    },
+    "updated-alola": {
+      "names": { "zh-Hans": "阿罗拉图鉴（更新版）", "zh-Hant": "阿羅拉圖鑑（更新版）", "ja": "アローラ図鑑（更新版）" },
+      "descriptions": {
+        "zh-Hans": "究极之日/究极之月中的阿罗拉地区图鉴",
+        "zh-Hant": "究極之日/究極之月中的阿羅拉地區圖鑑"
+      }
+    },
+    "updated-hoenn": {
+      "names": { "zh-Hans": "丰缘图鉴（新版）", "zh-Hant": "豐緣圖鑑（新版）", "ja": "ホウエン図鑑（新版）" },
+      "descriptions": {
+        "zh-Hans": "终极红宝石/始源蓝宝石中的丰缘地区图鉴，在红宝石/蓝宝石/绿宝石的基础上补入了新的进化型",
+        "zh-Hant": "終極紅寶石/始源藍寶石中的豐緣地區圖鑑，在紅寶石/藍寶石/綠寶石的基礎上補入了新的進化型"
+      }
+    },
+    "updated-johto": {
+      "names": { "zh-Hans": "城都图鉴（更新版）", "zh-Hant": "城都圖鑑（更新版）", "ja": "ジョウト図鑑（更新版）" },
+      "descriptions": {
+        "zh-Hans": "心金/魂银中的城都地区图鉴，在金/银/水晶的基础上补入了第四世代靠招式达成的进化型",
+        "zh-Hant": "心金/魂銀中的城都地區圖鑑，在金/銀/水晶的基礎上補入了第四世代靠招式達成的進化型"
+      }
+    },
+    "updated-melemele": {
+      "names": { "zh-Hans": "美乐美乐图鉴（更新版）", "zh-Hant": "美樂美樂圖鑑（更新版）", "ja": "メレメレ図鑑（更新版）" },
+      "descriptions": {
+        "zh-Hans": "究极之日/究极之月中的美乐美乐岛图鉴",
+        "zh-Hant": "究極之日/究極之月中的美樂美樂島圖鑑"
+      }
+    },
+    "updated-poni": {
+      "names": { "zh-Hans": "波尼图鉴（更新版）", "zh-Hant": "波尼圖鑑（更新版）", "ja": "ポニ図鑑（更新版）" },
+      "descriptions": {
+        "zh-Hans": "究极之日/究极之月中的波尼岛图鉴",
+        "zh-Hant": "究極之日/究極之月中的波尼島圖鑑"
+      }
+    },
+    "updated-ulaula": {
+      "names": { "zh-Hans": "乌拉乌拉图鉴（更新版）", "zh-Hant": "烏拉烏拉圖鑑（更新版）", "ja": "ウラウラ図鑑（更新版）" },
+      "descriptions": {
+        "zh-Hans": "究极之日/究极之月中的乌拉乌拉岛图鉴",
+        "zh-Hant": "究極之日/究極之月中的烏拉烏拉島圖鑑"
+      }
+    },
+    "updated-unova": {
+      "names": { "zh-Hans": "合众图鉴（更新版）", "zh-Hant": "合眾圖鑑（更新版）", "ja": "イッシュ図鑑（更新版）" },
+      "descriptions": {
+        "zh-Hans": "黑 2/白 2 中的合众地区图鉴",
+        "zh-Hant": "黑 2/白 2 中的合眾地區圖鑑"
+      }
+    }
+  }
+}

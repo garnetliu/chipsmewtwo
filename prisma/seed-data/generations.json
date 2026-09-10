@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "slug": "generation-i",
+    "mainRegionSlug": "kanto",
+    "names": {
+      "zh-Hans": "第一世代",
+      "zh-Hant": "第一世代",
+      "en": "Generation I",
+      "ja": "第一世代",
+      "ja-Hrkt": "だいいちせだい",
+      "ko": "1세대",
+      "fr": "1re Génération",
+      "de": "Generation I",
+      "es": "Generación I"
+    }
+  },
+  {
+    "id": 2,
+    "slug": "generation-ii",
+    "mainRegionSlug": "johto",
+    "names": {
+      "zh-Hans": "第二世代",
+      "zh-Hant": "第二世代",
+      "en": "Generation II",
+      "ja": "第二世代",
+      "ja-Hrkt": "だいにせだい",
+      "ko": "2세대",
+      "fr": "2e Génération",
+      "de": "Generation II",
+      "es": "Generación II"
+    }
+  },
+  {
+    "id": 3,
+    "slug": "generation-iii",
+    "mainRegionSlug": "hoenn",
+    "names": {
+      "zh-Hans": "第三世代",
+      "zh-Hant": "第三世代",
+      "en": "Generation III",
+      "ja": "第三世代",
+      "ja-Hrkt": "だいさんせだい",
+      "ko": "3세대",
+      "fr": "3e Génération",
+      "de": "Generation III",
+      "es": "Generación III"
+    }
+  },
+  {
+    "id": 4,
+    "slug": "generation-iv",
+    "mainRegionSlug": "sinnoh",
+    "names": {
+      "zh-Hans": "第四世代",
+      "zh-Hant": "第四世代",
+      "en": "Generation IV",
+      "ja": "第四世代",
+      "ja-Hrkt": "だいよんせだい",
+      "ko": "4세대",
+      "fr": "4e Génération",
+      "de": "Generation IV",
+      "es": "Generación IV"
+    }
+  },
+  {
+    "id": 5,
+    "slug": "generation-v",
+    "mainRegionSlug": "unova",
+    "names": {
+      "zh-Hans": "第五世代",
+      "zh-Hant": "第五世代",
+      "en": "Generation V",
+      "ja": "第五世代",
+      "ja-Hrkt": "だいごせだい",
+      "ko": "5세대",
+      "fr": "5e Génération",
+      "de": "Generation V",
+      "es": "Generación V"
+    }
+  },
+  {
+    "id": 6,
+    "slug": "generation-vi",
+    "mainRegionSlug": "kalos",
+    "names": {
+      "zh-Hans": "第六世代",
+      "zh-Hant": "第六世代",
+      "en": "Generation VI",
+      "ja": "第六世代",
+      "ja-Hrkt": "だいろくせだい",
+      "ko": "6세대",
+      "fr": "6e Génération",
+      "de": "Generation VI",
+      "es": "Generación VI"
+    }
+  },
+  {
+    "id": 7,
+    "slug": "generation-vii",
+    "mainRegionSlug": "alola",
+    "names": {
+      "zh-Hans": "第七世代",
+      "zh-Hant": "第七世代",
+      "en": "Generation VII",
+      "ja": "第七世代",
+      "ja-Hrkt": "だいななせだい",
+      "ko": "7세대",
+      "fr": "7e Génération",
+      "de": "Generation VII",
+      "es": "Generación VII"
+    }
+  },
+  {
+    "id": 8,
+    "slug": "generation-viii",
+    "mainRegionSlug": "galar",
+    "names": {
+      "zh-Hans": "第八世代",
+      "zh-Hant": "第八世代",
+      "en": "Generation VIII",
+      "ja": "第八世代",
+      "ja-Hrkt": "だいはちせだい",
+      "ko": "8세대",
+      "fr": "8e Génération",
+      "de": "Generation VIII",
+      "es": "Generación VIII"
+    }
+  },
+  {
+    "id": 9,
+    "slug": "generation-ix",
+    "mainRegionSlug": "paldea",
+    "names": {
+      "zh-Hans": "第九世代",
+      "zh-Hant": "第九世代",
+      "en": "Generation IX",
+      "ja": "第九世代",
+      "ja-Hrkt": "だいきゅうせだい",
+      "ko": "9세대",
+      "fr": "9e Génération",
+      "de": "Generation IX",
+      "es": "Generación IX"
+    }
+  }
+]

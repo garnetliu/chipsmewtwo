@@ -1,0 +1,690 @@
+[
+  {
+    "slug": "bug",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "虫",
+      "zh-Hant": "蟲",
+      "en": "Bug",
+      "ja": "むし",
+      "ja-Hrkt": "むし",
+      "ko": "벌레",
+      "fr": "Insecte",
+      "de": "Käfer",
+      "es": "Bicho",
+      "it": "Coleottero"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "fairy",
+        "fighting",
+        "fire",
+        "flying",
+        "ghost",
+        "poison",
+        "steel"
+      ],
+      "double": [
+        "dark",
+        "grass",
+        "psychic"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 1,
+        "zero": [],
+        "half": [
+          "fighting",
+          "fire",
+          "flying",
+          "ghost"
+        ],
+        "double": [
+          "grass",
+          "poison",
+          "psychic"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dark",
+    "introducedInGenerationId": 2,
+    "names": {
+      "zh-Hans": "恶",
+      "zh-Hant": "惡",
+      "en": "Dark",
+      "ja": "あく",
+      "ja-Hrkt": "あく",
+      "ko": "악",
+      "fr": "Ténèbres",
+      "de": "Unlicht",
+      "es": "Siniestro",
+      "it": "Buio"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "dark",
+        "fairy",
+        "fighting"
+      ],
+      "double": [
+        "ghost",
+        "psychic"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 5,
+        "zero": [],
+        "half": [
+          "dark",
+          "fighting",
+          "steel"
+        ],
+        "double": [
+          "ghost",
+          "psychic"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dragon",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "龙",
+      "zh-Hant": "龍",
+      "en": "Dragon",
+      "ja": "ドラゴン",
+      "ja-Hrkt": "ドラゴン",
+      "ko": "드래곤",
+      "fr": "Dragon",
+      "de": "Drache",
+      "es": "Dragón",
+      "it": "Drago"
+    },
+    "damageTo": {
+      "zero": [
+        "fairy"
+      ],
+      "half": [
+        "steel"
+      ],
+      "double": [
+        "dragon"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "electric",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "电",
+      "zh-Hant": "電",
+      "en": "Electric",
+      "ja": "でんき",
+      "ja-Hrkt": "でんき",
+      "ko": "전기",
+      "fr": "Électrik",
+      "de": "Elektro",
+      "es": "Eléctrico",
+      "it": "Elettro"
+    },
+    "damageTo": {
+      "zero": [
+        "ground"
+      ],
+      "half": [
+        "dragon",
+        "electric",
+        "grass"
+      ],
+      "double": [
+        "flying",
+        "water"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "fairy",
+    "introducedInGenerationId": 6,
+    "names": {
+      "zh-Hans": "妖精",
+      "zh-Hant": "妖精",
+      "en": "Fairy",
+      "ja": "フェアリー",
+      "ja-Hrkt": "フェアリー",
+      "ko": "페어리",
+      "fr": "Fée",
+      "de": "Fee",
+      "es": "Hada",
+      "it": "Folletto"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "fire",
+        "poison",
+        "steel"
+      ],
+      "double": [
+        "dark",
+        "dragon",
+        "fighting"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "fighting",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "格斗",
+      "zh-Hant": "格鬥",
+      "en": "Fighting",
+      "ja": "かくとう",
+      "ja-Hrkt": "かくとう",
+      "ko": "격투",
+      "fr": "Combat",
+      "de": "Kampf",
+      "es": "Lucha",
+      "it": "Lotta"
+    },
+    "damageTo": {
+      "zero": [
+        "ghost"
+      ],
+      "half": [
+        "bug",
+        "fairy",
+        "flying",
+        "poison",
+        "psychic"
+      ],
+      "double": [
+        "dark",
+        "ice",
+        "normal",
+        "rock",
+        "steel"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "fire",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "火",
+      "zh-Hant": "火",
+      "en": "Fire",
+      "ja": "ほのお",
+      "ja-Hrkt": "ほのお",
+      "ko": "불꽃",
+      "fr": "Feu",
+      "de": "Feuer",
+      "es": "Fuego",
+      "it": "Fuoco"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "dragon",
+        "fire",
+        "rock",
+        "water"
+      ],
+      "double": [
+        "bug",
+        "grass",
+        "ice",
+        "steel"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 1,
+        "zero": [],
+        "half": [
+          "dragon",
+          "fire",
+          "rock",
+          "water"
+        ],
+        "double": [
+          "bug",
+          "grass",
+          "ice"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "flying",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "飞行",
+      "zh-Hant": "飛行",
+      "en": "Flying",
+      "ja": "ひこう",
+      "ja-Hrkt": "ひこう",
+      "ko": "비행",
+      "fr": "Vol",
+      "de": "Flug",
+      "es": "Volador",
+      "it": "Volante"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "electric",
+        "rock",
+        "steel"
+      ],
+      "double": [
+        "bug",
+        "fighting",
+        "grass"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "ghost",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "幽灵",
+      "zh-Hant": "幽靈",
+      "en": "Ghost",
+      "ja": "ゴースト",
+      "ja-Hrkt": "ゴースト",
+      "ko": "고스트",
+      "fr": "Spectre",
+      "de": "Geist",
+      "es": "Fantasma",
+      "it": "Spettro"
+    },
+    "damageTo": {
+      "zero": [
+        "normal"
+      ],
+      "half": [
+        "dark"
+      ],
+      "double": [
+        "ghost",
+        "psychic"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 1,
+        "zero": [
+          "normal",
+          "psychic"
+        ],
+        "half": [],
+        "double": [
+          "ghost"
+        ]
+      },
+      {
+        "throughGenerationId": 5,
+        "zero": [
+          "normal"
+        ],
+        "half": [
+          "dark",
+          "steel"
+        ],
+        "double": [
+          "ghost",
+          "psychic"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "grass",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "草",
+      "zh-Hant": "草",
+      "en": "Grass",
+      "ja": "くさ",
+      "ja-Hrkt": "くさ",
+      "ko": "풀",
+      "fr": "Plante",
+      "de": "Pflanze",
+      "es": "Planta",
+      "it": "Erba"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "bug",
+        "dragon",
+        "fire",
+        "flying",
+        "grass",
+        "poison",
+        "steel"
+      ],
+      "double": [
+        "ground",
+        "rock",
+        "water"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "ground",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "地面",
+      "zh-Hant": "地面",
+      "en": "Ground",
+      "ja": "じめん",
+      "ja-Hrkt": "じめん",
+      "ko": "땅",
+      "fr": "Sol",
+      "de": "Boden",
+      "es": "Tierra",
+      "it": "Terra"
+    },
+    "damageTo": {
+      "zero": [
+        "flying"
+      ],
+      "half": [
+        "bug",
+        "grass"
+      ],
+      "double": [
+        "electric",
+        "fire",
+        "poison",
+        "rock",
+        "steel"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "ice",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "冰",
+      "zh-Hant": "冰",
+      "en": "Ice",
+      "ja": "こおり",
+      "ja-Hrkt": "こおり",
+      "ko": "얼음",
+      "fr": "Glace",
+      "de": "Eis",
+      "es": "Hielo",
+      "it": "Ghiaccio"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "fire",
+        "ice",
+        "steel",
+        "water"
+      ],
+      "double": [
+        "dragon",
+        "flying",
+        "grass",
+        "ground"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 1,
+        "zero": [],
+        "half": [
+          "ice",
+          "water"
+        ],
+        "double": [
+          "dragon",
+          "flying",
+          "grass",
+          "ground"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "normal",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "一般",
+      "zh-Hant": "一般",
+      "en": "Normal",
+      "ja": "ノーマル",
+      "ja-Hrkt": "ノーマル",
+      "ko": "노말",
+      "fr": "Normal",
+      "de": "Normal",
+      "es": "Normal",
+      "it": "Normale"
+    },
+    "damageTo": {
+      "zero": [
+        "ghost"
+      ],
+      "half": [
+        "rock",
+        "steel"
+      ],
+      "double": []
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "poison",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "毒",
+      "zh-Hant": "毒",
+      "en": "Poison",
+      "ja": "どく",
+      "ja-Hrkt": "どく",
+      "ko": "독",
+      "fr": "Poison",
+      "de": "Gift",
+      "es": "Veneno",
+      "it": "Veleno"
+    },
+    "damageTo": {
+      "zero": [
+        "steel"
+      ],
+      "half": [
+        "ghost",
+        "ground",
+        "poison",
+        "rock"
+      ],
+      "double": [
+        "fairy",
+        "grass"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 1,
+        "zero": [],
+        "half": [
+          "ghost",
+          "ground",
+          "poison",
+          "rock"
+        ],
+        "double": [
+          "bug",
+          "grass"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "psychic",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "超能力",
+      "zh-Hant": "超能力",
+      "en": "Psychic",
+      "ja": "エスパー",
+      "ja-Hrkt": "エスパー",
+      "ko": "에스퍼",
+      "fr": "Psy",
+      "de": "Psycho",
+      "es": "Psíquico",
+      "it": "Psico"
+    },
+    "damageTo": {
+      "zero": [
+        "dark"
+      ],
+      "half": [
+        "psychic",
+        "steel"
+      ],
+      "double": [
+        "fighting",
+        "poison"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 1,
+        "zero": [],
+        "half": [
+          "psychic"
+        ],
+        "double": [
+          "fighting",
+          "poison"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "rock",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "岩石",
+      "zh-Hant": "岩石",
+      "en": "Rock",
+      "ja": "いわ",
+      "ja-Hrkt": "いわ",
+      "ko": "바위",
+      "fr": "Roche",
+      "de": "Gestein",
+      "es": "Roca",
+      "it": "Roccia"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "fighting",
+        "ground",
+        "steel"
+      ],
+      "double": [
+        "bug",
+        "fire",
+        "flying",
+        "ice"
+      ]
+    },
+    "pastDamageTo": []
+  },
+  {
+    "slug": "steel",
+    "introducedInGenerationId": 2,
+    "names": {
+      "zh-Hans": "钢",
+      "zh-Hant": "鋼",
+      "en": "Steel",
+      "ja": "はがね",
+      "ja-Hrkt": "はがね",
+      "ko": "강철",
+      "fr": "Acier",
+      "de": "Stahl",
+      "es": "Acero",
+      "it": "Acciaio"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "electric",
+        "fire",
+        "steel",
+        "water"
+      ],
+      "double": [
+        "fairy",
+        "ice",
+        "rock"
+      ]
+    },
+    "pastDamageTo": [
+      {
+        "throughGenerationId": 5,
+        "zero": [],
+        "half": [
+          "electric",
+          "fire",
+          "steel",
+          "water"
+        ],
+        "double": [
+          "ice",
+          "rock"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "water",
+    "introducedInGenerationId": 1,
+    "names": {
+      "zh-Hans": "水",
+      "zh-Hant": "水",
+      "en": "Water",
+      "ja": "みず",
+      "ja-Hrkt": "みず",
+      "ko": "물",
+      "fr": "Eau",
+      "de": "Wasser",
+      "es": "Agua",
+      "it": "Acqua"
+    },
+    "damageTo": {
+      "zero": [],
+      "half": [
+        "dragon",
+        "grass",
+        "water"
+      ],
+      "double": [
+        "fire",
+        "ground",
+        "rock"
+      ]
+    },
+    "pastDamageTo": []
+  }
+]

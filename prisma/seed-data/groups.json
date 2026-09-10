@@ -1,0 +1,511 @@
+[
+  {
+    "slug": "red-green-japan",
+    "order": 1,
+    "generationId": 1,
+    "regionSlugs": [
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "kanto"
+    ],
+    "moveLearnMethodSlugs": [
+      "level-up",
+      "machine",
+      "stadium-surfing-pikachu"
+    ]
+  },
+  {
+    "slug": "blue-japan",
+    "order": 2,
+    "generationId": 1,
+    "regionSlugs": [
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "kanto"
+    ],
+    "moveLearnMethodSlugs": [
+      "level-up",
+      "machine",
+      "stadium-surfing-pikachu"
+    ]
+  },
+  {
+    "slug": "red-blue",
+    "order": 3,
+    "generationId": 1,
+    "regionSlugs": [
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "kanto"
+    ],
+    "moveLearnMethodSlugs": [
+      "level-up",
+      "machine",
+      "stadium-surfing-pikachu"
+    ]
+  },
+  {
+    "slug": "yellow",
+    "order": 4,
+    "generationId": 1,
+    "regionSlugs": [
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "kanto"
+    ],
+    "moveLearnMethodSlugs": [
+      "level-up",
+      "machine",
+      "stadium-surfing-pikachu"
+    ]
+  },
+  {
+    "slug": "gold-silver",
+    "order": 5,
+    "generationId": 2,
+    "regionSlugs": [
+      "johto",
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "original-johto"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "level-up",
+      "machine"
+    ]
+  },
+  {
+    "slug": "crystal",
+    "order": 6,
+    "generationId": 2,
+    "regionSlugs": [
+      "johto",
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "original-johto"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "level-up",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "ruby-sapphire",
+    "order": 7,
+    "generationId": 3,
+    "regionSlugs": [
+      "hoenn"
+    ],
+    "pokedexSlugs": [
+      "hoenn"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "level-up",
+      "machine"
+    ]
+  },
+  {
+    "slug": "emerald",
+    "order": 8,
+    "generationId": 3,
+    "regionSlugs": [
+      "hoenn"
+    ],
+    "pokedexSlugs": [
+      "hoenn"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "colosseum",
+    "order": 9,
+    "generationId": 3,
+    "regionSlugs": [],
+    "pokedexSlugs": [],
+    "moveLearnMethodSlugs": [
+      "level-up",
+      "machine"
+    ]
+  },
+  {
+    "slug": "xd",
+    "order": 10,
+    "generationId": 3,
+    "regionSlugs": [],
+    "pokedexSlugs": [],
+    "moveLearnMethodSlugs": [
+      "level-up",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "firered-leafgreen",
+    "order": 11,
+    "generationId": 3,
+    "regionSlugs": [
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "kanto"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "level-up",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "diamond-pearl",
+    "order": 12,
+    "generationId": 4,
+    "regionSlugs": [
+      "sinnoh"
+    ],
+    "pokedexSlugs": [
+      "original-sinnoh"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "platinum",
+    "order": 13,
+    "generationId": 4,
+    "regionSlugs": [
+      "sinnoh"
+    ],
+    "pokedexSlugs": [
+      "extended-sinnoh"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "heartgold-soulsilver",
+    "order": 14,
+    "generationId": 4,
+    "regionSlugs": [
+      "johto",
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "updated-johto"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "black-white",
+    "order": 15,
+    "generationId": 5,
+    "regionSlugs": [
+      "unova"
+    ],
+    "pokedexSlugs": [
+      "original-unova"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "black-2-white-2",
+    "order": 16,
+    "generationId": 5,
+    "regionSlugs": [
+      "unova"
+    ],
+    "pokedexSlugs": [
+      "updated-unova"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "x-y",
+    "order": 17,
+    "generationId": 6,
+    "regionSlugs": [
+      "kalos"
+    ],
+    "pokedexSlugs": [
+      "kalos-central",
+      "kalos-coastal",
+      "kalos-mountain"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "omega-ruby-alpha-sapphire",
+    "order": 18,
+    "generationId": 6,
+    "regionSlugs": [
+      "hoenn"
+    ],
+    "pokedexSlugs": [
+      "updated-hoenn"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "sun-moon",
+    "order": 19,
+    "generationId": 7,
+    "regionSlugs": [
+      "alola"
+    ],
+    "pokedexSlugs": [
+      "original-akala",
+      "original-alola",
+      "original-melemele",
+      "original-poni",
+      "original-ulaula"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor",
+      "zygarde-cube"
+    ]
+  },
+  {
+    "slug": "ultra-sun-ultra-moon",
+    "order": 20,
+    "generationId": 7,
+    "regionSlugs": [
+      "alola"
+    ],
+    "pokedexSlugs": [
+      "updated-akala",
+      "updated-alola",
+      "updated-melemele",
+      "updated-poni",
+      "updated-ulaula"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "light-ball-egg",
+      "machine",
+      "tutor",
+      "zygarde-cube"
+    ]
+  },
+  {
+    "slug": "lets-go-pikachu-lets-go-eevee",
+    "order": 21,
+    "generationId": 7,
+    "regionSlugs": [
+      "kanto"
+    ],
+    "pokedexSlugs": [
+      "letsgo-kanto"
+    ],
+    "moveLearnMethodSlugs": [
+      "level-up",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "sword-shield",
+    "order": 22,
+    "generationId": 8,
+    "regionSlugs": [
+      "galar"
+    ],
+    "pokedexSlugs": [
+      "crown-tundra",
+      "galar",
+      "isle-of-armor"
+    ],
+    "moveLearnMethodSlugs": [
+      "egg",
+      "form-change",
+      "level-up",
+      "machine",
+      "tutor"
+    ]
+  },
+  {
+    "slug": "the-isle-of-armor",
+    "order": 23,
+    "generationId": 8,
+    "regionSlugs": [
+      "galar"
+    ],
+    "pokedexSlugs": [
+      "isle-of-armor"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "the-crown-tundra",
+    "order": 24,
+    "generationId": 8,
+    "regionSlugs": [
+      "galar"
+    ],
+    "pokedexSlugs": [
+      "crown-tundra"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "brilliant-diamond-shining-pearl",
+    "order": 25,
+    "generationId": 8,
+    "regionSlugs": [
+      "sinnoh"
+    ],
+    "pokedexSlugs": [
+      "original-sinnoh"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "legends-arceus",
+    "order": 26,
+    "generationId": 8,
+    "regionSlugs": [
+      "hisui"
+    ],
+    "pokedexSlugs": [
+      "hisui"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "scarlet-violet",
+    "order": 27,
+    "generationId": 9,
+    "regionSlugs": [
+      "paldea"
+    ],
+    "pokedexSlugs": [
+      "blueberry",
+      "kitakami",
+      "paldea"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "the-teal-mask",
+    "order": 28,
+    "generationId": 9,
+    "regionSlugs": [
+      "paldea"
+    ],
+    "pokedexSlugs": [
+      "kitakami"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "the-indigo-disk",
+    "order": 29,
+    "generationId": 9,
+    "regionSlugs": [
+      "paldea"
+    ],
+    "pokedexSlugs": [
+      "blueberry"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "legends-za",
+    "order": 30,
+    "generationId": 9,
+    "regionSlugs": [],
+    "pokedexSlugs": [
+      "hyperspace",
+      "lumiose-city"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "mega-dimension",
+    "order": 31,
+    "generationId": 9,
+    "regionSlugs": [],
+    "pokedexSlugs": [
+      "hyperspace"
+    ],
+    "moveLearnMethodSlugs": []
+  },
+  {
+    "slug": "champions",
+    "order": 32,
+    "generationId": 9,
+    "regionSlugs": [],
+    "pokedexSlugs": [
+      "champions"
+    ],
+    "moveLearnMethodSlugs": []
+  }
+]

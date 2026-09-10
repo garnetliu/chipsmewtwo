@@ -1,0 +1,12 @@
+-- 清掉按需拉回来的宝可梦，让它们整只重新拉一次。
+--
+-- 上一条 reset_ondemand_i18n 删错了对象：它只清译名表，但回源的触发条件是
+-- pokemon 表查不到行（graphql/schema/pokemon/resolvers/Query/pokemon.ts:9 的
+-- findOne 返回 null 才调 importPokemon），而不是译名缺不缺。结果那几只留在
+-- pokemon 表里算命中，译名却已经没了，查出来的 name 是 null。
+--
+-- 删物种行，form / pokemon_i18n / pokedex_number / form_* 全都 onDelete: Cascade
+-- 跟着走，下次访问页面重新拉一遍，这次是 10 种语言。
+--
+-- 字典表不受影响：那些由 seed 从快照灌，跟这里没有外键关系。
+DELETE FROM "pokemon";

@@ -1,0 +1,118 @@
+[
+  {
+    "slug": "agile-style-move",
+    "names": {
+      "en": "Use move in agile style",
+      "fr": "Utiliser une capacité sous style agile"
+    }
+  },
+  {
+    "slug": "gimmighoul-coins",
+    "names": {
+      "en": "Collect 999 Gimmighoul Coins",
+      "fr": "Collectionner 999 Pièces Mordudor"
+    }
+  },
+  {
+    "slug": "level-up",
+    "names": {
+      "en": "Level up",
+      "fr": "Montée de niveau",
+      "de": "Levelaufstieg"
+    }
+  },
+  {
+    "slug": "other",
+    "names": {
+      "en": "Other",
+      "fr": "Autre"
+    }
+  },
+  {
+    "slug": "recoil-damage",
+    "names": {
+      "en": "Take recoil damage",
+      "fr": "Subir des dégâts de contrecoup"
+    }
+  },
+  {
+    "slug": "shed",
+    "names": {
+      "en": "Shed",
+      "fr": "Place dans l’équipe et une Poké Ball",
+      "de": "Platz im Team und ein Pokéball"
+    }
+  },
+  {
+    "slug": "spin",
+    "names": {
+      "en": "Spin",
+      "fr": "Tourner sur soi-même"
+    }
+  },
+  {
+    "slug": "strong-style-move",
+    "names": {
+      "en": "Use move in strong style",
+      "fr": "Utiliser une capacité sous style puissant"
+    }
+  },
+  {
+    "slug": "take-damage",
+    "names": {
+      "en": "Go somewhere after taking damage",
+      "fr": "Aller quelque part après avoir encaissé des dommages"
+    }
+  },
+  {
+    "slug": "three-critical-hits",
+    "names": {
+      "en": "Land three critical hits in a battle",
+      "fr": "Faire 3 coups critiques en un combat"
+    }
+  },
+  {
+    "slug": "three-defeated-bisharp",
+    "names": {
+      "en": "Defeat three Bisharp that hold a Leader's Crest",
+      "fr": "Vaincre trois Scalproie en tenant un Emblème du Général"
+    }
+  },
+  {
+    "slug": "tower-of-darkness",
+    "names": {
+      "en": "Train in the Tower of Darkness",
+      "fr": "Interagir avec le Rouleau des Ténèbres dans la Tour des Ténèbres"
+    }
+  },
+  {
+    "slug": "tower-of-waters",
+    "names": {
+      "en": "Train in the Tower of Waters",
+      "fr": "Interagir avec le Rouleau de l’Eau dans la Tour de l’Eau"
+    }
+  },
+  {
+    "slug": "trade",
+    "names": {
+      "en": "Trade or Linking Cord",
+      "fr": "Échange",
+      "de": "Tausch oder Verbindungsschnur"
+    }
+  },
+  {
+    "slug": "use-item",
+    "names": {
+      "en": "Use item",
+      "fr": "Utilisation d’un objet",
+      "de": "Gegenstand nutzen"
+    }
+  },
+  {
+    "slug": "use-move",
+    "names": {
+      "en": "Use move",
+      "fr": "Utiliser une capacité"
+    }
+  }
+]
