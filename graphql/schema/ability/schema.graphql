@@ -1,0 +1,11 @@
+"""
+特性。这里只有身份和译名 —— 效果说明（AbilityEffectI18n）和特性列表查询
+等这个域自己建起来时再 extend
+"""
+type Ability {
+  id: ID!
+  """例如 flash-fire"""
+  slug: String!
+  """特性译名。回退规则同 Pokemon.name"""
+  name(language: String): String
+}

@@ -8,3 +8,12 @@ type Query {
 type Mutation {
     check: Boolean
 }
+
+type PaginationMeta {
+  page: Int!
+  pageSize: Int!
+  total: Int!
+  totalPages: Int!
+  hasNext: Boolean!
+  hasPrev: Boolean!
+}

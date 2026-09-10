@@ -1,48 +1,31 @@
-import { DEFAULT_LANGUAGE, LATEST_GENERATION } from "@/lib/pokemon/defaults";
-import { detailImageUrl, fullImageUrl } from "@/lib/pokemon/sprites";
-
 import type { PokemonResolvers } from "./../../types.generated";
 
 /**
- * 每个字段自己拿参数、自己走 DataLoader，缺数据就返回 null。
+ * 物种只剩身份和译名，属性、种族值、图片全在 Form 上。
  *
  * id 和 slug 不用写 —— Query 那边 findOne 返回的对象里就有，
  * GraphQL 默认解析取同名属性。
  *
- * name 和 genus 调的是同一个 nameOf，DataLoader 会把两次调用合并成一次查询。
+ * name 和 genus 调的是同一个 nameOf，DataLoader 会把两次调用合并成一次查询；
+ * defaultForm 和 forms 同理共用 formsOf
  */
 export const Pokemon: PokemonResolvers = {
   name: async (parent, { language }, ctx) => {
-    const row = await ctx.dataSources.pokemonDb.nameOf(
-      Number(parent.id),
-      language ?? DEFAULT_LANGUAGE,
-    );
+    const row = await ctx.dataSources.pokemonDb.nameOf(Number(parent.id), language ?? ctx.language);
     return row?.name ?? null;
   },
 
   genus: async (parent, { language }, ctx) => {
-    const row = await ctx.dataSources.pokemonDb.nameOf(
-      Number(parent.id),
-      language ?? DEFAULT_LANGUAGE,
-    );
+    const row = await ctx.dataSources.pokemonDb.nameOf(Number(parent.id), language ?? ctx.language);
     return row?.genus ?? null;
   },
 
-  // 库里存的是文件名，前缀在 lib/pokemon/sprites.ts。两个字段调同一个
-  // DataLoader，一次查询就够
-  fullImageUrl: async (parent, _args, ctx) => {
-    const images = await ctx.dataSources.pokemonDb.imagesOf(Number(parent.id));
-    return images?.fullImage ? fullImageUrl(images.fullImage) : null;
+  // formsOf 已经把默认形态排在第一位，这里再 find 一次而不是取 [0]：
+  // 数据库没约束一个物种只能有一条 isDefault，排序靠不住时宁可返回 null
+  defaultForm: async (parent, _args, ctx) => {
+    const forms = await ctx.dataSources.pokemonDb.formsOf(Number(parent.id));
+    return forms.find((f) => f.isDefault) ?? null;
   },
 
-  detailImageUrl: async (parent, _args, ctx) => {
-    const images = await ctx.dataSources.pokemonDb.imagesOf(Number(parent.id));
-    return images?.detailImage ? detailImageUrl(images.detailImage) : null;
-  },
-
-  types: (parent, { generation }, ctx) =>
-    ctx.dataSources.pokemonDb.typesOf(Number(parent.id), generation ?? LATEST_GENERATION),
-
-  stats: (parent, { generation }, ctx) =>
-    ctx.dataSources.pokemonDb.statsOf(Number(parent.id), generation ?? LATEST_GENERATION),
+  forms: (parent, _args, ctx) => ctx.dataSources.pokemonDb.formsOf(Number(parent.id)),
 };

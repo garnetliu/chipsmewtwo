@@ -8,14 +8,20 @@ import { PokeAPI } from "@/graphql/context/PokeAPISource";
 import { PokemonDbSource } from "@/graphql/context/PokemonDbSource";
 import { resolvers } from "@/graphql/schema/resolvers.generated";
 import { typeDefs } from "@/graphql/schema/typeDefs.generated";
+import { DEFAULT_LANGUAGE } from "@/lib/pokemon/defaults";
 import { canUseSource, getPokemonFetchMode } from "@/lib/pokemon/fetch-mode";
+import { LANGUAGE_COOKIE, resolveLanguageTag } from "@/lib/pokemon/language";
 
 const apolloServer = new ApolloServer<MyContext>({ typeDefs, resolvers });
 
 const handler = startServerAndCreateNextHandler<NextRequest, MyContext>(apolloServer, {
-  context: async () => {
+  context: async (request) => {
     return {
       userID: "",
+      // cookie 由 graphql/apollo/server.ts 从 RSC 的请求头整份透传过来，浏览器
+      // 直连时 authLink 的 credentials: "include" 让 fetch 带上，两条路径都拿得到。
+      // 前端还没开始写这个 cookie，所以现在一律走 DEFAULT_LANGUAGE
+      language: resolveLanguageTag(request.cookies.get(LANGUAGE_COOKIE)?.value) ?? DEFAULT_LANGUAGE,
       // 两个都每请求新建，不是共享单例：DataLoader 的缓存和 RESTDataSource
       // 的请求去重都按实例存，跨请求复用会把一个请求的数据喂给另一个
       dataSources: {

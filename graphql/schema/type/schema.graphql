@@ -1,0 +1,10 @@
+"""属性本体。18 个，全局复用，所以 id 用 type 表的主键"""
+type Type {
+  id: ID!
+  """例如 fire"""
+  slug: String!
+  """属性徽章的主题色，例如 #EE8130"""
+  color: String!
+  """属性译名。回退规则同 Pokemon.name"""
+  name(language: String): String
+}
