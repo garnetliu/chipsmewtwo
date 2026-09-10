@@ -3,16 +3,8 @@
 # case, the "books" query returns an array of zero or more Books (defined above).
 type Query {
     checks: Boolean
-    users: [User!]!
 }
 
 type Mutation {
     check: Boolean
-}
-
-type User {
-    id: Int!
-    name: String!
-    age: Int!
-    email: String!
 }

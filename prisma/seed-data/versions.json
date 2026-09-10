@@ -1,0 +1,771 @@
+[
+  {
+    "slug": "alpha-sapphire",
+    "groupSlug": "omega-ruby-alpha-sapphire",
+    "names": {
+      "zh-Hans": "阿尔法蓝宝石",
+      "zh-Hant": "阿爾法藍寶石",
+      "en": "Alpha Sapphire",
+      "ja-Hrkt": "アルファサファイア",
+      "ko": "알파사파이어",
+      "fr": "Saphir Alpha",
+      "de": "Alpha Saphir",
+      "es": "Zafiro Alfa",
+      "it": "Zaffiro Alpha"
+    }
+  },
+  {
+    "slug": "black",
+    "groupSlug": "black-white",
+    "names": {
+      "zh-Hans": "黑",
+      "zh-Hant": "黑",
+      "en": "Black",
+      "ja-Hrkt": "ブラック",
+      "ko": "블랙",
+      "fr": "Noir",
+      "de": "Schwarz",
+      "es": "Negro",
+      "it": "Nera"
+    }
+  },
+  {
+    "slug": "black-2",
+    "groupSlug": "black-2-white-2",
+    "names": {
+      "zh-Hans": "黑2",
+      "zh-Hant": "黑2",
+      "en": "Black 2",
+      "ja-Hrkt": "ブラック2",
+      "ko": "블랙 2",
+      "fr": "Noir 2",
+      "de": "Schwarz 2",
+      "es": "Negro 2",
+      "it": "Nera 2"
+    }
+  },
+  {
+    "slug": "blue",
+    "groupSlug": "red-blue",
+    "names": {
+      "zh-Hans": "藍",
+      "zh-Hant": "藍",
+      "en": "Blue",
+      "ja-Hrkt": "青",
+      "ko": "블루",
+      "fr": "Bleu",
+      "de": "Blau",
+      "es": "Azul",
+      "it": "Blu"
+    }
+  },
+  {
+    "slug": "blue-japan",
+    "groupSlug": "blue-japan",
+    "names": {
+      "en": "Blue",
+      "ja-Hrkt": "青",
+      "ko": "블루",
+      "fr": "Bleu",
+      "de": "Blau",
+      "es": "Azul",
+      "it": "Blu"
+    }
+  },
+  {
+    "slug": "brilliant-diamond",
+    "groupSlug": "brilliant-diamond-shining-pearl",
+    "names": {
+      "zh-Hans": "晶灿钻石",
+      "zh-Hant": "晶燦鑽石",
+      "en": "Brilliant Diamond",
+      "ja-Hrkt": "ブリリアントダイヤモンド",
+      "ko": "브릴리언트 다이아몬드",
+      "fr": "Diamant Étincelant",
+      "de": "Strahlender Diamant",
+      "es": "Diamante Brillante",
+      "it": "Diamante Lucente"
+    }
+  },
+  {
+    "slug": "champions",
+    "groupSlug": "champions",
+    "names": {
+      "en": "Champions"
+    }
+  },
+  {
+    "slug": "colosseum",
+    "groupSlug": "colosseum",
+    "names": {
+      "en": "Colosseum",
+      "ja-Hrkt": "コロシアム",
+      "ko": "콜로세움",
+      "fr": "Colosseum",
+      "de": "Colosseum",
+      "es": "Colosseum",
+      "it": "Colosseum"
+    }
+  },
+  {
+    "slug": "crystal",
+    "groupSlug": "crystal",
+    "names": {
+      "zh-Hans": "水晶",
+      "zh-Hant": "水晶",
+      "en": "Crystal",
+      "ja-Hrkt": "クリスタル",
+      "ko": "크리스탈",
+      "fr": "Cristal",
+      "de": "Kristall",
+      "es": "Cristal",
+      "it": "Cristallo"
+    }
+  },
+  {
+    "slug": "diamond",
+    "groupSlug": "diamond-pearl",
+    "names": {
+      "zh-Hans": "钻石",
+      "zh-Hant": "鑽石",
+      "en": "Diamond",
+      "ja-Hrkt": "ダイヤモンド",
+      "ko": "디아루가",
+      "fr": "Diamant",
+      "de": "Diamant",
+      "es": "Diamante",
+      "it": "Diamante"
+    }
+  },
+  {
+    "slug": "emerald",
+    "groupSlug": "emerald",
+    "names": {
+      "zh-Hans": "綠寶石",
+      "zh-Hant": "綠寶石",
+      "en": "Emerald",
+      "ja-Hrkt": "エメラルド",
+      "ko": "에메랄드",
+      "fr": "Émeraude",
+      "de": "Smaragd",
+      "es": "Esmeralda",
+      "it": "Smeraldo"
+    }
+  },
+  {
+    "slug": "firered",
+    "groupSlug": "firered-leafgreen",
+    "names": {
+      "zh-Hans": "火紅",
+      "zh-Hant": "火紅",
+      "en": "FireRed",
+      "ja-Hrkt": "ファイアレッド",
+      "ko": "파이어레드",
+      "fr": "Rouge Feu",
+      "de": "Feuerrot",
+      "es": "Rojo Fuego",
+      "it": "Rosso Fuoco"
+    }
+  },
+  {
+    "slug": "gold",
+    "groupSlug": "gold-silver",
+    "names": {
+      "zh-Hans": "金",
+      "zh-Hant": "金",
+      "en": "Gold",
+      "ja-Hrkt": "金",
+      "ko": "골드",
+      "fr": "Or",
+      "de": "Gold",
+      "es": "Oro",
+      "it": "Oro"
+    }
+  },
+  {
+    "slug": "green-japan",
+    "groupSlug": "red-green-japan",
+    "names": {
+      "en": "Green",
+      "ja-Hrkt": "緑",
+      "ko": "그린",
+      "fr": "Vert",
+      "de": "Grüne",
+      "es": "Verde",
+      "it": "Verde"
+    }
+  },
+  {
+    "slug": "heartgold",
+    "groupSlug": "heartgold-soulsilver",
+    "names": {
+      "zh-Hans": "心金",
+      "zh-Hant": "心金",
+      "en": "HeartGold",
+      "ja-Hrkt": "ハートゴールド",
+      "ko": "하트골드",
+      "fr": "Or HeartGold",
+      "de": "HeartGold",
+      "es": "Oro HeartGold",
+      "it": "Oro HeartGold"
+    }
+  },
+  {
+    "slug": "leafgreen",
+    "groupSlug": "firered-leafgreen",
+    "names": {
+      "zh-Hans": "葉綠",
+      "zh-Hant": "葉綠",
+      "en": "LeafGreen",
+      "ja-Hrkt": "リーフグリーン",
+      "ko": "리프그린",
+      "fr": "Vert Feuille",
+      "de": "Blattgrün",
+      "es": "Verde Hoja",
+      "it": "Verde Foglia"
+    }
+  },
+  {
+    "slug": "legends-arceus",
+    "groupSlug": "legends-arceus",
+    "names": {
+      "zh-Hans": "传说 阿尔宙斯",
+      "zh-Hant": "傳說 阿爾宙斯",
+      "en": "Legends: Arceus",
+      "ja-Hrkt": "LEGENDS アルセウス",
+      "ko": "LEGENDS 아르세우스",
+      "fr": "Légendes : Arceus",
+      "de": "Legenden: Arceus",
+      "es": "Leyendas: Arceus",
+      "it": "Leggende: Arceus"
+    }
+  },
+  {
+    "slug": "legends-za",
+    "groupSlug": "legends-za",
+    "names": {
+      "zh-Hans": "传说 Z-A",
+      "zh-Hant": "傳說 Z-A",
+      "en": "Legends: Z-A",
+      "ja": "レジェンズ Z-A",
+      "ja-Hrkt": "レジェンズ Z-A",
+      "ko": "LEGENDS Z-A",
+      "fr": "Légendes : Z-A",
+      "de": "Legenden: Z-A",
+      "es": "Leyendas: Z-A",
+      "it": "Leggende: Z-A"
+    }
+  },
+  {
+    "slug": "lets-go-eevee",
+    "groupSlug": "lets-go-pikachu-lets-go-eevee",
+    "names": {
+      "zh-Hans": "Let’s Go！伊布",
+      "zh-Hant": "Let’s Go！伊布",
+      "en": "Let’s Go, Eevee!",
+      "ja-Hrkt": "Let’s Go! イーブイ",
+      "ko": "레츠고! 이브이",
+      "fr": "Let’s Go, Évoli",
+      "de": "Let’s Go, Evoli!",
+      "es": "Let’s Go, Eevee!",
+      "it": "Let’s Go, Eevee!"
+    }
+  },
+  {
+    "slug": "lets-go-pikachu",
+    "groupSlug": "lets-go-pikachu-lets-go-eevee",
+    "names": {
+      "zh-Hans": "Let’s Go！皮卡丘",
+      "zh-Hant": "Let’s Go！皮卡丘",
+      "en": "Let’s Go, Pikachu!",
+      "ja-Hrkt": "Let’s Go! ピカチュウ",
+      "ko": "레츠고! 피카츄",
+      "fr": "Let’s Go, Pikachu",
+      "de": "Let’s Go, Pikachu!",
+      "es": "Let’s Go, Pikachu!",
+      "it": "Let’s Go, Pikachu!"
+    }
+  },
+  {
+    "slug": "mega-dimension",
+    "groupSlug": "mega-dimension",
+    "names": {
+      "zh-Hans": "超次元爆涌",
+      "zh-Hant": "超次元爆湧",
+      "en": "Mega Dimension",
+      "ko": "메가 차원 러시",
+      "fr": "Méga-Dimension",
+      "de": "Mega-Dimension",
+      "es": "Megadimensión",
+      "it": "Megadimensione"
+    }
+  },
+  {
+    "slug": "moon",
+    "groupSlug": "sun-moon",
+    "names": {
+      "zh-Hans": "月亮",
+      "zh-Hant": "月亮",
+      "en": "Moon",
+      "ja-Hrkt": "ムーン",
+      "ko": "문",
+      "fr": "Lune",
+      "de": "Mond",
+      "es": "Luna",
+      "it": "Luna"
+    }
+  },
+  {
+    "slug": "omega-ruby",
+    "groupSlug": "omega-ruby-alpha-sapphire",
+    "names": {
+      "zh-Hans": "欧米伽红宝石",
+      "zh-Hant": "歐米加紅寶石",
+      "en": "Omega Ruby",
+      "ja-Hrkt": "オメガルビー",
+      "ko": "오메가루비",
+      "fr": "Rubis Oméga",
+      "de": "Omega Rubin",
+      "es": "Rubí Omega",
+      "it": "Rubino Omega"
+    }
+  },
+  {
+    "slug": "pearl",
+    "groupSlug": "diamond-pearl",
+    "names": {
+      "zh-Hans": "珍珠",
+      "zh-Hant": "珍珠",
+      "en": "Pearl",
+      "ja-Hrkt": "パール",
+      "ko": "펄기아",
+      "fr": "Perle",
+      "de": "Perl",
+      "es": "Perla",
+      "it": "Perla"
+    }
+  },
+  {
+    "slug": "platinum",
+    "groupSlug": "platinum",
+    "names": {
+      "zh-Hans": "白金",
+      "zh-Hant": "白金",
+      "en": "Platinum",
+      "ja-Hrkt": "プラチナ",
+      "ko": "기라티나",
+      "fr": "Platine",
+      "de": "Platin",
+      "es": "Platino",
+      "it": "Platino"
+    }
+  },
+  {
+    "slug": "red",
+    "groupSlug": "red-blue",
+    "names": {
+      "zh-Hans": "紅",
+      "zh-Hant": "紅",
+      "en": "Red",
+      "ja-Hrkt": "赤",
+      "ko": "레드",
+      "fr": "Rouge",
+      "de": "Rot",
+      "es": "Rojo",
+      "it": "Rossa"
+    }
+  },
+  {
+    "slug": "red-japan",
+    "groupSlug": "red-green-japan",
+    "names": {
+      "en": "Red",
+      "ja-Hrkt": "赤",
+      "ko": "레드",
+      "fr": "Rouge",
+      "de": "Rot",
+      "es": "Rojo",
+      "it": "Rossa"
+    }
+  },
+  {
+    "slug": "ruby",
+    "groupSlug": "ruby-sapphire",
+    "names": {
+      "zh-Hans": "紅寶石",
+      "zh-Hant": "紅寶石",
+      "en": "Ruby",
+      "ja-Hrkt": "ルビー",
+      "ko": "루비",
+      "fr": "Rubis",
+      "de": "Rubin",
+      "es": "Rubí",
+      "it": "Rubino"
+    }
+  },
+  {
+    "slug": "sapphire",
+    "groupSlug": "ruby-sapphire",
+    "names": {
+      "zh-Hans": "藍寶石",
+      "zh-Hant": "藍寶石",
+      "en": "Sapphire",
+      "ja-Hrkt": "サファイア",
+      "ko": "사파이어",
+      "fr": "Saphir",
+      "de": "Saphir",
+      "es": "Zafiro",
+      "it": "Zaffiro"
+    }
+  },
+  {
+    "slug": "scarlet",
+    "groupSlug": "scarlet-violet",
+    "names": {
+      "zh-Hans": "朱",
+      "zh-Hant": "朱",
+      "en": "Scarlet",
+      "ja-Hrkt": "スカーレット",
+      "ko": "스칼렛",
+      "fr": "Écarlate",
+      "de": "Karmesin",
+      "es": "Escarlata",
+      "it": "Scarlatto"
+    }
+  },
+  {
+    "slug": "shield",
+    "groupSlug": "sword-shield",
+    "names": {
+      "zh-Hans": "盾",
+      "zh-Hant": "盾",
+      "en": "Shield",
+      "ja-Hrkt": "シールド",
+      "ko": "실드",
+      "fr": "Bouclier",
+      "de": "Schild",
+      "es": "Escudo",
+      "it": "Scudo"
+    }
+  },
+  {
+    "slug": "shining-pearl",
+    "groupSlug": "brilliant-diamond-shining-pearl",
+    "names": {
+      "zh-Hans": "明亮珍珠",
+      "zh-Hant": "明亮珍珠",
+      "en": "Shining Pearl",
+      "ja-Hrkt": "シャイニングパール",
+      "ko": "샤이닝 펄",
+      "fr": "Perle Scintillante",
+      "de": "Leuchtende Perle",
+      "es": "Perla Reluciente",
+      "it": "Perla Splendente"
+    }
+  },
+  {
+    "slug": "silver",
+    "groupSlug": "gold-silver",
+    "names": {
+      "zh-Hans": "銀",
+      "zh-Hant": "銀",
+      "en": "Silver",
+      "ja-Hrkt": "銀",
+      "ko": "실버",
+      "fr": "Argent",
+      "de": "Silber",
+      "es": "Plata",
+      "it": "Argento"
+    }
+  },
+  {
+    "slug": "soulsilver",
+    "groupSlug": "heartgold-soulsilver",
+    "names": {
+      "zh-Hans": "魂銀",
+      "zh-Hant": "魂銀",
+      "en": "SoulSilver",
+      "ja-Hrkt": "ソウルシルバー",
+      "ko": "소울실버",
+      "fr": "Argent SoulSilver",
+      "de": "SoulSilver",
+      "es": "Plata SoulSilver",
+      "it": "Argento SoulSilver"
+    }
+  },
+  {
+    "slug": "sun",
+    "groupSlug": "sun-moon",
+    "names": {
+      "zh-Hans": "太阳",
+      "zh-Hant": "太陽",
+      "en": "Sun",
+      "ja-Hrkt": "サン",
+      "ko": "썬",
+      "fr": "Soleil",
+      "de": "Sonne",
+      "es": "Sol",
+      "it": "Sole"
+    }
+  },
+  {
+    "slug": "sword",
+    "groupSlug": "sword-shield",
+    "names": {
+      "zh-Hans": "剑",
+      "zh-Hant": "劍",
+      "en": "Sword",
+      "ja-Hrkt": "ソード",
+      "ko": "소드",
+      "fr": "Épée",
+      "de": "Schwert",
+      "es": "Espada",
+      "it": "Spada"
+    }
+  },
+  {
+    "slug": "the-crown-tundra-shield",
+    "groupSlug": "the-crown-tundra",
+    "names": {
+      "zh-Hans": "盾: 冠之雪原",
+      "zh-Hant": "盾: 冠之雪原",
+      "en": "Shield: The Crown Tundra",
+      "ja-Hrkt": "シールド: 冠の雪原",
+      "ko": "실드: 왕관의 설원",
+      "fr": "Bouclier: Les terres enneigées de la Couronne",
+      "de": "Schild: Die Schneelande der Krone",
+      "es": "Escudo: Las nieves de la corona",
+      "it": "Scudo: Le terre innevate della corona"
+    }
+  },
+  {
+    "slug": "the-crown-tundra-sword",
+    "groupSlug": "the-crown-tundra",
+    "names": {
+      "zh-Hans": "剑: 冠之雪原",
+      "zh-Hant": "劍: 冠之雪原",
+      "en": "Sword: The Crown Tundra",
+      "ja-Hrkt": "ソード: 冠の雪原",
+      "ko": "소드: 왕관의 설원",
+      "fr": "Épée: Les terres enneigées de la Couronne",
+      "de": "Schwert: Die Schneelande der Krone",
+      "es": "Espada: Las nieves de la corona",
+      "it": "Spada: Le terre innevate della corona"
+    }
+  },
+  {
+    "slug": "the-indigo-disk-scarlet",
+    "groupSlug": "the-indigo-disk",
+    "names": {
+      "zh-Hans": "朱: 藍之圓盤",
+      "en": "Scarlet: The Indigo Disk",
+      "ja-Hrkt": "スカーレット: 藍の円盤",
+      "fr": "Écarlate: Le Disque Indigo",
+      "de": "Karmesin: Die Indigoblaue Scheibe",
+      "es": "Escarlata: El disco índigo",
+      "it": "Scarlatto: Il disco indaco"
+    }
+  },
+  {
+    "slug": "the-indigo-disk-violet",
+    "groupSlug": "the-indigo-disk",
+    "names": {
+      "zh-Hans": "紫: 藍之圓盤",
+      "en": "Violet: The Indigo Disk",
+      "ja-Hrkt": "バイオレット: 藍の円盤",
+      "fr": "Violet: Le Disque Indigo",
+      "de": "Purpur: Die Indigoblaue Scheibe",
+      "es": "Púrpura: El disco índigo",
+      "it": "Violetto: Il disco indaco"
+    }
+  },
+  {
+    "slug": "the-isle-of-armor-shield",
+    "groupSlug": "the-isle-of-armor",
+    "names": {
+      "zh-Hans": "盾: 铠之孤岛",
+      "zh-Hant": "盾: 鎧之孤島",
+      "en": "Shield: The Isle of Armor",
+      "ja-Hrkt": "シールド: 鎧の孤島",
+      "ko": "실드: 갑옷의 외딴섬",
+      "fr": "Bouclier: L’île solitaire de l’Armure",
+      "de": "Schild: Die Insel der Rüstung",
+      "es": "Escudo: La isla de la armadura",
+      "it": "Scudo: L’isola solitaria dell’armatura"
+    }
+  },
+  {
+    "slug": "the-isle-of-armor-sword",
+    "groupSlug": "the-isle-of-armor",
+    "names": {
+      "zh-Hans": "剑: 铠之孤岛",
+      "zh-Hant": "劍: 鎧之孤島",
+      "en": "Sword: The Isle of Armor",
+      "ja-Hrkt": "ソード: 鎧の孤島",
+      "ko": "소드: 갑옷의 외딴섬",
+      "fr": "Épée: L’île solitaire de l’Armure",
+      "de": "Schwert: Die Insel der Rüstung",
+      "es": "Espada: La isla de la armadura",
+      "it": "Spada: L’isola solitaria dell’armatura"
+    }
+  },
+  {
+    "slug": "the-teal-mask-scarlet",
+    "groupSlug": "the-teal-mask",
+    "names": {
+      "zh-Hans": "朱: 碧之假面",
+      "en": "Scarlet: The Teal Mask",
+      "ja-Hrkt": "スカーレット: 碧の仮面",
+      "fr": "Écarlate: Le Masque Turquoise",
+      "de": "Karmesin: Die Türkisgrüne Maske",
+      "es": "Escarlata: La máscara turquesa",
+      "it": "Scarlatto: La maschera turchese"
+    }
+  },
+  {
+    "slug": "the-teal-mask-violet",
+    "groupSlug": "the-teal-mask",
+    "names": {
+      "zh-Hans": "紫: 碧之假面",
+      "en": "Violet: The Teal Mask",
+      "ja-Hrkt": "バイオレット: 碧の仮面",
+      "fr": "Violet: Le Masque Turquoise",
+      "de": "Purpur: Die Türkisgrüne Maske",
+      "es": "Púrpura: La máscara turquesa",
+      "it": "Violetto: La maschera turchese"
+    }
+  },
+  {
+    "slug": "ultra-moon",
+    "groupSlug": "ultra-sun-ultra-moon",
+    "names": {
+      "zh-Hans": "究极之月",
+      "zh-Hant": "究極之月",
+      "en": "Ultra Moon",
+      "ja-Hrkt": "ウルトラムーン",
+      "ko": "울트라문",
+      "fr": "Ultra-Lune",
+      "de": "Ultramond",
+      "es": "Ultraluna",
+      "it": "Ultraluna"
+    }
+  },
+  {
+    "slug": "ultra-sun",
+    "groupSlug": "ultra-sun-ultra-moon",
+    "names": {
+      "zh-Hans": "究极之日",
+      "zh-Hant": "究極之日",
+      "en": "Ultra Sun",
+      "ja-Hrkt": "ウルトラサン",
+      "ko": "울트라썬",
+      "fr": "Ultra-Soleil",
+      "de": "Ultrasonne",
+      "es": "Ultrasol",
+      "it": "Ultrasole"
+    }
+  },
+  {
+    "slug": "violet",
+    "groupSlug": "scarlet-violet",
+    "names": {
+      "zh-Hans": "紫",
+      "zh-Hant": "紫",
+      "en": "Violet",
+      "ja-Hrkt": "バイオレット",
+      "ko": "바이올렛",
+      "fr": "Violet",
+      "de": "Purpur",
+      "es": "Púrpura",
+      "it": "Violetto"
+    }
+  },
+  {
+    "slug": "white",
+    "groupSlug": "black-white",
+    "names": {
+      "zh-Hans": "白",
+      "zh-Hant": "白",
+      "en": "White",
+      "ja-Hrkt": "ホワイト",
+      "ko": "화이트",
+      "fr": "Blanc",
+      "de": "Weiß",
+      "es": "Blanco",
+      "it": "Bianca"
+    }
+  },
+  {
+    "slug": "white-2",
+    "groupSlug": "black-2-white-2",
+    "names": {
+      "zh-Hans": "白2",
+      "zh-Hant": "白2",
+      "en": "White 2",
+      "ja-Hrkt": "ホワイト2",
+      "ko": "화이트 2",
+      "fr": "Blanc 2",
+      "de": "Weiß 2",
+      "es": "Blanco 2",
+      "it": "Bianca 2"
+    }
+  },
+  {
+    "slug": "x",
+    "groupSlug": "x-y",
+    "names": {
+      "zh-Hans": "X",
+      "zh-Hant": "X",
+      "en": "X",
+      "ja-Hrkt": "X",
+      "ko": "X",
+      "fr": "X",
+      "de": "X",
+      "es": "X",
+      "it": "X"
+    }
+  },
+  {
+    "slug": "xd",
+    "groupSlug": "xd",
+    "names": {
+      "en": "XD",
+      "ja-Hrkt": "XD",
+      "ko": "XD",
+      "fr": "XD",
+      "de": "XD",
+      "es": "XD",
+      "it": "XD"
+    }
+  },
+  {
+    "slug": "y",
+    "groupSlug": "x-y",
+    "names": {
+      "zh-Hans": "Y",
+      "zh-Hant": "Y",
+      "en": "Y",
+      "ja-Hrkt": "Y",
+      "ko": "Y",
+      "fr": "Y",
+      "de": "Y",
+      "es": "Y",
+      "it": "Y"
+    }
+  },
+  {
+    "slug": "yellow",
+    "groupSlug": "yellow",
+    "names": {
+      "zh-Hans": "皮卡丘",
+      "zh-Hant": "皮卡丘",
+      "en": "Yellow",
+      "ja-Hrkt": "ピカチュウ",
+      "ko": "피카츄",
+      "fr": "Jaune",
+      "de": "Gelb",
+      "es": "Amarillo",
+      "it": "Gialla"
+    }
+  }
+]

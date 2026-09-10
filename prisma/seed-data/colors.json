@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "black",
+    "names": {
+      "zh-Hans": "黑色",
+      "zh-Hant": "黑色",
+      "en": "Black",
+      "ja": "黒色",
+      "ja-Hrkt": "くろいろ",
+      "ko": "검정",
+      "fr": "Noir",
+      "de": "Schwarz",
+      "es": "Negro",
+      "it": "Nero"
+    }
+  },
+  {
+    "slug": "blue",
+    "names": {
+      "zh-Hans": "蓝色",
+      "zh-Hant": "藍色",
+      "en": "Blue",
+      "ja": "青色",
+      "ja-Hrkt": "あおいろ",
+      "ko": "파랑",
+      "fr": "Bleu",
+      "de": "Blau",
+      "es": "Azul",
+      "it": "Blu"
+    }
+  },
+  {
+    "slug": "brown",
+    "names": {
+      "zh-Hans": "褐色",
+      "zh-Hant": "褐色",
+      "en": "Brown",
+      "ja": "茶色",
+      "ja-Hrkt": "ちゃいろ",
+      "ko": "갈색",
+      "fr": "Brun",
+      "de": "Braun",
+      "es": "Marrón",
+      "it": "Marrone"
+    }
+  },
+  {
+    "slug": "gray",
+    "names": {
+      "zh-Hans": "灰色",
+      "zh-Hant": "灰色",
+      "en": "Gray",
+      "ja": "灰色",
+      "ja-Hrkt": "はいいろ",
+      "ko": "회색",
+      "fr": "Gris",
+      "de": "Grau",
+      "es": "Gris",
+      "it": "Grigio"
+    }
+  },
+  {
+    "slug": "green",
+    "names": {
+      "zh-Hans": "绿色",
+      "zh-Hant": "綠色",
+      "en": "Green",
+      "ja": "緑色",
+      "ja-Hrkt": "みどりいろ",
+      "ko": "초록",
+      "fr": "Vert",
+      "de": "Grün",
+      "es": "Verde",
+      "it": "Verde"
+    }
+  },
+  {
+    "slug": "pink",
+    "names": {
+      "zh-Hans": "粉红色",
+      "zh-Hant": "粉紅色",
+      "en": "Pink",
+      "ja": "桃色",
+      "ja-Hrkt": "ももいろ",
+      "ko": "담홍",
+      "fr": "Rose",
+      "de": "Rosa",
+      "es": "Rosa",
+      "it": "Rosa"
+    }
+  },
+  {
+    "slug": "purple",
+    "names": {
+      "zh-Hans": "紫色",
+      "zh-Hant": "紫色",
+      "en": "Purple",
+      "ja": "紫色",
+      "ja-Hrkt": "むらさきいろ",
+      "ko": "보라",
+      "fr": "Violet",
+      "de": "Violett",
+      "es": "Morado",
+      "it": "Viola"
+    }
+  },
+  {
+    "slug": "red",
+    "names": {
+      "zh-Hans": "红色",
+      "zh-Hant": "紅色",
+      "en": "Red",
+      "ja": "赤色",
+      "ja-Hrkt": "あかいろ",
+      "ko": "빨강",
+      "fr": "Rouge",
+      "de": "Rot",
+      "es": "Rojo",
+      "it": "Rosso"
+    }
+  },
+  {
+    "slug": "white",
+    "names": {
+      "zh-Hans": "白色",
+      "zh-Hant": "白色",
+      "en": "White",
+      "ja": "白色",
+      "ja-Hrkt": "しろいろ",
+      "ko": "하양",
+      "fr": "Blanc",
+      "de": "Weiß",
+      "es": "Blanco",
+      "it": "Bianco"
+    }
+  },
+  {
+    "slug": "yellow",
+    "names": {
+      "zh-Hans": "黄色",
+      "zh-Hant": "黃色",
+      "en": "Yellow",
+      "ja": "黄色",
+      "ja-Hrkt": "きいろ",
+      "ko": "노랑",
+      "fr": "Jaune",
+      "de": "Gelb",
+      "es": "Amarillo",
+      "it": "Giallo"
+    }
+  }
+]

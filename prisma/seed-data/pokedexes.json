@@ -1,0 +1,571 @@
+[
+  {
+    "slug": "blueberry",
+    "isMainSeries": true,
+    "regionSlug": "paldea",
+    "names": {
+      "en": "Blueberry",
+      "fr": "Myrtille",
+      "de": "Blaubeer-Akademie",
+      "es": "Arándano"
+    },
+    "descriptions": {
+      "en": "Blueberry Academy dex",
+      "fr": "Pokédex de l'Institut Myrtille",
+      "de": "Blaubeer-Akademie Dex",
+      "es": "Pokédex regional de la Academia Arándano de Escarlata/Púrpura"
+    }
+  },
+  {
+    "slug": "champions",
+    "isMainSeries": false,
+    "regionSlug": null,
+    "names": {
+      "en": "Champions",
+      "fr": "Champions"
+    },
+    "descriptions": {
+      "en": "Champions dex",
+      "fr": "Pokédex de Champions"
+    }
+  },
+  {
+    "slug": "conquest-gallery",
+    "isMainSeries": false,
+    "regionSlug": null,
+    "names": {
+      "en": "Gallery",
+      "fr": "Galerie",
+      "de": "Gallerie",
+      "es": "Galería"
+    },
+    "descriptions": {
+      "en": "Pokémon Conquest gallery order",
+      "fr": "Ordre de la Galerie dans Pokémon Conquest",
+      "de": "Pokémon Conquest Galerie Reihenfolge",
+      "es": "Orden de la Galería en Pokémon Conquest"
+    }
+  },
+  {
+    "slug": "crown-tundra",
+    "isMainSeries": true,
+    "regionSlug": "galar",
+    "names": {
+      "en": "Crown Tundra",
+      "fr": "Couronneige",
+      "de": "Kronen-Schneelande",
+      "es": "Nieves de la Corona"
+    },
+    "descriptions": {
+      "en": "Crown Tundra dex",
+      "fr": "Pokédex de Couronneige",
+      "de": "Kronen-Schneelande Dex",
+      "es": "Pokédex regional de Nieves de la Corona"
+    }
+  },
+  {
+    "slug": "extended-sinnoh",
+    "isMainSeries": true,
+    "regionSlug": "sinnoh",
+    "names": {
+      "en": "Extended Sinnoh",
+      "fr": "Sinnoh étendu",
+      "de": "Erweitertes Sinnoh",
+      "es": "Sinnoh Extendido"
+    },
+    "descriptions": {
+      "en": "Platinum Sinnoh dex—an extended version of Diamond and Pearl’s",
+      "fr": "Pokédex régional de Sinnoh dans Platine",
+      "de": "Platin Sinnoh Dex — eine erweiterte Version von Diamant und Perl",
+      "es": "Pokédex regional de Sinnoh de Platino"
+    }
+  },
+  {
+    "slug": "galar",
+    "isMainSeries": true,
+    "regionSlug": "galar",
+    "names": {
+      "en": "Galar",
+      "fr": "Galar",
+      "de": "Galar",
+      "es": "Galar"
+    },
+    "descriptions": {
+      "en": "Sword/Shield Galar dex",
+      "fr": "Pokédex de Galar dans Épée/Bouclier",
+      "de": "Galar Dex",
+      "es": "Pokédex regional de Galar"
+    }
+  },
+  {
+    "slug": "hisui",
+    "isMainSeries": true,
+    "regionSlug": "hisui",
+    "names": {
+      "en": "Hisui",
+      "fr": "Hisui",
+      "de": "Hisui",
+      "es": "Hisui"
+    },
+    "descriptions": {
+      "en": "Hisui dex",
+      "fr": "Pokédex d'Hisui",
+      "de": "Hisui Dex — Dex aus Pokémon Legenden Arceus",
+      "es": "Pokédex regional de Hisui de Leyendas Pokémon Arceus"
+    }
+  },
+  {
+    "slug": "hoenn",
+    "isMainSeries": true,
+    "regionSlug": "hoenn",
+    "names": {
+      "en": "Original Hoenn",
+      "fr": "Hoenn initial",
+      "de": "Original Hoenn",
+      "es": "Hoenn Original"
+    },
+    "descriptions": {
+      "en": "Ruby/Sapphire/Emerald Hoenn dex",
+      "fr": "Pokédex régional d’Hoenn dans Rubis/Saphir/Émeraude",
+      "de": "Rubin/Saphir/Smaragd Hoenn Dex",
+      "es": "Pokédex regional de Hoenn de Rubí/Zafiro/Esmeralda"
+    }
+  },
+  {
+    "slug": "hyperspace",
+    "isMainSeries": true,
+    "regionSlug": "kalos",
+    "names": {
+      "en": "Hyperspace",
+      "fr": "Extra Illumis",
+      "de": "Dimensions-Illumina",
+      "es": "Luminalia Dimensional"
+    },
+    "descriptions": {
+      "en": "Hyperspace dex",
+      "fr": "Pokédex d'extra Illumis dans Légendes Z-A Méga Dimension",
+      "de": "Dimensions-Illumina Dex",
+      "es": "Pokédex regional de Luminalia Dimensional de Pokemon Leyendas Z-A"
+    }
+  },
+  {
+    "slug": "isle-of-armor",
+    "isMainSeries": true,
+    "regionSlug": "galar",
+    "names": {
+      "en": "Isle of Armor",
+      "fr": "Isolarmure",
+      "de": "Die Insel der Rüstung",
+      "es": "Isla de la Armadura"
+    },
+    "descriptions": {
+      "en": "Isle of Armor dex",
+      "fr": "Pokédex d'Isolarmure",
+      "de": "Die Insel der Rüstung Dex",
+      "es": "Pokédex regional de Isla de la Armadura"
+    }
+  },
+  {
+    "slug": "kalos-central",
+    "isMainSeries": true,
+    "regionSlug": "kalos",
+    "names": {
+      "en": "Central Kalos",
+      "fr": "Kalos : Centre",
+      "de": "Kalos-Zentral",
+      "es": "Kalos Centro"
+    },
+    "descriptions": {
+      "en": "",
+      "fr": "",
+      "de": "",
+      "es": ""
+    }
+  },
+  {
+    "slug": "kalos-coastal",
+    "isMainSeries": true,
+    "regionSlug": "kalos",
+    "names": {
+      "en": "Coastal Kalos",
+      "fr": "Kalos : Côtes",
+      "de": "Kalos-Küste",
+      "es": "Kalos Costa"
+    },
+    "descriptions": {
+      "en": "",
+      "fr": "",
+      "de": "",
+      "es": ""
+    }
+  },
+  {
+    "slug": "kalos-mountain",
+    "isMainSeries": true,
+    "regionSlug": "kalos",
+    "names": {
+      "en": "Mountain Kalos",
+      "fr": "Kalos : Monts",
+      "de": "Kalos-Gebirge",
+      "es": "Kalos Montaña"
+    },
+    "descriptions": {
+      "en": "",
+      "fr": "",
+      "de": "",
+      "es": ""
+    }
+  },
+  {
+    "slug": "kanto",
+    "isMainSeries": true,
+    "regionSlug": "kanto",
+    "names": {
+      "en": "Kanto",
+      "fr": "Kanto",
+      "de": "Kanto",
+      "es": "Kanto"
+    },
+    "descriptions": {
+      "en": "Red/Blue/Yellow Kanto dex",
+      "fr": "Pokédex régional de Kanto dans Rouge/Bleu/Jaune",
+      "de": "Rot/Blau/Gelb Kanto Dex",
+      "es": "Pokédex regional de Rojo/Azul/Amarillo"
+    }
+  },
+  {
+    "slug": "kitakami",
+    "isMainSeries": true,
+    "regionSlug": "paldea",
+    "names": {
+      "en": "Kitakami",
+      "fr": "Septentria",
+      "es": "Kitakami"
+    },
+    "descriptions": {
+      "en": "Kitakami dex",
+      "fr": "Pokédex de Septentria",
+      "es": "Pokédex regional de Kitakami de Escarlata/Púrpura"
+    }
+  },
+  {
+    "slug": "letsgo-kanto",
+    "isMainSeries": true,
+    "regionSlug": "kanto",
+    "names": {
+      "en": "Let’s Go Kanto",
+      "fr": "Let's Go Kanto",
+      "de": "Let's Go Kanto",
+      "es": "Let’s Go Kanto"
+    },
+    "descriptions": {
+      "en": "Let’s Go: Pikachu/Let’s Go: Eevee Kanto dex",
+      "fr": "Pokédex de Kanto dans Let's Go: Pikachu/Let's Go: Évoli",
+      "de": "Kanto Pokédex aus Let's Go: Pikachu/Let's Go: Evoli",
+      "es": "Pokédex regional de Let’s Go Pikachu/Eevee"
+    }
+  },
+  {
+    "slug": "lumiose-city",
+    "isMainSeries": true,
+    "regionSlug": "kalos",
+    "names": {
+      "en": "Lumiose",
+      "fr": "Illumis",
+      "de": "Illumina City",
+      "es": "Ciudad Luminalia"
+    },
+    "descriptions": {
+      "en": "Lumiose City dex",
+      "fr": "Pokédex de la ville d'Illumis dans Légendes Z-A",
+      "de": "Illumina City Dex - Dex aus Pokémon Legenden Z-A",
+      "es": "Pokédex regional de Ciudad Luminalia de Pokemon Leyendas Z-A"
+    }
+  },
+  {
+    "slug": "national",
+    "isMainSeries": true,
+    "regionSlug": null,
+    "names": {
+      "en": "National",
+      "fr": "National",
+      "de": "National",
+      "es": "Nacional"
+    },
+    "descriptions": {
+      "en": "Entire National dex",
+      "fr": "Pokédex National complet",
+      "de": "Komplette Nationale Dex",
+      "es": "Pokédex Nacional completa"
+    }
+  },
+  {
+    "slug": "original-akala",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Original Akala",
+      "fr": "Akala original",
+      "es": "Akala Original"
+    },
+    "descriptions": {
+      "en": "Sun/Moon Akala dex",
+      "fr": "Pokédex d'Akala dans Soleil/Lune",
+      "es": "Pokédex regional de Akala de Sol/Luna"
+    }
+  },
+  {
+    "slug": "original-alola",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Original Alola",
+      "fr": "Alola original",
+      "es": "Alola Original"
+    },
+    "descriptions": {
+      "en": "Sun/Moon Alola dex",
+      "fr": "Pokédex d'Alola dans Soleil/Lune",
+      "es": "Pokédex regional de Alola de Sol/Luna"
+    }
+  },
+  {
+    "slug": "original-johto",
+    "isMainSeries": true,
+    "regionSlug": "johto",
+    "names": {
+      "en": "Original Johto",
+      "fr": "Johto initial",
+      "de": "Original Johto",
+      "es": "Johto Original"
+    },
+    "descriptions": {
+      "en": "Gold/Silver/Crystal Johto dex—called the \"New\" Pokédex in-game",
+      "fr": "Pokédex régional de Johto dans Or/Argent/Cristal, appellé \"Nouveau\" Pokédex dans le jeu",
+      "de": "Gold/Silber/Kristall Johto Dex — Auch der \"Neue\" Pokédex im Spiel genannt",
+      "es": "Pokédex regional de Johto de Oro/Plata/Cristal"
+    }
+  },
+  {
+    "slug": "original-melemele",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Original Melemele",
+      "fr": "Mele-Mele original",
+      "es": "Melemele Original"
+    },
+    "descriptions": {
+      "en": "Sun/Moon Melemele dex",
+      "fr": "Pokédex de Mele-Mele dans Soleil/Lune",
+      "es": "Pokédex regional de Melemele de Sol/Luna"
+    }
+  },
+  {
+    "slug": "original-poni",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Original Poni",
+      "fr": "Poni original",
+      "es": "Poni Original"
+    },
+    "descriptions": {
+      "en": "Sun/Moon Poni dex",
+      "fr": "Pokédex de Poni dans Soleil/Lune",
+      "es": "Pokédex regional de Poni de Sol/Luna"
+    }
+  },
+  {
+    "slug": "original-sinnoh",
+    "isMainSeries": true,
+    "regionSlug": "sinnoh",
+    "names": {
+      "en": "Original Sinnoh",
+      "fr": "Sinnoh initial",
+      "de": "Original Sinnoh",
+      "es": "Sinnoh Original"
+    },
+    "descriptions": {
+      "en": "Diamond/Pearl Sinnoh dex",
+      "fr": "Pokédex régional de Sinnoh dans Diamant/Perle",
+      "de": "Diamant/Perl Sinnoh Dex",
+      "es": "Pokédex regional de Sinnoh de Diamante/Perla"
+    }
+  },
+  {
+    "slug": "original-ulaula",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Original Ula’ula",
+      "fr": "Ula-Ula original",
+      "es": "Ula-Ula Original"
+    },
+    "descriptions": {
+      "en": "Sun/Moon Ula’ula dex",
+      "fr": "Pokédex d'Ula-Ula dans Soleil/Lune",
+      "es": "Pokédex regional de Ula-Ula de Sol/Luna"
+    }
+  },
+  {
+    "slug": "original-unova",
+    "isMainSeries": true,
+    "regionSlug": "unova",
+    "names": {
+      "en": "Original Unova",
+      "fr": "Unys initial",
+      "de": "Original Einall",
+      "es": "Teselia Original"
+    },
+    "descriptions": {
+      "en": "Black/White Unova dex",
+      "fr": "Pokédex régional d’Unys dans Noir/Blanc",
+      "de": "Schwarz/Weiß Einall Dex",
+      "es": "Pokédex regional de Teselia de Negro/Blanco"
+    }
+  },
+  {
+    "slug": "paldea",
+    "isMainSeries": true,
+    "regionSlug": "paldea",
+    "names": {
+      "en": "Paldea",
+      "fr": "Paldea",
+      "de": "Paldea",
+      "es": "Paldea"
+    },
+    "descriptions": {
+      "en": "Paldea dex",
+      "fr": "Pokédex de Paldea",
+      "de": "Paldea Dex",
+      "es": "Pokédex regional de Paldea de Escarlata/Púrpura"
+    }
+  },
+  {
+    "slug": "updated-akala",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Updated Akala",
+      "fr": "Akala mis à jour",
+      "es": "Akala Actualizado"
+    },
+    "descriptions": {
+      "en": "Ultra Sun/Ultra Moon Akala dex",
+      "fr": "Pokédex d'Akala dans Ultra Soleil/Ultra Lune",
+      "es": "Pokédex regional de Akala de Ultra Sol/Ultra Luna"
+    }
+  },
+  {
+    "slug": "updated-alola",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Updated Alola",
+      "fr": "Alola mis à jour",
+      "es": "Alola Actualizado"
+    },
+    "descriptions": {
+      "en": "Ultra Sun/Ultra Moon Alola dex",
+      "fr": "Pokédex d'Alola dans Ultra Soleil/Ultra Lune",
+      "es": "Pokédex regional de Alola de Ultra Sol/Ultra Luna"
+    }
+  },
+  {
+    "slug": "updated-hoenn",
+    "isMainSeries": true,
+    "regionSlug": "hoenn",
+    "names": {
+      "en": "New Hoenn",
+      "fr": "Hoenn amélioré",
+      "de": "Neue Hoenn",
+      "es": "Hoenn Actualizado"
+    },
+    "descriptions": {
+      "en": "Omega Ruby/Alpha Sapphire Hoenn Dex—Ruby/Sapphire/Emerald’s, updated to add new evolutions",
+      "fr": "Pokédex régional d’Hoenn dans Rubis Oméga/Saphir Alpha, mis à jour pour les nouvelles évolutions",
+      "de": "Omega Rubin/Alpha Saphir Hoenn Dex — Dex aus Rubin/Saphir/Smaragd um Neue Entwicklungen erweitert",
+      "es": "Pokédex regional de Hoenn de Rubí Omega/Zafiro Alfa"
+    }
+  },
+  {
+    "slug": "updated-johto",
+    "isMainSeries": true,
+    "regionSlug": "johto",
+    "names": {
+      "en": "Updated Johto",
+      "fr": "Johto amélioré",
+      "de": "Aktualisiertes Johto",
+      "es": "Johto Actualizado"
+    },
+    "descriptions": {
+      "en": "HeartGold/SoulSilver Johto dex—Gold/Silver/Crystal’s, extended to add move-based Generation IV evolutions",
+      "fr": "Pokédex régional de Johto dans Or HeartGold/Argent SoulSilver, mis à jour pour la 4ème génération",
+      "de": "HeartGold/SoulSilver Johto Dex — Dex aus Gold/Silber/Kristall um Fähigkeiten basierende Entwicklungen aus Generation IV erweitert",
+      "es": "Pokédex regional de Johto de Oro HeartGold/Plata SoulSilver"
+    }
+  },
+  {
+    "slug": "updated-melemele",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Updated Melemele",
+      "fr": "Mele-Mele mis à jour",
+      "es": "Melemele Actualizado"
+    },
+    "descriptions": {
+      "en": "Ultra Sun/Ultra Moon Melemele dex",
+      "fr": "Pokédex de Mele-Mele dans Ultra Soleil/Ultra Lune",
+      "es": "Pokédex regional de Melemele de Ultra Sol/Ultra Luna"
+    }
+  },
+  {
+    "slug": "updated-poni",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Updated Poni",
+      "fr": "Poni mis à jour",
+      "es": "Poni Actualizado"
+    },
+    "descriptions": {
+      "en": "Ultra Sun/Ultra Moon Poni dex",
+      "fr": "Pokédex de Poni dans Ultra Soleil/Ultra Lune",
+      "es": "Pokédex regional de Poni de Ultra Sol/Ultra Luna"
+    }
+  },
+  {
+    "slug": "updated-ulaula",
+    "isMainSeries": true,
+    "regionSlug": "alola",
+    "names": {
+      "en": "Updated Ula’ula",
+      "fr": "Ula-Ula mis à jour",
+      "es": "Ula-Ula Actualizado"
+    },
+    "descriptions": {
+      "en": "Ultra Sun/Ultra Moon Ula’ula dex",
+      "fr": "Pokédex d'Ula-Ula dans Ultra Soleil/Ultra Lune",
+      "es": "Pokédex regional de Ula-Ula de Ultra Sol/Ultra Luna"
+    }
+  },
+  {
+    "slug": "updated-unova",
+    "isMainSeries": true,
+    "regionSlug": "unova",
+    "names": {
+      "en": "Updated Unova",
+      "fr": "Unys amélioré",
+      "de": "Aktualisiertes Einall",
+      "es": "Teselia Actualizado"
+    },
+    "descriptions": {
+      "en": "Black 2/White 2 Unova dex",
+      "fr": "Pokédex régional d’Unys dans Noir 2/Blanc 2",
+      "de": "Schwarz 2/Weiß 2 Einall Dex",
+      "es": "Pokédex regional de Teselia de Negro 2/Blanco 2"
+    }
+  }
+]

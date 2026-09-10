@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "alola",
+    "names": {
+      "zh-Hans": "阿罗拉",
+      "zh-Hant": "阿羅拉",
+      "en": "Alola",
+      "ja-Hrkt": "アローラ",
+      "ko": "알로라",
+      "fr": "Alola",
+      "de": "Alola",
+      "it": "Alola"
+    }
+  },
+  {
+    "slug": "galar",
+    "names": {
+      "zh-Hans": "伽勒尔",
+      "zh-Hant": "伽勒爾",
+      "en": "Galar",
+      "ja-Hrkt": "ガラル",
+      "ko": "가라르",
+      "fr": "Galar",
+      "de": "Galar",
+      "it": "Galar"
+    }
+  },
+  {
+    "slug": "hisui",
+    "names": {
+      "zh-Hans": "洗翠",
+      "zh-Hant": "洗翠",
+      "en": "Hisui",
+      "ja-Hrkt": "ヒスイ",
+      "ko": "히스이",
+      "fr": "Hisui",
+      "de": "Hisui",
+      "it": "Hisui"
+    }
+  },
+  {
+    "slug": "hoenn",
+    "names": {
+      "zh-Hans": "丰缘",
+      "zh-Hant": "豐緣",
+      "en": "Hoenn",
+      "ja-Hrkt": "ホウエン",
+      "ko": "호연",
+      "fr": "Hoenn",
+      "de": "Hoenn",
+      "it": "Hoenn"
+    }
+  },
+  {
+    "slug": "johto",
+    "names": {
+      "zh-Hans": "城都",
+      "zh-Hant": "城都",
+      "en": "Johto",
+      "ja-Hrkt": "ジョウト",
+      "ko": "성도",
+      "fr": "Johto",
+      "de": "Johto",
+      "it": "Johto"
+    }
+  },
+  {
+    "slug": "kalos",
+    "names": {
+      "zh-Hans": "卡洛斯",
+      "zh-Hant": "卡洛斯",
+      "en": "Kalos",
+      "ja-Hrkt": "カロス",
+      "ko": "칼로스",
+      "fr": "Kalos",
+      "de": "Kalos",
+      "it": "Kalos"
+    }
+  },
+  {
+    "slug": "kanto",
+    "names": {
+      "zh-Hans": "关都",
+      "zh-Hant": "關都",
+      "en": "Kanto",
+      "ja-Hrkt": "カントー",
+      "ko": "관동",
+      "fr": "Kanto",
+      "de": "Kanto",
+      "it": "Kanto"
+    }
+  },
+  {
+    "slug": "orre",
+    "names": {
+      "en": "Orre"
+    }
+  },
+  {
+    "slug": "paldea",
+    "names": {
+      "zh-Hans": "帕底亚",
+      "zh-Hant": "帕底亞",
+      "en": "Paldea",
+      "ja-Hrkt": "パルデア",
+      "ko": "팔데아",
+      "fr": "Paldea",
+      "de": "Paldea",
+      "it": "Paldea"
+    }
+  },
+  {
+    "slug": "sinnoh",
+    "names": {
+      "zh-Hans": "神奥",
+      "zh-Hant": "神奧",
+      "en": "Sinnoh",
+      "ja-Hrkt": "シンオウ",
+      "ko": "신오",
+      "fr": "Sinnoh",
+      "de": "Sinnoh",
+      "it": "Sinnoh"
+    }
+  },
+  {
+    "slug": "unova",
+    "names": {
+      "zh-Hans": "合众",
+      "zh-Hant": "合眾",
+      "en": "Unova",
+      "ja-Hrkt": "イッシュ",
+      "ko": "하나",
+      "fr": "Unys",
+      "de": "Einall",
+      "it": "Unima"
+    }
+  }
+]

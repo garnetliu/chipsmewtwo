@@ -1,0 +1,96 @@
+[
+  {
+    "slug": "colosseum-purification",
+    "names": {
+      "en": "Colosseum: Purification",
+      "fr": "Colosseum: Purification"
+    }
+  },
+  {
+    "slug": "egg",
+    "names": {
+      "en": "Egg",
+      "fr": "Œuf",
+      "de": "Ei",
+      "es": "Huevo"
+    }
+  },
+  {
+    "slug": "form-change",
+    "names": {
+      "en": "Form Change",
+      "fr": "Changement de Forme",
+      "de": "Rotom Formen"
+    }
+  },
+  {
+    "slug": "level-up",
+    "names": {
+      "en": "Level up",
+      "fr": "Montée de niveau",
+      "de": "Level up",
+      "es": "Nivel"
+    }
+  },
+  {
+    "slug": "light-ball-egg",
+    "names": {
+      "en": "Volt Tackle Pichu",
+      "fr": "Pichu Électacle",
+      "de": "Volttackle Pichu"
+    }
+  },
+  {
+    "slug": "machine",
+    "names": {
+      "en": "Machine",
+      "fr": "Capsule",
+      "de": "Maschine",
+      "es": "Máquina"
+    }
+  },
+  {
+    "slug": "stadium-surfing-pikachu",
+    "names": {
+      "en": "Stadium: Surfing Pikachu",
+      "fr": "Stadium: Pikachu Surfeur",
+      "de": "Stadium: Surfendes Pikachu"
+    }
+  },
+  {
+    "slug": "train",
+    "names": {
+      "en": "Train"
+    }
+  },
+  {
+    "slug": "tutor",
+    "names": {
+      "en": "Tutor",
+      "fr": "Enseigné",
+      "de": "Tutor",
+      "es": "Tutor"
+    }
+  },
+  {
+    "slug": "xd-purification",
+    "names": {
+      "en": "XD: Purification",
+      "fr": "XD: Purification"
+    }
+  },
+  {
+    "slug": "xd-shadow",
+    "names": {
+      "en": "XD: Shadow",
+      "fr": "XD: Obscur"
+    }
+  },
+  {
+    "slug": "zygarde-cube",
+    "names": {
+      "en": "Zygarde Cube",
+      "fr": "Boîte Zygarde"
+    }
+  }
+]

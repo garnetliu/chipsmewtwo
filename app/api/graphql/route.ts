@@ -4,14 +4,29 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import type { NextRequest } from "next/server";
 
 import { MyContext } from "@/graphql/context";
+import { PokeAPI } from "@/graphql/context/PokeAPISource";
+import { PokemonDbSource } from "@/graphql/context/PokemonDbSource";
 import { resolvers } from "@/graphql/schema/resolvers.generated";
 import { typeDefs } from "@/graphql/schema/typeDefs.generated";
+import { canUseSource, getPokemonFetchMode } from "@/lib/pokemon/fetch-mode";
 
 const apolloServer = new ApolloServer<MyContext>({ typeDefs, resolvers });
 
 const handler = startServerAndCreateNextHandler<NextRequest, MyContext>(apolloServer, {
   context: async () => {
-    return { userID: "" };
+    return {
+      userID: "",
+      // 两个都每请求新建，不是共享单例：DataLoader 的缓存和 RESTDataSource
+      // 的请求去重都按实例存，跨请求复用会把一个请求的数据喂给另一个
+      dataSources: {
+        pokemonDb: new PokemonDbSource(),
+        // db-only 模式下真的不实例化 HTTP 客户端，而不是实例化了不调用。
+        // resolver 那边也就不用查 mode —— 有没有 importer 就是答案
+        pokemonImporter: canUseSource(getPokemonFetchMode())
+          ? new PokeAPI({ cache: apolloServer.cache })
+          : undefined,
+      },
+    };
   },
 });
 

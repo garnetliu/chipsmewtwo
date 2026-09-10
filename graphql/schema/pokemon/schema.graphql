@@ -1,10 +1,64 @@
 extend type Query {
+    """
+    按全国图鉴编号（37）或英文 slug（vulpix）查一只。
+    库里没有时会尝试补数据（见 POKEMON_FETCH_MODE），两边都没有则报 NOT_FOUND。
+    """
     pokemon(id: ID!): Pokemon
-    pokemonList(offset: Int!, limit: Int!): [Pokemon]
+
+    """按全国图鉴编号翻页。这一页在库里凑不满 limit 条时会尝试补数据"""
+    pokemonList(offset: Int!, limit: Int!): [Pokemon!]
 }
 
 type Pokemon {
+    """全国图鉴编号"""
     id: ID!
-    name: String!
+    """英文标识，例如 vulpix"""
     slug: String!
+    """
+    译名。这个语言没收录就回退：默认语言 → 剩下的按语言表的 sortOrder 取最靠前的。
+    所以拿到的可能是别的语种的文本，一条译名都没有才是 null
+    """
+    name(language: String): String
+    """分类，例如「狐狸宝可梦」。回退规则同 name"""
+    genus(language: String): String
+    """
+    大图，475×475 的官方美术图，详情页用。取默认形态那张。
+    数据源没收录这只的图、或者这只还没导入时是 null
+    """
+    fullImageUrl: String
+    """小图，96×96 的点阵图，列表缩略图用。取默认形态那张"""
+    detailImageUrl: String
+    """
+    按世代取。数组顺序就是属性槽位：第一个是第一属性、第二个是第二属性，
+    单属性的宝可梦只有一个元素。那一代的数据没导入就是 null
+    """
+    types(generation: Int): [PokemonType!]
+    """按世代取。目前只导入了最新世代（数据源没有历史种族值），查老世代是 null"""
+    stats(generation: Int): PokemonStats
+}
+
+"""属性本体。18 个，全局复用，所以 id 用 type 表的主键"""
+type PokemonType {
+    id: ID!
+    """例如 fire"""
+    slug: String!
+    """属性徽章的主题色，例如 #EE8130"""
+    color: String!
+    """属性译名。回退规则同 Pokemon.name"""
+    name(language: String): String
+}
+
+"""一只宝可梦在某个世代的种族值"""
+type PokemonStats {
+    """formId:generationId 拼成的缓存键，例如 1:9"""
+    id: ID!
+    hp: Int!
+    attack: Int!
+    defense: Int!
+    """Gen1 没有特攻特防之分，那一代是 null，看 special"""
+    specialAttack: Int
+    specialDefense: Int
+    speed: Int!
+    """只有 Gen1 有"""
+    special: Int
 }
