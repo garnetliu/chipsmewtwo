@@ -12,6 +12,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 import { type LanguageCode, LANGUAGES, resolveLanguageCode } from "@/lib/pokeapi/language";
+import { type PokemonResponse, type SpeciesResponse, toSnapshot } from "@/lib/pokeapi/pokemon";
 import {
   type ColorSnapshot,
   type DamageTo,
@@ -22,6 +23,8 @@ import {
   type Localized,
   type MoveLearnMethodSnapshot,
   type PokedexSnapshot,
+  type PokemonDescriptionSnapshot,
+  type PokemonSnapshot,
   type RegionSnapshot,
   SEED_DATA_DIR,
   type SeedData,
@@ -361,6 +364,53 @@ async function versions(): Promise<VersionSnapshot[]> {
   );
 }
 
+/**
+ * 全部 1025 个物种，只取默认形态。
+ *
+ * 地区形态不进快照：它们靠 PokeAPISource 按需拉，而且一进来数据量就翻几倍。
+ * /pokemon 列表里默认形态的 id 是 1..1025，一万开头的那批是形态，按 id 过滤。
+ *
+ * 每只两个请求（pokemon 和 pokemon-species），两千多个请求，几分钟。
+ * 映射用 lib/pokeapi/pokemon.ts 的 toSnapshot，跟按需拉那条路完全同一份代码。
+ */
+async function pokemon(): Promise<{
+  pokemon: PokemonSnapshot[];
+  descriptions: PokemonDescriptionSnapshot[];
+}> {
+  const list = await getJson<{ results: NamedRef[] }>("/pokemon-species?limit=2000");
+  console.log(`  pokemon-species: ${list.results.length} 个物种`);
+
+  const rows: PokemonSnapshot[] = [];
+  const descriptions: PokemonDescriptionSnapshot[] = [];
+
+  const batchSize = 8;
+  for (let i = 0; i < list.results.length; i += batchSize) {
+    const batch = list.results.slice(i, i + batchSize);
+    const snapshots = await Promise.all(
+      batch.map(async (ref) => {
+        const species = await getJson<SpeciesResponse>(`/pokemon-species/${ref.name}`);
+        // 默认形态就是物种同名那条，直接按 slug 取，不用翻 varieties
+        const poke = await getJson<PokemonResponse>(`/pokemon/${species.id}`);
+        return toSnapshot(poke, species);
+      }),
+    );
+
+    for (const snap of snapshots) {
+      const { descriptions: texts, ...form } = snap.form;
+      rows.push({ ...snap, form });
+      if (texts.length) descriptions.push({ slug: snap.slug, descriptions: texts });
+    }
+    if ((i / batchSize) % 20 === 0) {
+      console.log(`  ${Math.min(i + batchSize, list.results.length)}/${list.results.length}`);
+    }
+  }
+
+  rows.sort((a, b) => a.id - b.id);
+  descriptions.sort((a, b) => a.slug.localeCompare(b.slug));
+  console.log(`  图鉴说明 ${descriptions.reduce((n, d) => n + d.descriptions.length, 0)} 条`);
+  return { pokemon: rows, descriptions };
+}
+
 // ── 入口 ──────────────────────────────────────────────────────
 
 await mkdir(SEED_DATA_DIR, { recursive: true });
@@ -378,3 +428,7 @@ await write("items", await items(groupRows));
 await write("pokedexes", await pokedexes());
 await write("groups", groupRows);
 await write("versions", await versions());
+
+const species = await pokemon();
+await write("pokemon", species.pokemon);
+await write("pokemon-descriptions", species.descriptions);

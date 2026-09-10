@@ -181,6 +181,7 @@ async function seedTypes(generationCount: number) {
   console.log(`属性: ${types.length} 行`);
 
   await seedTypeEffectiveness(types, introducedIn, ids, generationCount);
+  return ids;
 }
 
 /**
@@ -248,6 +249,7 @@ async function seedTypeEffectiveness(
 async function seedColors() {
   const colors = read("colors");
 
+  const ids = new Map<string, number>();
   for (const c of colors) {
     const data = { slug: c.slug, color: POKEMON_COLORS[c.slug] ?? "#888888" };
     const color = await prisma.color.upsert({
@@ -255,6 +257,7 @@ async function seedColors() {
       create: data,
       update: data,
     });
+    ids.set(c.slug, color.id);
     for (const { languageCode, value: name } of localized(c.names)) {
       await prisma.colorI18n.upsert({
         where: { colorId_languageCode: { colorId: color.id, languageCode } },
@@ -264,6 +267,7 @@ async function seedColors() {
     }
   }
   console.log(`颜色: ${colors.length} 行`);
+  return ids;
 }
 
 async function seedMoveLearnMethods() {
@@ -452,6 +456,7 @@ async function seedGroups(regionIds: Map<string, number>, pokedexIds: Map<string
 async function seedVersions(groupIds: Map<string, number>) {
   const versions = read("versions");
 
+  const ids = new Map<string, number>();
   for (const v of versions) {
     const groupId = groupIds.get(v.groupSlug);
     if (groupId === undefined) continue;
@@ -462,6 +467,7 @@ async function seedVersions(groupIds: Map<string, number>) {
       create: data,
       update: data,
     });
+    ids.set(v.slug, version.id);
 
     for (const { languageCode, value: name } of localized(v.names)) {
       await prisma.versionI18n.upsert({
@@ -472,6 +478,128 @@ async function seedVersions(groupIds: Map<string, number>) {
     }
   }
   console.log(`版本: ${versions.length} 行`);
+  return ids;
+}
+
+/**
+ * 全部物种和它们的默认形态。
+ *
+ * 跟字典表不一样，这里用批量写而不是逐行 upsert —— 一千多只摊开是三万多行，
+ * 加上十万条图鉴说明，逐行来是十几万次数据库往返。
+ *
+ * 物种、译名、图鉴编号用 createMany + skipDuplicates：主键都是数据源给的
+ * 固定值，重复跑不会变。形态得逐只 upsert 拿自增 id，之后子表按 formId
+ * 整批删了重插 —— 只清这批 formId 的行，按需拉进来的地区形态不受影响。
+ */
+async function seedPokemon(dict: {
+  pokedexes: Map<string, number>;
+  types: Map<string, number>;
+  colors: Map<string, number>;
+  versions: Map<string, number>;
+}) {
+  const rows = read("pokemon");
+  const descriptions = new Map(read("pokemon-descriptions").map((d) => [d.slug, d.descriptions]));
+
+  await prisma.pokemon.createMany({
+    data: rows.map((p) => ({ id: p.id, slug: p.slug })),
+    skipDuplicates: true,
+  });
+  await prisma.pokemonI18n.createMany({
+    data: rows.flatMap((p) =>
+      p.names.map((n) => ({
+        pokemonId: p.id,
+        languageCode: n.languageCode as LanguageCode,
+        name: n.name,
+        genus: n.genus,
+      })),
+    ),
+    skipDuplicates: true,
+  });
+  await prisma.pokedexNumber.createMany({
+    data: rows.flatMap((p) =>
+      p.dexNumbers.flatMap((d) => {
+        // 数据源偶尔引用没进字典表的图鉴，跳过而不是让整批炸掉
+        const pokedexId = dict.pokedexes.get(d.pokedexSlug);
+        return pokedexId === undefined ? [] : [{ pokemonId: p.id, pokedexId, number: d.number }];
+      }),
+    ),
+    skipDuplicates: true,
+  });
+
+  const formIds = new Map<number, number>();
+  for (const p of rows) {
+    const data = {
+      pokemonId: p.id,
+      isDefault: p.form.isDefault,
+      fullImage: p.form.fullImage,
+      detailImage: p.form.detailImage,
+    };
+    const form = await prisma.form.upsert({
+      where: { slug: p.form.slug },
+      create: { slug: p.form.slug, ...data },
+      update: data,
+    });
+    formIds.set(p.id, form.id);
+  }
+
+  const ids = [...formIds.values()];
+  await prisma.formType.deleteMany({ where: { formId: { in: ids } } });
+  await prisma.formType.createMany({
+    data: rows.flatMap((p) =>
+      p.form.types.flatMap((t) => {
+        const primaryTypeId = dict.types.get(t.primarySlug);
+        if (primaryTypeId === undefined) return [];
+        return [
+          {
+            formId: formIds.get(p.id)!,
+            generationId: t.generationId,
+            primaryTypeId,
+            secondaryTypeId: t.secondarySlug ? (dict.types.get(t.secondarySlug) ?? null) : null,
+          },
+        ];
+      }),
+    ),
+  });
+
+  await prisma.formColor.deleteMany({ where: { formId: { in: ids } } });
+  await prisma.formColor.createMany({
+    data: rows.flatMap((p) =>
+      p.form.colors.flatMap((c) => {
+        const colorId = dict.colors.get(c.colorSlug);
+        return colorId === undefined
+          ? []
+          : [{ formId: formIds.get(p.id)!, generationId: c.generationId, colorId }];
+      }),
+    ),
+  });
+
+  await prisma.formStat.deleteMany({ where: { formId: { in: ids } } });
+  await prisma.formStat.createMany({
+    data: rows.flatMap((p) => p.form.stats.map((st) => ({ formId: formIds.get(p.id)!, ...st }))),
+  });
+
+  await prisma.formDescriptionI18n.deleteMany({ where: { formId: { in: ids } } });
+  const descriptionRows = rows.flatMap((p) =>
+    (descriptions.get(p.slug) ?? []).flatMap((d) => {
+      const versionId = dict.versions.get(d.versionSlug);
+      return versionId === undefined
+        ? []
+        : [
+            {
+              formId: formIds.get(p.id)!,
+              versionId,
+              languageCode: d.languageCode as LanguageCode,
+              text: d.text,
+            },
+          ];
+    }),
+  );
+  // 十万行一次性塞过去会超出参数上限，分批
+  for (let i = 0; i < descriptionRows.length; i += 5000) {
+    await prisma.formDescriptionI18n.createMany({ data: descriptionRows.slice(i, i + 5000) });
+  }
+
+  console.log(`宝可梦: ${rows.length} 只，图鉴说明 ${descriptionRows.length} 行`);
 }
 
 // ── 入口 ──────────────────────────────────────────────────────
@@ -483,14 +611,23 @@ async function main() {
   await seedLanguages();
   const regionIds = await seedRegions();
   const generationCount = await seedGenerations(regionIds);
-  await seedTypes(generationCount);
-  await seedColors();
+  const typeIds = await seedTypes(generationCount);
+  const colorIds = await seedColors();
   await seedMoveLearnMethods();
   await seedEvolutionTriggers();
   await seedItems();
   const pokedexIds = await seedPokedexes(regionIds);
   const groupIds = await seedGroups(regionIds, pokedexIds);
-  await seedVersions(groupIds);
+  const versionIds = await seedVersions(groupIds);
+
+  // 字典表全部就位之后才灌宝可梦 —— 它的属性、颜色、图鉴编号、图鉴说明
+  // 分别指向 type / color / pokedex / version
+  await seedPokemon({
+    pokedexes: pokedexIds,
+    types: typeIds,
+    colors: colorIds,
+    versions: versionIds,
+  });
 }
 
 try {
