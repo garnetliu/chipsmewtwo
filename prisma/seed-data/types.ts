@@ -11,8 +11,9 @@
  * 跨表引用一律用 slug：库里的 id 是自增的，重灌一次就变，写进快照没有意义。
  * 世代是唯一的例外，它的 id 就是「第几世代」这个官方编号。
  */
-import type { LanguageCode } from "@/lib/pokeapi/language";
-import type { Snapshot } from "@/lib/pokeapi/pokemon";
+import type { LanguageCode } from "@/lib/pokemon/language";
+
+import type { Snapshot } from "./pokeapi-pokemon";
 
 /** 译名。缺的语言是数据源没收录，不是漏了 */
 export type Localized = Partial<Record<LanguageCode, string>>;
@@ -104,7 +105,7 @@ export type VersionSnapshot = {
 };
 
 /**
- * 宝可梦快照里的一条。形状直接用 lib/pokeapi/pokemon.ts 的 Snapshot，
+ * 宝可梦快照里的一条。形状直接用 pokeapi-pokemon.ts 的 Snapshot，
  * 只是把图鉴说明摘出去单独存 —— 说明有十万多条、二十多兆，跟本体放一起的话
  * 每次刷新整个文件都要重写，diff 也没法看。
  *

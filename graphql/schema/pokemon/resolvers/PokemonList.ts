@@ -2,12 +2,11 @@ import type { PokemonListResolvers } from "./../../types.generated";
 
 /** data 和 pagination 都由 Query.pokemonList 一次性拼好 */
 export const PokemonList: PokemonListResolvers = {
-  pagination: async (parent, arg, ctx) => {
+  pagination: async (parent, _arg, ctx) => {
     const { offset, limit, data } = parent;
-    const { pokemonDb } = ctx.dataSources;
+    const { pokemon } = ctx.dataSources;
 
-    // 总数在补完数据之后才查，不然刚导进来的那几只不算在里面
-    const total = await pokemonDb.countAll();
+    const total = await pokemon.countAll();
 
     return {
       // offset/limit 换算成页码给前端用。limit 是 0 时页码没有意义，当第一页
@@ -20,7 +19,7 @@ export const PokemonList: PokemonListResolvers = {
       hasPrev: offset > 0,
     };
   },
-  data: ({ data }, _arg, _ctx) => {
+  data: ({ data }) => {
     /* PokemonList.data resolver is required because PokemonList.data and PokemonListMapper.data are not compatible */
     return data;
   },

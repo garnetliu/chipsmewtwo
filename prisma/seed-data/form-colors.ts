@@ -3,7 +3,7 @@
  *
  * 图鉴颜色分类跟着形态走：关都六尾是褐色，阿罗拉六尾是白色；关都喵喵黄色，
  * 阿罗拉喵喵蓝色，伽勒尔喵喵褐色。PokeAPI 的 color 挂在物种上，同一物种的
- * 所有形态拿到同一个值，所以这张表用来覆盖它（graphql/context/PokeAPISource.ts）。
+ * 所有形态拿到同一个值，所以这张表用来覆盖它（见 pokeapi-pokemon.ts 的 toColors）。
  *
  * 数据在 form-colors.json，由 scripts/refresh-form-colors.ts 从神奇宝贝百科
  * 生成并提交进仓库。要跟进 wiki 的更新跑 pnpm form-colors:refresh，然后看 diff。

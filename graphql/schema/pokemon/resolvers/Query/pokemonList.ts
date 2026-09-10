@@ -6,9 +6,9 @@ export const pokemonList: NonNullable<QueryResolvers["pokemonList"]> = async (
   ctx,
 ) => {
   const { offset, limit } = arg;
-  const { pokemonDb } = ctx.dataSources;
+  const { pokemon } = ctx.dataSources;
 
-  const data = await pokemonDb.findPage(offset, limit);
+  const data = await pokemon.findPage(offset, limit);
 
   return { data, offset, limit };
 };

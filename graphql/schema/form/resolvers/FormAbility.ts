@@ -1,9 +1,9 @@
 import type { FormAbilityResolvers } from "./../../types.generated";
 
 /**
- * 库里不存 isHidden 列 —— 它跟 slot = 3 完全等价（见 prisma schema 的 FormAbility），
- * 所以在这里算，不在数据里冗余一份
+ * 库里是 (formId, generationId, slot) 复合主键，没有单列 id，
+ * 客户端缓存要的那个键在这层拼 —— 同 FormStats.id
  */
 export const FormAbility: FormAbilityResolvers = {
-  isHidden: (parent) => parent.slot === 3,
+  id: (parent) => `${parent.formId}:${parent.generationId}:${parent.slot}`,
 };

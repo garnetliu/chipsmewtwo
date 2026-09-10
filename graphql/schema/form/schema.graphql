@@ -86,8 +86,6 @@ type FormAbility {
   皮卡丘只有 slot 1 和 slot 3，隐藏特性不会顶上来变成 2
   """
   slot: Int!
-  """等价于 slot == 3"""
-  isHidden: Boolean!
   ability: Ability!
 }
 

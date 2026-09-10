@@ -1,28 +1,23 @@
 /**
- * 形态那批类型的 parent 形状：查库实际给的列。
- * 带参数的字段（name、types、stats…）都不在里面，由字段 resolver 各自走 loader
+ * 形态那批类型的 parent 形状，全是 FormSource 查出来的库里的行。
+ * 带参数的字段（name、types、stats…）不在里面，由字段 resolver 各自走 loader
  */
-import type { AbilityMapper } from "../ability/schema.mappers";
-import type { VersionMapper } from "../version/schema.mappers";
+import type { FormStat } from "@/generated/prisma/client";
+import type {
+  FormAbilityRow,
+  FormColorRow,
+  FormDescriptionRow,
+  FormRow,
+} from "@/graphql/context/form-source";
 
-/** 图片存的是文件名，resolver 拼前缀（lib/pokemon/sprites.ts） */
-export type FormMapper = {
-  id: string;
-  slug: string;
-  isDefault: boolean;
-  fullImage: string | null;
-  detailImage: string | null;
-};
+export type FormMapper = FormRow;
 
-export type FormColorMapper = { id: string; slug: string; color: string };
+/** 复合主键，库里没有单列 id，GraphQL 的 id 由 FormStats.id 拼 */
+export type FormStatsMapper = FormStat;
 
-/** ability 在 loader 里就 join 出来了，不用再多一层字段解析 */
-export type FormAbilityMapper = { id: string; slot: number; ability: AbilityMapper };
+export type FormColorMapper = FormColorRow;
 
-/** version 同上，跟着说明一起查出来 */
-export type FormDescriptionMapper = {
-  id: string;
-  text: string;
-  languageCode: string;
-  version: VersionMapper;
-};
+/** 同 FormStats，id 由 FormAbility.id 拼 */
+export type FormAbilityMapper = FormAbilityRow;
+
+export type FormDescriptionMapper = FormDescriptionRow;

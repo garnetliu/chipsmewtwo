@@ -11,8 +11,13 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
-import { type LanguageCode, LANGUAGES, resolveLanguageCode } from "@/lib/pokeapi/language";
-import { type PokemonResponse, type SpeciesResponse, toSnapshot } from "@/lib/pokeapi/pokemon";
+import { type LanguageCode, LANGUAGES } from "@/lib/pokemon/language";
+import { resolveLanguageCode } from "@/prisma/seed-data/pokeapi-language";
+import {
+  type PokemonResponse,
+  type SpeciesResponse,
+  toSnapshot,
+} from "@/prisma/seed-data/pokeapi-pokemon";
 import {
   type ColorSnapshot,
   type DamageTo,

@@ -534,15 +534,6 @@ export const typeDefs = {
         },
         {
           kind: "FieldDefinition",
-          description: { kind: "StringValue", value: "等价于 slot == 3", block: true },
-          name: { kind: "Name", value: "isHidden" },
-          type: {
-            kind: "NonNullType",
-            type: { kind: "NamedType", name: { kind: "Name", value: "Boolean" } },
-          },
-        },
-        {
-          kind: "FieldDefinition",
           name: { kind: "Name", value: "ability" },
           type: {
             kind: "NonNullType",

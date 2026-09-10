@@ -1,15 +1,14 @@
 /**
  * PokeAPI 的宝可梦响应，以及它到本项目形状的映射。
  *
- * 两个地方用：graphql/context/PokeAPISource.ts 查不到时按需拉一只，
- * scripts/refresh-seed-data.ts 拉全量写快照。两边拿到的形状必须一致，
- * 所以映射写在这里而不是各写一份 —— 属性和颜色的按世代展开、
+ * 两个地方用：scripts/refresh-seed-data.ts 拉全量写快照，prisma/seed.ts 灌库。
+ * 形状必须跟快照一致，所以映射写在这里而不是各写一份 —— 属性和颜色的按世代展开、
  * 图鉴说明的换行清理，任何一处不一样都会让按需拉的那只跟快照里的对不上。
  *
  * 只管映射，不管怎么拉也不管怎么落库，那是两个调用方各自的事。
  */
-import { resolveLanguageCode } from "@/lib/pokeapi/language";
-import { FORM_COLOR_HISTORY, FORM_COLORS } from "@/lib/pokemon/form-colors";
+import { FORM_COLOR_HISTORY, FORM_COLORS } from "./form-colors";
+import { resolveLanguageCode } from "./pokeapi-language";
 
 /** 属性按世代展开的上界，也是种族值唯一有数据的那一代 */
 export const LATEST_GENERATION = 9;
