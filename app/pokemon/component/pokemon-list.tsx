@@ -2,6 +2,7 @@
 
 import { useSuspenseQuery } from "@apollo/client/react";
 
+import { PokemonCard } from "@/app/pokemon/component/pokemon-card";
 import { PaginationList } from "@/components/pagination-list";
 import { GET_POKEMON_LIST } from "@/graphql/apollo/query";
 
@@ -14,11 +15,14 @@ export function PokemonList() {
     return <div>没找到数据。。。</div>;
   }
 
+  console.log(pokemonList);
+
   return (
     <PaginationList pagination={pokemonList.pagination}>
-      <div>
+      <div className="mx-auto w-7/8">
+        {/* 这里只读得到 id —— 其余字段是卡片自己声明的，masking 遮住了 */}
         {pokemonList.data.map((pokemon) => (
-          <div key={pokemon.id}>{pokemon.name}</div>
+          <PokemonCard key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
     </PaginationList>

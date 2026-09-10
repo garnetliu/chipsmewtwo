@@ -5,20 +5,10 @@ export const GET_POKEMON_LIST = graphql(`
     pokemonList(offset: $offset, limit: $limit) {
       data {
         id
-        name
-        slug
-        defaultForm {
-          id
-          detailImageUrl
-        }
+        ...POKEMON_POKEMON_ITEM
       }
       pagination {
-        page
-        pageSize
-        total
-        totalPages
-        hasNext
-        hasPrev
+        ...PAGINATION @unmask
       }
     }
   }
