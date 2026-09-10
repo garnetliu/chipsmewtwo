@@ -1,4 +1,5 @@
 import type { PokemonDbSource } from "@/graphql/context/PokemonDbSource";
+import type { LanguageCode } from "@/lib/pokeapi/language";
 
 /**
  * 库里数据不足时用来补库。唯一实现是 graphql/context/PokeAPISource.ts，
@@ -12,6 +13,11 @@ export interface PokemonImporter {
 
 export interface MyContext {
   userID: string;
+  /**
+   * 这次请求取译名用哪种语言，由 NEXT_LOCALE cookie 决定，没有或认不出就是 DEFAULT_LANGUAGE。
+   * 字段上的 language 参数优先级更高，用来单点覆盖（同一页里显示一个日文名之类）
+   */
+  language: LanguageCode;
   /** 两个都必须每请求新建，实例化在 app/api/graphql/route.ts */
   dataSources: {
     pokemonDb: PokemonDbSource;

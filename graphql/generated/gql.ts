@@ -15,11 +15,11 @@ import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-
  */
 type Documents = {
     "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n    }\n  }\n": typeof types.Get_PokemonDocument,
-    "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      id\n      name\n      slug\n    }\n  }\n": typeof types.Get_Pokemon_ListDocument,
+    "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      data {\n        id\n        name\n        slug\n        defaultForm {\n          id\n          detailImageUrl\n        }\n      }\n      pagination {\n        page\n        pageSize\n        total\n        totalPages\n        hasNext\n        hasPrev\n      }\n    }\n  }\n": typeof types.Get_Pokemon_ListDocument,
 };
 const documents: Documents = {
     "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n    }\n  }\n": types.Get_PokemonDocument,
-    "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      id\n      name\n      slug\n    }\n  }\n": types.Get_Pokemon_ListDocument,
+    "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      data {\n        id\n        name\n        slug\n        defaultForm {\n          id\n          detailImageUrl\n        }\n      }\n      pagination {\n        page\n        pageSize\n        total\n        totalPages\n        hasNext\n        hasPrev\n      }\n    }\n  }\n": types.Get_Pokemon_ListDocument,
 };
 
 /**
@@ -43,7 +43,7 @@ export function graphql(source: "\n  query GET_POKEMON($id: ID!) {\n    pokemon(
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      id\n      name\n      slug\n    }\n  }\n"): (typeof documents)["\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      id\n      name\n      slug\n    }\n  }\n"];
+export function graphql(source: "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      data {\n        id\n        name\n        slug\n        defaultForm {\n          id\n          detailImageUrl\n        }\n      }\n      pagination {\n        page\n        pageSize\n        total\n        totalPages\n        hasNext\n        hasPrev\n      }\n    }\n  }\n"): (typeof documents)["\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      data {\n        id\n        name\n        slug\n        defaultForm {\n          id\n          detailImageUrl\n        }\n      }\n      pagination {\n        page\n        pageSize\n        total\n        totalPages\n        hasNext\n        hasPrev\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

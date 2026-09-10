@@ -1,0 +1,11 @@
+"""
+游戏版本，例如红/绿/皮卡丘。图鉴说明按版本存，将来招式表也按版本组走，
+所以单独成域，不挂在某一个域下面
+"""
+type Version {
+  id: ID!
+  """例如 red"""
+  slug: String!
+  """版本译名。回退规则同 Pokemon.name"""
+  name(language: String): String
+}

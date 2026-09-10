@@ -1,0 +1,102 @@
+"""
+形态。属性、种族值、图片、图鉴颜色、特性、图鉴说明都挂在这一层。
+默认形态也是一条 Form（isDefault = true），没有形态的宝可梦不存在
+"""
+type Form {
+  """form 表主键。地区形态和原形态是两条不同的 Form，用它当缓存键"""
+  id: ID!
+  """例如 vulpix-alola"""
+  slug: String!
+  isDefault: Boolean!
+  """
+  形态名，例如「阿罗拉的样子」。原形态没有这一项。
+  回退规则同 Pokemon.name。注意 form_i18n 还没有导入路径，这个字段目前恒为 null
+  """
+  name(language: String): String
+  """
+  大图，475×475 的官方美术图，详情页用。
+  数据源没收录这个形态的图时是 null
+  """
+  fullImageUrl: String
+  """小图，96×96 的点阵图，列表缩略图用"""
+  detailImageUrl: String
+  """
+  按世代取。数组顺序就是属性槽位：第一个是第一属性、第二个是第二属性，
+  单属性的宝可梦只有一个元素。那一代的数据没导入就是 null
+  """
+  types(generation: Int): [Type!]
+  """按世代取。目前只导入了最新世代（数据源没有历史种族值），查老世代是 null"""
+  stats(generation: Int): FormStats
+  """
+  图鉴颜色，按世代取。「按颜色查找图鉴」是 Gen3 才有的功能，
+  Gen1/Gen2 没有这一项，是 null
+  """
+  color(generation: Int): FormColor
+  """
+  特性，按世代取，按槽位排序。Gen1/Gen2 没有特性，那两代是空数组。
+  注意 form_ability 还没有导入路径，这个字段目前恒为空数组
+  """
+  abilities(generation: Int): [FormAbility!]!
+  """
+  图鉴说明，每个版本一条，按版本排。回退规则同 name，
+  拿到的可能是别的语种的文案，看 languageCode。
+
+  一只形态在库里有几十个版本 × 十种语言的行，查一只没问题，
+  但列表页整页一起查会拉出上千行 —— 这个字段留给详情页
+  """
+  descriptions(language: String): [FormDescription!]!
+}
+
+"""一只形态在某个世代的种族值"""
+type FormStats {
+  """formId:generationId 拼成的缓存键，例如 1:9"""
+  id: ID!
+  hp: Int!
+  attack: Int!
+  defense: Int!
+  """Gen1 没有特攻特防之分，那一代是 null，看 special"""
+  specialAttack: Int
+  specialDefense: Int
+  speed: Int!
+  """只有 Gen1 有"""
+  special: Int
+}
+
+"""
+图鉴的颜色分类，10 种，游戏里「按颜色查找图鉴」筛的就是它。
+跟 Type.color（属性徽章的主题色）不是一回事：
+关都六尾的颜色分类是褐色，而它的火系徽章是橙红
+"""
+type FormColor {
+  id: ID!
+  """例如 white"""
+  slug: String!
+  """颜色筛选器上画色块用的色值，例如 #B1736C"""
+  color: String!
+  """颜色译名。回退规则同 Pokemon.name"""
+  name(language: String): String
+}
+
+"""形态在某个世代的一个特性槽位"""
+type FormAbility {
+  """formId:generationId:slot 拼成的缓存键，例如 1:9:3"""
+  id: ID!
+  """
+  1、2 是普通特性，3 是隐藏特性。编号固定，缺哪个就没那一项 ——
+  皮卡丘只有 slot 1 和 slot 3，隐藏特性不会顶上来变成 2
+  """
+  slot: Int!
+  """等价于 slot == 3"""
+  isHidden: Boolean!
+  ability: Ability!
+}
+
+"""一条图鉴说明。游戏图鉴上给玩家看的那段介绍文案"""
+type FormDescription {
+  id: ID!
+  text: String!
+  """这条文案实际是哪个语种。回退时跟请求的语言不一样"""
+  languageCode: String!
+  """出自哪个游戏版本"""
+  version: Version!
+}
