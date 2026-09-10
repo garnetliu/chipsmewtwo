@@ -15,3 +15,4 @@
 - 不要写任何给 ai 看的内容，写给人看的内容
 - 不要用「让我来帮你...」「首先...」这类开场
 - commit message 中不要提及 Claude 或 AI
+- commit 的规则按照 `https://www.conventionalcommits.org/zh-hans/v1.0.0/` 的要求生成
