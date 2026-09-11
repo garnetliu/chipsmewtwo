@@ -10,9 +10,9 @@
  */
 import DataLoader from "dataloader";
 
-import type { Pokemon, PokemonI18n } from "@/generated/prisma/client";
 import { pickByLanguage } from "@/lib/pokemon/language";
 import { prisma } from "@/lib/prisma";
+import type { Pokemon, PokemonI18n } from "@/prisma/generated/client";
 
 export type PokemonRow = Pokemon;
 

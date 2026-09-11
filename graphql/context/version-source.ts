@@ -2,9 +2,9 @@
  * 游戏版本。图鉴说明按版本存（见 FormSource.descriptionsOf），
  * 这里只管版本本身的身份和译名
  */
-import type { Version } from "@/generated/prisma/client";
 import { createNameLoader } from "@/lib/pokemon/language";
 import { prisma } from "@/lib/prisma";
+import type { Version } from "@/prisma/generated/client";
 
 /** 跟着图鉴说明一起 join 出来的那几列 */
 export type VersionRow = Pick<Version, "id" | "slug">;

@@ -41,6 +41,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prisma Client 生成产物，schema.prisma 的 generator output 指到这里。
+    "prisma/generated/**",
   ]),
 ]);
 
