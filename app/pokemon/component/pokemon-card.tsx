@@ -32,7 +32,7 @@ export function PokemonCard(props: Readonly<IProps>) {
   return (
     <div className="flex items-center gap-2">
       {data.defaultForm?.detailImageUrl && (
-        <Image src={data.defaultForm.detailImageUrl} alt="" width={96} height={96} unoptimized />
+        <Image src={data.defaultForm.detailImageUrl} alt="" width={32} height={32} unoptimized />
       )}
       <span>{data.name ?? data.slug}</span>
     </div>
