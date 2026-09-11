@@ -11,6 +11,8 @@
  */
 import DataLoader from "dataloader";
 
+import { createNameLoader, pickByLanguage } from "@/lib/pokemon/language";
+import { prisma } from "@/lib/prisma";
 import type {
   Ability,
   Color,
@@ -18,9 +20,7 @@ import type {
   FormAbility,
   FormDescriptionI18n,
   FormStat,
-} from "@/generated/prisma/client";
-import { createNameLoader, pickByLanguage } from "@/lib/pokemon/language";
-import { prisma } from "@/lib/prisma";
+} from "@/prisma/generated/client";
 
 import type { TypeRow } from "./type-source";
 import type { VersionRow } from "./version-source";

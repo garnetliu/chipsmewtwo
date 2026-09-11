@@ -2,13 +2,13 @@
  * 形态那批类型的 parent 形状，全是 FormSource 查出来的库里的行。
  * 带参数的字段（name、types、stats…）不在里面，由字段 resolver 各自走 loader
  */
-import type { FormStat } from "@/generated/prisma/client";
 import type {
   FormAbilityRow,
   FormColorRow,
   FormDescriptionRow,
   FormRow,
 } from "@/graphql/context/form-source";
+import type { FormStat } from "@/prisma/generated/client";
 
 export type FormMapper = FormRow;
 
