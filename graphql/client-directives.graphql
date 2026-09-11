@@ -1,0 +1,17 @@
+"""
+Apollo 的客户端指令，加在 fragment spread 上表示这一处不遮，父级直接读得到。
+mode 只有 "migrate" 一个合法值，渐进迁移时用：字段照给，读到时打开发期警告。
+
+Apollo 不发布这行声明 —— 运行时只按名字找指令（@apollo/client/masking/utils.js），
+发请求前又会把它摘掉（@apollo/client/core/QueryManager.js 的 serverQuery），
+从头到尾不碰 schema，所以没有能 import 的东西，只能自己写一份给校验工具看。
+
+放在这个文件而不是 graphql/schema/**/schema.graphql 里：
+codegen 的服务端 schema 按 `**/schema.graphql` 收，避开这个名字，
+服务端就不会平白多出一个 unmaskDirectiveResolver。客户端那侧在 codegen.ts
+里单独把这个文件并进 schema，IDE 则按项目里全部 .graphql 解析，两边都认识它。
+
+@see https://www.apollographql.com/docs/react/data/fragments#data-masking
+@see https://the-guild.dev/graphql/codegen/docs/config-reference/schema-field
+"""
+directive @unmask(mode: String) on FRAGMENT_SPREAD

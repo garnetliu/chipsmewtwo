@@ -7,6 +7,13 @@ const config: CodegenConfig = {
     "graphql/generated/": {
       preset: "client",
       documents: ["app/**/*.{ts,tsx}", "graphql/apollo/**/*.{ts,tsx}"],
+      /**
+       * 跟顶层的 schema 合并，不是替换 —— 客户端这侧多认一个 @unmask，
+       * 服务端那侧不受影响。
+       *
+       * @see https://the-guild.dev/graphql/codegen/docs/config-reference/schema-field
+       */
+      schema: "graphql/client-directives.graphql",
       config: {
         useTypeImports: true,
         /**
@@ -20,7 +27,7 @@ const config: CodegenConfig = {
         inlineFragmentTypes: "mask",
         /**
          * 认识 @unmask 指令：加了它的 fragment spread 不遮，父级直接能读。
-         * 指令本身的声明在 graphql/client-directives.graphql。
+         * 指令声明在 graphql/client-directives.graphql，上面的 schema 把它并了进来。
          *
          * @see https://the-guild.dev/graphql/codegen/plugins/typescript/typescript-operations#customDirectives
          */
