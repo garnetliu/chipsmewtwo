@@ -62,7 +62,7 @@ export const typeDefs = {
           description: {
             kind: "StringValue",
             value:
-              "按全国图鉴编号（37）或英文 slug（vulpix）查一只。\n库里没有时会尝试补数据（见 POKEMON_FETCH_MODE），两边都没有则报 NOT_FOUND。",
+              "按全国图鉴编号（37）或英文 slug（vulpix）查一只。\n库里没有这一只就返回 null，由调用方展示「未找到该 Pokémon」（AC-011）。",
             block: true,
           },
           name: { kind: "Name", value: "pokemon" },
@@ -82,7 +82,7 @@ export const typeDefs = {
           kind: "FieldDefinition",
           description: {
             kind: "StringValue",
-            value: "按全国图鉴编号翻页。这一页在库里凑不满 limit 条时会尝试补数据",
+            value: "按全国图鉴编号翻页。数据全部来自库，不回源外部接口",
             block: true,
           },
           name: { kind: "Name", value: "pokemonList" },

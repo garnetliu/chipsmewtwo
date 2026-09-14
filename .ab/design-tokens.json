@@ -1,0 +1,31 @@
+{
+  "color": {
+    "background": "oklch(0.993 0.004 301.4)",
+    "foreground": "oklch(0.21 0.071 293.9)",
+    "card": "oklch(1 0 0)",
+    "primary": "oklch(0.491 0.241 292.6)",
+    "primary-foreground": "oklch(0.985 0.004 301.4)",
+    "secondary": "oklch(0.959 0.016 301.2)",
+    "secondary-foreground": "oklch(0.38 0.178 293.7)",
+    "muted": "oklch(0.967 0.008 301.4)",
+    "muted-foreground": "oklch(0.522 0.05 294.6)",
+    "accent": "oklch(0.939 0.027 299.5)",
+    "accent-foreground": "oklch(0.38 0.178 293.7)",
+    "destructive": "oklch(0.577 0.215 27.3)",
+    "border": "oklch(0.921 0.021 301.1)",
+    "input": "oklch(0.888 0.031 300.3)",
+    "ring": "oklch(0.541 0.247 293)"
+  },
+  "radius": {
+    "sm": "0.45rem",
+    "md": "0.6rem",
+    "lg": "0.75rem",
+    "xl": "1.05rem",
+    "2xl": "1.35rem"
+  },
+  "fontFamily": {
+    "sans": "var(--font-inter)",
+    "heading": "var(--font-space-grotesk), var(--font-inter)",
+    "mono": "var(--font-jetbrains)"
+  }
+}

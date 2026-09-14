@@ -1,0 +1,592 @@
+{
+  "questions": [
+    {
+      "id": "Q-001",
+      "question": "前端到底兜不兜核心数据？NFR 说不兜，而 5 个 US 的验收标准要求兜。",
+      "blocks": [
+        "arch",
+        "detail",
+        "qa"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md §非功能性需求·NFR「前端异常边界：前端不判断、不兜底核心数据；仅处理交互和展示层状态」，以及 §核心对象状态机开头「核心结构化数据由入库和数据库层保证正确与完整，前端不判断、不兜底核心数据」；而 US002/US004/US006/US008 的验收标准与 §异常、空态、加载态与恢复路径 表要求「说明类文本为空 → 说明暂缺」「详情对象不存在 → 未找到该 Pokémon」「图片资源异常 → 占位图」「版本图标资源异常 → 版本名称文本兜底」",
+      "cost": "按 NFR 实现，这三类 16 条 AC 都不该存在；按 AC 实现，NFR 那行是假的。契约的返回码与前端组件的状态集合都会照着被选中的那一半固化",
+      "stage": "prd",
+      "answer": "三类都归前端，NFR 那行收窄为「不兜核心结构化数据的正确性」。(1) 核心字段为空由前端兜（AC 415/444/474/503/504 保留），连带把 §数据模型 里招式/道具/特性「说明」的「必填」从「是」改成「否」，否则 PRD 仍自相矛盾；(2) 对象不存在由前端兜（AC 410/440/470/499 保留），归为交互层的路由必然分支；(3) 图标/图片资源异常那 7 条要在 NFR 里显式写成「前端负责」，免得那句话下次又被读成包含它们。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-002",
+      "question": "首版到底有没有用户系统？PRD 说没有，代码里已经有一整套。",
+      "blocks": [
+        "arch",
+        "qa"
+      ],
+      "kind": "scope",
+      "source": "docs/PRD.md §范围边界·非本期范围「用户系统先不进 P0」「登录、收藏、个人数据、权限、投稿审核、后台管理 不进入首版 P0」+ NFR 安全「第一版无登录」；而 prisma/schema.prisma 已有 User / Session / Account / Verification 四张表，package.json 装了 better-auth@^1.7.3，app/api/auth/[...all]/route.ts 与 app/(auth)/layout.tsx 已存在，代码读 GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET",
+      "cost": "决定 .ab/prd.json 里要不要有登录页与 auth 实体，也决定 Q-013/Q-014 那两个密钥算不算本期；答错会让 auth-coverage / session-cookie-flags 这批门禁对着一个不该存在的子系统报警，或者反过来放过一个真在跑的登录",
+      "stage": "prd",
+      "answer": "PRD 对，首版不要登录。auth 代码为后续预留、不接入任何页面，PRD §非本期范围 与 NFR 安全保持原样，.ab/prd.json 不列登录页、不列 auth 实体。已知后果：lib/auth.ts 的 /api/auth/[...all] 端点仍然是活的且开着 emailAndPassword + GitHub OAuth，却没有任何 AC 验收它——Q-013/Q-014 两个密钥的处置要在那两条里单独定。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-003",
+      "question": "努力值模拟器的状态机没有终态，也没有「可计算 → 未选择」的转移，缺的是哪一样？",
+      "blocks": [
+        "arch",
+        "detail"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md §努力值模拟器 状态枚举 三个状态（未选择 / 可计算 / 输入非法）的「是否终态」全部为「否」；§努力值模拟器 状态转换 只有 3 条转移，没有任何一条回到「未选择」（换一只 Pokémon、清空选择）",
+      "cost": "prd-quality 的状态机闭合检查要求「至少有一个终态」，现在必红。按 asking：不许为了过门禁自己编一个终态出来——编出来的那个状态下游会照着建",
+      "stage": "prd",
+      "answer": "努力值模拟器没有状态机。选 Pokémon 是 select 元素、默认选中列表第一只，所以「未选择」状态不存在；努力值输入用不给机会输错的控件（上下限由控件截断），所以「输入非法」状态也不存在。三个状态塌成一种正常显示，§努力值模拟器 状态枚举 与 状态转换 两张表整体作废，.ab/prd.json 的 domain.workflows 留空——这个项目没有业务状态机，不拿新状态顶替被删掉的那三个。波及原文 19 处，已逐行定位。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-004",
+      "question": "「默认入口」和「详情页返回路径」这两项，到底阻不阻塞？同一份 PRD 里两张表结论相反。",
+      "blocks": [
+        "detail"
+      ],
+      "kind": "scope",
+      "source": "docs/PRD.md §范围边界·非阻塞待确认 把「返回路径」「默认入口」列为非阻塞；而 §P0 待确认项阻塞表（标题自称「唯一的阻塞类待确认清单」）把「默认入口与一级导航呈现方式」「详情页返回路径」的「是否阻塞原型」标成「是」",
+      "cost": "决定这两项现在就要答、还是可以带着走。答错的话要么白等，要么详设阶段拿着一个自称非阻塞的阻塞项开工",
+      "stage": "prd",
+      "answer": "两项分开处置。(1)「默认入口」不再是待确认——代码已经回答：app/page.tsx 是导航页，列了 pokemon / 道具 / 特性 / 招式 / 努力值模拟器 5 个链接，默认落点就是这个导航页。(2)「详情页返回路径」定为面包屑、固定回对应列表：精灵详情回 /pokemon、招式详情回 /move、道具详情回 /item、特性详情回 /ability；从搜索或特性详情进来也一样。不采用原文阻塞表里那个「按来源返回」的默认假设——那要记来源状态，在服务端渲染的页面上额外麻烦且难以写成能判过/不过的验收标准。两张表的矛盾随之消解：这两项都不再阻塞。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-005",
+      "question": "特性列表的空态文案是「当前暂无特性数据」，还是待确认？",
+      "blocks": [
+        "detail"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md §基础管理对象页面规则·列表页 特性行「空态：当前暂无特性数据」；而 §异常、空态、加载态与恢复路径 表「特性列表为空」行的「文案」是「待确认」",
+      "cost": "文案不一致时写用例等于替人选一条；这类空态文案是 AT-* 直接断言的字符串",
+      "stage": "prd",
+      "answer": "「当前暂无特性数据」。§异常、空态、加载态与恢复路径 表里那处「待确认」对齐到 §基础管理对象页面规则·列表页 已有的这个文案。不跟其它列表统一成「当前筛选条件下暂无结果」——特性列表没有 Gen 筛选，说「筛选条件」不贴切。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-006",
+      "question": "努力值模拟器的输入项、取值范围和计算口径是什么？",
+      "blocks": [
+        "arch",
+        "detail",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md §P0 待确认项阻塞表 该行「是否阻塞开发 = 是」；§数据模型·努力值模拟器输入 中「努力值相关输入」的类型/枚举/默认值/校验规则四栏全部「待确认」；US010 的验收标准只说「输入非法时标红并展示具体原因」，没有定义什么叫非法",
+      "cost": "F009 是唯一一个有真实计算逻辑的功能，输入规则不定就写不出一条能判过/不过的 AC，整个功能无法验收",
+      "stage": "prd",
+      "answer": "标准能力值计算器。输入：Pokémon（select，默认第一只）+ 等级 + 性格 + 6 项个体值(0–31) + 6 项努力值(单项 0–252、总和 ≤510)；输出：HP/攻击/防御/特攻/特防/速度 六项最终能力值。两条来自产物的硬约束：(1) 性格/个体值/努力值在 52 个 prisma model 里一条都没有，而库不改——25 种性格的系数表只能作为代码常量存在；(2) FormStat 的 GraphQL 注释写明「目前只导入了最新世代（数据源没有历史种族值），查老世代是 null」，所以模拟器只能算最新世代。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-007",
+      "question": "招式详情按游戏版本组织，用分组、表格还是切换？",
+      "blocks": [
+        "arch",
+        "detail",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md §P0 待确认项阻塞表 该行「是否阻塞开发 = 是」；F004 与 §建议补充问题 第 5 条",
+      "cost": "决定招式详情的数据返回形状（按版本聚合还是按字段聚合），契约一旦按其中一种固化，另一种要重做查询层",
+      "stage": "prd",
+      "answer": "表格：一行一个世代，列是 属性/分类/威力/命中/PP。顺带修正 PRD 的用词——原文通篇说「按不同游戏版本组织」，而库里 MoveGeneration 的主键是 [moveId, generationId]，按**世代**存、最多 9 行，库不改，所以 PRD 里招式相关的「版本」要读作「世代」。选表格的理由：对战玩家要看的是「哪一代改过」，一列扫下来就看到（拍落 Gen6 威力 20→65），分组和切换都要来回翻；而且查询拿到的本来就是 9 行，直接铺上去不用再聚合。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-008",
+      "question": "「具体游戏版本图标」要覆盖哪些版本，图标资源从哪来？",
+      "blocks": [
+        "arch",
+        "detail",
+        "code"
+      ],
+      "kind": "asset",
+      "source": "docs/PRD.md §P0 待确认项阻塞表 该行「是否阻塞开发 = 是」，原型默认假设只写「参考 52poke 方向」；§建议补充问题 第 4 条",
+      "cost": "四个列表页和四个详情页都要展示它；版本集合定错会改数据模型（Version 表的取值）而不只是改图",
+      "stage": "prd",
+      "answer": "不用图标，用 VersionI18n 里现成的中文版本名当文字标签。版本集合已从产物算出：prisma/seed-data/versions.json 共 53 个，各带 9 种语言译名、挂在 groupSlug 下。不入库、不加字段。已知代价：这是对 PRD 的一次实质缩范围——「具体游戏版本图标」在 §指标与演示边界 里是写进「用户可见指标」的，PRD 对应处要改成「版本名称文本」；相应地，「版本图标资源异常 → 版本名称文本兜底」那 6 条 AC 失去触发条件要一并删（400 US001 / 430 US003 / 460 US005 / 489 US007 四条列表，445 US004 / 475 US006 两条详情）。414「Pokémon 图片资源异常 → 占位图」保留——那是 Form.fullImage 真实的图，schema 注释写明「数据源没收录这只的图时是 null」。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-009",
+      "question": "特性详情里「拥有该特性的 Pokémon 列表」展示哪些字段、怎么排序？",
+      "blocks": [
+        "arch",
+        "detail",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md §P0 待确认项阻塞表 该行「是否阻塞开发 = 是」；§数据模型·特性 中该字段的枚举/默认值/校验规则均「待确认」；§建议补充问题 第 7 条",
+      "cost": "这是 PRD 里唯一一条跨资料对象的关联查询（特性 → Pokémon），字段集合决定 GraphQL schema 的形状",
+      "stage": "prd",
+      "answer": "每条显示：Form.smallImage 小图（96×96 点阵图）+ 中文名 + slot=3 时标「隐藏」。点一条进对应精灵详情。两点由库直接定死、不属于选择：(1) 它是 **Form 列表而不是 Pokemon 列表**——FormAbility 的主键是 [formId, generationId, slot]，关都六尾和阿罗拉六尾是两条；(2) 它**随世代变**，所以要带 generation 参数。标「隐藏」的依据是 slot=3，schema 注释：「不另设 isHidden 列——它跟 slot=3 完全等价」。已知阻塞（不是新问题，是现状）：Form.abilities 的 GraphQL 注释写明「form_ability 还没有导入路径，这个字段目前恒为空数组」，且 seed-data 下没有 abilities.json。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-010",
+      "question": "PRD 全篇没有任何页面路由。.ab/prd.json 的 pages[].route 是必填，用代码里现有的这套吗？",
+      "blocks": [
+        "arch",
+        "detail"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md §页面地图与信息架构 列了 10 个模块但没有一列是路由；代码里已存在 /、/pokemon、/pokemon/[name]、/move、/move/[name]、/item、/item/[name]、/ability、/ability/[name]，且 app/page.tsx 已经链到 /effort-values——而那个路由下还没有页面",
+      "cost": "route 是 page-coverage / link-reachability / no-orphan-route 三条门禁的判定依据，也是契约里 API 路径的命名基准",
+      "stage": "prd",
+      "answer": "用代码里现有这套，共 10 条：/ · /pokemon · /pokemon/[name] · /move · /move/[name] · /item · /item/[name] · /ability · /ability/[name] · /effort-values。前 9 条已存在；/effort-values 是 app/page.tsx 已经链过去、但页面还没建的那条。写进 PRD 与 prd.json 只是把既成事实记下来，不产生改动。顶部搜索模态框不占路由——原文明写「保持顶部搜索为全站组件，不作为独立搜索页面」，所以它不进 prd.json 的 pages。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-011",
+      "question": ".abrc.json 写着 mode: greenfield，但仓库里已经有 8 个页面和一整套 GraphQL + Prisma。要改成二次开发模式吗？",
+      "blocks": [
+        "detail",
+        "code"
+      ],
+      "kind": "decision",
+      "source": ".abrc.json 的 \"mode\": \"greenfield\"；而 git log 已有 5 次 feat(web) 提交，app/ 下 pokemon / move / item / ability 的列表与详情共 8 个页面已实现",
+      "cost": "mode 决定一批门禁把现存代码当成「本次产出」还是「既有基线」，判错会让整个存量被当成本次改动来审",
+      "stage": "prd",
+      "answer": "不改，保持 greenfield。brownfield 的定义是「系统已存在，本次是变更请求」，而这个项目是首版建到一半（10 个 P0 只完成 2 个），不是变更请求；现在全量跑出 14 条 partial + 1 条 info，远没到「报告太长没人看」那个程度。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-012",
+      "question": "这个项目有没有设计来源（设计稿 / 原型 / token 表）？",
+      "blocks": [],
+      "kind": "asset",
+      "source": "docs/PRD.md §平台适配与端能力「设计基准：待确认」、§范围边界·非阻塞待确认「视觉样式：具体界面视觉、图标排布方式待确认」；仓库里没有 UI_CONTRACT.md，app/ 与 components/ 下 data-testid 为 0 处",
+      "cost": "没有设计来源，详设阶段的 UI 契约与 token 表无源可依；testid-contract 会挡住所有带选择器的用例",
+      "stage": "prd",
+      "answer": "并入 Q-016，本条作废。撤销理由当时写错了：我以为 design-source-missing 看的是「有没有设计 token」，于是拿 app/globals.css 里那套 shadcn 变量判它不命中。实际判据是「.ab/prd.json 有页面而 UI_CONTRACT.md 不存在」——写出 prd.json 之后它确实命中了。这条判据由 Q-016 承接并带 rule 字段。",
+      "answeredBy": "claude（判据复核）",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-013",
+      "question": "GITHUB_CLIENT_ID 用哪个 GitHub OAuth App 的值？",
+      "blocks": [
+        "code"
+      ],
+      "kind": "secret",
+      "env": [
+        "GITHUB_CLIENT_ID"
+      ],
+      "rule": "secret-never-asked",
+      "anchor": "GITHUB_CLIENT_ID",
+      "source": "代码里 process.env.GITHUB_CLIENT_ID 被读取，而 .env.example 里没有声明它",
+      "cost": "缺它 GitHub 登录起不来；但先要看 Q-002 的答案——如果首版真的不要登录，这一条连同 Q-014 一起作废",
+      "stage": "prd",
+      "answer": "补进 .env.example，留空占位并加注释说明「首版不用，要开 GitHub 登录时才填」。值不进任何提交的文件。与 Q-002 一致：首版不要登录，但 lib/auth.ts 的 socialProviders.github 保持原样不动——.env.example 的作用是告诉下一个人「这个项目会读哪些变量」，漏声明比声明了但为空更坑人。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-014",
+      "question": "GITHUB_CLIENT_SECRET 配好了吗？",
+      "blocks": [
+        "code"
+      ],
+      "kind": "secret",
+      "env": [
+        "GITHUB_CLIENT_SECRET"
+      ],
+      "rule": "secret-never-asked",
+      "anchor": "GITHUB_CLIENT_SECRET",
+      "source": "代码里 process.env.GITHUB_CLIENT_SECRET 被读取，而 .env.example 里没有声明它",
+      "cost": "同 Q-013。值永不写进本文件，只记「已配置」",
+      "stage": "prd",
+      "answer": "补进 .env.example，留空占位并加注释说明「首版不用，要开 GitHub 登录时才填」。值不进任何提交的文件。与 Q-002 一致：首版不要登录，但 lib/auth.ts 的 socialProviders.github 保持原样不动——.env.example 的作用是告诉下一个人「这个项目会读哪些变量」，漏声明比声明了但为空更坑人。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-015",
+      "question": "PRD 里 140 行「待确认」没有一处指向任何 Q-*。要把它们逐处锚到台账吗？",
+      "blocks": [
+        "arch",
+        "detail"
+      ],
+      "kind": "decision",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md 全文 grep 「TBD|TODO|待确认|待定」命中 140 行；全文 grep 「Q-[0-9]+」命中 0 处",
+      "cost": "没有锚的待定项没有消费方——它既不挡门禁也不会有人回来答，下游会把它当成「已经想过了」",
+      "stage": "prd",
+      "answer": "只给本轮之后仍然悬着的「待确认」加 Q-* 引用。本轮 13 条答案会把一批待确认直接改写成真实答案（不再是占位），那些地方不挂编号——给一个已经有答案的地方挂问题编号，等于把已决的事重新变成未决。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-11"
+    },
+    {
+      "id": "Q-016",
+      "question": "界面视觉与排布方式按什么来？",
+      "blocks": [
+        "detail"
+      ],
+      "kind": "asset",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md §非阻塞待确认「视觉样式」、§平台适配「设计基准」",
+      "cost": "设计 token 已有（app/globals.css 的 shadcn/Tailwind v4 变量），缺的是页面级的排布与组件选型；不定的话详设阶段的 UI 契约只能凭空写",
+      "stage": "prd",
+      "answer": "参考 52poke 的版式：高信息密度、以表格承载资料、世代/版本以文字标签呈现。组件仍用仓库已有的 shadcn（button / tabs / pagination），配色沿用 app/globals.css 的 token，不另出设计稿。详设阶段写 UI 契约时按这个方向定具体排布。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-017",
+      "question": "loading 态要不要文案？还是只给骨架屏 / 转圈？",
+      "blocks": [
+        "detail"
+      ],
+      "kind": "decision",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md §异常、空态、加载态与恢复路径 中「搜索中」「列表加载中」「详情加载中」三行的文案列",
+      "cost": "错误与空态文案都已落定，只剩 loading 这三处；它是 AT-* 会断言的字符串",
+      "stage": "prd",
+      "answer": "不要文案。列表与详情用骨架屏，搜索框用转圈指示。§异常、空态、加载态与恢复路径 里那三行的「文案」列写「无文案」。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-018",
+      "question": "可访问性与稳定性要不要定量指标？",
+      "blocks": [],
+      "kind": "decision",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md §非功能性需求·NFR 的「可访问性」「稳定性」两行",
+      "cost": "首版不定也能交付，但定了才能验收；记成不挡",
+      "stage": "prd",
+      "answer": "首版不设量化目标。NFR 两行写明「首版不设量化目标」，不编一个没人验的指标。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-019",
+      "question": "PRD 的负责人写谁？",
+      "blocks": [],
+      "kind": "decision",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md §概述「**负责人**: 待确认」",
+      "cost": "纯署名，不影响任何产物；记成不挡",
+      "stage": "prd",
+      "answer": "jie",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-020",
+      "question": "P1 / P2 要不要现在列？",
+      "blocks": [],
+      "kind": "scope",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md §功能清单 的 P1、P2 两节都只写「待确认」",
+      "cost": "本期只做 P0，不列也能开工；记成不挡",
+      "stage": "prd",
+      "answer": "不列。P1 / P2 两节标明「本期不规划」——P0 十个功能目前只完成一个，先做完 P0。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-021",
+      "question": "招式 / 道具 / 特性列表的默认排序按什么？",
+      "blocks": [
+        "detail",
+        "code"
+      ],
+      "kind": "decision",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md §基础管理对象页面规则·列表页 三行的「默认排序」列；精灵列表已定为全国编号",
+      "cost": "写列表查询就要 order by 某一列，不定就得现编一个；换排序会改查询与分页游标",
+      "stage": "prd",
+      "answer": "英文 slug 字母序（Move.slug / Item.slug / Ability.slug 升序）。三张表的 slug 都有 @unique 索引，分页游标稳定。精灵列表维持全国编号不变。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-022",
+      "question": "精灵列表进来时默认选中哪个世代筛选？",
+      "blocks": [
+        "detail",
+        "code"
+      ],
+      "kind": "decision",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md AC-003「系统展示默认列表内容，默认筛选状态待确认」",
+      "cost": "AC-003 自己就带着「待确认」，这条 AC 现在判不出过或不过",
+      "stage": "prd",
+      "answer": "不预选，进来即全国图鉴全量，筛选器处于未选中状态。已实现的精灵列表就是这么跑的，AC-003 的「默认筛选状态待确认」改写为「筛选器未选中，展示全量」。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-023",
+      "question": "特性详情里「拥有该特性的 Form 列表」为空时显示什么文案？",
+      "blocks": [
+        "detail"
+      ],
+      "kind": "decision",
+      "rule": "tbd-unanchored",
+      "source": "docs/PRD.md AC-057「系统展示空态文案，具体文案待确认」；Q-005 定的「当前暂无特性数据」是**特性列表**为空，不是这个场景",
+      "cost": "同 AC-057，这条 AC 现在判不出过或不过",
+      "stage": "prd",
+      "answer": "「暂无宝可梦拥有该特性」。与 Q-005 的「当前暂无特性数据」是两个场景：Q-005 是特性列表整个为空，这条是某一个特性没有关联 Form。库里 Gen1/Gen2 不插 FormAbility 行，所以查这两代必然走到这个空态。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-024",
+      "question": "这 10 个页面有 Figma 文件或可交互原型吗？",
+      "blocks": [
+        "detail"
+      ],
+      "kind": "asset",
+      "rule": "design-source-missing",
+      "source": "preflight 判据：.ab/prd.json 有 10 个页面而 UI_CONTRACT.md 不存在。这条是写出 prd.json 之后才命中的——在此之前没有页面清单，判据无从触发",
+      "cost": "没有设计来源，详设阶段的 UI 契约只能从页面规格推，布局与视觉由实现方定",
+      "stage": "prd",
+      "answer": "没有 Figma 也没有可交互原型。版式参考 52poke（高信息密度、表格承载资料、世代/版本文字标签），组件用仓库已有的 shadcn，配色沿用 app/globals.css 的 token。UI 只能从页面规格推，布局与视觉由实现方定——与 Q-016 是同一次裁决。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-025",
+      "question": "GraphQL schema 承诺了「库里没有时会尝试补数据」，但代码里没有这个机制。哪个是真的？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "graphql/schema/pokemon/schema.graphql:4 的文档字符串写「库里没有时会尝试补数据（见 POKEMON_FETCH_MODE），两边都没有则报 NOT_FOUND」；而全仓 grep POKEMON_FETCH_MODE 只命中这一处注释，没有任何实现，.env.example 里也没有这个变量",
+      "cost": "schema 的 description 是对客户端的承诺，会被 codegen 带进类型、被任务拆解当成要建的东西。承诺一个不存在的回源机制，等于让调用方以为查不到的数据会自动补上",
+      "stage": "arch",
+      "answer": "注释是假的，删掉回源那半句。pokemon(id) 与 pokemonList 的文档字符串改成「库里没有就返回 null / 空列表」，不再提 POKEMON_FETCH_MODE。理由：seed 已经把 3.3MB 的 Pokémon 数据导进库，运行时再回 PokeAPI 会把一个确定性的资料站变成依赖外部网络的站，而 PRD 的 NFR 要求详情页约 2 秒首屏。连带：本项目没有外部集成降级这一类 DEC——唯一的外部依赖是 seed 期的 pnpm seed:refresh，不在运行时路径上。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-026",
+      "question": ".abrc.json 的 subsystem.minEndpoints 是 15，而本项目只有一个 HTTP 数据端点。这个阈值要改吗？",
+      "blocks": [
+        "arch"
+      ],
+      "kind": "decision",
+      "source": ".abrc.json 的 subsystem: { minEndpoints: 15, minDomains: 2, maxDomainShare: 0.4 }；而 app/api/graphql/route.ts 的首行注释写「本项目唯一的 HTTP 数据入口（DEC-002：单端点 GraphQL，不做 REST）」",
+      "cost": "阈值是按 REST 多端点项目设的。不改的话，domain-split 一类判定会拿一个永远达不到的标准衡量这个项目",
+      "stage": "arch",
+      "answer": "先不动。当前 33 条 partial 里没有 domain-split，这组阈值还没造成任何报告；而字段确切语义（数的是 HTTP 端点还是契约条目）没有确认，改了可能只是把一个没响的铃换成另一个。等它真报了再改。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-027",
+      "question": "/api/graphql 是匿名可调用的 POST，要不要限流和查询深度限制？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "app/api/graphql/route.ts 导出 POST 且无任何鉴权；契约里它的 auth 只能是 public。按 stage-arch，auth: public 且方法为 POST 的端点必须回答 rateLimit",
+      "cost": "GraphQL 单端点的攻击面和 REST 不同：一个嵌套查询就能放大成上千次数据库查询。不声明就等于没人想过",
+      "stage": "arch",
+      "answer": "加查询深度/复杂度限制，不加频次限流。契约里 /api/graphql 的 rateLimit 写 \"none\"，并在 prdJustification 说明这是明确选择：纯只读资料站，频次限制收益不大；GraphQL 特有的放大器是嵌套深度，用 Apollo 插件在编码期兑现。写成 DEC。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-028",
+      "question": "首版不做登录，那 /api/auth/[...all] 这个活端点怎么处置？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "scope",
+      "source": "Q-002 已裁决首版不要登录；而 app/api/auth/[...all]/route.ts 仍然挂载，lib/auth.ts 开着 emailAndPassword + GitHub OAuth。它是匿名可调用的 POST",
+      "cost": "一个没有任何 AC 验收、没有页面入口、却对公网开放的注册/登录端点。它同时要回答 rateLimit",
+      "stage": "arch",
+      "answer": "首版关掉。/api/auth/[...all] 不再挂载（或用环境变量关掉），lib/auth.ts 保留供后续启用。理由：没有任何 AC 验收它、没有页面入口，却允许匿名往 User 表写行。关掉之后契约里不再有匿名写端点，rate-limit-declared 那条判据的适用子集为空。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-029",
+      "question": "_contracts/api-routes.json 怎么表达 GraphQL 的操作？",
+      "blocks": [
+        "arch",
+        "detail"
+      ],
+      "kind": "decision",
+      "source": "契约格式是 { method, endpoint, ... } 的 HTTP 端点表，而本项目所有数据操作都走同一个 POST /api/graphql（DEC-002）",
+      "cost": "写一条就等于整个契约只有一个条目，下游的覆盖率判定和任务拆解都拿不到可用信息；写成多条又要给同一个路径编出区分符",
+      "stage": "arch",
+      "answer": "一个 GraphQL 根字段一条契约条目，endpoint 写成 POST /api/graphql#<字段名>。每条有自己的 requestSchema（GraphQL 参数）与 responseSchema（返回形状）。已知代价：# 后缀不是标准 HTTP 路径写法，按路径去代码里找实现的门禁可能对不上；换来的是下游任务拆解与覆盖率判定拿得到字段级信息，而不是一条笼统条目。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-030",
+      "question": "列表分页用 offset/limit 还是 cursor？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "现有 pokemonList(offset: Int!, limit: Int!) 与 PaginationMeta { page, pageSize, total, totalPages, hasNext, hasPrev }；四个列表页都要分页",
+      "cost": "换分页模型要改 schema、resolver 和已经接上地址栏的分页组件",
+      "stage": "arch",
+      "answer": "offset/limit，维持现状。资料在 seed 导入后是静态的，cursor 要解决的「翻页时数据在变」这里不存在；而「跳到第 5 页」「共 1025 条」是资料站真需要的，cursor 给不了。PaginationMeta 的形状不变。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-031",
+      "question": "错误形状用什么？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "graphql/schema/pokemon/schema.graphql:4 提到「报 NOT_FOUND」，但全站没有统一的错误约定；GraphQL 的 errors 数组与 HTTP 状态码是两套",
+      "cost": "调用方无法预测错误长什么样。按 stage-arch，错误形状有替代时必须记一条 DEC",
+      "stage": "arch",
+      "answer": "两层：查不到某一条返回 null（不算错误），由前端展示「未找到该 X」（AC-011 / AC-028 / AC-042 / AC-055）；真出错（库挂了、参数非法）才进 GraphQL errors，带 extensions.code。HTTP 一律 200，这是 GraphQL 惯例，而 schema 里 pokemon 本来就是可空的。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-032",
+      "question": "浏览器怎么拿数据：服务端组件直接查，还是客户端 Apollo 直连 /api/graphql？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "仓库里两条路都有：graphql/apollo/server.ts（registerApolloClient，RSC 用）和 graphql/apollo/client.ts（浏览器用）；app/pokemon/page.tsx 标了 export const dynamic = \"force-dynamic\"",
+      "cost": "决定每个页面怎么写、数据在哪一层缓存，也决定 SEO（PRD 的 NFR 要求详情页有基础搜索引擎收录能力）",
+      "stage": "arch",
+      "answer": "详情页用 RSC 服务端取数（满足 PRD NFR 的「详情页基础搜索引擎收录」），列表页的筛选与翻页走客户端 Apollo（交互快）。两条路仓库里都已搭好：graphql/apollo/server.ts 与 graphql/apollo/client.ts。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-033",
+      "question": "服务端状态缓存怎么做？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "现有 InMemoryCache + dataMasking: true（fragment masking 已开，见 git log「开启 fragment masking」）；Form.descriptions 的 schema 注释警告列表页整页查会拉出上千行",
+      "cost": "缓存策略决定列表页翻页是否重新请求、详情页能否复用列表已取的字段",
+      "stage": "arch",
+      "answer": "维持 InMemoryCache + dataMasking: true，并把「重字段只在详情页取」从注释升成约束：Form.descriptions、招式世代表这类字段不进列表页查询。依据是 schema 自己的注释：「一只形态在库里有几十个版本 × 十种语言的行，列表页整页一起查会拉出上千行 —— 这个字段留给详情页」。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-034",
+      "question": "世代筛选要不要进 URL？",
+      "blocks": [
+        "arch",
+        "detail"
+      ],
+      "kind": "decision",
+      "source": "分页已经接上地址栏（git log「feat(web): 分页接上地址栏」）；而 Gen1-Gen9 筛选是 AC-002 要求「刷新列表并保留筛选条件」的那一项",
+      "cost": "决定筛选后的页面能不能被分享和收藏，也决定 PRD NFR 里「详情页基础搜索引擎收录」之外列表页的可索引性",
+      "stage": "arch",
+      "answer": "进 URL，与分页同一套，如 /pokemon?gen=9&page=2。AC-002 要求「刷新列表并保留筛选条件」，URL 是最直接的兑现方式，也最好测；而分页已在 URL、筛选不在会让两套状态对不上。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-035",
+      "question": "库里有 9 种语言，首版对外暴露几种？",
+      "blocks": [
+        "arch",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "prisma 的 Language 表与所有 I18n 表支持 9 种语言（zh-Hans/zh-Hant/en/ja/ko/fr/de/es/it）；app/api/graphql/route.ts 已经在读 LANGUAGE_COOKIE 并 resolveLanguageTag，注释写「前端还没开始写这个 cookie，所以现在一律走 DEFAULT_LANGUAGE」；而 PRD 通篇只说「中文 Pokémon 资料站」",
+      "cost": "决定要不要做语言切换 UI、URL 要不要带语言段、以及 name(language:) 这个参数在前端怎么传",
+      "stage": "arch",
+      "answer": "首版只出简体中文：不做语言切换 UI、URL 不带语言段、name(language:) 一律不传走 DEFAULT_LANGUAGE。库里那 9 种译名留着备用。LANGUAGE_COOKIE 的读取逻辑保留不动（已在 route.ts 里），但前端不写这个 cookie。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-036",
+      "question": "契约说 formStats 属于 effort-values 域，而 arch.json 把它归给了 search 域。哪个对？",
+      "blocks": [
+        "detail"
+      ],
+      "kind": "decision",
+      "source": "_contracts/api-routes.json 里 formStats 的 domain 是 effort-values；.ab/arch.json 的 CMP-006「搜索与努力值模拟」把 search 与 formStats 两个端点都归在 search 域，全文没有 effort-values 这个域",
+      "cost": "域是执行器会话的边界。合在一起意味着一次会话要同时做跨四类资料的名称搜索和带公式的能力值计算器",
+      "stage": "detail",
+      "answer": "拆成两个域。arch.json 的 CMP-006 拆为 CMP-006「顶部搜索」(search) 与 CMP-008「努力值模拟器」(effort-values)，DEC 里涉及 formStats 的条目补上 effort-values 域。三份产物的域集合现已一致。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-037",
+      "question": "招式与特性没有 seed 数据，四个 P0 功能建不起来。这一批怎么排？",
+      "blocks": [
+        "detail",
+        "code"
+      ],
+      "kind": "scope",
+      "source": "prisma/seed-data/ 下没有 moves.json / abilities.json；prisma/seed.ts 导入的表里没有 move、没有 ability；graphql/schema/form/schema.graphql 的 Form.abilities 注释写「form_ability 还没有导入路径，这个字段目前恒为空数组」",
+      "cost": "F003/F004/F007/F008 四个 P0 功能没有数据可展示；精灵详情的特性字段同样是空的",
+      "stage": "detail",
+      "answer": "先拆数据导入任务，作为前置依赖。catalog 域加三个任务：导入 moves、导入 abilities、建 form_ability 关联；move / ability 两个域的页面任务 dependsOn 它们。理由：每一刀做完都能验证（库里真有数据了），不做这一步后面四个功能写出来也是空页。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-038",
+      "question": "AC-049 和 AC-055 逐字相同，都写「用户重复点击同一特性条目」。详情页那条指的是什么？",
+      "blocks": [
+        "qa",
+        "detail"
+      ],
+      "kind": "decision",
+      "source": "docs/PRD.md AC-049（US007 特性列表）与 AC-055（US008 特性详情）文本完全一致：「给定 用户重复点击同一特性条目 When 详情请求进行中 Then 系统保持跳转到同一特性详情，避免产生错误页面。」对照其余各 US 的模式：列表页那条讲重复点筛选项（AC-007/022/036），详情页那条讲重复点条目（AC-013/028/042）。特性列表没有世代筛选，所以 AC-049 照搬了详情页的写法；而用户已经在特性详情页时，「重复点击同一特性条目」没有落点",
+      "cost": "两条 AC 指向同一个行为，写用例时等于替人选一条。AC-055 若按字面实现，测的是一个不存在的交互",
+      "stage": "qa",
+      "answer": "AC-055 改写为「用户在特性详情里重复点击同一形态条目 → 保持跳转到同一精灵详情」。AC-049（列表页重复点条目）保留不变。理由：特性详情页上唯一可点的就是「拥有该特性的 Form 列表」（AC-051），补上这条正好与其余详情页的模式一致。不删任何一条——AC 编号已被契约与 tasks.json 引用，重排的代价远大于收益。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    },
+    {
+      "id": "Q-039",
+      "question": "这个仓库要用哪套测试框架？现在一套都没有。",
+      "blocks": [
+        "qa",
+        "code"
+      ],
+      "kind": "decision",
+      "source": "package.json 的 scripts 里没有 test；devDependencies 与 dependencies 里没有任何测试相关包；node_modules/.bin 下没有 vitest/jest/playwright/cypress；全仓没有 *.test.* / *.spec.* / 配置文件。tdd 的第一步是「从磁盘认出这一仓库的聚焦测试命令」，这里认不出来，而 tdd 禁止发明仓库没有的测试路径",
+      "cost": "没有 runner 就跑不出 RED，这一阶段的核心动作（亲眼看见失败）无法执行。选型还决定 test-plan 里 level 怎么分：Next 16 的测试指南明确提醒 async Server Component 目前推荐用 E2E 而非单元测试，而本项目四个详情页按 DEC-008 都是服务端渲染",
+      "stage": "qa",
+      "answer": "Vitest + React Testing Library 跑 unit / integration；Playwright 跑 e2e。依据是 Next 16 自带文档：vitest.md 明写「Vitest currently does not support async Server Components，we recommend using E2E tests for async components」，而四个详情页按 DEC-008 都是服务端渲染。聚焦命令：pnpm vitest run <file> -t <name>（unit/integration）、pnpm playwright test <file>（e2e）。这一维不在 agb 的栈词表里，门禁判不了它，属于「照实记成 DEC」那一类。",
+      "answeredBy": "jie",
+      "answeredAt": "2026-09-14"
+    }
+  ]
+}

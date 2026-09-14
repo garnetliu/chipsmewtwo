@@ -42,3 +42,18 @@ yarn-error.log*
 next-env.d.ts
 
 /prisma/generated
+
+# AGB's bookkeeping files: produced locally, never committed (see BOOKKEEPING_PATHS in ab-core)
+.ab/events.jsonl
+.ab/attempts.json
+.ab/boot.log
+.ab/run/
+.ab/knowledge-candidates.jsonl
+.ab/knowledge-reviewed.jsonl
+.ab/evidence/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

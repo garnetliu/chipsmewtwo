@@ -1,0 +1,204 @@
+{
+  "components": [
+    {
+      "id": "CMP-002",
+      "name": "精灵域",
+      "domain": "pokemon",
+      "owns": {
+        "endpoints": [
+          "POST /api/graphql#pokemonList",
+          "POST /api/graphql#pokemon"
+        ],
+        "tables": [
+          "pokemon",
+          "pokemon_i18n",
+          "form",
+          "form_i18n",
+          "form_type",
+          "form_color",
+          "form_description_i18n"
+        ]
+      },
+      "dependsOn": [
+        "CMP-007"
+      ]
+    },
+    {
+      "id": "CMP-003",
+      "name": "招式域",
+      "domain": "move",
+      "owns": {
+        "endpoints": [
+          "POST /api/graphql#moveList",
+          "POST /api/graphql#move"
+        ],
+        "tables": [
+          "move",
+          "move_i18n",
+          "move_generation",
+          "move_effect_i18n"
+        ]
+      },
+      "dependsOn": [
+        "CMP-007"
+      ]
+    },
+    {
+      "id": "CMP-004",
+      "name": "道具域",
+      "domain": "item",
+      "owns": {
+        "endpoints": [
+          "POST /api/graphql#itemList",
+          "POST /api/graphql#item"
+        ],
+        "tables": [
+          "item",
+          "item_i18n",
+          "item_effect_i18n"
+        ]
+      },
+      "dependsOn": [
+        "CMP-007"
+      ]
+    },
+    {
+      "id": "CMP-005",
+      "name": "特性域",
+      "domain": "ability",
+      "owns": {
+        "endpoints": [
+          "POST /api/graphql#abilityList",
+          "POST /api/graphql#ability"
+        ],
+        "tables": [
+          "ability",
+          "ability_i18n",
+          "ability_effect_i18n",
+          "form_ability"
+        ]
+      },
+      "dependsOn": [
+        "CMP-007",
+        "CMP-002"
+      ]
+    },
+    {
+      "id": "CMP-006",
+      "name": "顶部搜索",
+      "domain": "search",
+      "owns": {
+        "endpoints": [
+          "POST /api/graphql#search"
+        ]
+      },
+      "dependsOn": [
+        "CMP-002",
+        "CMP-003",
+        "CMP-004",
+        "CMP-005"
+      ]
+    },
+    {
+      "id": "CMP-008",
+      "name": "努力值模拟器",
+      "domain": "effort-values",
+      "owns": {
+        "endpoints": [
+          "POST /api/graphql#formStats"
+        ],
+        "tables": [
+          "form_stat"
+        ]
+      },
+      "dependsOn": [
+        "CMP-002"
+      ]
+    },
+    {
+      "id": "CMP-007",
+      "name": "世代与版本字典",
+      "domain": "catalog",
+      "owns": {
+        "tables": [
+          "generation",
+          "generation_i18n",
+          "group",
+          "group_i18n",
+          "version",
+          "version_i18n",
+          "type",
+          "type_i18n",
+          "language"
+        ]
+      },
+      "dependsOn": []
+    }
+  ],
+  "constraints": [
+    {
+      "id": "CON-001",
+      "target": "四个详情页首屏在 2 秒内完成（PRD §NFR 性能）",
+      "landsOn": {
+        "endpoints": [
+          "POST /api/graphql#pokemon",
+          "POST /api/graphql#move",
+          "POST /api/graphql#item",
+          "POST /api/graphql#ability"
+        ]
+      }
+    },
+    {
+      "id": "CON-002",
+      "target": "搜索与列表筛选结果在 1 秒内返回（PRD §NFR 性能）",
+      "landsOn": {
+        "endpoints": [
+          "POST /api/graphql#search",
+          "POST /api/graphql#pokemonList",
+          "POST /api/graphql#moveList",
+          "POST /api/graphql#itemList",
+          "POST /api/graphql#abilityList"
+        ]
+      }
+    },
+    {
+      "id": "CON-003",
+      "target": "四个详情页可被搜索引擎抓取到正文（PRD §NFR 搜索引擎收录），即服务端渲染出完整 HTML",
+      "landsOn": {
+        "endpoints": [
+          "POST /api/graphql#pokemon",
+          "POST /api/graphql#move",
+          "POST /api/graphql#item",
+          "POST /api/graphql#ability"
+        ]
+      }
+    },
+    {
+      "id": "CON-004",
+      "target": "单次 GraphQL 查询嵌套深度不超过 10 层，超出直接拒绝（Q-027）",
+      "landsOn": {
+        "endpoints": [
+          "POST /api/graphql#pokemon",
+          "POST /api/graphql#ability",
+          "POST /api/graphql#move"
+        ]
+      }
+    },
+    {
+      "id": "CON-005",
+      "target": "列表页查询不取 Form.descriptions 与招式世代表这类重字段（一只形态有几十版本 × 十语言的行）",
+      "landsOn": {
+        "endpoints": [
+          "POST /api/graphql#pokemonList",
+          "POST /api/graphql#moveList",
+          "POST /api/graphql#itemList",
+          "POST /api/graphql#abilityList"
+        ],
+        "tables": [
+          "form_description_i18n",
+          "move_generation"
+        ]
+      }
+    }
+  ]
+}

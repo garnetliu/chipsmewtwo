@@ -1,0 +1,114 @@
+{
+  "endpoints": [
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#pokemonList",
+      "domain": "pokemon",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-002 精灵列表：AC-001 按全国编号展示条目、AC-002 Gen1-Gen9 单选筛选、AC-003 默认全量",
+      "requestSchema": "{ offset: number; limit: number; generation?: number }",
+      "responseSchema": "{ data: { id: string; slug: string; name: string | null; defaultForm: { id: string; detailImageUrl: string | null } | null }[]; pagination: { page: number; pageSize: number; total: number; totalPages: number; hasNext: boolean; hasPrev: boolean } }"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#pokemon",
+      "domain": "pokemon",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-003 精灵详情：AC-008 点击条目进入详情、AC-009 同全国编号下形态同页展示、AC-010 不存在时展示未找到该 Pokémon",
+      "requestSchema": "{ id: string }",
+      "responseSchema": "{ id: string; slug: string; name: string | null; genus: string | null; forms: { id: string; slug: string; name: string | null; isDefault: boolean; fullImageUrl: string | null; types: { id: string; slug: string; name: string | null; color: string }[] | null; stats: { hp: number; attack: number; defense: number; specialAttack: number | null; specialDefense: number | null; speed: number } | null; abilities: { id: string; slot: number; ability: { id: string; slug: string; name: string | null } }[]; descriptions: { id: string; text: string; version: { id: string; name: string | null } }[] }[] } | null"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#moveList",
+      "domain": "move",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-004 招式列表：AC-016 展示名称/说明/版本名称、AC-017 Gen1-Gen9 单选筛选",
+      "requestSchema": "{ offset: number; limit: number; generation?: number }",
+      "responseSchema": "{ data: { id: string; slug: string; name: string | null; shortEffect: string | null }[]; pagination: { page: number; pageSize: number; total: number; totalPages: number; hasNext: boolean; hasPrev: boolean } }"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#move",
+      "domain": "move",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-005 招式详情：F004 一张表格一行一个世代，列为 属性/分类/威力/命中/PP；AC-025 不存在时展示未找到该招式",
+      "requestSchema": "{ slug: string }",
+      "responseSchema": "{ id: string; slug: string; name: string | null; generations: { id: string; generationId: number; type: { id: string; slug: string; name: string | null; color: string }; damageClass: \"PHYSICAL\" | \"SPECIAL\" | \"STATUS\"; power: number | null; accuracy: number | null; pp: number | null }[]; effects: { generationId: number; shortEffect: string | null; effect: string }[] } | null"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#itemList",
+      "domain": "item",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-006 道具列表：AC-030 展示名称/说明/版本名称、AC-031 Gen1-Gen9 单选筛选",
+      "requestSchema": "{ offset: number; limit: number; generation?: number }",
+      "responseSchema": "{ data: { id: string; slug: string; name: string | null; shortEffect: string | null }[]; pagination: { page: number; pageSize: number; total: number; totalPages: number; hasNext: boolean; hasPrev: boolean } }"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#item",
+      "domain": "item",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-007 道具详情：AC-038 展示名称/说明/版本名称与具体版本可用性、AC-039 不存在时展示未找到该道具",
+      "requestSchema": "{ slug: string }",
+      "responseSchema": "{ id: string; slug: string; name: string | null; effects: { generationId: number; shortEffect: string | null; effect: string }[]; versions: { id: string; slug: string; name: string | null }[] } | null"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#abilityList",
+      "domain": "ability",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-008 特性列表：AC-044 展示名称/简短说明/版本名称；空态为当前暂无特性数据",
+      "requestSchema": "{ offset: number; limit: number }",
+      "responseSchema": "{ data: { id: string; slug: string; name: string | null; shortEffect: string | null }[]; pagination: { page: number; pageSize: number; total: number; totalPages: number; hasNext: boolean; hasPrev: boolean } }"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#ability",
+      "domain": "ability",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-009 特性详情：AC-051 展示名称/详细说明/拥有该特性的列表、AC-052 不存在时展示未找到该特性、AC-057 无关联 Form 时暂无宝可梦拥有该特性",
+      "requestSchema": "{ slug: string; generation?: number }",
+      "responseSchema": "{ id: string; slug: string; name: string | null; effects: { generationId: number; shortEffect: string | null; effect: string }[]; forms: { id: string; slot: number; form: { id: string; slug: string; detailImageUrl: string | null; pokemon: { id: string; name: string | null } } }[] } | null"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#search",
+      "domain": "search",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "F010 顶部搜索模态框：AC-060 展示匹配结果、AC-065 点击结果进入对应详情页",
+      "requestSchema": "{ keyword: string; limit?: number }",
+      "responseSchema": "{ results: { kind: \"pokemon\" | \"move\" | \"item\" | \"ability\"; id: string; slug: string; name: string }[] }"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/graphql#formStats",
+      "domain": "effort-values",
+      "auth": "public",
+      "rateLimit": "none",
+      "audience": "user",
+      "prdJustification": "PAGE-010 努力值模拟器：AC-066 默认选中第一只并展示六项能力值、AC-067 切换 Pokémon 后按新种族值重算",
+      "requestSchema": "{ formId: string; generation?: number }",
+      "responseSchema": "{ id: string; hp: number; attack: number; defense: number; specialAttack: number | null; specialDefense: number | null; speed: number; special: number | null } | null"
+    }
+  ]
+}

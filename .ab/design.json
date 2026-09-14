@@ -1,0 +1,227 @@
+{
+  "decisions": [
+    {
+      "id": "DEC-001",
+      "title": "技术栈沿用仓库既有事实：ts + next-app + prisma + graphql",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability",
+        "search",
+        "catalog"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemonList"
+      ],
+      "tables": [
+        "pokemon",
+        "move",
+        "item",
+        "ability"
+      ]
+    },
+    {
+      "id": "DEC-002",
+      "title": "单端点 GraphQL，不做 REST",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability",
+        "search",
+        "catalog",
+        "effort-values"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemonList",
+        "POST /api/graphql#pokemon",
+        "POST /api/graphql#moveList",
+        "POST /api/graphql#move",
+        "POST /api/graphql#itemList",
+        "POST /api/graphql#item",
+        "POST /api/graphql#abilityList",
+        "POST /api/graphql#ability",
+        "POST /api/graphql#search",
+        "POST /api/graphql#formStats"
+      ]
+    },
+    {
+      "id": "DEC-003",
+      "title": "列表分页用 offset/limit，不用 cursor",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemonList",
+        "POST /api/graphql#moveList",
+        "POST /api/graphql#itemList",
+        "POST /api/graphql#abilityList"
+      ]
+    },
+    {
+      "id": "DEC-004",
+      "title": "查不到返回 null，真错才进 GraphQL errors",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability",
+        "search",
+        "effort-values"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemon",
+        "POST /api/graphql#move",
+        "POST /api/graphql#item",
+        "POST /api/graphql#ability",
+        "POST /api/graphql#formStats"
+      ]
+    },
+    {
+      "id": "DEC-005",
+      "title": "数据只来自本地库，运行时不回源 PokeAPI",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability",
+        "catalog"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemon",
+        "POST /api/graphql#pokemonList"
+      ],
+      "tables": [
+        "pokemon",
+        "form",
+        "move",
+        "item",
+        "ability",
+        "version"
+      ]
+    },
+    {
+      "id": "DEC-006",
+      "title": "GraphQL 端点靠查询深度限制防护，不做频次限流",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability",
+        "search"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemon",
+        "POST /api/graphql#ability",
+        "POST /api/graphql#move"
+      ]
+    },
+    {
+      "id": "DEC-007",
+      "title": "首版关闭 /api/auth 端点",
+      "tables": [
+        "user",
+        "session",
+        "account",
+        "verification"
+      ]
+    },
+    {
+      "id": "DEC-008",
+      "title": "详情页服务端渲染，列表页客户端取数",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemon",
+        "POST /api/graphql#move",
+        "POST /api/graphql#item",
+        "POST /api/graphql#ability",
+        "POST /api/graphql#pokemonList"
+      ]
+    },
+    {
+      "id": "DEC-009",
+      "title": "重字段只在详情页取，列表页不取",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemonList",
+        "POST /api/graphql#moveList",
+        "POST /api/graphql#itemList",
+        "POST /api/graphql#abilityList"
+      ],
+      "tables": [
+        "form_description_i18n",
+        "move_generation"
+      ]
+    },
+    {
+      "id": "DEC-010",
+      "title": "筛选与分页都放进 URL 查询参数",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemonList",
+        "POST /api/graphql#moveList",
+        "POST /api/graphql#itemList",
+        "POST /api/graphql#abilityList"
+      ]
+    },
+    {
+      "id": "DEC-011",
+      "title": "首版只对外暴露简体中文",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability",
+        "search",
+        "catalog"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemonList",
+        "POST /api/graphql#pokemon"
+      ],
+      "tables": [
+        "language",
+        "pokemon_i18n",
+        "move_i18n",
+        "item_i18n",
+        "ability_i18n"
+      ]
+    },
+    {
+      "id": "DEC-012",
+      "title": "测试分两层：Vitest 跑 unit/integration，Playwright 跑 e2e",
+      "domains": [
+        "pokemon",
+        "move",
+        "item",
+        "ability",
+        "search",
+        "effort-values",
+        "catalog"
+      ],
+      "endpoints": [
+        "POST /api/graphql#pokemon",
+        "POST /api/graphql#formStats"
+      ]
+    }
+  ]
+}

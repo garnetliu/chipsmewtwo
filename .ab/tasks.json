@@ -1,0 +1,685 @@
+{
+  "domains": [
+    {
+      "id": "catalog",
+      "name": "字典与数据导入",
+      "tasks": [
+        {
+          "id": "T-001",
+          "title": "把招式数据导入库",
+          "role": "backend",
+          "description": "扩展 seed 流水线，把 PokeAPI 的招式抓成快照并导入 move / move_i18n / move_generation / move_effect_i18n 四张表。表结构已存在，只缺导入路径。",
+          "dependsOn": [],
+          "coversRequirementIds": [
+            "F003",
+            "F004"
+          ],
+          "acceptanceCriteria": [
+            "pnpm seed:refresh 后 prisma/seed-data/moves.json 存在且含中文译名",
+            "pnpm 导入后 move 表非空，且同一招式在 move_generation 里有多行（每世代一行）",
+            "拍落（knock-off）在 Gen5 威力为 20、Gen6 起为 65 —— 验证按世代存的数值是对的"
+          ],
+          "subSteps": [
+            {
+              "action": "抓取",
+              "detail": "参照 prisma/seed-data/pokeapi-pokemon.ts 的写法，新增 pokeapi-move.ts"
+            },
+            {
+              "action": "导入",
+              "detail": "在 prisma/seed.ts 里加 move 系列的 upsert"
+            }
+          ],
+          "files": {
+            "creates": [
+              "prisma/seed-data/pokeapi-move.ts",
+              "prisma/seed-data/moves.json"
+            ],
+            "modifies": [
+              "scripts/refresh-seed-data.ts",
+              "prisma/seed.ts",
+              "prisma/seed-data/types.ts"
+            ]
+          }
+        },
+        {
+          "id": "T-002",
+          "title": "把特性数据导入库",
+          "role": "backend",
+          "description": "同 T-001，导入 ability / ability_i18n / ability_effect_i18n 三张表。",
+          "dependsOn": [],
+          "coversRequirementIds": [
+            "F007",
+            "F008"
+          ],
+          "acceptanceCriteria": [
+            "pnpm seed:refresh 后 prisma/seed-data/abilities.json 存在且含中文译名",
+            "导入后 ability 表非空，蓄电（volt-absorb）能按 slug 查到",
+            "ability_effect_i18n 里同一特性在不同世代可以有不同说明"
+          ],
+          "subSteps": [
+            {
+              "action": "抓取",
+              "detail": "新增 pokeapi-ability.ts"
+            },
+            {
+              "action": "导入",
+              "detail": "prisma/seed.ts 加 ability 系列 upsert"
+            }
+          ],
+          "files": {
+            "creates": [
+              "prisma/seed-data/pokeapi-ability.ts",
+              "prisma/seed-data/abilities.json"
+            ],
+            "modifies": [
+              "scripts/refresh-seed-data.ts",
+              "prisma/seed.ts",
+              "prisma/seed-data/types.ts"
+            ]
+          }
+        },
+        {
+          "id": "T-003",
+          "title": "建立形态与特性的关联数据",
+          "role": "backend",
+          "description": "导入 form_ability：每个形态在每个世代有哪几个特性槽位（slot 1/2 普通、3 隐藏）。做完之后 Form.abilities 才不再恒为空数组。",
+          "dependsOn": [
+            "T-002"
+          ],
+          "coversRequirementIds": [
+            "AC-051",
+            "AC-057"
+          ],
+          "acceptanceCriteria": [
+            "皮卡丘只有 slot 1（静电）和 slot 3（避雷针），没有 slot 2",
+            "Gen1/Gen2 不插 form_ability 行，查那两代返回空数组",
+            "graphql/schema/form/schema.graphql 里 Form.abilities 那句「导入路径还没建」的注释已删除"
+          ],
+          "subSteps": [
+            {
+              "action": "导入",
+              "detail": "从 pokemon.json 的 abilities 字段展开成 form_ability 行"
+            },
+            {
+              "action": "改注释",
+              "detail": "schema 里那句失效的警告要一并删掉，否则契约继续说假话"
+            }
+          ],
+          "files": {
+            "modifies": [
+              "prisma/seed.ts",
+              "prisma/seed-data/pokeapi-pokemon.ts",
+              "graphql/schema/form/schema.graphql"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gateway",
+      "name": "网关与安全",
+      "tasks": [
+        {
+          "id": "T-004",
+          "title": "给 GraphQL 端点加查询深度限制",
+          "role": "backend",
+          "description": "按 DEC-006 与 CON-004，在 Apollo Server 上挂一个限制查询嵌套深度的插件，超过 10 层直接拒绝。",
+          "dependsOn": [],
+          "coversRequirementIds": [
+            "DEC-006",
+            "CON-004"
+          ],
+          "acceptanceCriteria": [
+            "一个嵌套 11 层的查询被拒绝，返回的 errors 带可识别的 code",
+            "现有 pokemonList / pokemon 查询不受影响，照常返回数据",
+            "深度上限是一个具名常量，不是散落在代码里的字面量 10"
+          ],
+          "subSteps": [
+            {
+              "action": "挂插件",
+              "detail": "在 app/api/graphql/route.ts 的 ApolloServer 配置里加 plugins"
+            },
+            {
+              "action": "测试",
+              "detail": "一条超深查询的聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "graphql/apollo/plugins/depth-limit.ts"
+            ],
+            "modifies": [
+              "app/api/graphql/route.ts"
+            ]
+          }
+        },
+        {
+          "id": "T-005",
+          "title": "首版关闭 /api/auth 端点",
+          "role": "backend",
+          "description": "按 DEC-007，让 /api/auth/[...all] 不再对外可达。lib/auth.ts 的配置保留，供后续启用。",
+          "dependsOn": [],
+          "coversRequirementIds": [
+            "DEC-007"
+          ],
+          "acceptanceCriteria": [
+            "POST /api/auth/sign-up/email 返回 404，不再能匿名往 user 表写行",
+            "lib/auth.ts 与 prisma 的 user/session/account/verification 四张表保持原样不删",
+            "app/(auth)/layout.tsx 这个只有占位内容的空壳一并清掉"
+          ],
+          "subSteps": [
+            {
+              "action": "下线",
+              "detail": "移除 route 挂载（或用环境变量开关，默认关）"
+            },
+            {
+              "action": "验证",
+              "detail": "一条聚焦测试断言该路径不可达"
+            }
+          ],
+          "files": {
+            "modifies": [
+              "app/api/auth/[...all]/route.ts",
+              "app/(auth)/layout.tsx"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pokemon",
+      "name": "精灵",
+      "tasks": [
+        {
+          "id": "T-006",
+          "title": "精灵列表支持世代筛选，筛选与分页都在 URL 里",
+          "role": "fullstack",
+          "description": "给 pokemonList 加 generation 参数，列表页的世代筛选器与分页一起进 URL 查询参数。精灵列表是当前唯一已实现的页面，这一刀是在它上面改。",
+          "dependsOn": [],
+          "coversRequirementIds": [
+            "AC-001",
+            "AC-002",
+            "AC-003",
+            "PAGE-002",
+            "CON-002",
+            "CON-005"
+          ],
+          "acceptanceCriteria": [
+            "选中 Gen9 后地址变成 /pokemon?gen=9&page=1，刷新页面筛选仍在",
+            "不带 gen 参数进入时筛选器未选中，列表是全国图鉴全量（AC-003）",
+            "当前筛选下无结果时展示「当前筛选条件下暂无结果」",
+            "列表查询不取 Form.descriptions（CON-005）",
+            "筛选或翻页的结果在 1 秒内返回（CON-002）—— 记录实际值"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#pokemonList 的 generation 参数"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "resolver 加筛选、列表组件读 URL 参数、聚焦测试"
+            }
+          ],
+          "files": {
+            "modifies": [
+              "graphql/schema/pokemon/schema.graphql",
+              "graphql/schema/pokemon/resolvers",
+              "app/pokemon/component/pokemon-list.tsx",
+              "app/pokemon/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "T-007",
+          "title": "精灵详情页能看到一只 Pokémon 的完整资料",
+          "role": "fullstack",
+          "description": "把 /pokemon/[name] 从三行空壳做成真实详情页：服务端渲染（DEC-008），展示资料、形态、特性字段、版本可用性。",
+          "dependsOn": [
+            "T-003",
+            "T-006"
+          ],
+          "coversRequirementIds": [
+            "AC-008",
+            "AC-009",
+            "AC-010",
+            "AC-015",
+            "PAGE-003",
+            "CON-001",
+            "CON-003"
+          ],
+          "acceptanceCriteria": [
+            "从列表点一条进入详情，展示该 Pokémon 的种族值、属性、特性",
+            "同全国编号下有多个形态时在同一页展示（AC-009）",
+            "访问不存在的 slug 展示「未找到该 Pokémon」（AC-010）",
+            "说明类文本为空时展示「说明暂缺」（AC-015）",
+            "页面在服务端渲染出完整 HTML，curl 拿得到正文（CON-003）",
+            "首屏在 2 秒内完成（CON-001）—— 用一次本地测量记录实际值，不达标就说出来"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#pokemon 的响应形状"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "RSC 页面 + 面包屑 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "app/pokemon/[name]/component/pokemon-detail.tsx"
+            ],
+            "modifies": [
+              "app/pokemon/[name]/page.tsx"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "move",
+      "name": "招式",
+      "tasks": [
+        {
+          "id": "T-008",
+          "title": "招式列表可浏览并按世代筛选",
+          "role": "fullstack",
+          "description": "新建 moveList 查询与招式列表页。/move 现在是三行空壳。",
+          "dependsOn": [
+            "T-001"
+          ],
+          "coversRequirementIds": [
+            "AC-016",
+            "AC-017",
+            "PAGE-004",
+            "CON-002",
+            "CON-005"
+          ],
+          "acceptanceCriteria": [
+            "列表展示招式中文名与简短说明，按英文 slug 字母序（Q-021）",
+            "选中某个世代后地址带 gen 参数，刷新仍在",
+            "说明为空的招式展示「说明暂缺」",
+            "列表查询不取 move_generation 的世代表（CON-005）",
+            "筛选或翻页的结果在 1 秒内返回（CON-002）—— 记录实际值"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#moveList"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "schema + resolver + 列表页 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "graphql/schema/move/schema.graphql",
+              "app/move/component/move-list.tsx"
+            ],
+            "modifies": [
+              "app/move/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "T-009",
+          "title": "招式详情用一张世代表格展示数值变化",
+          "role": "fullstack",
+          "description": "按 DEC-002 与 F004，招式详情是一张表：一行一个世代，列为 属性/分类/威力/命中/PP。服务端渲染。",
+          "dependsOn": [
+            "T-008"
+          ],
+          "coversRequirementIds": [
+            "F004",
+            "AC-025",
+            "PAGE-005",
+            "CON-001",
+            "CON-003"
+          ],
+          "acceptanceCriteria": [
+            "拍落的详情页表格里 Gen5 威力显示 20、Gen6 起显示 65",
+            "变化招式的威力列显示为空而不是 0",
+            "访问不存在的 slug 展示「未找到该招式」（AC-025）",
+            "页面服务端渲染出完整 HTML（CON-003）",
+            "首屏在 2 秒内完成（CON-001）—— 用一次本地测量记录实际值，不达标就说出来"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#move 的 generations 数组"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "RSC 页面 + 世代表格组件 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "app/move/[name]/component/move-detail.tsx"
+            ],
+            "modifies": [
+              "graphql/schema/move/schema.graphql",
+              "app/move/[name]/page.tsx"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "item",
+      "name": "道具",
+      "tasks": [
+        {
+          "id": "T-010",
+          "title": "道具列表可浏览并按世代筛选",
+          "role": "fullstack",
+          "description": "新建 itemList 查询与道具列表页。库里已有 156 条道具，但 descriptions 全为空。",
+          "dependsOn": [],
+          "coversRequirementIds": [
+            "AC-030",
+            "AC-031",
+            "PAGE-006",
+            "CON-002",
+            "CON-005"
+          ],
+          "acceptanceCriteria": [
+            "列表展示 156 条道具的中文名，按英文 slug 字母序",
+            "选中某个世代后地址带 gen 参数，刷新仍在",
+            "所有道具的说明当前为空，一律展示「说明暂缺」——这正是 seed 现状",
+            "列表查询不取详情页专属的重字段（CON-005）",
+            "筛选或翻页的结果在 1 秒内返回（CON-002）—— 记录实际值"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#itemList"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "schema + resolver + 列表页 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "graphql/schema/item/schema.graphql",
+              "app/item/component/item-list.tsx"
+            ],
+            "modifies": [
+              "app/item/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "T-011",
+          "title": "道具详情页能看到单个道具资料",
+          "role": "fullstack",
+          "description": "把 /item/[name] 从空壳做成真实详情页，服务端渲染。",
+          "dependsOn": [
+            "T-010"
+          ],
+          "coversRequirementIds": [
+            "AC-038",
+            "AC-039",
+            "PAGE-007",
+            "CON-001",
+            "CON-003"
+          ],
+          "acceptanceCriteria": [
+            "展示道具名称、说明、具体版本可用性（AC-038）",
+            "访问不存在的 slug 展示「未找到该道具」（AC-039）",
+            "说明为空时展示「说明暂缺」",
+            "页面服务端渲染出完整 HTML（CON-003）",
+            "首屏在 2 秒内完成（CON-001）—— 用一次本地测量记录实际值，不达标就说出来"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#item"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "RSC 页面 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "app/item/[name]/component/item-detail.tsx"
+            ],
+            "modifies": [
+              "graphql/schema/item/schema.graphql",
+              "app/item/[name]/page.tsx"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ability",
+      "name": "特性",
+      "tasks": [
+        {
+          "id": "T-012",
+          "title": "特性列表可浏览",
+          "role": "fullstack",
+          "description": "新建 abilityList 查询与特性列表页。特性列表没有世代筛选（PRD 只给了其余三类）。",
+          "dependsOn": [
+            "T-002"
+          ],
+          "coversRequirementIds": [
+            "AC-044",
+            "PAGE-008",
+            "CON-002",
+            "CON-005"
+          ],
+          "acceptanceCriteria": [
+            "列表展示特性中文名与简短说明，按英文 slug 字母序",
+            "页面上没有世代筛选器 —— PRD 的特性列表本来就没有这一项",
+            "库里没有特性数据时展示「当前暂无特性数据」（Q-005）",
+            "列表查询不取详情页专属的重字段（CON-005）",
+            "筛选或翻页的结果在 1 秒内返回（CON-002）—— 记录实际值"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#abilityList"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "schema 扩 Query + 列表页 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "app/ability/component/ability-list.tsx"
+            ],
+            "modifies": [
+              "graphql/schema/ability/schema.graphql",
+              "app/ability/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "T-013",
+          "title": "特性详情能列出拥有该特性的宝可梦并跳转",
+          "role": "fullstack",
+          "description": "特性详情展示名称、详细说明，以及拥有该特性的 Form 列表（小图 + 名 + 隐藏标记），点击进精灵详情。",
+          "dependsOn": [
+            "T-003",
+            "T-012",
+            "T-007"
+          ],
+          "coversRequirementIds": [
+            "AC-051",
+            "AC-052",
+            "AC-057",
+            "PAGE-009",
+            "CON-001",
+            "CON-003"
+          ],
+          "acceptanceCriteria": [
+            "蓄电的详情页列出拥有它的形态，slot=3 的那几条标「隐藏」",
+            "点一条进入对应精灵详情（AC-051）",
+            "访问不存在的 slug 展示「未找到该特性」（AC-052）",
+            "查 Gen1/Gen2 时列表为空，展示「暂无宝可梦拥有该特性」（AC-057）",
+            "页面服务端渲染出完整 HTML（CON-003）",
+            "首屏在 2 秒内完成（CON-001）—— 用一次本地测量记录实际值，不达标就说出来"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#ability 的 forms 数组与 generation 参数"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "RSC 页面 + Form 列表组件 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "app/ability/[name]/component/ability-detail.tsx",
+              "app/ability/[name]/component/ability-form-list.tsx"
+            ],
+            "modifies": [
+              "graphql/schema/ability/schema.graphql",
+              "app/ability/[name]/page.tsx"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "name": "顶部搜索",
+      "tasks": [
+        {
+          "id": "T-014",
+          "title": "顶部搜索能按名称跨四类资料定位并跳转",
+          "role": "fullstack",
+          "description": "全站组件：顶部搜索框触发蒙层模态框，按中文名搜 Pokémon / 招式 / 道具 / 特性，点结果进对应详情。不占独立路由。",
+          "dependsOn": [
+            "T-007",
+            "T-009",
+            "T-011",
+            "T-013"
+          ],
+          "coversRequirementIds": [
+            "F010",
+            "AC-060",
+            "AC-065",
+            "CON-002"
+          ],
+          "acceptanceCriteria": [
+            "输入「妙蛙」能同时命中 Pokémon，结果标出类型",
+            "点某条结果进入对应类型的详情页（AC-065）",
+            "无匹配时展示「未找到匹配结果」",
+            "未输入关键词时不展示结果列表",
+            "搜索失败时展示「搜索暂时不可用，请稍后再试」并保留输入",
+            "搜索结果在 1 秒内返回（CON-002）—— 记录实际值"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#search 的 results 联合形状"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "search resolver 跨四表查 + 模态框组件 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "graphql/schema/search/schema.graphql",
+              "components/root-header/search-modal.tsx"
+            ],
+            "modifies": [
+              "components/root-header/index.tsx"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "effort-values",
+      "name": "努力值模拟器",
+      "tasks": [
+        {
+          "id": "T-015",
+          "title": "能力值计算的纯函数与性格系数表",
+          "role": "backend",
+          "description": "实现标准能力值公式与 25 种性格的修正系数表。库里没有 Nature 表（52 个 model 里一条都没有），所以系数表是代码常量。纯逻辑，无 I/O。",
+          "dependsOn": [],
+          "coversRequirementIds": [
+            "F009",
+            "AC-068",
+            "AC-069"
+          ],
+          "acceptanceCriteria": [
+            "HP 与其余五项用不同公式：HP 多加等级与 10，其余乘性格修正",
+            "性格修正是一项 ×1.1、一项 ×0.9，无修正性格两项相同",
+            "单项努力值超过 252、总和超过 510、个体值超过 31 时被截断在上限（AC-068、AC-069）",
+            "等级 50、个体值 31、努力值 0、无修正性格下，某只已知种族值的结果与游戏一致"
+          ],
+          "subSteps": [
+            {
+              "action": "写常量",
+              "detail": "25 种性格的加成/减成项"
+            },
+            {
+              "action": "写公式",
+              "detail": "纯函数 + 单元测试，不碰数据库"
+            }
+          ],
+          "files": {
+            "creates": [
+              "lib/pokemon/stats.ts",
+              "lib/pokemon/natures.ts",
+              "lib/pokemon/stats.test.ts"
+            ]
+          }
+        },
+        {
+          "id": "T-016",
+          "title": "努力值模拟器页面可选 Pokémon 并实时出结果",
+          "role": "fullstack",
+          "description": "新建 /effort-values 页面（路由还不存在，但 app/page.tsx 已经链过去了）。select 默认选中第一只，调整任一输入立即重算。",
+          "dependsOn": [
+            "T-015",
+            "T-006"
+          ],
+          "coversRequirementIds": [
+            "AC-066",
+            "AC-067",
+            "AC-070",
+            "PAGE-010"
+          ],
+          "acceptanceCriteria": [
+            "进入页面即选中列表第一只并展示六项能力值，没有「请选择」空态（AC-066）",
+            "切换到另一只后六项能力值按新种族值重算（AC-067）",
+            "调整等级/性格/个体值/努力值任一项，结果立即更新",
+            "努力值总和达 510 后无法继续增加（AC-069）",
+            "选择列表加载失败时展示「列表加载失败，请稍后再试」并允许重试（AC-070）"
+          ],
+          "subSteps": [
+            {
+              "action": "对齐契约",
+              "detail": "POST /api/graphql#formStats 取种族值"
+            },
+            {
+              "action": "垂直切片",
+              "detail": "页面 + 输入控件 + 结果区 + 聚焦测试"
+            }
+          ],
+          "files": {
+            "creates": [
+              "app/effort-values/page.tsx",
+              "app/effort-values/component/ev-calculator.tsx",
+              "app/effort-values/component/stat-inputs.tsx"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

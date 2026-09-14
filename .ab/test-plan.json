@@ -1,0 +1,517 @@
+{
+  "cases": [
+    {
+      "id": "AT-001",
+      "covers": [
+        "AC-001"
+      ],
+      "level": "integration",
+      "title": "精灵列表按全国编号升序渲染条目"
+    },
+    {
+      "id": "AT-002",
+      "covers": [
+        "AC-002",
+        "AC-007"
+      ],
+      "level": "integration",
+      "title": "选中某个世代后列表按该世代刷新；重复点同一项不重复请求、筛选不丢"
+    },
+    {
+      "id": "AT-003",
+      "covers": [
+        "AC-003"
+      ],
+      "level": "integration",
+      "title": "首次进入时筛选器未选中，列表为全量"
+    },
+    {
+      "id": "AT-004",
+      "covers": [
+        "AC-005"
+      ],
+      "level": "integration",
+      "title": "筛选无结果时渲染「当前筛选条件下暂无结果」"
+    },
+    {
+      "id": "AT-005",
+      "covers": [
+        "AC-006"
+      ],
+      "level": "integration",
+      "title": "列表请求失败时渲染「列表加载失败，请稍后再试」与重试入口"
+    },
+    {
+      "id": "AT-006",
+      "covers": [
+        "AC-002"
+      ],
+      "level": "e2e",
+      "title": "选中 Gen9 后地址变为 /pokemon?gen=9，刷新后筛选仍在"
+    },
+    {
+      "id": "AT-007",
+      "covers": [
+        "AC-004",
+        "AC-011",
+        "AC-019",
+        "AC-026",
+        "AC-033",
+        "AC-040",
+        "AC-046",
+        "AC-053",
+        "AC-061",
+        "AC-071"
+      ],
+      "level": "e2e",
+      "title": "未登录可直达全部公开页面，无任何登录墙"
+    },
+    {
+      "id": "AT-008",
+      "covers": [
+        "AC-008"
+      ],
+      "level": "e2e",
+      "title": "从精灵列表点条目进入对应精灵详情"
+    },
+    {
+      "id": "AT-009",
+      "covers": [
+        "AC-009"
+      ],
+      "level": "e2e",
+      "title": "同全国编号下有多形态时在同一页展示"
+    },
+    {
+      "id": "AT-010",
+      "covers": [
+        "AC-010"
+      ],
+      "level": "e2e",
+      "title": "访问不存在的 slug 时展示「未找到该 Pokémon」"
+    },
+    {
+      "id": "AT-011",
+      "covers": [
+        "AC-012"
+      ],
+      "level": "integration",
+      "title": "精灵详情取数失败时展示「精灵资料加载失败，请稍后再试」"
+    },
+    {
+      "id": "AT-012",
+      "covers": [
+        "AC-013"
+      ],
+      "level": "e2e",
+      "title": "重复点同一条目只进同一个精灵详情，不出错误页"
+    },
+    {
+      "id": "AT-013",
+      "covers": [
+        "AC-014"
+      ],
+      "level": "integration",
+      "title": "Pokémon 图片加载失败时换占位图且布局不塌"
+    },
+    {
+      "id": "AT-014",
+      "covers": [
+        "AC-015",
+        "AC-029",
+        "AC-043",
+        "AC-056"
+      ],
+      "level": "integration",
+      "title": "说明类文本为空时四类详情一律展示「说明暂缺」"
+    },
+    {
+      "id": "AT-015",
+      "covers": [
+        "AC-016"
+      ],
+      "level": "integration",
+      "title": "招式列表展示名称与简短说明，按 slug 字母序"
+    },
+    {
+      "id": "AT-016",
+      "covers": [
+        "AC-017",
+        "AC-022"
+      ],
+      "level": "integration",
+      "title": "招式列表按世代筛选；重复点同一项筛选不丢"
+    },
+    {
+      "id": "AT-017",
+      "covers": [
+        "AC-018",
+        "AC-032",
+        "AC-045"
+      ],
+      "level": "integration",
+      "title": "未输入搜索关键词时三类列表按列表页规则照常展示"
+    },
+    {
+      "id": "AT-018",
+      "covers": [
+        "AC-020"
+      ],
+      "level": "integration",
+      "title": "招式列表筛选无结果时展示空态文案"
+    },
+    {
+      "id": "AT-019",
+      "covers": [
+        "AC-021"
+      ],
+      "level": "integration",
+      "title": "招式列表加载失败时展示失败文案与重试入口"
+    },
+    {
+      "id": "AT-020",
+      "covers": [
+        "AC-023"
+      ],
+      "level": "e2e",
+      "title": "从招式列表点条目进入对应招式详情"
+    },
+    {
+      "id": "AT-021",
+      "covers": [
+        "AC-024"
+      ],
+      "level": "e2e",
+      "title": "招式详情渲染世代表格：拍落 Gen5 威力 20、Gen6 起 65"
+    },
+    {
+      "id": "AT-022",
+      "covers": [
+        "AC-025"
+      ],
+      "level": "e2e",
+      "title": "访问不存在的招式 slug 展示「未找到该招式」"
+    },
+    {
+      "id": "AT-023",
+      "covers": [
+        "AC-027"
+      ],
+      "level": "integration",
+      "title": "招式详情取数失败时展示「招式资料加载失败，请稍后再试」"
+    },
+    {
+      "id": "AT-024",
+      "covers": [
+        "AC-028"
+      ],
+      "level": "e2e",
+      "title": "重复点同一招式条目只进同一个详情页"
+    },
+    {
+      "id": "AT-025",
+      "covers": [
+        "AC-030"
+      ],
+      "level": "integration",
+      "title": "道具列表展示名称与说明，按 slug 字母序"
+    },
+    {
+      "id": "AT-026",
+      "covers": [
+        "AC-031",
+        "AC-036"
+      ],
+      "level": "integration",
+      "title": "道具列表按世代筛选；重复点同一项筛选不丢"
+    },
+    {
+      "id": "AT-027",
+      "covers": [
+        "AC-034"
+      ],
+      "level": "integration",
+      "title": "道具列表筛选无结果时展示空态文案"
+    },
+    {
+      "id": "AT-028",
+      "covers": [
+        "AC-035"
+      ],
+      "level": "integration",
+      "title": "道具列表加载失败时展示失败文案与重试入口"
+    },
+    {
+      "id": "AT-029",
+      "covers": [
+        "AC-037"
+      ],
+      "level": "e2e",
+      "title": "从道具列表点条目进入对应道具详情"
+    },
+    {
+      "id": "AT-030",
+      "covers": [
+        "AC-038"
+      ],
+      "level": "e2e",
+      "title": "道具详情展示名称、说明与具体版本可用性"
+    },
+    {
+      "id": "AT-031",
+      "covers": [
+        "AC-039"
+      ],
+      "level": "e2e",
+      "title": "访问不存在的道具 slug 展示「未找到该道具」"
+    },
+    {
+      "id": "AT-032",
+      "covers": [
+        "AC-041"
+      ],
+      "level": "integration",
+      "title": "道具详情取数失败时展示「道具资料加载失败，请稍后再试」"
+    },
+    {
+      "id": "AT-033",
+      "covers": [
+        "AC-042"
+      ],
+      "level": "e2e",
+      "title": "重复点同一道具条目只进同一个详情页"
+    },
+    {
+      "id": "AT-034",
+      "covers": [
+        "AC-044"
+      ],
+      "level": "integration",
+      "title": "特性列表展示名称与简短说明，按 slug 字母序"
+    },
+    {
+      "id": "AT-035",
+      "covers": [
+        "AC-047"
+      ],
+      "level": "integration",
+      "title": "特性表无数据时展示「当前暂无特性数据」"
+    },
+    {
+      "id": "AT-036",
+      "covers": [
+        "AC-048"
+      ],
+      "level": "integration",
+      "title": "特性列表加载失败时展示失败文案与重试入口"
+    },
+    {
+      "id": "AT-037",
+      "covers": [
+        "AC-049"
+      ],
+      "level": "e2e",
+      "title": "重复点同一特性条目只进同一个特性详情"
+    },
+    {
+      "id": "AT-038",
+      "covers": [
+        "AC-050"
+      ],
+      "level": "e2e",
+      "title": "从特性列表点条目进入对应特性详情"
+    },
+    {
+      "id": "AT-039",
+      "covers": [
+        "AC-051"
+      ],
+      "level": "e2e",
+      "title": "特性详情展示名称、详细说明与拥有该特性的形态列表"
+    },
+    {
+      "id": "AT-040",
+      "covers": [
+        "AC-052"
+      ],
+      "level": "e2e",
+      "title": "访问不存在的特性 slug 展示「未找到该特性」"
+    },
+    {
+      "id": "AT-041",
+      "covers": [
+        "AC-054"
+      ],
+      "level": "integration",
+      "title": "特性详情取数失败时展示「特性资料加载失败，请稍后再试」"
+    },
+    {
+      "id": "AT-042",
+      "covers": [
+        "AC-055"
+      ],
+      "level": "e2e",
+      "title": "在特性详情重复点同一形态条目只进同一个精灵详情"
+    },
+    {
+      "id": "AT-043",
+      "covers": [
+        "AC-057"
+      ],
+      "level": "e2e",
+      "title": "查 Gen1/Gen2 时形态列表为空，展示「暂无宝可梦拥有该特性」"
+    },
+    {
+      "id": "AT-044",
+      "covers": [
+        "AC-051"
+      ],
+      "level": "integration",
+      "title": "隐藏特性（slot 3）的形态条目带「隐藏」标记"
+    },
+    {
+      "id": "AT-045",
+      "covers": [
+        "AC-058"
+      ],
+      "level": "integration",
+      "title": "点顶部搜索框打开蒙层模态框"
+    },
+    {
+      "id": "AT-046",
+      "covers": [
+        "AC-059"
+      ],
+      "level": "integration",
+      "title": "模态框已开但未输入关键词时不展示结果列表"
+    },
+    {
+      "id": "AT-047",
+      "covers": [
+        "AC-060"
+      ],
+      "level": "integration",
+      "title": "输入可匹配名称后展示匹配结果并标出类型"
+    },
+    {
+      "id": "AT-048",
+      "covers": [
+        "AC-062"
+      ],
+      "level": "integration",
+      "title": "输入无匹配名称时展示「未找到匹配结果」"
+    },
+    {
+      "id": "AT-049",
+      "covers": [
+        "AC-063"
+      ],
+      "level": "integration",
+      "title": "搜索失败时展示「搜索暂时不可用，请稍后再试」并保留输入"
+    },
+    {
+      "id": "AT-050",
+      "covers": [
+        "AC-064"
+      ],
+      "level": "integration",
+      "title": "重复输入同一关键词返回相同结果，不产生重复跳转"
+    },
+    {
+      "id": "AT-051",
+      "covers": [
+        "AC-065"
+      ],
+      "level": "e2e",
+      "title": "点搜索结果按类型进入对应的四类详情页之一"
+    },
+    {
+      "id": "AT-052",
+      "covers": [
+        "AC-068"
+      ],
+      "level": "unit",
+      "title": "单项努力值超过 252、个体值超过 31 时被截断在上限"
+    },
+    {
+      "id": "AT-053",
+      "covers": [
+        "AC-069"
+      ],
+      "level": "unit",
+      "title": "六项努力值总和达 510 后任一项无法再增加"
+    },
+    {
+      "id": "AT-054",
+      "covers": [
+        "AC-070"
+      ],
+      "level": "unit",
+      "title": "按种族值、等级、性格、个体值、努力值算出的六项能力值与游戏一致"
+    },
+    {
+      "id": "AT-055",
+      "covers": [
+        "AC-070"
+      ],
+      "level": "unit",
+      "title": "HP 与其余五项用不同公式；性格修正为一项 ×1.1、一项 ×0.9"
+    },
+    {
+      "id": "AT-056",
+      "covers": [
+        "AC-066"
+      ],
+      "level": "integration",
+      "title": "进入模拟器即选中第一只并展示六项能力值，无「请选择」空态"
+    },
+    {
+      "id": "AT-057",
+      "covers": [
+        "AC-067"
+      ],
+      "level": "integration",
+      "title": "切换 Pokémon 后六项能力值按新种族值重算"
+    },
+    {
+      "id": "AT-058",
+      "covers": [
+        "AC-070"
+      ],
+      "level": "integration",
+      "title": "调整任一输入后结果立即更新"
+    },
+    {
+      "id": "AT-059",
+      "covers": [
+        "AC-072"
+      ],
+      "level": "integration",
+      "title": "选择列表加载失败时展示「列表加载失败，请稍后再试」并允许重试"
+    },
+    {
+      "id": "AT-060",
+      "covers": [
+        "AC-073"
+      ],
+      "level": "integration",
+      "title": "重复选择同一 Pokémon 保持计算上下文，不产生错误状态"
+    },
+    {
+      "id": "AT-061",
+      "covers": [
+        "AC-024"
+      ],
+      "level": "integration",
+      "title": "招式世代数值按世代升序返回，最多 9 行"
+    },
+    {
+      "id": "AT-062",
+      "covers": [
+        "AC-001"
+      ],
+      "level": "integration",
+      "title": "精灵列表的查询文档里不含 descriptions 与 generations 这类重字段"
+    }
+  ]
+}

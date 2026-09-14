@@ -1,0 +1,155 @@
+{
+  "pages": [
+    {
+      "id": "PAGE-001",
+      "name": "首页导航",
+      "route": "/",
+      "layoutRegions": ["Body: 五个一级入口的链接列表"],
+      "interactiveComponents": [
+        { "id": "IC-01", "name": "精灵列表入口", "interaction": "点击", "effect": "进入精灵列表 /pokemon" },
+        { "id": "IC-02", "name": "招式列表入口", "interaction": "点击", "effect": "进入招式列表 /move" },
+        { "id": "IC-03", "name": "道具列表入口", "interaction": "点击", "effect": "进入道具列表 /item" },
+        { "id": "IC-04", "name": "特性列表入口", "interaction": "点击", "effect": "进入特性列表 /ability" },
+        { "id": "IC-05", "name": "努力值模拟器入口", "interaction": "点击", "effect": "进入努力值模拟器 /effort-values" }
+      ],
+      "staticElements": ["站点标识"],
+      "states": ["populated"]
+    },
+    {
+      "id": "PAGE-002",
+      "name": "精灵列表",
+      "route": "/pokemon",
+      "layoutRegions": ["Header: 世代筛选器", "Body: Pokémon 卡片网格", "Footer: 分页"],
+      "interactiveComponents": [
+        { "id": "IC-06", "name": "世代筛选", "interaction": "单选 Gen1-Gen9", "effect": "刷新当前列表并保留筛选条件" },
+        { "id": "IC-07", "name": "Pokémon 条目", "interaction": "点击", "effect": "进入精灵详情 /pokemon/[name]" },
+        { "id": "IC-08", "name": "分页", "interaction": "点击页码", "effect": "翻页，停留在精灵列表" }
+      ],
+      "staticElements": ["全国编号", "Pokémon 中文名", "缩略图", "版本名称标签"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-003",
+      "name": "精灵详情",
+      "route": "/pokemon/[name]",
+      "layoutRegions": ["Header: 面包屑 + 名称 + 全国编号", "Body: 资料区", "Aside: 形态与版本可用性"],
+      "interactiveComponents": [
+        { "id": "IC-09", "name": "面包屑", "interaction": "点击", "effect": "返回精灵列表 /pokemon" },
+        { "id": "IC-10", "name": "形态切换", "interaction": "点击", "effect": "在同一页切换同全国编号下的形态" }
+      ],
+      "staticElements": ["种族值", "属性", "特性资料字段", "图鉴说明", "具体版本可用性", "官方美术图"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-004",
+      "name": "招式列表",
+      "route": "/move",
+      "layoutRegions": ["Header: 世代筛选器", "Body: 招式条目列表", "Footer: 分页"],
+      "interactiveComponents": [
+        { "id": "IC-11", "name": "世代筛选", "interaction": "单选 Gen1-Gen9", "effect": "刷新当前列表并保留筛选条件" },
+        { "id": "IC-12", "name": "招式条目", "interaction": "点击", "effect": "进入招式详情 /move/[name]" },
+        { "id": "IC-13", "name": "分页", "interaction": "点击页码", "effect": "翻页，停留在招式列表" }
+      ],
+      "staticElements": ["招式中文名", "说明", "版本名称标签"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-005",
+      "name": "招式详情",
+      "route": "/move/[name]",
+      "layoutRegions": ["Header: 面包屑 + 招式名", "Body: 世代表格"],
+      "interactiveComponents": [
+        { "id": "IC-14", "name": "面包屑", "interaction": "点击", "effect": "返回招式列表 /move" }
+      ],
+      "staticElements": ["世代表格：行为 Gen1-Gen9，列为 属性/分类/威力/命中/PP", "效果说明"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-006",
+      "name": "道具列表",
+      "route": "/item",
+      "layoutRegions": ["Header: 世代筛选器", "Body: 道具条目列表", "Footer: 分页"],
+      "interactiveComponents": [
+        { "id": "IC-15", "name": "世代筛选", "interaction": "单选 Gen1-Gen9", "effect": "刷新当前列表并保留筛选条件" },
+        { "id": "IC-16", "name": "道具条目", "interaction": "点击", "effect": "进入道具详情 /item/[name]" },
+        { "id": "IC-17", "name": "分页", "interaction": "点击页码", "effect": "翻页，停留在道具列表" }
+      ],
+      "staticElements": ["道具中文名", "说明", "版本名称标签"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-007",
+      "name": "道具详情",
+      "route": "/item/[name]",
+      "layoutRegions": ["Header: 面包屑 + 道具名", "Body: 资料区"],
+      "interactiveComponents": [
+        { "id": "IC-18", "name": "面包屑", "interaction": "点击", "effect": "返回道具列表 /item" }
+      ],
+      "staticElements": ["道具中文名", "效果说明", "具体版本可用性"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-008",
+      "name": "特性列表",
+      "route": "/ability",
+      "layoutRegions": ["Body: 特性条目列表", "Footer: 分页"],
+      "interactiveComponents": [
+        { "id": "IC-19", "name": "特性条目", "interaction": "点击", "effect": "进入特性详情 /ability/[name]" },
+        { "id": "IC-20", "name": "分页", "interaction": "点击页码", "effect": "翻页，停留在特性列表" }
+      ],
+      "staticElements": ["特性中文名", "简短说明", "版本名称标签"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-009",
+      "name": "特性详情",
+      "route": "/ability/[name]",
+      "layoutRegions": ["Header: 面包屑 + 特性名", "Body: 详细说明", "Aside: 拥有该特性的 Form 列表"],
+      "interactiveComponents": [
+        { "id": "IC-21", "name": "面包屑", "interaction": "点击", "effect": "返回特性列表 /ability" },
+        { "id": "IC-22", "name": "Form 条目", "interaction": "点击", "effect": "进入精灵详情 /pokemon/[name]" }
+      ],
+      "staticElements": ["特性中文名", "详细说明", "拥有该特性的 Form 小图与名称", "隐藏特性标记"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-010",
+      "name": "努力值模拟器",
+      "route": "/effort-values",
+      "layoutRegions": ["Header: Pokémon 选择器", "Body: 参数输入区", "Aside: 六项能力值结果"],
+      "interactiveComponents": [
+        { "id": "IC-23", "name": "Pokémon 选择器", "interaction": "select 选择", "effect": "按新 Pokémon 的种族值重算，停留在本页" },
+        { "id": "IC-24", "name": "等级输入", "interaction": "输入 1-100", "effect": "实时重算六项能力值" },
+        { "id": "IC-25", "name": "性格选择器", "interaction": "select 选择 25 种性格之一", "effect": "实时重算六项能力值" },
+        { "id": "IC-26", "name": "个体值输入", "interaction": "输入 6 项 0-31", "effect": "实时重算六项能力值" },
+        { "id": "IC-27", "name": "努力值输入", "interaction": "输入 6 项 0-252，总和不超过 510", "effect": "实时重算六项能力值" }
+      ],
+      "staticElements": ["六项最终能力值", "种族值来源说明"],
+      "states": ["loading", "error", "populated"]
+    }
+  ],
+  "domain": {
+    "entities": [
+      { "type": "Pokemon" },
+      { "type": "Form" },
+      { "type": "Move" },
+      { "type": "Item" },
+      { "type": "Ability" },
+      { "type": "Generation" },
+      { "type": "Version" }
+    ],
+    "variables": [
+      { "id": "VAR-01", "name": "单项努力值上限" },
+      { "id": "VAR-02", "name": "六项努力值总和上限" },
+      { "id": "VAR-03", "name": "单项个体值上限" },
+      { "id": "VAR-04", "name": "等级上限" }
+    ],
+    "rules": [
+      { "id": "RULE-01", "name": "单项努力值不超过 252", "inputVariableId": "VAR-01" },
+      { "id": "RULE-02", "name": "六项努力值总和不超过 510", "inputVariableId": "VAR-02" },
+      { "id": "RULE-03", "name": "单项个体值不超过 31", "inputVariableId": "VAR-03" },
+      { "id": "RULE-04", "name": "等级在 1 到 100 之间", "inputVariableId": "VAR-04" }
+    ],
+    "workflows": []
+  }
+}
