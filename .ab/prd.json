@@ -1,0 +1,159 @@
+{
+  "pages": [
+    {
+      "id": "PAGE-001",
+      "name": "首页导航",
+      "route": "/",
+      "layoutRegions": ["Header: 站点标识 + 主题切换 + 顶部搜索框", "Body: 5 个一级入口"],
+      "interactiveComponents": [
+        { "id": "IC-001", "name": "精灵入口", "interaction": "点击", "effect": "进入精灵列表 /pokemon" },
+        { "id": "IC-002", "name": "招式入口", "interaction": "点击", "effect": "进入招式列表 /move" },
+        { "id": "IC-003", "name": "道具入口", "interaction": "点击", "effect": "进入道具列表 /item" },
+        { "id": "IC-004", "name": "特性入口", "interaction": "点击", "effect": "进入特性列表 /ability" },
+        { "id": "IC-005", "name": "努力值模拟器入口", "interaction": "点击", "effect": "进入努力值模拟器 /effort-values" },
+        { "id": "IC-006", "name": "顶部搜索框", "interaction": "点击", "effect": "打开全站搜索模态框，结果可跳转精灵详情 /pokemon/[name]、招式详情 /move/[name]、道具详情 /item/[name]、特性详情 /ability/[name]" }
+      ],
+      "staticElements": ["站点标识"],
+      "states": ["populated"]
+    },
+    {
+      "id": "PAGE-002",
+      "name": "精灵列表",
+      "route": "/pokemon",
+      "layoutRegions": ["Header: 全站头部", "Toolbar: Gen1-Gen9 单选筛选", "Body: Pokémon 条目列表", "Footer: 分页栏"],
+      "interactiveComponents": [
+        { "id": "IC-007", "name": "世代筛选", "interaction": "单选", "effect": "按世代刷新列表，筛选条件写入 URL 查询参数并保留" },
+        { "id": "IC-008", "name": "Pokémon 条目", "interaction": "点击", "effect": "进入精灵详情 /pokemon/[name]" },
+        { "id": "IC-009", "name": "分页栏", "interaction": "点击页码", "effect": "翻页，页码写入 URL 查询参数" }
+      ],
+      "staticElements": ["全国编号", "形态缩略图", "中文名"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-003",
+      "name": "精灵详情",
+      "route": "/pokemon/[name]",
+      "layoutRegions": ["Header: 全站头部", "Breadcrumb: 面包屑", "Body: Pokémon 资料 + 形态 + 特性字段 + 具体版本可用性"],
+      "interactiveComponents": [
+        { "id": "IC-010", "name": "面包屑", "interaction": "点击", "effect": "返回精灵列表 /pokemon" }
+      ],
+      "staticElements": ["全国编号", "中文名", "分类", "形态信息", "特性资料字段", "具体版本可用性", "图鉴说明", "图鉴颜色"],
+      "states": ["loading", "error", "notFound", "populated"]
+    },
+    {
+      "id": "PAGE-004",
+      "name": "招式列表",
+      "route": "/move",
+      "layoutRegions": ["Header: 全站头部", "Toolbar: Gen1-Gen9 单选筛选", "Body: 招式条目列表", "Footer: 分页栏"],
+      "interactiveComponents": [
+        { "id": "IC-011", "name": "世代筛选", "interaction": "单选", "effect": "按世代刷新列表，筛选条件写入 URL 查询参数并保留" },
+        { "id": "IC-012", "name": "招式条目", "interaction": "点击", "effect": "进入招式详情 /move/[name]" },
+        { "id": "IC-013", "name": "分页栏", "interaction": "点击页码", "effect": "翻页，页码写入 URL 查询参数" }
+      ],
+      "staticElements": ["招式名称", "说明"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-005",
+      "name": "招式详情",
+      "route": "/move/[name]",
+      "layoutRegions": ["Header: 全站头部", "Breadcrumb: 面包屑", "Body: 世代表格"],
+      "interactiveComponents": [
+        { "id": "IC-014", "name": "面包屑", "interaction": "点击", "effect": "返回招式列表 /move" }
+      ],
+      "staticElements": ["招式名称", "世代表格：行 = Gen1–Gen9，列 = 属性/分类/威力/命中/PP"],
+      "states": ["loading", "error", "notFound", "populated"]
+    },
+    {
+      "id": "PAGE-006",
+      "name": "道具列表",
+      "route": "/item",
+      "layoutRegions": ["Header: 全站头部", "Toolbar: Gen1-Gen9 单选筛选", "Body: 道具条目列表", "Footer: 分页栏"],
+      "interactiveComponents": [
+        { "id": "IC-015", "name": "世代筛选", "interaction": "单选", "effect": "按世代刷新列表，筛选条件写入 URL 查询参数并保留" },
+        { "id": "IC-016", "name": "道具条目", "interaction": "点击", "effect": "进入道具详情 /item/[name]" },
+        { "id": "IC-017", "name": "分页栏", "interaction": "点击页码", "effect": "翻页，页码写入 URL 查询参数" }
+      ],
+      "staticElements": ["道具名称", "说明"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-007",
+      "name": "道具详情",
+      "route": "/item/[name]",
+      "layoutRegions": ["Header: 全站头部", "Breadcrumb: 面包屑", "Body: 道具资料"],
+      "interactiveComponents": [
+        { "id": "IC-018", "name": "面包屑", "interaction": "点击", "effect": "返回道具列表 /item" }
+      ],
+      "staticElements": ["道具名称", "说明", "具体版本可用性"],
+      "states": ["loading", "error", "notFound", "populated"]
+    },
+    {
+      "id": "PAGE-008",
+      "name": "特性列表",
+      "route": "/ability",
+      "layoutRegions": ["Header: 全站头部", "Body: 特性条目列表", "Footer: 分页栏"],
+      "interactiveComponents": [
+        { "id": "IC-019", "name": "特性条目", "interaction": "点击", "effect": "进入特性详情 /ability/[name]" },
+        { "id": "IC-020", "name": "分页栏", "interaction": "点击页码", "effect": "翻页，页码写入 URL 查询参数" }
+      ],
+      "staticElements": ["特性名称", "简短说明"],
+      "states": ["loading", "empty", "error", "populated"]
+    },
+    {
+      "id": "PAGE-009",
+      "name": "特性详情",
+      "route": "/ability/[name]",
+      "layoutRegions": ["Header: 全站头部", "Breadcrumb: 面包屑", "Body: 特性资料 + 拥有该特性的 Form 列表"],
+      "interactiveComponents": [
+        { "id": "IC-021", "name": "面包屑", "interaction": "点击", "effect": "返回特性列表 /ability" },
+        { "id": "IC-022", "name": "Form 条目", "interaction": "点击", "effect": "进入精灵详情 /pokemon/[name]" }
+      ],
+      "staticElements": ["特性名称", "详细说明", "具体版本可用性", "拥有该特性的 Form 列表：小图 + 中文名 + slot=3 标「隐藏」"],
+      "states": ["loading", "empty", "error", "notFound", "populated"]
+    },
+    {
+      "id": "PAGE-010",
+      "name": "努力值模拟器",
+      "route": "/effort-values",
+      "layoutRegions": ["Header: 全站头部", "Body: Pokémon 选择 + 参数输入", "Result: 六项能力值"],
+      "interactiveComponents": [
+        { "id": "IC-023", "name": "Pokémon 选择", "interaction": "下拉选择", "effect": "按新 Pokémon 的种族值重算六项能力值，停留在 /effort-values" },
+        { "id": "IC-024", "name": "等级输入", "interaction": "输入", "effect": "重算六项能力值，取值被控件截断在 1–100" },
+        { "id": "IC-025", "name": "性格选择", "interaction": "下拉选择", "effect": "重算六项能力值，一项 ×1.1、一项 ×0.9" },
+        { "id": "IC-026", "name": "个体值输入 ×6", "interaction": "输入", "effect": "重算六项能力值，取值被控件截断在 0–31" },
+        { "id": "IC-027", "name": "努力值输入 ×6", "interaction": "输入", "effect": "重算六项能力值，单项截断在 0–252、六项总和不超过 510" }
+      ],
+      "staticElements": ["六项能力值结果", "种族值明细"],
+      "states": ["loading", "error", "populated"]
+    }
+  ],
+  "domain": {
+    "entities": [
+      { "type": "Pokemon" },
+      { "type": "Form" },
+      { "type": "Move" },
+      { "type": "Item" },
+      { "type": "Ability" },
+      { "type": "Version" },
+      { "type": "Generation" }
+    ],
+    "variables": [
+      { "id": "VAR-01", "name": "等级（1–100，默认 50）" },
+      { "id": "VAR-02", "name": "个体值（每项 0–31，默认 31）" },
+      { "id": "VAR-03", "name": "单项努力值（0–252，默认 0）" },
+      { "id": "VAR-04", "name": "六项努力值总和上限（510）" },
+      { "id": "VAR-05", "name": "性格修正系数（一项 ×1.1、一项 ×0.9）" },
+      { "id": "VAR-06", "name": "世代筛选（Gen1–Gen9，单选，默认未选中）" }
+    ],
+    "rules": [
+      { "id": "RULE-01", "name": "六项能力值按最新世代公式计算，结果需与游戏一致", "inputVariableId": "VAR-01" },
+      { "id": "RULE-02", "name": "个体值超出范围由控件截断，不产生错误提示", "inputVariableId": "VAR-02" },
+      { "id": "RULE-03", "name": "单项努力值超出上限由控件截断", "inputVariableId": "VAR-03" },
+      { "id": "RULE-04", "name": "六项努力值总和达 510 后任一项不再允许增加", "inputVariableId": "VAR-04" },
+      { "id": "RULE-05", "name": "性格对两项能力值施加修正", "inputVariableId": "VAR-05" },
+      { "id": "RULE-06", "name": "列表按选中世代过滤，筛选条件保留在 URL 查询参数里", "inputVariableId": "VAR-06" }
+    ],
+    "workflows": []
+  }
+}

@@ -42,3 +42,13 @@ yarn-error.log*
 next-env.d.ts
 
 /prisma/generated
+
+# AGB bookkeeping files: generated locally, kept out of git (see BOOKKEEPING_PATHS in ab-core)
+.ab/events.jsonl
+.ab/attempts.json
+.ab/boot.log
+.ab/run/
+.ab/knowledge-candidates.jsonl
+.ab/knowledge-reviewed.jsonl
+.ab/evidence/
+.ab/upload.json
