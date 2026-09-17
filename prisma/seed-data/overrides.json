@@ -1,248 +1,1428 @@
 {
   "pokedexes": {
     "blueberry": {
-      "names": { "zh-Hans": "蓝莓图鉴", "zh-Hant": "藍莓圖鑑", "ja": "ブルーベリー図鑑" },
+      "names": {
+        "zh-Hans": "蓝莓图鉴",
+        "zh-Hant": "藍莓圖鑑",
+        "ja": "ブルーベリー図鑑"
+      },
       "descriptions": {
         "zh-Hans": "蓝莓学园的图鉴",
         "zh-Hant": "藍莓學園的圖鑑"
       }
     },
     "champions": {
-      "names": { "zh-Hans": "冠军图鉴", "zh-Hant": "冠軍圖鑑", "ja": "チャンピオン図鑑" },
+      "names": {
+        "zh-Hans": "冠军图鉴",
+        "zh-Hant": "冠軍圖鑑",
+        "ja": "チャンピオン図鑑"
+      },
       "descriptions": {
         "zh-Hans": "《宝可梦传说 Z-A》的冠军图鉴",
         "zh-Hant": "《寶可夢傳說 Z-A》的冠軍圖鑑"
       }
     },
     "conquest-gallery": {
-      "names": { "zh-Hans": "图鉴一览", "zh-Hant": "圖鑑一覽", "ja": "ギャラリー" },
+      "names": {
+        "zh-Hans": "图鉴一览",
+        "zh-Hant": "圖鑑一覽",
+        "ja": "ギャラリー"
+      },
       "descriptions": {
         "zh-Hans": "《宝可梦 + 信长的野望》的图鉴排列顺序",
         "zh-Hant": "《寶可夢 + 信長之野望》的圖鑑排列順序"
       }
     },
     "crown-tundra": {
-      "names": { "zh-Hans": "冠雪原图鉴", "zh-Hant": "冠雪原圖鑑", "ja": "カンムリ雪原図鑑" },
+      "names": {
+        "zh-Hans": "冠雪原图鉴",
+        "zh-Hant": "冠雪原圖鑑",
+        "ja": "カンムリ雪原図鑑"
+      },
       "descriptions": {
         "zh-Hans": "冠之雪原的图鉴",
         "zh-Hant": "冠之雪原的圖鑑"
       }
     },
     "extended-sinnoh": {
-      "names": { "zh-Hans": "神奥图鉴（扩充版）", "zh-Hant": "神奧圖鑑（擴充版）", "ja": "シンオウ図鑑（拡張版）" },
+      "names": {
+        "zh-Hans": "神奥图鉴（扩充版）",
+        "zh-Hant": "神奧圖鑑（擴充版）",
+        "ja": "シンオウ図鑑（拡張版）"
+      },
       "descriptions": {
         "zh-Hans": "白金版本中的神奥地区图鉴，在钻石/珍珠的基础上扩充",
         "zh-Hant": "白金版本中的神奧地區圖鑑，在鑽石/珍珠的基礎上擴充"
       }
     },
     "galar": {
-      "names": { "zh-Hans": "伽勒尔图鉴", "zh-Hant": "伽勒爾圖鑑", "ja": "ガラル図鑑" },
+      "names": {
+        "zh-Hans": "伽勒尔图鉴",
+        "zh-Hant": "伽勒爾圖鑑",
+        "ja": "ガラル図鑑"
+      },
       "descriptions": {
         "zh-Hans": "剑/盾版本中的伽勒尔地区图鉴",
         "zh-Hant": "劍/盾版本中的伽勒爾地區圖鑑"
       }
     },
     "hisui": {
-      "names": { "zh-Hans": "洗翠图鉴", "zh-Hant": "洗翠圖鑑", "ja": "ヒスイ図鑑" },
+      "names": {
+        "zh-Hans": "洗翠图鉴",
+        "zh-Hant": "洗翠圖鑑",
+        "ja": "ヒスイ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "《宝可梦传说 阿尔宙斯》的洗翠地区图鉴",
         "zh-Hant": "《寶可夢傳說 阿爾宙斯》的洗翠地區圖鑑"
       }
     },
     "hoenn": {
-      "names": { "zh-Hans": "丰缘图鉴", "zh-Hant": "豐緣圖鑑", "ja": "ホウエン図鑑" },
+      "names": {
+        "zh-Hans": "丰缘图鉴",
+        "zh-Hant": "豐緣圖鑑",
+        "ja": "ホウエン図鑑"
+      },
       "descriptions": {
         "zh-Hans": "红宝石/蓝宝石/绿宝石版本中的丰缘地区图鉴",
         "zh-Hant": "紅寶石/藍寶石/綠寶石版本中的豐緣地區圖鑑"
       }
     },
     "hyperspace": {
-      "names": { "zh-Hans": "异空间图鉴", "zh-Hant": "異空間圖鑑", "ja": "異空間図鑑" },
+      "names": {
+        "zh-Hans": "异空间图鉴",
+        "zh-Hant": "異空間圖鑑",
+        "ja": "異空間図鑑"
+      },
       "descriptions": {
         "zh-Hans": "异空间的图鉴",
         "zh-Hant": "異空間的圖鑑"
       }
     },
     "isle-of-armor": {
-      "names": { "zh-Hans": "铠岛图鉴", "zh-Hant": "鎧島圖鑑", "ja": "ヨロイ島図鑑" },
+      "names": {
+        "zh-Hans": "铠岛图鉴",
+        "zh-Hant": "鎧島圖鑑",
+        "ja": "ヨロイ島図鑑"
+      },
       "descriptions": {
         "zh-Hans": "铠之孤岛的图鉴",
         "zh-Hant": "鎧之孤島的圖鑑"
       }
     },
     "kalos-central": {
-      "names": { "zh-Hans": "卡洛斯图鉴 中央篇", "zh-Hant": "卡洛斯圖鑑 中央篇", "ja": "カロス図鑑 セントラル" },
+      "names": {
+        "zh-Hans": "卡洛斯图鉴 中央篇",
+        "zh-Hant": "卡洛斯圖鑑 中央篇",
+        "ja": "カロス図鑑 セントラル"
+      },
       "descriptions": {
         "zh-Hans": "X/Y 版本中的卡洛斯地区图鉴，中央区域",
         "zh-Hant": "X/Y 版本中的卡洛斯地區圖鑑，中央區域"
       }
     },
     "kalos-coastal": {
-      "names": { "zh-Hans": "卡洛斯图鉴 海岸篇", "zh-Hant": "卡洛斯圖鑑 海岸篇", "ja": "カロス図鑑 コースト" },
+      "names": {
+        "zh-Hans": "卡洛斯图鉴 海岸篇",
+        "zh-Hant": "卡洛斯圖鑑 海岸篇",
+        "ja": "カロス図鑑 コースト"
+      },
       "descriptions": {
         "zh-Hans": "X/Y 版本中的卡洛斯地区图鉴，海岸区域",
         "zh-Hant": "X/Y 版本中的卡洛斯地區圖鑑，海岸區域"
       }
     },
     "kalos-mountain": {
-      "names": { "zh-Hans": "卡洛斯图鉴 山岳篇", "zh-Hant": "卡洛斯圖鑑 山岳篇", "ja": "カロス図鑑 マウンテン" },
+      "names": {
+        "zh-Hans": "卡洛斯图鉴 山岳篇",
+        "zh-Hant": "卡洛斯圖鑑 山岳篇",
+        "ja": "カロス図鑑 マウンテン"
+      },
       "descriptions": {
         "zh-Hans": "X/Y 版本中的卡洛斯地区图鉴，山岳区域",
         "zh-Hant": "X/Y 版本中的卡洛斯地區圖鑑，山岳區域"
       }
     },
     "kanto": {
-      "names": { "zh-Hans": "关都图鉴", "zh-Hant": "關都圖鑑", "ja": "カントー図鑑" },
+      "names": {
+        "zh-Hans": "关都图鉴",
+        "zh-Hant": "關都圖鑑",
+        "ja": "カントー図鑑"
+      },
       "descriptions": {
         "zh-Hans": "红/蓝/黄版本中的关都地区图鉴",
         "zh-Hant": "紅/藍/黃版本中的關都地區圖鑑"
       }
     },
     "kitakami": {
-      "names": { "zh-Hans": "北上图鉴", "zh-Hant": "北上圖鑑", "ja": "キタカミ図鑑" },
+      "names": {
+        "zh-Hans": "北上图鉴",
+        "zh-Hant": "北上圖鑑",
+        "ja": "キタカミ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "北上乡的图鉴",
         "zh-Hant": "北上鄉的圖鑑"
       }
     },
     "letsgo-kanto": {
-      "names": { "zh-Hans": "关都图鉴（Let's Go）", "zh-Hant": "關都圖鑑（Let's Go）", "ja": "カントー図鑑（Let's Go）" },
+      "names": {
+        "zh-Hans": "关都图鉴（Let's Go）",
+        "zh-Hant": "關都圖鑑（Let's Go）",
+        "ja": "カントー図鑑（Let's Go）"
+      },
       "descriptions": {
         "zh-Hans": "Let's Go! 皮卡丘/Let's Go! 伊布中的关都地区图鉴",
         "zh-Hant": "Let's Go! 皮卡丘/Let's Go! 伊布中的關都地區圖鑑"
       }
     },
     "lumiose-city": {
-      "names": { "zh-Hans": "密阿雷图鉴", "zh-Hant": "密阿雷圖鑑", "ja": "ミアレ図鑑" },
+      "names": {
+        "zh-Hans": "密阿雷图鉴",
+        "zh-Hant": "密阿雷圖鑑",
+        "ja": "ミアレ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "密阿雷市的图鉴",
         "zh-Hant": "密阿雷市的圖鑑"
       }
     },
     "national": {
-      "names": { "zh-Hans": "全国图鉴", "zh-Hant": "全國圖鑑", "ja": "全国図鑑" },
+      "names": {
+        "zh-Hans": "全国图鉴",
+        "zh-Hant": "全國圖鑑",
+        "ja": "全国図鑑"
+      },
       "descriptions": {
         "zh-Hans": "收录全部宝可梦的全国图鉴",
         "zh-Hant": "收錄全部寶可夢的全國圖鑑"
       }
     },
     "original-akala": {
-      "names": { "zh-Hans": "阿卡拉图鉴", "zh-Hant": "阿卡拉圖鑑", "ja": "アーカラ図鑑" },
+      "names": {
+        "zh-Hans": "阿卡拉图鉴",
+        "zh-Hant": "阿卡拉圖鑑",
+        "ja": "アーカラ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "太阳/月亮版本中的阿卡拉岛图鉴",
         "zh-Hant": "太陽/月亮版本中的阿卡拉島圖鑑"
       }
     },
     "original-alola": {
-      "names": { "zh-Hans": "阿罗拉图鉴", "zh-Hant": "阿羅拉圖鑑", "ja": "アローラ図鑑" },
+      "names": {
+        "zh-Hans": "阿罗拉图鉴",
+        "zh-Hant": "阿羅拉圖鑑",
+        "ja": "アローラ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "太阳/月亮版本中的阿罗拉地区图鉴",
         "zh-Hant": "太陽/月亮版本中的阿羅拉地區圖鑑"
       }
     },
     "original-johto": {
-      "names": { "zh-Hans": "城都图鉴", "zh-Hant": "城都圖鑑", "ja": "ジョウト図鑑" },
+      "names": {
+        "zh-Hans": "城都图鉴",
+        "zh-Hant": "城都圖鑑",
+        "ja": "ジョウト図鑑"
+      },
       "descriptions": {
         "zh-Hans": "金/银/水晶版本中的城都地区图鉴，游戏里称作「新图鉴」",
         "zh-Hant": "金/銀/水晶版本中的城都地區圖鑑，遊戲裡稱作「新圖鑑」"
       }
     },
     "original-melemele": {
-      "names": { "zh-Hans": "美乐美乐图鉴", "zh-Hant": "美樂美樂圖鑑", "ja": "メレメレ図鑑" },
+      "names": {
+        "zh-Hans": "美乐美乐图鉴",
+        "zh-Hant": "美樂美樂圖鑑",
+        "ja": "メレメレ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "太阳/月亮版本中的美乐美乐岛图鉴",
         "zh-Hant": "太陽/月亮版本中的美樂美樂島圖鑑"
       }
     },
     "original-poni": {
-      "names": { "zh-Hans": "波尼图鉴", "zh-Hant": "波尼圖鑑", "ja": "ポニ図鑑" },
+      "names": {
+        "zh-Hans": "波尼图鉴",
+        "zh-Hant": "波尼圖鑑",
+        "ja": "ポニ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "太阳/月亮版本中的波尼岛图鉴",
         "zh-Hant": "太陽/月亮版本中的波尼島圖鑑"
       }
     },
     "original-sinnoh": {
-      "names": { "zh-Hans": "神奥图鉴", "zh-Hant": "神奧圖鑑", "ja": "シンオウ図鑑" },
+      "names": {
+        "zh-Hans": "神奥图鉴",
+        "zh-Hant": "神奧圖鑑",
+        "ja": "シンオウ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "钻石/珍珠版本中的神奥地区图鉴",
         "zh-Hant": "鑽石/珍珠版本中的神奧地區圖鑑"
       }
     },
     "original-ulaula": {
-      "names": { "zh-Hans": "乌拉乌拉图鉴", "zh-Hant": "烏拉烏拉圖鑑", "ja": "ウラウラ図鑑" },
+      "names": {
+        "zh-Hans": "乌拉乌拉图鉴",
+        "zh-Hant": "烏拉烏拉圖鑑",
+        "ja": "ウラウラ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "太阳/月亮版本中的乌拉乌拉岛图鉴",
         "zh-Hant": "太陽/月亮版本中的烏拉烏拉島圖鑑"
       }
     },
     "original-unova": {
-      "names": { "zh-Hans": "合众图鉴", "zh-Hant": "合眾圖鑑", "ja": "イッシュ図鑑" },
+      "names": {
+        "zh-Hans": "合众图鉴",
+        "zh-Hant": "合眾圖鑑",
+        "ja": "イッシュ図鑑"
+      },
       "descriptions": {
         "zh-Hans": "黑/白版本中的合众地区图鉴",
         "zh-Hant": "黑/白版本中的合眾地區圖鑑"
       }
     },
     "paldea": {
-      "names": { "zh-Hans": "帕底亚图鉴", "zh-Hant": "帕底亞圖鑑", "ja": "パルデア図鑑" },
+      "names": {
+        "zh-Hans": "帕底亚图鉴",
+        "zh-Hant": "帕底亞圖鑑",
+        "ja": "パルデア図鑑"
+      },
       "descriptions": {
         "zh-Hans": "朱/紫版本中的帕底亚地区图鉴",
         "zh-Hant": "朱/紫版本中的帕底亞地區圖鑑"
       }
     },
     "updated-akala": {
-      "names": { "zh-Hans": "阿卡拉图鉴（更新版）", "zh-Hant": "阿卡拉圖鑑（更新版）", "ja": "アーカラ図鑑（更新版）" },
+      "names": {
+        "zh-Hans": "阿卡拉图鉴（更新版）",
+        "zh-Hant": "阿卡拉圖鑑（更新版）",
+        "ja": "アーカラ図鑑（更新版）"
+      },
       "descriptions": {
         "zh-Hans": "究极之日/究极之月中的阿卡拉岛图鉴",
         "zh-Hant": "究極之日/究極之月中的阿卡拉島圖鑑"
       }
     },
     "updated-alola": {
-      "names": { "zh-Hans": "阿罗拉图鉴（更新版）", "zh-Hant": "阿羅拉圖鑑（更新版）", "ja": "アローラ図鑑（更新版）" },
+      "names": {
+        "zh-Hans": "阿罗拉图鉴（更新版）",
+        "zh-Hant": "阿羅拉圖鑑（更新版）",
+        "ja": "アローラ図鑑（更新版）"
+      },
       "descriptions": {
         "zh-Hans": "究极之日/究极之月中的阿罗拉地区图鉴",
         "zh-Hant": "究極之日/究極之月中的阿羅拉地區圖鑑"
       }
     },
     "updated-hoenn": {
-      "names": { "zh-Hans": "丰缘图鉴（新版）", "zh-Hant": "豐緣圖鑑（新版）", "ja": "ホウエン図鑑（新版）" },
+      "names": {
+        "zh-Hans": "丰缘图鉴（新版）",
+        "zh-Hant": "豐緣圖鑑（新版）",
+        "ja": "ホウエン図鑑（新版）"
+      },
       "descriptions": {
         "zh-Hans": "终极红宝石/始源蓝宝石中的丰缘地区图鉴，在红宝石/蓝宝石/绿宝石的基础上补入了新的进化型",
         "zh-Hant": "終極紅寶石/始源藍寶石中的豐緣地區圖鑑，在紅寶石/藍寶石/綠寶石的基礎上補入了新的進化型"
       }
     },
     "updated-johto": {
-      "names": { "zh-Hans": "城都图鉴（更新版）", "zh-Hant": "城都圖鑑（更新版）", "ja": "ジョウト図鑑（更新版）" },
+      "names": {
+        "zh-Hans": "城都图鉴（更新版）",
+        "zh-Hant": "城都圖鑑（更新版）",
+        "ja": "ジョウト図鑑（更新版）"
+      },
       "descriptions": {
         "zh-Hans": "心金/魂银中的城都地区图鉴，在金/银/水晶的基础上补入了第四世代靠招式达成的进化型",
         "zh-Hant": "心金/魂銀中的城都地區圖鑑，在金/銀/水晶的基礎上補入了第四世代靠招式達成的進化型"
       }
     },
     "updated-melemele": {
-      "names": { "zh-Hans": "美乐美乐图鉴（更新版）", "zh-Hant": "美樂美樂圖鑑（更新版）", "ja": "メレメレ図鑑（更新版）" },
+      "names": {
+        "zh-Hans": "美乐美乐图鉴（更新版）",
+        "zh-Hant": "美樂美樂圖鑑（更新版）",
+        "ja": "メレメレ図鑑（更新版）"
+      },
       "descriptions": {
         "zh-Hans": "究极之日/究极之月中的美乐美乐岛图鉴",
         "zh-Hant": "究極之日/究極之月中的美樂美樂島圖鑑"
       }
     },
     "updated-poni": {
-      "names": { "zh-Hans": "波尼图鉴（更新版）", "zh-Hant": "波尼圖鑑（更新版）", "ja": "ポニ図鑑（更新版）" },
+      "names": {
+        "zh-Hans": "波尼图鉴（更新版）",
+        "zh-Hant": "波尼圖鑑（更新版）",
+        "ja": "ポニ図鑑（更新版）"
+      },
       "descriptions": {
         "zh-Hans": "究极之日/究极之月中的波尼岛图鉴",
         "zh-Hant": "究極之日/究極之月中的波尼島圖鑑"
       }
     },
     "updated-ulaula": {
-      "names": { "zh-Hans": "乌拉乌拉图鉴（更新版）", "zh-Hant": "烏拉烏拉圖鑑（更新版）", "ja": "ウラウラ図鑑（更新版）" },
+      "names": {
+        "zh-Hans": "乌拉乌拉图鉴（更新版）",
+        "zh-Hant": "烏拉烏拉圖鑑（更新版）",
+        "ja": "ウラウラ図鑑（更新版）"
+      },
       "descriptions": {
         "zh-Hans": "究极之日/究极之月中的乌拉乌拉岛图鉴",
         "zh-Hant": "究極之日/究極之月中的烏拉烏拉島圖鑑"
       }
     },
     "updated-unova": {
-      "names": { "zh-Hans": "合众图鉴（更新版）", "zh-Hant": "合眾圖鑑（更新版）", "ja": "イッシュ図鑑（更新版）" },
+      "names": {
+        "zh-Hans": "合众图鉴（更新版）",
+        "zh-Hant": "合眾圖鑑（更新版）",
+        "ja": "イッシュ図鑑（更新版）"
+      },
       "descriptions": {
         "zh-Hans": "黑 2/白 2 中的合众地区图鉴",
         "zh-Hant": "黑 2/白 2 中的合眾地區圖鑑"
+      }
+    }
+  },
+  "groups": {
+    "red-green-japan": {
+      "names": {
+        "zh-Hans": "红·绿",
+        "zh-Hant": "紅·綠"
+      }
+    },
+    "blue-japan": {
+      "names": {
+        "zh-Hans": "蓝（日版）",
+        "zh-Hant": "藍（日版）"
+      }
+    },
+    "red-blue": {
+      "names": {
+        "zh-Hans": "红·蓝",
+        "zh-Hant": "紅·藍"
+      }
+    },
+    "yellow": {
+      "names": {
+        "zh-Hans": "黄",
+        "zh-Hant": "黃"
+      }
+    },
+    "gold-silver": {
+      "names": {
+        "zh-Hans": "金·银",
+        "zh-Hant": "金·銀"
+      }
+    },
+    "crystal": {
+      "names": {
+        "zh-Hans": "水晶",
+        "zh-Hant": "水晶"
+      }
+    },
+    "ruby-sapphire": {
+      "names": {
+        "zh-Hans": "红宝石·蓝宝石",
+        "zh-Hant": "紅寶石·藍寶石"
+      }
+    },
+    "emerald": {
+      "names": {
+        "zh-Hans": "绿宝石",
+        "zh-Hant": "綠寶石"
+      }
+    },
+    "colosseum": {
+      "names": {
+        "zh-Hans": "竞技场",
+        "zh-Hant": "競技場"
+      }
+    },
+    "xd": {
+      "names": {
+        "zh-Hans": "XD 暗之旋风 黑暗洛奇亚",
+        "zh-Hant": "XD 暗之旋風 黑暗洛奇亞"
+      }
+    },
+    "firered-leafgreen": {
+      "names": {
+        "zh-Hans": "火红·叶绿",
+        "zh-Hant": "火紅·葉綠"
+      }
+    },
+    "diamond-pearl": {
+      "names": {
+        "zh-Hans": "钻石·珍珠",
+        "zh-Hant": "鑽石·珍珠"
+      }
+    },
+    "platinum": {
+      "names": {
+        "zh-Hans": "白金",
+        "zh-Hant": "白金"
+      }
+    },
+    "heartgold-soulsilver": {
+      "names": {
+        "zh-Hans": "心金·魂银",
+        "zh-Hant": "心金·魂銀"
+      }
+    },
+    "black-white": {
+      "names": {
+        "zh-Hans": "黑·白",
+        "zh-Hant": "黑·白"
+      }
+    },
+    "black-2-white-2": {
+      "names": {
+        "zh-Hans": "黑2·白2",
+        "zh-Hant": "黑2·白2"
+      }
+    },
+    "x-y": {
+      "names": {
+        "zh-Hans": "X·Y",
+        "zh-Hant": "X·Y"
+      }
+    },
+    "omega-ruby-alpha-sapphire": {
+      "names": {
+        "zh-Hans": "终极红宝石·始源蓝宝石",
+        "zh-Hant": "終極紅寶石·始源藍寶石"
+      }
+    },
+    "sun-moon": {
+      "names": {
+        "zh-Hans": "太阳·月亮",
+        "zh-Hant": "太陽·月亮"
+      }
+    },
+    "ultra-sun-ultra-moon": {
+      "names": {
+        "zh-Hans": "究极之日·究极之月",
+        "zh-Hant": "究極之日·究極之月"
+      }
+    },
+    "lets-go-pikachu-lets-go-eevee": {
+      "names": {
+        "zh-Hans": "Let's Go! 皮卡丘·Let's Go! 伊布",
+        "zh-Hant": "Let's Go! 皮卡丘·Let's Go! 伊布"
+      }
+    },
+    "sword-shield": {
+      "names": {
+        "zh-Hans": "剑·盾",
+        "zh-Hant": "劍·盾"
+      }
+    },
+    "the-isle-of-armor": {
+      "names": {
+        "zh-Hans": "铠之孤岛",
+        "zh-Hant": "鎧之孤島"
+      }
+    },
+    "the-crown-tundra": {
+      "names": {
+        "zh-Hans": "冠之雪原",
+        "zh-Hant": "冠之雪原"
+      }
+    },
+    "brilliant-diamond-shining-pearl": {
+      "names": {
+        "zh-Hans": "晶灿钻石·明亮珍珠",
+        "zh-Hant": "晶燦鑽石·明亮珍珠"
+      }
+    },
+    "legends-arceus": {
+      "names": {
+        "zh-Hans": "传说 阿尔宙斯",
+        "zh-Hant": "傳說 阿爾宙斯"
+      }
+    },
+    "scarlet-violet": {
+      "names": {
+        "zh-Hans": "朱·紫",
+        "zh-Hant": "朱·紫"
+      }
+    },
+    "the-teal-mask": {
+      "names": {
+        "zh-Hans": "碧之假面",
+        "zh-Hant": "碧之假面"
+      }
+    },
+    "the-indigo-disk": {
+      "names": {
+        "zh-Hans": "蓝之圆盘",
+        "zh-Hant": "藍之圓盤"
+      }
+    },
+    "legends-za": {
+      "names": {
+        "zh-Hans": "传说 Z-A",
+        "zh-Hant": "傳說 Z-A"
+      }
+    },
+    "mega-dimension": {
+      "names": {
+        "zh-Hans": "超级次元",
+        "zh-Hant": "超級次元"
+      }
+    },
+    "champions": {
+      "names": {
+        "zh-Hans": "冠军赛",
+        "zh-Hant": "冠軍賽"
+      }
+    }
+  },
+  "evolutionTriggers": {
+    "level-up": {
+      "names": {
+        "zh-Hans": "提升等级",
+        "zh-Hant": "提升等級"
+      }
+    },
+    "trade": {
+      "names": {
+        "zh-Hans": "通信交换",
+        "zh-Hant": "通信交換"
+      }
+    },
+    "use-item": {
+      "names": {
+        "zh-Hans": "使用道具",
+        "zh-Hant": "使用道具"
+      }
+    },
+    "shed": {
+      "names": {
+        "zh-Hans": "队伍有空位且有精灵球",
+        "zh-Hant": "隊伍有空位且有精靈球"
+      }
+    },
+    "spin": {
+      "names": {
+        "zh-Hans": "旋转",
+        "zh-Hant": "旋轉"
+      }
+    },
+    "tower-of-darkness": {
+      "names": {
+        "zh-Hans": "在恶之塔修行",
+        "zh-Hant": "在惡之塔修行"
+      }
+    },
+    "tower-of-waters": {
+      "names": {
+        "zh-Hans": "在水之塔修行",
+        "zh-Hant": "在水之塔修行"
+      }
+    },
+    "three-critical-hits": {
+      "names": {
+        "zh-Hans": "一场对战中击中要害三次",
+        "zh-Hant": "一場對戰中擊中要害三次"
+      }
+    },
+    "take-damage": {
+      "names": {
+        "zh-Hans": "受到伤害后前往特定地点",
+        "zh-Hant": "受到傷害後前往特定地點"
+      }
+    },
+    "other": {
+      "names": {
+        "zh-Hans": "其他",
+        "zh-Hant": "其他"
+      }
+    },
+    "agile-style-move": {
+      "names": {
+        "zh-Hans": "以迅疾之型使用招式",
+        "zh-Hant": "以迅疾之型使用招式"
+      }
+    },
+    "strong-style-move": {
+      "names": {
+        "zh-Hans": "以刚猛之型使用招式",
+        "zh-Hant": "以剛猛之型使用招式"
+      }
+    },
+    "recoil-damage": {
+      "names": {
+        "zh-Hans": "累积反作用力伤害",
+        "zh-Hant": "累積反作用力傷害"
+      }
+    },
+    "use-move": {
+      "names": {
+        "zh-Hans": "使用招式",
+        "zh-Hant": "使用招式"
+      }
+    },
+    "three-defeated-bisharp": {
+      "names": {
+        "zh-Hans": "击败三只持有首领的证明的劈斩司令",
+        "zh-Hant": "擊敗三隻持有首領的證明的劈斬司令"
+      }
+    },
+    "gimmighoul-coins": {
+      "names": {
+        "zh-Hans": "收集 999 枚索财灵金币",
+        "zh-Hant": "收集 999 枚索財靈金幣"
+      }
+    }
+  },
+  "moveLearnMethods": {
+    "level-up": {
+      "names": {
+        "zh-Hans": "升级",
+        "zh-Hant": "升級"
+      }
+    },
+    "egg": {
+      "names": {
+        "zh-Hans": "遗传",
+        "zh-Hant": "遺傳"
+      }
+    },
+    "tutor": {
+      "names": {
+        "zh-Hans": "招式教学",
+        "zh-Hant": "招式教學"
+      }
+    },
+    "machine": {
+      "names": {
+        "zh-Hans": "招式学习器",
+        "zh-Hant": "招式學習器"
+      }
+    },
+    "form-change": {
+      "names": {
+        "zh-Hans": "形态变化",
+        "zh-Hant": "形態變化"
+      }
+    },
+    "light-ball-egg": {
+      "names": {
+        "zh-Hans": "电球皮丘",
+        "zh-Hant": "電球皮丘"
+      }
+    },
+    "stadium-surfing-pikachu": {
+      "names": {
+        "zh-Hans": "竞技场冲浪皮卡丘",
+        "zh-Hant": "競技場衝浪皮卡丘"
+      }
+    },
+    "colosseum-purification": {
+      "names": {
+        "zh-Hans": "竞技场净化",
+        "zh-Hant": "競技場淨化"
+      }
+    },
+    "xd-shadow": {
+      "names": {
+        "zh-Hans": "XD 暗影",
+        "zh-Hant": "XD 暗影"
+      }
+    },
+    "xd-purification": {
+      "names": {
+        "zh-Hans": "XD 净化",
+        "zh-Hant": "XD 淨化"
+      }
+    },
+    "zygarde-cube": {
+      "names": {
+        "zh-Hans": "基格尔德魔方",
+        "zh-Hant": "基格爾德魔方"
+      }
+    },
+    "train": {
+      "names": {
+        "zh-Hans": "修行",
+        "zh-Hant": "修行"
+      }
+    }
+  },
+  "forms": {
+    "alcremie-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "appletun-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "araquanid-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "arcanine-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "avalugg-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "barbaracle-mega": {
+      "names": {
+        "zh-Hans": "超级龟足巨铠",
+        "zh-Hant": "超級龜足巨鎧"
+      }
+    },
+    "baxcalibur-mega": {
+      "names": {
+        "zh-Hans": "超级戟脊龙",
+        "zh-Hant": "超級戟脊龍"
+      }
+    },
+    "blastoise-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "braviary-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "butterfree-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "centiskorch-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "chandelure-mega": {
+      "names": {
+        "zh-Hans": "超级水晶灯火灵",
+        "zh-Hant": "超級水晶燈火靈"
+      }
+    },
+    "charizard-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "chesnaught-mega": {
+      "names": {
+        "zh-Hans": "超级布里卡隆",
+        "zh-Hant": "超級布里卡隆"
+      }
+    },
+    "chimecho-mega": {
+      "names": {
+        "zh-Hans": "超级风铃铃",
+        "zh-Hant": "超級風鈴鈴"
+      }
+    },
+    "cinderace-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "clefable-mega": {
+      "names": {
+        "zh-Hans": "超级皮可西",
+        "zh-Hant": "超級皮可西"
+      }
+    },
+    "coalossal-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "copperajah-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "corviknight-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "crabominable-mega": {
+      "names": {
+        "zh-Hans": "超级好胜毛蟹",
+        "zh-Hant": "超級好勝毛蟹"
+      }
+    },
+    "darkrai-mega": {
+      "names": {
+        "zh-Hans": "超级达克莱伊",
+        "zh-Hant": "超級達克萊伊"
+      }
+    },
+    "decidueye-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "delphox-mega": {
+      "names": {
+        "zh-Hans": "超级妖火红狐",
+        "zh-Hant": "超級妖火紅狐"
+      }
+    },
+    "dragalge-mega": {
+      "names": {
+        "zh-Hans": "超级毒藻龙",
+        "zh-Hant": "超級毒藻龍"
+      }
+    },
+    "dragonite-mega": {
+      "names": {
+        "zh-Hans": "超级快龙",
+        "zh-Hant": "超級快龍"
+      }
+    },
+    "drampa-mega": {
+      "names": {
+        "zh-Hans": "超级老翁龙",
+        "zh-Hant": "超級老翁龍"
+      }
+    },
+    "drednaw-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "duraludon-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "eelektross-mega": {
+      "names": {
+        "zh-Hans": "超级麻麻鳗鱼王",
+        "zh-Hant": "超級麻麻鰻魚王"
+      }
+    },
+    "eevee-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "electrode-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "emboar-mega": {
+      "names": {
+        "zh-Hans": "超级炎武王",
+        "zh-Hant": "超級炎武王"
+      }
+    },
+    "excadrill-mega": {
+      "names": {
+        "zh-Hans": "超级龙头地鼠",
+        "zh-Hant": "超級龍頭地鼠"
+      }
+    },
+    "falinks-mega": {
+      "names": {
+        "zh-Hans": "超级列阵兵",
+        "zh-Hant": "超級列陣兵"
+      }
+    },
+    "feraligatr-mega": {
+      "names": {
+        "zh-Hans": "超级大力鳄",
+        "zh-Hant": "超級大力鱷"
+      }
+    },
+    "flapple-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "floette-mega": {
+      "names": {
+        "zh-Hans": "超级花叶蒂",
+        "zh-Hant": "超級花葉蒂"
+      }
+    },
+    "froslass-mega": {
+      "names": {
+        "zh-Hans": "超级雪妖女",
+        "zh-Hant": "超級雪妖女"
+      }
+    },
+    "garbodor-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "gengar-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "glimmora-mega": {
+      "names": {
+        "zh-Hans": "超级晶光花",
+        "zh-Hant": "超級晶光花"
+      }
+    },
+    "golisopod-mega": {
+      "names": {
+        "zh-Hans": "超级具甲武者",
+        "zh-Hant": "超級具甲武者"
+      }
+    },
+    "golurk-mega": {
+      "names": {
+        "zh-Hans": "超级泥偶巨人",
+        "zh-Hant": "超級泥偶巨人"
+      }
+    },
+    "goodra-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "greninja-mega": {
+      "names": {
+        "zh-Hans": "超级甲贺忍蛙",
+        "zh-Hant": "超級甲賀忍蛙"
+      }
+    },
+    "grimmsnarl-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "growlithe-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "gumshoos-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "hatterene-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "hawlucha-mega": {
+      "names": {
+        "zh-Hans": "超级摔角鹰人",
+        "zh-Hant": "超級摔角鷹人"
+      }
+    },
+    "heatran-mega": {
+      "names": {
+        "zh-Hans": "超级席多蓝恩",
+        "zh-Hant": "超級席多藍恩"
+      }
+    },
+    "inteleon-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "kingler-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "kommo-o-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "lapras-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "lilligant-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "lurantis-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "machamp-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "magearna-mega": {
+      "names": {
+        "zh-Hans": "超级玛机雅娜",
+        "zh-Hant": "超級瑪機雅娜"
+      }
+    },
+    "magearna-original-mega": {
+      "names": {
+        "zh-Hans": "超级玛机雅娜",
+        "zh-Hant": "超級瑪機雅娜"
+      }
+    },
+    "malamar-mega": {
+      "names": {
+        "zh-Hans": "超级乌贼王",
+        "zh-Hant": "超級烏賊王"
+      }
+    },
+    "marowak-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "meganium-mega": {
+      "names": {
+        "zh-Hans": "超级大竺葵",
+        "zh-Hant": "超級大竺葵"
+      }
+    },
+    "melmetal-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "meowstic-female-mega": {
+      "names": {
+        "zh-Hans": "超级超能妙喵",
+        "zh-Hant": "超級超能妙喵"
+      }
+    },
+    "meowstic-male-mega": {
+      "names": {
+        "zh-Hans": "超级超能妙喵",
+        "zh-Hant": "超級超能妙喵"
+      }
+    },
+    "meowth-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "mimikyu-totem-busted": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "mimikyu-totem-disguised": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "orbeetle-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "pikachu-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "pyroar-mega": {
+      "names": {
+        "zh-Hans": "超级火炎狮",
+        "zh-Hant": "超級火炎獅"
+      }
+    },
+    "qwilfish-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "raichu-mega-x": {
+      "names": {
+        "zh-Hans": "超级雷丘 X",
+        "zh-Hant": "超級雷丘 X"
+      }
+    },
+    "raichu-mega-y": {
+      "names": {
+        "zh-Hans": "超级雷丘 Y",
+        "zh-Hant": "超級雷丘 Y"
+      }
+    },
+    "raticate-totem-alola": {
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    "ribombee-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "rillaboom-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "salazzle-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "samurott-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "sandaconda-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "scolipede-mega": {
+      "names": {
+        "zh-Hans": "超级蜈蚣王",
+        "zh-Hant": "超級蜈蚣王"
+      }
+    },
+    "scovillain-mega": {
+      "names": {
+        "zh-Hans": "超级狠辣椒",
+        "zh-Hant": "超級狠辣椒"
+      }
+    },
+    "scrafty-mega": {
+      "names": {
+        "zh-Hans": "超级头巾混混",
+        "zh-Hant": "超級頭巾混混"
+      }
+    },
+    "skarmory-mega": {
+      "names": {
+        "zh-Hans": "超级盔甲鸟",
+        "zh-Hant": "超級盔甲鳥"
+      }
+    },
+    "sliggoo-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "sneasel-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "snorlax-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "staraptor-mega": {
+      "names": {
+        "zh-Hans": "超级姆克鹰",
+        "zh-Hant": "超級姆克鷹"
+      }
+    },
+    "starmie-mega": {
+      "names": {
+        "zh-Hans": "超级宝石海星",
+        "zh-Hant": "超級寶石海星"
+      }
+    },
+    "tatsugiri-curly-mega": {
+      "names": {
+        "zh-Hans": "超级米立龙",
+        "zh-Hant": "超級米立龍"
+      }
+    },
+    "tatsugiri-droopy-mega": {
+      "names": {
+        "zh-Hans": "超级米立龙",
+        "zh-Hant": "超級米立龍"
+      }
+    },
+    "tatsugiri-stretchy-mega": {
+      "names": {
+        "zh-Hans": "超级米立龙",
+        "zh-Hant": "超級米立龍"
+      }
+    },
+    "tauros-paldea-aqua-breed": {
+      "names": {
+        "zh-Hans": "帕底亚的样子",
+        "zh-Hant": "帕底亞的樣子"
+      }
+    },
+    "tauros-paldea-blaze-breed": {
+      "names": {
+        "zh-Hans": "帕底亚的样子",
+        "zh-Hant": "帕底亞的樣子"
+      }
+    },
+    "tauros-paldea-combat-breed": {
+      "names": {
+        "zh-Hans": "帕底亚的样子",
+        "zh-Hant": "帕底亞的樣子"
+      }
+    },
+    "togedemaru-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "toxtricity-amped-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "toxtricity-low-key-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "typhlosion-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "urshifu-rapid-strike-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "urshifu-single-strike-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "venusaur-gmax": {
+      "names": {
+        "zh-Hans": "超极巨化的样子",
+        "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "victreebel-mega": {
+      "names": {
+        "zh-Hans": "超级大食花",
+        "zh-Hant": "超級大食花"
+      }
+    },
+    "vikavolt-totem": {
+      "names": {
+        "zh-Hans": "首领的样子",
+        "zh-Hant": "首領的樣子"
+      }
+    },
+    "voltorb-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "wooper-paldea": {
+      "names": {
+        "zh-Hans": "帕底亚的样子",
+        "zh-Hant": "帕底亞的樣子"
+      }
+    },
+    "zeraora-mega": {
+      "names": {
+        "zh-Hans": "超级捷拉奥拉",
+        "zh-Hant": "超級捷拉奧拉"
+      }
+    },
+    "zoroark-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "zorua-hisui": {
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "zygarde-mega": {
+      "names": {
+        "zh-Hans": "超级基格尔德",
+        "zh-Hant": "超級基格爾德"
       }
     }
   }
