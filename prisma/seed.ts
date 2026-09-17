@@ -1,35 +1,41 @@
 /**
- * 字典表的种子数据。
+ * 把快照灌进库。
  *
- * 这些是游戏史实，四千多行，永远不变，所以一次性灌好而不是走 PokeAPISource
- * 那套「查库 miss 才拉」的按需逻辑 —— 压根没有 miss 的概念。
+ * 这些是游戏史实，永远不变，所以一次性灌好 —— 运行时只查本地 Postgres，
+ * 不回源 PokeAPI，字典表空着的话整个站都没数据。
  *
- * 而且它是 PokeAPISource 能工作的前提：写 pokemon_i18n 要 language 表有行、
- * 写属性要 generation 和 type 表有行，字典表空着的话，从 PokeAPI 拉回来的
- * 宝可梦一条也插不进去，全都外键报错。
+ * 数据读的是 prisma/seed-data/ 下的快照，跟代码一起进 git：
+ *   *.json          PokeAPI 的拷贝，scripts/refresh-seed-data.ts 生成
+ *   *.json.gz       同上，大到没法明文存的（招式学习表一百万行）
+ *   wiki-*.json     神奇宝贝百科的拷贝，scripts/refresh-wiki-data.ts 生成，补中文
+ *   overrides.json  人工译名，两个刷新脚本都不碰
  *
- * 数据读的是 prisma/seed-data/*.json —— PokeAPI 某一刻的快照，跟代码一起进 git。
  * 这里不联网：建库不该依赖 pokeapi.co 可用，数据源改了什么也该在 diff 里看得见。
- * 要跟进数据源的更新跑 pnpm seed:refresh（scripts/refresh-seed-data.ts）。
  *
- * 跑法：pnpm exec prisma db seed（migrate dev 也会自动执行）
+ * 跑法：pnpm seed（或 pnpm exec prisma db seed，migrate dev 也会自动执行）
  *
- * 可以重复跑：实体和译名走 upsert；相克表和道具说明整表重建 —— 那两张是纯导入
- * 数据、没有下游引用，而 upsert 会把上一版的行留在库里删不掉。
+ * 可以重复跑：实体和译名走 upsert；说明、相克表、招式学习、进化这些纯导入数据
+ * 整表重建 —— 它们没有下游引用，而 upsert 会把上一版的行留在库里删不掉。
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { gunzipSync } from "node:zlib";
 
 import { type LanguageCode, LANGUAGES } from "@/lib/pokemon/language";
 import { prisma } from "@/lib/prisma";
 import {
   type DamageTo,
+  type EffectsByGeneration,
+  type FlavorsByGroup,
+  type GzipSeedData,
   type Localized,
   SEED_DATA_DIR,
   SEED_OVERRIDES_FILE,
   type SeedData,
   type SeedOverrides,
   type TypeSnapshot,
+  type WikiData,
+  type WikiEffectSnapshot,
 } from "@/prisma/seed-data/types";
 
 /** 属性徽章的主题色。PokeAPI 不提供，只能手写 */
@@ -69,6 +75,9 @@ const POKEMON_COLORS: Record<string, string> = {
   yellow: "#F7D02C",
 };
 
+/** createMany 一次塞多少行。再大就顶到 Postgres 的参数上限了 */
+const BATCH = 5000;
+
 // ── 快照读取 ──────────────────────────────────────────────────
 
 /** 路径相对项目根 —— seed 和刷新脚本都由 pnpm 从根目录启动 */
@@ -77,7 +86,19 @@ function read<K extends keyof SeedData>(name: K): SeedData[K] {
   return JSON.parse(readFileSync(path, "utf8")) as SeedData[K];
 }
 
-/** 人工译名。跟快照放一起，但由人维护，pnpm seed:refresh 不碰它 */
+/** 压着存的那些。招式学习表纯文本三百多兆，超过 GitHub 单文件上限 */
+function readGzip<K extends keyof GzipSeedData>(name: K): GzipSeedData[K] {
+  const path = join(SEED_DATA_DIR, `${name}.json.gz`);
+  return JSON.parse(gunzipSync(readFileSync(path)).toString("utf8")) as GzipSeedData[K];
+}
+
+/** 神奇宝贝百科的快照。补中文 —— PokeAPI 的机制说明只有英法德 */
+function readWiki<K extends keyof WikiData>(name: K): WikiData[K] {
+  const path = join(SEED_DATA_DIR, `${name}.json`);
+  return JSON.parse(readFileSync(path, "utf8")) as WikiData[K];
+}
+
+/** 人工译名。跟快照放一起，但由人维护，两个刷新脚本都不碰它 */
 function overrides(): SeedOverrides {
   const path = join(SEED_DATA_DIR, SEED_OVERRIDES_FILE);
   return JSON.parse(readFileSync(path, "utf8")) as SeedOverrides;
@@ -89,6 +110,87 @@ function localized(texts: Localized): { languageCode: LanguageCode; value: strin
     languageCode: languageCode as LanguageCode,
     value,
   }));
+}
+
+/** 分批塞。十万行一次性过去会超出 Postgres 的参数上限 */
+async function insertInBatches<T>(rows: T[], insert: (batch: T[]) => Promise<unknown>) {
+  for (let i = 0; i < rows.length; i += BATCH) await insert(rows.slice(i, i + BATCH));
+}
+
+// ── 说明文本的两个数据源合并 ──────────────────────────────────
+
+type EffectRow = {
+  generationId: number;
+  languageCode: LanguageCode;
+  shortEffect: string | null;
+  effect: string;
+};
+
+/**
+ * 机制说明摊成一行行。
+ *
+ * 快照那份只有英法德 —— 数据源的 effect_entries 是志愿者手写的，
+ * 贡献者以英语和欧洲语言使用者为主。中文来自神奇宝贝百科，它不分世代，
+ * 所以每一代都插同一段文本，shortEffect 留空（百科上没有短版）。
+ */
+function effectRows(effects: EffectsByGeneration, chinese: Localized | undefined): EffectRow[] {
+  const out: EffectRow[] = [];
+  for (const [generation, texts] of Object.entries(effects)) {
+    const generationId = Number(generation);
+    for (const [code, text] of Object.entries(texts)) {
+      out.push({
+        generationId,
+        languageCode: code as LanguageCode,
+        shortEffect: text.short,
+        effect: text.effect,
+      });
+    }
+    for (const { languageCode, value } of localized(chinese ?? {})) {
+      out.push({ generationId, languageCode, shortEffect: null, effect: value });
+    }
+  }
+  return out;
+}
+
+/**
+ * 游戏文案摊成一行行。
+ *
+ * 两份数据源同一个版本组同一种语言都有时以百科为准 —— PokeAPI 的中文只到剑盾，
+ * 朱紫那一批只有百科有。版本组不在库里的行丢掉（外传游戏的版本组没进快照）。
+ */
+function flavorRows(
+  flavors: FlavorsByGroup,
+  chinese: FlavorsByGroup | undefined,
+  groupIds: Map<string, number>,
+): { groupId: number; languageCode: LanguageCode; text: string }[] {
+  const out: { groupId: number; languageCode: LanguageCode; text: string }[] = [];
+  const slugs = new Set([...Object.keys(flavors), ...Object.keys(chinese ?? {})]);
+  for (const slug of slugs) {
+    const groupId = groupIds.get(slug);
+    if (groupId === undefined) continue;
+    const merged = { ...flavors[slug], ...chinese?.[slug] };
+    for (const { languageCode, value: text } of localized(merged)) {
+      out.push({ groupId, languageCode, text });
+    }
+  }
+  return out;
+}
+
+/** wiki 快照按 slug 建索引。文件不存在就当没有中文，不让 seed 挂掉 ——
+ *  百科那边页面结构变了抓不到东西时，英文数据照样该能进库 */
+function wikiEffects(name: "wiki-abilities" | "wiki-moves"): Map<string, WikiEffectSnapshot> {
+  try {
+    const snapshot = readWiki(name);
+    if (snapshot.unmatched.length) {
+      // 多半是百科收了而 PokeAPI 还没收的新条目（传说 Z-A 那批特性就是），
+      // 本体表以 PokeAPI 为准，这些中文没有可挂的行
+      console.warn(`⚠ ${name}: ${snapshot.unmatched.length} 个条目在 PokeAPI 里没有对应记录`);
+    }
+    return new Map(snapshot.rows.map((r) => [r.slug, r]));
+  } catch {
+    console.warn(`⚠ 读不到 ${name}.json，这一批的中文说明会缺`);
+    return new Map();
+  }
 }
 
 // ── 各步 ──────────────────────────────────────────────────────
@@ -270,7 +372,8 @@ async function seedColors() {
   return ids;
 }
 
-async function seedMoveLearnMethods() {
+/** 学习方式的译名数据源只有英法，中日韩靠 overrides.json 补 */
+async function seedMoveLearnMethods(manual: SeedOverrides["moveLearnMethods"]) {
   const methods = read("move-learn-methods");
 
   for (const m of methods) {
@@ -279,7 +382,8 @@ async function seedMoveLearnMethods() {
       create: { slug: m.slug },
       update: {},
     });
-    for (const { languageCode, value: name } of localized(m.names)) {
+    const names = { ...m.names, ...manual?.[m.slug]?.names };
+    for (const { languageCode, value: name } of localized(names)) {
       await prisma.moveLearnMethodI18n.upsert({
         where: { methodSlug_languageCode: { methodSlug: m.slug, languageCode } },
         create: { methodSlug: m.slug, languageCode, name },
@@ -291,7 +395,7 @@ async function seedMoveLearnMethods() {
 }
 
 /** 进化的触发方式，16 种。evolution.triggerSlug 指向它 */
-async function seedEvolutionTriggers() {
+async function seedEvolutionTriggers(manual: SeedOverrides["evolutionTriggers"]) {
   const triggers = read("evolution-triggers");
 
   for (const t of triggers) {
@@ -300,7 +404,8 @@ async function seedEvolutionTriggers() {
       create: { slug: t.slug },
       update: {},
     });
-    for (const { languageCode, value: name } of localized(t.names)) {
+    const names = { ...t.names, ...manual?.[t.slug]?.names };
+    for (const { languageCode, value: name } of localized(names)) {
       await prisma.evolutionTriggerI18n.upsert({
         where: { triggerSlug_languageCode: { triggerSlug: t.slug, languageCode } },
         create: { triggerSlug: t.slug, languageCode, name },
@@ -311,56 +416,11 @@ async function seedEvolutionTriggers() {
   console.log(`进化触发方式: ${triggers.length} 行`);
 }
 
-async function seedItems() {
-  const items = read("items");
-
-  const rows: {
-    itemId: number;
-    generationId: number;
-    languageCode: LanguageCode;
-    effect: string;
-  }[] = [];
-  for (const item of items) {
-    const saved = await prisma.item.upsert({
-      where: { slug: item.slug },
-      create: { slug: item.slug, imageName: item.imageName },
-      update: { imageName: item.imageName },
-    });
-    for (const { languageCode, value: name } of localized(item.names)) {
-      await prisma.itemI18n.upsert({
-        where: { itemId_languageCode: { itemId: saved.id, languageCode } },
-        create: { itemId: saved.id, languageCode, name },
-        update: { name },
-      });
-    }
-
-    // 说明按世代存，每代一份完整值 —— 雷之石的文案 Gen3 是「Makes certain species
-    // of POKéMON evolve.」，Gen6 起改成「A peculiar stone that can make...」，
-    // 拿最新值糊到老世代上就是错的。
-    //
-    // shortEffect 一律 null：快照里的文本是游戏原文（flavor text），没有短版。
-    // 那一列原来装 effect_entries 的 short_effect，而 effect_entries 是志愿者
-    // 手写的机制描述、只有英法文，换成游戏原文之后 10 种语言都有了
-    for (const [generation, texts] of Object.entries(item.descriptions)) {
-      for (const { languageCode, value: effect } of localized(texts)) {
-        rows.push({ itemId: saved.id, generationId: Number(generation), languageCode, effect });
-      }
-    }
-  }
-
-  // 整表重建而不是逐行 upsert：三千多行，而且这张表没有下游引用。
-  // upsert 还会把上一版的行留在库里 —— 换数据源那次，老的 effect_entries
-  // 全写在 generationId=9，新数据一行都不覆盖到它们
-  await prisma.itemEffectI18n.deleteMany({});
-  await prisma.itemEffectI18n.createMany({ data: rows });
-  console.log(`道具: ${items.length} 行，说明 ${rows.length} 行`);
-}
-
 /** 图鉴。要先建它才能写 pokedex_group，所以排在版本组之前。
  *  地区编号跳过 —— 那是 PokedexNumber，得先有 pokemon 表数据 */
-async function seedPokedexes(regionIds: Map<string, number>) {
+async function seedPokedexes(regionIds: Map<string, number>, manual: SeedOverrides["pokedexes"]) {
   const pokedexes = read("pokedexes");
-  const manual = overrides().pokedexes ?? {};
+  const bySlug = manual ?? {};
 
   const ids = new Map<string, number>();
   for (const p of pokedexes) {
@@ -378,8 +438,8 @@ async function seedPokedexes(regionIds: Map<string, number>) {
 
     // 数据源这两项只有 en / fr / es / de，中日韩全无 —— 图鉴名不是游戏 ROM 里的
     // 文本，是 PokeAPI 给自己那些记录起的名字，靠志愿者填。人工译名叠在上面
-    const names = { ...p.names, ...manual[p.slug]?.names };
-    const descriptions = { ...p.descriptions, ...manual[p.slug]?.descriptions };
+    const names = { ...p.names, ...bySlug[p.slug]?.names };
+    const descriptions = { ...p.descriptions, ...bySlug[p.slug]?.descriptions };
 
     for (const { languageCode, value: name } of localized(names)) {
       await prisma.pokedexI18n.upsert({
@@ -398,7 +458,7 @@ async function seedPokedexes(regionIds: Map<string, number>) {
     }
   }
 
-  const unknown = Object.keys(manual).filter((slug) => !ids.has(slug));
+  const unknown = Object.keys(bySlug).filter((slug) => !ids.has(slug));
   if (unknown.length) {
     // overrides 里写了快照里没有的 slug，多半是数据源改名或手抖拼错，
     // 静静跳过的话那条译名永远不生效也没人知道
@@ -408,7 +468,12 @@ async function seedPokedexes(regionIds: Map<string, number>) {
   return ids;
 }
 
-async function seedGroups(regionIds: Map<string, number>, pokedexIds: Map<string, number>) {
+/** 版本组。译名 PokeAPI 一条都不给（那边只有 version 有 names），全靠 overrides.json */
+async function seedGroups(
+  regionIds: Map<string, number>,
+  pokedexIds: Map<string, number>,
+  manual: SeedOverrides["groups"],
+) {
   const groups = read("groups");
 
   const ids = new Map<string, number>();
@@ -422,7 +487,14 @@ async function seedGroups(regionIds: Map<string, number>, pokedexIds: Map<string
     ids.set(vg.slug, group.id);
     const groupId = group.id;
 
-    // 版本组没有译名，PokeAPI 不给，所以只写本体和三张中间表
+    for (const { languageCode, value: name } of localized(manual?.[vg.slug]?.names ?? {})) {
+      await prisma.groupI18n.upsert({
+        where: { groupId_languageCode: { groupId, languageCode } },
+        create: { groupId, languageCode, name },
+        update: { name },
+      });
+    }
+
     for (const slug of vg.regionSlugs) {
       const regionId = regionIds.get(slug);
       if (regionId === undefined) continue;
@@ -448,6 +520,11 @@ async function seedGroups(regionIds: Map<string, number>, pokedexIds: Map<string
         update: {},
       });
     }
+  }
+
+  const unknown = Object.keys(manual ?? {}).filter((slug) => !ids.has(slug));
+  if (unknown.length) {
+    console.warn(`⚠ overrides.json 里有快照没有的版本组: ${unknown.join(", ")}`);
   }
   console.log(`版本组: ${groups.length} 行`);
   return ids;
@@ -482,23 +559,198 @@ async function seedVersions(groupIds: Map<string, number>) {
 }
 
 /**
- * 全部物种和它们的默认形态。
+ * 道具，两千两百多件。
  *
- * 跟字典表不一样，这里用批量写而不是逐行 upsert —— 一千多只摊开是三万多行，
- * 加上十万条图鉴说明，逐行来是十几万次数据库往返。
+ * 两套说明分开存：ItemEffectI18n 是机制说明（数据源的 effect_entries，
+ * 志愿者手写、只有英法），ItemFlavorI18n 是游戏里显示的那句话
+ * （从各语言版本 ROM 提取，10 种语言齐全）。两张表各自整表重建。
+ */
+async function seedItems(groupIds: Map<string, number>) {
+  const items = read("items");
+
+  const effects: (EffectRow & { itemId: number })[] = [];
+  const flavors: { itemId: number; groupId: number; languageCode: LanguageCode; text: string }[] =
+    [];
+
+  for (const item of items) {
+    const saved = await prisma.item.upsert({
+      where: { slug: item.slug },
+      create: { slug: item.slug, imageName: item.imageName },
+      update: { imageName: item.imageName },
+    });
+    for (const { languageCode, value: name } of localized(item.names)) {
+      await prisma.itemI18n.upsert({
+        where: { itemId_languageCode: { itemId: saved.id, languageCode } },
+        create: { itemId: saved.id, languageCode, name },
+        update: { name },
+      });
+    }
+
+    for (const row of effectRows(item.effects, undefined))
+      effects.push({ itemId: saved.id, ...row });
+    for (const row of flavorRows(item.flavors, undefined, groupIds)) {
+      flavors.push({ itemId: saved.id, ...row });
+    }
+  }
+
+  await prisma.itemEffectI18n.deleteMany({});
+  await insertInBatches(effects, (data) => prisma.itemEffectI18n.createMany({ data }));
+  await prisma.itemFlavorI18n.deleteMany({});
+  await insertInBatches(flavors, (data) => prisma.itemFlavorI18n.createMany({ data }));
+  console.log(
+    `道具: ${items.length} 行，机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行`,
+  );
+  return new Map(
+    await prisma.item
+      .findMany({ select: { id: true, slug: true } })
+      .then((rows) => rows.map((r) => [r.slug, r.id] as const)),
+  );
+}
+
+/** 特性，374 个。中文机制说明来自神奇宝贝百科 —— PokeAPI 那边只有英法德 */
+async function seedAbilities(groupIds: Map<string, number>) {
+  const abilities = read("abilities");
+  const wiki = wikiEffects("wiki-abilities");
+
+  const effects: (EffectRow & { abilityId: number })[] = [];
+  const flavors: {
+    abilityId: number;
+    groupId: number;
+    languageCode: LanguageCode;
+    text: string;
+  }[] = [];
+
+  const ids = new Map<string, number>();
+  for (const a of abilities) {
+    const saved = await prisma.ability.upsert({
+      where: { slug: a.slug },
+      create: { slug: a.slug },
+      update: {},
+    });
+    ids.set(a.slug, saved.id);
+
+    for (const { languageCode, value: name } of localized(a.names)) {
+      await prisma.abilityI18n.upsert({
+        where: { abilityId_languageCode: { abilityId: saved.id, languageCode } },
+        create: { abilityId: saved.id, languageCode, name },
+        update: { name },
+      });
+    }
+
+    const zh = wiki.get(a.slug);
+    for (const row of effectRows(a.effects, zh?.effect))
+      effects.push({ abilityId: saved.id, ...row });
+    for (const row of flavorRows(a.flavors, zh?.flavors, groupIds)) {
+      flavors.push({ abilityId: saved.id, ...row });
+    }
+  }
+
+  await prisma.abilityEffectI18n.deleteMany({});
+  await insertInBatches(effects, (data) => prisma.abilityEffectI18n.createMany({ data }));
+  await prisma.abilityFlavorI18n.deleteMany({});
+  await insertInBatches(flavors, (data) => prisma.abilityFlavorI18n.createMany({ data }));
+  console.log(
+    `特性: ${abilities.length} 行，机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行`,
+  );
+  return ids;
+}
+
+/** 招式，937 个。数值每代一行 —— 喷射火焰 Gen1~5 威力 95、Gen6 起 90 */
+async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, number>) {
+  const moves = read("moves");
+  const wiki = wikiEffects("wiki-moves");
+
+  const generations: {
+    moveId: number;
+    generationId: number;
+    typeId: number;
+    damageClass: "PHYSICAL" | "SPECIAL" | "STATUS";
+    power: number | null;
+    accuracy: number | null;
+    pp: number | null;
+  }[] = [];
+  const effects: (EffectRow & { moveId: number })[] = [];
+  const flavors: { moveId: number; groupId: number; languageCode: LanguageCode; text: string }[] =
+    [];
+
+  const ids = new Map<string, number>();
+  for (const m of moves) {
+    const saved = await prisma.move.upsert({
+      where: { slug: m.slug },
+      create: { slug: m.slug },
+      update: {},
+    });
+    ids.set(m.slug, saved.id);
+
+    for (const { languageCode, value: name } of localized(m.names)) {
+      await prisma.moveI18n.upsert({
+        where: { moveId_languageCode: { moveId: saved.id, languageCode } },
+        create: { moveId: saved.id, languageCode, name },
+        update: { name },
+      });
+    }
+
+    for (const [generation, values] of Object.entries(m.generations)) {
+      const typeId = typeIds.get(values.typeSlug);
+      // 太晶爆发那种非标准属性不在库里，整行跳过而不是写半行进去
+      if (typeId === undefined) continue;
+      generations.push({
+        moveId: saved.id,
+        generationId: Number(generation),
+        typeId,
+        damageClass: values.damageClass,
+        power: values.power,
+        accuracy: values.accuracy,
+        pp: values.pp,
+      });
+    }
+
+    const zh = wiki.get(m.slug);
+    for (const row of effectRows(m.effects, zh?.effect)) effects.push({ moveId: saved.id, ...row });
+    for (const row of flavorRows(m.flavors, zh?.flavors, groupIds)) {
+      flavors.push({ moveId: saved.id, ...row });
+    }
+  }
+
+  await prisma.moveGeneration.deleteMany({});
+  await insertInBatches(generations, (data) => prisma.moveGeneration.createMany({ data }));
+  await prisma.moveEffectI18n.deleteMany({});
+  await insertInBatches(effects, (data) => prisma.moveEffectI18n.createMany({ data }));
+  await prisma.moveFlavorI18n.deleteMany({});
+  await insertInBatches(flavors, (data) => prisma.moveFlavorI18n.createMany({ data }));
+  console.log(
+    `招式: ${moves.length} 行，世代数值 ${generations.length} 行，` +
+      `机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行`,
+  );
+  return ids;
+}
+
+/**
+ * 全部物种和它们的 1351 个形态。
+ *
+ * 跟字典表不一样，这里用批量写而不是逐行 upsert —— 一千多只摊开是几万行，
+ * 加上八万条图鉴说明，逐行来是十几万次数据库往返。
  *
  * 物种、译名、图鉴编号用 createMany + skipDuplicates：主键都是数据源给的
  * 固定值，重复跑不会变。形态得逐只 upsert 拿自增 id，之后子表按 formId
- * 整批删了重插 —— 只清这批 formId 的行，按需拉进来的地区形态不受影响。
+ * 整批删了重插。
+ *
+ * 图鉴说明挂在物种上（数据源那边就是这么给的），所以同一物种的每个形态
+ * 都写一份 —— 阿罗拉六尾在游戏里的说明跟关都六尾不同，这层差异数据源补不了。
  */
-async function seedPokemon(dict: {
-  pokedexes: Map<string, number>;
-  types: Map<string, number>;
-  colors: Map<string, number>;
-  versions: Map<string, number>;
-}) {
+async function seedPokemon(
+  dict: {
+    pokedexes: Map<string, number>;
+    types: Map<string, number>;
+    colors: Map<string, number>;
+    versions: Map<string, number>;
+    abilities: Map<string, number>;
+  },
+  manual: SeedOverrides["forms"],
+) {
   const rows = read("pokemon");
   const descriptions = new Map(read("pokemon-descriptions").map((d) => [d.slug, d.descriptions]));
+  const chinese = wikiDescriptions();
 
   await prisma.pokemon.createMany({
     data: rows.map((p) => ({ id: p.id, slug: p.slug })),
@@ -526,32 +778,54 @@ async function seedPokemon(dict: {
     skipDuplicates: true,
   });
 
-  const formIds = new Map<number, number>();
+  /** 形态 slug → 自增 id。进化关系和招式学习表都靠它 */
+  const formIds = new Map<string, number>();
   for (const p of rows) {
-    const data = {
-      pokemonId: p.id,
-      isDefault: p.form.isDefault,
-      fullImage: p.form.fullImage,
-      detailImage: p.form.detailImage,
-    };
-    const form = await prisma.form.upsert({
-      where: { slug: p.form.slug },
-      create: { slug: p.form.slug, ...data },
-      update: data,
-    });
-    formIds.set(p.id, form.id);
+    for (const f of p.forms) {
+      const data = {
+        pokemonId: p.id,
+        isDefault: f.isDefault,
+        fullImage: f.fullImage,
+        detailImage: f.detailImage,
+      };
+      const form = await prisma.form.upsert({
+        where: { slug: f.slug },
+        create: { slug: f.slug, ...data },
+        update: data,
+      });
+      formIds.set(f.slug, form.id);
+    }
   }
 
+  /** 摊平成 (形态 id, 形态快照) 对，下面几张子表都按它展开 */
+  const forms = rows.flatMap((p) =>
+    p.forms.map((f) => ({ id: formIds.get(f.slug)!, species: p.slug, form: f })),
+  );
   const ids = [...formIds.values()];
+
+  await prisma.formI18n.deleteMany({ where: { formId: { in: ids } } });
+  await prisma.formI18n.createMany({
+    data: forms.flatMap(({ id, form }) => {
+      // 形态名只有非默认形态有（「阿罗拉的样子」）；数据源缺中文，靠 overrides 补
+      const names: Localized = { ...manual?.[form.slug]?.names };
+      for (const n of form.names) names[n.languageCode as LanguageCode] ??= n.name;
+      return localized(names).map(({ languageCode, value: name }) => ({
+        formId: id,
+        languageCode,
+        name,
+      }));
+    }),
+  });
+
   await prisma.formType.deleteMany({ where: { formId: { in: ids } } });
   await prisma.formType.createMany({
-    data: rows.flatMap((p) =>
-      p.form.types.flatMap((t) => {
+    data: forms.flatMap(({ id, form }) =>
+      form.types.flatMap((t) => {
         const primaryTypeId = dict.types.get(t.primarySlug);
         if (primaryTypeId === undefined) return [];
         return [
           {
-            formId: formIds.get(p.id)!,
+            formId: id,
             generationId: t.generationId,
             primaryTypeId,
             secondaryTypeId: t.secondarySlug ? (dict.types.get(t.secondarySlug) ?? null) : null,
@@ -563,70 +837,305 @@ async function seedPokemon(dict: {
 
   await prisma.formColor.deleteMany({ where: { formId: { in: ids } } });
   await prisma.formColor.createMany({
-    data: rows.flatMap((p) =>
-      p.form.colors.flatMap((c) => {
+    data: forms.flatMap(({ id, form }) =>
+      form.colors.flatMap((c) => {
         const colorId = dict.colors.get(c.colorSlug);
-        return colorId === undefined
-          ? []
-          : [{ formId: formIds.get(p.id)!, generationId: c.generationId, colorId }];
+        return colorId === undefined ? [] : [{ formId: id, generationId: c.generationId, colorId }];
       }),
     ),
   });
 
   await prisma.formStat.deleteMany({ where: { formId: { in: ids } } });
-  await prisma.formStat.createMany({
-    data: rows.flatMap((p) => p.form.stats.map((st) => ({ formId: formIds.get(p.id)!, ...st }))),
-  });
+  const statRows = forms.flatMap(({ id, form }) => form.stats.map((st) => ({ formId: id, ...st })));
+  await insertInBatches(statRows, (data) => prisma.formStat.createMany({ data }));
 
+  await prisma.formAbility.deleteMany({ where: { formId: { in: ids } } });
+  const abilityRows = forms.flatMap(({ id, form }) =>
+    form.abilities.flatMap((a) => {
+      const abilityId = dict.abilities.get(a.abilitySlug);
+      return abilityId === undefined
+        ? []
+        : [{ formId: id, generationId: a.generationId, abilityId, slot: a.slot }];
+    }),
+  );
+  await insertInBatches(abilityRows, (data) => prisma.formAbility.createMany({ data }));
+
+  // 图鉴说明两个数据源合并后一次写入。同一 (版本, 语言) 以百科为准 ——
+  // PokeAPI 的中文只有 8 个版本组、722 只，朱紫那 127 只一条都没有。
+  //
+  // 不分两趟写：先插 PokeAPI 再删了重插百科的话，那个 deleteMany 得按
+  // (形态, 版本, 语言) 三元组匹配几万行，一批五千个 OR 条件能跑几分钟
   await prisma.formDescriptionI18n.deleteMany({ where: { formId: { in: ids } } });
-  const descriptionRows = rows.flatMap((p) =>
-    (descriptions.get(p.slug) ?? []).flatMap((d) => {
+  let chineseRows = 0;
+  const descriptionRows = forms.flatMap(({ id, species }) => {
+    const merged = new Map<string, { versionSlug: string; languageCode: string; text: string }>();
+    for (const d of descriptions.get(species) ?? []) {
+      merged.set(`${d.versionSlug} ${d.languageCode}`, d);
+    }
+    for (const d of chinese.get(species) ?? []) {
+      merged.set(`${d.versionSlug} ${d.languageCode}`, d);
+      chineseRows++;
+    }
+
+    return [...merged.values()].flatMap((d) => {
       const versionId = dict.versions.get(d.versionSlug);
       return versionId === undefined
         ? []
-        : [
-            {
-              formId: formIds.get(p.id)!,
-              versionId,
-              languageCode: d.languageCode as LanguageCode,
-              text: d.text,
-            },
-          ];
-    }),
+        : [{ formId: id, versionId, languageCode: d.languageCode as LanguageCode, text: d.text }];
+    });
+  });
+  await insertInBatches(descriptionRows, (data) =>
+    prisma.formDescriptionI18n.createMany({ data, skipDuplicates: true }),
   );
-  // 十万行一次性塞过去会超出参数上限，分批
-  for (let i = 0; i < descriptionRows.length; i += 5000) {
-    await prisma.formDescriptionI18n.createMany({ data: descriptionRows.slice(i, i + 5000) });
+
+  console.log(
+    `宝可梦: ${rows.length} 只 / ${forms.length} 个形态，种族值 ${statRows.length} 行，` +
+      `特性 ${abilityRows.length} 行，图鉴说明 ${descriptionRows.length} 行` +
+      `（其中来自百科的中文 ${chineseRows} 行）`,
+  );
+  return formIds;
+}
+
+/**
+ * 百科的中文图鉴说明，按物种 slug 建索引。
+ *
+ * PokeAPI 的中文只覆盖 722 只、8 个版本组，朱紫那 127 只一条都没有；
+ * 百科从红绿版到朱紫全有。文件读不到就当没有中文，不让 seed 挂掉
+ */
+function wikiDescriptions(): Map<
+  string,
+  { versionSlug: string; languageCode: LanguageCode; text: string }[]
+> {
+  try {
+    const snapshot = readWiki("wiki-pokemon-descriptions");
+    if (snapshot.unmatched.length) {
+      console.warn(
+        `⚠ wiki-pokemon-descriptions: ${snapshot.unmatched.length} 只没抓到中文图鉴说明`,
+      );
+    }
+    return new Map(snapshot.rows.map((r) => [r.slug, r.descriptions]));
+  } catch {
+    console.warn("⚠ 读不到 wiki-pokemon-descriptions.json，中文图鉴说明会缺");
+    return new Map();
+  }
+}
+
+/**
+ * 招式学习表，一百万行。
+ *
+ * 快照是 gzip 的，解开就是一百万条五元组。整表重建 —— 它没有下游引用，
+ * 而按 formId 逐批删再插会把删除也做一百万次。
+ *
+ * 流式处理：一边展开一边攒够 BATCH 就插，不把一百万个对象同时留在内存里
+ */
+async function seedMoveLearns(dict: {
+  forms: Map<string, number>;
+  moves: Map<string, number>;
+  groups: Map<string, number>;
+  methods: Set<string>;
+}) {
+  const snapshot = readGzip("move-learns");
+
+  await prisma.moveLearn.deleteMany({});
+
+  type Row = {
+    formId: number;
+    moveId: number;
+    groupId: number;
+    methodSlug: string;
+    level: number;
+    machineNumber: string | null;
+  };
+  let batch: Row[] = [];
+  let total = 0;
+  const flush = async () => {
+    if (!batch.length) return;
+    // skipDuplicates：同一 (形态, 招式, 版本组, 学法, 等级) 数据源偶尔给两条，
+    // 唯一键会挡下来，不该让整批炸掉
+    await prisma.moveLearn.createMany({ data: batch, skipDuplicates: true });
+    total += batch.length;
+    batch = [];
+  };
+
+  for (const entry of snapshot) {
+    const formId = dict.forms.get(entry.formSlug);
+    if (formId === undefined) continue;
+    for (const [moveSlug, groupSlug, methodSlug, level, machineNumber] of entry.learns) {
+      const moveId = dict.moves.get(moveSlug);
+      const groupId = dict.groups.get(groupSlug);
+      if (moveId === undefined || groupId === undefined || !dict.methods.has(methodSlug)) continue;
+      batch.push({ formId, moveId, groupId, methodSlug, level, machineNumber });
+      if (batch.length >= BATCH) await flush();
+    }
+  }
+  await flush();
+  console.log(`招式学习: ${total} 行`);
+}
+
+/**
+ * 进化关系，以及从它们算出来的进化链。
+ *
+ * 链不是数据源给的 —— 把首尾相接的进化关系并成连通分量，一个分量一条链，
+ * 再回填 Form.evolutionChainId。用并查集而不是图遍历：只需要知道「谁和谁同一组」，
+ * 不需要知道谁在谁前面，那个信息在 Evolution 行上本来就有。
+ */
+async function seedEvolutions(dict: {
+  forms: Map<string, number>;
+  groups: Map<string, number>;
+  items: Map<string, number>;
+  moves: Map<string, number>;
+  types: Map<string, number>;
+  regions: Map<string, number>;
+  triggers: Set<string>;
+}) {
+  const rows = read("evolutions");
+
+  const skipped = new Set<string>();
+  const data = rows.flatMap((e) => {
+    const fromFormId = dict.forms.get(e.fromFormSlug);
+    const toFormId = dict.forms.get(e.toFormSlug);
+    const groupId = dict.groups.get(e.groupSlug);
+    if (fromFormId === undefined || toFormId === undefined || groupId === undefined) {
+      skipped.add(`${e.fromFormSlug}→${e.toFormSlug}`);
+      return [];
+    }
+    if (!dict.triggers.has(e.triggerSlug)) {
+      skipped.add(e.triggerSlug);
+      return [];
+    }
+    return [
+      {
+        fromFormId,
+        toFormId,
+        groupId,
+        triggerSlug: e.triggerSlug,
+        minLevel: e.minLevel,
+        minHappiness: e.minHappiness,
+        minAffection: e.minAffection,
+        minBeauty: e.minBeauty,
+        minSteps: e.minSteps,
+        minMoveCount: e.minMoveCount,
+        minDamageTaken: e.minDamageTaken,
+        // 条件引用的道具/招式/属性不在库里就当没这个条件 —— 丢掉整行的话
+        // 「用水之石进化」会直接消失，留着行至少还有触发方式和其余条件
+        itemId: e.itemSlug ? (dict.items.get(e.itemSlug) ?? null) : null,
+        heldItemId: e.heldItemSlug ? (dict.items.get(e.heldItemSlug) ?? null) : null,
+        knownMoveId: e.knownMoveSlug ? (dict.moves.get(e.knownMoveSlug) ?? null) : null,
+        knownMoveTypeId: e.knownMoveTypeSlug ? (dict.types.get(e.knownMoveTypeSlug) ?? null) : null,
+        usedMoveId: e.usedMoveSlug ? (dict.moves.get(e.usedMoveSlug) ?? null) : null,
+        partyFormId: e.partyFormSlug ? (dict.forms.get(e.partyFormSlug) ?? null) : null,
+        partyTypeId: e.partyTypeSlug ? (dict.types.get(e.partyTypeSlug) ?? null) : null,
+        tradeFormId: e.tradeFormSlug ? (dict.forms.get(e.tradeFormSlug) ?? null) : null,
+        regionId: e.regionSlug ? (dict.regions.get(e.regionSlug) ?? null) : null,
+        locationName: e.locationName,
+        timeOfDay: e.timeOfDay,
+        gender: e.gender,
+        needsRain: e.needsRain,
+        needsMultiplayer: e.needsMultiplayer,
+        nearSpecialRock: e.nearSpecialRock,
+        turnUpsideDown: e.turnUpsideDown,
+        attackVsDefense: e.attackVsDefense,
+      },
+    ];
+  });
+
+  // 整表重建。链是从这些行算出来的，所以链也一起重建
+  await prisma.form.updateMany({ data: { evolutionChainId: null } });
+  await prisma.evolutionChain.deleteMany({});
+  await prisma.evolution.deleteMany({});
+  await insertInBatches(data, (batch) => prisma.evolution.createMany({ data: batch }));
+
+  // 并查集：把首尾相接的进化关系并成一组
+  const parent = new Map<number, number>();
+  const find = (x: number): number => {
+    let root = x;
+    while (parent.get(root) !== undefined && parent.get(root) !== root) root = parent.get(root)!;
+    // 路径压缩，一千多个形态其实不压也行，但写出来才不用担心退化成链
+    let cur = x;
+    while (parent.get(cur) !== undefined && parent.get(cur) !== cur) {
+      const next = parent.get(cur)!;
+      parent.set(cur, root);
+      cur = next;
+    }
+    return root;
+  };
+  const union = (a: number, b: number) => {
+    parent.set(a, parent.get(a) ?? a);
+    parent.set(b, parent.get(b) ?? b);
+    const ra = find(a);
+    const rb = find(b);
+    if (ra !== rb) parent.set(rb, ra);
+  };
+  for (const e of data) union(e.fromFormId, e.toFormId);
+
+  const members = new Map<number, number[]>();
+  for (const formId of parent.keys()) {
+    const root = find(formId);
+    const list = members.get(root);
+    if (list) list.push(formId);
+    else members.set(root, [formId]);
   }
 
-  console.log(`宝可梦: ${rows.length} 只，图鉴说明 ${descriptionRows.length} 行`);
+  for (const formIds of members.values()) {
+    const chain = await prisma.evolutionChain.create({ data: {} });
+    await prisma.form.updateMany({
+      where: { id: { in: formIds } },
+      data: { evolutionChainId: chain.id },
+    });
+  }
+
+  if (skipped.size) {
+    console.warn(`⚠ ${skipped.size} 条进化关系两端或版本组不在库里，已跳过`);
+  }
+  console.log(`进化: ${data.length} 行，进化链 ${members.size} 条`);
 }
 
 // ── 入口 ──────────────────────────────────────────────────────
 
 async function main() {
-  // 顺序按外键依赖：语言 → 地区 → 世代 → 属性 → 颜色 → 学习方式 →
-  // 进化触发方式 → 道具 → 图鉴 → 版本组 → 版本。
-  // 图鉴排在版本组之前，因为 pokedex_group 要两边都存在
+  // 顺序按外键依赖。图鉴排在版本组之前（pokedex_group 要两边都在），
+  // 道具和特性排在版本组之后（说明按版本组存），招式排在属性之后（每代一行带属性）
+  const manual = overrides();
+
   await seedLanguages();
   const regionIds = await seedRegions();
   const generationCount = await seedGenerations(regionIds);
   const typeIds = await seedTypes(generationCount);
   const colorIds = await seedColors();
-  await seedMoveLearnMethods();
-  await seedEvolutionTriggers();
-  await seedItems();
-  const pokedexIds = await seedPokedexes(regionIds);
-  const groupIds = await seedGroups(regionIds, pokedexIds);
+  await seedMoveLearnMethods(manual.moveLearnMethods);
+  await seedEvolutionTriggers(manual.evolutionTriggers);
+  const pokedexIds = await seedPokedexes(regionIds, manual.pokedexes);
+  const groupIds = await seedGroups(regionIds, pokedexIds, manual.groups);
   const versionIds = await seedVersions(groupIds);
+  const itemIds = await seedItems(groupIds);
+  const abilityIds = await seedAbilities(groupIds);
+  const moveIds = await seedMoves(typeIds, groupIds);
 
-  // 字典表全部就位之后才灌宝可梦 —— 它的属性、颜色、图鉴编号、图鉴说明
-  // 分别指向 type / color / pokedex / version
-  await seedPokemon({
-    pokedexes: pokedexIds,
+  // 字典表全部就位之后才灌宝可梦 —— 它的属性、颜色、图鉴编号、图鉴说明、特性
+  // 分别指向 type / color / pokedex / version / ability
+  const formIds = await seedPokemon(
+    {
+      pokedexes: pokedexIds,
+      types: typeIds,
+      colors: colorIds,
+      versions: versionIds,
+      abilities: abilityIds,
+    },
+    manual.forms,
+  );
+
+  const methods = new Set(read("move-learn-methods").map((m) => m.slug));
+  await seedMoveLearns({ forms: formIds, moves: moveIds, groups: groupIds, methods });
+
+  const triggers = new Set(read("evolution-triggers").map((t) => t.slug));
+  await seedEvolutions({
+    forms: formIds,
+    groups: groupIds,
+    items: itemIds,
+    moves: moveIds,
     types: typeIds,
-    colors: colorIds,
-    versions: versionIds,
+    regions: regionIds,
+    triggers,
   });
 }
 
