@@ -1,32 +1,44 @@
 /**
- * 从 PokeAPI 重新生成字典表快照。
+ * 从 PokeAPI 重新生成快照。
  *
  * 跑法：pnpm seed:refresh，然后 git diff 看数据源改了什么，确认后提交。
  *
  * 平时不需要跑这个 —— prisma/seed.ts 读的是 prisma/seed-data/*.json，不联网。
  * 只有想跟进数据源的更新（出了新世代、译名被修正）时才跑一次。
  *
- * 三百多个请求，一分钟上下。不写数据库，所以不需要 DATABASE_URL。
+ * 一万多个请求，半小时上下。不写数据库，所以不需要 DATABASE_URL。
+ * 中文那部分抓不到，在 scripts/refresh-wiki-data.ts。
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { gzipSync } from "node:zlib";
 
 import { type LanguageCode, LANGUAGES } from "@/lib/pokemon/language";
 import { resolveLanguageCode } from "@/prisma/seed-data/pokeapi-language";
 import {
+  LATEST_GENERATION,
+  type PokemonFormResponse,
   type PokemonResponse,
   type SpeciesResponse,
   toSnapshot,
+  type Variety,
 } from "@/prisma/seed-data/pokeapi-pokemon";
 import {
+  type AbilitySnapshot,
   type ColorSnapshot,
   type DamageTo,
+  type EffectsByGeneration,
+  type EvolutionSnapshot,
   type EvolutionTriggerSnapshot,
+  type FlavorsByGroup,
   type GenerationSnapshot,
   type GroupSnapshot,
+  type GzipSeedData,
   type ItemSnapshot,
   type Localized,
   type MoveLearnMethodSnapshot,
+  type MoveLearnSnapshot,
+  type MoveSnapshot,
   type PokedexSnapshot,
   type PokemonDescriptionSnapshot,
   type PokemonSnapshot,
@@ -53,10 +65,28 @@ function idFromUrl(url: string): number {
   return id;
 }
 
-async function getJson<T>(path: string): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`);
-  if (!res.ok) throw new Error(`GET ${path} → ${res.status} ${res.statusText}`);
-  return res.json() as Promise<T>;
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * 拉一条，失败退避重试。
+ *
+ * 一万多个请求跑半小时，中途总会撞上连接被掐或者 5xx —— 整轮重跑的代价
+ * 比重试一条大得多。404 那种「这个请求不对」不重试。
+ */
+async function getJson<T>(path: string, attempt = 0): Promise<T> {
+  try {
+    const res = await fetch(`${BASE_URL}${path}`);
+    if (res.ok) return (await res.json()) as T;
+    if (res.status < 500 && res.status !== 429) {
+      throw new Error(`GET ${path} → ${res.status} ${res.statusText}`);
+    }
+    if (attempt >= 4) throw new Error(`GET ${path} → ${res.status}，重试 ${attempt} 次仍失败`);
+  } catch (err) {
+    if (attempt >= 4) throw err;
+  }
+
+  await sleep(1000 * 2 ** attempt);
+  return getJson<T>(path, attempt + 1);
 }
 
 /** 按 URL 逐个拉详情。
@@ -70,13 +100,16 @@ async function fetchDetails<T>(refs: NamedRef[], batchSize = 8): Promise<T[]> {
         batch.map((r) => getJson<T>(new URL(r.url).pathname.replace("/api/v2", ""))),
       )),
     );
+    if (refs.length > 500 && (i / batchSize) % 25 === 0) {
+      console.log(`    ${Math.min(i + batchSize, refs.length)}/${refs.length}`);
+    }
   }
   return out;
 }
 
 /** 列出某个资源的全部条目，再逐个拉详情 */
 async function fetchAll<T>(resource: string, batchSize = 8): Promise<T[]> {
-  const list = await getJson<{ results: NamedRef[] }>(`/${resource}?limit=2000`);
+  const list = await getJson<{ results: NamedRef[] }>(`/${resource}?limit=5000`);
   const out = await fetchDetails<T>(list.results, batchSize);
   console.log(`  ${resource}: 拉到 ${out.length} 条`);
   return out;
@@ -117,6 +150,126 @@ async function write<K extends keyof SeedData>(name: K, rows: SeedData[K]) {
   const path = join(SEED_DATA_DIR, `${name}.json`);
   await writeFile(path, JSON.stringify(rows, null, 2) + "\n", "utf8");
   console.log(`写入 ${path}：${rows.length} 条`);
+}
+
+/** 大到没法进 git 的那些压着存。招式学习表纯文本三百多兆，压完二十几兆 */
+async function writeGzip<K extends keyof GzipSeedData>(name: K, rows: GzipSeedData[K]) {
+  const path = join(SEED_DATA_DIR, `${name}.json.gz`);
+  const json = JSON.stringify(rows);
+  await writeFile(path, gzipSync(json, { level: 9 }));
+  const mb = (n: number) => `${(n / 1024 / 1024).toFixed(1)}MB`;
+  console.log(
+    `写入 ${path}：${rows.length} 条，${mb(json.length)} → ${mb((await import("node:fs")).statSync(path).size)}`,
+  );
+}
+
+// ── 说明文本 ──────────────────────────────────────────────────
+
+/** 换行是游戏文本框的排版产物，不是内容，存库前去掉。
+ *
+ *  中文和日文按句边界断行，删掉就行；日文的全角空格是数据源给的分词，保留不动。
+ *  韩文和欧洲语言靠空格分词，而且断行经常落在单词中间（"certain species of\nPokémon"），
+ *  必须换成空格 —— 韩文直接删会粘成「포켓몬을진화시키는」 */
+function stripLineBreaks(text: string, code: LanguageCode): string {
+  const joiner = code === "ja" || code === "ja-Hrkt" || code.startsWith("zh-") ? "" : " ";
+  return text.replace(/[\n\f\r]+/g, joiner).trim();
+}
+
+/** 机制说明是英法德，一律按空格拼行；顺便把连续空白压成一个 */
+function cleanEffect(text: string, effectChance: number | null): string {
+  return text
+    .replace(/\$effect_chance/g, effectChance === null ? "?" : String(effectChance))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+type EffectEntry = { effect: string; short_effect?: string; language: { name: string } };
+type EffectChange = {
+  version_group: NamedRef;
+  effect_entries: { effect: string; language: { name: string } }[];
+};
+
+/**
+ * 机制说明按世代展开。
+ *
+ * effect_entries 本身不带世代，是「现在是这样」；effect_changes 每项的
+ * version_group 是**变更生效**的版本组，文本描述的是变更**之前**的行为 ——
+ * 蓄电的那条挂在钻石珍珠上，写的是「不吸收非伤害类电系招式」，
+ * 说的是 Gen3 及之前。所以某一代取第一个「生效世代 > 这一代」的变更文本。
+ *
+ * 变更条目没有 short_effect（数据源那张表就没这一列），所以旧世代的行
+ * shortEffect 是 null —— 不拿 effect 顶替，前端为 null 时展示「说明暂缺」。
+ */
+function toEffects(
+  entries: EffectEntry[],
+  changes: EffectChange[],
+  introducedIn: number,
+  generationOfGroup: (slug: string) => number | undefined,
+  effectChance: number | null = null,
+): EffectsByGeneration {
+  const current = byLanguage(entries, (e) => ({
+    short: e.short_effect ? cleanEffect(e.short_effect, effectChance) : null,
+    effect: cleanEffect(e.effect, effectChance),
+  }));
+  if (!Object.keys(current).length) return {};
+
+  const past = changes
+    .flatMap((c) => {
+      const generationId = generationOfGroup(c.version_group.name);
+      if (generationId === undefined) return [];
+      const texts = byLanguage(c.effect_entries, (e) => ({
+        short: null as string | null,
+        effect: cleanEffect(e.effect, effectChance),
+      }));
+      return Object.keys(texts).length ? [{ generationId, texts }] : [];
+    })
+    .sort((a, b) => a.generationId - b.generationId);
+
+  const out: EffectsByGeneration = {};
+  for (let generationId = introducedIn; generationId <= LATEST_GENERATION; generationId++) {
+    const hit = past.find((p) => p.generationId > generationId);
+    // 变更条目未必覆盖全部语言，没覆盖到的那几种回落到当前文本
+    out[String(generationId)] = hit ? { ...current, ...hit.texts } : current;
+  }
+  return out;
+}
+
+type FlavorEntry = { language: { name: string }; version_group: NamedRef };
+
+/**
+ * 游戏文案按版本组收。
+ *
+ * key 按版本组的发售顺序写而不是数据源给的顺序，同样是为了 diff 稳定。
+ * 引用了未知版本组的条目丢掉 —— 版本组是同一次刷新里拉的，对不上说明数据源那边
+ * 有版本组没进 /version-group 列表，调用方会把它 warn 出来
+ */
+function toFlavors<T extends FlavorEntry>(
+  entries: T[],
+  text: (entry: T) => string,
+  groupOrder: Map<string, number>,
+  unknown: Set<string>,
+): FlavorsByGroup {
+  const byGroup = new Map<string, T[]>();
+  for (const entry of entries) {
+    const slug = entry.version_group.name;
+    if (!groupOrder.has(slug)) {
+      unknown.add(slug);
+      continue;
+    }
+    const list = byGroup.get(slug);
+    if (list) list.push(entry);
+    else byGroup.set(slug, [entry]);
+  }
+
+  const out: FlavorsByGroup = {};
+  for (const slug of [...byGroup.keys()].sort((a, b) => groupOrder.get(a)! - groupOrder.get(b)!)) {
+    const texts: Localized = {};
+    for (const [code, value] of Object.entries(byLanguage(byGroup.get(slug)!, (e) => text(e)))) {
+      texts[code as LanguageCode] = stripLineBreaks(value, code as LanguageCode);
+    }
+    if (Object.keys(texts).length) out[slug] = texts;
+  }
+  return out;
 }
 
 // ── 各资源 ────────────────────────────────────────────────────
@@ -220,98 +373,383 @@ async function evolutionTriggers(): Promise<EvolutionTriggerSnapshot[]> {
   return bySlug(rows.map((t) => ({ slug: t.name, names: byLanguage(t.names, (e) => e.name) })));
 }
 
-/** 进化条件会引用的道具。
- *
- *  只拉这四类而不是全量两千多个 —— item 表在这个项目里只为进化条件服务，
- *  能出现在进化条件里的道具都在这四类中：evolution 是进化石那批（含连接绳），
- *  held-items 有王者之证和锐利之爪，species-specific 有深海之牙，
- *  type-enhancement 有金属膜。抓进化数据时遇到不在库里的道具会外键报错，
- *  到时候往这个清单里补一类就行 */
-const ITEM_CATEGORIES = ["evolution", "held-items", "species-specific", "type-enhancement"];
+/** 版本组 slug → 世代号 / 发售顺序。说明按世代或版本组存，全靠这两张表换算 */
+type GroupIndex = {
+  generationOf: (slug: string) => number | undefined;
+  order: Map<string, number>;
+};
 
-/** 换行是游戏文本框的排版产物，不是内容，存库前去掉。
- *
- *  中文和日文按句边界断行，删掉就行；日文的全角空格是数据源给的分词，保留不动。
- *  韩文和欧洲语言靠空格分词，而且断行经常落在单词中间（"certain species of\nPokémon"），
- *  必须换成空格 —— 韩文直接删会粘成「포켓몬을진화시키는」 */
-function stripLineBreaks(text: string, code: LanguageCode): string {
-  const joiner = code === "ja" || code === "ja-Hrkt" || code.startsWith("zh-") ? "" : " ";
-  return text.replace(/[\n\f\r]+/g, joiner).trim();
+function groupIndex(groups: GroupSnapshot[]): GroupIndex {
+  const generation = new Map(groups.map((g) => [g.slug, g.generationId]));
+  return {
+    generationOf: (slug) => generation.get(slug),
+    order: new Map(groups.map((g) => [g.slug, g.order])),
+  };
 }
 
-async function items(groups: GroupSnapshot[]): Promise<ItemSnapshot[]> {
-  type ItemCategory = { items: NamedRef[] };
+/**
+ * 全部道具，两千两百多件。
+ *
+ * 曾经只拉进化相关的四类，因为 item 表当时只为进化条件服务。现在道具有自己的
+ * 列表页和详情页，技能机器、树果、邮简那些都得在。
+ */
+async function items(index: GroupIndex): Promise<ItemSnapshot[]> {
   type Item = {
+    id: number;
     name: string;
     names: LocalizedName[];
     sprites: { default: string | null };
-    flavor_text_entries: { text: string; language: { name: string }; version_group: NamedRef }[];
+    effect_entries: EffectEntry[];
+    flavor_text_entries: ({ text: string } & FlavorEntry)[];
+    game_indices: { generation: NamedRef }[];
   };
+  const rows = await fetchAll<Item>("item", 12);
 
-  const refs = new Map<string, NamedRef>();
-  for (const category of ITEM_CATEGORIES) {
-    const { items } = await getJson<ItemCategory>(`/item-category/${category}`);
-    // 同一个道具可能被多类收录，按 URL 去重
-    for (const item of items) refs.set(item.url, item);
-  }
-  const rows = await fetchDetails<Item>([...refs.values()]);
-  console.log(`  item: 拉到 ${rows.length} 条`);
-
-  const byGroupSlug = new Map(groups.map((g) => [g.slug, g]));
-  const unknownGroups = new Set<string>();
-
+  const unknown = new Set<string>();
   const out = bySlug(
     rows.map((item) => {
-      // 同一世代里可能有好几个版本组（Gen3 有红蓝宝石 / 绿宝石 / 火红叶绿），
-      // 文案各版本会改，取 order 最大的那个 —— 即该世代最后出的版本
-      const latest = new Map<string, { order: number; text: string }>();
-      for (const entry of item.flavor_text_entries) {
-        const code = resolveLanguageCode(entry.language.name);
-        if (!code) continue;
-        const group = byGroupSlug.get(entry.version_group.name);
-        if (!group) {
-          unknownGroups.add(entry.version_group.name);
-          continue;
-        }
-        const key = `${group.generationId} ${code}`;
-        const prev = latest.get(key);
-        if (!prev || group.order > prev.order) {
-          latest.set(key, { order: group.order, text: stripLineBreaks(entry.text, code) });
-        }
-      }
-
-      // 摊成 { 世代: { 语言: 文本 } }，世代按数字升序、语言按 LANGUAGES 顺序
-      const descriptions: Record<string, Localized> = {};
-      const generationIds = [
-        ...new Set([...latest.keys()].map((k) => Number(k.split(" ")[0]))),
-      ].sort((a, b) => a - b);
-      for (const generationId of generationIds) {
-        const texts: Localized = {};
-        for (const lang of LANGUAGES) {
-          const hit = latest.get(`${generationId} ${lang.code}`);
-          if (hit) texts[lang.code] = hit.text;
-        }
-        descriptions[String(generationId)] = texts;
-      }
+      // 道具没有 generation 字段，用 game_indices 里最早的那代当登场世代；
+      // 两者都没有的（新道具数据源还没填）从第一代铺开，宁可多几行也别整条丢掉
+      const generationIds = item.game_indices.map((g) => idFromUrl(g.generation.url));
+      const introducedIn = generationIds.length ? Math.min(...generationIds) : 1;
 
       return {
         slug: item.name,
         names: byLanguage(item.names, (e) => e.name),
         // 存文件名不存整条地址：地址前缀和版本号在 lib/pokemon/sprites.ts 里
         imageName: item.sprites.default?.split("/").pop() ?? null,
-        descriptions,
+        // 道具没有 effect_changes，机制说明每代都一样，展开只是为了跟另外两张表同形
+        effects: toEffects(item.effect_entries, [], introducedIn, index.generationOf),
+        flavors: toFlavors(item.flavor_text_entries, (e) => e.text, index.order, unknown),
       };
     }),
   );
 
-  if (unknownGroups.size) {
-    // 不该发生：groups 是同一次刷新里拉的，两边应该对得上。
-    // 真出现了说明数据源那边有版本组没进 /version-group 列表，得看一眼
-    console.warn(`  ⚠ 有 flavor text 引用了未知版本组: ${[...unknownGroups].sort().join(", ")}`);
+  if (unknown.size) {
+    console.warn(`  ⚠ 有 flavor text 引用了未知版本组: ${[...unknown].sort().join(", ")}`);
   }
-  const withText = out.filter((i) => Object.keys(i.descriptions).length).length;
-  console.log(`  item 说明: ${withText}/${out.length} 条有 flavor text`);
+
+  // 数据源偶尔给同一个 slug 两条记录（roseli-berry 就有两个 id），
+  // slug 在库里是唯一键，这里先去重，免得快照里留着一条永远写不进去的
+  const unique = [...new Map(out.map((item) => [item.slug, item])).values()];
+  if (unique.length !== out.length) {
+    console.warn(`  ⚠ 数据源有 ${out.length - unique.length} 个重复 slug，各保留一条`);
+  }
+
+  const withEffect = unique.filter((i) => Object.keys(i.effects).length).length;
+  const withFlavor = unique.filter((i) => Object.keys(i.flavors).length).length;
+  console.log(
+    `  道具说明: 机制 ${withEffect}/${unique.length}，游戏文案 ${withFlavor}/${unique.length}`,
+  );
+  return unique;
+}
+
+/** 特性，374 个。全是 Gen3 起的东西 —— Gen1/2 没有特性这个概念 */
+async function abilities(index: GroupIndex): Promise<AbilitySnapshot[]> {
+  type Ability = {
+    name: string;
+    is_main_series: boolean;
+    generation: NamedRef;
+    names: LocalizedName[];
+    effect_entries: EffectEntry[];
+    effect_changes: EffectChange[];
+    flavor_text_entries: ({ flavor_text: string } & FlavorEntry)[];
+  };
+  const rows = await fetchAll<Ability>("ability", 12);
+
+  const unknown = new Set<string>();
+  const out = bySlug(
+    rows.map((a) => {
+      const introducedIn = idFromUrl(a.generation.url);
+      return {
+        slug: a.name,
+        introducedInGenerationId: introducedIn,
+        names: byLanguage(a.names, (e) => e.name),
+        effects: toEffects(a.effect_entries, a.effect_changes, introducedIn, index.generationOf),
+        flavors: toFlavors(a.flavor_text_entries, (e) => e.flavor_text, index.order, unknown),
+      };
+    }),
+  );
+
+  if (unknown.size) {
+    console.warn(`  ⚠ 有 flavor text 引用了未知版本组: ${[...unknown].sort().join(", ")}`);
+  }
+  const withEffect = out.filter((a) => Object.keys(a.effects).length).length;
+  console.log(`  特性说明: 机制 ${withEffect}/${out.length}`);
   return out;
+}
+
+/**
+ * Gen4 之前伤害分类跟属性走，不是招式自己定的：火水草电超冰龙恶一律特殊，
+ * 其余一律物理。变化招式两边都一样。
+ *
+ * 数据源的 damage_class 是招式当前的分类，照抄到老世代就会把
+ * Gen1 的拍落（恶系，那时算特殊）写成物理
+ */
+const SPECIAL_TYPES = new Set([
+  "fire",
+  "water",
+  "grass",
+  "electric",
+  "psychic",
+  "ice",
+  "dragon",
+  "dark",
+]);
+const CATEGORY_SPLIT_GENERATION = 4;
+
+function damageClassOf(
+  typeSlug: string,
+  current: string,
+  generationId: number,
+): "PHYSICAL" | "SPECIAL" | "STATUS" {
+  if (current === "status") return "STATUS";
+  if (generationId >= CATEGORY_SPLIT_GENERATION) {
+    return current === "physical" ? "PHYSICAL" : "SPECIAL";
+  }
+  return SPECIAL_TYPES.has(typeSlug) ? "SPECIAL" : "PHYSICAL";
+}
+
+/**
+ * 招式，937 个。
+ *
+ * 数值按世代展开成每代一行。past_values 每项的 version_group 是**变更生效**的
+ * 版本组，那一项的值是变更**之前**用的 —— 喷射火焰挂在 x-y（第六世代）上、
+ * power 95，所以 Gen1~5 是 95、Gen6~9 是现在的 90。
+ *
+ * past_values 是差异不是整组，只给改过的那几项，其余为 null 表示没变，
+ * 所以要从当前值出发按世代从大到小依次叠。
+ */
+async function moves(index: GroupIndex): Promise<MoveSnapshot[]> {
+  type PastValue = {
+    version_group: NamedRef;
+    type: NamedRef | null;
+    power: number | null;
+    accuracy: number | null;
+    pp: number | null;
+    effect_chance: number | null;
+  };
+  type Move = {
+    name: string;
+    generation: NamedRef;
+    type: NamedRef;
+    damage_class: NamedRef;
+    power: number | null;
+    accuracy: number | null;
+    pp: number | null;
+    effect_chance: number | null;
+    names: LocalizedName[];
+    past_values: PastValue[];
+    effect_entries: EffectEntry[];
+    effect_changes: EffectChange[];
+    flavor_text_entries: ({ flavor_text: string } & FlavorEntry)[];
+  };
+  const rows = await fetchAll<Move>("move", 12);
+
+  const unknown = new Set<string>();
+  const out = bySlug(
+    rows.map((m) => {
+      const introducedIn = idFromUrl(m.generation.url);
+      const past = m.past_values
+        .flatMap((p) => {
+          const generationId = index.generationOf(p.version_group.name);
+          return generationId === undefined ? [] : [{ generationId, value: p }];
+        })
+        .sort((a, b) => b.generationId - a.generationId);
+
+      const generations: MoveSnapshot["generations"] = {};
+      for (let generationId = introducedIn; generationId <= LATEST_GENERATION; generationId++) {
+        let typeSlug = m.type.name;
+        let power = m.power;
+        let accuracy = m.accuracy;
+        let pp = m.pp;
+        // 生效世代比目标世代晚的那些变更全部倒回去，晚的先叠、早的后叠
+        for (const { generationId: changedIn, value } of past) {
+          if (changedIn <= generationId) continue;
+          if (value.type) typeSlug = value.type.name;
+          if (value.power !== null) power = value.power;
+          if (value.accuracy !== null) accuracy = value.accuracy;
+          if (value.pp !== null) pp = value.pp;
+        }
+        generations[String(generationId)] = {
+          typeSlug,
+          damageClass: damageClassOf(typeSlug, m.damage_class.name, generationId),
+          power,
+          accuracy,
+          pp,
+        };
+      }
+
+      return {
+        slug: m.name,
+        introducedInGenerationId: introducedIn,
+        names: byLanguage(m.names, (e) => e.name),
+        generations,
+        effects: toEffects(
+          m.effect_entries,
+          m.effect_changes,
+          introducedIn,
+          index.generationOf,
+          m.effect_chance,
+        ),
+        flavors: toFlavors(m.flavor_text_entries, (e) => e.flavor_text, index.order, unknown),
+      };
+    }),
+  );
+
+  if (unknown.size) {
+    console.warn(`  ⚠ 有 flavor text 引用了未知版本组: ${[...unknown].sort().join(", ")}`);
+  }
+  const withEffect = out.filter((m) => Object.keys(m.effects).length).length;
+  console.log(`  招式说明: 机制 ${withEffect}/${out.length}`);
+  return out;
+}
+
+/**
+ * 技能机器编号。
+ *
+ * /machine 一条记录是「某个版本组里，某号机器教某个招式」—— 编号在 item 那边
+ * （item.name 是 "tm35"），所以拉回来按 (招式, 版本组) 建索引，
+ * 招式学习表里 method 是 machine 的那些行回填编号。
+ *
+ * 同一招在同一版本组可能既是 TM 又是 HM（极少），取先遇到的那条
+ */
+async function machineNumbers(): Promise<Map<string, string>> {
+  type Machine = { item: NamedRef; move: NamedRef; version_group: NamedRef };
+  const rows = await fetchAll<Machine>("machine", 16);
+
+  const out = new Map<string, string>();
+  for (const m of rows) {
+    const key = `${m.move.name} ${m.version_group.name}`;
+    if (!out.has(key)) out.set(key, m.item.name.toUpperCase());
+  }
+  return out;
+}
+
+/**
+ * 进化关系。
+ *
+ * 数据源按「链」组织，一条链是一棵树（伊布那条有八个分支）。递归展开成一行行
+ * 「fromForm 在某版本组按某条件变成 toForm」，树形结构不进快照 ——
+ * 库里的 EvolutionChain 是 seed 时从这些关系反推出来的分组编号。
+ *
+ * 两端都是形态：数据源给了 base_form / evolved_form 指向具体形态，
+ * 没给的时候回落到该物种的默认形态（也就是跟物种同名那条）
+ */
+async function evolutions(defaultFormOf: Map<string, string>): Promise<EvolutionSnapshot[]> {
+  type Detail = {
+    version_group: NamedRef;
+    trigger: NamedRef;
+    item: NamedRef | null;
+    held_item: NamedRef | null;
+    known_move: NamedRef | null;
+    known_move_type: NamedRef | null;
+    used_move: NamedRef | null;
+    party_species: NamedRef | null;
+    party_type: NamedRef | null;
+    trade_species: NamedRef | null;
+    region: NamedRef | null;
+    location: NamedRef | null;
+    base_form: NamedRef | null;
+    evolved_form: NamedRef | null;
+    gender: number | null;
+    time_of_day: string;
+    min_level: number | null;
+    min_happiness: number | null;
+    min_affection: number | null;
+    min_beauty: number | null;
+    min_steps: number | null;
+    min_move_count: number | null;
+    min_damage_taken: number | null;
+    relative_physical_stats: number | null;
+    needs_overworld_rain: boolean;
+    needs_multiplayer: boolean;
+    near_special_rock: boolean;
+    turn_upside_down: boolean;
+  };
+  type Link = {
+    species: NamedRef;
+    evolution_details: Detail[];
+    evolves_to: Link[];
+  };
+  const chains = await fetchAll<{ id: number; chain: Link }>("evolution-chain", 12);
+
+  /** 物种 slug → 默认形态 slug。多数情况两者同名，代欧奇希斯那种不同 */
+  const formOf = (speciesSlug: string) => defaultFormOf.get(speciesSlug) ?? speciesSlug;
+
+  const rows: EvolutionSnapshot[] = [];
+  const missing = new Set<string>();
+
+  const walk = (node: Link) => {
+    for (const next of node.evolves_to) {
+      for (const d of next.evolution_details) {
+        const fromFormSlug = d.base_form?.name ?? formOf(node.species.name);
+        const toFormSlug = d.evolved_form?.name ?? formOf(next.species.name);
+        if (!defaultFormOf.has(node.species.name)) missing.add(node.species.name);
+
+        rows.push({
+          fromFormSlug,
+          toFormSlug,
+          groupSlug: d.version_group.name,
+          triggerSlug: d.trigger.name,
+          minLevel: d.min_level,
+          minHappiness: d.min_happiness,
+          minAffection: d.min_affection,
+          minBeauty: d.min_beauty,
+          minSteps: d.min_steps,
+          minMoveCount: d.min_move_count,
+          minDamageTaken: d.min_damage_taken,
+          itemSlug: d.item?.name ?? null,
+          heldItemSlug: d.held_item?.name ?? null,
+          knownMoveSlug: d.known_move?.name ?? null,
+          knownMoveTypeSlug: d.known_move_type?.name ?? null,
+          usedMoveSlug: d.used_move?.name ?? null,
+          partyFormSlug: d.party_species ? formOf(d.party_species.name) : null,
+          partyTypeSlug: d.party_type?.name ?? null,
+          tradeFormSlug: d.trade_species ? formOf(d.trade_species.name) : null,
+          regionSlug: d.region?.name ?? null,
+          // location 是「磁场区域」这类具体地点，数据源给的是 slug 不是译名
+          locationName: d.location?.name ?? null,
+          // 空字符串是数据源表示「不限时间」的写法，不是 DAY。
+          // full-moon 那种连字符值换成下划线，对上枚举
+          timeOfDay: d.time_of_day
+            ? (d.time_of_day.toUpperCase().replace(/-/g, "_") as EvolutionSnapshot["timeOfDay"])
+            : null,
+          // 数据源用 1 = 雄性、2 = 雌性
+          gender: d.gender === 1 ? "MALE" : d.gender === 2 ? "FEMALE" : null,
+          needsRain: d.needs_overworld_rain,
+          needsMultiplayer: d.needs_multiplayer,
+          nearSpecialRock: d.near_special_rock,
+          turnUpsideDown: d.turn_upside_down,
+          // 数据源用 1 / 0 / -1，不照抄：0 是「攻防相等」这个有意义的值，
+          // 而判断「有没有这个条件」时 0 和「没有」长得一样
+          attackVsDefense:
+            d.relative_physical_stats === 1
+              ? "ATTACK_HIGHER"
+              : d.relative_physical_stats === 0
+                ? "EQUAL"
+                : d.relative_physical_stats === -1
+                  ? "DEFENSE_HIGHER"
+                  : null,
+        });
+      }
+      walk(next);
+    }
+  };
+  for (const c of chains) walk(c.chain);
+
+  if (missing.size) {
+    console.warn(`  ⚠ 进化链引用了不在物种快照里的 ${missing.size} 个物种，按同名形态处理`);
+  }
+  // 排序只为 diff 稳定，跟落库顺序无关
+  rows.sort(
+    (a, b) =>
+      a.fromFormSlug.localeCompare(b.fromFormSlug) ||
+      a.toFormSlug.localeCompare(b.toFormSlug) ||
+      a.groupSlug.localeCompare(b.groupSlug),
+  );
+  console.log(`  进化关系: ${rows.length} 行`);
+  return rows;
 }
 
 async function pokedexes(): Promise<PokedexSnapshot[]> {
@@ -370,40 +808,106 @@ async function versions(): Promise<VersionSnapshot[]> {
 }
 
 /**
- * 全部 1025 个物种，只取默认形态。
+ * 全部 1025 个物种和它们的 1351 个形态。
  *
- * 地区形态不进快照：它们靠 PokeAPISource 按需拉，而且一进来数据量就翻几倍。
- * /pokemon 列表里默认形态的 id 是 1..1025，一万开头的那批是形态，按 id 过滤。
+ * 形态全收而不是只收默认形态：进化做在形态级 —— 关都喵喵和阿罗拉喵喵各自变成
+ * 对应形态的猫老大，只有伽勒尔喵喵变喵头目，只导默认形态的话这三条线会混成一条。
  *
- * 每只两个请求（pokemon 和 pokemon-species），两千多个请求，几分钟。
- * 映射用 lib/pokeapi/pokemon.ts 的 toSnapshot，跟按需拉那条路完全同一份代码。
+ * 每个物种一个 /pokemon-species 请求，每个形态两个（/pokemon 和 /pokemon-form），
+ * 加起来将近四千个请求。招式学习表顺带在这里出 —— 它要的 moves 字段就在
+ * /pokemon 的响应里，另开一轮等于把这批请求再打一遍。
  */
-async function pokemon(): Promise<{
+async function pokemon(machines: Map<string, string>): Promise<{
   pokemon: PokemonSnapshot[];
   descriptions: PokemonDescriptionSnapshot[];
+  moveLearns: MoveLearnSnapshot[];
+  defaultFormOf: Map<string, string>;
 }> {
+  type MoveEntry = {
+    move: NamedRef;
+    version_group_details: {
+      level_learned_at: number;
+      version_group: NamedRef;
+      move_learn_method: NamedRef;
+    }[];
+  };
   const list = await getJson<{ results: NamedRef[] }>("/pokemon-species?limit=2000");
   console.log(`  pokemon-species: ${list.results.length} 个物种`);
 
   const rows: PokemonSnapshot[] = [];
   const descriptions: PokemonDescriptionSnapshot[] = [];
+  const moveLearns: MoveLearnSnapshot[] = [];
+  const defaultFormOf = new Map<string, string>();
 
-  const batchSize = 8;
+  const batchSize = 6;
   for (let i = 0; i < list.results.length; i += batchSize) {
     const batch = list.results.slice(i, i + batchSize);
-    const snapshots = await Promise.all(
+    const results = await Promise.all(
       batch.map(async (ref) => {
         const species = await getJson<SpeciesResponse>(`/pokemon-species/${ref.name}`);
-        // 默认形态就是物种同名那条，直接按 slug 取，不用翻 varieties
-        const poke = await getJson<PokemonResponse>(`/pokemon/${species.id}`);
-        return toSnapshot(poke, species);
+        const varieties = await Promise.all(
+          species.varieties.map(async (v) => {
+            const poke = await getJson<PokemonResponse & { moves: MoveEntry[] }>(
+              `/pokemon/${v.pokemon.name}`,
+            );
+            // /pokemon 的 forms 一般只有一条；多条时第一条是默认外观那条
+            const formRef = poke.forms[0];
+            const form = formRef
+              ? await getJson<PokemonFormResponse>(
+                  new URL(formRef.url).pathname.replace("/api/v2", ""),
+                )
+              : null;
+            return { pokemon: poke, form } satisfies Variety;
+          }),
+        );
+        return { species, varieties };
       }),
     );
 
-    for (const snap of snapshots) {
-      const { descriptions: texts, ...form } = snap.form;
-      rows.push({ ...snap, form });
+    for (const { species, varieties } of results) {
+      const snap = toSnapshot(species, varieties);
+      // 图鉴说明摘出去单独存，形态本体里不留 —— 说明有十万多条，
+      // 跟本体放一起的话每次刷新整个文件都要重写
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const forms = snap.forms.map(({ descriptions: _drop, ...form }) => form);
+      rows.push({ ...snap, forms });
+
+      const texts = snap.forms[0]?.descriptions ?? [];
       if (texts.length) descriptions.push({ slug: snap.slug, descriptions: texts });
+
+      const defaultForm = snap.forms.find((f) => f.isDefault) ?? snap.forms[0];
+      if (defaultForm) defaultFormOf.set(snap.slug, defaultForm.slug);
+
+      for (const v of varieties) {
+        const learns: MoveLearnSnapshot["learns"] = [];
+        for (const entry of v.pokemon.moves) {
+          for (const d of entry.version_group_details) {
+            const methodSlug = d.move_learn_method.name;
+            const groupSlug = d.version_group.name;
+            learns.push([
+              entry.move.name,
+              groupSlug,
+              methodSlug,
+              // level 只有 level-up 有意义，其余一律 0 —— 那一列进了唯一键，
+              // 而 Postgres 里 NULL 互不相等，可空的话唯一键对这几类行等于失效
+              methodSlug === "level-up" ? d.level_learned_at : 0,
+              methodSlug === "machine"
+                ? (machines.get(`${entry.move.name} ${groupSlug}`) ?? null)
+                : null,
+            ]);
+          }
+        }
+        if (learns.length) {
+          learns.sort(
+            (a, b) =>
+              a[0].localeCompare(b[0]) ||
+              a[1].localeCompare(b[1]) ||
+              a[2].localeCompare(b[2]) ||
+              a[3] - b[3],
+          );
+          moveLearns.push({ formSlug: v.pokemon.name, learns });
+        }
+      }
     }
     if ((i / batchSize) % 20 === 0) {
       console.log(`  ${Math.min(i + batchSize, list.results.length)}/${list.results.length}`);
@@ -412,16 +916,22 @@ async function pokemon(): Promise<{
 
   rows.sort((a, b) => a.id - b.id);
   descriptions.sort((a, b) => a.slug.localeCompare(b.slug));
-  console.log(`  图鉴说明 ${descriptions.reduce((n, d) => n + d.descriptions.length, 0)} 条`);
-  return { pokemon: rows, descriptions };
+  moveLearns.sort((a, b) => a.formSlug.localeCompare(b.formSlug));
+  console.log(
+    `  形态 ${rows.reduce((n, p) => n + p.forms.length, 0)} 个，` +
+      `图鉴说明 ${descriptions.reduce((n, d) => n + d.descriptions.length, 0)} 条，` +
+      `招式学习 ${moveLearns.reduce((n, m) => n + m.learns.length, 0)} 行`,
+  );
+  return { pokemon: rows, descriptions, moveLearns, defaultFormOf };
 }
 
 // ── 入口 ──────────────────────────────────────────────────────
 
 await mkdir(SEED_DATA_DIR, { recursive: true });
 
-// 版本组先算：道具说明按世代存，要靠它把 flavor text 的 version_group 映射到世代
+// 版本组先算：说明按世代或版本组存，要靠它把 flavor text 的 version_group 换算过去
 const groupRows = await groups();
+const index = groupIndex(groupRows);
 
 await write("regions", await regions());
 await write("generations", await generations());
@@ -429,11 +939,20 @@ await write("types", await types());
 await write("colors", await colors());
 await write("move-learn-methods", await moveLearnMethods());
 await write("evolution-triggers", await evolutionTriggers());
-await write("items", await items(groupRows));
+await write("items", await items(index));
+await write("abilities", await abilities(index));
 await write("pokedexes", await pokedexes());
 await write("groups", groupRows);
 await write("versions", await versions());
+await write("moves", await moves(index));
 
-const species = await pokemon();
+// 技能机器编号先备好，招式学习表里 machine 那些行要回填
+const machines = await machineNumbers();
+
+const species = await pokemon(machines);
 await write("pokemon", species.pokemon);
 await write("pokemon-descriptions", species.descriptions);
+await writeGzip("move-learns", species.moveLearns);
+
+// 进化两端是形态，要先知道每个物种的默认形态叫什么
+await write("evolutions", await evolutions(species.defaultFormOf));
