@@ -325,6 +325,8 @@ export type WikiPokemonDescriptionSnapshot = {
 export type WikiData = {
   "wiki-abilities": WikiSnapshot<WikiEffectSnapshot>;
   "wiki-moves": WikiSnapshot<WikiEffectSnapshot>;
+  /** 道具只补机制说明，游戏文案那边 PokeAPI 十种语言齐全 */
+  "wiki-items": WikiSnapshot<WikiEffectSnapshot>;
   "wiki-pokemon-descriptions": WikiSnapshot<WikiPokemonDescriptionSnapshot>;
 };
 
