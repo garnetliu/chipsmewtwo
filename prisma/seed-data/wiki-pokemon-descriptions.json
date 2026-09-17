@@ -550,7 +550,10 @@
           "languageCode": "zh-Hant",
           "text": "１天有１８個小時都在睡覺。就算在睡著的時候，也會使用各式各樣的超能力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "念力"
+      }
     },
     {
       "slug": "absol",
@@ -880,7 +883,10 @@
           "languageCode": "zh-Hant",
           "text": "脫殼後變得更輕巧了。為了防止乾燥，會將帶狀的黏膜裹在身上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "脱壳"
+      }
     },
     {
       "slug": "aegislash",
@@ -1800,7 +1806,10 @@
           "languageCode": "zh-Hant",
           "text": "會巧妙地操縱比雙手還靈活的尾巴，生活在高高的樹上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长尾"
+      }
     },
     {
       "slug": "alakazam",
@@ -2315,7 +2324,10 @@
           "languageCode": "zh-Hant",
           "text": "漂浮在汪洋大海上生活。保母曼波的周圍會聚集起許多水屬性寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "看护"
+      }
     },
     {
       "slug": "altaria",
@@ -2645,7 +2657,10 @@
           "languageCode": "zh-Hant",
           "text": "從１億年前陷入冰封狀態的身體的一部分復活而來的古代寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冻原"
+      }
     },
     {
       "slug": "ambipom",
@@ -2845,7 +2860,10 @@
           "languageCode": "zh-Hant",
           "text": "分叉成２根的尾巴非常靈活，能夠完成各式各樣的事情，因此變得幾乎不使用雙手了。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长尾"
+      }
     },
     {
       "slug": "amoonguss",
@@ -2970,7 +2988,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然想用精靈球般的菌傘引誘獵物靠近，但上當的寶可夢很少。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蘑菇"
+      }
     },
     {
       "slug": "ampharos",
@@ -3280,7 +3301,10 @@
           "languageCode": "zh-Hant",
           "text": "一而再地使出需用力到頭部血管都會爆裂的招式，最終進化成了棄世猴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "愤怒猴"
+      }
     },
     {
       "slug": "anorith",
@@ -3510,7 +3534,10 @@
           "languageCode": "zh-Hant",
           "text": "從化石裡復活的寶可夢祖先的一種。生活在海裡，會用爪子捕捉獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "古虾"
+      }
     },
     {
       "slug": "appletun",
@@ -3600,7 +3627,10 @@
           "languageCode": "zh-Hant",
           "text": "平時都在蘋果中生活。如果失去了蘋果，身體的水分就會流失而變得虛弱。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "苹果居"
+      }
     },
     {
       "slug": "araquanid",
@@ -3685,7 +3715,10 @@
           "languageCode": "zh-Hant",
           "text": "會發射黏答答的水泡。等被困在水泡中的敵人失去意識後，牠就會用大顎將其咬成碎片。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水泡"
+      }
     },
     {
       "slug": "arbok",
@@ -4025,7 +4058,10 @@
           "languageCode": "zh-Hant",
           "text": "展開胸部威嚇對手時，會同時從口中發出令對手喪膽的恐怖空氣聲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "眼镜蛇"
+      }
     },
     {
       "slug": "arboliva",
@@ -4050,7 +4086,10 @@
           "languageCode": "zh-Hant",
           "text": "會把香醇濃郁的油以連岩石都能粉碎的力道發射出去，擊退敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "橄榄"
+      }
     },
     {
       "slug": "arcanine",
@@ -4565,7 +4604,10 @@
           "languageCode": "zh-Hant",
           "text": "以己身為光源，從天照耀洗翠大地。憑藉其光明引導並守護寶可夢。洗翠神話視其為萬物的創造主。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "创造"
+      }
     },
     {
       "slug": "archaludon",
@@ -4590,7 +4632,10 @@
           "languageCode": "zh-Hant",
           "text": "會在山裡挖洞來尋找食物。身體非常堅硬，即使遇到洞穴坍塌也絲毫不會在意。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "合金"
+      }
     },
     {
       "slug": "archen",
@@ -4725,7 +4770,10 @@
           "languageCode": "zh-Hant",
           "text": "被稱作是鳥寶可夢的祖先。棲息在樹上，以樹果和蟲寶可夢為食。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "远古鸟"
+      }
     },
     {
       "slug": "archeops",
@@ -4865,7 +4913,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然能夠飛行，但牠似乎更擅於在地上捕捉獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "远古鸟"
+      }
     },
     {
       "slug": "arctibax",
@@ -4900,7 +4951,10 @@
           "languageCode": "zh-Hant",
           "text": "用冰之面罩和背鰭的劍武裝自己。會以矯捷的身手撲向對手，並且使出斬擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冰鳍"
+      }
     },
     {
       "slug": "arctovish",
@@ -4925,7 +4979,10 @@
           "languageCode": "zh-Hant",
           "text": "面部的皮膚無論受到什麼攻擊都不會受傷，但由於呼吸起來不方便而滅絕了。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "化石"
+      }
     },
     {
       "slug": "arctozolt",
@@ -4950,7 +5007,10 @@
           "languageCode": "zh-Hant",
           "text": "曾經生活在古代的海邊，能用身體的冰來保存食物，但由於動作太遲緩而滅絕了。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "化石"
+      }
     },
     {
       "slug": "ariados",
@@ -5255,7 +5315,10 @@
           "languageCode": "zh-Hant",
           "text": "不僅會從臀部，還會從口中吐出絲線。所以光用眼睛看無法分辨哪邊才是頭部。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长腿"
+      }
     },
     {
       "slug": "armaldo",
@@ -5495,7 +5558,10 @@
           "languageCode": "zh-Hant",
           "text": "進化後變得能在地面上生活。全身上下都被結實堅固的鎧甲所包裹著。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "甲胄"
+      }
     },
     {
       "slug": "armarouge",
@@ -5530,7 +5596,10 @@
           "languageCode": "zh-Hant",
           "text": "雖對訓練家忠心耿耿，但會為了提升超能力而隻身一而再地鍛鍊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火战士"
+      }
     },
     {
       "slug": "aromatisse",
@@ -5605,7 +5674,10 @@
           "languageCode": "zh-Hant",
           "text": "由於氣味過於強烈，如果不是相當喜歡牠的訓練家，就連要帶著一起走都十分困難。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "芳香"
+      }
     },
     {
       "slug": "aron",
@@ -5815,7 +5887,10 @@
           "languageCode": "zh-Hant",
           "text": "覆蓋全身的鋼鐵盔甲會在進化時全部脫落，然後長出新的盔甲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铁铠"
+      }
     },
     {
       "slug": "arrokuda",
@@ -5860,7 +5935,10 @@
           "languageCode": "zh-Hant",
           "text": "會用又尖又硬的下巴發動突擊來捕殺獵物。視力很差，因此成功率很低。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "突击"
+      }
     },
     {
       "slug": "articuno",
@@ -6340,7 +6418,10 @@
           "languageCode": "zh-Hant",
           "text": "從菱形的結晶裡放出零下１５０度的寒氣，包圍敵人並將其冰封。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冻原"
+      }
     },
     {
       "slug": "avalugg",
@@ -6560,7 +6641,10 @@
           "languageCode": "zh-Hant",
           "text": "如果在岩石或樹木上發現了獨特的齒痕，附近一定棲息著牙牙。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "牙"
+      }
     },
     {
       "slug": "azelf",
@@ -6690,7 +6774,10 @@
           "languageCode": "zh-Hant",
           "text": "以意志之神的身分受人畏懼的寶可夢。傳說牠能操縱與己敵對者的意志，使其化成傀儡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "意志"
+      }
     },
     {
       "slug": "azumarill",
@@ -6930,7 +7017,10 @@
           "languageCode": "zh-Hant",
           "text": "只要細細聆聽，就能分辨出在湍急的河川中有些什麼。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水兔"
+      }
     },
     {
       "slug": "azurill",
@@ -7160,7 +7250,10 @@
           "languageCode": "zh-Hant",
           "text": "圓圓大大的尾巴裡充滿了牠在成長時所需要的營養。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水珠"
+      }
     },
     {
       "slug": "bagon",
@@ -7450,7 +7543,10 @@
           "languageCode": "zh-Hant",
           "text": "會用經過鍛鍊的頸部肌肉和鐵一般堅硬的頭顱把巨大的岩石撞得粉碎。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "坚硬脑袋"
+      }
     },
     {
       "slug": "baltoy",
@@ -7680,7 +7776,10 @@
           "languageCode": "zh-Hant",
           "text": "用單腳一邊旋轉一邊移動。是在古代遺跡裡發現的稀奇寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "泥偶"
+      }
     },
     {
       "slug": "banette",
@@ -8275,7 +8374,10 @@
           "languageCode": "zh-Hant",
           "text": "會用２根長長的鬍鬚探索渾濁的河底。用濕滑的黏膜保護著身體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "须鱼"
+      }
     },
     {
       "slug": "barraskewda",
@@ -8320,7 +8422,10 @@
           "languageCode": "zh-Hant",
           "text": "以超過１００節的速度游泳。會為了食物和波普海豚的群體展開激烈的爭鬥。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "穿刺"
+      }
     },
     {
       "slug": "basculegion",
@@ -8730,7 +8835,10 @@
           "languageCode": "zh-Hant",
           "text": "群居生活的護城龍們在遭受外敵襲擊時，會橫著排成一排，以堅硬的臉抵擋攻擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "护盾"
+      }
     },
     {
       "slug": "baxcalibur",
@@ -9030,7 +9138,10 @@
           "languageCode": "zh-Hant",
           "text": "脖子周圍散發出的彷彿香辛料般的香味具有激發活力的效果。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "叶子"
+      }
     },
     {
       "slug": "beartic",
@@ -9150,7 +9261,10 @@
           "languageCode": "zh-Hant",
           "text": "在北國有白色惡魔之稱，深受當地人們的畏懼。會用帶有寒氣的爪牙襲擊獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冻结"
+      }
     },
     {
       "slug": "beautifly",
@@ -9325,7 +9439,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有色彩鮮豔的美麗外貌，然而性情貪婪，會驅趕正在採集花蜜的三蜜蜂，以便獨佔自己愛吃的花蜜。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝴蝶"
+      }
     },
     {
       "slug": "beedrill",
@@ -9730,7 +9847,10 @@
           "languageCode": "zh-Hant",
           "text": "能控制對方的記憶。經常有人看到牠在麥田的上方徘徊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "脑"
+      }
     },
     {
       "slug": "beldum",
@@ -10010,7 +10130,10 @@
           "languageCode": "zh-Hant",
           "text": "透過磁力的波長和夥伴交流。成群的鐵啞鈴會有條不紊地行動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铁球"
+      }
     },
     {
       "slug": "bellibolt",
@@ -10035,7 +10158,10 @@
           "languageCode": "zh-Hant",
           "text": "看似眼球的部位其實是放電器官，能夠用來發射腹部的發電臍製造的電力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电蛙"
+      }
     },
     {
       "slug": "bellossom",
@@ -10300,7 +10426,10 @@
           "languageCode": "zh-Hant",
           "text": "會離開出生長大的森林，組成只有美麗花的群體。興致高昂時就會跳起舞來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花"
+      }
     },
     {
       "slug": "bellsprout",
@@ -10630,7 +10759,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然體格瘦弱，但捕捉獵物時的動作卻快到肉眼無法看清。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花"
+      }
     },
     {
       "slug": "bergmite",
@@ -10735,7 +10867,10 @@
           "languageCode": "zh-Hant",
           "text": "覆蓋身體的冰可以抵禦敵人的攻擊。即使被打破也可以瞬間再用寒氣製造出冰層。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冰块"
+      }
     },
     {
       "slug": "bewear",
@@ -10795,7 +10930,10 @@
           "languageCode": "zh-Hant",
           "text": "會用令格鬥家都無地自容的技術把逮住的獵物夾在腋下，帶回自己的住處。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "强臂"
+      }
     },
     {
       "slug": "bibarel",
@@ -10935,7 +11073,10 @@
           "languageCode": "zh-Hant",
           "text": "體毛有著極佳的撥水效果，且保溫性十足，性能十分優秀。會在河中築起堤壩當作巢穴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "河狸"
+      }
     },
     {
       "slug": "bidoof",
@@ -11065,7 +11206,10 @@
           "languageCode": "zh-Hant",
           "text": "表情木訥，遇到何事都能處之泰然。過去曾發生大牙狸光明正大地跑進村裡，還光明正大地把房屋啃了一番的妙事。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "圆鼠"
+      }
     },
     {
       "slug": "binacle",
@@ -11140,7 +11284,10 @@
           "languageCode": "zh-Hant",
           "text": "２隻龜腳腳在同一塊岩石上生活。一旦雙方吵架，其中１隻就會搬到別的岩石上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "双手"
+      }
     },
     {
       "slug": "bisharp",
@@ -11280,7 +11427,10 @@
           "languageCode": "zh-Hant",
           "text": "會用全身上下的利刃毫不留情地斬斷對手。為求勝利不擇手段。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刀刃"
+      }
     },
     {
       "slug": "blacephalon",
@@ -11305,7 +11455,10 @@
           "languageCode": "zh-Hant",
           "text": "從究極之洞中出現的究極異獸。會用爆炸嚇唬對手，然後趁機奪取對方的精氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "烟火"
+      }
     },
     {
       "slug": "blastoise",
@@ -11920,7 +12073,10 @@
           "languageCode": "zh-Hant",
           "text": "經常出現在田地裡的寶可夢。會透過長在身體上的毛來感應周圍發生的事。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幼虫"
+      }
     },
     {
       "slug": "blissey",
@@ -12225,7 +12381,10 @@
           "languageCode": "zh-Hant",
           "text": "幸福蛋生的蛋裡富含幸福，只要吃上一口，不管是誰都會笑逐顏開。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幸福"
+      }
     },
     {
       "slug": "blitzle",
@@ -12325,7 +12484,10 @@
           "languageCode": "zh-Hant",
           "text": "喜歡經常發生落雷的土地。會用鬃毛接下雷電，把電力儲存到體內。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "带电"
+      }
     },
     {
       "slug": "boldore",
@@ -12465,7 +12627,10 @@
           "languageCode": "zh-Hant",
           "text": "透過聲音來探測四周。要是惹牠生氣了，牠會連身體方向也不轉就朝你追來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "矿石"
+      }
     },
     {
       "slug": "boltund",
@@ -12490,7 +12655,10 @@
           "languageCode": "zh-Hant",
           "text": "電力增強了牠的腳力。當以最高速度奔跑時，時速可以輕易超過９０公里。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "狗"
+      }
     },
     {
       "slug": "bombirdier",
@@ -12515,7 +12683,10 @@
           "languageCode": "zh-Hant",
           "text": "會用胸口的袋子包住食物，然後帶回巢裡。以弄掉會發出響亮聲音的東西為樂。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "掉东西"
+      }
     },
     {
       "slug": "bonsly",
@@ -12760,7 +12931,10 @@
           "languageCode": "zh-Hant",
           "text": "會從眼睛排出體內多餘的水分。該成分接近人類的汗液。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "盆栽"
+      }
     },
     {
       "slug": "bouffalant",
@@ -12855,7 +13029,10 @@
           "languageCode": "zh-Hant",
           "text": "會組成約２０隻的群體一起生活。不知為何，背叛了群體的爆炸頭水牛頭上的毛會脫落。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "头锤牛"
+      }
     },
     {
       "slug": "bounsweet",
@@ -12935,7 +13112,10 @@
           "languageCode": "zh-Hant",
           "text": "被牠甜甜的香氣吸引而來的藏飽栗鼠，會把牠和樹果用尾巴裹起來一併帶走。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水果"
+      }
     },
     {
       "slug": "braixen",
@@ -13010,7 +13190,10 @@
           "languageCode": "zh-Hant",
           "text": "尾巴上插有樹枝。用樹枝和尾巴上的毛摩擦生熱，點燃樹枝應戰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "狐狸"
+      }
     },
     {
       "slug": "brambleghast",
@@ -13035,7 +13218,10 @@
           "languageCode": "zh-Hant",
           "text": "會在乾燥地帶流浪。有極低的機率會大量出現，把一整座城鎮塞得滿滿滿。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "滚草"
+      }
     },
     {
       "slug": "bramblin",
@@ -13060,7 +13246,10 @@
           "languageCode": "zh-Hant",
           "text": "在風的吹拂下滾動於荒野間，就連自己也不知道會滾到哪裡去。最討厭身體被弄得濕答答的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "滚草"
+      }
     },
     {
       "slug": "braviary",
@@ -13455,7 +13644,10 @@
           "languageCode": "zh-Hant",
           "text": "尾巴上的種子是由毒孢子所構成的。會以肉眼無法看清的速度出拳打倒敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蘑菇"
+      }
     },
     {
       "slug": "brionne",
@@ -13535,7 +13727,10 @@
           "languageCode": "zh-Hant",
           "text": "非常關心自己的夥伴。訓練家如果情緒低落，就會跳舞給予鼓勵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "偶像"
+      }
     },
     {
       "slug": "bronzong",
@@ -13740,7 +13935,10 @@
           "languageCode": "zh-Hant",
           "text": "打開通往其他世界的洞，從那裡降下雨來。因此被叫做豐收之神。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铜钟"
+      }
     },
     {
       "slug": "bronzor",
@@ -13930,7 +14128,10 @@
           "languageCode": "zh-Hant",
           "text": "能在古墓發現到牠。據說牠背上的花紋寄宿著神秘的力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "青铜"
+      }
     },
     {
       "slug": "brute-bonnet",
@@ -13955,7 +14156,10 @@
           "languageCode": "zh-Hant",
           "text": "與可疑的雜誌裡被介紹成由恐龍與蘑菇融合而成的寶可夢有點相似。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "bruxish",
@@ -14020,7 +14224,10 @@
           "languageCode": "zh-Hant",
           "text": "磨牙時會泛起波紋。當陽光反射在上面時，周圍的水會閃起令人目眩神迷的亮光。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "磨牙"
+      }
     },
     {
       "slug": "budew",
@@ -14190,7 +14397,10 @@
           "languageCode": "zh-Hant",
           "text": "如果沐浴到溫暖的陽光，花苞就會打開並飛散出花粉。習慣住在清澈的水邊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花苞"
+      }
     },
     {
       "slug": "buizel",
@@ -14375,7 +14585,10 @@
           "languageCode": "zh-Hant",
           "text": "會膨脹頸部的浮囊讓自己能把臉露出水面，以探查地上獵物的動靜。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海鼬"
+      }
     },
     {
       "slug": "bulbasaur",
@@ -14730,7 +14943,10 @@
           "languageCode": "zh-Hant",
           "text": "據說從牠出生的時候開始，背上就種著奇妙的種子，和牠的身體一起成長。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "种子"
+      }
     },
     {
       "slug": "buneary",
@@ -14910,7 +15126,10 @@
           "languageCode": "zh-Hant",
           "text": "如果猛然伸直總是捲成團的耳朵，就連大岩石也能輕易破壞。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "兔子"
+      }
     },
     {
       "slug": "bunnelby",
@@ -14985,7 +15204,10 @@
           "languageCode": "zh-Hant",
           "text": "用大大的耳朵挖掘地面做出巢穴。能整晚不眠不休地持續挖掘。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "挖洞"
+      }
     },
     {
       "slug": "burmy",
@@ -15520,7 +15742,10 @@
           "languageCode": "zh-Hant",
           "text": "會向對手炫耀自己膨脹到異常程度的肌肉。是究極異獸的一種。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "膨胀"
+      }
     },
     {
       "slug": "cacnea",
@@ -15740,7 +15965,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在乾燥少雨的地方。黃色的花朵每年綻放１次。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "仙人掌"
+      }
     },
     {
       "slug": "cacturne",
@@ -15960,7 +16188,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在沙漠。一到晚上就會開始活動，去捕捉因受不了沙漠的炎熱而精疲力盡的獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "稻草人"
+      }
     },
     {
       "slug": "calyrex",
@@ -16250,7 +16481,10 @@
           "languageCode": "zh-Hant",
           "text": "也許是辣味成分的影響，牠的情緒起伏非常激烈。只要不順心就會咬上來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "热辣"
+      }
     },
     {
       "slug": "carbink",
@@ -16385,7 +16619,10 @@
           "languageCode": "zh-Hant",
           "text": "在地底深處的高溫高壓環境下出生。從頭上的石頭放出能量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "宝石"
+      }
     },
     {
       "slug": "carkol",
@@ -16430,7 +16667,10 @@
           "languageCode": "zh-Hant",
           "text": "由於內部製造著柏油，因此就算牠跑得再快，背上的煤炭山也不會崩塌。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "煤炭"
+      }
     },
     {
       "slug": "carnivine",
@@ -16575,7 +16815,10 @@
           "languageCode": "zh-Hant",
           "text": "雖是草木形態的寶可夢，但性情卻是貪婪粗暴，會張開大口襲擊獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "捕虫"
+      }
     },
     {
       "slug": "carracosta",
@@ -16715,7 +16958,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然和水中相比動作會變得比較遲緩，但為了尋找獵物牠還是會在陸地上活動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "古代龟"
+      }
     },
     {
       "slug": "carvanha",
@@ -16985,7 +17231,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在流經叢林的大河中。會成群結隊襲擊混進自己地盤的獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "凶猛"
+      }
     },
     {
       "slug": "cascoon",
@@ -17185,7 +17434,10 @@
           "languageCode": "zh-Hant",
           "text": "包裹全身的絲雖細，但強度十足，且色澤更勝甲殼繭的絲，以此織成的衣物被人們視為上品。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛹"
+      }
     },
     {
       "slug": "castform",
@@ -17765,7 +18017,10 @@
           "languageCode": "zh-Hant",
           "text": "會從紅色觸角釋放出臭氣來趕走敵人。隨著反覆蛻皮而長大。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虫宝宝"
+      }
     },
     {
       "slug": "celebi",
@@ -18005,7 +18260,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠使用穿越時光的力量。據說只會在和平的時代出現。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "时空穿越"
+      }
     },
     {
       "slug": "celesteela",
@@ -18050,7 +18308,10 @@
           "languageCode": "zh-Hant",
           "text": "在這個世界是危險的異類，但在原本棲息的世界裡，牠似乎是常見的普通生物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发射"
+      }
     },
     {
       "slug": "centiskorch",
@@ -18110,7 +18371,10 @@
           "languageCode": "zh-Hant",
           "text": "對訓練家忠心耿耿，對釋出敵意的對象會不由分說地使出斬擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火剑士"
+      }
     },
     {
       "slug": "cetitan",
@@ -18135,7 +18399,10 @@
           "languageCode": "zh-Hant",
           "text": "會集中冰能量使上顎的角變得超低溫，然後將自己附近的一切都凍成冰塊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "陆鲸"
+      }
     },
     {
       "slug": "cetoddle",
@@ -18160,7 +18427,10 @@
           "languageCode": "zh-Hant",
           "text": "在寒冷地帶會組成約５隻規模的群體來生活。喜歡雪或冰所含的礦物質。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "陆鲸"
+      }
     },
     {
       "slug": "chandelure",
@@ -18670,7 +18940,10 @@
           "languageCode": "zh-Hant",
           "text": "為了避免蛋被打破，走起路來小心謹慎。然而逃跑速度卻是快之無比。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛋"
+      }
     },
     {
       "slug": "charcadet",
@@ -18705,7 +18978,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有操縱火焰的招式，是從遙遠的過去就備受人們珍惜的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小火星"
+      }
     },
     {
       "slug": "charizard",
@@ -19145,7 +19421,10 @@
           "languageCode": "zh-Hant",
           "text": "蟲電寶消化吃掉的落葉時會產生電能，並將其存下。會從顎部尖端放出電流。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蓄电池"
+      }
     },
     {
       "slug": "charmander",
@@ -19510,7 +19789,10 @@
           "languageCode": "zh-Hant",
           "text": "尾巴上的火焰是小火龍生命力的象徵。如果活力十足，火焰就會熊熊燃燒。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜥蜴"
+      }
     },
     {
       "slug": "charmeleon",
@@ -19875,7 +20157,10 @@
           "languageCode": "zh-Hant",
           "text": "會揮動尾巴掃倒對手，再用銳利的爪子把對手撕成碎塊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火焰"
+      }
     },
     {
       "slug": "chatot",
@@ -20015,7 +20300,10 @@
           "languageCode": "zh-Hant",
           "text": "能將人類話語模仿得維妙維肖的表演家。當隨著年齡增長而累積眾多經驗後，甚至還能夠理解話語中的含意。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "音符"
+      }
     },
     {
       "slug": "cherrim",
@@ -20360,7 +20648,10 @@
           "languageCode": "zh-Hant",
           "text": "會在本體旁的果實長大成熟後，使用果實的營養來進化。之後果實會自己掉落，成為其他生物的食糧。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "樱桃"
+      }
     },
     {
       "slug": "chesnaught",
@@ -20510,7 +20801,10 @@
           "languageCode": "zh-Hant",
           "text": "頭上的刺平時很柔軟，一旦集中力量就會變得尖銳，硬度足以刺穿岩石。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刺栗"
+      }
     },
     {
       "slug": "chewtle",
@@ -20555,7 +20849,10 @@
           "languageCode": "zh-Hant",
           "text": "拿起咬咬龜咬著的樹枝，比賽誰的能咬住不放最久，是種在孩童間很流行的遊戲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "咬住"
+      }
     },
     {
       "slug": "chi-yu",
@@ -20580,7 +20877,10 @@
           "languageCode": "zh-Hant",
           "text": "曾引起無數鬥爭的勾玉聚集了嫉妒之情。這些嫉妒之情纏繞了火焰，變成了寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "灾厄"
+      }
     },
     {
       "slug": "chien-pao",
@@ -20605,7 +20905,10 @@
           "languageCode": "zh-Hant",
           "text": "遙遠過去喪命於劍下者的憎恨之情纏繞在雪上，變成了寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "灾厄"
+      }
     },
     {
       "slug": "chikorita",
@@ -20870,7 +21173,10 @@
           "languageCode": "zh-Hant",
           "text": "從頭上的葉子飄散出淡淡的清甜香氣。性情溫和，最愛沐浴在陽光下。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "叶子"
+      }
     },
     {
       "slug": "chimchar",
@@ -21055,7 +21361,10 @@
           "languageCode": "zh-Hant",
           "text": "肚子產生的瓦斯在屁股上燃燒。如果身體狀況不好的話，火焰就會變弱。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小猴"
+      }
     },
     {
       "slug": "chimecho",
@@ -21595,7 +21904,10 @@
           "languageCode": "zh-Hant",
           "text": "會從２根觸手的前端釋放正負電流來麻痺對手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "琵琶鱼"
+      }
     },
     {
       "slug": "chingling",
@@ -21790,7 +22102,10 @@
           "languageCode": "zh-Hant",
           "text": "振動喉嚨深處的圓珠以發出叫聲。會輕飄飄地彈跳移動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铃铛"
+      }
     },
     {
       "slug": "cinccino",
@@ -21935,7 +22250,10 @@
           "languageCode": "zh-Hant",
           "text": "從全身滲出的油非常滑。對於因為肌膚乾燥而煩惱的人也很有效果。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "围巾"
+      }
     },
     {
       "slug": "cinderace",
@@ -22190,7 +22508,10 @@
           "languageCode": "zh-Hant",
           "text": "據說牠一生只會做出１顆的那顆珍珠擁有能夠增強精神力量的作用。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "双壳贝"
+      }
     },
     {
       "slug": "clauncher",
@@ -22305,7 +22626,10 @@
           "languageCode": "zh-Hant",
           "text": "如手槍般從巨大的鉗子裡射出壓縮過的水，擊落空中的獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水枪"
+      }
     },
     {
       "slug": "clawitzer",
@@ -22420,7 +22744,10 @@
           "languageCode": "zh-Hant",
           "text": "能從鉗子後面的噴管噴出水，並以此為推進力以６０節的速度前進。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发射器"
+      }
     },
     {
       "slug": "claydol",
@@ -22650,7 +22977,10 @@
           "languageCode": "zh-Hant",
           "text": "古代的泥偶受到怪異光線的照射後，得到了生命而變成寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "泥偶"
+      }
     },
     {
       "slug": "clefable",
@@ -23405,7 +23735,10 @@
           "languageCode": "zh-Hant",
           "text": "似乎能夠將月光聚集在背後的翅膀上，藉此讓自己浮在空中。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "妖精"
+      }
     },
     {
       "slug": "cleffa",
@@ -23720,7 +24053,10 @@
           "languageCode": "zh-Hant",
           "text": "根據當地的傳說，皮寶寶經常出沒的地方就是流星隕落之處。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "星形"
+      }
     },
     {
       "slug": "clobbopus",
@@ -23755,7 +24091,10 @@
           "languageCode": "zh-Hant",
           "text": "很擅長用前端圓膨膨的觸手盡情地大敲特敲一番，但最不拿手的就是用它抓東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "缠人"
+      }
     },
     {
       "slug": "clodsire",
@@ -23780,7 +24119,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在池塘和沼澤底部。會讓烏波坐在自己背上，然後游泳送到對岸去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刺鱼"
+      }
     },
     {
       "slug": "cloyster",
@@ -24160,7 +24502,10 @@
           "languageCode": "zh-Hant",
           "text": "只要受到攻擊，表面的刺就會一根接一根地飛過來。殼裡的真面目無人知曉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "双壳贝"
+      }
     },
     {
       "slug": "coalossal",
@@ -24315,7 +24660,10 @@
           "languageCode": "zh-Hant",
           "text": "有著鋼鐵的身體與心靈。光只是瞪一眼就能夠讓凶暴的寶可夢也甘心臣服。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铁心"
+      }
     },
     {
       "slug": "cofagrigus",
@@ -24425,7 +24773,10 @@
           "languageCode": "zh-Hant",
           "text": "會把誤認自己是真正的棺材而靠近的盜墓賊關在體內。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "棺木"
+      }
     },
     {
       "slug": "combee",
@@ -24620,7 +24971,10 @@
           "languageCode": "zh-Hant",
           "text": "從出生那時起就是３隻一起。為了取悅蜂女王，一直都在採集著花蜜。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幼蜂"
+      }
     },
     {
       "slug": "combusken",
@@ -24850,7 +25204,10 @@
           "languageCode": "zh-Hant",
           "text": "有著１秒內連踢１０次的腿技。會用尖銳的叫聲威嚇對手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幼鸡"
+      }
     },
     {
       "slug": "comfey",
@@ -24935,7 +25292,10 @@
           "languageCode": "zh-Hant",
           "text": "如果身上黏著花就會很開心，並且發揮出治癒的效果。喜歡有很多花的地方。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "摘花"
+      }
     },
     {
       "slug": "conkeldurr",
@@ -25055,7 +25415,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠不憑蠻力，而是巧妙利用離心力來揮舞水泥柱使出招式。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "筋骨"
+      }
     },
     {
       "slug": "copperajah",
@@ -25350,7 +25713,10 @@
           "languageCode": "zh-Hant",
           "text": "即使水質惡劣也不以為意，因此不會和其他水寶可夢爭奪食物，使得牠們的數量不斷增加。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "无赖"
+      }
     },
     {
       "slug": "corsola",
@@ -25730,7 +26096,10 @@
           "languageCode": "zh-Hant",
           "text": "頭腦聰明，懂得使用工具。會用爪子抓起小石頭投向敵人，或是用繩子把敵人綑住。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "乌鸦"
+      }
     },
     {
       "slug": "cosmoem",
@@ -25795,7 +26164,10 @@
           "languageCode": "zh-Hant",
           "text": "以驚人的氣勢吸入大氣中的塵埃，努力用內核製造著進化的能源。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "原始星"
+      }
     },
     {
       "slug": "cosmog",
@@ -25860,7 +26232,10 @@
           "languageCode": "zh-Hant",
           "text": "沒有警戒心且好奇心強，所以經常會遇到麻煩。危急時會用瞬間移動來逃跑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "星云"
+      }
     },
     {
       "slug": "cottonee",
@@ -26020,7 +26395,10 @@
           "languageCode": "zh-Hant",
           "text": "受到襲擊時會從身體噴出棉花，趁著敵人把棉花誤以為是木棉球時逃之夭夭。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "棉球"
+      }
     },
     {
       "slug": "crabominable",
@@ -26170,7 +26548,10 @@
           "languageCode": "zh-Hant",
           "text": "堅硬的鉗子攻守皆宜。好勝蟹與好勝蟹之間的戰鬥就像是拳擊賽一樣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "拳斗"
+      }
     },
     {
       "slug": "cradily",
@@ -26400,7 +26781,10 @@
           "languageCode": "zh-Hant",
           "text": "會待在溫暖的海洋淺灘上。退潮時會把躲在沙灘下的獵物挖出來吃掉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "藤壶"
+      }
     },
     {
       "slug": "cramorant",
@@ -26670,7 +27054,10 @@
           "languageCode": "zh-Hant",
           "text": "頭蓋龍之間會以頭互撞，堅硬的頭會藉此得到更進一步的鍛鍊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "头锤"
+      }
     },
     {
       "slug": "crawdaunt",
@@ -26930,7 +27317,10 @@
           "languageCode": "zh-Hant",
           "text": "不停揮舞自己巨大的鉗子，是個性情粗暴的傢伙。被認為是很難培育的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "流氓"
+      }
     },
     {
       "slug": "cresselia",
@@ -27070,7 +27460,10 @@
           "languageCode": "zh-Hant",
           "text": "令人聯想到彎月的寶可夢。在夜空中飛翔時，會留下一道鮮明的光跡，就像是在天上畫出一條銀河的仙女。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "新月"
+      }
     },
     {
       "slug": "croagunk",
@@ -27265,7 +27658,10 @@
           "languageCode": "zh-Hant",
           "text": "很少會堂堂正正地戰鬥，但那都是為了要生存下去。作為吉祥物非常受歡迎。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒击"
+      }
     },
     {
       "slug": "crobat",
@@ -27540,7 +27936,10 @@
           "languageCode": "zh-Hant",
           "text": "牙齒很銳利，就算在黑暗中被牠咬住吸血，也會因感覺不到疼痛而無法立刻發現。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝙蝠"
+      }
     },
     {
       "slug": "crocalor",
@@ -27565,7 +27964,10 @@
           "languageCode": "zh-Hant",
           "text": "聲帶和火囊的閥緊鄰在一起。會一邊發出嘶啞的聲音，一邊噴灑火焰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火鳄"
+      }
     },
     {
       "slug": "croconaw",
@@ -27830,7 +28232,10 @@
           "languageCode": "zh-Hant",
           "text": "即使牙齒掉了也會不斷重新長出來。嘴裡總是長滿著４８顆牙齒。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大颚"
+      }
     },
     {
       "slug": "crustle",
@@ -27925,7 +28330,10 @@
           "languageCode": "zh-Hant",
           "text": "厚實的鉗子是牠最大的武器。硬度高到甚至能讓超甲狂犀的護具裂開。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩居"
+      }
     },
     {
       "slug": "cryogonal",
@@ -28055,7 +28463,10 @@
           "languageCode": "zh-Hant",
           "text": "用冰的結晶做成的鎖鏈來綑綁獵物，把對手冰凍到零下１００度。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "结晶"
+      }
     },
     {
       "slug": "cubchoo",
@@ -28175,7 +28586,10 @@
           "languageCode": "zh-Hant",
           "text": "當牠開始打噴嚏時，就要提高警覺了。如果被牠那帶著寒氣的鼻涕噴到，可是會凍傷的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "结冰"
+      }
     },
     {
       "slug": "cubone",
@@ -28535,7 +28949,10 @@
           "languageCode": "zh-Hant",
           "text": "戴著自己一出生就死別的母親的頭骨，絕對不露出真面貌。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "孤独"
+      }
     },
     {
       "slug": "cufant",
@@ -28580,7 +28997,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠舉起重達５噸的貨物。天一亮就會成群結隊前往洞窟找礦石來吃。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "像铜"
+      }
     },
     {
       "slug": "cursola",
@@ -28605,7 +29025,10 @@
           "languageCode": "zh-Hant",
           "text": "一定要小心牠那包覆著靈魂的靈體。如果觸摸到，就會像石頭一樣動彈不得。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "珊瑚"
+      }
     },
     {
       "slug": "cutiefly",
@@ -28690,7 +29113,10 @@
           "languageCode": "zh-Hant",
           "text": "會用長長的嘴吸取花粉與花蜜。吃不完的花粉會被儲存在體毛間的縫裡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜂虻"
+      }
     },
     {
       "slug": "cyclizar",
@@ -28725,7 +29151,10 @@
           "languageCode": "zh-Hant",
           "text": "在喉部的褶皺中蓄有能量，因此可以載著人不停地奔跑很長一段距離。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "坐骑"
+      }
     },
     {
       "slug": "cyndaquil",
@@ -28990,7 +29419,10 @@
           "languageCode": "zh-Hant",
           "text": "從背上噴出的火焰會在生氣時燃燒得最強烈，令敵手大嚇一跳。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火鼠"
+      }
     },
     {
       "slug": "dachsbun",
@@ -29025,7 +29457,10 @@
           "languageCode": "zh-Hant",
           "text": "用聞起來香噴噴的體味強烈刺激對手的飢餓感，以此削弱其精力和體力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "狗"
+      }
     },
     {
       "slug": "darkrai",
@@ -29276,6 +29711,13 @@
           "text": "體內的火焰燃得越旺，力量就越大。火焰的溫度有時甚至能超過１４００度。受傷之後會像岩石一樣動也不動。那其實是牠在用沉思來磨鍊內心。（达摩模式）性情敦厚的大力士。會一口氣凍住頭上的雪球，然後用頭錘撞擊對手。（伽勒尔的样子）達摩狒狒情緒激昂的樣子。在怒氣平息之前，即使身體融化也會不斷噴出火焰。（伽勒尔的样子，达摩模式）"
         }
       ]
+    },
+    {
+      "slug": "dartrix",
+      "descriptions": [],
+      "genus": {
+        "zh-Hans": "刃羽"
+      }
     },
     {
       "slug": "darumaka",
@@ -29585,7 +30027,10 @@
           "languageCode": "zh-Hant",
           "text": "鬍鬚有著天線功能。可以收發電波，與遠方的夥伴相互聯絡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "天线"
+      }
     },
     {
       "slug": "deerling",
@@ -29810,7 +30255,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息的洞窟深處缺乏食糧，因此只要是會動的東西，牠都會想去咬住吃掉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "粗鲁"
+      }
     },
     {
       "slug": "delcatty",
@@ -29990,7 +30438,10 @@
           "languageCode": "zh-Hant",
           "text": "有著美麗的毛髮，非常受女性訓練家的歡迎。沒有固定的住所。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "清高"
+      }
     },
     {
       "slug": "delibird",
@@ -30300,7 +30751,10 @@
           "languageCode": "zh-Hant",
           "text": "會把食物裹在尾巴裡搬運。有把食物分給山中遇難者的習性。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "搬运"
+      }
     },
     {
       "slug": "delphox",
@@ -30900,7 +31354,10 @@
           "languageCode": "zh-Hant",
           "text": "為了戰勝寒冷，會在體內儲存熱能。在寒冷的海中也能以８節的速度前進。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海狮"
+      }
     },
     {
       "slug": "dewott",
@@ -31010,7 +31467,10 @@
           "languageCode": "zh-Hant",
           "text": "性情勤勉，嚴以律己。會透過紮實的反覆練習，學成運用扇貝貝的刀法。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "修行"
+      }
     },
     {
       "slug": "dewpider",
@@ -31095,7 +31555,10 @@
           "languageCode": "zh-Hant",
           "text": "用３隻腳支撐著包裹頭部的水泡。有時會偷偷地換腳。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水泡"
+      }
     },
     {
       "slug": "dhelmise",
@@ -31160,7 +31623,10 @@
           "languageCode": "zh-Hant",
           "text": "把錨拋到海裡，伏擊獵物。會去捕捉巨大的吼鯨王，吸取牠們的精氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "碎藻"
+      }
     },
     {
       "slug": "dialga",
@@ -31420,7 +31886,10 @@
           "languageCode": "zh-Hant",
           "text": "大大的耳朵有著能輕易舉起超過１噸重的岩石的力量。在工地能幫上大忙。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "挖洞"
+      }
     },
     {
       "slug": "diglett",
@@ -31835,7 +32304,10 @@
           "languageCode": "zh-Hant",
           "text": "由露出了頭部的外頭蟲與露出了尾巴的裡頭蟲相扶相持，一起在蘋果裡面生活。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "糖苹果"
+      }
     },
     {
       "slug": "ditto",
@@ -32205,7 +32677,10 @@
           "languageCode": "zh-Hant",
           "text": "會自己重組身體細胞的結構，變身成其他的生命體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "变身"
+      }
     },
     {
       "slug": "dodrio",
@@ -32500,7 +32975,10 @@
           "languageCode": "zh-Hant",
           "text": "頸部最粗且力量最強的那顆頭會成為首領，掌握身體的主導權。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "三头鸟"
+      }
     },
     {
       "slug": "doduo",
@@ -32800,7 +33278,10 @@
           "languageCode": "zh-Hant",
           "text": "２顆頭不會同時睡著。會每隔約１個小時就醒來，互相輪流放哨。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "两头鸟"
+      }
     },
     {
       "slug": "dolliv",
@@ -32825,7 +33306,10 @@
           "languageCode": "zh-Hant",
           "text": "當頭上的果實沐浴了充分的陽光而開始成熟時，就會遠離人煙，踏上旅途。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "橄榄"
+      }
     },
     {
       "slug": "dondozo",
@@ -32860,7 +33344,10 @@
           "languageCode": "zh-Hant",
           "text": "有著大鬧起來會掀起大浪的巨大身體與驚人力量，但卻不擅長捕食。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大鲶"
+      }
     },
     {
       "slug": "donphan",
@@ -33105,7 +33592,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然平時性情穩重，但一旦被激怒就會滾著蜷起的身體猛衝過來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铠甲"
+      }
     },
     {
       "slug": "dottler",
@@ -33130,7 +33620,10 @@
           "languageCode": "zh-Hant",
           "text": "正在殼裡成長著。用精神力量掌握外界的狀況，做好進化的準備。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "天线罩"
+      }
     },
     {
       "slug": "doublade",
@@ -33205,7 +33698,10 @@
           "languageCode": "zh-Hant",
           "text": "進化後分裂為２把。會透過心靈感應來交談，並以合作攻擊砍碎敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刀剑"
+      }
     },
     {
       "slug": "dracovish",
@@ -33230,7 +33726,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然能用自豪的腳力以６０公里的時速奔跑，但是只能在水中呼吸。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "化石"
+      }
     },
     {
       "slug": "dracozolt",
@@ -33255,7 +33754,10 @@
           "languageCode": "zh-Hant",
           "text": "會用尾部結實的肌肉發電。與下半身相比，上半身真的太小了。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "化石"
+      }
     },
     {
       "slug": "dragalge",
@@ -33415,7 +33917,10 @@
           "languageCode": "zh-Hant",
           "text": "群體裡飛得最快的個體，身邊經常都圍繞著想體驗音速飛行的多龍梅西亞。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "隐形"
+      }
     },
     {
       "slug": "dragonair",
@@ -33800,7 +34305,10 @@
           "languageCode": "zh-Hant",
           "text": "水晶一般的珠子裡，似乎蘊含著能夠自由操縱天氣的能力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "龙"
+      }
     },
     {
       "slug": "dragonite",
@@ -34215,7 +34723,10 @@
           "languageCode": "zh-Hant",
           "text": "會用儲存在肺部的能量進行攻擊。在多龍梅西亞能獨當一面前，都會一起戰鬥並照顧起居。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "保姆"
+      }
     },
     {
       "slug": "drampa",
@@ -34450,7 +34961,10 @@
           "languageCode": "zh-Hant",
           "text": "性情凶猛殘暴。靠著能夠彈開刀劍的堅固甲殼與強橫的勁力四處大鬧，為禍一方。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝎怪"
+      }
     },
     {
       "slug": "dratini",
@@ -34820,7 +35334,10 @@
           "languageCode": "zh-Hant",
           "text": "體型會隨著一次次的蛻皮而不斷變大，是一種充滿生命力的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "龙"
+      }
     },
     {
       "slug": "drednaw",
@@ -34910,7 +35427,10 @@
           "languageCode": "zh-Hant",
           "text": "明明不吃卻又愛死咬著鐵臂槍蝦不放，聽說是牠生前殘留下來的活動習性。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "哀怨"
+      }
     },
     {
       "slug": "drifblim",
@@ -35135,7 +35655,10 @@
           "languageCode": "zh-Hant",
           "text": "會搬運人和寶可夢。但由於牠只能隨風漂流，因此無法自行決定目的地。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "热气球"
+      }
     },
     {
       "slug": "drifloon",
@@ -35380,7 +35903,10 @@
           "languageCode": "zh-Hant",
           "text": "漫無目的浮在空中的樣子，使牠在某些民間故事裡被相傳為迷途靈魂的路標。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "气球"
+      }
     },
     {
       "slug": "drilbur",
@@ -35515,7 +36041,10 @@
           "languageCode": "zh-Hant",
           "text": "透過讓身體旋轉，能夠維持時速５０公里的速度，筆直挖掘地面前進。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鼹鼠"
+      }
     },
     {
       "slug": "drizzile",
@@ -35560,7 +36089,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然個性上很怕麻煩，但智商非常高，會設置陷阱來保護自己的住處。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水蜥"
+      }
     },
     {
       "slug": "drowzee",
@@ -35915,7 +36447,10 @@
           "languageCode": "zh-Hant",
           "text": "據說當牠抽動凸出的鼻子，無論是誰在哪裡做著什麼夢，都會被牠知道得一清二楚。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "催眠"
+      }
     },
     {
       "slug": "druddigon",
@@ -36030,7 +36565,10 @@
           "languageCode": "zh-Hant",
           "text": "性情凶暴且狡猾。會搶奪其他寶可夢挖好的巢穴，來當作是自己的窩。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "洞穴"
+      }
     },
     {
       "slug": "dubwool",
@@ -36055,7 +36593,10 @@
           "languageCode": "zh-Hant",
           "text": "長得長長的角是為了向異性求愛而存在的。牠從不會把角當作武器。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "绵羊"
+      }
     },
     {
       "slug": "ducklett",
@@ -36155,7 +36696,10 @@
           "languageCode": "zh-Hant",
           "text": "會在池塘水深的地方四處游動找水苔來吃，順便鍛鍊身體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水鸟"
+      }
     },
     {
       "slug": "dudunsparce",
@@ -36865,7 +37409,10 @@
           "languageCode": "zh-Hant",
           "text": "一旦被誰看見了身影，就會用尾巴挖洞逃走。能用翅膀稍微浮在空中。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "地蛇"
+      }
     },
     {
       "slug": "duosion",
@@ -36990,7 +37537,10 @@
           "languageCode": "zh-Hant",
           "text": "當一分為二的大腦思考相同的事情時，就會發揮最大的力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "分割"
+      }
     },
     {
       "slug": "duraludon",
@@ -37135,7 +37685,10 @@
           "languageCode": "zh-Hant",
           "text": "巨大的顎部能咬碎岩石。為了不讓沙螺蟒把蛋搶走，會和其他同類一起並肩戰鬥。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铁蚁"
+      }
     },
     {
       "slug": "dusclops",
@@ -37385,7 +37938,10 @@
           "languageCode": "zh-Hant",
           "text": "據說在體內燃燒著的鮮紅獨眼是彷徨夜靈的本體，但沒有人親眼見過。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "招手"
+      }
     },
     {
       "slug": "dusknoir",
@@ -37590,7 +38146,10 @@
           "languageCode": "zh-Hant",
           "text": "在這個世界與另一個世界間往返。據說會吸入並帶走遊蕩的靈魂，因此遭到人們畏懼。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "抓握"
+      }
     },
     {
       "slug": "duskull",
@@ -37815,7 +38374,10 @@
           "languageCode": "zh-Hant",
           "text": "遭到牠鮮紅的獨眼瞪視並且被吸取生物能量時，會受到嚴重的寒氣侵襲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "渡魂"
+      }
     },
     {
       "slug": "dustox",
@@ -37980,7 +38542,10 @@
           "languageCode": "zh-Hant",
           "text": "有著被黑暗中的篝火吸引的習性。會散布毒性猛烈的鱗粉，令人們為了將牠們驅離村落而煞費苦心。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒蛾"
+      }
     },
     {
       "slug": "dwebble",
@@ -38080,7 +38645,10 @@
           "languageCode": "zh-Hant",
           "text": "如果找不到大小合適的石頭來當成自己的家，牠也會住到河馬獸的洞裡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "石居"
+      }
     },
     {
       "slug": "eelektrik",
@@ -38195,7 +38763,10 @@
           "languageCode": "zh-Hant",
           "text": "纏住對手，從圓圓的斑點放出電流使對手麻痺後，再加以啃食。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电鱼"
+      }
     },
     {
       "slug": "eelektross",
@@ -39070,7 +39641,10 @@
           "languageCode": "zh-Hant",
           "text": "身體會隨著年齡增長不斷變長。每到夜裡就會把身體纏繞在樹枝上歇息。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛇"
+      }
     },
     {
       "slug": "eldegoss",
@@ -39095,7 +39669,10 @@
           "languageCode": "zh-Hant",
           "text": "用牠頭上的棉絮製成的線有著十分美麗動人的光澤，是伽勒爾地區的名產。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "棉饰"
+      }
     },
     {
       "slug": "electabuzz",
@@ -39465,7 +40042,10 @@
           "languageCode": "zh-Hant",
           "text": "人們正在研究如何把雷電儲存到電擊獸的體內，以便隨時使用。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电击"
+      }
     },
     {
       "slug": "electivire",
@@ -39695,7 +40275,10 @@
           "languageCode": "zh-Hant",
           "text": "會用尾巴前端抵住對手，然後在一瞬間注入超過２萬伏特的電流。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "雷电"
+      }
     },
     {
       "slug": "electrike",
@@ -39945,7 +40528,10 @@
           "languageCode": "zh-Hant",
           "text": "會將靜電積蓄在體毛中後放電。當暴風雨來臨前，會從全身冒出火花。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "闪电"
+      }
     },
     {
       "slug": "electrode",
@@ -40555,7 +41141,10 @@
           "languageCode": "zh-Hant",
           "text": "會一圈圈轉動雙臂製造電力，但沒兩三下就會感到疲累，因此只能儲存少量的電力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电气"
+      }
     },
     {
       "slug": "elgyem",
@@ -40675,7 +41264,10 @@
           "languageCode": "zh-Hant",
           "text": "在大約５０年前被發現的寶可夢。會用又大又發達的大腦來操縱精神力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "脑"
+      }
     },
     {
       "slug": "emboar",
@@ -40925,7 +41517,10 @@
           "languageCode": "zh-Hant",
           "text": "將臉頰裡的電囊製造出的電儲藏在膜的內側，一邊滑翔一邊放電。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "飞鼠"
+      }
     },
     {
       "slug": "empoleon",
@@ -41110,7 +41705,10 @@
           "languageCode": "zh-Hant",
           "text": "不會參與無謂的紛爭，但若有威脅群體安全的敵人，就會毫不留情地將其擊潰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "皇帝"
+      }
     },
     {
       "slug": "enamorus",
@@ -41340,7 +41938,10 @@
           "languageCode": "zh-Hant",
           "text": "據說如果炎帝吼叫的話，世界上的某處火山就會爆發。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火山"
+      }
     },
     {
       "slug": "escavalier",
@@ -41440,7 +42041,10 @@
           "languageCode": "zh-Hant",
           "text": "會舉起長矛突擊敵人。有一幅名畫描繪著牠和蔥遊兵決鬥的場景。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "骑兵"
+      }
     },
     {
       "slug": "espathra",
@@ -41465,7 +42069,10 @@
           "languageCode": "zh-Hant",
           "text": "會從鮮豔褶邊的縫隙間釋放出精神力量，藉此以時速２００公里的速度狂奔。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鸵鸟"
+      }
     },
     {
       "slug": "espeon",
@@ -41785,7 +42392,10 @@
           "languageCode": "zh-Hant",
           "text": "會用全身上下的細毛來感受空氣的流動，預測敵人的想法和天氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "太阳"
+      }
     },
     {
       "slug": "espurr",
@@ -41880,7 +42490,10 @@
           "languageCode": "zh-Hant",
           "text": "為了不讓強大的精神力量流出，因此用耳朵掩住放出精神力量的器官。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "自制"
+      }
     },
     {
       "slug": "eternatus",
@@ -42420,7 +43033,10 @@
           "languageCode": "zh-Hant",
           "text": "會發出只有蛋蛋才能收到的心靈感應，因此不論何時都能６隻聚集在一起。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛋"
+      }
     },
     {
       "slug": "exeggutor",
@@ -43010,7 +43626,10 @@
           "languageCode": "zh-Hant",
           "text": "爆音怪的長嚎能傳到１０公里之外。會從身上的許多洞裡發出各種聲音。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "噪音"
+      }
     },
     {
       "slug": "falinks",
@@ -43410,7 +44029,10 @@
           "languageCode": "zh-Hant",
           "text": "會用堅硬的尾巴頭保護著本體的頭，並揮甩長長的脖子讓對手吃牠一記頭錘。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长颈"
+      }
     },
     {
       "slug": "fearow",
@@ -43720,7 +44342,10 @@
           "languageCode": "zh-Hant",
           "text": "有著能用大大的翅膀來回飛行一整天的體力。會用銳利的鳥嘴戰鬥。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鸟嘴"
+      }
     },
     {
       "slug": "feebas",
@@ -43995,7 +44620,10 @@
           "languageCode": "zh-Hant",
           "text": "以樣子寒酸而聞名。雖然數量非常多，卻有著齊聚一處的習性。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鱼"
+      }
     },
     {
       "slug": "fennekin",
@@ -44070,7 +44698,10 @@
           "languageCode": "zh-Hant",
           "text": "吃了小樹枝就會變得有精神，從大大的耳朵中噴出超過攝氏２００度的熱氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "狐狸"
+      }
     },
     {
       "slug": "feraligatr",
@@ -44420,7 +45051,10 @@
           "languageCode": "zh-Hant",
           "text": "偏愛長著青苔的洞窟。青苔中所含的酵素能使牠的尖刺成長得又大又結實。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刺果"
+      }
     },
     {
       "slug": "ferrothorn",
@@ -44520,7 +45154,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有比鋼鐵還堅硬的尖刺。會利用觸手上的尖刺攀附在岩壁上移動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刺球"
+      }
     },
     {
       "slug": "fezandipiti",
@@ -44545,7 +45182,10 @@
           "languageCode": "zh-Hant",
           "text": "會拍動豔麗的翅膀散佈費洛蒙，使人類和寶可夢神魂顛倒，為牠著迷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "随从"
+      }
     },
     {
       "slug": "fidough",
@@ -44580,7 +45220,10 @@
           "languageCode": "zh-Hant",
           "text": "在體內培育著酵母。自古以來就和人們一起生活，並成為飲食生活的支柱。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小狗"
+      }
     },
     {
       "slug": "finizen",
@@ -44605,7 +45248,10 @@
           "languageCode": "zh-Hant",
           "text": "牠的水環是頭部的洞冒出來的黏膠與海水混合後製造出來的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海豚"
+      }
     },
     {
       "slug": "finneon",
@@ -44820,7 +45466,10 @@
           "languageCode": "zh-Hant",
           "text": "粉紅色的皮膚部分會儲存太陽光發光。聽說是用來做保護色的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "飞翅鱼"
+      }
     },
     {
       "slug": "flaaffy",
@@ -45095,7 +45744,10 @@
           "languageCode": "zh-Hant",
           "text": "體毛中蓄滿電力後，尾巴就會開始發光。會射出碰到就會被電麻的體毛。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "绵毛"
+      }
     },
     {
       "slug": "flabebe",
@@ -45190,7 +45842,10 @@
           "languageCode": "zh-Hant",
           "text": "牠所擁有的能力可以激發出野花潛藏的力量。對紅花最為鍾愛。（红花）乘著黃花的花蓓蓓。在牠找到花並獲得其力量前會毫無防備，處境十分危險。（黄花）因為從花那裡得到力量，所以會分出自己的能量給花。最喜歡的是橙花。（橙花）最喜歡的是藍花。會利用從花朵散發出的力量浮在空中，輕輕地飄來飄去。（蓝花）一到黃昏，牠就會去找盛開著和自己的花一樣是白花的地方睡覺。（白花）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "单朵"
+      }
     },
     {
       "slug": "flamigo",
@@ -45225,7 +45880,10 @@
           "languageCode": "zh-Hant",
           "text": "當規模大時會超過１萬隻的纏紅鶴群體在同步彼此的動作時，呈現出的那片景象震撼力十足。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "同步"
+      }
     },
     {
       "slug": "flapple",
@@ -45655,7 +46313,10 @@
           "languageCode": "zh-Hant",
           "text": "體內有著火袋，會在深深吸氣後吐出１７００度的火焰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火"
+      }
     },
     {
       "slug": "fletchinder",
@@ -45790,7 +46451,10 @@
           "languageCode": "zh-Hant",
           "text": "腹部火袋的火力越強，就能飛得越快，但點火需要花點時間。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火花"
+      }
     },
     {
       "slug": "fletchling",
@@ -45920,7 +46584,10 @@
           "languageCode": "zh-Hant",
           "text": "婉轉的叫聲雖然美麗，但對於入侵領地的對手會毫不留情地粗暴對待。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "知更鸟"
+      }
     },
     {
       "slug": "flittle",
@@ -45945,7 +46612,10 @@
           "languageCode": "zh-Hant",
           "text": "會在荒地跑來跑去生活。如果最喜歡的樹果被搶走，就會窮追不捨地展開報復。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "褶边"
+      }
     },
     {
       "slug": "floatzel",
@@ -46130,7 +46800,10 @@
           "languageCode": "zh-Hant",
           "text": "大量棲息在漁村，除了會去救助溺水的人，還會幫忙搬捕獲的獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海鼬"
+      }
     },
     {
       "slug": "floette",
@@ -46250,7 +46923,10 @@
           "languageCode": "zh-Hant",
           "text": "體毛的硬度會隨心情而變。進入迎戰狀態時，體毛會變得如針般尖銳。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "草猫"
+      }
     },
     {
       "slug": "florges",
@@ -46345,7 +47021,10 @@
           "languageCode": "zh-Hant",
           "text": "據說花潔夫人打造的花園裡會源源不絕地傾注著能夠治癒身心的力量。（红花）據說曾經有花潔夫人保護城堡的庭園長達３００年以上。（黄花）橙花會如砲台般放射出威力強大的光束來攻擊對手。（橙花）過去藍色的顏料價格昂貴，因此畫有藍色個體的畫擁有極高的價值。（蓝花）白花的花潔夫人打造的花園有著色彩繽紛的花草點綴，十分地美麗動人。（白花）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花园"
+      }
     },
     {
       "slug": "flutter-mane",
@@ -46370,7 +47049,10 @@
           "languageCode": "zh-Hant",
           "text": "只有特徵長得像是超自然雜誌所報導的翼龍的幽靈。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "flygon",
@@ -46650,7 +47332,10 @@
           "languageCode": "zh-Hant",
           "text": "振翅聲簡直有如歌聲。凡是被這聲音迷惑的，最終會被捲入沙暴成為沙漠蜻蜓的食物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "神秘"
+      }
     },
     {
       "slug": "fomantis",
@@ -46735,7 +47420,10 @@
           "languageCode": "zh-Hant",
           "text": "有很多訓練家會給牠偽螳草專用的花盆，好讓牠能平靜地享受日光浴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "镰草"
+      }
     },
     {
       "slug": "foongus",
@@ -46865,7 +47553,10 @@
           "languageCode": "zh-Hant",
           "text": "用酷似精靈球的花紋引誘敵人並向其噴出毒孢子。為什麼和精靈球那麼相似是一個謎。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蘑菇"
+      }
     },
     {
       "slug": "forretress",
@@ -47140,7 +47831,10 @@
           "languageCode": "zh-Hant",
           "text": "全身覆蓋著有如鋼鐵般堅硬的殼。殼裡的真面目至今不明。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蓑衣虫"
+      }
     },
     {
       "slug": "fraxure",
@@ -47260,7 +47954,10 @@
           "languageCode": "zh-Hant",
           "text": "會使用粗壯的牙齒俐落地分解獵物，然後把當下要吃的份與存糧的份分開。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "颚斧"
+      }
     },
     {
       "slug": "frigibax",
@@ -47295,7 +47992,10 @@
           "languageCode": "zh-Hant",
           "text": "背鰭能將火屬性招式的熱能轉換成冰屬性的能量，並使空氣結凍。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冰鳍"
+      }
     },
     {
       "slug": "frillish",
@@ -47490,7 +48190,10 @@
           "languageCode": "zh-Hant",
           "text": "以細膩的泡泡包住身體，保護皮膚。裝出一副悠閒的樣子，但其實精明地打量著四周。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "泡蛙"
+      }
     },
     {
       "slug": "frogadier",
@@ -47565,7 +48268,10 @@
           "languageCode": "zh-Hant",
           "text": "靈巧的動作不會輸給任何人。只需１分鐘就能登上超過６００公尺高的塔頂。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "泡蛙"
+      }
     },
     {
       "slug": "froslass",
@@ -47865,7 +48571,10 @@
           "languageCode": "zh-Hant",
           "text": "會用能釋放寒氣的巨大翅膀飛來飛去，引發暴風雪。喜歡乾淨的雪融水。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冰蛾"
+      }
     },
     {
       "slug": "fuecoco",
@@ -47890,7 +48599,10 @@
           "languageCode": "zh-Hant",
           "text": "火囊很小，因此能量會溢出來，在牠頭上的凹槽那裡搖曳晃動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火鳄"
+      }
     },
     {
       "slug": "furfrou",
@@ -47965,7 +48677,10 @@
           "languageCode": "zh-Hant",
           "text": "在遙遠過去的卡洛斯地區，被授予護衛國王職責的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "贵宾犬"
+      }
     },
     {
       "slug": "furret",
@@ -48200,7 +48915,10 @@
           "languageCode": "zh-Hant",
           "text": "動作靈活且身體極為柔軟，因此就算被捉住也能一溜煙地從對方手中逃脫。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长躯干"
+      }
     },
     {
       "slug": "gabite",
@@ -48455,7 +49173,10 @@
           "languageCode": "zh-Hant",
           "text": "有著在擴大巢穴時，把地裡挖出的寶石原石儲存到自己巢穴的習性。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "洞穴"
+      }
     },
     {
       "slug": "gallade",
@@ -48785,7 +49506,10 @@
           "languageCode": "zh-Hant",
           "text": "遇到敵人襲擊時，會吐出許多帶電的絲，做出電的屏障。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电蜘蛛"
+      }
     },
     {
       "slug": "garbodor",
@@ -49475,7 +50199,10 @@
           "languageCode": "zh-Hant",
           "text": "從鹽石巨靈採收的岩鹽富含具有恢復作用的成分，有助於維持身體健康。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩盐"
+      }
     },
     {
       "slug": "gastly",
@@ -49855,7 +50582,10 @@
           "languageCode": "zh-Hant",
           "text": "從氣體中誕生的生命體。若被牠那有毒氣體形成的身體裹住，不管是誰都會昏迷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "气体状"
+      }
     },
     {
       "slug": "gastrodon",
@@ -50165,7 +50895,10 @@
           "languageCode": "zh-Hant",
           "text": "此古生代的蟲寶可夢被某個組織重新賦予生命，並且改造了背上的大砲。裝上填充了水能量的卡帶的樣子。會以飛行形態在空中飛翔。（水流卡带）裝上填充了電能量的卡帶的樣子。會發射能量彈。（闪电卡带）裝上填充了火能量的卡帶的樣子。擁有尖銳的鋼爪。（火焰卡带）裝上填充了冰能量的卡帶的樣子。毫無慈悲之心。（冰冻卡带）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "古生代"
+      }
     },
     {
       "slug": "gengar",
@@ -50900,7 +51633,10 @@
           "languageCode": "zh-Hans",
           "text": "ZA"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "宝者"
+      }
     },
     {
       "slug": "gible",
@@ -51130,7 +51866,10 @@
           "languageCode": "zh-Hant",
           "text": "把洞窟裡的小洞當成住所。如果有獵物靠近，就會迅速地撲出來捕捉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "陆鲨"
+      }
     },
     {
       "slug": "gigalith",
@@ -51270,7 +52009,10 @@
           "languageCode": "zh-Hant",
           "text": "牠射出的能量彈具有能擊飛砂石車的破壞力。不過只有在晴天才能射擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "高压"
+      }
     },
     {
       "slug": "gimmighoul",
@@ -51510,7 +52252,10 @@
           "languageCode": "zh-Hant",
           "text": "尾巴上也有小小顆的頭。如果有敵人從背後靠近，就會受本能驅使一咬而上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长颈"
+      }
     },
     {
       "slug": "giratina",
@@ -51920,7 +52665,10 @@
           "languageCode": "zh-Hant",
           "text": "透過控制體溫，使周圍的空氣結凍，降下冰晶。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "新雪"
+      }
     },
     {
       "slug": "glalie",
@@ -52360,7 +53108,10 @@
           "languageCode": "zh-Hant",
           "text": "以漩渦狀的尾巴及眼力迷惑人心。暗藏的爪子也十分銳利，一旦與之為敵將會非常棘手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "装乖"
+      }
     },
     {
       "slug": "glastrier",
@@ -52385,7 +53136,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有十分驚人的怪力。遮住臉部的冰面罩比鑽石還要堅硬１００倍。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "烈马"
+      }
     },
     {
       "slug": "gligar",
@@ -52640,7 +53394,10 @@
           "languageCode": "zh-Hant",
           "text": "會用滑翔的方式撲到對手的臉上嚇唬對方，再用毒針進行攻擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "飞蝎"
+      }
     },
     {
       "slug": "glimmet",
@@ -52675,7 +53432,10 @@
           "languageCode": "zh-Hant",
           "text": "緊貼在洞窟的頂部。會將充滿了毒素的花苞砸向敵人，藉此保護自己。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "矿石"
+      }
     },
     {
       "slug": "glimmora",
@@ -52885,7 +53645,10 @@
           "languageCode": "zh-Hant",
           "text": "可不發出振翅聲而在空中飛行。先用長長的尾巴攫住獵物，再用牙齒朝弱點給予一刺。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "牙蝎"
+      }
     },
     {
       "slug": "gloom",
@@ -53235,7 +53998,10 @@
           "languageCode": "zh-Hant",
           "text": "猶如口水般的黏稠花蜜非常甜，但氣味異常地臭，任誰都難以靠近牠。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "杂草"
+      }
     },
     {
       "slug": "gogoat",
@@ -53310,7 +54076,10 @@
           "languageCode": "zh-Hant",
           "text": "可以從握住角時的些微差異領會訓練家的心情，所以能夠與訓練家一體同心地奔跑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "坐骑"
+      }
     },
     {
       "slug": "golbat",
@@ -53655,7 +54424,10 @@
           "languageCode": "zh-Hant",
           "text": "再堅硬的皮膚都能用銳利的獠牙刺穿，盡情地吸血吸個夠。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝙蝠"
+      }
     },
     {
       "slug": "goldeen",
@@ -53970,7 +54742,10 @@
           "languageCode": "zh-Hant",
           "text": "能以５節的速度游動。感到自身有危險的時候，會用尖銳的角來反擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "金鱼"
+      }
     },
     {
       "slug": "golduck",
@@ -54330,7 +55105,10 @@
           "languageCode": "zh-Hant",
           "text": "喜歡水流平穩的河川和湖泊。泳姿相當地優雅。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鸭"
+      }
     },
     {
       "slug": "golem",
@@ -54835,7 +55613,10 @@
           "languageCode": "zh-Hant",
           "text": "古代人之所以捏黏土製造牠，似乎是為了當成僕人使喚。能量來源至今不明。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "魔像"
+      }
     },
     {
       "slug": "golisopod",
@@ -55355,7 +56136,10 @@
           "languageCode": "zh-Hant",
           "text": "被黏呼呼的黏膜包裹的身體能讓敵人的拳擊或腳踢咕溜地滑開。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "软体生物"
+      }
     },
     {
       "slug": "gorebyss",
@@ -55565,7 +56349,10 @@
           "languageCode": "zh-Hant",
           "text": "生活在海底。不知為何，一到了春天身上的粉紅色就會變得鮮豔。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "南海"
+      }
     },
     {
       "slug": "gossifleur",
@@ -55590,7 +56377,10 @@
           "languageCode": "zh-Hant",
           "text": "會隨著微風一邊轉圈圈一邊愉快地唱歌。許多人因為喜歡這可愛的模樣而培育牠。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花饰"
+      }
     },
     {
       "slug": "gothita",
@@ -55705,7 +56495,10 @@
           "languageCode": "zh-Hant",
           "text": "一旦觸碰到牠那用來控制精神力量的觸角，牠就會放聲大哭，千萬要小心。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "凝视"
+      }
     },
     {
       "slug": "gothitelle",
@@ -55820,7 +56613,10 @@
           "languageCode": "zh-Hant",
           "text": "會凝望星星預知未來。總是擺著看似冷淡的態度，是因為牠知道萬物的結局。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "天体"
+      }
     },
     {
       "slug": "gothorita",
@@ -55940,7 +56736,10 @@
           "languageCode": "zh-Hant",
           "text": "會使用精神力量把小石子排列成星座的形狀。有些人認為牠是從宇宙來的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "操纵"
+      }
     },
     {
       "slug": "gouging-fire",
@@ -55965,7 +56764,10 @@
           "languageCode": "zh-Hant",
           "text": "與超自然雜誌刊登的可疑寶可夢長得很相似。報導中的寶可夢據說是從化石復原的炎帝。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "gourgeist",
@@ -56075,7 +56877,10 @@
           "languageCode": "zh-Hant",
           "text": "使用會隨著吃下的食物種類而變色的唾液，在石頭或樹木上畫圖案來保護地盤。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒猴"
+      }
     },
     {
       "slug": "granbull",
@@ -56355,7 +57160,10 @@
           "languageCode": "zh-Hant",
           "text": "當牠張開大嘴，露出粗壯的獠牙時，大多數的寶可夢都會逃走。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "妖精"
+      }
     },
     {
       "slug": "grapploct",
@@ -56390,7 +57198,10 @@
           "languageCode": "zh-Hant",
           "text": "會以自豪的觸手施展寢技制服對手。即使是力大無窮的寶可夢也沒有辦法掙脫逃跑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "柔术"
+      }
     },
     {
       "slug": "graveler",
@@ -56745,7 +57556,10 @@
           "languageCode": "zh-Hant",
           "text": "長得就像是超自然雜誌曾介紹的自太古以來就存活至今的謎之寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "greavard",
@@ -56780,7 +57594,10 @@
           "languageCode": "zh-Hant",
           "text": "非常喜歡嬉戲玩耍。會用體毛磨蹭對方，將對方的精氣吸至乾枯。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鬼犬"
+      }
     },
     {
       "slug": "greedent",
@@ -56825,7 +57642,10 @@
           "languageCode": "zh-Hant",
           "text": "會用約有身體２倍長的尾巴把樹上掉下來的樹果全都裹起來帶走。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "贪欲"
+      }
     },
     {
       "slug": "greninja",
@@ -57340,7 +58160,10 @@
           "languageCode": "zh-Hant",
           "text": "用木棒見到什麼就敲什麼，隨著牠越敲越覺得開心，節奏感也變得越來越好。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小猴"
+      }
     },
     {
       "slug": "grotle",
@@ -57525,7 +58348,10 @@
           "languageCode": "zh-Hant",
           "text": "知道哪裡會湧出清澈的泉水，會讓夥伴寶可夢騎在牠背上，運到那個地方去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "树丛"
+      }
     },
     {
       "slug": "groudon",
@@ -57955,7 +58781,10 @@
           "languageCode": "zh-Hant",
           "text": "發達的大腿肌肉會產生出驚人的爆發力和跳躍力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "林蜥"
+      }
     },
     {
       "slug": "growlithe",
@@ -58410,7 +59239,10 @@
           "languageCode": "zh-Hant",
           "text": "會吐出黏糊糊的絲纏住樹枝並猶如擺錘般地晃動身體，藉此在樹木之間輕巧地移動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幼虫"
+      }
     },
     {
       "slug": "grumpig",
@@ -58630,7 +59462,10 @@
           "languageCode": "zh-Hant",
           "text": "能用黑珍珠增強自己的精神力量。會用奇異的舞步操縱對手的心。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "操纵"
+      }
     },
     {
       "slug": "gulpin",
@@ -58860,7 +59695,10 @@
           "languageCode": "zh-Hant",
           "text": "整個身體幾乎都是胃。會用強力的胃液瞬間消化吞下的東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "胃袋"
+      }
     },
     {
       "slug": "gumshoos",
@@ -58925,7 +59763,10 @@
           "languageCode": "zh-Hant",
           "text": "擅長追著獵物的足跡不放。然而牠似乎覺得個性單純的貪心栗鼠追起來不夠過癮。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蹲守"
+      }
     },
     {
       "slug": "gurdurr",
@@ -59050,7 +59891,10 @@
           "languageCode": "zh-Hant",
           "text": "身體的肌肉經過完美鍛鍊。即使是職業摔角手一擁而上進行攻擊，也能毫髮無傷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "筋骨"
+      }
     },
     {
       "slug": "guzzlord",
@@ -59095,7 +59939,10 @@
           "languageCode": "zh-Hant",
           "text": "被稱為究極異獸的未知生命。不知是否總覺得肚子餓，牠隨時都在吃東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "异食"
+      }
     },
     {
       "slug": "gyarados",
@@ -59575,7 +60422,10 @@
           "languageCode": "zh-Hant",
           "text": "會強而有勁地敲擊鱗片並且跳起舞來激勵自己。戰吼聲是牠開戰的信號。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鳞片"
+      }
     },
     {
       "slug": "happiny",
@@ -59795,7 +60645,10 @@
           "languageCode": "zh-Hant",
           "text": "深信白白圓圓的石頭是蛋，很小心翼翼地拿著。很在意自己捲毛的形狀。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "家家酒"
+      }
     },
     {
       "slug": "hariyama",
@@ -60055,7 +60908,10 @@
           "languageCode": "zh-Hant",
           "text": "會用雙腳跺地積蓄力量。一掌就能打飛１０噸重的卡車。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "猛推"
+      }
     },
     {
       "slug": "hatenna",
@@ -60100,7 +60956,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠察覺生物的心情。小心別讓牠不停接收強烈的情感，否則牠會累壞的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "宁静"
+      }
     },
     {
       "slug": "hatterene",
@@ -60190,7 +61049,10 @@
           "languageCode": "zh-Hant",
           "text": "只要一發現情緒激昂的傢伙，就會用辮子毒打，直到對方失去意識而沉默下來為止。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "肃静"
+      }
     },
     {
       "slug": "haunter",
@@ -60585,7 +61447,10 @@
           "languageCode": "zh-Hant",
           "text": "如果被牠的氣體狀的舌頭舔到，靈魂就會被抓走。會躲在暗處尋找獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "气体状"
+      }
     },
     {
       "slug": "hawlucha",
@@ -60815,7 +61680,10 @@
           "languageCode": "zh-Hant",
           "text": "會以自傲的牙齒壓制敵人。牙齒的鋒利程度無與倫比，就連鐵塔都能夠一斬而斷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "颚斧"
+      }
     },
     {
       "slug": "heatmor",
@@ -60915,7 +61783,10 @@
           "languageCode": "zh-Hant",
           "text": "將火焰當成舌頭來使用。會一點一點地熔化鐵蟻堅硬的外骨骼，然後把牠吃掉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "食蚁兽"
+      }
     },
     {
       "slug": "heatran",
@@ -61140,7 +62011,10 @@
           "languageCode": "zh-Hant",
           "text": "會張開頸傘發電。只要１隻光電傘蜥就可以產生一棟摩天大樓所需的電力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发电"
+      }
     },
     {
       "slug": "helioptile",
@@ -61215,7 +62089,10 @@
           "languageCode": "zh-Hant",
           "text": "在頭兩側的褶子裡，有著只要暴露在陽光下就能發電的細胞。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发电"
+      }
     },
     {
       "slug": "heracross",
@@ -61640,7 +62517,10 @@
           "languageCode": "zh-Hant",
           "text": "覆蓋身體的黑色體毛既厚實又有彈性，就連銳利的獠牙也會被反彈。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "忠犬"
+      }
     },
     {
       "slug": "hippopotas",
@@ -61855,7 +62735,10 @@
           "languageCode": "zh-Hant",
           "text": "會用沙子包裹全身，藉此防止身體受到細菌侵害。不喜歡被水弄濕。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "河马"
+      }
     },
     {
       "slug": "hippowdon",
@@ -62070,7 +62953,10 @@
           "languageCode": "zh-Hant",
           "text": "會從身體的孔洞裡向上噴出體內儲存的沙子，製造出巨大龍捲風進行攻擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "重量"
+      }
     },
     {
       "slug": "hitmonchan",
@@ -62405,7 +63291,10 @@
           "languageCode": "zh-Hant",
           "text": "整個拳頭都是肌肉。每隔３分鐘就會休息一下，調整自己的呼吸與心情。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "拳击"
+      }
     },
     {
       "slug": "hitmonlee",
@@ -62740,7 +63629,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠自由自在地伸縮雙腿的韌帶，讓踢技的攻擊範圍擴展至２倍。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "踢腿"
+      }
     },
     {
       "slug": "hitmontop",
@@ -63015,7 +63907,10 @@
           "languageCode": "zh-Hant",
           "text": "會以角為軸心旋轉，並施展華麗的踢擊。角會一輩子不停地生長。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "倒立"
+      }
     },
     {
       "slug": "ho-oh",
@@ -63235,7 +64130,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有七彩翅膀。據說看見鳳王的人，必定能得到永遠的幸福。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虹色"
+      }
     },
     {
       "slug": "honchkrow",
@@ -63460,7 +64358,10 @@
           "languageCode": "zh-Hant",
           "text": "夜行性。只要鳴叫一聲，就會有超過１００隻的黑暗鴉跟班聚集起來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大头目"
+      }
     },
     {
       "slug": "honedge",
@@ -63535,7 +64436,10 @@
           "languageCode": "zh-Hant",
           "text": "似乎是死者的靈魂寄宿在古代的劍上而誕生。會附在人類身上吸取生命。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刀剑"
+      }
     },
     {
       "slug": "hoopa",
@@ -63885,7 +64789,10 @@
           "languageCode": "zh-Hant",
           "text": "由於能準確地報時，因此在某些國家被視為是明白世間一切事理的智慧之神。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "猫头鹰"
+      }
     },
     {
       "slug": "hoppip",
@@ -64120,7 +65027,10 @@
           "languageCode": "zh-Hant",
           "text": "由於會乘著風在各地移動，因此除了寒冷的地區以外，幾乎隨處可見牠們的身影。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "棉草"
+      }
     },
     {
       "slug": "horsea",
@@ -64455,7 +65365,10 @@
           "languageCode": "zh-Hant",
           "text": "會用像蕨菜那樣捲起的尾巴來保持身體的平衡。有時候會從口中吐出墨汁。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "龙"
+      }
     },
     {
       "slug": "houndoom",
@@ -65020,7 +65933,10 @@
           "languageCode": "zh-Hant",
           "text": "會在黎明時分用響徹附近一帶的嚇人長嚎來宣示牠們自己的地盤。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "阴暗"
+      }
     },
     {
       "slug": "houndstone",
@@ -65055,7 +65971,10 @@
           "languageCode": "zh-Hant",
           "text": "在不斷守著死別的主人的墳墓多年的歲月中，轉生變成了幽靈寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鬼犬"
+      }
     },
     {
       "slug": "huntail",
@@ -65265,7 +66184,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在深海中的寶可夢。用形如小魚的尾巴引誘獵物靠近並捕捉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "深海"
+      }
     },
     {
       "slug": "hydrapple",
@@ -65290,7 +66212,10 @@
           "languageCode": "zh-Hant",
           "text": "由善變的蛇蟲蟲們聚集同住在一起。偶爾心靈相通時，就會發揮出真正的力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "苹果大蛇"
+      }
     },
     {
       "slug": "hydreigon",
@@ -65410,7 +66335,10 @@
           "languageCode": "zh-Hant",
           "text": "據說以前被視為邪惡的化身，不斷受到人們的厭惡與攻擊，所以性情才會變得凶暴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "凶暴"
+      }
     },
     {
       "slug": "hypno",
@@ -65770,7 +66698,10 @@
           "languageCode": "zh-Hant",
           "text": "會以固定的節奏擺動著形影不離的鐘擺。一靠近牠就會不由自主地昏昏欲睡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "催眠"
+      }
     },
     {
       "slug": "igglybuff",
@@ -66075,7 +67006,10 @@
           "languageCode": "zh-Hant",
           "text": "為了讓歌喉變好，牠一直努力練習唱歌，就連在睡夢中也不斷歌唱。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "气球"
+      }
     },
     {
       "slug": "illumise",
@@ -66285,7 +67219,10 @@
           "languageCode": "zh-Hant",
           "text": "會誘導電螢蟲在夜空中描繪記號。也有些學者在研究記號的含意。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "萤火虫"
+      }
     },
     {
       "slug": "impidimp",
@@ -66330,7 +67267,10 @@
           "languageCode": "zh-Hant",
           "text": "會成群住在一起，並透過惡搞對方和彼此找碴來磨練製造麻煩的身手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "捉弄"
+      }
     },
     {
       "slug": "incineroar",
@@ -66410,7 +67350,10 @@
           "languageCode": "zh-Hant",
           "text": "在使出猛烈的拳擊或腳踢後，會從肚臍周圍噴出火焰，將敵人一擊斃命。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "反派"
+      }
     },
     {
       "slug": "indeedee",
@@ -66650,7 +67593,10 @@
           "languageCode": "zh-Hant",
           "text": "會使出手腳上纏繞著火焰的獨特格鬥技。面對任何對手都會勇於對抗。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火焰"
+      }
     },
     {
       "slug": "inkay",
@@ -66765,7 +67711,10 @@
           "languageCode": "zh-Hant",
           "text": "會以光的閃爍讓襲擊自己的對手失去戰意。並趁機隱藏自己的身影。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "回转"
+      }
     },
     {
       "slug": "inteleon",
@@ -66835,7 +67784,10 @@
           "languageCode": "zh-Hant",
           "text": "身體似乎是由金屬構成。牠的名字來自記載於古老書籍裡的神秘物體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-bundle",
@@ -66860,7 +67812,10 @@
           "languageCode": "zh-Hant",
           "text": "與古書裡記載的神秘物體長得很相像的寶可夢。過去只被目擊過２次。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-crown",
@@ -66885,7 +67840,10 @@
           "languageCode": "zh-Hant",
           "text": "據說牠曾射出發光的刀刃劈開了周遭的一切，但沒有能得知其真面目的其他資訊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-hands",
@@ -66910,7 +67868,10 @@
           "languageCode": "zh-Hant",
           "text": "與某本探險記裡記載的一種叫做鐵臂膀的物體有許多相似處的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-jugulis",
@@ -66935,7 +67896,10 @@
           "languageCode": "zh-Hant",
           "text": "古書裡所記載的叫做鐵脖頸的物體，說不定就是這隻寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-leaves",
@@ -66960,7 +67924,10 @@
           "languageCode": "zh-Hant",
           "text": "根據極少數的目擊紀錄，牠似乎用光輝燦爛的劍將大樹與巨岩切成了絲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-moth",
@@ -66985,7 +67952,10 @@
           "languageCode": "zh-Hant",
           "text": "無捕獲紀錄。資料不足。其特徵與古書裡所記載的物體一致。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-thorns",
@@ -67010,7 +67980,10 @@
           "languageCode": "zh-Hant",
           "text": "有一部分的特徵與某本探險記裡以鐵荊棘來介紹的物體一致。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-treads",
@@ -67035,7 +68008,10 @@
           "languageCode": "zh-Hant",
           "text": "近年曾經有人目擊到牠。是與古老的探險記裡記載的不明物體長得很像的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "iron-valiant",
@@ -67060,7 +68036,10 @@
           "languageCode": "zh-Hant",
           "text": "牠有可能就是在某本探險記裡，以鐵武者這個名字被記載下來的物體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "ivysaur",
@@ -67415,7 +68394,10 @@
           "languageCode": "zh-Hant",
           "text": "據說長在背上的花苞在吸收足夠的養分之後會開出大大的花朵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "种子"
+      }
     },
     {
       "slug": "jangmo-o",
@@ -67500,7 +68482,10 @@
           "languageCode": "zh-Hant",
           "text": "會透過敲擊鱗片的聲音來與夥伴溝通。成群在一起時非常吵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鳞片"
+      }
     },
     {
       "slug": "jellicent",
@@ -68005,7 +68990,10 @@
           "languageCode": "zh-Hant",
           "text": "只要盯著牠圓圓的眼睛看，牠就會開始唱出悅耳到讓對方忍不住入睡的歌曲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "气球"
+      }
     },
     {
       "slug": "jirachi",
@@ -68215,7 +69203,10 @@
           "languageCode": "zh-Hant",
           "text": "據說牠在１０００年之中只有７天時間會醒過來，使用能實現任何願望的力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "祈愿"
+      }
     },
     {
       "slug": "jolteon",
@@ -68615,7 +69606,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠吸入空氣中的負離子，吐出大約１００００伏特的高壓電。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "雷"
+      }
     },
     {
       "slug": "joltik",
@@ -68740,7 +69734,10 @@
           "languageCode": "zh-Hant",
           "text": "自己無法製造電力，會附在其他大型寶可夢身上吸取靜電。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "吸附"
+      }
     },
     {
       "slug": "jumpluff",
@@ -68965,7 +69962,10 @@
           "languageCode": "zh-Hant",
           "text": "要注意牠的棉花孢子。如果不小心吸了進去，就會全身發癢，還會咳個半死。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "棉草"
+      }
     },
     {
       "slug": "jynx",
@@ -69295,7 +70295,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然牠的叫聲聽起來像是人類的語言，但卻完全無法理解牠想表達的意思。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "人形"
+      }
     },
     {
       "slug": "kabuto",
@@ -69610,7 +70613,10 @@
           "languageCode": "zh-Hant",
           "text": "人們認為牠曾經生活在３億年前的沙灘上。會用堅硬的殼來保護自己。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "甲壳"
+      }
     },
     {
       "slug": "kabutops",
@@ -69915,7 +70921,10 @@
           "languageCode": "zh-Hant",
           "text": "人們認為鐮刀盔是因為牠的獵物開始在陸地上生活，所以才跟著上岸。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "甲壳"
+      }
     },
     {
       "slug": "kadabra",
@@ -70230,7 +71239,10 @@
           "languageCode": "zh-Hant",
           "text": "每次使用能力時從體內發出的特殊阿爾法波會讓機器失靈。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "念力"
+      }
     },
     {
       "slug": "kakuna",
@@ -70510,7 +71522,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然只靠自己幾乎無法行動，但在遇到危險的時候好像會讓外殼變硬來保護自己。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛹"
+      }
     },
     {
       "slug": "kangaskhan",
@@ -70945,7 +71960,10 @@
           "languageCode": "zh-Hant",
           "text": "用嘴裡吐出的液體來融化小嘴蝸的殼，只會去吃裡面的身體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "啃咬"
+      }
     },
     {
       "slug": "kartana",
@@ -70990,7 +72008,10 @@
           "languageCode": "zh-Hant",
           "text": "在這個世界是危險的異類，但在原本棲息的世界裡，牠似乎是常見的普通生物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "拔刀"
+      }
     },
     {
       "slug": "kecleon",
@@ -71210,7 +72231,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠改變體色，融入景色中，悄悄地靠近獵物。但腹部的花紋是不會消失的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "变色"
+      }
     },
     {
       "slug": "keldeo",
@@ -71350,7 +72374,10 @@
           "languageCode": "zh-Hant",
           "text": "會把翅膀製造的電儲存到喉囊裡。由於羽毛含的油脂少之又少，導致牠不是很擅長游泳。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "军舰鸟"
+      }
     },
     {
       "slug": "kingambit",
@@ -71375,7 +72402,10 @@
           "languageCode": "zh-Hant",
           "text": "會引領大軍戰鬥，卻不擅長有難度的戰術，只會靠蠻力來壓制對手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大刀"
+      }
     },
     {
       "slug": "kingdra",
@@ -71645,7 +72675,10 @@
           "languageCode": "zh-Hant",
           "text": "據說牠會沉睡在任何生物都無法潛到的深海底部積蓄力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "龙"
+      }
     },
     {
       "slug": "kingler",
@@ -72205,7 +73238,10 @@
           "languageCode": "zh-Hant",
           "text": "訓練家開朗的情緒是牠的精神力量源泉。開心時會轉圈跳舞。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "感情"
+      }
     },
     {
       "slug": "klang",
@@ -72305,7 +73341,10 @@
           "languageCode": "zh-Hant",
           "text": "被認為是工業技術的象徵。有許多伽勒爾當地的公司選擇牠作為企業的標誌。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "齿轮"
+      }
     },
     {
       "slug": "klawf",
@@ -72330,7 +73369,10 @@
           "languageCode": "zh-Hant",
           "text": "生活在陡峭的懸崖上。會左右移動閃避攻擊，然後用鉗子瞄準對手的要害。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "埋伏"
+      }
     },
     {
       "slug": "kleavor",
@@ -72375,7 +73417,10 @@
           "languageCode": "zh-Hant",
           "text": "岩斧會因為激烈的戰鬥而開始到處出現破損，但也因此變得越來越鋒利。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "斧钺"
+      }
     },
     {
       "slug": "klefki",
@@ -72510,7 +73555,10 @@
           "languageCode": "zh-Hant",
           "text": "喜歡的鑰匙絕不放手。可以將金庫的鑰匙交給牠以防止偷竊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "钥匙串"
+      }
     },
     {
       "slug": "klink",
@@ -72605,7 +73653,10 @@
           "languageCode": "zh-Hant",
           "text": "據說在很久以前，是看到了齒輪兒的人發明了齒輪的構造。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "齿轮"
+      }
     },
     {
       "slug": "klinklang",
@@ -72700,7 +73751,10 @@
           "languageCode": "zh-Hant",
           "text": "讓３個齒輪高速旋轉。新增出來的那個帶著尖刺的齒輪並不是生物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "齿轮"
+      }
     },
     {
       "slug": "koffing",
@@ -73020,7 +74074,10 @@
           "languageCode": "zh-Hant",
           "text": "體內的毒瓦斯成分比空氣來得輕一點，所以總是微微浮在空中。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒气"
+      }
     },
     {
       "slug": "komala",
@@ -73080,7 +74137,10 @@
           "languageCode": "zh-Hant",
           "text": "樹枕尾熊的口水一經稀釋後，就會變成強效的麻醉藥。過去曾被用在手術上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "半梦半醒"
+      }
     },
     {
       "slug": "kommo-o",
@@ -73160,7 +74220,10 @@
           "languageCode": "zh-Hant",
           "text": "會敲響鱗片來測試對手的膽量。弱小的傢伙聽到那聲音就會嚇得逃之夭夭。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鳞片"
+      }
     },
     {
       "slug": "koraidon",
@@ -73185,7 +74248,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然長相相似，但頑強凶暴的程度卻是凌駕於摩托蜥之上。牠的生態等資訊目前一切不明。（完全形态）與古書裡記載的名為翼大王的生物有著相似的特徵。（制限形态）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "krabby",
@@ -73490,7 +74556,10 @@
           "languageCode": "zh-Hant",
           "text": "會在沙灘上挖洞生活。即使鉗子在戰鬥中脫落，也會再長回原樣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "清水蟹"
+      }
     },
     {
       "slug": "kricketot",
@@ -73675,7 +74744,10 @@
           "languageCode": "zh-Hant",
           "text": "觸角之間互相碰撞時，會叮叮咚咚地奏出如同木琴一般的音色。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蟋蟀"
+      }
     },
     {
       "slug": "kricketune",
@@ -73860,7 +74932,10 @@
           "languageCode": "zh-Hant",
           "text": "有村子會讓牠們互相比拼變化多端的叫聲，當成娛樂活動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蟋蟀"
+      }
     },
     {
       "slug": "krokorok",
@@ -74035,7 +75110,10 @@
           "languageCode": "zh-Hant",
           "text": "覆蓋眼球的特殊膜可以感測到物體的熱，因此即使在黑暗中也能看到四周。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "沙漠鳄鱼"
+      }
     },
     {
       "slug": "krookodile",
@@ -74205,7 +75283,10 @@
           "languageCode": "zh-Hant",
           "text": "遇上的獵物絕不放過。有著能夠咬爛汽車車身的強力下顎。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "威吓"
+      }
     },
     {
       "slug": "kubfu",
@@ -74230,7 +75311,10 @@
           "languageCode": "zh-Hant",
           "text": "拉緊頭上又白又長的體毛就會變得氣勢高昂，並且由丹田湧出力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "拳法"
+      }
     },
     {
       "slug": "kyogre",
@@ -74740,7 +75824,10 @@
           "languageCode": "zh-Hant",
           "text": "最愛吃鐵礦石。會用鋼鐵的身體互相碰撞來爭奪地盤。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铁铠"
+      }
     },
     {
       "slug": "lampent",
@@ -74870,7 +75957,10 @@
           "languageCode": "zh-Hant",
           "text": "在人臨死之際現身，當靈魂離開肉體的瞬間，就會立刻吸取。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "油灯"
+      }
     },
     {
       "slug": "landorus",
@@ -75265,7 +76355,10 @@
           "languageCode": "zh-Hant",
           "text": "會放出刺眼的亮光讓對手看不見東西。然後趁對手無法動彈時一口吞下。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "灯"
+      }
     },
     {
       "slug": "lapras",
@@ -75780,7 +76873,10 @@
           "languageCode": "zh-Hant",
           "text": "在遙遠的過去曾被信奉成太陽的使者，但卻因為常常引發森林大火而遭人們疏遠。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火炬"
+      }
     },
     {
       "slug": "larvitar",
@@ -76085,7 +77181,10 @@
           "languageCode": "zh-Hant",
           "text": "靠吃泥土維生。吃掉一座大山後，就會為了成長而開始沉睡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩石肤"
+      }
     },
     {
       "slug": "latias",
@@ -76725,7 +77824,10 @@
           "languageCode": "zh-Hant",
           "text": "會如植物般行光合作用，因此葉伊布的周圍充滿了澄澈的空氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "新绿"
+      }
     },
     {
       "slug": "leavanny",
@@ -76830,7 +77932,10 @@
           "languageCode": "zh-Hant",
           "text": "會拿葉子來縫製成衣服。雖然性情溫和，但絕不輕饒盯上幼小的寶可夢的傢伙。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "育儿"
+      }
     },
     {
       "slug": "lechonk",
@@ -76855,7 +77960,10 @@
           "languageCode": "zh-Hant",
           "text": "只吃精挑細選過的食物。蟲寶可夢很討厭牠身上散發的那種聞起來像是香草的氣味。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "猪"
+      }
     },
     {
       "slug": "ledian",
@@ -77125,7 +78233,10 @@
           "languageCode": "zh-Hant",
           "text": "會把星光轉化成能量。夜空中星星的數量變多時，背上的花紋就會變大。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "五星"
+      }
     },
     {
       "slug": "ledyba",
@@ -77385,7 +78496,10 @@
           "languageCode": "zh-Hant",
           "text": "非常膽小，不聚集成群就會因不安而無法動彈。會用氣味來傳達彼此的心情。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "五星"
+      }
     },
     {
       "slug": "lickilicky",
@@ -77565,7 +78679,10 @@
           "languageCode": "zh-Hant",
           "text": "舌頭伸縮自如，最長可延展至自身體長的十倍以上。唾液中含有溶解成分，不可掉以輕心。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "舔舔"
+      }
     },
     {
       "slug": "lickitung",
@@ -77875,7 +78992,10 @@
           "languageCode": "zh-Hant",
           "text": "口中長舌如同雙手般靈巧。收集牠帶有黏性的唾液加以熬煮，便能製成用途廣泛的強力黏膠。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "舔舔"
+      }
     },
     {
       "slug": "liepard",
@@ -77990,7 +79110,10 @@
           "languageCode": "zh-Hant",
           "text": "神出鬼沒的寶可夢。美麗的體態和毛皮令許多訓練家著迷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冷酷"
+      }
     },
     {
       "slug": "lileep",
@@ -78220,7 +79343,10 @@
           "languageCode": "zh-Hant",
           "text": "曾經生活在距今約１億年前海底的古代寶可夢。因科學的力量而復活。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海百合"
+      }
     },
     {
       "slug": "lilligant",
@@ -78535,7 +79661,10 @@
           "languageCode": "zh-Hant",
           "text": "比一般的小孩子都還要聰明。對於自己得到的關愛，或是受到的傷害牠都不會忘記。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小狗"
+      }
     },
     {
       "slug": "linoone",
@@ -78840,7 +79969,10 @@
           "languageCode": "zh-Hant",
           "text": "為了變強而離開群體獨自生活。血氣方剛，十分衝動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幼狮"
+      }
     },
     {
       "slug": "litten",
@@ -78925,7 +80057,10 @@
           "languageCode": "zh-Hant",
           "text": "將理毛時屯積在肚子裡的落毛引燃並吐出火焰。火焰會隨著吐毛的方式不同而變化。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火猫"
+      }
     },
     {
       "slug": "litwick",
@@ -79060,7 +80195,10 @@
           "languageCode": "zh-Hant",
           "text": "燭光靈頭上的燭火是靠著吸取人與寶可夢的生命力來燃燒的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜡烛"
+      }
     },
     {
       "slug": "lokix",
@@ -79085,7 +80223,10 @@
           "languageCode": "zh-Hant",
           "text": "進入決戰模式時會使用折疊起的第３對腳，但由於會造成身體很大的負擔，因此無法久戰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝗虫"
+      }
     },
     {
       "slug": "lombre",
@@ -79325,7 +80466,10 @@
           "languageCode": "zh-Hant",
           "text": "喜歡待在食物豐富的水邊。為了避免和鳥寶可夢互搶食物，於是變成了夜行性的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "爽朗"
+      }
     },
     {
       "slug": "lopunny",
@@ -79770,7 +80914,10 @@
           "languageCode": "zh-Hant",
           "text": "水質良好的池塘會有許多蓮葉童子聚集，因此水面有時會被葉子給覆蓋住。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "浮萍"
+      }
     },
     {
       "slug": "loudred",
@@ -79980,7 +81127,10 @@
           "languageCode": "zh-Hant",
           "text": "巨大的叫聲產生的衝擊波會掀翻卡車。會利用跺腳來提高威力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大声"
+      }
     },
     {
       "slug": "lucario",
@@ -80475,7 +81625,10 @@
           "languageCode": "zh-Hant",
           "text": "只要跳著節奏歡樂的舞蹈，情緒就會高昂起來，變成毫不畏敵的精神狀態。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "乐天"
+      }
     },
     {
       "slug": "lugia",
@@ -80690,7 +81843,10 @@
           "languageCode": "zh-Hant",
           "text": "沉睡在很深的海溝底部。據說洛奇亞一旦揮動翅膀，就會引起長達４０天的暴風雨。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "潜水"
+      }
     },
     {
       "slug": "lumineon",
@@ -80890,7 +82046,10 @@
           "languageCode": "zh-Hant",
           "text": "在深海的海底發光的霓虹魚看起來就像是夜空中閃閃發亮的星星。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "霓虹"
+      }
     },
     {
       "slug": "lunala",
@@ -81165,7 +82324,10 @@
           "languageCode": "zh-Hant",
           "text": "在滿月的夜裡會變得特別活躍，因此據說牠的活動與月亮的圓缺有關。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "陨石"
+      }
     },
     {
       "slug": "lurantis",
@@ -81250,7 +82412,10 @@
           "languageCode": "zh-Hant",
           "text": "要維持牠鮮豔的花色，需下很多工夫，是很考驗訓練家細膩程度的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花镰"
+      }
     },
     {
       "slug": "luvdisc",
@@ -81510,7 +82675,10 @@
           "languageCode": "zh-Hant",
           "text": "在繁殖的季節，會有大量愛心魚聚集在珊瑚礁，把海面都染成粉紅色。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "相随"
+      }
     },
     {
       "slug": "luxio",
@@ -81715,7 +82883,10 @@
           "languageCode": "zh-Hant",
           "text": "只要與夥伴的尾巴互相串聯，就能將更加強大的電擊從爪子釋放出去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电光"
+      }
     },
     {
       "slug": "luxray",
@@ -81920,7 +83091,10 @@
           "languageCode": "zh-Hant",
           "text": "倫琴貓的透視能力在發現危險事物時非常有幫助。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "目光"
+      }
     },
     {
       "slug": "lycanroc",
@@ -82040,7 +83214,10 @@
           "languageCode": "zh-Hant",
           "text": "有著與外表不相稱的善良性格，但在面對威脅家族安危的對手時，就會不留情地窮追到底並加以收拾。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大佬"
+      }
     },
     {
       "slug": "machamp",
@@ -82730,7 +83907,10 @@
           "languageCode": "zh-Hant",
           "text": "靠著能夠單手舉起大貨車的力量，幫忙人們做各種費力工作的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "怪力"
+      }
     },
     {
       "slug": "machop",
@@ -83065,7 +84245,10 @@
           "languageCode": "zh-Hant",
           "text": "全身都是肌肉，雖然體型只有小孩那麼大，卻可以扔飛１００個大人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "怪力"
+      }
     },
     {
       "slug": "magby",
@@ -83370,7 +84553,10 @@
           "languageCode": "zh-Hant",
           "text": "由於體內流著熔岩般的血液，因此體溫高達６００度。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火种"
+      }
     },
     {
       "slug": "magcargo",
@@ -83605,7 +84791,10 @@
           "languageCode": "zh-Hant",
           "text": "自古相傳如果野生的熔岩蝸牛突然變多了，那就是火山爆發的前兆。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "熔岩"
+      }
     },
     {
       "slug": "magearna",
@@ -84035,7 +85224,10 @@
           "languageCode": "zh-Hant",
           "text": "力量和速度都不太行。是世界上最弱最可憐的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鱼"
+      }
     },
     {
       "slug": "magmar",
@@ -84385,7 +85577,10 @@
           "languageCode": "zh-Hant",
           "text": "身體表面會產生像太陽一樣的火焰熱浪。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "吐火"
+      }
     },
     {
       "slug": "magmortar",
@@ -84615,7 +85810,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在火山口。據說１座火山只有一對鴨嘴炎獸。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "爆炎"
+      }
     },
     {
       "slug": "magnemite",
@@ -84970,7 +86168,10 @@
           "languageCode": "zh-Hant",
           "text": "會浮在空中移動，從左右兩邊的組件發射電磁波之類的東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "磁铁"
+      }
     },
     {
       "slug": "magneton",
@@ -85330,7 +86531,10 @@
           "languageCode": "zh-Hant",
           "text": "據說太陽黑子多的時候，這類連結在一起的小磁怪會大量出現。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "磁铁"
+      }
     },
     {
       "slug": "magnezone",
@@ -85560,7 +86764,10 @@
           "languageCode": "zh-Hant",
           "text": "在特殊磁場的影響下，三合一磁怪的分子構造受到重組，從而進化成了自爆磁怪。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "磁场"
+      }
     },
     {
       "slug": "makuhita",
@@ -85820,7 +87027,10 @@
           "languageCode": "zh-Hant",
           "text": "會不斷撞擊大樹來鍛鍊強韌的身軀和不氣餒的心。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毅力"
+      }
     },
     {
       "slug": "malamar",
@@ -86125,7 +87335,10 @@
           "languageCode": "zh-Hant",
           "text": "曾在１萬年前的地層裡發現過冰封狀態的象牙豬，而且還因牠甦醒過來而引起了一陣騷動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "双牙"
+      }
     },
     {
       "slug": "manaphy",
@@ -86290,7 +87503,10 @@
           "languageCode": "zh-Hant",
           "text": "迴游在大洋中，有傳聞說牠在極少數情況下會來到洗翠近海。外型與霏歐納相似，但有許多不同之處，兩者之間關係不明。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "回游"
+      }
     },
     {
       "slug": "mandibuzz",
@@ -86450,7 +87666,10 @@
           "languageCode": "zh-Hant",
           "text": "從空中觀察地面，襲擊衰弱的獵物。有用骨頭裝扮的習性。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "骨鹰"
+      }
     },
     {
       "slug": "manectric",
@@ -87055,7 +88274,10 @@
           "languageCode": "zh-Hant",
           "text": "時時刻刻都在發怒。見到合適的獵物，就會成群襲擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "猪猴"
+      }
     },
     {
       "slug": "mantine",
@@ -87320,7 +88542,10 @@
           "languageCode": "zh-Hant",
           "text": "性情溫和，悠游於大海之中。游泳速度增快時會躍出海面，人們常將其誤認為鳥寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "风筝"
+      }
     },
     {
       "slug": "mantyke",
@@ -87510,7 +88735,10 @@
           "languageCode": "zh-Hant",
           "text": "姿態渾圓如球，卻是個游泳高手。目前已知與鐵炮魚群體交流較多的個體最終將得以進化。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "风筝"
+      }
     },
     {
       "slug": "maractus",
@@ -87605,7 +88833,10 @@
           "languageCode": "zh-Hant",
           "text": "一年散播一次種子。花的種子營養十足，是沙漠中貴重的食糧。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "仙人掌"
+      }
     },
     {
       "slug": "mareanie",
@@ -87690,7 +88921,10 @@
           "languageCode": "zh-Hant",
           "text": "具備著很強的再生能力。斷掉的腳苦味和澀味很強烈，不適合當成食材使用。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "非星"
+      }
     },
     {
       "slug": "mareep",
@@ -87965,7 +89199,10 @@
           "languageCode": "zh-Hant",
           "text": "蓬鬆的體毛在儲存了靜電後會膨脹到原來的２倍。一旦觸摸就會觸電。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "绵毛"
+      }
     },
     {
       "slug": "marill",
@@ -88190,7 +89427,10 @@
           "languageCode": "zh-Hant",
           "text": "儲滿了油脂的尾巴能用來代替浮囊，因此即使河川的流速再急也不成問題。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水鼠"
+      }
     },
     {
       "slug": "marowak",
@@ -88865,7 +90105,10 @@
           "languageCode": "zh-Hant",
           "text": "下盤十分結實，即使是在泥濘的地上也能穩步前進。會把身體埋進泥裡睡覺。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "沼鱼"
+      }
     },
     {
       "slug": "maschiff",
@@ -88900,7 +90143,10 @@
           "languageCode": "zh-Hant",
           "text": "群體的團結力非常牢固。為了避免被看扁而擺出不悅的表情來威嚇對手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小辈"
+      }
     },
     {
       "slug": "masquerain",
@@ -89160,7 +90406,10 @@
           "languageCode": "zh-Hant",
           "text": "一旦被雨淋濕，獨特的眼珠花紋觸角就會變重，使牠連飛都飛不起來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "眼珠"
+      }
     },
     {
       "slug": "maushold",
@@ -89870,7 +91119,10 @@
           "languageCode": "zh-Hant",
           "text": "１天只吃１個樹果。藉由忍耐飢餓來磨練自己的心。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冥想"
+      }
     },
     {
       "slug": "meganium",
@@ -90335,7 +91587,10 @@
           "languageCode": "zh-Hant",
           "text": "身體是化成液狀的鋼鐵。能夠將地底的鐵或其他金屬溶解後吸收進體內。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "螺帽"
+      }
     },
     {
       "slug": "meowscarada",
@@ -90360,7 +91615,10 @@
           "languageCode": "zh-Hant",
           "text": "會巧妙引開敵人的注意力，然後引爆牠在神不知鬼不覺間設置好的裝滿花粉的花炸彈。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "魔术师"
+      }
     },
     {
       "slug": "meowstic",
@@ -90980,7 +92238,10 @@
           "languageCode": "zh-Hant",
           "text": "有著感情之神別名的寶可夢。傳說牠會令對其不敬之人的感情失控，因而受到人們畏懼。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "感情"
+      }
     },
     {
       "slug": "metagross",
@@ -91545,7 +92806,10 @@
           "languageCode": "zh-Hant",
           "text": "由２隻鐵啞鈴組合而成。鋼鐵的身軀即使和噴射機相撞也不會受傷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铁爪"
+      }
     },
     {
       "slug": "metapod",
@@ -91900,7 +93164,10 @@
           "languageCode": "zh-Hant",
           "text": "會用鋼鐵般堅硬的外殼保護裡面柔軟的身體。在進化之前會一直默默忍耐。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛹"
+      }
     },
     {
       "slug": "mew",
@@ -92195,7 +93462,10 @@
           "languageCode": "zh-Hant",
           "text": "因為能使用所有的招式，所以有很多學者認為牠是寶可夢的祖先。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "新种"
+      }
     },
     {
       "slug": "mewtwo",
@@ -92635,7 +93905,10 @@
           "languageCode": "zh-Hant",
           "text": "與群體的夥伴們一起在深山裡閉關修行。不同的群體有著不同的踢腿和手刀技法。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "武术"
+      }
     },
     {
       "slug": "mienshao",
@@ -92775,7 +94048,10 @@
           "languageCode": "zh-Hant",
           "text": "將雙臂的毛如鞭子般靈活使用。一旦開始連續攻擊，誰也無法阻止。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "武术"
+      }
     },
     {
       "slug": "mightyena",
@@ -92995,7 +94271,10 @@
           "languageCode": "zh-Hant",
           "text": "當嗅到遠處有獵物的氣味，群體就會遵從首領的指示，一起展開行動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "紧咬"
+      }
     },
     {
       "slug": "milcery",
@@ -93040,7 +94319,10 @@
           "languageCode": "zh-Hant",
           "text": "遭到襲擊時，會全身撞向對手，趁著對方沾滿鮮奶油而看不見前方，或因鮮奶油的美味而愣住時迅速逃跑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鲜奶油"
+      }
     },
     {
       "slug": "milotic",
@@ -93330,7 +94612,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在大湖的湖底。據說只要看見牠美麗的身影，心中的污穢就會得到淨化。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "慈爱"
+      }
     },
     {
       "slug": "miltank",
@@ -93620,7 +94905,10 @@
           "languageCode": "zh-Hant",
           "text": "聽說喝大奶罐的奶長大成人的孩子，會既健康又強壯。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "奶牛"
+      }
     },
     {
       "slug": "mime-jr",
@@ -93635,7 +94923,10 @@
           "languageCode": "zh-Hant",
           "text": "有著模仿對手動作的習性。據說被模仿的對手會不由得看得目不轉睛。 |pearldex=喜歡人群聚集的地方。會分毫不差地模仿對手的動作來使其迷惑，然後趁機逃走。 |platinumdex=能模仿牠所看到的对手的表情和动作，并试图理解对方的一切感情。 |hgssdex=可以分毫不差地模仿對手的動作，趁對手迷惑的時候迅速逃走。 |bwdex=能模仿牠所看到的对手的表情和动作，并试图理解对方的一切感情。 |b2w2dex=能模仿牠所看到的对手的表情和动作，并试图理解对方的一切感情。 |xdex=可以分毫不差地模仿對手的動作，趁對手迷惑的時候迅速逃走。 |ydex=有著模仿對手動作的習性。據說被模仿的對手會不由得看得目不轉睛。 |omegarubydex=可以分毫不差地模仿對手的動作，趁對手迷惑的時候迅速逃走。 |alphasapphiredex=有著模仿對手動作的習性。據說被模仿的對手會不由得看得目不轉睛。 |ultrasundex=會拼命模仿對方的動作和表情，但還算不上模仿得很好。 |ultramoondex=擅長模仿。對方如果因此吃驚，牠就會很開心，甚至不知不覺忘了自己正在模仿這件事。 |Swdex=會模仿一切映入眼簾的事物。一心一意模仿踏冰人偶華麗的舞步，不停地練習。 |Shdex=像徒弟一樣跟隨著擅長跳舞的踏冰人偶，拼命模仿牠的舞步。 |bddex=有著模仿對手動作的習性。據說被模仿的對手會不由得看得目不轉睛。 |spdex=喜歡人群聚集的地方。會分毫不差地模仿對手的動作來使其迷惑，然後趁機逃走。 |ladex=有時會忽然出現在熱鬧的市場中，像幼童般模仿人類的行為，然後興致勃勃地觀察人們的反應。 |zadex=擅長模仿。對方如果因此吃驚，牠就會很開心，甚至不知不覺忘了自己正在模仿這件事。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "默剧"
+      }
     },
     {
       "slug": "mimikyu",
@@ -93870,7 +95161,10 @@
           "languageCode": "zh-Hant",
           "text": "是愛乾淨的寶可夢。總是把尾巴當作掃把來除去居處的灰塵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "栗鼠"
+      }
     },
     {
       "slug": "minior",
@@ -94155,7 +95449,10 @@
           "languageCode": "zh-Hant",
           "text": "討厭碰到水，一旦下起雨就會到屋簷下避雨。會用火花彩球幫夥伴加油。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "加油"
+      }
     },
     {
       "slug": "miraidon",
@@ -94180,7 +95477,10 @@
           "languageCode": "zh-Hant",
           "text": "牠似乎就是古書裡所提及的鐵大蛇。傳說牠曾用雷電將大地化成了一片灰。（完整模式）密勒頓這個名字是發現牠的博士所命名的。生態等詳情仍然不明。（受限模式）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "misdreavus",
@@ -94475,7 +95775,10 @@
           "languageCode": "zh-Hant",
           "text": "會冷不防地去咬住或拉扯人的頭髮，然後看著對方大吃一驚的樣子來取樂。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "夜啼"
+      }
     },
     {
       "slug": "mismagius",
@@ -94700,7 +96003,10 @@
           "languageCode": "zh-Hant",
           "text": "用咒語般的怪異叫聲折磨對手。是神出鬼沒的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "魔法"
+      }
     },
     {
       "slug": "moltres",
@@ -95175,7 +96481,10 @@
           "languageCode": "zh-Hant",
           "text": "尾巴上的火焰越大且藍色臉譜越鮮豔的猛火猴，在群體中的地位就越高。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "顽皮"
+      }
     },
     {
       "slug": "morelull",
@@ -95240,7 +96549,10 @@
           "languageCode": "zh-Hant",
           "text": "白天也生活在昏暗的森林裡。會一邊閃爍一邊散播發著光的孢子來讓敵人陷入沉睡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发光"
+      }
     },
     {
       "slug": "morgrem",
@@ -95285,7 +96597,10 @@
           "languageCode": "zh-Hant",
           "text": "吸收負面情緒來轉化成自身能量的寶可夢。深受有負面思考習慣的人歡迎。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "坏心眼"
+      }
     },
     {
       "slug": "morpeko",
@@ -95480,7 +96795,10 @@
           "languageCode": "zh-Hant",
           "text": "拍動翅膀時會灑下銀灰色的鱗粉。雖然觀察結果顯示其主食是花蜜，但卻很少在花田看見牠們。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蓑衣蛾"
+      }
     },
     {
       "slug": "mr-mime",
@@ -95830,7 +97148,10 @@
           "languageCode": "zh-Hant",
           "text": "滑稽的舞步是牠的獨門絕活。會趁著敵方在笑的時候，施以零下２００度的寒氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "喜剧演员"
+      }
     },
     {
       "slug": "mudbray",
@@ -95915,7 +97236,10 @@
           "languageCode": "zh-Hant",
           "text": "走路雖然慢，力氣卻很大。即使背著比自己重５０倍的行李，走路速度也不會有變化。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "驴"
+      }
     },
     {
       "slug": "mudkip",
@@ -96145,7 +97469,10 @@
           "languageCode": "zh-Hant",
           "text": "會用頭上的鰭感知水流，藉此了解周圍的狀況。是個能舉起岩石的大力士。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "沼鱼"
+      }
     },
     {
       "slug": "mudsdale",
@@ -96230,7 +97557,10 @@
           "languageCode": "zh-Hant",
           "text": "泥巴使牠的蹄變得比岩石還要堅硬，只需一記腳踢就能讓大卡車變成廢鐵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "挽马"
+      }
     },
     {
       "slug": "muk",
@@ -96810,7 +98140,10 @@
           "languageCode": "zh-Hant",
           "text": "會埋頭拼命吃東西，吃著吃著就忘記了藏在體毛下的食物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大胃王"
+      }
     },
     {
       "slug": "munkidori",
@@ -96835,7 +98168,10 @@
           "languageCode": "zh-Hant",
           "text": "會從安全的地方釋放出能引起強烈頭暈的念力，把敵手戲弄得團團轉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "随从"
+      }
     },
     {
       "slug": "munna",
@@ -96945,7 +98281,10 @@
           "languageCode": "zh-Hant",
           "text": "會吃掉人類或寶可夢作的夢。吃下快樂的夢時，就會吐出粉紅色的煙霧。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "食梦"
+      }
     },
     {
       "slug": "murkrow",
@@ -97235,7 +98574,10 @@
           "languageCode": "zh-Hant",
           "text": "遇見黑暗鴉時，如果隨便就跟在牠後面走，反而會遭到迷惑而一個人被丟在山路上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "黑暗"
+      }
     },
     {
       "slug": "musharna",
@@ -97350,7 +98692,10 @@
           "languageCode": "zh-Hant",
           "text": "能將吃下的夢實體化。從額頭洩出的煙霧會變形成夢見的東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "半梦半醒"
+      }
     },
     {
       "slug": "nacli",
@@ -97385,7 +98730,10 @@
           "languageCode": "zh-Hant",
           "text": "鹽石寶走過後地面上會留下岩鹽的顆粒，那痕跡自古被稱為鹽路。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩盐"
+      }
     },
     {
       "slug": "naclstack",
@@ -97420,7 +98768,10 @@
           "languageCode": "zh-Hant",
           "text": "有著忘東忘西的健忘性格。不僅會忘了自己醃漬的獵物，連訓練家的指示都常會忘記。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩盐"
+      }
     },
     {
       "slug": "naganadel",
@@ -97445,7 +98796,10 @@
           "languageCode": "zh-Hant",
           "text": "究極異獸的一種。會從毒針發射出黏度很高的發光毒液。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒针"
+      }
     },
     {
       "slug": "natu",
@@ -97715,7 +99069,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠靈巧地避開仙人掌的花苞和刺來啄食。會一跳一跳地移動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小鸟"
+      }
     },
     {
       "slug": "necrozma",
@@ -97815,7 +99172,10 @@
           "languageCode": "zh-Hant",
           "text": "搶走人類或寶可夢的食物後，會在逃跑時用尾巴擦掉足跡以藉此擺脫追兵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "狐狸"
+      }
     },
     {
       "slug": "nidoking",
@@ -98110,7 +99470,10 @@
           "languageCode": "zh-Hant",
           "text": "尾巴揮出的一擊能將電線桿像火柴棒一樣折成兩段。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "钻锥"
+      }
     },
     {
       "slug": "nidoqueen",
@@ -98415,7 +99778,10 @@
           "languageCode": "zh-Hant",
           "text": "堅硬的鱗片像鎧甲一樣包裹全身。會拼上性命保護巢穴裡的孩子。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "钻锥"
+      }
     },
     {
       "slug": "nidoran-f",
@@ -98710,7 +100076,10 @@
           "languageCode": "zh-Hant",
           "text": "有著不愛戰鬥的性格。從毒針裡分泌出的毒液只要一滴就能致命。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒针"
+      }
     },
     {
       "slug": "nidoran-m",
@@ -99005,7 +100374,10 @@
           "languageCode": "zh-Hant",
           "text": "會從草叢裡伸出耳朵來探查周圍的狀況。用帶有劇毒的角來保護自己。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒针"
+      }
     },
     {
       "slug": "nidorina",
@@ -99310,7 +100682,10 @@
           "languageCode": "zh-Hant",
           "text": "察覺到危險時會倒豎起全身的尖刺。身上的刺比尼多力諾成長得慢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒针"
+      }
     },
     {
       "slug": "nidorino",
@@ -99610,7 +100985,10 @@
           "languageCode": "zh-Hant",
           "text": "性情粗暴的寶可夢。當角刺中對手時，劇毒就會隨著衝擊而流出。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒针"
+      }
     },
     {
       "slug": "nihilego",
@@ -99655,7 +101033,10 @@
           "languageCode": "zh-Hant",
           "text": "從究極之洞中現身來到這個世界。似乎會靠寄生在寶可夢或人類身上來生存。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "寄生"
+      }
     },
     {
       "slug": "nincada",
@@ -99875,7 +101256,10 @@
           "languageCode": "zh-Hant",
           "text": "在地下成長。會用觸角代替幾乎什麼都看不到的眼睛，來探察周圍的狀況。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "入门"
+      }
     },
     {
       "slug": "ninetales",
@@ -100475,7 +101859,10 @@
           "languageCode": "zh-Hant",
           "text": "由於移動的速度太快，有時甚至無法看清牠的身影。會聚集在樹液周圍。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "忍者"
+      }
     },
     {
       "slug": "noctowl",
@@ -100770,7 +102157,10 @@
           "languageCode": "zh-Hant",
           "text": "極為柔軟的翅膀讓牠在飛行時不發一絲聲響，因此可以悄悄地接近獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "猫头鹰"
+      }
     },
     {
       "slug": "noibat",
@@ -100885,7 +102275,10 @@
           "languageCode": "zh-Hant",
           "text": "在２０萬赫茲的超音波下，就連強壯的摔角手也會頭昏眼花，沒辦法好好站著。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "音波"
+      }
     },
     {
       "slug": "noivern",
@@ -101000,7 +102393,10 @@
           "languageCode": "zh-Hant",
           "text": "在連月光也沒有的暗夜飛行，襲擊粗心大意的獵物。在黑暗裡的戰鬥中所向無敵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "音波"
+      }
     },
     {
       "slug": "nosepass",
@@ -101260,7 +102656,10 @@
           "languageCode": "zh-Hant",
           "text": "陷入危機時，有時會增強磁力將附近的鐵塊吸引過來保護身體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "罗盘"
+      }
     },
     {
       "slug": "numel",
@@ -101490,7 +102889,10 @@
           "languageCode": "zh-Hant",
           "text": "體內儲存著１２００度的熔岩。使用火屬性的招式後，駝峰就會縮小。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "迟钝"
+      }
     },
     {
       "slug": "nuzleaf",
@@ -101730,7 +103132,10 @@
           "languageCode": "zh-Hant",
           "text": "集中了感覺功能的尖鼻子能夠讓牠感知周遭的狀況，但同時也是牠的弱點。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "捉弄"
+      }
     },
     {
       "slug": "nymble",
@@ -101755,7 +103160,10 @@
           "languageCode": "zh-Hant",
           "text": "活用跳躍力閃避攻擊並同時給予對手傷害，是牠很擅長的戰鬥方式。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝗虫"
+      }
     },
     {
       "slug": "obstagoon",
@@ -101780,7 +103188,10 @@
           "languageCode": "zh-Hant",
           "text": "在不斷的鬥爭中得到了進化。牠交叉著雙臂發出的怒吼能讓一切對手都為之膽怯。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "停止"
+      }
     },
     {
       "slug": "octillery",
@@ -102035,7 +103446,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然同樣能從口中噴射水流，但由於外貌實在天差地遠，長久以來人們一直不相信牠是由鐵炮魚進化而來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "喷射"
+      }
     },
     {
       "slug": "oddish",
@@ -102370,7 +103784,10 @@
           "languageCode": "zh-Hant",
           "text": "沐浴到月光就會醒來四處活動，白天則會靜靜地待在地面下。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "杂草"
+      }
     },
     {
       "slug": "ogerpon",
@@ -102445,7 +103862,10 @@
           "languageCode": "zh-Hant",
           "text": "動不動就會怒火沖天的粗暴傢伙。會揮甩脖子的鎖鏈一股腦兒地擊碎東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "随从"
+      }
     },
     {
       "slug": "omanyte",
@@ -102770,7 +104190,10 @@
           "languageCode": "zh-Hant",
           "text": "用現代先進的科學力量使其從化石中復活的寶可夢。曾經暢游在古代的海裡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "漩涡"
+      }
     },
     {
       "slug": "omastar",
@@ -103095,7 +104518,10 @@
           "languageCode": "zh-Hant",
           "text": "人們認為這種寶可夢之所以會滅絕，是因為螺旋狀的殼長得太大了。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "漩涡"
+      }
     },
     {
       "slug": "onix",
@@ -103400,7 +104826,10 @@
           "languageCode": "zh-Hant",
           "text": "平時住在地底。會以８０公里的時速在地下一邊挖掘一邊尋找食物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩蛇"
+      }
     },
     {
       "slug": "oranguru",
@@ -103485,7 +104914,10 @@
           "languageCode": "zh-Hant",
           "text": "在森林深處過著安靜的生活。如同斗蓬般的紫色體毛會隨著年齡而越變越長。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "贤者"
+      }
     },
     {
       "slug": "orbeetle",
@@ -103600,7 +105032,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在乾燥的沙地上。會以土中的鐵質為食，來維持由金屬構成的身體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蚯蚓"
+      }
     },
     {
       "slug": "oshawott",
@@ -103710,7 +105145,10 @@
           "languageCode": "zh-Hant",
           "text": "據說牠是模仿了人類使用磨刀石的樣子，於是變得會用河灘上的石頭來保養扇貝貝。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海獭"
+      }
     },
     {
       "slug": "overqwil",
@@ -103755,7 +105193,10 @@
           "languageCode": "zh-Hant",
           "text": "強化得又粗又長的毒針會擅自對會動的東西發動攻擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "剑山"
+      }
     },
     {
       "slug": "pachirisu",
@@ -103940,7 +105381,10 @@
           "languageCode": "zh-Hant",
           "text": "有時候可以見到為了將儲存的電力分給同伴而互相摩擦頰囊的帕奇利茲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电松鼠"
+      }
     },
     {
       "slug": "palafin",
@@ -104190,7 +105634,10 @@
           "languageCode": "zh-Hant",
           "text": "在城堡的下面埋藏著大量被吸乾了精氣者的骸骨。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "沙堡"
+      }
     },
     {
       "slug": "palpitoad",
@@ -104290,7 +105737,10 @@
           "languageCode": "zh-Hant",
           "text": "有時也會發出悅耳的叫聲。身上突起物越大的藍蟾蜍越能以更廣的音域來鳴叫。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "震动"
+      }
     },
     {
       "slug": "pancham",
@@ -104400,7 +105850,10 @@
           "languageCode": "zh-Hant",
           "text": "努力擺出可怕的表情瞪視對手。但一被摸到頭就會忍不住偷笑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "顽皮"
+      }
     },
     {
       "slug": "pangoro",
@@ -104515,7 +105968,10 @@
           "languageCode": "zh-Hant",
           "text": "性格暴躁衝動，但絕不容許欺負弱小。會用樹葉預測敵人的動作。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "恶颜"
+      }
     },
     {
       "slug": "panpour",
@@ -104605,7 +106061,10 @@
           "languageCode": "zh-Hant",
           "text": "頭上的毛髮叢裡儲藏的水營養非常豐富。牠會用尾巴拿這種水來灌溉草木。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "泼水"
+      }
     },
     {
       "slug": "pansage",
@@ -104700,7 +106159,10 @@
           "languageCode": "zh-Hant",
           "text": "會把頭上的葉子分給沒有精神的寶可夢。葉子有消除疲勞的效果。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "草猴"
+      }
     },
     {
       "slug": "pansear",
@@ -104790,7 +106252,10 @@
           "languageCode": "zh-Hant",
           "text": "智商很高，有把樹果烤過再吃的習性。喜歡幫助人類。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "高温"
+      }
     },
     {
       "slug": "paras",
@@ -104825,7 +106290,10 @@
           "languageCode": "zh-Hant",
           "text": "蟲的背上長著一種叫做冬蟲夏草的蘑菇。長大後蘑菇也會變大。 |bluedex=挖洞吸食树根。背上的蘑菇从身体中吸取养分生长。 |yellowdex=會挖掘洞穴，從樹木的根部獲取營養，但幾乎所有的營養都會被背上的蘑菇奪走。 |golddex=全身覆盖着蘑菇的孢子出生。身体成长的同时背上的蘑菇也长出来了。 |silverdex=身体长大的同时，背上名为冬虫夏草的蘑菇也会长出来。 |crystaldex=被背上长着的名为冬虫夏草的蘑菇命令而从树的根部吸取精华。 |rsedex=從派拉斯身上吸取養分而長大的蘑菇被稱為冬蟲夏草。是被當成長壽之藥的貴重蘑菇。 |dpptdex=背上長著一種叫做冬蟲夏草的蘑菇，會和派拉斯一起長大。 |firereddex=蟲的背上長著一種叫做冬蟲夏草的蘑菇。長大後蘑菇也會變大。 |leafgreendex=挖洞吸食树根。背上的蘑菇从身体中吸取养分生长。 |heartgolddex=全身覆盖着蘑菇的孢子出生。身体成长的同时背上的蘑菇也长出来了。 |soulsilverdex=身体长大的同时，背上名为冬虫夏草的蘑菇也会长出来。 |bwdex=背上長著一種叫做冬蟲夏草的蘑菇，會和派拉斯一起長大。 |b2w2dex=背上長著一種叫做冬蟲夏草的蘑菇，會和派拉斯一起長大。 |xdex=蟲的背上長著一種叫做冬蟲夏草的蘑菇。長大後蘑菇也會變大。 |ydex=會挖掘洞穴，從樹木的根部獲取營養，但幾乎所有的營養都會被背上的蘑菇奪走。 |orasdex=從派拉斯身上吸取養分而長大的蘑菇被稱為冬蟲夏草。是被當成長壽之藥的貴重蘑菇。 |sundex=即使不停地吃，不停地吃，大部分攝取的營養都會被生長在背上的蘑菇奪走。 |moondex=背上生長蘑菇被稱為冬蟲夏草，是一種能延年益壽的藥。乾燥後磨成粉末使用。 |ultrasundex=不知是因為濕氣不夠還是營養不足，阿羅拉的派拉斯背上的蘑菇長得都不怎麼樣。 |ultramoondex=控制蟲子的是一種叫做冬蟲夏草的蕈類。蟲子的意志會被忽視。 |letsgodex=會挖掘洞穴，從樹木的根部獲取營養，但幾乎所有的營養都會被背上的蘑菇奪走。 |bdspdex=背上長著一種叫做冬蟲夏草的蘑菇，會和派拉斯一起長大。 |ladex=散見於潮濕森林裡的樹木根部。背上名為冬蟲夏草的蘑菇並非與生俱來，而是隨著幼體發育而長出。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蘑菇"
+      }
     },
     {
       "slug": "parasect",
@@ -105155,7 +106623,10 @@
           "languageCode": "zh-Hant",
           "text": "森林中存在著背上蘑菇脫落後絲毫不動的個體，此樣本足可用以證明大大的蘑菇才是本體的學說。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蘑菇"
+      }
     },
     {
       "slug": "passimian",
@@ -105240,7 +106711,10 @@
           "languageCode": "zh-Hant",
           "text": "老大會選出１０隻出外狩獵，並把牠們帶回來的食物平均分配給群體內的夥伴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "配合"
+      }
     },
     {
       "slug": "patrat",
@@ -105330,7 +106804,10 @@
           "languageCode": "zh-Hant",
           "text": "會在頰囊裡藏食物，連續站崗好幾天。會用尾巴向夥伴發出信號。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "放哨"
+      }
     },
     {
       "slug": "pawmi",
@@ -105355,7 +106832,10 @@
           "languageCode": "zh-Hant",
           "text": "手的肉球是放電的器官。會費勁地用後腳站起來，然後從手掌釋放出電擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鼠"
+      }
     },
     {
       "slug": "pawmo",
@@ -105380,7 +106860,10 @@
           "languageCode": "zh-Hant",
           "text": "使用的格鬥技非常獨特，會一邊用手掌給予打擊，並一邊用肉球施放電擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鼠"
+      }
     },
     {
       "slug": "pawmot",
@@ -105405,7 +106888,10 @@
           "languageCode": "zh-Hant",
           "text": "膨鬆的體毛是蓄電池，可以積蓄與電動汽車等量的電力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "押掌"
+      }
     },
     {
       "slug": "pawniard",
@@ -105545,7 +107031,10 @@
           "languageCode": "zh-Hant",
           "text": "刀刃的缺損可說是致命傷。每當戰鬥結束後，就會用最愛的磨刀石來精心保養。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "利器"
+      }
     },
     {
       "slug": "pecharunt",
@@ -105570,7 +107059,10 @@
           "languageCode": "zh-Hant",
           "text": "桃形的殼是劇毒的儲藏庫。會製作帶毒的麻糬送給人和寶可夢吃。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "支配"
+      }
     },
     {
       "slug": "pelipper",
@@ -105850,7 +107342,10 @@
           "languageCode": "zh-Hant",
           "text": "會把孩子放進鳥嘴裡保護。風平浪靜的日子會漂浮在海面上稍作休息。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水鸟"
+      }
     },
     {
       "slug": "perrserker",
@@ -105885,7 +107380,10 @@
           "languageCode": "zh-Hant",
           "text": "在戰鬥上以無與倫比的實力為傲，並留下了無數的英勇事蹟，但棲身之處卻堆滿了垃圾。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "维京"
+      }
     },
     {
       "slug": "persian",
@@ -106460,7 +107958,10 @@
           "languageCode": "zh-Hant",
           "text": "如果偶爾修剪葉子，就會長成圓鼓鼓很華麗的樣子。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "根茎"
+      }
     },
     {
       "slug": "phanpy",
@@ -106690,7 +108191,10 @@
           "languageCode": "zh-Hant",
           "text": "有別於外表的大力士。如果被牠甩動的鼻子揮中，手臂的骨頭就會支離破碎。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长鼻"
+      }
     },
     {
       "slug": "phantump",
@@ -106825,7 +108329,10 @@
           "languageCode": "zh-Hant",
           "text": "據說是在森林中迷路而死的小孩靈魂寄宿在樹樁上所變成的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "树桩"
+      }
     },
     {
       "slug": "pheromosa",
@@ -106870,7 +108377,10 @@
           "languageCode": "zh-Hant",
           "text": "在這個世界是危險的異類，但在原本棲息的世界裡，牠似乎是常見的普通生物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "美艳"
+      }
     },
     {
       "slug": "phione",
@@ -107035,7 +108545,10 @@
           "languageCode": "zh-Hant",
           "text": "在海水溫度上升的季節可以看見牠漂在海岸附近的身影。蒼藍的體色與海水顏色相近，能保護牠免於天敵的侵襲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海洋"
+      }
     },
     {
       "slug": "pichu",
@@ -107365,7 +108878,10 @@
           "languageCode": "zh-Hant",
           "text": "還不擅長蓄電。驚訝或是發笑的時候就會不由自主地放電。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小鼠"
+      }
     },
     {
       "slug": "pidgeot",
@@ -107965,7 +109481,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有著廣闊的地盤。要是有哪個討厭鬼膽敢入侵，就會遭到牠的瘋狂啄擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鸟"
+      }
     },
     {
       "slug": "pidgey",
@@ -108245,7 +109764,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然性情溫和不愛戰鬥，但要是隨意對牠出手的話，就會受到牠強烈的反擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小鸟"
+      }
     },
     {
       "slug": "pidove",
@@ -108345,7 +109867,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然既健忘又不太聰明，因為性格認真且容易親近人，所以受到了許多訓練家的喜愛。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小鸽"
+      }
     },
     {
       "slug": "pignite",
@@ -108455,7 +109980,10 @@
           "languageCode": "zh-Hant",
           "text": "吃得越多，可供燃燒的東西就越多。胃裡的火焰會因此變強，力量也會源源不絕地湧出。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火猪"
+      }
     },
     {
       "slug": "pikachu",
@@ -108890,7 +110418,10 @@
           "languageCode": "zh-Hant",
           "text": "幸虧頸部的肌肉強韌，因此即使激烈地搖晃頭部，也不會造成任何傷害。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "啄木鸟"
+      }
     },
     {
       "slug": "piloswine",
@@ -109165,7 +110696,10 @@
           "languageCode": "zh-Hant",
           "text": "由於被長長的體毛覆蓋，所以看不清眼前的情況，只會不斷地往前猛衝。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "野猪"
+      }
     },
     {
       "slug": "pincurchin",
@@ -109210,7 +110744,10 @@
           "languageCode": "zh-Hant",
           "text": "生性膽小，光是碰到海藻屑就足以讓牠嚇得放電。嘴唇不會導電。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海胆"
+      }
     },
     {
       "slug": "pineco",
@@ -109470,7 +111007,10 @@
           "languageCode": "zh-Hant",
           "text": "口中吐出的液體是牠用來貼上樹皮的膠水，一接觸到空氣就會凝固。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蓑衣虫"
+      }
     },
     {
       "slug": "pinsir",
@@ -109975,7 +111515,10 @@
           "languageCode": "zh-Hant",
           "text": "討厭被別人照顧。因為不肯聽訓練家的指示，要和牠變得親密是很困難的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "企鹅"
+      }
     },
     {
       "slug": "plusle",
@@ -110195,7 +111738,10 @@
           "languageCode": "zh-Hant",
           "text": "能從電線桿上吸取電力。會透過讓體內儲存的電流短路來發出聲音。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "加油"
+      }
     },
     {
       "slug": "poipole",
@@ -110220,7 +111766,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在異世界的究極異獸。會從頭上的毒針朝對手噴出毒液，然後放聲大笑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒针"
+      }
     },
     {
       "slug": "politoed",
@@ -110530,7 +112079,10 @@
           "languageCode": "zh-Hant",
           "text": "蚊香蝌蚪和蚊香君的領袖。蚊香蛙皇一聲吼，大家都嚇得伏在地上一動不動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛙"
+      }
     },
     {
       "slug": "poliwag",
@@ -110890,7 +112442,10 @@
           "languageCode": "zh-Hant",
           "text": "由於腳才剛長出來，因此還不太擅長走路。似乎更喜歡在水中游泳。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝌蚪"
+      }
     },
     {
       "slug": "poliwhirl",
@@ -111270,7 +112825,10 @@
           "languageCode": "zh-Hant",
           "text": "全身的皮膚都濕答答的，但肚子上的漩渦部分摸起來很光滑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝌蚪"
+      }
     },
     {
       "slug": "poliwrath",
@@ -111635,7 +113193,10 @@
           "languageCode": "zh-Hant",
           "text": "如果只是一瞬間的話，牠能夠用肌肉發達的四肢在水上奔跑。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝌蚪"
+      }
     },
     {
       "slug": "poltchageist",
@@ -111660,7 +113221,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然這種寶可夢看起來像是來悲茶的地區型態，但最近被發現其實兩者毫無關係。（冒牌货的样子）住進極為昂貴的茶罐裡的樣子。雖然長得與便宜貨不同，但外行人無法分辨出來。（高档货的样子）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "抹茶"
+      }
     },
     {
       "slug": "polteageist",
@@ -111705,7 +113269,10 @@
           "languageCode": "zh-Hant",
           "text": "會潛入茶壺裡，然後把自己倒進喝到一半的紅茶裡來使茶量變多。（赝品形态）雖然喝下牠很危險，但味道卻是相當美味。不怕危險的饕客們每天都會喝怖思壺。（真品形态）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "红茶"
+      }
     },
     {
       "slug": "ponyta",
@@ -112200,7 +113767,10 @@
           "languageCode": "zh-Hant",
           "text": "會成群追擊獵物，並在其筋疲力盡時給予致命一擊，但有時會因遭到反擊而逃走。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "紧咬"
+      }
     },
     {
       "slug": "popplio",
@@ -112285,7 +113855,10 @@
           "languageCode": "zh-Hant",
           "text": "靠著每天不斷地練習，用鼻子吹出的氣球會一點一滴地漸漸變大。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海狮"
+      }
     },
     {
       "slug": "porygon",
@@ -112675,7 +114248,10 @@
           "languageCode": "zh-Hant",
           "text": "經過不斷的研究所誕生出的人工寶可夢。程式裡只設入了基本動作。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虚拟"
+      }
     },
     {
       "slug": "porygon-z",
@@ -112930,7 +114506,10 @@
           "languageCode": "zh-Hant",
           "text": "以能夠在異次元空間活動為目標更新了程式，但是怪異的動作非常惹人注目。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虚拟"
+      }
     },
     {
       "slug": "porygon2",
@@ -113240,7 +114819,10 @@
           "languageCode": "zh-Hant",
           "text": "將行星的開發納入視野，以當時的最新技術升級了多邊獸。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虚拟"
+      }
     },
     {
       "slug": "primarina",
@@ -113325,7 +114907,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有歌姬的別名。在月夜裡率領群體歌唱的樣子充滿了幻想色彩。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "独唱者"
+      }
     },
     {
       "slug": "primeape",
@@ -113360,7 +114945,10 @@
           "languageCode": "zh-Hant",
           "text": "總是激烈地發著怒，無論再怎麼逃，逃到哪裡，牠都會追上來。 |bluedex=会莫名其妙的暴怒，无论逃到哪里，它都会穷追不舍。 |yellowdex=只有當誰都不在身邊的時候才會停止生氣。然而要看到牠不生氣的樣子是很困難的。 |golddex=要是靠近睡著的火爆猴，牠就會在半夢半醒中發怒，不知所以地猛追上來。 |silverdex=光是感覺到他方的視線都會暴怒起來，然後去追和牠對到眼的傢伙。 |crystaldex=是会把让自己发怒的东西穷追不舍到天涯海角并打倒的粗暴的宝可梦。 |rsedex=暴怒會促進血液循環，讓肌肉的力量變得更強。但是大腦的運轉會因此變慢。 |firereddex=總是激烈地發著怒，無論再怎麼逃，逃到哪裡，牠都會追上來。 |leafgreendex=会莫名其妙的暴怒，无论逃到哪里，它都会穷追不舍。 |dpptdex=光是視線和牠對上，牠就會生氣。此時要是轉身逃跑，牠就會更生氣。就算已經揍扁對方，牠仍會繼續生氣。 |heartgolddex=要是靠近睡著的火爆猴，牠就會在半夢半醒中發怒，不知所以地猛追上來。 |soulsilverdex=光是感覺到他方的視線都會暴怒起來，然後去追和牠對到眼的傢伙。 |bwdex=光是視線和牠對上，牠就會生氣。此時要是轉身逃跑，牠就會更生氣。就算已經揍扁對方，牠仍會繼續生氣。 |b2w2dex=光是視線和牠對上，牠就會生氣。此時要是轉身逃跑，牠就會更生氣。就算已經揍扁對方，牠仍會繼續生氣。 |xdex=只有當誰都不在身邊的時候才會停止生氣。然而要看到牠不生氣的樣子是很困難的。 |ydex=總是激烈地發著怒，無論再怎麼逃，逃到哪裡，牠都會追上來。 |orasdex=暴怒會促進血液循環，讓肌肉的力量變得更強。但是大腦的運轉會因此變慢。 |sundex=因為太過生氣而就這樣死去，這樣的事也是有的。但死的時候表情很安詳。 |moondex=某位研究者的學說中提到，即使在精靈球裡，火爆猴好像也在發怒。 |ultrasundex=不會原諒激怒自己的對手，會不斷追擊，就算把對方揍到無法動彈也不會原諒對方。 |ultramoondex=和其他的寶可夢比起來，牠的腦血管特別結實，就算一直發怒也能活得好好的。 |letsgodex=只有當誰都不在身邊的時候才會停止生氣。然而要看到牠不生氣的樣子是很困難的。 |bdspdex=光是視線和牠對上，牠就會生氣。此時要是轉身逃跑，牠就會更生氣。就算已經揍扁對方，牠仍會繼續生氣。 |scdex=光是感覺到他方的視線都會暴怒起來，然後去追和牠對到眼的傢伙。 |videx=某位研究者的學說中提到，即使在精靈球裡，火爆猴好像也在發怒。 |zadex=要是靠近睡著的火爆猴，牠就會在半夢半醒中發怒，不知所以地猛追上來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "豬猴"
+      }
     },
     {
       "slug": "prinplup",
@@ -113545,7 +115133,10 @@
           "languageCode": "zh-Hant",
           "text": "所有的波皇子都認為自己是最了不起的，所以不可能組成群體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "企鹅"
+      }
     },
     {
       "slug": "probopass",
@@ -113760,7 +115351,10 @@
           "languageCode": "zh-Hant",
           "text": "因為會釋放強大的磁力，導致附近的電器都變得無法使用。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "罗盘"
+      }
     },
     {
       "slug": "psyduck",
@@ -114110,7 +115704,10 @@
           "languageCode": "zh-Hant",
           "text": "總是會在頭痛欲裂時發揮出神奇的力量，但似乎沒有當下的記憶。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鸭"
+      }
     },
     {
       "slug": "pumpkaboo",
@@ -114490,7 +116087,10 @@
           "languageCode": "zh-Hant",
           "text": "身體像岩盤一樣堅硬。會噴射壓縮氣體，如同火箭一般地飛出去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "子弹"
+      }
     },
     {
       "slug": "purrloin",
@@ -114595,7 +116195,10 @@
           "languageCode": "zh-Hant",
           "text": "把偷別人的東西當遊戲。被偷的苦主也會因為牠惹人憐愛的動作而不禁原諒牠。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "坏心眼"
+      }
     },
     {
       "slug": "purugly",
@@ -114735,7 +116338,10 @@
           "languageCode": "zh-Hant",
           "text": "性情厚顏無恥且極難馴服，但由於擁有更勝棉花絨的美麗毛皮，因此很受人歡迎。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虎斑猫"
+      }
     },
     {
       "slug": "pyroar",
@@ -114895,7 +116501,10 @@
           "languageCode": "zh-Hant",
           "text": "覆蓋著皮膚的黏液具有出眾的保濕效果，即使在陸地上待好幾天也不會乾掉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海参"
+      }
     },
     {
       "slug": "quagsire",
@@ -115170,7 +116779,10 @@
           "languageCode": "zh-Hant",
           "text": "性格悠閒自得，游泳時腦袋會撞到河底的岩石或船底。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水鱼"
+      }
     },
     {
       "slug": "quaquaval",
@@ -115195,7 +116807,10 @@
           "languageCode": "zh-Hant",
           "text": "會用充滿異國情調的舞蹈迷倒看到的對手，然後揮舞以水構成的羽飾將其劈裂。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "舞者"
+      }
     },
     {
       "slug": "quaxly",
@@ -115220,7 +116835,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有在水流湍急的河川也能自在游動的腳力。愛乾淨，個性不知變通。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小鸭"
+      }
     },
     {
       "slug": "quaxwell",
@@ -115245,7 +116863,10 @@
           "languageCode": "zh-Hant",
           "text": "個性勤奮，會觀察各地區的人和寶可夢，並將其動作融入自己的舞蹈裡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "习艺"
+      }
     },
     {
       "slug": "quilava",
@@ -115510,7 +117131,10 @@
           "languageCode": "zh-Hant",
           "text": "一身的毛皮絕不會被點燃。遭受任何火焰攻擊都能安然無恙。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火山"
+      }
     },
     {
       "slug": "quilladin",
@@ -115585,7 +117209,10 @@
           "languageCode": "zh-Hant",
           "text": "夥伴間互相碰撞身體來鍛鍊下盤。個性溫和，不會自己挑起戰鬥。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刺铠"
+      }
     },
     {
       "slug": "qwilfish",
@@ -115925,7 +117552,10 @@
           "languageCode": "zh-Hant",
           "text": "以自己多彩多姿的踢技為傲，但利用因火焰而變熱的額頭使出的頭錘也十分強勁。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "兔子"
+      }
     },
     {
       "slug": "rabsca",
@@ -115950,7 +117580,10 @@
           "languageCode": "zh-Hant",
           "text": "為了讓在球裡睡覺的寶寶可以睡得更加香甜，會用腳轉著球，讓寶寶感到安穩。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "滚动"
+      }
     },
     {
       "slug": "raging-bolt",
@@ -115975,7 +117608,10 @@
           "languageCode": "zh-Hant",
           "text": "與超自然雜誌曾報導且掀起了短暫話題的雷公的祖先長得很像。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "raichu",
@@ -116605,7 +118241,10 @@
           "languageCode": "zh-Hant",
           "text": "據說牠會和雷電一起降臨。能夠從背上的雨雲放射出雷電。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "天雷"
+      }
     },
     {
       "slug": "ralts",
@@ -116865,7 +118504,10 @@
           "languageCode": "zh-Hant",
           "text": "用紅色的角感知到人和寶可夢的溫情後，全身也會變得有點暖暖的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "心情"
+      }
     },
     {
       "slug": "rampardos",
@@ -117085,7 +118727,10 @@
           "languageCode": "zh-Hant",
           "text": "由於頭蓋骨厚達３０公分，就算用頭部激烈互撞，也絕對不會昏倒。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "头锤"
+      }
     },
     {
       "slug": "rapidash",
@@ -118365,7 +120010,10 @@
           "languageCode": "zh-Hant",
           "text": "身體是由冰河時期形成的冰塊所構成。能操控零下２００度的寒氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冰山"
+      }
     },
     {
       "slug": "regidrago",
@@ -118390,7 +120038,10 @@
           "languageCode": "zh-Hant",
           "text": "全身是由龍之能量的結晶打造而成。據說牠擁有所有的龍寶可夢的力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "龙玉"
+      }
     },
     {
       "slug": "regieleki",
@@ -118415,7 +120066,10 @@
           "languageCode": "zh-Hant",
           "text": "全身都是能發電的器官。牠製造的電能可以滿足伽勒爾全域的電力需求。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电子"
+      }
     },
     {
       "slug": "regigigas",
@@ -118590,7 +120244,10 @@
           "languageCode": "zh-Hant",
           "text": "傳說雷吉奇卡斯用繩索將大陸拖曳而來，創造了洗翠的大地。傳說內容雖有疑義，但其中或許蘊藏著一絲真理。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "巨大"
+      }
     },
     {
       "slug": "regirock",
@@ -118800,7 +120457,10 @@
           "languageCode": "zh-Hant",
           "text": "全身由岩石構成。即使身體在戰鬥中受損，也能透過補上岩石來治癒。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩山"
+      }
     },
     {
       "slug": "registeel",
@@ -119010,7 +120670,10 @@
           "languageCode": "zh-Hant",
           "text": "經過數萬年來地下壓力的錘鍊，金屬的身軀變得刀槍不入。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "黑金"
+      }
     },
     {
       "slug": "relicanth",
@@ -119260,7 +120923,10 @@
           "languageCode": "zh-Hant",
           "text": "在深海調查中被發現的珍奇寶可夢。１億年來樣子都沒變化過。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "长寿"
+      }
     },
     {
       "slug": "rellor",
@@ -119285,7 +120951,10 @@
           "languageCode": "zh-Hant",
           "text": "會一邊滾著泥巴球，一邊使進化的能量成熟。最終會迎接進化的時刻。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "滚动"
+      }
     },
     {
       "slug": "remoraid",
@@ -119550,7 +121219,10 @@
           "languageCode": "zh-Hant",
           "text": "從口中噴射出的水流能夠極為精確地命中所瞄準的目標。會擊落並獵捕吊在樹枝上的結草兒。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "喷射"
+      }
     },
     {
       "slug": "reshiram",
@@ -119650,7 +121322,10 @@
           "languageCode": "zh-Hant",
           "text": "在神話的敘述裡，如果人類蔑視真實、放縱欲望，牠就會用火焰燒盡他們的王國。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "白阳"
+      }
     },
     {
       "slug": "reuniclus",
@@ -119770,7 +121445,10 @@
           "languageCode": "zh-Hant",
           "text": "當人造細胞卵彼此握手時，大腦就會如網路般連接，精神力量將得到提升。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "增幅"
+      }
     },
     {
       "slug": "revavroom",
@@ -119795,7 +121473,10 @@
           "languageCode": "zh-Hant",
           "text": "用排氣聲猛烈威嚇對手。會從圓筒形的嘴巴吐出舌頭並噴灑毒液。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "多汽缸"
+      }
     },
     {
       "slug": "rhydon",
@@ -120105,7 +121786,10 @@
           "languageCode": "zh-Hant",
           "text": "進化後變得可以只用後腳步行，因此將棲息地拓展到了險峻的山地。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "钻锥"
+      }
     },
     {
       "slug": "rhyhorn",
@@ -120415,7 +122099,10 @@
           "languageCode": "zh-Hant",
           "text": "一旦開始奔跑，即使撞上了大岩石也不會停下來。這性情使牠的棲息地變得越來越廣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "尖尖"
+      }
     },
     {
       "slug": "rhyperior",
@@ -120595,7 +122282,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然大腦比鑽角犀獸還小，但可以把因而多出的能量全用在戰鬥上，所以非常強。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "钻锥"
+      }
     },
     {
       "slug": "ribombee",
@@ -120680,7 +122370,10 @@
           "languageCode": "zh-Hant",
           "text": "有高手之稱的蝶結萌虻所製作的花粉團能消除疲勞，因此是很受歡迎的商品。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜂虻"
+      }
     },
     {
       "slug": "rillaboom",
@@ -120980,7 +122673,10 @@
           "languageCode": "zh-Hant",
           "text": "從身體發出的波導會在害怕或悲傷時變強，將危機傳遞給夥伴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "波纹"
+      }
     },
     {
       "slug": "roaring-moon",
@@ -121005,7 +122701,10 @@
           "languageCode": "zh-Hant",
           "text": "根據可疑雜誌的報導來看，這種寶可夢好像跟某個地區會發生的現象有關連。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "rockruff",
@@ -121225,7 +122924,10 @@
           "languageCode": "zh-Hant",
           "text": "會對聲音產生反應而動起來。在能量核心的影響下，牠摸起來暖暖的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "地幔"
+      }
     },
     {
       "slug": "rolycoly",
@@ -121270,7 +122972,10 @@
           "languageCode": "zh-Hant",
           "text": "脫落的老舊體表一直以來都當成燃料來代替煤炭使用。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "煤炭"
+      }
     },
     {
       "slug": "rookidee",
@@ -121325,7 +123030,10 @@
           "languageCode": "zh-Hant",
           "text": "性情勇敢，無論多強的敵人都勇於挑戰。即使在敵人的反擊中被打敗，也能從中得到鍛鍊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小鸟"
+      }
     },
     {
       "slug": "roselia",
@@ -121550,7 +123258,10 @@
           "languageCode": "zh-Hant",
           "text": "會用右手和左手分別施放２種不同的毒來進行攻擊。香氣越濃越有活力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "荆棘"
+      }
     },
     {
       "slug": "roserade",
@@ -121720,7 +123431,10 @@
           "languageCode": "zh-Hant",
           "text": "會用甜甜的香氣引誘獵物，然後用雙臂的毒刺鞭刺入或勒緊來解決對方。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花束"
+      }
     },
     {
       "slug": "rotom",
@@ -122030,7 +123744,10 @@
           "languageCode": "zh-Hant",
           "text": "在狹窄陰暗的地方才會感到安穩。有時也會用訓練家的懷抱或是包包代替巢穴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "草羽"
+      }
     },
     {
       "slug": "rufflet",
@@ -122195,7 +123912,10 @@
           "languageCode": "zh-Hant",
           "text": "用尖尖的爪子刺穿獵物後啄食。雖然也會吃樹果，但基本上是肉食性寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "雏鹰"
+      }
     },
     {
       "slug": "runerigus",
@@ -122230,7 +123950,10 @@
           "languageCode": "zh-Hant",
           "text": "曾經七零八落的黏土板全數歸位如初，導致封印在內的怨念能量全部解放了出來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "怨念"
+      }
     },
     {
       "slug": "sableye",
@@ -122895,7 +124618,10 @@
           "languageCode": "zh-Hant",
           "text": "唯有雌性製造的氣體會釋放費洛蒙。被迷得神魂顛倒的雄性會對雌性唯命是從。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒蜥"
+      }
     },
     {
       "slug": "salazzle",
@@ -122975,7 +124701,10 @@
           "languageCode": "zh-Hant",
           "text": "焰后蜥的群體之間一旦碰上彼此，就會使用費洛蒙氣體展開雄性爭奪戰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒蜥"
+      }
     },
     {
       "slug": "samurott",
@@ -123305,7 +125034,10 @@
           "languageCode": "zh-Hant",
           "text": "會潛入沙中，露出眼睛和鼻子移動。黑色的膜保護著眼睛。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "沙漠鳄鱼"
+      }
     },
     {
       "slug": "sandshrew",
@@ -124075,7 +125807,10 @@
           "languageCode": "zh-Hant",
           "text": "與超自然雜誌所報導的活了１萬年的三合一磁怪長得稍微有那麼一點相似。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "sandygast",
@@ -124170,7 +125905,10 @@
           "languageCode": "zh-Hant",
           "text": "死者的怨念附在沙丘上，從而變成的寶可夢。很喜歡頭上的鏟子。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "沙丘"
+      }
     },
     {
       "slug": "sawk",
@@ -124280,7 +126018,10 @@
           "languageCode": "zh-Hant",
           "text": "束緊帶子就會有幹勁，拳擊的破壞力會提升。修行時被打擾就會生氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "空手道"
+      }
     },
     {
       "slug": "sawsbuck",
@@ -124455,7 +126196,10 @@
           "languageCode": "zh-Hant",
           "text": "覆蓋身體的粉末能夠調節體溫。無論在任何氣候或水土下都能生活。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "喷粉"
+      }
     },
     {
       "slug": "sceptile",
@@ -125135,7 +126879,10 @@
           "languageCode": "zh-Hant",
           "text": "聚集了火之能量的腳底肉球會升至高溫，帶給對手巨大的傷害。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "兔子"
+      }
     },
     {
       "slug": "scovillain",
@@ -125480,7 +127227,10 @@
           "languageCode": "zh-Hant",
           "text": "會把皮拉到頸部採取防禦姿勢。有著橡膠般彈力的皮能減少傷害。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜕皮"
+      }
     },
     {
       "slug": "scream-tail",
@@ -125505,7 +127255,10 @@
           "languageCode": "zh-Hant",
           "text": "與超自然雜誌裡被當成１０億年前的胖丁來介紹的謎之寶可夢長得很相似。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "scyther",
@@ -125890,7 +127643,10 @@
           "languageCode": "zh-Hant",
           "text": "會用鋒利的鐮刀斬斷獵物取其性命。在極少數情況下會用翅膀飛行。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "螳螂"
+      }
     },
     {
       "slug": "seadra",
@@ -126230,7 +127986,10 @@
           "languageCode": "zh-Hant",
           "text": "會從鰭的前端分泌毒。牠的鰭和骨頭很適合拿來當作中藥材。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "龙"
+      }
     },
     {
       "slug": "seaking",
@@ -126565,7 +128324,10 @@
           "languageCode": "zh-Hant",
           "text": "為了守護家人，牠會用如鑽頭般銳利的角戰鬥。平時生活在河底下的岩穴中。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "金鱼"
+      }
     },
     {
       "slug": "sealeo",
@@ -126785,7 +128547,10 @@
           "languageCode": "zh-Hant",
           "text": "兩腮的白鬍鬚有著敏銳的知覺，會將海豹球置於鼻尖，從觸感及體味確認其是否健康。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "滚球"
+      }
     },
     {
       "slug": "seedot",
@@ -127015,7 +128780,10 @@
           "languageCode": "zh-Hant",
           "text": "懸掛在樹枝上吸收水分生活。在年輕又巨大的樹木上，會有成排的橡實果。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "橡实"
+      }
     },
     {
       "slug": "seel",
@@ -127345,7 +129113,10 @@
           "languageCode": "zh-Hant",
           "text": "天氣越冷就會越有精神，並且會開心地在有浮冰的寒冷大海游來游去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海狮"
+      }
     },
     {
       "slug": "seismitoad",
@@ -127440,7 +129211,10 @@
           "languageCode": "zh-Hant",
           "text": "在老年人之間廣受歡迎。因為他們覺得牠身上的瘤發出的震動拿來按摩剛剛好。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "震动"
+      }
     },
     {
       "slug": "sentret",
@@ -127680,7 +129454,10 @@
           "languageCode": "zh-Hant",
           "text": "遇到敵人時會用尾巴站立，讓自己的身體看起來比平時更大，藉此威嚇對手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "放哨"
+      }
     },
     {
       "slug": "serperior",
@@ -127780,7 +129557,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有能讓對手畏怯的眼神以及威風凜凜的身姿，因此被稱為森林的君主。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "皇家"
+      }
     },
     {
       "slug": "servine",
@@ -127880,7 +129660,10 @@
           "languageCode": "zh-Hant",
           "text": "小缺點是自尊心過高。需要不少時間才能與其他寶可夢合作。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "草蛇"
+      }
     },
     {
       "slug": "seviper",
@@ -128110,7 +129893,10 @@
           "languageCode": "zh-Hant",
           "text": "用滲出劇毒的鋒利尾巴來對抗敏捷的貓鼬斬。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "牙蛇"
+      }
     },
     {
       "slug": "sewaddle",
@@ -128215,7 +130001,10 @@
           "languageCode": "zh-Hant",
           "text": "頭部的小包包是感覺器官。當蟲寶包彼此相遇時，會互相磨蹭包包來打招呼。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "裁缝"
+      }
     },
     {
       "slug": "sharpedo",
@@ -128835,7 +130624,10 @@
           "languageCode": "zh-Hant",
           "text": "靈魂寄宿到了蛻下的殼中。從牠背上的縫隙向裡面窺視的話，靈魂好像會被吸走。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "空壳"
+      }
     },
     {
       "slug": "shelgon",
@@ -129115,7 +130907,10 @@
           "languageCode": "zh-Hant",
           "text": "在堅硬的外殼內部，細胞開始發生變化。外殼會在進化的瞬間剝落。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "耐力"
+      }
     },
     {
       "slug": "shellder",
@@ -129500,7 +131295,10 @@
           "languageCode": "zh-Hant",
           "text": "用貝殼夾擊的時候，裡面柔軟的部分就會暴露出來，所以這算是孤注一擲的攻擊方式。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "双壳贝"
+      }
     },
     {
       "slug": "shellos",
@@ -129850,7 +131648,10 @@
           "languageCode": "zh-Hant",
           "text": "有著會對電能產生反應的奇異體質。不知為何，和蓋蓋蟲待在一起就會進化。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜗牛"
+      }
     },
     {
       "slug": "shieldon",
@@ -130075,7 +131876,10 @@
           "languageCode": "zh-Hant",
           "text": "多虧那張結實的臉，牠的敵人應該不多。棲息在太古時代的叢林裡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "护盾"
+      }
     },
     {
       "slug": "shiftry",
@@ -130315,7 +132119,10 @@
           "languageCode": "zh-Hant",
           "text": "自古流傳著若鳥寶可夢做了壞事，就會被神明換走鳥嘴和翅膀當作懲罰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "邪恶"
+      }
     },
     {
       "slug": "shiinotic",
@@ -130380,7 +132187,10 @@
           "languageCode": "zh-Hant",
           "text": "如果半夜裡在森林的深處看見光亮，記住千萬不要接近。燈罩夜菇會讓你睡著的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发光"
+      }
     },
     {
       "slug": "shinx",
@@ -130585,7 +132395,10 @@
           "languageCode": "zh-Hant",
           "text": "只要伸縮肌肉就能夠產生電流。身陷危機時體毛會發出刺眼的亮光。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "闪光"
+      }
     },
     {
       "slug": "shroodle",
@@ -130620,7 +132433,10 @@
           "languageCode": "zh-Hant",
           "text": "利用與小小身體格格不入的又長又大的門牙和毒唾液來抵禦敵人，保護自身安危。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒鼠"
+      }
     },
     {
       "slug": "shroomish",
@@ -130840,7 +132656,10 @@
           "languageCode": "zh-Hant",
           "text": "一察覺到危險，就會從頭頂散播出毒孢子來保護自身安全的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蘑菇"
+      }
     },
     {
       "slug": "shuckle",
@@ -131075,7 +132894,10 @@
           "languageCode": "zh-Hant",
           "text": "會把樹果儲存在甲殼裡。樹果最終會和體液融合成美味的果汁。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发酵"
+      }
     },
     {
       "slug": "shuppet",
@@ -131325,7 +133147,10 @@
           "languageCode": "zh-Hant",
           "text": "據說會用頭上的角吃掉怨恨和嫉妒的感情。在深夜時特別活躍。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "人偶"
+      }
     },
     {
       "slug": "sigilyph",
@@ -131425,7 +133250,10 @@
           "languageCode": "zh-Hant",
           "text": "人們在象徵鳥飛過的沙漠地下進行調查，結果在那裡發現了疑似古代都市的遺跡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "似鸟"
+      }
     },
     {
       "slug": "silcoon",
@@ -131615,7 +133443,10 @@
           "languageCode": "zh-Hant",
           "text": "以細絲包裹全身，積蓄進化所需的活力。雖然無手無腳且動作遲緩，但雙眼射出的凌厲視線不會放過四周的風吹草動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蛹"
+      }
     },
     {
       "slug": "silicobra",
@@ -131660,7 +133491,10 @@
           "languageCode": "zh-Hant",
           "text": "牠大大的鼻孔是專為噴射沙子而演變而成的，因此很不擅長分辨氣味。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "沙蛇"
+      }
     },
     {
       "slug": "silvally",
@@ -131725,7 +133559,10 @@
           "languageCode": "zh-Hant",
           "text": "與所信賴的訓練家之間的牽絆是解放牠真正力量的最後一個要素。（属性：一般）有著依所裝備的記憶碟改變自身屬性的能力。這是牠格鬥屬性的樣子。（属性：战斗）有著依所裝備的記憶碟改變自身屬性的能力。這是牠飛行屬性的樣子。（属性：飞翔）有著依所裝備的記憶碟改變自身屬性的能力。這是牠毒屬性的樣子。（属性：毒）有著依所裝備的記憶碟改變自身屬性的能力。這是牠地面屬性的樣子。（属性：大地）有著依所裝備的記憶碟改變自身屬性的能力。這是牠岩石屬性的樣子。（属性：岩石）有著依所裝備的記憶碟改變自身屬性的能力。這是牠蟲屬性的樣子。（属性：虫子）有著依所裝備的記憶碟改變自身屬性的能力。這是牠幽靈屬性的樣子。（属性：幽灵）有著依所裝備的記憶碟改變自身屬性的能力。這是牠鋼屬性的樣子。（属性：钢铁）有著依所裝備的記憶碟改變自身屬性的能力。這是牠火屬性的樣子。（属性：火焰）有著依所裝備的記憶碟改變自身屬性的能力。這是牠水屬性的樣子。（属性：清水）有著依所裝備的記憶碟改變自身屬性的能力。這是牠草屬性的樣子。（属性：青草）有著依所裝備的記憶碟改變自身屬性的能力。這是牠電屬性的樣子。（属性：电子）有著依所裝備的記憶碟改變自身屬性的能力。這是牠超能力屬性的樣子。（属性：精神）有著依所裝備的記憶碟改變自身屬性的能力。這是牠冰屬性的樣子。（属性：冰雪）有著依所裝備的記憶碟改變自身屬性的能力。這是牠龍屬性的樣子。（属性：龙）有著依所裝備的記憶碟改變自身屬性的能力。這是牠惡屬性的樣子。（属性：黑暗）有著依所裝備的記憶碟改變自身屬性的能力。這是牠妖精屬性的樣子。（属性：妖精）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "人工"
+      }
     },
     {
       "slug": "simipour",
@@ -131815,7 +133652,10 @@
           "languageCode": "zh-Hant",
           "text": "喜歡水質乾淨的地方。頭上儲存的水如果減少，就會從尾巴吸取水來補給。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "放水"
+      }
     },
     {
       "slug": "simisage",
@@ -131900,7 +133740,10 @@
           "languageCode": "zh-Hant",
           "text": "性情凶暴，會猛烈地揮舞帶刺的尾巴戰鬥。頭上的葉子非常苦。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "刺猴"
+      }
     },
     {
       "slug": "simisear",
@@ -131990,7 +133833,10 @@
           "languageCode": "zh-Hant",
           "text": "興奮的時候，頭部與尾巴就會變熱並飛出火花。不知為何最喜歡吃甜的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火花"
+      }
     },
     {
       "slug": "sinistcha",
@@ -132015,7 +133861,10 @@
           "languageCode": "zh-Hant",
           "text": "喜歡待在民宅的地板下或架子深處等陰涼的地方。日落後會四處徘徊尋找獵物。（凡作的样子）越是用頭部的茶筅攪拌，就越能累積起能量。這是牠面對戰鬥時的準備。（杰作的样子）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "抹茶"
+      }
     },
     {
       "slug": "sinistea",
@@ -132060,7 +133909,10 @@
           "languageCode": "zh-Hant",
           "text": "會趁著自己被喝掉時進到對方身體裡，從內部奪走其生物能量。喝起來很難喝。（赝品形态）住在古董茶杯裡的樣子。雖然十分貴重，但來悲茶並沒有因此變得比較好喝。（真品形态）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "红茶"
+      }
     },
     {
       "slug": "sirfetchd",
@@ -132095,7 +133947,10 @@
           "languageCode": "zh-Hant",
           "text": "傾注精力心血栽培出來的蔥，對蔥遊兵而言如同生命般重要。以華麗的蔥術在戰場上立下功績。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "黃嘴鴨"
+      }
     },
     {
       "slug": "sizzlipede",
@@ -132120,7 +133975,10 @@
           "languageCode": "zh-Hant",
           "text": "會用滾燙的身體勒緊獵物，等到烤得恰到好處之時，就把牠們大口大口地吃掉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "发热"
+      }
     },
     {
       "slug": "skarmory",
@@ -132450,7 +134308,10 @@
           "languageCode": "zh-Hant",
           "text": "溫柔的歌聲能療癒聽者的靈魂。會使用３０００度的火焰將敵人燒成灰燼。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "歌手"
+      }
     },
     {
       "slug": "skiddo",
@@ -132525,7 +134386,10 @@
           "languageCode": "zh-Hant",
           "text": "只要有水與陽光，就能以背上的葉子產生能量，即使不吃東西也沒問題。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "坐骑"
+      }
     },
     {
       "slug": "skiploom",
@@ -132775,7 +134639,10 @@
           "languageCode": "zh-Hant",
           "text": "天氣一變冷就會闔上花瓣。由於無法進行光合作用，因此會飛到溫暖的地區去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "棉草"
+      }
     },
     {
       "slug": "skitty",
@@ -132955,7 +134822,10 @@
           "languageCode": "zh-Hant",
           "text": "看見在動的東西會不由自主地追上去。會追著自己的尾巴，一圈圈地原地打轉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小猫"
+      }
     },
     {
       "slug": "skorupi",
@@ -133115,7 +134985,10 @@
           "languageCode": "zh-Hant",
           "text": "尾上鉗子不但銳利而且帶毒，毫無疑問是種危險的寶可夢。但對於寒冷似乎缺乏抵抗力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝎子"
+      }
     },
     {
       "slug": "skrelp",
@@ -133230,7 +135103,10 @@
           "languageCode": "zh-Hant",
           "text": "會擬態為腐爛海藻的樣子。對沒注意到而接近自己的獵物潑灑毒液來解決對方。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "似草"
+      }
     },
     {
       "slug": "skuntank",
@@ -133435,7 +135311,10 @@
           "languageCode": "zh-Hant",
           "text": "會從尾巴尖端噴出充滿臭味的液體進行攻擊。連發時臭味會減輕。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "臭鼬"
+      }
     },
     {
       "slug": "skwovet",
@@ -133480,7 +135359,10 @@
           "languageCode": "zh-Hant",
           "text": "不管吃得再怎麼飽，都還是因為會擔心肚子餓，而往頰囊和尾巴裡儲藏樹果。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "贪吃"
+      }
     },
     {
       "slug": "slaking",
@@ -133700,7 +135582,10 @@
           "languageCode": "zh-Hant",
           "text": "平常都是躺著生活。會等到周圍的草都吃光後，才會翻身移動到別處。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "怕麻烦"
+      }
     },
     {
       "slug": "slakoth",
@@ -133920,7 +135805,10 @@
           "languageCode": "zh-Hant",
           "text": "懶人獺慵懶的樣子會深深地刺激看著牠的人的懶惰之心。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "懒人"
+      }
     },
     {
       "slug": "sliggoo",
@@ -134085,7 +135973,10 @@
           "languageCode": "zh-Hant",
           "text": "與可疑的雜誌介紹的火神蛾太古時代的樣子長得有點像的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "slowbro",
@@ -135370,7 +137261,10 @@
           "languageCode": "zh-Hant",
           "text": "聽說在火山活動頻繁的太古時代，世界上生活著比現在更多的熔岩蟲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "熔岩"
+      }
     },
     {
       "slug": "slurpuff",
@@ -135445,7 +137339,10 @@
           "languageCode": "zh-Hant",
           "text": "善用能辨別細微氣味的敏銳嗅覺，幫忙分擔甜點師傅的工作。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "泡沫奶油"
+      }
     },
     {
       "slug": "smeargle",
@@ -135725,7 +137622,10 @@
           "languageCode": "zh-Hant",
           "text": "每隻圖圖犬從尾巴尖端分泌出的神秘液體，都有自己固定的顏色。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "画画"
+      }
     },
     {
       "slug": "smoliv",
@@ -135750,7 +137650,10 @@
           "languageCode": "zh-Hant",
           "text": "會把營養轉換成油，儲存在頭部的果實裡。１個星期不吃不喝也無所謂。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "橄榄"
+      }
     },
     {
       "slug": "smoochum",
@@ -136005,7 +137908,10 @@
           "languageCode": "zh-Hant",
           "text": "不管遇到什麼都會試著用嘴唇去觸碰確認。會用嘴唇記住自己喜歡和討厭的東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "亲吻"
+      }
     },
     {
       "slug": "sneasel",
@@ -136320,7 +138226,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有凌駕其他物種之上的身體能力以及劇毒。在寒冷的高地上所向無敵。偏好獨自行動，而不會集結成群。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "攀崖"
+      }
     },
     {
       "slug": "snivy",
@@ -136425,7 +138334,10 @@
           "languageCode": "zh-Hant",
           "text": "生性不愛群體行動。在生活中會靈巧操縱藤蔓來代替短短的手臂。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "草蛇"
+      }
     },
     {
       "slug": "snom",
@@ -136470,7 +138382,10 @@
           "languageCode": "zh-Hant",
           "text": "會吃掉雪來獲得寒氣，並利用體內的器官使其變得更加冰冷，好讓牠能做出如冰柱般的尖刺。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虫宝宝"
+      }
     },
     {
       "slug": "snorlax",
@@ -137120,7 +139035,10 @@
           "languageCode": "zh-Hant",
           "text": "在雪國有著這樣的傳說，雪童子所居住的人家會變得富有。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "雪笠"
+      }
     },
     {
       "slug": "snover",
@@ -137335,7 +139253,10 @@
           "languageCode": "zh-Hant",
           "text": "一到春天，腹部周圍就會長出口感像冰棒的樹果。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "树冰"
+      }
     },
     {
       "slug": "snubbull",
@@ -137615,7 +139536,10 @@
           "languageCode": "zh-Hant",
           "text": "發出的低吼聲讓對手不安。平時是很悠閒的傢伙，１天中有一半時間都在睡覺。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "妖精"
+      }
     },
     {
       "slug": "sobble",
@@ -137660,7 +139584,10 @@
           "languageCode": "zh-Hant",
           "text": "警戒心十分強，遇到無論如何都得戰鬥時，會先讓身影消失再發動攻擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水蜥"
+      }
     },
     {
       "slug": "solgaleo",
@@ -137845,7 +139772,10 @@
           "languageCode": "zh-Hant",
           "text": "放出精神力量以擊退來襲的敵人。會用心靈感應與夥伴交談。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "细胞"
+      }
     },
     {
       "slug": "solrock",
@@ -138065,7 +139995,10 @@
           "languageCode": "zh-Hant",
           "text": "有傳言說牠是太陽分身的新品種寶可夢。會旋轉身體發出光芒。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "陨石"
+      }
     },
     {
       "slug": "spearow",
@@ -138385,7 +140318,10 @@
           "languageCode": "zh-Hant",
           "text": "會忙碌地拍動牠小小的翅膀來飛行，用鳥嘴來找出在草叢裡的獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小鸟"
+      }
     },
     {
       "slug": "spectrier",
@@ -138410,7 +140346,10 @@
           "languageCode": "zh-Hant",
           "text": "在漆黑的夜裡奔馳，吸取正在睡覺的生物的生命能量。喜愛孤獨與寂靜。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "骏马"
+      }
     },
     {
       "slug": "spewpa",
@@ -138485,7 +140424,10 @@
           "languageCode": "zh-Hant",
           "text": "躲在繁茂草木的陰影下生活。受到襲擊時，就會將體毛尖尖豎起威嚇敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "喷粉"
+      }
     },
     {
       "slug": "spheal",
@@ -138705,7 +140647,10 @@
           "languageCode": "zh-Hant",
           "text": "在流冰靠岸的季節裡，比起陸地更喜歡生活在天敵較少的冰上。體毛的保溫效果極佳，能耐酷寒。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "拍手"
+      }
     },
     {
       "slug": "spidops",
@@ -138730,7 +140675,10 @@
           "languageCode": "zh-Hant",
           "text": "會在自己的地盤裡布下既堅固又黏答答的絲線，作為捕捉入侵者的陷阱。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "陷阱"
+      }
     },
     {
       "slug": "spinarak",
@@ -139035,7 +140983,10 @@
           "languageCode": "zh-Hant",
           "text": "會用又細又結實的絲線佈下陷阱，然後靜靜等待獵物落網。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "吐丝"
+      }
     },
     {
       "slug": "spinda",
@@ -139265,7 +141216,10 @@
           "languageCode": "zh-Hant",
           "text": "沒有任何晃晃斑的斑點是相同的。會用飄搖不定的步伐來避開對手的瞄準。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "斑点熊猫"
+      }
     },
     {
       "slug": "spiritomb",
@@ -139470,7 +141424,10 @@
           "languageCode": "zh-Hant",
           "text": "由１０８個靈魂構成。為了防止自己再度作惡，而被綁縛到了楔石上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "封印"
+      }
     },
     {
       "slug": "spoink",
@@ -139690,7 +141647,10 @@
           "languageCode": "zh-Hant",
           "text": "會用尾巴代替彈簧，一直不斷跳來跳去，靠跳躍時的震動來使心臟跳動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "弹跳"
+      }
     },
     {
       "slug": "sprigatito",
@@ -139715,7 +141675,10 @@
           "languageCode": "zh-Hant",
           "text": "會用身體發出甜甜香氣，讓周圍的一切為之傾倒。照到陽光後香氣會變得更濃郁。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "草猫"
+      }
     },
     {
       "slug": "spritzee",
@@ -139790,7 +141753,10 @@
           "languageCode": "zh-Hant",
           "text": "據說以前的貴婦們會帶著散發自己喜歡的香氣的粉香香來代替香水。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "香水"
+      }
     },
     {
       "slug": "squawkabilly",
@@ -140180,7 +142146,10 @@
           "languageCode": "zh-Hant",
           "text": "會躲進甲殼裡保護自己。從不放過對手的破綻，會抓準時機用噴水來反擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小龟"
+      }
     },
     {
       "slug": "stakataka",
@@ -140205,7 +142174,10 @@
           "languageCode": "zh-Hant",
           "text": "疑似究極異獸的神秘生命體。突然動起來展開襲擊的石牆，它的真面目就是這個傢伙。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "石墙"
+      }
     },
     {
       "slug": "stantler",
@@ -140450,7 +142422,10 @@
           "languageCode": "zh-Hant",
           "text": "據說過去外敵眾多，實力比現在來得強，甚至還靠著自己的力量進化過。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大角"
+      }
     },
     {
       "slug": "staraptor",
@@ -140840,7 +142815,10 @@
           "languageCode": "zh-Hant",
           "text": "棲息在森林和草原。如果遇上同類的團隊，就會開始爭奪地盤。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "椋鸟"
+      }
     },
     {
       "slug": "starly",
@@ -141035,7 +143013,10 @@
           "languageCode": "zh-Hant",
           "text": "會多隻一起群體行動。雖然身體很小，但拍打翅膀的力量非常強。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "椋鸟"
+      }
     },
     {
       "slug": "starmie",
@@ -141700,7 +143681,10 @@
           "languageCode": "zh-Hant",
           "text": "只要身體中央發光的核心部分還在，就算身體被切碎也可以再生。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "星形"
+      }
     },
     {
       "slug": "steelix",
@@ -142015,7 +143999,10 @@
           "languageCode": "zh-Hant",
           "text": "會活力滿滿地在森林裡蹦蹦跳跳。剝落的皮可經由磨碎變成治療肚子痛的藥。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水果"
+      }
     },
     {
       "slug": "stonjourner",
@@ -142060,7 +144047,10 @@
           "languageCode": "zh-Hant",
           "text": "每天眺望著日升日落。會用超過２００公斤的雙腳悠然自得地闊步在草原上。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "巨石"
+      }
     },
     {
       "slug": "stoutland",
@@ -142200,7 +144190,10 @@
           "languageCode": "zh-Hant",
           "text": "以氣派的鬍鬚為傲的寶可夢。據說在夥伴之間的階級地位就取決於鬍鬚的長度。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "宽大"
+      }
     },
     {
       "slug": "stufful",
@@ -142265,7 +144258,10 @@
           "languageCode": "zh-Hant",
           "text": "為了保護自己的身體而胡亂揮舞前腳的樣子雖然可愛，威力卻大到能將大樹折斷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "抓狂"
+      }
     },
     {
       "slug": "stunfisk",
@@ -142575,7 +144571,10 @@
           "languageCode": "zh-Hant",
           "text": "從屁股噴出的液體臭到連２公里外的人都會覺得不舒服。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "臭鼬"
+      }
     },
     {
       "slug": "sudowoodo",
@@ -142895,7 +144894,10 @@
           "languageCode": "zh-Hant",
           "text": "為了不讓自己受到攻擊，而不停模仿著樹的樣子，但因為很怕水，所以一下起雨就會逃得無影無蹤。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "模仿"
+      }
     },
     {
       "slug": "suicune",
@@ -143110,7 +145112,10 @@
           "languageCode": "zh-Hant",
           "text": "在全世界四處奔馳，讓污水重回清澈。會隨著北風飛奔而去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "极光"
+      }
     },
     {
       "slug": "sunflora",
@@ -143350,7 +145355,10 @@
           "languageCode": "zh-Hant",
           "text": "由於會將沐浴到的陽光轉換成能量，因此白天總是一直面向著太陽。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "太阳"
+      }
     },
     {
       "slug": "sunkern",
@@ -143605,7 +145613,10 @@
           "languageCode": "zh-Hant",
           "text": "十分弱小。即使遭到攻擊，也只能勉勉強強地靠著拼命揮舞葉子來趕走敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "种子"
+      }
     },
     {
       "slug": "surskit",
@@ -143865,7 +145876,10 @@
           "languageCode": "zh-Hant",
           "text": "從頭頂分泌出的液體有著如同麥芽糖般的甜味。住在有大量水草的池塘裡。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水黾"
+      }
     },
     {
       "slug": "swablu",
@@ -144105,7 +146119,10 @@
           "languageCode": "zh-Hant",
           "text": "不知道為什麼，牠最喜歡輕輕地站在人類頭上並裝成帽子的樣子。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "绵鸟"
+      }
     },
     {
       "slug": "swadloon",
@@ -144200,7 +146217,10 @@
           "languageCode": "zh-Hant",
           "text": "用葉子包裹身體來保護自己。能透過頭部的葉子捕捉空氣的流動，探測四周的狀況。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "足不出叶"
+      }
     },
     {
       "slug": "swalot",
@@ -144430,7 +146450,10 @@
           "languageCode": "zh-Hant",
           "text": "不管是什麼都會整個吞掉。會將毛孔中分泌出的劇毒體液灑向敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒袋"
+      }
     },
     {
       "slug": "swampert",
@@ -144760,7 +146783,10 @@
           "languageCode": "zh-Hant",
           "text": "據說許多藝術家都是從牠在晨曦暮色的微光中舞出的優美舞蹈獲得過靈感。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "白鸟"
+      }
     },
     {
       "slug": "swellow",
@@ -144960,7 +146986,10 @@
           "languageCode": "zh-Hant",
           "text": "會盤旋於高空尋找獵物，發現目標後會倒轉身體俯衝而下將其捕獲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "燕子"
+      }
     },
     {
       "slug": "swinub",
@@ -145230,7 +147259,10 @@
           "languageCode": "zh-Hant",
           "text": "會用鼻子前端摩擦地面一邊挖地一邊覓食。偶爾會挖到溫泉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小猪"
+      }
     },
     {
       "slug": "swirlix",
@@ -145305,7 +147337,10 @@
           "languageCode": "zh-Hant",
           "text": "放出棉花糖般又甜又黏的白絲纏繞對手，藉此封住對手的行動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "棉花糖"
+      }
     },
     {
       "slug": "swoobat",
@@ -145405,7 +147440,10 @@
           "languageCode": "zh-Hant",
           "text": "據說有些地區的人覺得牠鼻子的形狀很吉利，而把牠當成幸福的象徵來祭拜。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "求爱"
+      }
     },
     {
       "slug": "sylveon",
@@ -145550,7 +147588,10 @@
           "languageCode": "zh-Hant",
           "text": "用緞帶般的觸角挽著最喜歡的訓練家的手臂，一起行動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "连结"
+      }
     },
     {
       "slug": "tadbulb",
@@ -145575,7 +147616,10 @@
           "languageCode": "zh-Hant",
           "text": "會用蓄積在體內的電力浮在空中。出現雷雲時則能浮得比平時還要高。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电蝌蚪"
+      }
     },
     {
       "slug": "taillow",
@@ -145765,7 +147809,10 @@
           "languageCode": "zh-Hant",
           "text": "有著不管面對多麼強大的對手都敢於迎戰的骨氣。會向著溫暖的地帶飛行。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幼燕"
+      }
     },
     {
       "slug": "talonflame",
@@ -145900,7 +147947,10 @@
           "languageCode": "zh-Hant",
           "text": "因激烈的戰鬥感到興奮時，會從全身的羽毛間隙噴出火花飛行。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "烈火"
+      }
     },
     {
       "slug": "tandemaus",
@@ -145925,7 +147975,10 @@
           "languageCode": "zh-Hant",
           "text": "無論何時２隻都待在一起。會把尋獲的食物均分成兩半，親密無間地一同進食。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "成对"
+      }
     },
     {
       "slug": "tangela",
@@ -146205,7 +148258,10 @@
           "languageCode": "zh-Hant",
           "text": "全身覆蓋著藍色藤蔓，難以窺見其真身。此藤蔓入口清涼，可作為辛香料使用。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "藤蔓状"
+      }
     },
     {
       "slug": "tangrowth",
@@ -146360,7 +148416,10 @@
           "languageCode": "zh-Hant",
           "text": "全身纏滿長長藤蔓的模樣看起來就如一叢雜草。能將束起的藤蔓像手臂般自在揮舞，用以捲住獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "藤蔓状"
+      }
     },
     {
       "slug": "tapu-bulu",
@@ -146405,7 +148464,10 @@
           "languageCode": "zh-Hant",
           "text": "會搖響尾巴告知周圍自己的位置，藉此避免不必要的鬥爭。是操縱草木的烏拉烏拉守護神。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "土地神"
+      }
     },
     {
       "slug": "tapu-fini",
@@ -146450,7 +148512,10 @@
           "languageCode": "zh-Hant",
           "text": "被稱為守護神，但有時會對隨便靠近自己的對手帶來恐怖的災難。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "土地神"
+      }
     },
     {
       "slug": "tapu-koko",
@@ -146495,7 +148560,10 @@
           "languageCode": "zh-Hant",
           "text": "操縱雷電，是美樂美樂的守護神。有著旺盛的好奇心，會不時在人們面前現身。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "土地神"
+      }
     },
     {
       "slug": "tapu-lele",
@@ -146535,7 +148603,10 @@
           "languageCode": "zh-Hant",
           "text": "被稱為守護神，卻同時有著天真無邪與殘酷的性格，可說是大自然的化身。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "土地神"
+      }
     },
     {
       "slug": "tarountula",
@@ -146560,7 +148631,10 @@
           "languageCode": "zh-Hant",
           "text": "從臀部射出的絲線，強度足以與金屬絲匹敵。強度的秘密仍在研究中。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "线球"
+      }
     },
     {
       "slug": "tatsugiri",
@@ -147245,7 +149319,10 @@
           "languageCode": "zh-Hant",
           "text": "手掌裡滲入了滿滿的蜜糖。感到不安時只要舔舔手掌，就會笑逐顏開。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小熊"
+      }
     },
     {
       "slug": "tentacool",
@@ -147605,7 +149682,10 @@
           "languageCode": "zh-Hant",
           "text": "會從透澈如水晶的眼珠裡發射帶有奇異光芒的光束。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水母"
+      }
     },
     {
       "slug": "tentacruel",
@@ -147965,7 +150045,10 @@
           "languageCode": "zh-Hant",
           "text": "戰鬥時會將身上的８０根觸手全都伸出，做成帶毒的包圍網。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水母"
+      }
     },
     {
       "slug": "tepig",
@@ -148075,7 +150158,10 @@
           "languageCode": "zh-Hant",
           "text": "可以輕盈地閃避敵人的攻擊，並從鼻子射出火球。會用火焰烤樹果來吃。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火猪"
+      }
     },
     {
       "slug": "terapagos",
@@ -148210,7 +150296,10 @@
           "languageCode": "zh-Hant",
           "text": "有著能一舉衝破巨大城牆的衝撞力。是傳說裡描述的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "岩窟"
+      }
     },
     {
       "slug": "thievul",
@@ -148245,7 +150334,10 @@
           "languageCode": "zh-Hant",
           "text": "會在獵物身上沾染自己的氣味作為標記。擁有追蹤氣味找出對方巢穴的智慧。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "狐狸"
+      }
     },
     {
       "slug": "throh",
@@ -148355,7 +150447,10 @@
           "languageCode": "zh-Hant",
           "text": "５隻一組一起努力練習。在練習中掉隊的投摔鬼會扔掉帶子離開團隊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "柔道"
+      }
     },
     {
       "slug": "thundurus",
@@ -148490,7 +150585,10 @@
           "languageCode": "zh-Hant",
           "text": "在敲打著激烈的節拍時，有時會因為過於忘我而不聽訓練家的指示。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "节拍"
+      }
     },
     {
       "slug": "timburr",
@@ -148615,7 +150713,10 @@
           "languageCode": "zh-Hant",
           "text": "會亂揮木材來戰鬥。如果可以不費勁地搬起沉重的木材，就代表牠即將要進化了。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "筋骨"
+      }
     },
     {
       "slug": "ting-lu",
@@ -148640,7 +150741,10 @@
           "languageCode": "zh-Hant",
           "text": "當牠緩緩揮下自己笨重的頭部時，會造成地面出現深度達５０公尺的巨大裂縫。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "灾厄"
+      }
     },
     {
       "slug": "tinkatink",
@@ -148675,7 +150779,10 @@
           "languageCode": "zh-Hant",
           "text": "會把在礦山找到的金屬碎片和道具組合起來，為自己打造合用的錘子。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "锤炼"
+      }
     },
     {
       "slug": "tinkaton",
@@ -148710,7 +150817,10 @@
           "languageCode": "zh-Hant",
           "text": "率領群體的巨鍛匠會教導群體中的小鍛匠，如何將金屬敲打成形的技術。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "锤子"
+      }
     },
     {
       "slug": "tinkatuff",
@@ -148745,7 +150855,10 @@
           "languageCode": "zh-Hant",
           "text": "有時會為了收集金屬而來到人類居住的地方，在工廠或倉庫物色東西。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "锤子"
+      }
     },
     {
       "slug": "tirtouga",
@@ -148880,7 +150993,10 @@
           "languageCode": "zh-Hant",
           "text": "從化石復原的寶可夢。被認為是許多的龜寶可夢的祖先。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "古代龟"
+      }
     },
     {
       "slug": "toedscool",
@@ -148905,7 +151021,10 @@
           "languageCode": "zh-Hant",
           "text": "看起來像瑪瑙水母，其實是截然不同的種類。雖然腳很細，但跑起來能達到時速５０公里。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "木耳"
+      }
     },
     {
       "slug": "toedscruel",
@@ -148930,7 +151049,10 @@
           "languageCode": "zh-Hant",
           "text": "會用自己的１０根觸手纏住敵人，並吸取養分來折磨對方。下擺的摺皺是很受歡迎的珍味佳餚。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "木耳"
+      }
     },
     {
       "slug": "togedemaru",
@@ -148990,7 +151112,10 @@
           "languageCode": "zh-Hant",
           "text": "在危急時刻會把身體捲成一團、倒豎起背上的尖刺，不分青紅皂白地發出電擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜷缩"
+      }
     },
     {
       "slug": "togekiss",
@@ -149175,7 +151300,10 @@
           "languageCode": "zh-Hant",
           "text": "目擊案例極為稀少。從留存至今的文獻記載可知，此寶可夢無疑只會在天下太平之時現身於人前。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "祝福"
+      }
     },
     {
       "slug": "togepi",
@@ -149415,7 +151543,10 @@
           "languageCode": "zh-Hant",
           "text": "外觀好似一顆蛋，常讓在野外遇見牠的人誤會蛋自己會動。純真的笑容有療癒人心的功效。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "针球"
+      }
     },
     {
       "slug": "togetic",
@@ -149650,7 +151781,10 @@
           "languageCode": "zh-Hant",
           "text": "至今尚無在野外遇見牠的紀錄。據說若有人能知其心意並加以庇護，牠便會改變形貌並為此人帶來福報。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幸福"
+      }
     },
     {
       "slug": "torchic",
@@ -149880,7 +152014,10 @@
           "languageCode": "zh-Hant",
           "text": "因為體內燃燒著火焰，所以抱在懷裡非常溫暖。能噴出１０００度的火球。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "雏鸡"
+      }
     },
     {
       "slug": "torkoal",
@@ -150160,7 +152297,10 @@
           "languageCode": "zh-Hant",
           "text": "煤炭是牠的能量來源。在煤炭龜棲息著的山裡，沉睡著大量的煤炭。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "煤炭"
+      }
     },
     {
       "slug": "tornadus",
@@ -150330,7 +152470,10 @@
           "languageCode": "zh-Hant",
           "text": "變得親近後也會對訓練家撒嬌。但因為力氣很大，爪子又很銳利，訓練家會被弄得全身是傷。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "火猫"
+      }
     },
     {
       "slug": "torterra",
@@ -150515,7 +152658,10 @@
           "languageCode": "zh-Hant",
           "text": "有些寶可夢會在土台龜背上出生，並在此度過一生。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大陆"
+      }
     },
     {
       "slug": "totodile",
@@ -150780,7 +152926,10 @@
           "languageCode": "zh-Hant",
           "text": "個子雖小但是個性粗暴。只要眼前有東西在動，就會先上去咬一口再說。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大颚"
+      }
     },
     {
       "slug": "toucannon",
@@ -150840,7 +152989,10 @@
           "languageCode": "zh-Hant",
           "text": "成對的銃嘴大鳥會提高鳥嘴的溫度來互相取暖，因此被視為是感情融洽的象徵。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "铳炮"
+      }
     },
     {
       "slug": "toxapex",
@@ -150925,7 +153077,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然會為了爭奪暖流的流入處，與磨牙彩皮魚展開激戰，但勝算不高。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "非星"
+      }
     },
     {
       "slug": "toxel",
@@ -150980,7 +153135,10 @@
           "languageCode": "zh-Hant",
           "text": "透過讓自身的毒素產生化學反應來發電。電力雖然弱，卻能造成麻痺。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "婴儿"
+      }
     },
     {
       "slug": "toxicroak",
@@ -151175,7 +153333,10 @@
           "languageCode": "zh-Hant",
           "text": "喉嚨處有著毒囊。從喉嚨發出鳴叫時，積存的毒素就會被煉製得更加強勁。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒击"
+      }
     },
     {
       "slug": "toxtricity",
@@ -151330,7 +153491,10 @@
           "languageCode": "zh-Hant",
           "text": "頭腦聰明且記性很好。似乎有許多快遞員將牠選為自己的搭檔。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "野鸽"
+      }
     },
     {
       "slug": "trapinch",
@@ -151610,7 +153774,10 @@
           "languageCode": "zh-Hant",
           "text": "一邊用大大的顎把礙事的岩石咬碎，一邊挖沙子。巢穴的形狀就像研磨缽一樣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蚁狮"
+      }
     },
     {
       "slug": "treecko",
@@ -151840,7 +154007,10 @@
           "languageCode": "zh-Hant",
           "text": "在垂直的牆壁上也能輕快地攀爬。會用尾巴感知濕度，以此來判斷明天的天氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "林蜥"
+      }
     },
     {
       "slug": "trevenant",
@@ -151975,7 +154145,10 @@
           "languageCode": "zh-Hant",
           "text": "以樹根代替神經，操縱森林裡的樹木。對住在自己身上的寶可夢十分親切。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "老树"
+      }
     },
     {
       "slug": "tropius",
@@ -152215,7 +154388,10 @@
           "languageCode": "zh-Hant",
           "text": "因為平時不斷吃著同種水果，以至於自己的喉嚨上結出了極為美味的水果來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水果"
+      }
     },
     {
       "slug": "trubbish",
@@ -152360,7 +154536,17 @@
           "languageCode": "zh-Hant",
           "text": "垃圾袋與工業廢棄物起了化學變化，因而誕生出的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "垃圾袋"
+      }
+    },
+    {
+      "slug": "trumbeak",
+      "descriptions": [],
+      "genus": {
+        "zh-Hans": "喇叭喙"
+      }
     },
     {
       "slug": "tsareena",
@@ -152445,7 +154631,10 @@
           "languageCode": "zh-Hant",
           "text": "會用苗條的雙腿使出優雅而猛烈的踢技招呼對手。對狂歡浪舞鴨採敵視的態度。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "水果"
+      }
     },
     {
       "slug": "turtonator",
@@ -152510,7 +154699,10 @@
           "languageCode": "zh-Hant",
           "text": "在火山上生活，吃下的硫磺就是甲殼上炸藥的原料。連糞便也會爆炸，十分危險。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "爆炸龟"
+      }
     },
     {
       "slug": "turtwig",
@@ -152695,7 +154887,10 @@
           "languageCode": "zh-Hant",
           "text": "沐浴著陽光，用全身進行光合作用。甲殼是泥土變硬後形成的。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "嫩叶"
+      }
     },
     {
       "slug": "tympole",
@@ -152795,7 +154990,10 @@
           "languageCode": "zh-Hant",
           "text": "透過音波來聯繫夥伴。人類和其他寶可夢都聽不見牠發出的警告聲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝌蚪"
+      }
     },
     {
       "slug": "tynamo",
@@ -152910,7 +155108,10 @@
           "languageCode": "zh-Hant",
           "text": "由於只能放出微弱的電，所以會由許多麻麻小魚聚集起來，放出強大的電流。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "电鱼"
+      }
     },
     {
       "slug": "type-null",
@@ -152975,7 +155176,10 @@
           "languageCode": "zh-Hant",
           "text": "以神話中的寶可夢為原型所創造出的寶可夢，被戴上了抑制力量失控的面罩。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "人工"
+      }
     },
     {
       "slug": "typhlosion",
@@ -153635,7 +155839,10 @@
           "languageCode": "zh-Hant",
           "text": "在１億年前的世界裡所向無敵。如王者般君臨大地的寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "暴君"
+      }
     },
     {
       "slug": "tyrogue",
@@ -153910,7 +156117,10 @@
           "languageCode": "zh-Hant",
           "text": "想讓自己變得更強更壯，因此一昧地猛鍛鍊身體，逢見任何對手都會發起對戰。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "打斗"
+      }
     },
     {
       "slug": "tyrunt",
@@ -154005,7 +156215,10 @@
           "languageCode": "zh-Hant",
           "text": "從化石裡復活的寶可夢。遇到不高興的事就會神經過敏地大鬧一番。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "幼君"
+      }
     },
     {
       "slug": "umbreon",
@@ -154325,7 +156538,10 @@
           "languageCode": "zh-Hant",
           "text": "月光改變了伊布的基因。會潛伏在黑暗中等待獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "月光"
+      }
     },
     {
       "slug": "unfezant",
@@ -154620,7 +156836,10 @@
           "languageCode": "zh-Hant",
           "text": "奇形怪狀不似生物，且個體之間形狀各異，吾人指出其身姿與異國文字的共通性，但未獲重視。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "象征"
+      }
     },
     {
       "slug": "ursaluna",
@@ -154905,7 +157124,10 @@
           "languageCode": "zh-Hant",
           "text": "擅長爬樹。在樹上尋找樹果時如果撞見火爆猴，就會免不了一場糾紛。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冬眠"
+      }
     },
     {
       "slug": "urshifu",
@@ -155060,7 +157282,10 @@
           "languageCode": "zh-Hant",
           "text": "會奪去惡人的記憶，因而受到人們敬畏的寶可夢。吾人曾發現提及此寶可夢司掌知識的紀錄。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "知识"
+      }
     },
     {
       "slug": "vanillish",
@@ -155210,7 +157435,10 @@
           "languageCode": "zh-Hant",
           "text": "冷卻周圍的空氣並形成冰粒，凍結敵人的身體。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "冰雪"
+      }
     },
     {
       "slug": "vanillite",
@@ -155355,7 +157583,10 @@
           "languageCode": "zh-Hant",
           "text": "吐出零下５０度的氣息。會做出雪的結晶，使周圍下雪。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "新雪"
+      }
     },
     {
       "slug": "vanilluxe",
@@ -155505,7 +157736,10 @@
           "languageCode": "zh-Hant",
           "text": "當２顆頭同時生氣時，就會從角噴出猛烈的暴風雪。讓四周被大雪掩埋。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "暴风雪"
+      }
     },
     {
       "slug": "vaporeon",
@@ -155900,7 +158134,10 @@
           "languageCode": "zh-Hant",
           "text": "進化成了適應水中生活的身體。當牠與水融為一體時將無法看見牠的身影。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "吐泡"
+      }
     },
     {
       "slug": "varoom",
@@ -155925,7 +158162,10 @@
           "languageCode": "zh-Hant",
           "text": "鋼鐵身軀才是本體。會貼在岩石上將其成分轉換成活動用的能量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "单汽缸"
+      }
     },
     {
       "slug": "veluza",
@@ -155950,7 +158190,10 @@
           "languageCode": "zh-Hant",
           "text": "擁有強大的再生能力。會丟棄身上的贅肉讓自己變得輕盈後突擊獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "卸除"
+      }
     },
     {
       "slug": "venipede",
@@ -156055,7 +158298,10 @@
           "languageCode": "zh-Hant",
           "text": "會咬住對手後注入劇毒。即使是天敵的大型鳥寶可夢，也會身體麻痺，動彈不得。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜈蚣"
+      }
     },
     {
       "slug": "venomoth",
@@ -156365,7 +158611,10 @@
           "languageCode": "zh-Hant",
           "text": "會激烈地拍動大大的翅膀以及散播毒粉來發動攻擊。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毒蛾"
+      }
     },
     {
       "slug": "venonat",
@@ -156675,7 +158924,10 @@
           "languageCode": "zh-Hant",
           "text": "眼睛會發揮雷達的作用，使牠在黑暗中也能活動。會從眼睛發射出光束。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "昆虫"
+      }
     },
     {
       "slug": "venusaur",
@@ -157225,7 +159477,10 @@
           "languageCode": "zh-Hant",
           "text": "平時都在身體的洞裡養育孩子。會分泌出控制三蜜蜂的費洛蒙。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蜂巢"
+      }
     },
     {
       "slug": "vibrava",
@@ -157495,7 +159750,10 @@
           "languageCode": "zh-Hant",
           "text": "會劇烈地振動翅膀來產生超音波。能用消化液來溶解昏迷的獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "震动"
+      }
     },
     {
       "slug": "victini",
@@ -157575,7 +159833,10 @@
           "languageCode": "zh-Hant",
           "text": "如果分享到比克提尼產出的無限能量，全身就會充滿力量。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "胜利"
+      }
     },
     {
       "slug": "victreebel",
@@ -158130,7 +160391,10 @@
           "languageCode": "zh-Hant",
           "text": "由於無時無刻都在大鬧，肚子馬上就會覺得餓，但牠卻連吃飯時也靜不下來。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "暴猿"
+      }
     },
     {
       "slug": "vikavolt",
@@ -158215,7 +160479,10 @@
           "languageCode": "zh-Hant",
           "text": "會抱住蟲電寶獲取電能，然後從自己的大顎連續發射強力的電磁光束。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "锹形虫"
+      }
     },
     {
       "slug": "vileplume",
@@ -158560,7 +160827,10 @@
           "languageCode": "zh-Hant",
           "text": "會從那全世界最大的花瓣瘋狂地散播能引起過敏反應的花粉。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "花"
+      }
     },
     {
       "slug": "virizion",
@@ -158670,7 +160940,10 @@
           "languageCode": "zh-Hant",
           "text": "以敏捷的身手像旋風一般將敵人玩弄於股掌之中，會用鋒利的角毫不留情地斬斷對手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "草原"
+      }
     },
     {
       "slug": "vivillon",
@@ -158745,7 +161018,10 @@
           "languageCode": "zh-Hant",
           "text": "身上的花紋會受到誕生地的氣候和風土影響而改變。在極為寒冷的地方能見到這種樣子。（冰雪花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在降雪量多的地方能見到這種樣子。（雪国花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在氣候嚴寒的地方能見到這種樣子。（雪原花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在遼闊無邊的地方能見到這種樣子。（大陆花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在綠意盎然的地方能見到這種樣子。（庭园花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在四季分明的地方能見到這種樣子。（高雅花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在百花盛開的地方能見到這種樣子。（花园花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在日照強烈的地方能見到這種樣子。（摩登花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在海風吹拂的地方能見到這種樣子。（大海花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在島嶼群集的地方能見到這種樣子。（群岛花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在很少下雨的地方能見到這種樣子。（荒野花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在極為乾旱的地方能見到這種樣子。（沙尘花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在大河流過的地方能見到這種樣子。（大河花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在雨勢激烈的地方能見到這種樣子。（骤雨花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在熱帶氣候的地方能見到這種樣子。（热带草原花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在光線滿盈的地方能見到這種樣子。（太阳花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在四季如夏的地方能見到這種樣子。（大洋花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在熱帶雨林能見到這種樣子。（热带雨林花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在神奇的地方能見到這種樣子。（幻彩花纹）身上的花紋會受到誕生地的氣候和風土影響而改變。在特別的地方能見到這種樣子。（球球花纹）"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "鳞粉"
+      }
     },
     {
       "slug": "volbeat",
@@ -158965,7 +161241,10 @@
           "languageCode": "zh-Hant",
           "text": "會閃爍臀部的光芒來與夥伴交流。最喜歡甜甜螢放出的甜甜香氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "萤火虫"
+      }
     },
     {
       "slug": "volcanion",
@@ -159020,7 +161299,10 @@
           "languageCode": "zh-Hant",
           "text": "從背上的手臂噴出體內的水蒸氣。有著將整座山轟飛的威力。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蒸汽"
+      }
     },
     {
       "slug": "volcarona",
@@ -159155,7 +161437,10 @@
           "languageCode": "zh-Hant",
           "text": "會朝四周灑出火焰鱗粉。最危險的不是高溫，而是會耗盡周圍的氧氣。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "太阳"
+      }
     },
     {
       "slug": "voltorb",
@@ -159635,7 +161920,10 @@
           "languageCode": "zh-Hant",
           "text": "正處於食慾旺盛的發育期。為了配合身體的成長，會多次更換所穿的骨頭。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "尿布"
+      }
     },
     {
       "slug": "vulpix",
@@ -160285,7 +162573,10 @@
           "languageCode": "zh-Hant",
           "text": "天氣晴朗時會游上沙灘，像球一樣彈跳著玩耍。會用鼻子讓水噴湧而出。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "球鲸"
+      }
     },
     {
       "slug": "wailord",
@@ -160525,7 +162816,10 @@
           "languageCode": "zh-Hant",
           "text": "最大的寶可夢。不必換氣就能下潛到３０００公尺的深度。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "浮鲸"
+      }
     },
     {
       "slug": "walking-wake",
@@ -160550,7 +162844,10 @@
           "languageCode": "zh-Hant",
           "text": "樣子與超自然雜誌所刊登的插圖中的超古代水君很相似。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "悖谬"
+      }
     },
     {
       "slug": "walrein",
@@ -160760,7 +163057,10 @@
           "languageCode": "zh-Hant",
           "text": "粗大的獠牙雖有足以咬碎流冰的強度，但有時仍會折斷。獠牙折斷後會在隔年重新長回，斷掉的獠牙則成了洗翠名產。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "破冰"
+      }
     },
     {
       "slug": "wartortle",
@@ -161105,7 +163405,10 @@
           "languageCode": "zh-Hant",
           "text": "如果有人打牠的頭，牠會縮進殼裡來躲避，但會留下一小截尾巴在外面。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "龟"
+      }
     },
     {
       "slug": "watchog",
@@ -161195,7 +163498,10 @@
           "languageCode": "zh-Hant",
           "text": "透過體內的發光物質讓眼珠或身體變得閃閃發亮，使來襲的敵人畏縮。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "警戒"
+      }
     },
     {
       "slug": "wattrel",
@@ -161220,7 +163526,10 @@
           "languageCode": "zh-Hant",
           "text": "會在海岸的懸崖上築巢。吃起來劈哩啪啦跳的神奇口感，讓牠的巢成了受歡迎的珍奇美食。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海燕"
+      }
     },
     {
       "slug": "weavile",
@@ -161455,7 +163764,10 @@
           "languageCode": "zh-Hant",
           "text": "４～５隻一組行動。在岩石和樹木上留下記號，以團隊合作捕殺獵物。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "钩爪"
+      }
     },
     {
       "slug": "weedle",
@@ -161750,7 +164062,10 @@
           "languageCode": "zh-Hant",
           "text": "大量棲息在森林或草地裡。頭頂長著約５公分長的尖銳小毒針。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "毛毛虫"
+      }
     },
     {
       "slug": "weepinbell",
@@ -162080,7 +164395,10 @@
           "languageCode": "zh-Hant",
           "text": "會先吐出有毒的粉末，讓對手停止行動後，再用溶解液解決對手。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "捕蝇"
+      }
     },
     {
       "slug": "weezing",
@@ -162565,7 +164883,10 @@
           "languageCode": "zh-Hant",
           "text": "乘著風侵入民居。把房間裡弄得滿是棉絮後，就會嘻嘻哈哈地笑著離去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "风隐"
+      }
     },
     {
       "slug": "whirlipede",
@@ -162670,7 +164991,10 @@
           "languageCode": "zh-Hant",
           "text": "被堅硬的殼保護著。會像輪胎般旋轉，並用身體猛烈撞擊敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "茧蜈蚣"
+      }
     },
     {
       "slug": "whiscash",
@@ -162960,7 +165284,10 @@
           "languageCode": "zh-Hant",
           "text": "成群的鯰魚王在水面上跳躍的景象被認為是地震的先兆。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "须鱼"
+      }
     },
     {
       "slug": "whismur",
@@ -163180,7 +165507,10 @@
           "languageCode": "zh-Hant",
           "text": "平時的叫聲就像喃喃細語。一旦感到不安，就會用和噴射機同等的音量叫個不停。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "细语"
+      }
     },
     {
       "slug": "wigglytuff",
@@ -163550,7 +165880,10 @@
           "languageCode": "zh-Hant",
           "text": "當２隻依偎在一起時，牠們會因為對方的毛皮太過舒適而難以分開。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "气球"
+      }
     },
     {
       "slug": "wiglett",
@@ -163575,7 +165908,10 @@
           "languageCode": "zh-Hant",
           "text": "雖然長得像地鼠，但卻是完全不同的種類。據說是為了適應生活環境，才偶然變得相像。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "糯鳗"
+      }
     },
     {
       "slug": "wimpod",
@@ -163650,7 +165986,10 @@
           "languageCode": "zh-Hant",
           "text": "從沙灘到海底，會棲息在各式各樣的地方。即使是腐爛的食物也能吃得很開心，是大自然的清潔員。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "疾行"
+      }
     },
     {
       "slug": "wingull",
@@ -163930,7 +166269,10 @@
           "languageCode": "zh-Hant",
           "text": "會迎著海風如滑翔機般滑翔。到了冬天就會將食物藏在巢的周圍。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "海鸥"
+      }
     },
     {
       "slug": "wishiwashi",
@@ -164020,7 +166362,10 @@
           "languageCode": "zh-Hant",
           "text": "會吸取草木的能量，使周圍的森林霎時乾枯，田地的農作物歉收。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "灾厄"
+      }
     },
     {
       "slug": "wobbuffet",
@@ -164265,7 +166610,10 @@
           "languageCode": "zh-Hant",
           "text": "牠會拼命地把黑黑的尾巴藏起來，人們推測這證明了牠的尾巴裡藏有秘密。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "忍耐"
+      }
     },
     {
       "slug": "woobat",
@@ -164365,7 +166713,10 @@
           "languageCode": "zh-Hant",
           "text": "一邊發出超音波，一邊飛來飛去尋找蟲寶可夢來填飽自己的肚子。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝙蝠"
+      }
     },
     {
       "slug": "wooloo",
@@ -164390,7 +166741,10 @@
           "languageCode": "zh-Hant",
           "text": "要是身上的毛長得太長就會不能動彈。用毛辮羊的體毛織成的布結實得讓人吃驚。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "绵羊"
+      }
     },
     {
       "slug": "wooper",
@@ -164820,7 +167174,10 @@
           "languageCode": "zh-Hant",
           "text": "魚寶可夢的一種。曾經也有人認為牠是三地鼠的地區形態。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "糯鳗"
+      }
     },
     {
       "slug": "wurmple",
@@ -164995,7 +167352,10 @@
           "languageCode": "zh-Hant",
           "text": "嗜食樹液，大量生息於山野之中。進化成不同形態的理由不明，且無法從外觀判斷其進化方式。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "虫宝宝"
+      }
     },
     {
       "slug": "wynaut",
@@ -165215,7 +167575,10 @@
           "languageCode": "zh-Hant",
           "text": "透過和夥伴們玩互相推擠的遊戲，練就了很強的忍耐力。最喜歡吃香甜的水果。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "开朗"
+      }
     },
     {
       "slug": "wyrdeer",
@@ -165230,7 +167593,10 @@
           "languageCode": "zh-Hant",
           "text": "製造肉眼不可見的障壁時，黑珠會發出妖異的光輝。從牠身上脫落的鬍鬚是用來製作溫暖冬衣的實用原料。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "大角"
+      }
     },
     {
       "slug": "xatu",
@@ -165485,7 +167851,10 @@
           "languageCode": "zh-Hant",
           "text": "能夠看穿過去和未來。日復一日注視著太陽動向的奇異寶可夢。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "神秘"
+      }
     },
     {
       "slug": "xerneas",
@@ -165585,7 +167954,10 @@
           "languageCode": "zh-Hant",
           "text": "被稱為究極異獸。也有一些會像樹木一樣，把手腳刺進地面動也不動。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "灯饰"
+      }
     },
     {
       "slug": "yamask",
@@ -165720,7 +168092,10 @@
           "languageCode": "zh-Hant",
           "text": "因為想要得到零食而幫助人類工作的貪吃鬼。總是帶著電火花跑來跑去。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "小狗"
+      }
     },
     {
       "slug": "yanma",
@@ -165960,7 +168335,10 @@
           "languageCode": "zh-Hant",
           "text": "就算不轉動大大的眼珠也可以全方位環視周遭，因此不管是敵人還是食物都能立刻發現。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "薄翼"
+      }
     },
     {
       "slug": "yanmega",
@@ -166145,7 +168523,10 @@
           "languageCode": "zh-Hant",
           "text": "顎部的力量異常強大。擅長在高速飛行中咬斷與自己擦身而過的對手"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "勾蜓"
+      }
     },
     {
       "slug": "yungoos",
@@ -166210,7 +168591,10 @@
           "languageCode": "zh-Hant",
           "text": "醒著的時候總是不停地在覓食。一旦肚子餓了就會變得更加地凶暴。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "巡回"
+      }
     },
     {
       "slug": "yveltal",
@@ -166265,7 +168649,10 @@
           "languageCode": "zh-Hant",
           "text": "據說當生命走到盡頭時，會吸光所有生物的生命，回到繭的狀態。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "破坏"
+      }
     },
     {
       "slug": "zacian",
@@ -166545,7 +168932,10 @@
           "languageCode": "zh-Hant",
           "text": "只要聞到飯匙蛇的氣味，全身的體毛就會倒豎。會用鋒利的爪子撕裂敵人。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "猫鼬"
+      }
     },
     {
       "slug": "zapdos",
@@ -166960,7 +169350,10 @@
           "languageCode": "zh-Hant",
           "text": "為了讓群體裡的斑斑馬能透過雷電充電，只要一聽到雷鳴聲，就會成群追趕雷雲。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "雷电"
+      }
     },
     {
       "slug": "zekrom",
@@ -167060,7 +169453,10 @@
           "languageCode": "zh-Hant",
           "text": "在神話的敘述裡，如果人類失去了正義之心，牠就會用狂暴的雷電毀滅他們的王國。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "黑阴"
+      }
     },
     {
       "slug": "zeraora",
@@ -167955,7 +170351,10 @@
           "languageCode": "zh-Hant",
           "text": "白天在洞穴裡睡覺。由於沒有眼睛，會利用超音波一邊確認周圍環境一邊飛行。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "蝙蝠"
+      }
     },
     {
       "slug": "zweilous",
@@ -168075,7 +170474,10 @@
           "languageCode": "zh-Hant",
           "text": "２顆頭各有喜好。由於頭之間會互相爭鬥，因此不靠外力也能變強。"
         }
-      ]
+      ],
+      "genus": {
+        "zh-Hans": "粗暴"
+      }
     },
     {
       "slug": "zygarde",
@@ -168173,8 +170575,5 @@
       ]
     }
   ],
-  "unmatched": [
-    "dartrix 投羽枭",
-    "trumbeak 喇叭啄鸟"
-  ]
+  "unmatched": []
 }

@@ -37,6 +37,7 @@ import {
   type TypeSnapshot,
   type WikiData,
   type WikiEffectSnapshot,
+  type WikiPokemonDescriptionSnapshot,
 } from "@/prisma/seed-data/types";
 
 /** 属性徽章的主题色。PokeAPI 不提供，只能手写 */
@@ -598,7 +599,11 @@ async function seedItems(groupIds: Map<string, number>) {
       create: { slug: item.slug, imageName: item.imageName },
       update: { imageName: item.imageName },
     });
-    for (const { languageCode, value: name } of localized(item.names)) {
+    // 邮件、超级石那批数据源一直没中文名，用百科列表页的补
+    for (const { languageCode, value: name } of localized({
+      ...wiki.get(item.slug)?.names,
+      ...item.names,
+    })) {
       await prisma.itemI18n.upsert({
         where: { itemId_languageCode: { itemId: saved.id, languageCode } },
         create: { itemId: saved.id, languageCode, name },
@@ -611,7 +616,7 @@ async function seedItems(groupIds: Map<string, number>) {
     for (const row of effectRows(item.effects, wiki.get(item.slug)?.effect, 1)) {
       effects.push({ itemId: saved.id, ...row });
     }
-    for (const row of flavorRows(item.flavors, undefined, groupIds)) {
+    for (const row of flavorRows(item.flavors, wiki.get(item.slug)?.flavors, groupIds)) {
       flavors.push({ itemId: saved.id, ...row });
     }
   }
@@ -652,7 +657,11 @@ async function seedAbilities(groupIds: Map<string, number>) {
     });
     ids.set(a.slug, saved.id);
 
-    for (const { languageCode, value: name } of localized(a.names)) {
+    // 数据源没给中文名的（传说 Z-A 那几个新特性）用百科的补
+    for (const { languageCode, value: name } of localized({
+      ...wiki.get(a.slug)?.names,
+      ...a.names,
+    })) {
       await prisma.abilityI18n.upsert({
         where: { abilityId_languageCode: { abilityId: saved.id, languageCode } },
         create: { abilityId: saved.id, languageCode, name },
@@ -786,16 +795,25 @@ async function seedPokemon(
     data: rows.map((p) => ({ id: p.id, slug: p.slug })),
     skipDuplicates: true,
   });
+  // 整表重建而不是 createMany + skipDuplicates：分类要拿百科的补上，
+  // 跳过重复的话库里那些空分类永远也更新不到
+  let genusFromWiki = 0;
+  await prisma.pokemonI18n.deleteMany({});
   await prisma.pokemonI18n.createMany({
     data: rows.flatMap((p) =>
-      p.names.map((n) => ({
-        pokemonId: p.id,
-        languageCode: n.languageCode as LanguageCode,
-        name: n.name,
-        genus: n.genus,
-      })),
+      p.names.map((n) => {
+        const code = n.languageCode as LanguageCode;
+        // 数据源第九世代那批物种的中文分类是空的
+        const fromWiki = n.genus ? null : chinese.get(p.slug)?.genus?.[code];
+        if (fromWiki) genusFromWiki++;
+        return {
+          pokemonId: p.id,
+          languageCode: code,
+          name: n.name,
+          genus: n.genus || fromWiki || null,
+        };
+      }),
     ),
-    skipDuplicates: true,
   });
   await prisma.pokedexNumber.createMany({
     data: rows.flatMap((p) =>
@@ -902,7 +920,7 @@ async function seedPokemon(
     for (const d of descriptions.get(species) ?? []) {
       merged.set(`${d.versionSlug} ${d.languageCode}`, d);
     }
-    for (const d of chinese.get(species) ?? []) {
+    for (const d of chinese.get(species)?.descriptions ?? []) {
       merged.set(`${d.versionSlug} ${d.languageCode}`, d);
       chineseRows++;
     }
@@ -921,7 +939,7 @@ async function seedPokemon(
   console.log(
     `宝可梦: ${rows.length} 只 / ${forms.length} 个形态，种族值 ${statRows.length} 行，` +
       `特性 ${abilityRows.length} 行，图鉴说明 ${descriptionRows.length} 行` +
-      `（其中来自百科的中文 ${chineseRows} 行）`,
+      `（其中来自百科的中文 ${chineseRows} 行），分类补了 ${genusFromWiki} 行`,
   );
   return formIds;
 }
@@ -932,10 +950,7 @@ async function seedPokemon(
  * PokeAPI 的中文只覆盖 722 只、8 个版本组，朱紫那 127 只一条都没有；
  * 百科从红绿版到朱紫全有。文件读不到就当没有中文，不让 seed 挂掉
  */
-function wikiDescriptions(): Map<
-  string,
-  { versionSlug: string; languageCode: LanguageCode; text: string }[]
-> {
+function wikiDescriptions(): Map<string, WikiPokemonDescriptionSnapshot> {
   try {
     const snapshot = readWiki("wiki-pokemon-descriptions");
     if (snapshot.unmatched.length) {
@@ -943,7 +958,7 @@ function wikiDescriptions(): Map<
         `⚠ wiki-pokemon-descriptions: ${snapshot.unmatched.length} 只没抓到中文图鉴说明`,
       );
     }
-    return new Map(snapshot.rows.map((r) => [r.slug, r.descriptions]));
+    return new Map(snapshot.rows.map((r) => [r.slug, r]));
   } catch {
     console.warn("⚠ 读不到 wiki-pokemon-descriptions.json，中文图鉴说明会缺");
     return new Map();

@@ -310,6 +310,11 @@ export type WikiEffectSnapshot = {
   slug: string;
   effect: Localized;
   flavors: FlavorsByGroup;
+  /**
+   * 译名，只在数据源没给中文名时才有。
+   * 邮件、超级石那批数据源一直空着，百科的列表页有
+   */
+  names?: Localized;
 };
 
 /**
@@ -319,6 +324,11 @@ export type WikiEffectSnapshot = {
 export type WikiPokemonDescriptionSnapshot = {
   slug: string;
   descriptions: { versionSlug: string; languageCode: LanguageCode; text: string }[];
+  /**
+   * 分类（「种子宝可梦」那个）。数据源第九世代那批还没填中文，
+   * 百科的信息框里有。没抓到时不写这个字段
+   */
+  genus?: Localized;
 };
 
 /** wiki 快照的文件名 → 内容类型 */

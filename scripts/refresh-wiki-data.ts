@@ -443,6 +443,37 @@ const MIN_EFFECT_LENGTH = 8;
  * 跟 PokeAPI 的 effect 不是一个粒度。===对战中=== 这类子节标题跳过，
  * 标题下面的内容照收 —— 王者之证的效果分「对战中」和「对战外」两段，都算效果
  */
+/**
+ * 道具在游戏里显示的那句说明，一条 {{包包信息框}} 是一个版本组的。
+ *
+ * 参数是定位的：世代 | 版本组缩写 | 图片名 | 口袋 | 说明 | 售价 | 卖价。
+ * PokeAPI 的中文只到剑盾，第九世代那六百多件新道具只有这里有
+ */
+function parseItemFlavors(source: string, unknownAbbr: Set<string>): FlavorsByGroup {
+  const out: FlavorsByGroup = {};
+  for (const m of source.matchAll(/\{\{\s*包包信息框\s*\|/g)) {
+    const body = templateBody(source.slice(m.index), "包包信息框");
+    if (!body) continue;
+
+    const args = splitTopLevel(body);
+    const abbr = args[2]?.trim();
+    const text = args[5]?.trim();
+    if (!abbr || !text) continue;
+
+    const groupSlug = groupOfAbbr(abbr);
+    if (!groupSlug) {
+      unknownAbbr.add(abbr);
+      continue;
+    }
+    // 没有说明的版本写成一个破折号
+    if (/^(&mdash;|—|-)$/.test(text)) continue;
+
+    const texts = splitVariants(plainText(text));
+    if (Object.keys(texts).length) out[groupSlug] ??= texts;
+  }
+  return out;
+}
+
 const ITEM_EFFECT_HEADINGS = ["使用效果", "效果", "道具效果", "游戏中"];
 
 function parseItemEffect(source: string): string | null {
@@ -483,6 +514,7 @@ const GROUP_OF_ABBR: Record<string, string> = {
   RB: "red-blue",
   RGB: "red-blue",
   RBY: "red-blue",
+  RGBY: "red-blue",
   Y: "yellow",
   GS: "gold-silver",
   C: "crystal",
@@ -491,7 +523,13 @@ const GROUP_OF_ABBR: Record<string, string> = {
   E: "emerald",
   RSE: "ruby-sapphire",
   FRLG: "firered-leafgreen",
+  // 横跨两个版本组的缩写取靠前那个 —— 说明文案在两边是一样的，
+  // 不然百科不会把它们合并写成一条
+  EFRLG: "emerald",
+  XYORAS: "x-y",
   Col: "colosseum",
+  COLO: "colosseum",
+  COLOXD: "colosseum",
   XD: "xd",
   DP: "diamond-pearl",
   Pt: "platinum",
@@ -508,6 +546,9 @@ const GROUP_OF_ABBR: Record<string, string> = {
   LPLE: "lets-go-pikachu-lets-go-eevee",
   LGPE: "lets-go-pikachu-lets-go-eevee",
   SWSH: "sword-shield",
+  SWSH2: "sword-shield",
+  SW: "sword-shield",
+  SH: "sword-shield",
   BDSP: "brilliant-diamond-shining-pearl",
   LA: "legends-arceus",
   SV: "scarlet-violet",
@@ -522,6 +563,15 @@ const GROUP_OF_ABBR: Record<string, string> = {
   Champ: "champions",
   Champions: "champions",
 };
+
+/** 百科各处写缩写的大小写不一致（Colo / COLO / colo 都有），查表时统一压成小写 */
+const GROUP_BY_LOWER = new Map(
+  Object.entries(GROUP_OF_ABBR).map(([abbr, slug]) => [abbr.toLowerCase(), slug]),
+);
+
+function groupOfAbbr(abbr: string): string | undefined {
+  return GROUP_BY_LOWER.get(abbr.toLowerCase());
+}
 
 /**
  * 百科图鉴模板的参数名 → PokeAPI 的版本 slug。
@@ -671,6 +721,38 @@ function namedArgs(body: string): Map<string, string> {
   return out;
 }
 
+/** 英文名归一成 PokeAPI 的 slug 写法：小写、撇号点号去掉、其余非字母数字换成连字符 */
+function toSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/['’.]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/**
+ * 道具列表页的「英文名 → 中文名」。
+ *
+ * 缺中文名的道具没法拿中文名当页名去查，只能反过来从列表页认。
+ * 表格一行五格：图标、中文名、日文名、英文名、说明，中文名裹在 {{I|…}} 里，
+ * 英文名是那一行里唯一的纯拉丁字母格
+ */
+function parseItemNameIndex(source: string): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const block of source.split(/\n\|-/)) {
+    const zh = /\{\{\s*I\s*\|\s*([^|}\n]+)/.exec(block);
+    if (!zh) continue;
+
+    let en: string | null = null;
+    for (const cell of block.split("\n|")) {
+      const s = cell.trim();
+      if (s.length > 1 && !s.startsWith("class") && /^[A-Za-z0-9 '’\-.é]+$/.test(s)) en = s;
+    }
+    if (en) out.set(toSlug(en), zh[1]!.trim());
+  }
+  return out;
+}
+
 // ── 特性 ──────────────────────────────────────────────────────
 
 /**
@@ -678,14 +760,24 @@ function namedArgs(body: string): Map<string, string> {
  * {{特性列表|065|茂盛|しんりょく|Overgrow|简体说明|繁体说明|拥有数|隐藏数}}，
  * 编号就是 PokeAPI 的 ability id。一个请求拿到全部 374 个的页名
  */
-function abilityIndex(source: string): Map<number, string> {
-  const out = new Map<number, string>();
-  for (const m of source.matchAll(/\{\{\s*特性列表\s*\|([^|]*)\|([^|]*)\|/g)) {
+function abilityIndex(source: string): {
+  byId: Map<number, string>;
+  bySlug: Map<string, string>;
+} {
+  const byId = new Map<number, string>();
+  const bySlug = new Map<string, string>();
+  // 编号 | 中文名 | 日文名 | 英文名 | 简体说明 | 繁体说明 | …
+  for (const m of source.matchAll(/\{\{\s*特性列表\s*\|([^|]*)\|([^|]*)\|([^|]*)\|([^|]*)\|/g)) {
     const id = Number(m[1]!.trim());
     const name = m[2]!.trim();
-    if (Number.isFinite(id) && name) out.set(id, name);
+    const en = m[4]!.trim();
+    if (!name) continue;
+    if (Number.isFinite(id)) byId.set(id, name);
+    // 百科给新特性的编号跟数据源对不上（超级日光百科是 315、数据源是 310），
+    // 英文名当第二把钥匙
+    if (en) bySlug.set(toSlug(en), name);
   }
-  return out;
+  return { byId, bySlug };
 }
 
 /**
@@ -711,7 +803,7 @@ function parseStateBoxes(source: string, unknownAbbr: Set<string>): FlavorsByGro
     const parts = body.split("|");
     if (parts.length < 4) continue;
     const abbr = parts[2]!.trim();
-    const groupSlug = GROUP_OF_ABBR[abbr];
+    const groupSlug = groupOfAbbr(abbr);
     if (!groupSlug) {
       unknownAbbr.add(abbr);
       continue;
@@ -750,7 +842,7 @@ function parseMoveTemplate(source: string, unknownAbbr: Set<string>): FlavorsByG
     const texts = splitVariants(plainText(branch.value));
     if (!Object.keys(texts).length) continue;
     for (const key of branch.keys) {
-      const groupSlug = GROUP_OF_ABBR[key];
+      const groupSlug = groupOfAbbr(key);
       if (!groupSlug) {
         // 外传游戏和 #switch 自己的语法词不算缺失
         if (!/^(信长的野望|大集合|#default|\d+|)$/.test(key)) unknownAbbr.add(key);
@@ -808,6 +900,19 @@ function switchBranches(source: string): { keys: string[]; value: string }[] {
 }
 
 // ── 宝可梦图鉴说明 ────────────────────────────────────────────
+
+/**
+ * 分类，信息框里的 species 参数（「糖苹果宝可梦」的「糖苹果」那截）。
+ *
+ * 数据源第九世代那批物种的中文分类是空的，百科有。
+ * 模板名在页面里写的是繁体，简体重定向也认，两种都匹配
+ */
+function parseGenus(source: string): Localized {
+  const body = templateBody(source, "[寶宝]可[夢梦]信息框");
+  if (!body) return {};
+  const species = namedArgs(body).get("species");
+  return species ? splitVariants(plainText(species)) : {};
+}
 
 /**
  * {{图鉴|type=草|gen=9|scdex=…|videx=…}}，参数名就是版本。
@@ -924,16 +1029,26 @@ async function abilities(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   if (!indexPage) throw new Error("读不到「特性列表」，百科那边可能改了页名");
 
   const index = abilityIndex(indexPage);
-  console.log(`  特性索引: ${index.size} 条`);
+  console.log(`  特性索引: ${index.byId.size} 条`);
 
   // 「茂盛」是指向「茂盛（特性）」的重定向，带后缀查更稳 ——
   // 裸名字有跟宝可梦或道具重名的（「毅力」「同步」）
   const titleOf = new Map<string, string>();
+  const nameOf = new Map<string, string>();
   const unmatched = new Set<string>();
-  for (const [id, name] of index) {
+  for (const [id, name] of index.byId) {
     const slug = slugs.get(id);
-    if (slug) titleOf.set(slug, `${name}（特性）`);
-    else unmatched.add(`${id} ${name}`);
+    if (slug) {
+      titleOf.set(slug, `${name}（特性）`);
+      nameOf.set(slug, name);
+    } else unmatched.add(`${id} ${name}`);
+  }
+  // 编号对不上的用英文名再认一遍：传说 Z-A 那几个新特性百科和数据源编号不一致
+  for (const [slug, name] of index.bySlug) {
+    if (!titleOf.has(slug) && [...slugs.values()].includes(slug)) {
+      titleOf.set(slug, `${name}（特性）`);
+      nameOf.set(slug, name);
+    }
   }
 
   const pages = await fetchPages([...titleOf.values()]);
@@ -946,13 +1061,24 @@ async function abilities(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
       unmatched.add(title);
       continue;
     }
-    rows.push({ slug, ...parseAbilityPage(source, unknownAbbr) });
+    rows.push({ slug, ...parseAbilityPage(source, unknownAbbr), names: {} });
   }
 
   const effects = await fillEffects(
     rows.map((r) => ({ slug: r.slug, title: titleOf.get(r.slug)! })),
   );
   for (const row of rows) row.effect = effects.get(row.slug) ?? {};
+
+  // 译名：数据源没给中文名的那几个（传说 Z-A 的新特性）从索引页补
+  const traditional = await toTraditional([...new Set(nameOf.values())]);
+  for (const row of rows) {
+    const hans = nameOf.get(row.slug);
+    if (!hans) continue;
+    row.names = {
+      "zh-Hans": hans,
+      ...(traditional.get(hans) ? { "zh-Hant": traditional.get(hans)! } : {}),
+    };
+  }
 
   if (unknownAbbr.size) {
     console.warn(`  ⚠ 认不出的游戏缩写: ${[...unknownAbbr].sort().join(", ")}`);
@@ -1037,16 +1163,30 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   type Item = { slug: string; names: Partial<Record<LanguageCode, string>> };
   const snapshot = JSON.parse(readFileSync(join(SEED_DATA_DIR, "items.json"), "utf8")) as Item[];
 
+  // 数据源有九十多件道具没中文名（邮件、超级石那批），拿不到页名。
+  // 列表页一行带着中英文名，用英文名归一出的 slug 认回来
+  const [listPage] = [...(await fetchPages(["道具列表"])).values()];
+  const nameIndex = listPage ? parseItemNameIndex(listPage) : new Map<string, string>();
+  console.log(`  道具列表索引: ${nameIndex.size} 条`);
+
   // 页名带「（道具）」后缀：裸中文名有跟招式、宝可梦重名的（「日光」是招式），
   // 重定向会把我们带到那些条目上去。带后缀查不到的再退回裸名字
   const titleOf = new Map<string, string>();
+  const nameFromWiki = new Map<string, string>();
   const unmatched = new Set<string>();
   for (const item of snapshot) {
-    const name = item.names["zh-Hans"];
-    if (name) titleOf.set(item.slug, name);
-    else unmatched.add(item.slug);
+    const own = item.names["zh-Hans"];
+    const name = own ?? nameIndex.get(item.slug);
+    if (!name) {
+      unmatched.add(item.slug);
+      continue;
+    }
+    titleOf.set(item.slug, name);
+    if (!own) nameFromWiki.set(item.slug, name);
   }
-  console.log(`  道具: ${titleOf.size} 件有中文名，${unmatched.size} 件没有`);
+  console.log(
+    `  道具: ${titleOf.size} 件能定位，其中 ${nameFromWiki.size} 件的中文名是从列表页补的`,
+  );
 
   const suffixed = await fetchPages([...titleOf.values()].map((n) => `${n}（道具）`));
   const bare = await fetchPages([...titleOf.values()].filter((n) => !suffixed.has(`${n}（道具）`)));
@@ -1054,6 +1194,7 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   for (const [title, content] of bare) pages.set(title, content);
   for (const [title, content] of suffixed) pages.set(title.replace(/（道具）$/, ""), content);
 
+  const unknownAbbr = new Set<string>();
   const rows: WikiEffectSnapshot[] = [];
   for (const [slug, title] of titleOf) {
     const source = pages.get(title);
@@ -1063,22 +1204,46 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
       continue;
     }
     const effect = parseItemEffect(source);
-    if (!effect) {
+    const flavors = parseItemFlavors(source, unknownAbbr);
+    if (!effect && !Object.keys(flavors).length) {
       unmatched.add(`${slug} ${title}`);
       continue;
     }
-    rows.push({ slug, effect: { "zh-Hans": effect }, flavors: {} });
+    rows.push({
+      slug,
+      effect: effect ? { "zh-Hans": effect } : {},
+      flavors,
+      ...(nameFromWiki.has(slug) ? { names: { "zh-Hans": nameFromWiki.get(slug)! } } : {}),
+    });
+  }
+  if (unknownAbbr.size) {
+    console.warn(`  ⚠ 认不出的游戏缩写: ${[...unknownAbbr].sort().join(", ")}`);
   }
 
   // 源码里只有简体，繁体交给百科的字词转换表转一遍
-  const traditional = await toTraditional([...new Set(rows.map((r) => r.effect["zh-Hans"]!))]);
+  // 游戏文案不用转，它在源码里就是 -{zh-hans:…;zh-hant:…}- 写死的
+  const traditional = await toTraditional([
+    ...new Set(
+      rows
+        .flatMap((r) => [r.effect["zh-Hans"], r.names?.["zh-Hans"]])
+        .filter((s): s is string => !!s),
+    ),
+  ]);
   for (const row of rows) {
-    const hant = traditional.get(row.effect["zh-Hans"]!);
+    const hans = row.effect["zh-Hans"];
+    const hant = hans ? traditional.get(hans) : undefined;
     if (hant) row.effect["zh-Hant"] = hant;
+
+    const nameHans = row.names?.["zh-Hans"];
+    const nameHant = nameHans ? traditional.get(nameHans) : undefined;
+    if (row.names && nameHant) row.names["zh-Hant"] = nameHant;
   }
 
   console.log(
-    `  道具机制说明: ${rows.length} 件，其中 ${rows.filter((r) => r.effect["zh-Hant"]).length} 件有繁体`,
+    `  道具: 机制说明 ${rows.filter((r) => r.effect["zh-Hans"]).length} 件` +
+      `（繁体 ${rows.filter((r) => r.effect["zh-Hant"]).length} 件），` +
+      `游戏文案 ${rows.filter((r) => Object.keys(r.flavors).length).length} 件，` +
+      `补译名 ${rows.filter((r) => r.names).length} 件`,
   );
   rows.sort((a, b) => a.slug.localeCompare(b.slug));
   return wrap(rows, unmatched);
@@ -1130,18 +1295,20 @@ async function pokemonDescriptions(): Promise<WikiSnapshot<WikiPokemonDescriptio
       continue;
     }
     const descriptions = parseDexEntries(source, unknownKeys);
-    if (!descriptions.length) {
+    const genus = parseGenus(source);
+    if (!descriptions.length && !Object.keys(genus).length) {
       unmatched.add(`${slug} ${name}`);
       continue;
     }
-    rows.push({ slug, descriptions });
+    rows.push({ slug, descriptions, ...(Object.keys(genus).length ? { genus } : {}) });
   }
 
   if (unknownKeys.size) {
     console.warn(`  ⚠ 认不出的图鉴参数: ${[...unknownKeys].sort().join(", ")}`);
   }
   console.log(
-    `  图鉴说明: ${rows.length} 只，共 ${rows.reduce((n, r) => n + r.descriptions.length, 0)} 行`,
+    `  图鉴说明: ${rows.length} 只，共 ${rows.reduce((n, r) => n + r.descriptions.length, 0)} 行；` +
+      `分类 ${rows.filter((r) => r.genus).length} 只`,
   );
   rows.sort((a, b) => a.slug.localeCompare(b.slug));
   return wrap(rows, unmatched);
