@@ -1,0 +1,2 @@
+-- AlterEnum
+ALTER TYPE "TimeOfDay" ADD VALUE 'FULL_MOON';
