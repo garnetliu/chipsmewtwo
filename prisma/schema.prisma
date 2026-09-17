@@ -111,6 +111,9 @@ model Language {
   itemNames             ItemI18n[]
   itemEffects           ItemEffectI18n[]
   formDescriptions      FormDescriptionI18n[]
+  abilityFlavors        AbilityFlavorI18n[]
+  moveFlavors           MoveFlavorI18n[]
+  itemFlavors           ItemFlavorI18n[]
 
   @@map("language")
 }
@@ -196,6 +199,9 @@ model Group {
   regions          RegionGroup[]
   pokedexes        PokedexGroup[]
   moveLearnMethods GroupMoveLearnMethod[]
+  abilityFlavors   AbilityFlavorI18n[]
+  moveFlavors      MoveFlavorI18n[]
+  itemFlavors      ItemFlavorI18n[]
 
   @@index([generationId])
   @@index([order])
@@ -499,6 +505,7 @@ model Item {
 
   names   ItemI18n[]
   effects ItemEffectI18n[]
+  flavors ItemFlavorI18n[]
 
   usedInEvolutions Evolution[] @relation("EvolutionItem")
   heldInEvolutions Evolution[] @relation("EvolutionHeldItem")
@@ -518,15 +525,15 @@ model ItemI18n {
   @@map("item_i18n")
 }
 
-/// 道具 × 世代 × 语言的说明文案。说明不是道具的固有字段 ——
-/// 雷之石在 Gen3 是「Makes certain species of POKéMON evolve.」，Gen6 起改成
-/// 「A peculiar stone that can make certain species of Pokémon evolve.」；
-/// 王者之证的效果本身从 Gen3 到 Gen5 改了三轮，说明也跟着变。
+/// 道具 × 世代 × 语言的机制说明。说明不是道具的固有字段 ——
+/// 王者之证的效果本身从 Gen3 到 Gen5 改了三轮，说明跟着变，所以带世代。
 ///
-/// 存的是数据源的 flavor text，也就是游戏里给玩家看的那句话，从每个语言版本的
-/// 游戏里逐版本提取，所以 10 种语言齐全（中文从 Gen7 起才有，官方中文化始于
-/// 《太阳/月亮》，之前六代没有中文版）。同一份响应里还有一组 effect_entries，
-/// 那是志愿者手写的机制描述、只有英法两种语言也不分世代，没有采用。
+/// 存的是数据源的 effect_entries：一句成文的机制描述（「让伊布进化成水伊布……」），
+/// 志愿者手写，只有英法两种语言。它不分世代，导入时从道具登场那代填到最新代，
+/// 有 effect_changes 记录变更的世代换成旧文本。
+///
+/// 游戏里给玩家看的那句话是另一回事，在 ItemFlavorI18n —— 那个按版本组变、
+/// 10 种语言齐全。两者都要：机制说明讲清楚「做什么」，游戏文案是官方措辞。
 ///
 /// 数值不像招式那样单独拆一张表：MoveGeneration 能成立是因为所有招式共用
 /// 威力/命中/PP 这组列，道具没有这种共通结构 —— 金属膜是倍率、剩饭是每回合
@@ -538,14 +545,37 @@ model ItemEffectI18n {
   generation   Generation @relation(fields: [generationId], references: [id])
   languageCode String
   language     Language   @relation(fields: [languageCode], references: [code])
-  /// 现在一直是空的：游戏里的说明文案没有短版。
-  /// 这一列原本装数据源 effect_entries 的 short_effect，换成游戏文案之后就空着了
+  /// 一句话版，列表里用。数据源没给短版时是 null，前端展示「说明暂缺」
   shortEffect  String?
-  /// 游戏里显示的那句说明
+  /// 完整的机制说明
   effect       String
 
   @@id([itemId, generationId, languageCode])
   @@map("item_effect_i18n")
+}
+
+/// 道具在游戏里显示的那句说明文案，按版本组存。
+///
+/// 跟 ItemEffectI18n 不是一回事：那张存机制说明（志愿者手写、只有英法），
+/// 这张存从各语言版本 ROM 里提取的官方原文，10 种语言齐全 ——
+/// 雷之石在红蓝宝石里是「Makes certain species of POKéMON evolve.」，
+/// XY 起改成「A peculiar stone that can make certain species of Pokémon evolve.」。
+///
+/// 主键用版本组而不是版本：数据源给道具和招式的 flavor text 就是按版本组分的
+/// （红蓝共用一条），只有宝可梦的图鉴说明才细到版本（红版蓝版各一条），
+/// 所以 FormDescriptionI18n 按版本、这张按版本组
+model ItemFlavorI18n {
+  itemId       Int
+  item         Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  groupId      Int
+  group        Group    @relation(fields: [groupId], references: [id])
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  text         String
+
+  @@id([itemId, groupId, languageCode])
+  @@index([groupId])
+  @@map("item_flavor_i18n")
 }
 
 /// 进化链。同一条链上的形态共享一个 id，一句 where evolutionChainId
@@ -616,11 +646,13 @@ model PokedexNumber {
   @@map("pokedex_number")
 }
 
-/// 时间段。夕方（DUSK）只有 Gen7 起的黑夜魔灵用得上
+/// 时间段。夕方（DUSK）只有 Gen7 起的黑夜魔灵用得上，
+/// 满月（FULL_MOON）只有传说阿尔宙斯的圈圈熊→月月熊用得上
 enum TimeOfDay {
   DAY // 白天
   NIGHT // 夜晚
   DUSK // 傍晚
+  FULL_MOON // 满月
 }
 
 /// 进化的性别限制。雪妖女只有雌性小球飞鱼能进化，虐龙只有雄性
@@ -808,6 +840,7 @@ model Ability {
 
   names   AbilityI18n[]
   effects AbilityEffectI18n[]
+  flavors AbilityFlavorI18n[]
   forms   FormAbility[]
 
   @@map("ability")
@@ -833,11 +866,32 @@ model AbilityEffectI18n {
   generation   Generation @relation(fields: [generationId], references: [id])
   languageCode String
   language     Language   @relation(fields: [languageCode], references: [code])
-  shortEffect  String? // 一句话版，列表里用
+  shortEffect  String? // 一句话版，列表里用。数据源没给短版时为 null
   effect       String // 完整说明
 
   @@id([abilityId, generationId, languageCode])
   @@map("ability_effect_i18n")
+}
+
+/// 特性在游戏里显示的那句文案，按版本组存。
+///
+/// 跟 AbilityEffectI18n 不是一回事：那张存机制说明（「HP 1/3 以下时草属性招式
+/// 伤害 ×1.5」，志愿者手写、只有英法德），这张存游戏原文（「ＨＰ减少的时候，
+/// 草属性的招式威力会提高。」），10 种语言齐全。
+///
+/// 主键用版本组的理由见 ItemFlavorI18n
+model AbilityFlavorI18n {
+  abilityId    Int
+  ability      Ability  @relation(fields: [abilityId], references: [id], onDelete: Cascade)
+  groupId      Int
+  group        Group    @relation(fields: [groupId], references: [id])
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  text         String
+
+  @@id([abilityId, groupId, languageCode])
+  @@index([groupId])
+  @@map("ability_flavor_i18n")
 }
 
 /// 招式。只留跨世代不变的身份，属性、伤害分类、威力、命中、PP 全在 MoveGeneration
@@ -848,6 +902,7 @@ model Move {
   names       MoveI18n[]
   generations MoveGeneration[]
   effects     MoveEffectI18n[]
+  flavors     MoveFlavorI18n[]
   learns      MoveLearn[]
 
   knownMoveFor Evolution[] @relation("EvolutionKnownMove")
@@ -900,8 +955,12 @@ model MoveGeneration {
   @@map("move_generation")
 }
 
-/// 招式 × 世代 × 语言的效果说明。
-/// 这里存的是机制说明；游戏图鉴上那句介绍文案是按版本组变的，不是一回事，暂未建模
+/// 招式 × 世代 × 语言的机制说明。
+///
+/// 存数据源的 effect_entries，志愿者手写、只有英法德，中文从神奇宝贝百科补。
+/// 它本身不分世代，导入时从招式登场那代填到最新代。
+///
+/// 游戏图鉴上那句介绍文案是按版本组变的，不是一回事，在 MoveFlavorI18n
 model MoveEffectI18n {
   moveId       Int
   move         Move       @relation(fields: [moveId], references: [id], onDelete: Cascade)
@@ -909,11 +968,27 @@ model MoveEffectI18n {
   generation   Generation @relation(fields: [generationId], references: [id])
   languageCode String
   language     Language   @relation(fields: [languageCode], references: [code])
-  shortEffect  String? // 一句话版，列表里用
+  shortEffect  String? // 一句话版，列表里用。数据源没给短版时为 null
   effect       String // 完整说明
 
   @@id([moveId, generationId, languageCode])
   @@map("move_effect_i18n")
+}
+
+/// 招式在游戏里显示的那句介绍文案，按版本组存。
+/// 跟 MoveEffectI18n 的分工见那边的注释；主键用版本组的理由见 ItemFlavorI18n
+model MoveFlavorI18n {
+  moveId       Int
+  move         Move     @relation(fields: [moveId], references: [id], onDelete: Cascade)
+  groupId      Int
+  group        Group    @relation(fields: [groupId], references: [id])
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  text         String
+
+  @@id([moveId, groupId, languageCode])
+  @@index([groupId])
+  @@map("move_flavor_i18n")
 }
 
 /// 形态 × 版本组 × 学习方式
