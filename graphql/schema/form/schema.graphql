@@ -10,7 +10,7 @@ type Form {
   isDefault: Boolean!
   """
   形态名，例如「阿罗拉的样子」。原形态没有这一项。
-  回退规则同 Pokemon.name。注意 form_i18n 还没有导入路径，这个字段目前恒为 null
+  回退规则同 Pokemon.name
   """
   name(language: String): String
   """
@@ -25,7 +25,10 @@ type Form {
   单属性的宝可梦只有一个元素。那一代的数据没导入就是 null
   """
   types(generation: Int): [Type!]
-  """按世代取。目前只导入了最新世代（数据源没有历史种族值），查老世代是 null"""
+  """
+  按世代取。历史种族值也导了 —— 第一世代那批填的是合并的特殊值，
+  specialAttack / specialDefense 为 null，special 有值
+  """
   stats(generation: Int): FormStats
   """
   图鉴颜色，按世代取。「按颜色查找图鉴」是 Gen3 才有的功能，
@@ -33,8 +36,7 @@ type Form {
   """
   color(generation: Int): FormColor
   """
-  特性，按世代取，按槽位排序。Gen1/Gen2 没有特性，那两代是空数组。
-  注意 form_ability 还没有导入路径，这个字段目前恒为空数组
+  特性，按世代取，按槽位排序。Gen1/Gen2 没有特性，那两代是空数组
   """
   abilities(generation: Int): [FormAbility!]!
   """
