@@ -1331,6 +1331,73 @@
     }
   },
   {
+    "slug": "lets-snuggle-forever",
+    "typeSlug": "fairy",
+    "damageClass": "PHYSICAL",
+    "power": 190,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "亲密无间大乱揍",
+      "zh-Hant": "親密無間大亂揍",
+      "en": "Let’s Snuggle Forever",
+      "ja": "ぽかぼかフレンドタイム",
+      "ja-Hrkt": "ぽかぼかフレンドタイム",
+      "ko": "투닥투닥프렌드타임",
+      "fr": "Patati-Patattrape",
+      "de": "Herzliche Knuddelkloppe",
+      "es": "Somanta Amistosa",
+      "it": "Dolcesacco di Botte"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的谜拟Ｑ将全力进行乱揍攻击。",
+        "zh-Hant": "獲得Ｚ力量的謎擬Ｑ將會以全力進行亂揍攻擊。",
+        "en": "After obtaining Z-Power, the user, Mimikyu, punches the target with full force.",
+        "ja": "Ｚパワーを　得た　ミミッキュが全力で　ぽかぽか　攻撃。",
+        "ja-Hrkt": "Ｚパワーを　えた　ミミッキュがぜんりょくで　ぽかぽか　こうげき。",
+        "ko": "Z파워를 얻은 따라큐가 전력으로 투닥투닥 공격한다.",
+        "fr": "Mimiqui concentre toute la Force Z dans son corps, et attaque dans le plus grand fracas !",
+        "de": "Mimigma greift das Ziel mithilfe von Z-Kraft mit voller Wucht und viel Liebe an.",
+        "es": "Mimikyu ataca con toda su fuerza tras imbuirse del Poder Z y asesta una lluvia de golpes.",
+        "it": "Grazie al Potere Z, Mimikyu fa appello a tutte le sue forze e attacca il bersaglio tempestandolo di colpi."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的谜拟Ｑ将全力进行乱揍攻击。",
+        "zh-Hant": "獲得Ｚ力量的謎擬Ｑ將會以全力進行亂揍攻擊。",
+        "en": "After obtaining Z-Power, the user, Mimikyu, punches the target with full force.",
+        "ja": "Ｚパワーを　得た　ミミッキュが全力で　ぽかぽか　攻撃。",
+        "ja-Hrkt": "Ｚパワーを　えた　ミミッキュがぜんりょくで　ぽかぽか　こうげき。",
+        "ko": "Z파워를 얻은 따라큐가 전력으로 투닥투닥 공격한다.",
+        "fr": "Mimiqui concentre toute la Force Z dans son corps, et attaque dans le plus grand fracas !",
+        "de": "Mimigma greift das Ziel mithilfe von Z-Kraft mit voller Wucht und viel Liebe an.",
+        "es": "Mimikyu ataca con toda su fuerza tras imbuirse del Poder Z y asesta una lluvia de golpes.",
+        "it": "Grazie al Potere Z, Mimikyu fa appello a tutte le sue forze e attacca il bersaglio tempestandolo di colpi."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
     "slug": "light-that-burns-the-sky",
     "typeSlug": "psychic",
     "damageClass": "SPECIAL",

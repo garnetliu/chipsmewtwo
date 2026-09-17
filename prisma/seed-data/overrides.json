@@ -1471,5 +1471,655 @@
         "zh-Hant": "奧雷"
       }
     }
+  },
+  "moveTargets": {
+    "specific-move": {
+      "names": {
+        "zh-Hans": "特定招式",
+        "zh-Hant": "特定招式"
+      }
+    },
+    "selected-pokemon-me-first": {
+      "names": {
+        "zh-Hans": "选定的宝可梦",
+        "zh-Hant": "選定的寶可夢"
+      }
+    },
+    "ally": {
+      "names": {
+        "zh-Hans": "我方一只",
+        "zh-Hant": "我方一隻"
+      }
+    },
+    "users-field": {
+      "names": {
+        "zh-Hans": "我方场地",
+        "zh-Hant": "我方場地"
+      }
+    },
+    "user-or-ally": {
+      "names": {
+        "zh-Hans": "自己或我方一只",
+        "zh-Hant": "自己或我方一隻"
+      }
+    },
+    "opponents-field": {
+      "names": {
+        "zh-Hans": "对手场地",
+        "zh-Hant": "對手場地"
+      }
+    },
+    "user": {
+      "names": {
+        "zh-Hans": "自己",
+        "zh-Hant": "自己"
+      }
+    },
+    "random-opponent": {
+      "names": {
+        "zh-Hans": "随机一名对手",
+        "zh-Hant": "隨機一名對手"
+      }
+    },
+    "all-other-pokemon": {
+      "names": {
+        "zh-Hans": "自己以外的全场",
+        "zh-Hant": "自己以外的全場"
+      }
+    },
+    "selected-pokemon": {
+      "names": {
+        "zh-Hans": "选定的宝可梦",
+        "zh-Hant": "選定的寶可夢"
+      }
+    },
+    "all-opponents": {
+      "names": {
+        "zh-Hans": "全体对手",
+        "zh-Hant": "全體對手"
+      }
+    },
+    "entire-field": {
+      "names": {
+        "zh-Hans": "整个场地",
+        "zh-Hant": "整個場地"
+      }
+    },
+    "user-and-allies": {
+      "names": {
+        "zh-Hans": "自己和我方全体",
+        "zh-Hant": "自己和我方全體"
+      }
+    },
+    "all-pokemon": {
+      "names": {
+        "zh-Hans": "场上全部宝可梦",
+        "zh-Hant": "場上全部寶可夢"
+      }
+    },
+    "all-allies": {
+      "names": {
+        "zh-Hans": "我方全体",
+        "zh-Hant": "我方全體"
+      }
+    },
+    "fainting-pokemon": {
+      "names": {
+        "zh-Hans": "陷入濒死的宝可梦",
+        "zh-Hant": "陷入瀕死的寶可夢"
+      }
+    }
+  },
+  "moveAilments": {
+    "unknown": {
+      "names": {
+        "zh-Hans": "未知",
+        "zh-Hant": "未知"
+      }
+    },
+    "none": {
+      "names": {
+        "zh-Hans": "无",
+        "zh-Hant": "無"
+      }
+    },
+    "paralysis": {
+      "names": {
+        "zh-Hans": "麻痹",
+        "zh-Hant": "麻痺"
+      }
+    },
+    "sleep": {
+      "names": {
+        "zh-Hans": "睡眠",
+        "zh-Hant": "睡眠"
+      }
+    },
+    "freeze": {
+      "names": {
+        "zh-Hans": "冰冻",
+        "zh-Hant": "冰凍"
+      }
+    },
+    "burn": {
+      "names": {
+        "zh-Hans": "灼伤",
+        "zh-Hant": "灼傷"
+      }
+    },
+    "poison": {
+      "names": {
+        "zh-Hans": "中毒",
+        "zh-Hant": "中毒"
+      }
+    },
+    "confusion": {
+      "names": {
+        "zh-Hans": "混乱",
+        "zh-Hant": "混亂"
+      }
+    },
+    "infatuation": {
+      "names": {
+        "zh-Hans": "着迷",
+        "zh-Hant": "著迷"
+      }
+    },
+    "trap": {
+      "names": {
+        "zh-Hans": "束缚",
+        "zh-Hant": "束縛"
+      }
+    },
+    "nightmare": {
+      "names": {
+        "zh-Hans": "恶梦",
+        "zh-Hant": "惡夢"
+      }
+    },
+    "torment": {
+      "names": {
+        "zh-Hans": "无理取闹",
+        "zh-Hant": "無理取鬧"
+      }
+    },
+    "disable": {
+      "names": {
+        "zh-Hans": "定身法",
+        "zh-Hant": "定身法"
+      }
+    },
+    "yawn": {
+      "names": {
+        "zh-Hans": "哈欠",
+        "zh-Hant": "哈欠"
+      }
+    },
+    "heal-block": {
+      "names": {
+        "zh-Hans": "回复封锁",
+        "zh-Hant": "回復封鎖"
+      }
+    },
+    "no-type-immunity": {
+      "names": {
+        "zh-Hans": "心之眼",
+        "zh-Hant": "心之眼"
+      }
+    },
+    "leech-seed": {
+      "names": {
+        "zh-Hans": "寄生种子",
+        "zh-Hant": "寄生種子"
+      }
+    },
+    "embargo": {
+      "names": {
+        "zh-Hans": "封印道具",
+        "zh-Hant": "封印道具"
+      }
+    },
+    "perish-song": {
+      "names": {
+        "zh-Hans": "灭亡之歌",
+        "zh-Hant": "滅亡之歌"
+      }
+    },
+    "ingrain": {
+      "names": {
+        "zh-Hans": "扎根",
+        "zh-Hant": "扎根"
+      }
+    },
+    "silence": {
+      "names": {
+        "zh-Hans": "封印",
+        "zh-Hant": "封印"
+      }
+    },
+    "tar-shot": {
+      "names": {
+        "zh-Hans": "沥青射击",
+        "zh-Hant": "瀝青射擊"
+      }
+    },
+    "protect": {
+      "names": {
+        "zh-Hans": "守住",
+        "zh-Hant": "守住"
+      }
+    }
+  },
+  "moveMetaCategories": {
+    "damage": {
+      "names": {
+        "zh-Hans": "造成伤害",
+        "zh-Hant": "造成傷害"
+      }
+    },
+    "ailment": {
+      "names": {
+        "zh-Hans": "陷入异常状态",
+        "zh-Hant": "陷入異常狀態"
+      }
+    },
+    "net-good-stats": {
+      "names": {
+        "zh-Hans": "提升能力",
+        "zh-Hant": "提升能力"
+      }
+    },
+    "heal": {
+      "names": {
+        "zh-Hans": "回复",
+        "zh-Hant": "回復"
+      }
+    },
+    "damage-ailment": {
+      "names": {
+        "zh-Hans": "伤害并陷入异常状态",
+        "zh-Hant": "傷害並陷入異常狀態"
+      }
+    },
+    "swagger": {
+      "names": {
+        "zh-Hans": "提升能力并使其混乱",
+        "zh-Hant": "提升能力並使其混亂"
+      }
+    },
+    "damage-lower": {
+      "names": {
+        "zh-Hans": "伤害并降低能力",
+        "zh-Hant": "傷害並降低能力"
+      }
+    },
+    "damage-raise": {
+      "names": {
+        "zh-Hans": "伤害并提升自身能力",
+        "zh-Hant": "傷害並提升自身能力"
+      }
+    },
+    "damage-heal": {
+      "names": {
+        "zh-Hans": "伤害并回复自身",
+        "zh-Hant": "傷害並回復自身"
+      }
+    },
+    "ohko": {
+      "names": {
+        "zh-Hans": "一击必杀",
+        "zh-Hant": "一擊必殺"
+      }
+    },
+    "whole-field-effect": {
+      "names": {
+        "zh-Hans": "全场效果",
+        "zh-Hant": "全場效果"
+      }
+    },
+    "field-effect": {
+      "names": {
+        "zh-Hans": "单侧场地效果",
+        "zh-Hant": "單側場地效果"
+      }
+    },
+    "force-switch": {
+      "names": {
+        "zh-Hans": "强制换人",
+        "zh-Hant": "強制換人"
+      }
+    },
+    "unique": {
+      "names": {
+        "zh-Hans": "特殊效果",
+        "zh-Hant": "特殊效果"
+      }
+    }
+  },
+  "itemCategories": {
+    "stat-boosts": {
+      "names": {
+        "zh-Hans": "能力提升",
+        "zh-Hant": "能力提升"
+      }
+    },
+    "effort-drop": {
+      "names": {
+        "zh-Hans": "降低基础点数",
+        "zh-Hant": "降低基礎點數"
+      }
+    },
+    "medicine": {
+      "names": {
+        "zh-Hans": "药品",
+        "zh-Hant": "藥品"
+      }
+    },
+    "other": {
+      "names": {
+        "zh-Hans": "其他",
+        "zh-Hant": "其他"
+      }
+    },
+    "in-a-pinch": {
+      "names": {
+        "zh-Hans": "危急时发动",
+        "zh-Hant": "危急時發動"
+      }
+    },
+    "picky-healing": {
+      "names": {
+        "zh-Hans": "挑食回复",
+        "zh-Hant": "挑食回復"
+      }
+    },
+    "type-protection": {
+      "names": {
+        "zh-Hans": "属性防护",
+        "zh-Hant": "屬性防護"
+      }
+    },
+    "baking-only": {
+      "names": {
+        "zh-Hans": "仅用于烹饪",
+        "zh-Hant": "僅用於烹飪"
+      }
+    },
+    "collectibles": {
+      "names": {
+        "zh-Hans": "收藏品",
+        "zh-Hant": "收藏品"
+      }
+    },
+    "evolution": {
+      "names": {
+        "zh-Hans": "进化道具",
+        "zh-Hant": "進化道具"
+      }
+    },
+    "spelunking": {
+      "names": {
+        "zh-Hans": "洞窟探险",
+        "zh-Hant": "洞窟探險"
+      }
+    },
+    "held-items": {
+      "names": {
+        "zh-Hans": "携带物",
+        "zh-Hant": "攜帶物"
+      }
+    },
+    "choice": {
+      "names": {
+        "zh-Hans": "讲究系列",
+        "zh-Hant": "講究系列"
+      }
+    },
+    "effort-training": {
+      "names": {
+        "zh-Hans": "基础点数训练",
+        "zh-Hant": "基礎點數訓練"
+      }
+    },
+    "bad-held-items": {
+      "names": {
+        "zh-Hans": "负面携带物",
+        "zh-Hant": "負面攜帶物"
+      }
+    },
+    "training": {
+      "names": {
+        "zh-Hans": "训练用品",
+        "zh-Hant": "訓練用品"
+      }
+    },
+    "plates": {
+      "names": {
+        "zh-Hans": "石板",
+        "zh-Hant": "石板"
+      }
+    },
+    "species-specific": {
+      "names": {
+        "zh-Hans": "专属道具",
+        "zh-Hant": "專屬道具"
+      }
+    },
+    "type-enhancement": {
+      "names": {
+        "zh-Hans": "属性强化",
+        "zh-Hant": "屬性強化"
+      }
+    },
+    "event-items": {
+      "names": {
+        "zh-Hans": "活动道具",
+        "zh-Hant": "活動道具"
+      }
+    },
+    "gameplay": {
+      "names": {
+        "zh-Hans": "游戏功能道具",
+        "zh-Hant": "遊戲功能道具"
+      }
+    },
+    "plot-advancement": {
+      "names": {
+        "zh-Hans": "剧情道具",
+        "zh-Hant": "劇情道具"
+      }
+    },
+    "unused": {
+      "names": {
+        "zh-Hans": "未使用",
+        "zh-Hant": "未使用"
+      }
+    },
+    "loot": {
+      "names": {
+        "zh-Hans": "战利品",
+        "zh-Hant": "戰利品"
+      }
+    },
+    "all-mail": {
+      "names": {
+        "zh-Hans": "邮件",
+        "zh-Hant": "郵件"
+      }
+    },
+    "vitamins": {
+      "names": {
+        "zh-Hans": "营养饮料",
+        "zh-Hant": "營養飲料"
+      }
+    },
+    "healing": {
+      "names": {
+        "zh-Hans": "回复药",
+        "zh-Hant": "回復藥"
+      }
+    },
+    "pp-recovery": {
+      "names": {
+        "zh-Hans": "ＰＰ回复",
+        "zh-Hant": "ＰＰ回復"
+      }
+    },
+    "revival": {
+      "names": {
+        "zh-Hans": "复活道具",
+        "zh-Hant": "復活道具"
+      }
+    },
+    "status-cures": {
+      "names": {
+        "zh-Hans": "状态治疗",
+        "zh-Hant": "狀態治療"
+      }
+    },
+    "mulch": {
+      "names": {
+        "zh-Hans": "肥料",
+        "zh-Hant": "肥料"
+      }
+    },
+    "special-balls": {
+      "names": {
+        "zh-Hans": "特殊球",
+        "zh-Hant": "特殊球"
+      }
+    },
+    "standard-balls": {
+      "names": {
+        "zh-Hans": "常规球",
+        "zh-Hant": "常規球"
+      }
+    },
+    "dex-completion": {
+      "names": {
+        "zh-Hans": "图鉴辅助",
+        "zh-Hant": "圖鑑輔助"
+      }
+    },
+    "scarves": {
+      "names": {
+        "zh-Hans": "华丽围巾",
+        "zh-Hant": "華麗圍巾"
+      }
+    },
+    "all-machines": {
+      "names": {
+        "zh-Hans": "技能机器",
+        "zh-Hant": "技能機器"
+      }
+    },
+    "flutes": {
+      "names": {
+        "zh-Hans": "玻璃哨",
+        "zh-Hant": "玻璃哨"
+      }
+    },
+    "apricorn-balls": {
+      "names": {
+        "zh-Hans": "球果球",
+        "zh-Hant": "球果球"
+      }
+    },
+    "apricorn-box": {
+      "names": {
+        "zh-Hans": "球果盒",
+        "zh-Hant": "球果盒"
+      }
+    },
+    "data-cards": {
+      "names": {
+        "zh-Hans": "数据卡",
+        "zh-Hant": "資料卡"
+      }
+    },
+    "jewels": {
+      "names": {
+        "zh-Hans": "宝石",
+        "zh-Hant": "寶石"
+      }
+    },
+    "miracle-shooter": {
+      "names": {
+        "zh-Hans": "神奇发射器",
+        "zh-Hant": "神奇發射器"
+      }
+    },
+    "mega-stones": {
+      "names": {
+        "zh-Hans": "超级石",
+        "zh-Hant": "超級石"
+      }
+    },
+    "memories": {
+      "names": {
+        "zh-Hans": "记忆碟",
+        "zh-Hant": "記憶碟"
+      }
+    },
+    "z-crystals": {
+      "names": {
+        "zh-Hans": "Ｚ纯晶",
+        "zh-Hant": "Ｚ純晶"
+      }
+    },
+    "species-candies": {
+      "names": {
+        "zh-Hans": "专属糖果",
+        "zh-Hant": "專屬糖果"
+      }
+    },
+    "catching-bonus": {
+      "names": {
+        "zh-Hans": "捕捉加成",
+        "zh-Hant": "捕捉加成"
+      }
+    },
+    "dynamax-crystals": {
+      "names": {
+        "zh-Hans": "极巨结晶",
+        "zh-Hant": "極巨結晶"
+      }
+    },
+    "nature-mints": {
+      "names": {
+        "zh-Hans": "性格薄荷",
+        "zh-Hant": "性格薄荷"
+      }
+    },
+    "curry-ingredients": {
+      "names": {
+        "zh-Hans": "咖喱食材",
+        "zh-Hant": "咖哩食材"
+      }
+    },
+    "tera-shard": {
+      "names": {
+        "zh-Hans": "太晶碎块",
+        "zh-Hant": "太晶碎塊"
+      }
+    },
+    "sandwich-ingredients": {
+      "names": {
+        "zh-Hans": "三明治食材",
+        "zh-Hant": "三明治食材"
+      }
+    },
+    "tm-materials": {
+      "names": {
+        "zh-Hans": "技能机器素材",
+        "zh-Hant": "技能機器素材"
+      }
+    },
+    "picnic": {
+      "names": {
+        "zh-Hans": "野餐用品",
+        "zh-Hant": "野餐用品"
+      }
+    }
   }
 }
