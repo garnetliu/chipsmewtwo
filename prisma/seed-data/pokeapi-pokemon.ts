@@ -40,6 +40,9 @@ export type SpeciesResponse = {
   generation: NamedRef;
   pokedex_numbers: { entry_number: number; pokedex: NamedRef }[];
   varieties: { is_default: boolean; pokemon: NamedRef }[];
+  is_baby: boolean;
+  is_legendary: boolean;
+  is_mythical: boolean;
   flavor_text_entries: {
     flavor_text: string;
     language: { name: string };
@@ -116,6 +119,11 @@ export type FormSnapshot = {
 export type Snapshot = {
   id: number;
   slug: string;
+  /// 未进化的宝宝宝可梦（皮丘、波克比）
+  isBaby: boolean;
+  isLegendary: boolean;
+  /// 幻之宝可梦，通常只能靠活动配信拿到
+  isMythical: boolean;
   names: { languageCode: string; name: string; genus: string | null }[];
   dexNumbers: { pokedexSlug: string; number: number }[];
   /** 物种的全部形态，默认形态排在最前 */
@@ -137,6 +145,9 @@ export function toSnapshot(species: SpeciesResponse, varieties: Variety[]): Snap
   return {
     id: species.id,
     slug: species.name,
+    isBaby: species.is_baby,
+    isLegendary: species.is_legendary,
+    isMythical: species.is_mythical,
     names: toNames(species),
     dexNumbers: species.pokedex_numbers.map((entry) => ({
       pokedexSlug: entry.pokedex.name,

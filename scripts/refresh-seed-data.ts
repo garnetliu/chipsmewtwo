@@ -40,6 +40,8 @@ import {
   type MoveLearnMethodSnapshot,
   type MoveLearnSnapshot,
   type MoveSnapshot,
+  type NamedSnapshot,
+  type NatureSnapshot,
   type PokedexSnapshot,
   type PokemonDescriptionSnapshot,
   type PokemonSnapshot,
@@ -357,6 +359,65 @@ async function types(): Promise<TypeSnapshot[]> {
   );
 }
 
+/**
+ * 只有 slug 和译名的字典表。道具分类、招式目标、异常状态、招式元分类都是这个形状。
+ *
+ * 这四张数据源一条中文都不给（有的连 names 数组都是空的），
+ * 中文在 overrides.json 里人工写
+ */
+async function named(resource: string): Promise<NamedSnapshot[]> {
+  type Named = { name: string; names?: LocalizedName[] };
+  const rows = await fetchAll<Named>(resource, 16);
+  return bySlug(
+    rows.map((r) => ({ slug: r.name, names: byLanguage(r.names ?? [], (e) => e.name) })),
+  );
+}
+
+/**
+ * 性格，25 种。
+ *
+ * 数据源用 decreased_stat / increased_stat 指向 stat 资源，
+ * 这里换成枚举 —— 性格只碰攻击、防御、特攻、特防、速度五项，ＨＰ不受影响。
+ * 增减同一项的那 5 种（勤奋那批）数据源给的是 null，照实存空
+ */
+async function natures(): Promise<NatureSnapshot[]> {
+  type Nature = {
+    name: string;
+    decreased_stat: NamedRef | null;
+    increased_stat: NamedRef | null;
+    likes_flavor: NamedRef | null;
+    hates_flavor: NamedRef | null;
+    names: LocalizedName[];
+  };
+  const rows = await fetchAll<Nature>("nature", 12);
+
+  const STAT: Record<string, NatureSnapshot["increasedStat"]> = {
+    attack: "ATTACK",
+    defense: "DEFENSE",
+    "special-attack": "SPECIAL_ATTACK",
+    "special-defense": "SPECIAL_DEFENSE",
+    speed: "SPEED",
+  };
+  const FLAVOR: Record<string, NatureSnapshot["likesFlavor"]> = {
+    spicy: "SPICY",
+    dry: "DRY",
+    sweet: "SWEET",
+    bitter: "BITTER",
+    sour: "SOUR",
+  };
+
+  return bySlug(
+    rows.map((n) => ({
+      slug: n.name,
+      increasedStat: n.increased_stat ? (STAT[n.increased_stat.name] ?? null) : null,
+      decreasedStat: n.decreased_stat ? (STAT[n.decreased_stat.name] ?? null) : null,
+      likesFlavor: n.likes_flavor ? (FLAVOR[n.likes_flavor.name] ?? null) : null,
+      hatesFlavor: n.hates_flavor ? (FLAVOR[n.hates_flavor.name] ?? null) : null,
+      names: byLanguage(n.names, (e) => e.name),
+    })),
+  );
+}
+
 async function colors(): Promise<ColorSnapshot[]> {
   type Color = { name: string; names: LocalizedName[] };
   const rows = await fetchAll<Color>("pokemon-color");
@@ -404,6 +465,7 @@ async function items(index: GroupIndex): Promise<ItemSnapshot[]> {
     effect_entries: EffectEntry[];
     flavor_text_entries: ({ text: string } & FlavorEntry)[];
     game_indices: { generation: NamedRef }[];
+    category: NamedRef | null;
   };
   const rows = await fetchAll<Item>("item", 12);
 
@@ -418,6 +480,7 @@ async function items(index: GroupIndex): Promise<ItemSnapshot[]> {
       return {
         slug: item.name,
         names: byLanguage(item.names, (e) => e.name),
+        categorySlug: item.category?.name ?? null,
         // 存文件名不存整条地址：地址前缀和版本号在 lib/pokemon/sprites.ts 里
         imageName: item.sprites.default?.split("/").pop() ?? null,
         // 道具没有 effect_changes，机制说明每代都一样，展开只是为了跟另外两张表同形
@@ -554,6 +617,7 @@ const SIGNATURE_Z_MOVES = new Set([
   "menacing-moonraze-maelstrom",
   "light-that-burns-the-sky",
   "soul-stealing-7-star-strike",
+  "lets-snuggle-forever",
 ]);
 
 /** Ｚ招式和极巨招式各自只活在一个世代 */
@@ -566,7 +630,34 @@ type SplitMoves = {
   maxMoves: MaxMoveSnapshot[];
 };
 
-async function moves(index: GroupIndex): Promise<SplitMoves> {
+/**
+ * 招式活到哪一代，用招式学习表反推。
+ *
+ * 数据源只说招式哪代登场，不说哪代退场 —— 直接铺到第九代的话，
+ * Let's Go 专属的那批（电电加速、坏坏领域……）会凭空多出第八、第九世代的行，
+ * 可它们只在 Let's Go 里存在过。
+ *
+ * 取「有学习记录的最后一代」当上界：常规招式的学习记录本来就铺满到第九代，
+ * 不受影响；一条学习记录都没有的（皮卡丘的闪闪雷光那种事件招式）没法推断，
+ * 保持原样不裁
+ */
+function lastGeneration(
+  learns: MoveLearnSnapshot[],
+  generationOfGroup: (slug: string) => number | undefined,
+): Map<string, number> {
+  const out = new Map<string, number>();
+  for (const form of learns) {
+    for (const [moveSlug, groupSlug] of form.learns) {
+      const generationId = generationOfGroup(groupSlug);
+      if (generationId === undefined) continue;
+      const seen = out.get(moveSlug);
+      if (seen === undefined || generationId > seen) out.set(moveSlug, generationId);
+    }
+  }
+  return out;
+}
+
+async function moves(index: GroupIndex, learns: MoveLearnSnapshot[]): Promise<SplitMoves> {
   type PastValue = {
     version_group: NamedRef;
     type: NamedRef | null;
@@ -589,8 +680,25 @@ async function moves(index: GroupIndex): Promise<SplitMoves> {
     effect_entries: EffectEntry[];
     effect_changes: EffectChange[];
     flavor_text_entries: ({ flavor_text: string } & FlavorEntry)[];
+    priority: number;
+    target: NamedRef | null;
+    meta: {
+      ailment: NamedRef | null;
+      category: NamedRef | null;
+      min_hits: number | null;
+      max_hits: number | null;
+      min_turns: number | null;
+      max_turns: number | null;
+      drain: number | null;
+      healing: number | null;
+      crit_rate: number | null;
+      ailment_chance: number | null;
+      flinch_chance: number | null;
+      stat_chance: number | null;
+    } | null;
   };
   const rows = await fetchAll<Move>("move", 12);
+  const lastGen = lastGeneration(learns, index.generationOf);
 
   const unknown = new Set<string>();
   const all = bySlug(
@@ -603,8 +711,11 @@ async function moves(index: GroupIndex): Promise<SplitMoves> {
         })
         .sort((a, b) => b.generationId - a.generationId);
 
+      // 有学习记录就按它收口，没有的铺到最新代
+      const until = Math.max(lastGen.get(m.name) ?? LATEST_GENERATION, introducedIn);
+
       const generations: MoveSnapshot["generations"] = {};
-      for (let generationId = introducedIn; generationId <= LATEST_GENERATION; generationId++) {
+      for (let generationId = introducedIn; generationId <= until; generationId++) {
         let typeSlug = m.type.name;
         let power = m.power;
         let accuracy = m.accuracy;
@@ -630,6 +741,22 @@ async function moves(index: GroupIndex): Promise<SplitMoves> {
         slug: m.name,
         introducedInGenerationId: introducedIn,
         names: byLanguage(m.names, (e) => e.name),
+        priority: m.priority,
+        meta: {
+          targetSlug: m.target?.name ?? null,
+          ailmentSlug: m.meta?.ailment?.name ?? null,
+          metaCategorySlug: m.meta?.category?.name ?? null,
+          minHits: m.meta?.min_hits ?? null,
+          maxHits: m.meta?.max_hits ?? null,
+          minTurns: m.meta?.min_turns ?? null,
+          maxTurns: m.meta?.max_turns ?? null,
+          drain: m.meta?.drain ?? null,
+          healing: m.meta?.healing ?? null,
+          critRate: m.meta?.crit_rate ?? null,
+          ailmentChance: m.meta?.ailment_chance ?? null,
+          flinchChance: m.meta?.flinch_chance ?? null,
+          statChance: m.meta?.stat_chance ?? null,
+        },
         generations,
         effects: toEffects(
           m.effect_entries,
@@ -647,7 +774,10 @@ async function moves(index: GroupIndex): Promise<SplitMoves> {
     console.warn(`  ⚠ 有 flavor text 引用了未知版本组: ${[...unknown].sort().join(", ")}`);
   }
   const withEffect = all.filter((m) => Object.keys(m.effects).length).length;
-  console.log(`  招式说明: 机制 ${withEffect}/${all.length}`);
+  const trimmed = all.filter(
+    (m) => Math.max(...Object.keys(m.generations).map(Number)) < LATEST_GENERATION,
+  ).length;
+  console.log(`  招式说明: 机制 ${withEffect}/${all.length}；${trimmed} 条没活到第九世代`);
   return splitMoves(all);
 }
 
@@ -750,6 +880,14 @@ async function machineNumbers(): Promise<Map<string, string>> {
  * 没给的时候回落到该物种的默认形态（也就是跟物种同名那条）
  */
 async function evolutions(defaultFormOf: Map<string, string>): Promise<EvolutionSnapshot[]> {
+  // 触发方式按 id 认，不按名字 —— 数据源给进化链里的名字和字典表对不上：
+  // /evolution-trigger 里 18 号已经叫 unclassified，进化链里还写着旧名 other，
+  // 照名字存进去会因为外键找不到而整条丢掉
+  const triggerList = await getJson<{ results: NamedRef[] }>("/evolution-trigger?limit=200");
+  const triggerSlugById = new Map(
+    triggerList.results.map((r) => [idFromUrl(r.url), r.name] as const),
+  );
+
   type Detail = {
     version_group: NamedRef;
     trigger: NamedRef;
@@ -804,7 +942,7 @@ async function evolutions(defaultFormOf: Map<string, string>): Promise<Evolution
           fromFormSlug,
           toFormSlug,
           groupSlug: d.version_group.name,
-          triggerSlug: d.trigger.name,
+          triggerSlug: triggerSlugById.get(idFromUrl(d.trigger.url)) ?? d.trigger.name,
           minLevel: d.min_level,
           minHappiness: d.min_happiness,
           minAffection: d.min_affection,
@@ -1052,23 +1190,29 @@ await write("types", await types());
 await write("colors", await colors());
 await write("move-learn-methods", await moveLearnMethods());
 await write("evolution-triggers", await evolutionTriggers());
+await write("item-categories", await named("item-category"));
 await write("items", await items(index));
+await write("natures", await natures());
+await write("move-targets", await named("move-target"));
+await write("move-ailments", await named("move-ailment"));
+await write("move-meta-categories", await named("move-category"));
 await write("abilities", await abilities(index));
 await write("pokedexes", await pokedexes());
 await write("groups", groupRows);
 await write("versions", await versions());
-const moveRows = await moves(index);
-await write("moves", moveRows.moves);
-await write("z-moves", moveRows.zMoves);
-await write("max-moves", moveRows.maxMoves);
-
 // 技能机器编号先备好，招式学习表里 machine 那些行要回填
 const machines = await machineNumbers();
 
+// 宝可梦排在招式之前：招式的世代范围要靠学习表反推上界
 const species = await pokemon(machines);
 await write("pokemon", species.pokemon);
 await write("pokemon-descriptions", species.descriptions);
 await writeGzip("move-learns", species.moveLearns);
+
+const moveRows = await moves(index, species.moveLearns);
+await write("moves", moveRows.moves);
+await write("z-moves", moveRows.zMoves);
+await write("max-moves", moveRows.maxMoves);
 
 // 进化两端是形态，要先知道每个物种的默认形态叫什么
 await write("evolutions", await evolutions(species.defaultFormOf));
