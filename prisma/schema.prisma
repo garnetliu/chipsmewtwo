@@ -114,6 +114,11 @@ model Language {
   abilityFlavors        AbilityFlavorI18n[]
   moveFlavors           MoveFlavorI18n[]
   itemFlavors           ItemFlavorI18n[]
+  natureNames           NatureI18n[]
+  itemCategoryNames     ItemCategoryI18n[]
+  moveTargetNames       MoveTargetI18n[]
+  moveAilmentNames      MoveAilmentI18n[]
+  moveMetaCategoryNames MoveMetaCategoryI18n[]
   zMoveNames            ZMoveI18n[]
   zMoveEffects          ZMoveEffectI18n[]
   zMoveFlavors          ZMoveFlavorI18n[]
@@ -272,10 +277,19 @@ model Pokemon {
   id   Int    @id // 全国图鉴编号
   slug String @unique // "vulpix"
 
+  /// 未进化的宝宝宝可梦（皮丘、波克比）。它们不能繁殖，是蛋里孵出来的那一档
+  isBaby      Boolean @default(false)
+  /// 传说的宝可梦（三圣鸟、超梦、时拉比那些）
+  isLegendary Boolean @default(false)
+  /// 幻之宝可梦 —— 通常只能靠活动配信拿到（梦幻、玛纳霏、玛夏多）
+  isMythical  Boolean @default(false)
+
   names      PokemonI18n[]
   forms      Form[]
   dexNumbers PokedexNumber[]
 
+  @@index([isLegendary])
+  @@index([isMythical])
   @@map("pokemon")
 }
 
@@ -506,9 +520,35 @@ model EvolutionTriggerI18n {
 
 /// 道具。目前只为进化条件服务（进化石、携带物），所以只留身份和译名 ——
 /// 效果、售价、能不能在战斗中用这些等真要做道具图鉴时再加
+/// 道具分类，54 种。数据源按「在包包哪个口袋、做什么用」分的 ——
+/// 进化石是 evolution、携带物是 held-items、技能机器是 all-machines。
+/// 道具列表页靠它筛选
+model ItemCategory {
+  slug String @id // "evolution"
+
+  names ItemCategoryI18n[]
+  items Item[]
+
+  @@map("item_category")
+}
+
+model ItemCategoryI18n {
+  categorySlug String
+  category     ItemCategory @relation(fields: [categorySlug], references: [slug], onDelete: Cascade)
+  languageCode String
+  language     Language     @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([categorySlug, languageCode])
+  @@map("item_category_i18n")
+}
+
 model Item {
   id   Int    @id @default(autoincrement())
   slug String @unique // "thunder-stone" / "kings-rock"
+
+  categorySlug String?
+  category     ItemCategory? @relation(fields: [categorySlug], references: [slug])
 
   /// 图片文件名，例如 "thunder-stone.png"。道具这边文件名就是 slug，
   /// 但照样存下来 —— 数据源哪天换了命名规则，改的是导入代码不是拼地址的地方；
@@ -524,6 +564,7 @@ model Item {
   /// 这件道具是哪个专属Ｚ招式要携带的Ｚ纯晶
   zMoveCrystalFor  ZMove[]     @relation("ZMoveCrystal")
 
+  @@index([categorySlug])
   @@map("item")
 }
 
@@ -658,6 +699,54 @@ model PokedexNumber {
   @@id([pokemonId, pokedexId])
   @@unique([pokedexId, number])
   @@map("pokedex_number")
+}
+
+/// 性格影响的能力项。ＨＰ不受性格影响，所以不在里面
+enum StatKind {
+  ATTACK
+  DEFENSE
+  SPECIAL_ATTACK
+  SPECIAL_DEFENSE
+  SPEED
+}
+
+/// 树果的五种口味。性格决定宝可梦喜欢和讨厌哪一种
+enum BerryFlavor {
+  SPICY // 辣
+  DRY // 涩
+  SWEET // 甜
+  BITTER // 苦
+  SOUR // 酸
+}
+
+/// 性格，25 种。
+///
+/// 一项能力 ×1.1、另一项 ×0.9，五项两两组合是 20 种；
+/// 剩下 5 种（勤奋、坦率、害羞、认真、浮躁）增减的是同一项，等于没有加成，
+/// 那几条的 increasedStat 和 decreasedStat 都是空
+model Nature {
+  slug String @id // "adamant"
+
+  increasedStat StatKind? // ×1.1 的那项
+  decreasedStat StatKind? // ×0.9 的那项
+  /// 喜欢的口味，吃到会提高亲密度。无加成的那 5 种是空
+  likesFlavor   BerryFlavor?
+  hatesFlavor   BerryFlavor?
+
+  names NatureI18n[]
+
+  @@map("nature")
+}
+
+model NatureI18n {
+  natureSlug   String
+  nature       Nature   @relation(fields: [natureSlug], references: [slug], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String // 「固执」/「胆小」
+
+  @@id([natureSlug, languageCode])
+  @@map("nature_i18n")
 }
 
 /// 时间段。夕方（DUSK）只有 Gen7 起的黑夜魔灵用得上，
@@ -919,9 +1008,125 @@ model AbilityFlavorI18n {
  * （Z 招式只有第七世代、极巨化只有第八世代），套不上 MoveGeneration
  * 的「每代一行」；威力也不是固定值，按原招式换算
  */
+/// 招式打谁。16 种 —— 选定的一只、全体对手、自己、整个场地……
+/// 数据源没给译名，中文在 overrides.json
+model MoveTarget {
+  slug String @id // "selected-pokemon"
+
+  names MoveTargetI18n[]
+  moves Move[]
+
+  @@map("move_target")
+}
+
+model MoveTargetI18n {
+  targetSlug   String
+  target       MoveTarget @relation(fields: [targetSlug], references: [slug], onDelete: Cascade)
+  languageCode String
+  language     Language   @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([targetSlug, languageCode])
+  @@map("move_target_i18n")
+}
+
+/// 招式造成的异常状态，23 种（麻痹、灼伤、寄生种子……）。
+/// none 表示不造成异常状态，数据源自己就是这么列的
+model MoveAilment {
+  slug String @id // "burn"
+
+  names MoveAilmentI18n[]
+  moves Move[]
+
+  @@map("move_ailment")
+}
+
+model MoveAilmentI18n {
+  ailmentSlug  String
+  ailment      MoveAilment @relation(fields: [ailmentSlug], references: [slug], onDelete: Cascade)
+  languageCode String
+  language     Language    @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([ailmentSlug, languageCode])
+  @@map("move_ailment_i18n")
+}
+
+/// 招式按「做什么」分的元类别，14 种。
+/// 跟 MoveCategory（物理/特殊/变化）不是一回事 —— 那个说的是伤害怎么算，
+/// 这个说的是招式的意图：纯伤害、上异常状态、回复、强制换人……
+model MoveMetaCategory {
+  slug String @id // "damage-ailment"
+
+  names MoveMetaCategoryI18n[]
+  moves Move[]
+
+  @@map("move_meta_category")
+}
+
+model MoveMetaCategoryI18n {
+  metaCategorySlug String
+  metaCategory     MoveMetaCategory @relation(fields: [metaCategorySlug], references: [slug], onDelete: Cascade)
+  languageCode     String
+  language         Language         @relation(fields: [languageCode], references: [code])
+  name             String
+
+  @@id([metaCategorySlug, languageCode])
+  @@map("move_meta_category_i18n")
+}
+
 model Move {
   id   Int    @id @default(autoincrement())
   slug String @unique // "knock-off"
+
+  /// 出招顺序。0 是常规，电光一闪 +1、先制之爪 +2、王者盾牌 +4、报仇 -3。
+  /// 数据源只给当前值，不分世代
+  priority Int @default(0)
+
+  targetSlug String?
+  target     MoveTarget? @relation(fields: [targetSlug], references: [slug])
+
+  // ── 下面这些数据源统一塞在 meta 里，不分世代 ──
+
+  /// 造成的异常状态。不造成的是 "none" 而不是 null
+  ailmentSlug      String?
+  ailment          MoveAilment?      @relation(fields: [ailmentSlug], references: [slug])
+  metaCategorySlug String?
+  metaCategory     MoveMetaCategory? @relation(fields: [metaCategorySlug], references: [slug])
+
+  /// 连击招式的次数范围。双弹瓦斯是 2~2，乱击是 2~5，非连击招式为空
+  minHits  Int?
+  maxHits  Int?
+  /// 持续回合数范围。撒水雾那种持续状态用得上
+  minTurns Int?
+  maxTurns Int?
+  /// 吸血比例，百分数。正数回血（吸取 50），负数是反作用力（舍身冲撞 -33）
+  drain    Int?
+  /// 回复自身的比例，百分数。自我再生是 50
+  healing  Int?
+  /// 击中要害等级的加成。攀瀑、飞叶快刀是 1
+  critRate Int?
+  /// 触发异常状态的几率，百分数
+  ailmentChance Int?
+  /// 让对手畏缩的几率
+  flinchChance  Int?
+  /// 触发能力变化的几率
+  statChance    Int?
+
+  // ── 招式标记位。数据源不给，来自神奇宝贝百科的招式信息框；抓不到的是 null ──
+
+  /// 是否接触对手。静电、粗糙皮肤、毒刺这些「被接触时触发」的特性看它
+  makesContact         Boolean?
+  /// 能否被守住、看穿挡下
+  blockedByProtect     Boolean?
+  /// 能否被魔法反射弹回
+  reflectedByMagicCoat Boolean?
+  /// 能否被抢夺偷走
+  stolenBySnatch       Boolean?
+  /// 能否被鹦鹉学舌复制
+  copiedByMirrorMove   Boolean?
+  /// 携带王者之证时能否额外触发畏缩
+  triggersKingsRock    Boolean?
 
   names       MoveI18n[]
   generations MoveGeneration[]
@@ -934,6 +1139,9 @@ model Move {
   /// 专属 Z 招式由哪个招式转化而来
   zMoveFor     ZMove[]
 
+  @@index([targetSlug])
+  @@index([ailmentSlug])
+  @@index([metaCategorySlug])
   @@map("move")
 }
 
