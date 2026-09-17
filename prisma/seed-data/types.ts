@@ -136,6 +136,51 @@ export type MoveSnapshot = {
 };
 
 /**
+ * Ｚ招式，第七世代独有。
+ *
+ * 泛用的一个属性一个，威力和伤害分类跟原招式走所以是 null；
+ * 专属的限定宝可梦和原招式，那三个 *Slug 字段才有值。
+ *
+ * 不带世代维度 —— 整个机制只活在第七世代。说明也因此不按世代分
+ */
+export type ZMoveSnapshot = {
+  slug: string;
+  typeSlug: string;
+  /** 泛用Ｚ招式为 null：跟原招式相同。专属的有定值，伊布的极值提升就是变化类 */
+  damageClass: "PHYSICAL" | "SPECIAL" | "STATUS" | null;
+  /** 泛用Ｚ招式为 null：按原招式威力换算 */
+  power: number | null;
+  pp: number | null;
+  names: Localized;
+  effects: Partial<Record<LanguageCode, EffectText>>;
+  flavors: FlavorsByGroup;
+  /** 专属Ｚ招式限定的形态 */
+  formSlug?: string;
+  /** 专属Ｚ招式的原始招式 */
+  baseMoveSlug?: string;
+  /** 要携带的Ｚ纯晶 */
+  itemSlug?: string;
+};
+
+/**
+ * 极巨招式，第八世代独有。
+ *
+ * 泛用的一个属性一个，外加变化招式统一变成的极巨障壁；
+ * 超极巨的专属于某个形态，数据源一条都没收，全部来自神奇宝贝百科
+ */
+export type MaxMoveSnapshot = {
+  slug: string;
+  typeSlug: string;
+  power: number | null;
+  pp: number | null;
+  names: Localized;
+  effects: Partial<Record<LanguageCode, EffectText>>;
+  flavors: FlavorsByGroup;
+  /** 超极巨招式专属的形态 */
+  formSlug?: string;
+};
+
+/**
  * 一个形态学会的全部招式。
  *
  * learns 用定长元组而不是对象：全量一百万条，写成
@@ -237,6 +282,8 @@ export type SeedData = {
   items: ItemSnapshot[];
   abilities: AbilitySnapshot[];
   moves: MoveSnapshot[];
+  "z-moves": ZMoveSnapshot[];
+  "max-moves": MaxMoveSnapshot[];
   evolutions: EvolutionSnapshot[];
   pokedexes: PokedexSnapshot[];
   groups: GroupSnapshot[];
@@ -331,12 +378,44 @@ export type WikiPokemonDescriptionSnapshot = {
   genus?: Localized;
 };
 
+/**
+ * 专属Ｚ招式的转化关系。百科的Ｚ招式条目有张表，列着
+ * Ｚ招式名、属性、威力、分类、宝可梦、原始招式、要带的Ｚ纯晶
+ */
+export type WikiZMoveSnapshot = {
+  /** 对上数据源的 slug；数据源没收的那个（谜拟Ｑ的）靠中文名认 */
+  slug: string;
+  names: Localized;
+  formSlug: string | null;
+  baseMoveSlug: string | null;
+  itemSlug: string | null;
+  power: number | null;
+  damageClass: "PHYSICAL" | "SPECIAL" | "STATUS" | null;
+};
+
+/**
+ * 超极巨招式。数据源一条都没有，slug 由英文名生成
+ */
+export type WikiMaxMoveSnapshot = {
+  slug: string;
+  names: Localized;
+  typeSlug: string;
+  /** 专属于哪个形态 */
+  formSlug: string | null;
+  /** 附加效果，百科列表页那一列 */
+  effect: Localized;
+};
+
 /** wiki 快照的文件名 → 内容类型 */
 export type WikiData = {
   "wiki-abilities": WikiSnapshot<WikiEffectSnapshot>;
   "wiki-moves": WikiSnapshot<WikiEffectSnapshot>;
   /** 道具只补机制说明，游戏文案那边 PokeAPI 十种语言齐全 */
   "wiki-items": WikiSnapshot<WikiEffectSnapshot>;
+  /** 专属Ｚ招式的转化关系（谁 + 什么原招式 → 什么Ｚ招式），数据源不给 */
+  "wiki-z-moves": WikiSnapshot<WikiZMoveSnapshot>;
+  /** 超极巨招式全部来自百科，数据源一条都没收 */
+  "wiki-max-moves": WikiSnapshot<WikiMaxMoveSnapshot>;
   "wiki-pokemon-descriptions": WikiSnapshot<WikiPokemonDescriptionSnapshot>;
 };
 

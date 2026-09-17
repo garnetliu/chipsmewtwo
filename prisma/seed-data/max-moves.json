@@ -1,0 +1,760 @@
+[
+  {
+    "slug": "max-airstream",
+    "typeSlug": "flying",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨飞冲",
+      "zh-Hant": "極巨飛衝",
+      "en": "Max Airstream",
+      "ja": "ダイジェット",
+      "ja-Hrkt": "ダイジェット",
+      "ko": "다이제트",
+      "fr": "Aéromax",
+      "de": "Dyna-Düse",
+      "es": "Maxiciclón",
+      "it": "Dynajet"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, raise the Speed of the user and its allies' by 1 stage.",
+        "effect": "If this move hits, raise the Speed of the user and its allies' by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的飞行属性攻击。会提高我方的速度。",
+        "zh-Hant": "極巨化寶可夢所使出的飛行屬性攻擊。可提高我方的速度。",
+        "en": "This is a Flying-type attack Dynamax Pokémon use. This raises ally Pokémon’s Speed stats.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　ひこうタイプの　攻撃。味方の　素早さを　上げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　ひこうタイプの　こうげき。みかたの　すばやさを　あげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 비행타입의 공격. 같은 편의 스피드를 올린다.",
+        "fr": "Une attaque de type Vol que seuls les Pokémon Dynamax peuvent utiliser. Augmente la Vitesse des alliés.",
+        "de": "Eine Flug-Attacke, die nur Dynamax-Pokémon einsetzen können. Erhöht die Initiative der Mitstreiterseite.",
+        "es": "Ataque de tipo Volador ejecutado por un Pokémon Dinamax. Aumenta la Velocidad de tu bando.",
+        "it": "Un attacco di tipo Volante che può essere eseguito dai Pokémon dynamaxizzati. Aumenta la Velocità degli alleati."
+      }
+    }
+  },
+  {
+    "slug": "max-darkness",
+    "typeSlug": "dark",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨恶霸",
+      "zh-Hant": "極巨惡霸",
+      "en": "Max Darkness",
+      "ja": "ダイアーク",
+      "ja-Hrkt": "ダイアーク",
+      "ko": "다이아크",
+      "fr": "Sinistromax",
+      "de": "Dyna-Dunkel",
+      "es": "Maxisombra",
+      "it": "Dynatenebre"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, lower the Special Defense of all Pokemon on the opposing side by 1 stage.",
+        "effect": "If this move hits, lower the Special Defense of all Pokemon on the opposing side by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的恶属性攻击。会降低对手的特防。",
+        "zh-Hant": "極巨化寶可夢所使出的惡屬性攻擊。可降低對手的特防。",
+        "en": "This is a Dark-type attack Dynamax Pokémon use. This lowers the target’s Sp. Def stat.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　あくタイプの　攻撃。相手の　特防を　下げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　あくタイプの　こうげき。あいての　とくぼうを　さげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 악타입의 공격. 상대의 특수방어를 떨어뜨린다.",
+        "fr": "Une attaque de type Ténèbres que seuls les Pokémon Dynamax peuvent utiliser. Baisse la Défense Spéciale de la cible.",
+        "de": "Eine Unlicht-Attacke, die nur Dynamax-Pokémon einsetzen können. Senkt die Spezial-Verteidigung des Zieles.",
+        "es": "Ataque de tipo Siniestro ejecutado por un Pokémon Dinamax. Reduce la Defensa Especial del objetivo.",
+        "it": "Un attacco di tipo Buio che può essere eseguito dai Pokémon dynamaxizzati. Riduce la Difesa Speciale dei nemici intorno."
+      }
+    }
+  },
+  {
+    "slug": "max-flare",
+    "typeSlug": "fire",
+    "power": 100,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨火爆",
+      "zh-Hant": "極巨火爆",
+      "en": "Max Flare",
+      "ja": "ダイバーン",
+      "ja-Hrkt": "ダイバーン",
+      "ko": "다이번",
+      "fr": "Pyromax",
+      "de": "Dyna-Brand",
+      "es": "Maxignición",
+      "it": "Dynafiammata"
+    },
+    "effects": {
+      "en": {
+        "short": "Changes the weather to sunny for five turns.",
+        "effect": "Changes the weather to sunshine for five turns, during which Fire moves inflict 50% extra damage, and Water moves inflict half damage. If the user is holding Heat Rock, this effect lasts for eight turns. Pokémon cannot become frozen. Thunder has 50% accuracy. Solar Beam skips its charge turn. Moonlight, Morning Sun, and Synthesis heal 2/3 of the user’s max HP. Pokémon with Chlorophyll have doubled original Speed. Pokémon with Forecast become Fire. Pokémon with Leaf Guard are not affected by major status effects. Pokémon with Flower Gift change form; every Pokémon on their side of the field have their original Attack and Special Attack increased by 50%. Pokémon with Dry Skin lose 1/8 max HP at the end of each turn. Pokémon with Solar Power have their original Special Attack raised by 50% but lose 1/8 their max HP at the end of each turn."
+      },
+      "fr": {
+        "short": "Change la météo en soleil pendant cinq tours.",
+        "effect": "Change la météo en soleil pendant cinq tours, pendant lesquesl les capacités Feu infligent 50% de dégâts supplémentaires, et les capacités Eau infligent la moitié des dégâts. Si le lanceur tient Roche Chaude, cet effet dure pendant huit tours. Les Pokémon ne peuvent pas geler. Fatal-Foudre a 50% de précision. Lance-Soleil passe son tour de chargement. Rayon Lune, Aurore, et Synthèse soignent 2/3 des PV max du lanceur. Les Pokémon avec Chlorophylle ont une Vitesse d'origine doublée. Les Pokémon avec Météo deviennent Feu. Les Pokémon avec Feuille Garde ne sont pas affectés par les effets majeurs de statut. Les Pokémon avec Don Floral change de forme; tous les Pokémon de leur côté du terrain ont leur Attaque et Attaque Spéciale d'origine augmentées de 50%. Les Pokémon avec Peau Sèche perdent 1/8 des PV max à la fin de chaque tour. Les Pokémon avec Force Soleil ont leur Attaque Spéciale d'origine augmentée de 50% mais perdent 1/8 de leurs PV max à la fin de chaque tour."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的火属性攻击。可在５回合内让日照变得强烈。",
+        "zh-Hant": "極巨化寶可夢所使出的火屬性攻擊。可在５回合內讓日照增強。",
+        "en": "This is a Fire-type attack Dynamax Pokémon use. The user intensifies the sun for five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　ほのおタイプの　攻撃。５ターンの　間　日差しを　強くする。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　ほのおタイプの　こうげき。５ターンの　あいだ　ひざしを　つよくする。",
+        "ko": "다이맥스한 포켓몬이 날리는 불꽃타입의 공격. 5턴 동안 햇살을 강하게 만든다.",
+        "fr": "Une attaque de type Feu que seuls les Pokémon Dynamax peuvent utiliser. Fait briller le soleil pendant cinq tours.",
+        "de": "Eine Feuer-Attacke, die nur Dynamax-Pokémon einsetzen können. Die Sonne brennt unbarmherzig fünf Runden lang.",
+        "es": "Ataque de tipo Fuego ejecutado por un Pokémon Dinamax. Hace que se intensifique el efecto del sol durante cinco turnos.",
+        "it": "Un attacco di tipo Fuoco che può essere eseguito dai Pokémon dynamaxizzati. Intensifica i raggi solari per cinque turni."
+      }
+    }
+  },
+  {
+    "slug": "max-flutterby",
+    "typeSlug": "bug",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨虫蛊",
+      "zh-Hant": "極巨蟲蠱",
+      "en": "Max Flutterby",
+      "ja": "ダイワーム",
+      "ja-Hrkt": "ダイワーム",
+      "ko": "다이웜",
+      "fr": "Insectomax",
+      "de": "Dyna-Schwarm",
+      "es": "Maxinsecto",
+      "it": "Dynainsetto"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, lower the Special Attack of all Pokemon on the opposing side by 1 stage.",
+        "effect": "If this move hits, lower the Special Attack of all Pokemon on the opposing side by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的虫属性攻击。会降低对手的特攻。",
+        "zh-Hant": "極巨化寶可夢所使出的蟲屬性攻擊。可降低對手的特攻。",
+        "en": "This is a Bug-type attack Dynamax Pokémon use. This lowers the target’s Sp. Atk stat.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　むしタイプの　攻撃。相手の　特攻を　下げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　むしタイプの　こうげき。あいての　とくこうを　さげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 벌레타입의 공격. 상대의 특수공격을 떨어뜨린다.",
+        "fr": "Une attaque de type Insecte que seuls les Pokémon Dynamax peuvent utiliser. Baisse l’Attaque Spéciale de la cible.",
+        "de": "Eine Käfer-Attacke, die nur Dynamax-Pokémon einsetzen können. Senkt den Spezial-Angriff des Zieles.",
+        "es": "Ataque de tipo Bicho ejecutado por un Pokémon Dinamax. Reduce el Ataque Especial del objetivo.",
+        "it": "Un attacco di tipo Coleottero che può essere eseguito dai Pokémon dynamaxizzati. Riduce l’Attacco Speciale dei nemici intorno."
+      }
+    }
+  },
+  {
+    "slug": "max-geyser",
+    "typeSlug": "water",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨水流",
+      "zh-Hant": "極巨水流",
+      "en": "Max Geyser",
+      "ja": "ダイストリーム",
+      "ja-Hrkt": "ダイストリーム",
+      "ko": "다이스트림",
+      "fr": "Hydromax",
+      "de": "Dyna-Flut",
+      "es": "Maxichorro",
+      "it": "Dynaflusso"
+    },
+    "effects": {
+      "en": {
+        "short": "Changes the weather to rain for five turns.",
+        "effect": "Changes the weather to rain for five turns, during which Water moves inflict 50% extra damage, and Fire moves inflict half damage. If the user is holding Damp Rock, this effect lasts for eight turns. Thunder has 100% accuracy. If the target has used Detect or Protect, Thunder has a (100 - accuracy)% chance to break through the protection. Solar Beam has half power. Moonlight, Morning Sun, and Synthesis heal only 1/4 of the user’s max HP. Pokémon with Swift Swim have doubled original Speed. Pokémon with Forecast become Water. Pokémon with Dry Skin heal 1/8 max HP, Pokémon with Hydration are cured of major status effects, and Pokémon with Rain Dish heal 1/16 max HP at the end of each turn."
+      },
+      "fr": {
+        "short": "Change la météo en pluie pendant cinq tours.",
+        "effect": "Change la météo en pluie pendant cinq tours, durant lesquels les capacités Eau infligent 50% de dégâts supplémentaires, et les capacités Feu infligent la moitié des dégâts. Si le lanceur tient Roche Humide, cet effet dure huit tours. Fatal-Foudre a 100% de précision. Si la cible a utilisé Détection ou Abri, Fatal-Foudre a (100 - accuracy)% de chances de passer à travers la protection. Lance-Soleil a deux fois moins de puissance. Rayon Lune, Aurore, et Synthèse soignent seulement 1/4 des PV max du lanceur. Les Pokémon avec Glissade ont une Vitesse de base doublée. Les Pokémon avec Météo deviennent Eau. Les Pokémon avec Peau Sèche soignent 1/8 des PV max, les Pokémon avec Hydratation sont soignés de leurs effets majeurs de statut, et les Pokémon avec Cuvette soignent 1/16 des PV max à la fin de chaque tour."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的水属性攻击。可在５回合内降下大雨。",
+        "zh-Hant": "極巨化寶可夢所使出的水屬性攻擊。在５回合內會降下大雨。",
+        "en": "This is a Water-type attack Dynamax Pokémon use. The user summons a heavy rain that falls for five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　みずタイプの　攻撃。５ターンの　間　雨を　降らせる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　みずタイプの　こうげき。５ターンの　あいだ　あめを　ふらせる。",
+        "ko": "다이맥스한 포켓몬이 날리는 물타입의 공격. 5턴 동안 비를 내리게 한다.",
+        "fr": "Une attaque de type Eau que seuls les Pokémon Dynamax peuvent utiliser. Invoque de fortes pluies qui durent cinq tours.",
+        "de": "Eine Wasser-Attacke, die nur Dynamax-Pokémon einsetzen können. Löst fünf Runden lang strömenden Regen aus.",
+        "es": "Ataque de tipo Agua ejecutado por un Pokémon Dinamax. Desata un aguacero que dura cinco turnos.",
+        "it": "Un attacco di tipo Acqua che può essere eseguito dai Pokémon dynamaxizzati. Provoca una forte pioggia per cinque turni."
+      }
+    }
+  },
+  {
+    "slug": "max-guard",
+    "typeSlug": "normal",
+    "power": null,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨防壁",
+      "zh-Hant": "極巨防壁",
+      "en": "Max Guard",
+      "ja": "ダイウォール",
+      "ja-Hrkt": "ダイウォール",
+      "ko": "다이월",
+      "fr": "Gardomax",
+      "de": "Dyna-Wall",
+      "es": "Maxibarrera",
+      "it": "Dynabarriera"
+    },
+    "effects": {
+      "en": {
+        "short": "Prevents any moves from hitting the user this turn.",
+        "effect": "No moves will hit the user for the remainder of this turn. If the user is last to act this turn, this move will fail. If the user successfully used Detect, Endure, Protect, Quick Guard, or Wide Guard on the last turn, this move has a 50% chance to fail. Lock-On, Mind Reader, and No Guard provide a (100 – accuracy)% chance for moves to break through this move. This does not apply to one-hit KO moves (Fissure, Guillotine, Horn Drill, and Sheer Cold); those are always blocked by this move. Thunder during Rain Dance and Blizzard during Hail have a 30% chance to break through this move. The following effects are not prevented by this move: * Acupressure from an ally * Curse’s curse effect * Delayed damage from Doom Desire and Future Sight; however, these moves will be prevented if they are used this turn * Feint, which will also end this move’s protection after it hits * Imprison * Perish Song * Shadow Force * Moves that merely copy the user, such as Transform or Psych Up This move cannot be selected by Assist or Metronome."
+      },
+      "fr": {
+        "short": "Empêche n'importe quelle capacité de frapper le lanceur ce tour.",
+        "effect": "Aucune capacité ne frappera le lanceur pour le reste de ce tour. Si le lanceur est le dernier à agir ce tour, cette capacité échouera. Si le lanceur a utilisé avec succès Détection, Ténacité, Abri, Prévention, ou Garde Large le dernier tour, cette capacité a 50% de chances d'échouer. Verrouillage, Lire-Esprit, et Annule Garde fournissent (100 – accuracy)% de chances que les capacités passent à travers cette capacité. Cela ne s'applique pas aux capacités OHKO (Abîme, Guillotine, Empal’Korne, et Glaciation); celles-ci sont toujours bloquées par cette capacité. Fatal-Foudre sous Danse Pluie et Blizzard sous Grêle ont 30% de chances de passer à travers cette capacité. Les effets suivants ne sont pas empêchés par cette capacité: * Acupression d'un allié * Effet maudit de Malédiction * Dégâts retardés de Vœu Destructeur et Prescience; cependant, ces capacités seront empêchées si elles sont utilisées ce tour * Ruse, qui terminera aussi la protection de cette capacité après qu'elle frappe * Possessif * Requiem * Revenant * Capacités qui copient simplement le lanceur, comme Morphing ou Boost Cette capacité ne peut pas être sélectionnée par Assistance ou Métronome."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "完全抵挡对手的攻击。连续使出则容易失败。",
+        "zh-Hant": "完全防住對手的所有攻擊。連續使用時容易失敗。",
+        "en": "This move enables the user to protect itself from all attacks. Its chance of failing rises if it is used in succession.",
+        "ja": "相手の　攻撃をまったく　受けない。連続で　だすと　失敗しやすい。",
+        "ja-Hrkt": "あいての　こうげきをまったく　うけない。れんぞくで　だすと　しっぱい　しやすい。",
+        "ko": "상대의 공격을 전혀 받지 않는다. 연속으로 쓰면 실패하기 쉽다.",
+        "fr": "Le lanceur se protège de toutes les attaques. Peut échouer si utilisée plusieurs fois de suite.",
+        "de": "Anwender wehrt jede Attacke ab. Scheitert eventuell bei Wiederholung.",
+        "es": "Frena todos los ataques, pero puede fallar si se usa repetidamente.",
+        "it": "Permette di eludere tutti gli attacchi. Se usata in successione può fallire."
+      }
+    }
+  },
+  {
+    "slug": "max-hailstorm",
+    "typeSlug": "ice",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨寒冰",
+      "zh-Hant": "極巨寒冰",
+      "en": "Max Hailstorm",
+      "ja": "ダイアイス",
+      "ja-Hrkt": "ダイアイス",
+      "ko": "다이아이스",
+      "fr": "Cryomax",
+      "de": "Dyna-Frost",
+      "es": "Maxihelada",
+      "it": "Dynagelo"
+    },
+    "effects": {
+      "en": {
+        "short": "Changes the weather to a hailstorm for five turns.",
+        "effect": "Changes the weather to hail for five turns, during which non-Ice Pokémon are damaged for 1/16 their max HP at the end of every turn. If the user is holding Icy Rock, this effect lasts for eight turns. Blizzard has 100% accuracy. If the target has used Detect or Protect, Blizzard has a (100 - accuracy)% chance to break through the protection. Moonlight, Morning Sun, and Synthesis heal only 1/4 of the user’s max HP. Pokémon with Snow Cloak are exempt from this effect’s damage."
+      },
+      "fr": {
+        "short": "Change la météo en averse de grêle pendant cinq tours.",
+        "effect": "Change la météo en averse de grêle pendant cinq tours, pendant lesquels les Pokémon non-Glace reçoivent 1/16 de leurs PV max en dégâts à la fin de chaque tour. Si le lanceur tient Roche Glace, cet effet dure pendant huit tours. Blizzard a 100% de précision. Si la cible a utilisé Détection ou Abri, Blizzard a (100 – accuracy)% de chances de frapper à travers la protection. Rayon Lune, Aurore, et Synthèse soignent seulement 1/4 des PV max du lanceur. Les Pokémon avec Rideau Neige sont exempts des dégâts de cet effet."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦才能使出的冰属性攻击。在５回合内会降下冰雹。",
+        "zh-Hant": "極巨化寶可夢所使出的冰屬性攻擊。在５回合內會降下冰雹。",
+        "en": "This is an Ice-type attack Dynamax Pokémon use. The user summons a hailstorm lasting five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　こおりタイプの　攻撃。５ターンの　間　あられを　降らす。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　こおりタイプの　こうげき。５ターンの　あいだ　あられを　ふらす。",
+        "ko": "다이맥스한 포켓몬이 날리는 얼음타입의 공격. 5턴 동안 싸라기눈을 내리게 한다.",
+        "fr": "Une attaque de type Glace que seuls les Pokémon Dynamax peuvent utiliser. Invoque une tempête de grêle qui dure cinq tours.",
+        "de": "Eine Eis-Attacke, die nur Dynamax-Pokémon einsetzen können. Lässt fünf Runden lang einen Hagelsturm toben.",
+        "es": "Ataque de tipo Hielo ejecutado por un Pokémon Dinamax. Crea una tormenta de granizo que dura cinco turnos.",
+        "it": "Un attacco di tipo Ghiaccio che può essere eseguito dai Pokémon dynamaxizzati. Causa una grandinata che dura per cinque turni."
+      }
+    }
+  },
+  {
+    "slug": "max-knuckle",
+    "typeSlug": "fighting",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨拳斗",
+      "zh-Hant": "極巨拳鬥",
+      "en": "Max Knuckle",
+      "ja": "ダイナックル",
+      "ja-Hrkt": "ダイナックル",
+      "ko": "다이너클",
+      "fr": "Pugilomax",
+      "de": "Dyna-Faust",
+      "es": "Maxipuño",
+      "it": "Dynapugno"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, raise the Attack of the user and its allies' by 1 stage.",
+        "effect": "If this move hits, raise the Attack of the user and its allies' by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的格斗属性攻击。会提高我方的攻击。",
+        "zh-Hant": "極巨化寶可夢所使出的格鬥屬性攻擊。可提高我方的攻擊。",
+        "en": "This is a Fighting-type attack Dynamax Pokémon use. This raises ally Pokémon’s Attack stats.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　かくとうタイプの　攻撃。味方の　攻撃を　上げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　かくとうタイプの　こうげき。みかたの　こうげきを　あげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 격투타입의 공격. 같은 편의 공격을 올린다.",
+        "fr": "Une attaque de type Combat que seuls les Pokémon Dynamax peuvent utiliser. Augmente l’Attaque des alliés.",
+        "de": "Eine Kampf-Attacke, die nur Dynamax-Pokémon einsetzen können. Erhöht den Angriff der Mitstreiterseite.",
+        "es": "Ataque de tipo Lucha ejecutado por un Pokémon Dinamax. Aumenta el Ataque de tu bando.",
+        "it": "Un attacco di tipo Lotta che può essere eseguito dai Pokémon dynamaxizzati. Aumenta l’Attacco degli alleati."
+      }
+    }
+  },
+  {
+    "slug": "max-lightning",
+    "typeSlug": "electric",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨闪电",
+      "zh-Hant": "極巨閃電",
+      "en": "Max Lightning",
+      "ja": "ダイサンダー",
+      "ja-Hrkt": "ダイサンダー",
+      "ko": "다이썬더",
+      "fr": "Fulguromax",
+      "de": "Dyna-Gewitter",
+      "es": "Maxitormenta",
+      "it": "Dynasaetta"
+    },
+    "effects": {
+      "en": {
+        "short": "For five turns, prevents all Pokémon on the ground from sleeping and strengthens their Electric moves to 1.5× their power.",
+        "effect": "For five turns, prevents all Pokémon on the ground from sleeping and strengthens their Electric moves to 1.5× their power. Changes Nature Power to Thunderbolt."
+      },
+      "fr": {
+        "short": "Pendant cinq tours, empêche tous les Pokémon au sol de dormir et renforce leurs capacités Électrik d'1.5× leur puissance.",
+        "effect": "Pendant cinq tours, empêche tous les Pokémon au sol de dormir et renforce leurs capacités Électrik d'1.5× leur puissance. Change Force Nature en Tonnerre."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的电属性攻击。可在５回合内将脚下变成电气场地。",
+        "zh-Hant": "極巨化寶可夢所使出的電屬性攻擊。可在５回合內將腳下變成電氣場地。",
+        "en": "This is an Electric-type attack Dynamax Pokémon use. The user turns the ground into Electric Terrain for five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　でんきタイプの　攻撃。５ターンの　間　エレキフィールドにする。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　でんきタイプの　こうげき。５ターンのあいだ　エレキフィールドにする。",
+        "ko": "다이맥스한 포켓몬이 날리는 전기타입의 공격. 5턴 동안 일렉트릭필드로 만든다.",
+        "fr": "Une attaque de type Électrik que seuls les Pokémon Dynamax peuvent utiliser. Crée un Champ Électrifié qui dure cinq tours.",
+        "de": "Eine Elektro-Attacke, die nur Dynamax-Pokémon einsetzen können. Erzeugt fünf Runden lang ein Elektrofeld.",
+        "es": "Ataque de tipo Eléctrico ejecutado por un Pokémon Dinamax. Crea un campo eléctrico durante cinco turnos.",
+        "it": "Un attacco di tipo Elettro che può essere eseguito dai Pokémon dynamaxizzati. Per cinque turni il terreno entra nello stato di Campo Elettrico."
+      }
+    }
+  },
+  {
+    "slug": "max-mindstorm",
+    "typeSlug": "psychic",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨超能",
+      "zh-Hant": "極巨超能",
+      "en": "Max Mindstorm",
+      "ja": "ダイサイコ",
+      "ja-Hrkt": "ダイサイコ",
+      "ko": "다이사이코",
+      "fr": "Psychomax",
+      "de": "Dyna-Kinese",
+      "es": "Maxionda",
+      "it": "Dynapsiche"
+    },
+    "effects": {
+      "en": {
+        "short": "Protects Pokémon on the ground from priority moves and increases the power of their Psychic moves by 50%.",
+        "effect": "Changes the terrain to Psychic Terrain for 5 turns. Overrides Electric Terrain, Grassy Terrain, and Misty Terrain. All Pokémon on the ground are immune to moves with priority greater than 0. (Moves that target the field rather than individual Pokémon, such as Spikes, are not affected.) Additionally, when a Pokémon on the ground uses a Psychic-type move, that move’s power is increased to 1.5×. If a Pokémon is holding a Terrain Extender when creating Psychic Terrain (by any means), the effect lasts for 8 turns instead of 5."
+      },
+      "fr": {
+        "short": "Protège les Pokémon au sol des capacités prioritaires et augmente la puissance de leurs capacités Psy de 50%.",
+        "effect": "Change le terrain en Champ Psychique pendant 5 tours. Écrase Champ Électrifié, Champ Herbu, et Champ Brumeux. Tous les Pokémon au sol sont immunisés contre les capacités avec une priorité supérieure à 0. (Les capacités qui ciblent le terrain plutôt qu'un Pokémon individuel, telles que Picots, ne sont pas affectées.) De plus, quand un Pokémon au sol utilise une capacité de type Psy, la puissance de cette capacité est augmentée de 1.5×. Si un Pokémon tient un Champ'Duit en créant le Champ Psychique (par n'importe quel moyen), l'effet durera 8 tours au lieu de 5."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的超能力属性攻击。可在５回合内将脚下变成精神场地。",
+        "zh-Hant": "極巨化寶可夢所使出的超能力屬性攻擊。可在５回合內將腳下變成精神場地。",
+        "en": "This is a Psychic-type attack Dynamax Pokémon use. The user turns the ground into Psychic Terrain for five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　エスパータイプの　攻撃。５ターンの　間　サイコフィールドにする。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　エスパータイプの　こうげき。５ターンのあいだ　サイコフィールドにする。",
+        "ko": "다이맥스한 포켓몬이 날리는 에스퍼타입의 공격. 5턴 동안 사이코필드로 만든다.",
+        "fr": "Une attaque de type Psy que seuls les Pokémon Dynamax peuvent utiliser. Crée un Champ Psychique qui dure cinq tours.",
+        "de": "Eine Psycho-Attacke, die nur Dynamax-Pokémon einsetzen können. Erzeugt fünf Runden lang ein Psychofeld.",
+        "es": "Ataque de tipo Psíquico ejecutado por un Pokémon Dinamax. Crea un campo psíquico durante cinco turnos.",
+        "it": "Un attacco di tipo Psico che può essere eseguito dai Pokémon dynamaxizzati. Per cinque turni il terreno entra nello stato di Campo Psichico."
+      }
+    }
+  },
+  {
+    "slug": "max-ooze",
+    "typeSlug": "poison",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨酸毒",
+      "zh-Hant": "極巨酸毒",
+      "en": "Max Ooze",
+      "ja": "ダイアシッド",
+      "ja-Hrkt": "ダイアシッド",
+      "ko": "다이애시드",
+      "fr": "Toxinomax",
+      "de": "Dyna-Giftschwall",
+      "es": "Maxiácido",
+      "it": "Dynacorrosione"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, raise the Special Attack of the user and its allies' by 1 stage.",
+        "effect": "If this move hits, raise the Special Attack of the user and its allies' by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的毒属性攻击。会提高我方的特攻。",
+        "zh-Hant": "極巨化寶可夢所使出的毒屬性攻擊。可提高我方的特攻。",
+        "en": "This is a Poison-type attack Dynamax Pokémon use. This raises ally Pokémon’s Sp. Atk stats.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　どくタイプの　攻撃。味方の　特攻を　上げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　どくタイプの　こうげき。みかたの　とくこうを　あげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 독타입의 공격. 같은 편의 특수공격을 올린다.",
+        "fr": "Une attaque de type Poison que seuls les Pokémon Dynamax peuvent utiliser. Augmente l’Attaque Spéciale des alliés.",
+        "de": "Eine Gift-Attacke, die nur Dynamax-Pokémon einsetzen können. Erhöht den Spezial-Angriff der Mitstreiterseite.",
+        "es": "Ataque de tipo Veneno ejecutado por un Pokémon Dinamax. Aumenta el Ataque Especial de tu bando.",
+        "it": "Un attacco di tipo Veleno che può essere eseguito dai Pokémon dynamaxizzati. Aumenta l’Attacco Speciale degli alleati."
+      }
+    }
+  },
+  {
+    "slug": "max-overgrowth",
+    "typeSlug": "grass",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨草原",
+      "zh-Hant": "極巨草原",
+      "en": "Max Overgrowth",
+      "ja": "ダイソウゲン",
+      "ja-Hrkt": "ダイソウゲン",
+      "ko": "다이그래스",
+      "fr": "Phytomax",
+      "de": "Dyna-Flora",
+      "es": "Maxiflora",
+      "it": "Dynaflora"
+    },
+    "effects": {
+      "en": {
+        "short": "For five turns, heals all Pokémon on the ground for 1/16 max HP each turn and strengthens their Grass moves to 1.5× their power.",
+        "effect": "For five turns, heals all Pokémon on the ground for 1/16 their max HP each turn and strengthens their Grass moves to 1.5× their power. Changes Nature Power to Energy Ball."
+      },
+      "fr": {
+        "short": "Pendant cinq tours, soigne tous les Pokémon au sol d'1/16 de leurs PV max à chaque tour et renforce leurs capacités Plante de 1.5× leur puissance.",
+        "effect": "Pendant cinq tours, soigne tous les Pokémon au sol d'1/16 de leurs PV max à chaque tour et renforce leurs capacités Plante d'1.5× leur puissance. Change Force Nature en Éco-Sphère."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的草属性攻击。可在５回合内将脚下变成青草场地。",
+        "zh-Hant": "極巨化寶可夢所使出的草屬性攻擊。可在５回合內將腳下變成青草場地。",
+        "en": "This is a Grass-type attack Dynamax Pokémon use. The user turns the ground into Grassy Terrain for five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　くさタイプの　攻撃。５ターンの　間　グラスフィールドにする。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　くさタイプの　こうげき。５ターンのあいだ　グラスフィールドにする。",
+        "ko": "다이맥스한 포켓몬이 날리는 풀타입의 공격. 5턴 동안 그래스필드로 만든다.",
+        "fr": "Une attaque de type Plante que seuls les Pokémon Dynamax peuvent utiliser. Crée un Champ Herbu qui dure cinq tours.",
+        "de": "Eine Pflanzen-Attacke, die nur Dynamax-Pokémon einsetzen können. Erzeugt fünf Runden lang ein Grasfeld.",
+        "es": "Ataque de tipo Planta ejecutado por un Pokémon Dinamax. Crea un campo de hierba durante cinco turnos.",
+        "it": "Un attacco di tipo Erba che può essere eseguito dai Pokémon dynamaxizzati. Per cinque turni il terreno entra nello stato di Campo Erboso."
+      }
+    }
+  },
+  {
+    "slug": "max-phantasm",
+    "typeSlug": "ghost",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨幽魂",
+      "zh-Hant": "極巨幽魂",
+      "en": "Max Phantasm",
+      "ja": "ダイホロウ",
+      "ja-Hrkt": "ダイホロウ",
+      "ko": "다이할로우",
+      "fr": "Spectromax",
+      "de": "Dyna-Spuk",
+      "es": "Maxiespectro",
+      "it": "Dynavuoto"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, lower the Defense of all Pokemon on the opposing side by 1 stage.",
+        "effect": "If this move hits, lower the Defense of all Pokemon on the opposing side by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的幽灵属性攻击。会降低对手的防御。",
+        "zh-Hant": "極巨化寶可夢所使出的幽靈屬性攻擊。可降低對手的防禦。",
+        "en": "This is a Ghost-type attack Dynamax Pokémon use. This lowers the target’s Defense stat.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　ゴーストタイプの　攻撃。相手の　防御を　下げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　ゴーストタイプの　こうげき。あいての　ぼうぎょを　さげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 고스트타입의 공격. 상대의 방어를 떨어뜨린다.",
+        "fr": "Une attaque de type Spectre que seuls les Pokémon Dynamax peuvent utiliser. Baisse la Défense de la cible.",
+        "de": "Eine Geister-Attacke, die nur Dynamax-Pokémon einsetzen können. Senkt die Verteidigung des Zieles.",
+        "es": "Ataque de tipo Fantasma ejecutado por un Pokémon Dinamax. Reduce la Defensa de los rivales.",
+        "it": "Un attacco di tipo Spettro che può essere eseguito dai Pokémon dynamaxizzati. Riduce la Difesa dei nemici intorno."
+      }
+    }
+  },
+  {
+    "slug": "max-quake",
+    "typeSlug": "ground",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨大地",
+      "zh-Hant": "極巨大地",
+      "en": "Max Quake",
+      "ja": "ダイアース",
+      "ja-Hrkt": "ダイアース",
+      "ko": "다이어스",
+      "fr": "Sismomax",
+      "de": "Dyna-Erdstoß",
+      "es": "Maxitemblor",
+      "it": "Dynasisma"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, raise the Special Defense of the user and its allies' by 1 stage.",
+        "effect": "If this move hits, raise the Special Defense of the user and its allies' by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的地面属性攻击。会提高我方的特防。",
+        "zh-Hant": "極巨化寶可夢所使出的地面屬性攻擊。可提高我方的特防。",
+        "en": "This is a Ground-type attack Dynamax Pokémon use. This raises ally Pokémon’s Sp. Def stats.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　じめんタイプの　攻撃。味方の　特防を　上げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　じめんタイプの　こうげき。みかたの　とくぼうを　あげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 땅타입의 공격. 같은 편의 특수방어를 올린다.",
+        "fr": "Une attaque de type Sol que seuls les Pokémon Dynamax peuvent utiliser. Augmente la Défense Spéciale des alliés.",
+        "de": "Eine Boden-Attacke, die nur Dynamax-Pokémon einsetzen können. Erhöht die Spezial-Verteidigung der Mitstreiterseite.",
+        "es": "Ataque de tipo Tierra ejecutado por un Pokémon Dinamax. Aumenta la Defensa Especial de tu bando.",
+        "it": "Un attacco di tipo Terra che può essere eseguito dai Pokémon dynamaxizzati. Aumenta la Difesa Speciale degli alleati."
+      }
+    }
+  },
+  {
+    "slug": "max-rockfall",
+    "typeSlug": "rock",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨岩石",
+      "zh-Hant": "極巨岩石",
+      "en": "Max Rockfall",
+      "ja": "ダイロック",
+      "ja-Hrkt": "ダイロック",
+      "ko": "다이록",
+      "fr": "Lithomax",
+      "de": "Dyna-Brocken",
+      "es": "Maxilito",
+      "it": "Dynamacigno"
+    },
+    "effects": {
+      "en": {
+        "short": "Changes the weather to a sandstorm for five turns.",
+        "effect": "Changes the weather to a sandstorm for five turns. Pokémon that are not Ground, Rock, or Steel take 1/16 their max HP at the end of every turn. Every Rock Pokémon’s original Special Defense is raised by 50% for the duration of this effect. Solar Beam’s power is halved. Moonlight, Morning Sun, and Synthesis only heal 1/4 the user’s max HP."
+      },
+      "fr": {
+        "short": "Change la météo en tempête de sable pendant cinq tours.",
+        "effect": "Change la météo en tempête de sable pendant cinq tours. Les Pokémon qui ne sont pas Sol, Roche, ou Acier subissent 1/16 de leurs PV max à la fin de chaque tour. La Défense Spéciale d'origine de chaque Pokémon Roche est augmentée de 50% pour la durée de cet effet. La puissance de Lance-Soleil est divisée par deux. Rayon Lune, Aurore, et Synthèse ne soignent seulement 1/4 des PV max du lanceur."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的岩石属性攻击。可在５回合内卷起沙暴。",
+        "zh-Hant": "極巨化寶可夢所使出的岩石屬性攻擊。在５回合內會捲起沙暴。",
+        "en": "This is a Rock-type attack Dynamax Pokémon use. The user summons a sandstorm lasting five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　いわタイプの　攻撃。５ターンの　間　砂あらしにする。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　いわタイプの　こうげき。５ターンの　あいだ　すなあらしにする。",
+        "ko": "다이맥스한 포켓몬이 날리는 바위타입의 공격. 5턴 동안 날씨를 모래바람으로 만든다.",
+        "fr": "Une attaque de type Roche que seuls les Pokémon Dynamax peuvent utiliser. Invoque une tempête de sable qui dure cinq tours.",
+        "de": "Eine Gesteins-Attacke, die nur Dynamax-Pokémon einsetzen können. Lässt fünf Runden lang einen Sandsturm toben.",
+        "es": "Ataque de tipo Roca ejecutado por un Pokémon Dinamax. Levanta una tormenta de arena que dura cinco turnos.",
+        "it": "Un attacco di tipo Roccia che può essere eseguito dai Pokémon dynamaxizzati. Causa una tempesta di sabbia per cinque turni."
+      }
+    }
+  },
+  {
+    "slug": "max-starfall",
+    "typeSlug": "fairy",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨妖精",
+      "zh-Hant": "極巨妖精",
+      "en": "Max Starfall",
+      "ja": "ダイフェアリー",
+      "ja-Hrkt": "ダイフェアリー",
+      "ko": "다이페어리",
+      "fr": "Enchantomax",
+      "de": "Dyna-Zauber",
+      "es": "Maxiestela",
+      "it": "Dynafata"
+    },
+    "effects": {
+      "en": {
+        "short": "For five turns, protects all Pokémon on the ground from major status ailments and confusion, and halves the power of incoming Dragon moves.",
+        "effect": "For five turns, protects all Pokémon on the ground from major status ailments and confusion and weakens Dragon moves used against them to 0.5× their power. Changes Nature Power to Moonblast."
+      },
+      "fr": {
+        "short": "Pendant cinq tours, protège tous les Pokémon au sol des altérations majeures de statut et confusion, et divise par deux la puissance des capacités Dragon subies.",
+        "effect": "Pendant cinq tours, protège tous les Pokémon au sol des altérations majeures de statut et de la confusion et affaiblit les capacités Dragon utilisées contre eux de 0.5× leur puissance. Change Force Nature en Pouvoir Lunaire."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的妖精属性攻击。可在５回合内将脚下变成薄雾场地。",
+        "zh-Hant": "極巨化寶可夢所使出的妖精屬性攻擊。可在５回合內將腳下變成薄霧場地。",
+        "en": "This is a Fairy-type attack Dynamax Pokémon use. The user turns the ground into Misty Terrain for five turns.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　フェアリータイプの　攻撃。５ターンの　間　ミストフィールドにする。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　フェアリータイプの　こうげき。５ターンのあいだ　ミストフィールドにする。",
+        "ko": "다이맥스한 포켓몬이 날리는 페어리타입의 공격. 5턴 동안 미스트필드로 만든다.",
+        "fr": "Une attaque de type Fée que seuls les Pokémon Dynamax peuvent utiliser. Crée un Champ Brumeux qui dure cinq tours.",
+        "de": "Eine Feen-Attacke, die nur Dynamax-Pokémon einsetzen können. Erzeugt fünf Runden lang ein Nebelfeld.",
+        "es": "Ataque de tipo Hada ejecutado por un Pokémon Dinamax. Crea un campo de niebla durante cinco turnos.",
+        "it": "Un attacco di tipo Folletto che può essere eseguito dai Pokémon dynamaxizzati. Per cinque turni il terreno entra nello stato di Campo Nebbioso."
+      }
+    }
+  },
+  {
+    "slug": "max-steelspike",
+    "typeSlug": "steel",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨钢铁",
+      "zh-Hant": "極巨鋼鐵",
+      "en": "Max Steelspike",
+      "ja": "ダイスチル",
+      "ja-Hrkt": "ダイスチル",
+      "ko": "다이스틸",
+      "fr": "Métallomax",
+      "de": "Dyna-Stahlzacken",
+      "es": "Maximetal",
+      "it": "Dynametallo"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, raise the Defense of the user and its allies' by 1 stage.",
+        "effect": "If this move hits, raise the Defense of the user and its allies' by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的钢属性攻击。会提高我方的防御。",
+        "zh-Hant": "極巨化寶可夢所使出的鋼屬性攻擊。可提高我方的防禦。",
+        "en": "This is a Steel-type attack Dynamax Pokémon use. This raises ally Pokémon’s Defense stats.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　はがねタイプの　攻撃。味方の　防御を　上げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　はがねタイプの　こうげき。みかたの　ぼうぎょを　あげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 강철타입의 공격. 같은 편의 방어를 올린다.",
+        "fr": "Une attaque de type Acier que seuls les Pokémon Dynamax peuvent utiliser. Augmente la Défense des alliés.",
+        "de": "Eine Stahl-Attacke, die nur Dynamax-Pokémon einsetzen können. Erhöht die Verteidigung der Mitstreiterseite.",
+        "es": "Ataque de tipo Acero ejecutado por un Pokémon Dinamax. Aumenta la Defensa de tu bando.",
+        "it": "Un attacco di tipo Acciaio che può essere eseguito dai Pokémon dynamaxizzati. Aumenta la Difesa degli alleati."
+      }
+    }
+  },
+  {
+    "slug": "max-strike",
+    "typeSlug": "normal",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨攻击",
+      "zh-Hant": "極巨攻擊",
+      "en": "Max Strike",
+      "ja": "ダイアタック",
+      "ja-Hrkt": "ダイアタック",
+      "ko": "다이어택",
+      "fr": "Normalomax",
+      "de": "Dyna-Angriff",
+      "es": "Maxiataque",
+      "it": "Dynattacco"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, lower the Speed of all Pokemon on the opposing side by 1 stage.",
+        "effect": "If this move hits, lower the Speed of all Pokemon on the opposing side by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的一般属性攻击。会降低对手的速度。",
+        "zh-Hant": "極巨化寶可夢所使出的一般屬性攻擊。可降低對手的速度。",
+        "en": "This is a Normal-type attack Dynamax Pokémon use. This lowers the target’s Speed stat.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　ノーマルタイプの　攻撃。相手の　素早さを　下げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　ノーマルタイプの　こうげき。あいての　すばやさを　さげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 노말타입의 공격. 상대의 스피드를 떨어뜨린다.",
+        "fr": "Une attaque de type Normal que seuls les Pokémon Dynamax peuvent utiliser. Baisse la Vitesse de la cible.",
+        "de": "Eine Normal-Attacke, die nur Dynamax-Pokémon einsetzen können. Senkt die Initiative des Zieles.",
+        "es": "Ataque de tipo Normal ejecutado por un Pokémon Dinamax. Reduce la Velocidad del objetivo.",
+        "it": "Un attacco di tipo Normale che può essere eseguito dai Pokémon dynamaxizzati. Riduce la Velocità dei nemici intorno."
+      }
+    }
+  },
+  {
+    "slug": "max-wyrmwind",
+    "typeSlug": "dragon",
+    "power": 10,
+    "pp": 10,
+    "names": {
+      "zh-Hans": "极巨龙骑",
+      "zh-Hant": "極巨龍騎",
+      "en": "Max Wyrmwind",
+      "ja": "ダイドラグーン",
+      "ja-Hrkt": "ダイドラグーン",
+      "ko": "다이드라군",
+      "fr": "Dracomax",
+      "de": "Dyna-Wyrm",
+      "es": "Maxidraco",
+      "it": "Dynadragone"
+    },
+    "effects": {
+      "en": {
+        "short": "If this move hits, lower the Attack of all Pokemon on the opposing side by 1 stage.",
+        "effect": "If this move hits, lower the Attack of all Pokemon on the opposing side by 1 stage."
+      }
+    },
+    "flavors": {
+      "sword-shield": {
+        "zh-Hans": "极巨化宝可梦使出的龙属性攻击。会降低对手的攻击。",
+        "zh-Hant": "極巨化寶可夢所使出的龍屬性攻擊。可降低對手的攻擊。",
+        "en": "This is a Dragon-type attack Dynamax Pokémon use. This lowers the target’s Attack stat.",
+        "ja": "ダイマックスした　ポケモンが繰りだす　ドラゴンタイプの　攻撃。相手の　攻撃を　下げる。",
+        "ja-Hrkt": "ダイマックスした　ポケモンがくりだす　ドラゴンタイプの　こうげき。あいての　こうげきを　さげる。",
+        "ko": "다이맥스한 포켓몬이 날리는 드래곤타입의 공격. 상대의 공격을 떨어뜨린다.",
+        "fr": "Une attaque de type Dragon que seuls les Pokémon Dynamax peuvent utiliser. Baisse l’Attaque de la cible.",
+        "de": "Eine Drachen-Attacke, die nur Dynamax-Pokémon einsetzen können. Senkt den Angriff des Zieles.",
+        "es": "Ataque de tipo Dragón ejecutado por un Pokémon Dinamax. Reduce el Ataque del objetivo.",
+        "it": "Un attacco di tipo Drago che può essere eseguito dai Pokémon dynamaxizzati. Riduce l’Attacco dei nemici intorno."
+      }
+    }
+  }
+]

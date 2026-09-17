@@ -751,6 +751,11 @@ async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, num
     }
   }
 
+  // Ｚ招式和极巨招式已经拆去各自的表，库里旧的那七十多条得清掉。
+  // 它们没有 MoveLearn 行也不会被进化条件引用，删得动
+  const stale = await prisma.move.deleteMany({ where: { slug: { notIn: [...ids.keys()] } } });
+  if (stale.count) console.log(`  清掉 ${stale.count} 条已拆走的招式`);
+
   await prisma.moveGeneration.deleteMany({});
   await insertInBatches(generations, (data) => prisma.moveGeneration.createMany({ data }));
   await prisma.moveEffectI18n.deleteMany({});
@@ -1135,6 +1140,201 @@ async function seedEvolutions(dict: {
   console.log(`进化: ${data.length} 行，进化链 ${members.size} 条`);
 }
 
+/**
+ * Ｚ招式，第七世代独有。
+ *
+ * 数值和说明来自数据源，转化关系（谁 + 什么原招式 → 什么Ｚ招式）来自百科 ——
+ * 数据源那边Ｚ招式就是普通招式，看不出谁由谁变来
+ */
+async function seedZMoves(dict: {
+  types: Map<string, number>;
+  forms: Map<string, number>;
+  moves: Map<string, number>;
+  items: Map<string, number>;
+  groups: Map<string, number>;
+}) {
+  const rows = read("z-moves");
+  const wiki = new Map(
+    (() => {
+      try {
+        const snapshot = readWiki("wiki-z-moves");
+        if (snapshot.unmatched.length) {
+          console.warn(`⚠ wiki-z-moves: ${snapshot.unmatched.length} 条没对上数据源的 slug`);
+        }
+        return snapshot.rows.map((r) => [r.slug, r] as const);
+      } catch {
+        console.warn("⚠ 读不到 wiki-z-moves.json，Ｚ招式的转化关系会缺");
+        return [];
+      }
+    })(),
+  );
+
+  const effects: {
+    zMoveId: number;
+    languageCode: LanguageCode;
+    effect: string;
+    shortEffect: string | null;
+  }[] = [];
+  const flavors: { zMoveId: number; groupId: number; languageCode: LanguageCode; text: string }[] =
+    [];
+
+  let linked = 0;
+  for (const z of rows) {
+    const typeId = dict.types.get(z.typeSlug);
+    if (typeId === undefined) continue;
+
+    const link = wiki.get(z.slug);
+    const data = {
+      typeId,
+      damageClass: z.damageClass,
+      power: z.power,
+      pp: z.pp,
+      formId: link?.formSlug ? (dict.forms.get(link.formSlug) ?? null) : null,
+      baseMoveId: link?.baseMoveSlug ? (dict.moves.get(link.baseMoveSlug) ?? null) : null,
+      itemId: link?.itemSlug ? (dict.items.get(link.itemSlug) ?? null) : null,
+    };
+    if (data.formId && data.baseMoveId) linked++;
+
+    const saved = await prisma.zMove.upsert({
+      where: { slug: z.slug },
+      create: { slug: z.slug, ...data },
+      update: data,
+    });
+
+    for (const { languageCode, value: name } of localized({ ...z.names, ...link?.names })) {
+      await prisma.zMoveI18n.upsert({
+        where: { zMoveId_languageCode: { zMoveId: saved.id, languageCode } },
+        create: { zMoveId: saved.id, languageCode, name },
+        update: { name },
+      });
+    }
+    for (const [code, text] of Object.entries(z.effects)) {
+      effects.push({
+        zMoveId: saved.id,
+        languageCode: code as LanguageCode,
+        shortEffect: text.short,
+        effect: text.effect,
+      });
+    }
+    for (const row of flavorRows(z.flavors, undefined, dict.groups)) {
+      flavors.push({ zMoveId: saved.id, ...row });
+    }
+  }
+
+  await prisma.zMoveEffectI18n.deleteMany({});
+  await insertInBatches(effects, (data) => prisma.zMoveEffectI18n.createMany({ data }));
+  await prisma.zMoveFlavorI18n.deleteMany({});
+  await insertInBatches(flavors, (data) => prisma.zMoveFlavorI18n.createMany({ data }));
+  console.log(`Ｚ招式: ${rows.length} 条，转化关系认全的 ${linked} 条，说明 ${effects.length} 行`);
+}
+
+/**
+ * 极巨招式，第八世代独有。
+ *
+ * 泛用的十九条来自数据源，超极巨那二十多条数据源一条都没收，全部来自百科
+ */
+async function seedMaxMoves(dict: {
+  types: Map<string, number>;
+  forms: Map<string, number>;
+  groups: Map<string, number>;
+}) {
+  const rows = read("max-moves");
+  let gmax: {
+    slug: string;
+    names: Localized;
+    typeSlug: string;
+    formSlug: string | null;
+    effect: Localized;
+  }[] = [];
+  try {
+    const snapshot = readWiki("wiki-max-moves");
+    if (snapshot.unmatched.length) {
+      console.warn(`⚠ wiki-max-moves: ${snapshot.unmatched.length} 条没抓下来`);
+    }
+    gmax = snapshot.rows;
+  } catch {
+    console.warn("⚠ 读不到 wiki-max-moves.json，超极巨招式会缺");
+  }
+
+  const effects: {
+    maxMoveId: number;
+    languageCode: LanguageCode;
+    effect: string;
+    shortEffect: string | null;
+  }[] = [];
+  const flavors: {
+    maxMoveId: number;
+    groupId: number;
+    languageCode: LanguageCode;
+    text: string;
+  }[] = [];
+
+  for (const m of rows) {
+    const typeId = dict.types.get(m.typeSlug);
+    if (typeId === undefined) continue;
+    const data = { typeId, power: m.power, pp: m.pp, formId: null };
+    const saved = await prisma.maxMove.upsert({
+      where: { slug: m.slug },
+      create: { slug: m.slug, ...data },
+      update: data,
+    });
+    for (const { languageCode, value: name } of localized(m.names)) {
+      await prisma.maxMoveI18n.upsert({
+        where: { maxMoveId_languageCode: { maxMoveId: saved.id, languageCode } },
+        create: { maxMoveId: saved.id, languageCode, name },
+        update: { name },
+      });
+    }
+    for (const [code, text] of Object.entries(m.effects)) {
+      effects.push({
+        maxMoveId: saved.id,
+        languageCode: code as LanguageCode,
+        shortEffect: text.short,
+        effect: text.effect,
+      });
+    }
+    for (const row of flavorRows(m.flavors, undefined, dict.groups)) {
+      flavors.push({ maxMoveId: saved.id, ...row });
+    }
+  }
+
+  // 超极巨招式：百科只给招式名、属性、所属形态和一句附加效果
+  for (const g of gmax) {
+    const typeId = dict.types.get(g.typeSlug);
+    if (typeId === undefined) continue;
+    const data = {
+      typeId,
+      power: null,
+      pp: null,
+      formId: g.formSlug ? (dict.forms.get(g.formSlug) ?? null) : null,
+    };
+    const saved = await prisma.maxMove.upsert({
+      where: { slug: g.slug },
+      create: { slug: g.slug, ...data },
+      update: data,
+    });
+    for (const { languageCode, value: name } of localized(g.names)) {
+      await prisma.maxMoveI18n.upsert({
+        where: { maxMoveId_languageCode: { maxMoveId: saved.id, languageCode } },
+        create: { maxMoveId: saved.id, languageCode, name },
+        update: { name },
+      });
+    }
+    for (const { languageCode, value: effect } of localized(g.effect)) {
+      effects.push({ maxMoveId: saved.id, languageCode, shortEffect: null, effect });
+    }
+  }
+
+  await prisma.maxMoveEffectI18n.deleteMany({});
+  await insertInBatches(effects, (data) => prisma.maxMoveEffectI18n.createMany({ data }));
+  await prisma.maxMoveFlavorI18n.deleteMany({});
+  await insertInBatches(flavors, (data) => prisma.maxMoveFlavorI18n.createMany({ data }));
+  console.log(
+    `极巨招式: 泛用 ${rows.length} 条 + 超极巨 ${gmax.length} 条，` +
+      `认出形态的 ${gmax.filter((g) => g.formSlug).length} 条，说明 ${effects.length} 行`,
+  );
+}
+
 // ── 入口 ──────────────────────────────────────────────────────
 
 async function main() {
@@ -1171,6 +1371,16 @@ async function main() {
 
   const methods = new Set(read("move-learn-methods").map((m) => m.slug));
   await seedMoveLearns({ forms: formIds, moves: moveIds, groups: groupIds, methods });
+
+  // Ｚ招式引用普通招式（原招式）和形态，所以排在两者之后
+  await seedZMoves({
+    types: typeIds,
+    forms: formIds,
+    moves: moveIds,
+    items: itemIds,
+    groups: groupIds,
+  });
+  await seedMaxMoves({ types: typeIds, forms: formIds, groups: groupIds });
 
   const triggers = new Set(read("evolution-triggers").map((t) => t.slug));
   await seedEvolutions({

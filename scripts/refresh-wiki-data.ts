@@ -24,8 +24,10 @@ import {
   SEED_DATA_DIR,
   type WikiData,
   type WikiEffectSnapshot,
+  type WikiMaxMoveSnapshot,
   type WikiPokemonDescriptionSnapshot,
   type WikiSnapshot,
+  type WikiZMoveSnapshot,
 } from "@/prisma/seed-data/types";
 
 const WIKI_API = "https://wiki.52poke.com/api.php";
@@ -119,7 +121,10 @@ async function wikiPost<T>(params: Record<string, string>, attempt = 0): Promise
  * 拿 ---- 当分隔符：它渲染成 <hr>，转纯文本后正好按空行把各条切开。
  * 切出来的条数对不上就整批放弃 —— 宁可没有繁体，也不能让文本错位串行
  */
-async function toTraditional(texts: string[]): Promise<Map<string, string>> {
+async function convertVariant(
+  texts: string[],
+  variant: "zh-hans" | "zh-hant",
+): Promise<Map<string, string>> {
   const out = new Map<string, string>();
   const BATCH = 30;
 
@@ -131,7 +136,7 @@ async function toTraditional(texts: string[]): Promise<Map<string, string>> {
       contentmodel: "wikitext",
       prop: "text",
       disablelimitreport: "1",
-      variant: "zh-hant",
+      variant,
       text: batch.join("\n\n----\n\n"),
     });
 
@@ -148,12 +153,14 @@ async function toTraditional(texts: string[]): Promise<Map<string, string>> {
       if (parts.length === batch.length) {
         batch.forEach((source, n) => out.set(source, parts[n]!));
       } else {
-        console.warn(`  ⚠ 繁体转换切出 ${parts.length} 段，应是 ${batch.length} 段，这批放弃`);
+        console.warn(
+          `  ⚠ ${variant} 转换切出 ${parts.length} 段，应是 ${batch.length} 段，这批放弃`,
+        );
       }
     }
 
     if (i % (BATCH * 10) === 0) {
-      console.log(`    繁体 ${Math.min(i + BATCH, texts.length)}/${texts.length}`);
+      console.log(`    ${variant} ${Math.min(i + BATCH, texts.length)}/${texts.length}`);
     }
     await sleep(THROTTLE_MS);
   }
@@ -753,6 +760,58 @@ function parseItemNameIndex(source: string): Map<string, string> {
   return out;
 }
 
+/**
+ * 抠出某个 == 标题 == 下的第一张维基表格，拆成一行行单元格。
+ *
+ * 表格行以行首的 |- 分隔，单元格以行首的 | 开头 —— 模板参数里的竖线
+ * 不在行首，所以不会被误切。! 开头的是表头行，跳过
+ */
+function parseWikiTable(source: string, heading: string): string[][] {
+  const found = new RegExp(`^[ \\t]*==[ \\t]*${heading}[ \\t]*==[ \\t]*$`, "m").exec(source);
+  if (!found) return [];
+
+  const rest = source.slice(found.index + found[0].length);
+  const end = /^[ \t]*==[^=]/m.exec(rest);
+  const section = end ? rest.slice(0, end.index) : rest;
+
+  const start = section.indexOf("{|");
+  if (start < 0) return [];
+  const close = section.indexOf("\n|}", start);
+  const table = section.slice(start, close < 0 ? undefined : close);
+
+  const rows: string[][] = [];
+  let cells: string[] | null = null;
+  let current: string[] = [];
+  for (const raw of table.split("\n")) {
+    const line = raw.trimEnd();
+    if (/^\|-/.test(line)) {
+      if (cells && cells.length) rows.push(cells.map((c) => c.trim()));
+      cells = [];
+      current = [];
+      continue;
+    }
+    if (cells === null) continue;
+    if (/^[|!]/.test(line) && !/^\|\}/.test(line)) {
+      // 表头行整行跳过
+      if (line.startsWith("!")) continue;
+      current = [line.replace(/^\|/, "")];
+      cells.push("");
+      cells[cells.length - 1] = current[0]!;
+    } else if (cells.length) {
+      cells[cells.length - 1] += `\n${line}`;
+    }
+  }
+  if (cells && cells.length) rows.push(cells.map((c) => c.trim()));
+  return rows;
+}
+
+/** {{MSP|143|卡比兽}} 里的编号，带形态后缀的写成 026A（阿罗拉雷丘） */
+function dexNumberOf(cell: string): { number: number; suffix: string } | null {
+  const m = /\{\{\s*MSPN?\s*\|\s*0*(\d+)([A-Za-z]*)/.exec(cell);
+  if (!m) return null;
+  return { number: Number(m[1]), suffix: m[2]!.toUpperCase() };
+}
+
 // ── 特性 ──────────────────────────────────────────────────────
 
 /**
@@ -1070,7 +1129,7 @@ async function abilities(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   for (const row of rows) row.effect = effects.get(row.slug) ?? {};
 
   // 译名：数据源没给中文名的那几个（传说 Z-A 的新特性）从索引页补
-  const traditional = await toTraditional([...new Set(nameOf.values())]);
+  const traditional = await convertVariant([...new Set(nameOf.values())], "zh-hant");
   for (const row of rows) {
     const hans = nameOf.get(row.slug);
     if (!hans) continue;
@@ -1222,13 +1281,16 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
 
   // 源码里只有简体，繁体交给百科的字词转换表转一遍
   // 游戏文案不用转，它在源码里就是 -{zh-hans:…;zh-hant:…}- 写死的
-  const traditional = await toTraditional([
-    ...new Set(
-      rows
-        .flatMap((r) => [r.effect["zh-Hans"], r.names?.["zh-Hans"]])
-        .filter((s): s is string => !!s),
-    ),
-  ]);
+  const traditional = await convertVariant(
+    [
+      ...new Set(
+        rows
+          .flatMap((r) => [r.effect["zh-Hans"], r.names?.["zh-Hans"]])
+          .filter((s): s is string => !!s),
+      ),
+    ],
+    "zh-hant",
+  );
   for (const row of rows) {
     const hans = row.effect["zh-Hans"];
     const hant = hans ? traditional.get(hans) : undefined;
@@ -1247,6 +1309,215 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   );
   rows.sort((a, b) => a.slug.localeCompare(b.slug));
   return wrap(rows, unmatched);
+}
+
+// ── Ｚ招式与极巨招式 ──────────────────────────────────────────
+
+/**
+ * 百科各处的名字简繁混着写（超极巨招式列表页链接用的是繁体），
+ * 交给百科自己的字词转换表来回转一趟，简繁各存一份
+ */
+async function bothVariants(names: string[]): Promise<Map<string, Localized>> {
+  const unique = [...new Set(names)];
+  const [hans, hant] = await Promise.all([
+    convertVariant(unique, "zh-hans"),
+    convertVariant(unique, "zh-hant"),
+  ]);
+  return new Map(
+    unique.map((name) => [
+      name,
+      { "zh-Hans": hans.get(name) ?? name, "zh-Hant": hant.get(name) ?? name },
+    ]),
+  );
+}
+
+/** 快照读出来的中文名 → slug。两个方向都收（简繁），认得宽一点 */
+function nameIndex(rows: { slug: string; names: Localized }[]): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const row of rows) {
+    for (const name of Object.values(row.names)) {
+      if (name && !out.has(name)) out.set(name, row.slug);
+    }
+  }
+  return out;
+}
+
+function readSnapshot<T>(name: string): T[] {
+  try {
+    return JSON.parse(readFileSync(join(SEED_DATA_DIR, `${name}.json`), "utf8")) as T[];
+  } catch {
+    return [];
+  }
+}
+
+/** [[招式名]] 或 …<br>[[招式名]] 里的那个名字 */
+function linkedName(cell: string): string | null {
+  const links = [...cell.matchAll(/\[\[([^\]|]+?)(?:\|[^\]]*)?\]\]/g)]
+    .map((m) => m[1]!.trim())
+    .filter((s) => !/^(File|文件|Image):/i.test(s));
+  return links[links.length - 1] ?? null;
+}
+
+/**
+ * 专属Ｚ招式的转化关系。
+ *
+ * 百科的Ｚ招式条目里有张表，一行是「Ｚ招式 | 属性 | 威力 | 分类 | 附加效果 |
+ * 宝可梦 | 原始招式 | Ｚ纯晶」。这层关系数据源一点都不给 ——
+ * 它那边 Ｚ招式就是普通招式，看不出谁由谁变来
+ */
+async function zMoves(): Promise<WikiSnapshot<WikiZMoveSnapshot>> {
+  const [source] = [...(await fetchPages(["Z招式"])).values()];
+  if (!source) throw new Error("读不到「Z招式」，百科那边可能改了页名");
+
+  const zSlugOf = nameIndex(readSnapshot<{ slug: string; names: Localized }>("z-moves"));
+  const moveSlugOf = nameIndex(readSnapshot<{ slug: string; names: Localized }>("moves"));
+  const itemSlugOf = nameIndex(readSnapshot<{ slug: string; names: Localized }>("items"));
+  const formSlugOf = formIndex();
+
+  const unmatched = new Set<string>();
+  const rows: WikiZMoveSnapshot[] = [];
+  const table = parseWikiTable(source, "专属Ｚ招式");
+  const names = await bothVariants(
+    table.map((cells) => linkedName(cells[0] ?? "")).filter((s): s is string => !!s),
+  );
+  // 全角的Ｚ，跟页面里写的一致
+  for (const cells of table) {
+    const name = linkedName(cells[0] ?? "");
+    if (!name) continue;
+
+    const slug = zSlugOf.get(name);
+    if (!slug) {
+      // 数据源没收的那条（谜拟Ｑ的）只能记下来，没有可挂的行
+      unmatched.add(name);
+      continue;
+    }
+
+    const power = Number(plainText(cells[2] ?? ""));
+    const category = plainText(cells[3] ?? "");
+    const dex = dexNumberOf(cells[5] ?? "");
+    const baseMove = cells[6] ? /\{\{\s*m\s*\|\s*([^|}]+)/.exec(cells[6])?.[1]?.trim() : null;
+    const crystal = cells[7]
+      ? /\{\{\s*Bag(?:\/Latest)?\s*\|\s*([^|}]+)/.exec(cells[7])?.[1]?.trim()
+      : null;
+
+    rows.push({
+      slug,
+      names: names.get(name) ?? splitVariants(name),
+      formSlug: dex ? (formSlugOf(dex.number, dex.suffix) ?? null) : null,
+      baseMoveSlug: baseMove ? (moveSlugOf.get(baseMove) ?? null) : null,
+      itemSlug: crystal ? (itemSlugOf.get(crystal) ?? null) : null,
+      power: Number.isFinite(power) && power > 0 ? power : null,
+      damageClass: category.includes("物理")
+        ? "PHYSICAL"
+        : category.includes("特殊")
+          ? "SPECIAL"
+          : category.includes("变化") || category.includes("變化")
+            ? "STATUS"
+            : null,
+    });
+  }
+
+  const linked = rows.filter((r) => r.formSlug && r.baseMoveSlug).length;
+  console.log(`  专属Ｚ招式: ${rows.length} 条，形态和原招式都认出来的 ${linked} 条`);
+  rows.sort((a, b) => a.slug.localeCompare(b.slug));
+  return wrap(rows, unmatched);
+}
+
+/**
+ * 超极巨招式。数据源一条都没有，全部来自百科。
+ *
+ * 列表页给招式名、属性、附加效果和所属宝可梦；英文名得逐个翻招式页，
+ * slug 由英文名生成 —— 数据源没有这些招式，没有现成的 slug 可对
+ */
+async function maxMoves(): Promise<WikiSnapshot<WikiMaxMoveSnapshot>> {
+  const [source] = [...(await fetchPages(["极巨招式"])).values()];
+  if (!source) throw new Error("读不到「极巨招式」，百科那边可能改了页名");
+
+  const typeSlugOf = nameIndex(readSnapshot<{ slug: string; names: Localized }>("types"));
+  const formSlugOf = formIndex();
+
+  type Row = { name: string; typeSlug: string; formSlug: string | null; effect: Localized };
+  const parsed: Row[] = [];
+  const unmatched = new Set<string>();
+  for (const cells of parseWikiTable(source, "超极巨招式列表")) {
+    const name = linkedName(cells[0] ?? "");
+    const typeName = cells[1]
+      ? /\{\{\s*Typelink\s*\|\s*([^|}]+)/i.exec(cells[1])?.[1]?.trim()
+      : null;
+    if (!name || !typeName) continue;
+
+    const typeSlug = typeSlugOf.get(typeName);
+    if (!typeSlug) {
+      unmatched.add(`${name}（属性 ${typeName} 认不出）`);
+      continue;
+    }
+    const dex = dexNumberOf(cells[3] ?? "");
+    parsed.push({
+      name,
+      typeSlug,
+      formSlug: dex ? (formSlugOf(dex.number, "GMAX") ?? null) : null,
+      effect: splitVariants(plainText(cells[2] ?? "")),
+    });
+  }
+  console.log(`  超极巨招式: 列表页 ${parsed.length} 条`);
+
+  // slug 要英文名，列表页没有，逐个翻招式页的信息框
+  const pages = await fetchPages(parsed.map((r) => r.name));
+  // 名字和效果都得过一趟转换：列表页那几列简繁混着写
+  const names = await bothVariants(parsed.map((r) => r.name));
+  const effects = await bothVariants(
+    parsed.map((r) => r.effect["zh-Hans"]).filter((s): s is string => !!s),
+  );
+  const rows: WikiMaxMoveSnapshot[] = [];
+  for (const row of parsed) {
+    const page = pages.get(row.name);
+    const enName = page ? /\|\s*enname\s*=\s*([^\n|}]+)/.exec(page)?.[1]?.trim() : null;
+    if (!enName) {
+      unmatched.add(`${row.name}（没拿到英文名）`);
+      continue;
+    }
+    rows.push({
+      slug: toSlug(enName),
+      names: names.get(row.name) ?? splitVariants(row.name),
+      typeSlug: row.typeSlug,
+      formSlug: row.formSlug,
+      effect: (row.effect["zh-Hans"] && effects.get(row.effect["zh-Hans"])) || row.effect,
+    });
+  }
+
+  console.log(
+    `  超极巨招式: ${rows.length} 条，认出形态的 ${rows.filter((r) => r.formSlug).length} 条`,
+  );
+  rows.sort((a, b) => a.slug.localeCompare(b.slug));
+  return wrap(rows, unmatched);
+}
+
+/**
+ * 全国编号 + 形态后缀 → 形态 slug。
+ *
+ * 百科用 026A 表示阿罗拉雷丘、003 配「超极巨化」表示超极巨妙蛙花，
+ * 数据源那边这些是 raichu-alola、venusaur-gmax
+ */
+function formIndex(): (dex: number, suffix: string) => string | undefined {
+  type Pokemon = { id: number; forms: { slug: string; isDefault: boolean }[] };
+  const snapshot = readSnapshot<Pokemon>("pokemon");
+  const byId = new Map(snapshot.map((p) => [p.id, p.forms]));
+
+  const SUFFIX: Record<string, string> = {
+    A: "-alola",
+    G: "-galar",
+    H: "-hisui",
+    P: "-paldea",
+    GMAX: "-gmax",
+  };
+
+  return (dex, suffix) => {
+    const forms = byId.get(dex);
+    if (!forms) return undefined;
+    const want = SUFFIX[suffix];
+    if (want) return forms.find((f) => f.slug.endsWith(want))?.slug;
+    return (forms.find((f) => f.isDefault) ?? forms[0])?.slug;
+  };
 }
 
 /**
@@ -1320,6 +1591,8 @@ const only = process.argv[2];
 if (!only || only === "abilities") await write("wiki-abilities", await abilities());
 if (!only || only === "moves") await write("wiki-moves", await moves());
 if (!only || only === "items") await write("wiki-items", await items());
+if (!only || only === "z-moves") await write("wiki-z-moves", await zMoves());
+if (!only || only === "max-moves") await write("wiki-max-moves", await maxMoves());
 if (!only || only === "pokemon") {
   await write("wiki-pokemon-descriptions", await pokemonDescriptions());
 }
