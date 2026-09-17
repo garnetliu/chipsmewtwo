@@ -1,0 +1,201 @@
+{
+  "source": "https://wiki.52poke.com",
+  "license": "CC BY-NC-SA 3.0",
+  "rows": [
+    {
+      "slug": "10-000-000-volt-thunderbolt",
+      "names": {
+        "zh-Hans": "千万伏特",
+        "zh-Hant": "千萬伏特"
+      },
+      "formSlug": "pikachu",
+      "baseMoveSlug": "thunderbolt",
+      "itemSlug": "pikashunium-z--bag",
+      "power": 195,
+      "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "catastropika",
+      "names": {
+        "zh-Hans": "皮卡皮卡必杀击",
+        "zh-Hant": "皮卡皮卡必殺擊"
+      },
+      "formSlug": "pikachu",
+      "baseMoveSlug": "volt-tackle",
+      "itemSlug": "pikanium-z--bag",
+      "power": 210,
+      "damageClass": "PHYSICAL"
+    },
+    {
+      "slug": "clangorous-soulblaze",
+      "names": {
+        "zh-Hans": "炽魂热舞烈音爆",
+        "zh-Hant": "熾魂熱舞烈音爆"
+      },
+      "formSlug": "kommo-o",
+      "baseMoveSlug": "clanging-scales",
+      "itemSlug": "kommonium-z--bag",
+      "power": 185,
+      "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "extreme-evoboost",
+      "names": {
+        "zh-Hans": "九彩升华齐聚顶",
+        "zh-Hant": "九彩昇華齊聚頂"
+      },
+      "formSlug": "eevee",
+      "baseMoveSlug": "last-resort",
+      "itemSlug": "eevium-z--bag",
+      "power": null,
+      "damageClass": "STATUS"
+    },
+    {
+      "slug": "genesis-supernova",
+      "names": {
+        "zh-Hans": "起源超新星大爆炸",
+        "zh-Hant": "起源超新星大爆炸"
+      },
+      "formSlug": "mew",
+      "baseMoveSlug": "psychic",
+      "itemSlug": "mewnium-z--bag",
+      "power": 185,
+      "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "guardian-of-alola",
+      "names": {
+        "zh-Hans": "巨人卫士・阿罗拉",
+        "zh-Hant": "巨人衛士・阿羅拉"
+      },
+      "formSlug": "tapu-koko",
+      "baseMoveSlug": "natures-madness",
+      "itemSlug": "tapunium-z--bag",
+      "power": null,
+      "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "light-that-burns-the-sky",
+      "names": {
+        "zh-Hans": "焚天灭世炽光爆",
+        "zh-Hant": "焚天滅世熾光爆"
+      },
+      "formSlug": "necrozma",
+      "baseMoveSlug": "photon-geyser",
+      "itemSlug": "ultranecrozium-z--bag",
+      "power": 200,
+      "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "malicious-moonsault",
+      "names": {
+        "zh-Hans": "极恶飞跃粉碎击",
+        "zh-Hant": "極惡飛躍粉碎擊"
+      },
+      "formSlug": "incineroar",
+      "baseMoveSlug": "darkest-lariat",
+      "itemSlug": "incinium-z--bag",
+      "power": 180,
+      "damageClass": "PHYSICAL"
+    },
+    {
+      "slug": "menacing-moonraze-maelstrom",
+      "names": {
+        "zh-Hans": "月华飞溅落灵霄",
+        "zh-Hant": "月華飛濺落靈霄"
+      },
+      "formSlug": "lunala",
+      "baseMoveSlug": "moongeist-beam",
+      "itemSlug": "lunalium-z--bag",
+      "power": 200,
+      "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "oceanic-operetta",
+      "names": {
+        "zh-Hans": "海神庄严交响乐",
+        "zh-Hant": "海神莊嚴交響樂"
+      },
+      "formSlug": "primarina",
+      "baseMoveSlug": "sparkling-aria",
+      "itemSlug": "primarium-z--bag",
+      "power": 195,
+      "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "pulverizing-pancake",
+      "names": {
+        "zh-Hans": "认真起来大爆击",
+        "zh-Hant": "認真起來大爆擊"
+      },
+      "formSlug": "snorlax",
+      "baseMoveSlug": "giga-impact",
+      "itemSlug": "snorlium-z--bag",
+      "power": 210,
+      "damageClass": "PHYSICAL"
+    },
+    {
+      "slug": "searing-sunraze-smash",
+      "names": {
+        "zh-Hans": "日光回旋下苍穹",
+        "zh-Hant": "日光迴旋下蒼穹"
+      },
+      "formSlug": "solgaleo",
+      "baseMoveSlug": "sunsteel-strike",
+      "itemSlug": "solganium-z--bag",
+      "power": 200,
+      "damageClass": "PHYSICAL"
+    },
+    {
+      "slug": "sinister-arrow-raid",
+      "names": {
+        "zh-Hans": "遮天蔽日暗影箭",
+        "zh-Hant": "遮天蔽日暗影箭"
+      },
+      "formSlug": "decidueye",
+      "baseMoveSlug": "spirit-shackle",
+      "itemSlug": "decidium-z--bag",
+      "power": 180,
+      "damageClass": "PHYSICAL"
+    },
+    {
+      "slug": "soul-stealing-7-star-strike",
+      "names": {
+        "zh-Hans": "七星夺魂腿",
+        "zh-Hant": "七星奪魂腿"
+      },
+      "formSlug": "marshadow",
+      "baseMoveSlug": "spectral-thief",
+      "itemSlug": "marshadium-z--bag",
+      "power": 195,
+      "damageClass": "PHYSICAL"
+    },
+    {
+      "slug": "splintered-stormshards",
+      "names": {
+        "zh-Hans": "狼啸石牙飓风暴",
+        "zh-Hant": "狼嘯石牙颶風暴"
+      },
+      "formSlug": "lycanroc-midday",
+      "baseMoveSlug": "stone-edge",
+      "itemSlug": "lycanium-z--bag",
+      "power": 190,
+      "damageClass": "PHYSICAL"
+    },
+    {
+      "slug": "stoked-sparksurfer",
+      "names": {
+        "zh-Hans": "驾雷驭电戏冲浪",
+        "zh-Hant": "駕雷馭電戲衝浪"
+      },
+      "formSlug": "raichu-alola",
+      "baseMoveSlug": "thunderbolt",
+      "itemSlug": "aloraichium-z--bag",
+      "power": 175,
+      "damageClass": "SPECIAL"
+    }
+  ],
+  "unmatched": [
+    "親密無間大亂揍"
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "source": "https://wiki.52poke.com",
+  "license": "CC BY-NC-SA 3.0",
+  "rows": [
+    {
+      "slug": "g-max-befuddle",
+      "names": {
+        "zh-Hans": "超极巨蝶影蛊惑",
+        "zh-Hant": "超極巨蝶影蠱惑"
+      },
+      "typeSlug": "bug",
+      "formSlug": "butterfree-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入中毒、麻痹或睡眠状态。",
+        "zh-Hant": "讓全體對手陷入中毒、麻痺或睡眠狀態。"
+      }
+    },
+    {
+      "slug": "g-max-cannonade",
+      "names": {
+        "zh-Hans": "超极巨水炮轰灭",
+        "zh-Hant": "超極巨水砲轟滅"
+      },
+      "typeSlug": "water",
+      "formSlug": "blastoise-gmax",
+      "effect": {
+        "zh-Hans": "在４回合内给予全体水属性以外的对手伤害。",
+        "zh-Hant": "在４回合內給予全體水屬性以外的對手傷害。"
+      }
+    },
+    {
+      "slug": "g-max-centiferno",
+      "names": {
+        "zh-Hans": "超极巨百火焚野",
+        "zh-Hant": "超極巨百火焚野"
+      },
+      "typeSlug": "fire",
+      "formSlug": "centiskorch-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入束缚状态。",
+        "zh-Hant": "讓全體對手陷入束縛狀態。"
+      }
+    },
+    {
+      "slug": "g-max-chi-strike",
+      "names": {
+        "zh-Hans": "超极巨会心一击",
+        "zh-Hant": "超極巨會心一擊"
+      },
+      "typeSlug": "fighting",
+      "formSlug": "machamp-gmax",
+      "effect": {
+        "zh-Hans": "会提高全体我方的击中要害率。",
+        "zh-Hant": "會提高全體我方的擊中要害率。"
+      }
+    },
+    {
+      "slug": "g-max-cuddle",
+      "names": {
+        "zh-Hans": "超极巨热情拥抱",
+        "zh-Hant": "超極巨熱情擁抱"
+      },
+      "typeSlug": "normal",
+      "formSlug": "eevee-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入着迷状态。",
+        "zh-Hant": "讓全體對手陷入著迷狀態。"
+      }
+    },
+    {
+      "slug": "g-max-depletion",
+      "names": {
+        "zh-Hans": "超极巨劣化衰变",
+        "zh-Hant": "超極巨劣化衰變"
+      },
+      "typeSlug": "dragon",
+      "formSlug": "duraludon-gmax",
+      "effect": {
+        "zh-Hans": "减少全体对手最后使用的招式的ＰＰ。",
+        "zh-Hant": "減少全體對手最後使用的招式的ＰＰ。"
+      }
+    },
+    {
+      "slug": "g-max-drum-solo",
+      "names": {
+        "zh-Hans": "超极巨狂擂乱打",
+        "zh-Hant": "超極巨狂擂亂打"
+      },
+      "typeSlug": "grass",
+      "formSlug": "rillaboom-gmax",
+      "effect": {
+        "zh-Hans": "不会受到对手特性的干扰。",
+        "zh-Hant": "不會受到對手特性的干擾。"
+      }
+    },
+    {
+      "slug": "g-max-finale",
+      "names": {
+        "zh-Hans": "超极巨幸福圆满",
+        "zh-Hant": "超極巨幸福圓滿"
+      },
+      "typeSlug": "fairy",
+      "formSlug": "alcremie-gmax",
+      "effect": {
+        "zh-Hans": "回复全体我方的ＨＰ。",
+        "zh-Hant": "回復全體我方的ＨＰ。"
+      }
+    },
+    {
+      "slug": "g-max-fireball",
+      "names": {
+        "zh-Hans": "超极巨破阵火球",
+        "zh-Hant": "超極巨破陣火球"
+      },
+      "typeSlug": "fire",
+      "formSlug": "cinderace-gmax",
+      "effect": {
+        "zh-Hans": "不会受到对手特性的干扰。",
+        "zh-Hant": "不會受到對手特性的干擾。"
+      }
+    },
+    {
+      "slug": "g-max-foam-burst",
+      "names": {
+        "zh-Hans": "超极巨激漩泡涡",
+        "zh-Hant": "超極巨激漩泡渦"
+      },
+      "typeSlug": "water",
+      "formSlug": "kingler-gmax",
+      "effect": {
+        "zh-Hans": "大幅降低全体对手的速度。",
+        "zh-Hant": "大幅降低全體對手的速度。"
+      }
+    },
+    {
+      "slug": "g-max-gold-rush",
+      "names": {
+        "zh-Hans": "超极巨特大金币",
+        "zh-Hant": "超極巨特大金幣"
+      },
+      "typeSlug": "normal",
+      "formSlug": "meowth-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入混乱状态，并可获得金钱。",
+        "zh-Hant": "讓全體對手陷入混亂狀態，並可獲得金錢。"
+      }
+    },
+    {
+      "slug": "g-max-gravitas",
+      "names": {
+        "zh-Hans": "超极巨天道七星",
+        "zh-Hant": "超極巨天道七星"
+      },
+      "typeSlug": "psychic",
+      "formSlug": "orbeetle-gmax",
+      "effect": {
+        "zh-Hans": "在５回合内重力发生变化。",
+        "zh-Hant": "在５回合內重力發生變化。"
+      }
+    },
+    {
+      "slug": "g-max-hydrosnipe",
+      "names": {
+        "zh-Hans": "超极巨狙击神射",
+        "zh-Hant": "超極巨狙擊神射"
+      },
+      "typeSlug": "water",
+      "formSlug": "inteleon-gmax",
+      "effect": {
+        "zh-Hans": "不会受到对手特性的干扰。",
+        "zh-Hant": "不會受到對手特性的干擾。"
+      }
+    },
+    {
+      "slug": "g-max-malodor",
+      "names": {
+        "zh-Hans": "超极巨臭气冲天",
+        "zh-Hant": "超極巨臭氣沖天"
+      },
+      "typeSlug": "poison",
+      "formSlug": "garbodor-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入中毒状态。",
+        "zh-Hant": "讓全體對手陷入中毒狀態。"
+      }
+    },
+    {
+      "slug": "g-max-meltdown",
+      "names": {
+        "zh-Hans": "超极巨液金熔击",
+        "zh-Hant": "超極巨液金熔擊"
+      },
+      "typeSlug": "steel",
+      "formSlug": "melmetal-gmax",
+      "effect": {
+        "zh-Hans": "在３回合内让全体对手陷入无理取闹状态。",
+        "zh-Hant": "在３回合內讓全體對手陷入無理取鬧狀態。"
+      }
+    },
+    {
+      "slug": "g-max-one-blow",
+      "names": {
+        "zh-Hans": "超极巨夺命一击",
+        "zh-Hant": "超極巨奪命一擊"
+      },
+      "typeSlug": "dark",
+      "formSlug": "urshifu-rapid-strike-gmax",
+      "effect": {
+        "zh-Hans": "可以无视极巨防壁等引发的守住状态。",
+        "zh-Hant": "可以無視極巨防壁等引發的守住狀態。"
+      }
+    },
+    {
+      "slug": "g-max-rapid-flow",
+      "names": {
+        "zh-Hans": "超极巨流水连击",
+        "zh-Hant": "超極巨流水連擊"
+      },
+      "typeSlug": "water",
+      "formSlug": "urshifu-rapid-strike-gmax",
+      "effect": {
+        "zh-Hans": "可以无视极巨防壁等引发的守住状态。",
+        "zh-Hant": "可以無視極巨防壁等引發的守住狀態。"
+      }
+    },
+    {
+      "slug": "g-max-replenish",
+      "names": {
+        "zh-Hans": "超极巨资源再生",
+        "zh-Hant": "超極巨資源再生"
+      },
+      "typeSlug": "normal",
+      "formSlug": "snorlax-gmax",
+      "effect": {
+        "zh-Hans": "有50%的几率获得已经吃掉的树果。",
+        "zh-Hant": "有50%的機率獲得已經吃掉的樹果。"
+      }
+    },
+    {
+      "slug": "g-max-resonance",
+      "names": {
+        "zh-Hans": "超极巨极光旋律",
+        "zh-Hant": "超極巨極光旋律"
+      },
+      "typeSlug": "ice",
+      "formSlug": "lapras-gmax",
+      "effect": {
+        "zh-Hans": "在５回合内减弱受到的伤害。",
+        "zh-Hant": "在５回合內減弱受到的傷害。"
+      }
+    },
+    {
+      "slug": "g-max-sandblast",
+      "names": {
+        "zh-Hans": "超极巨沙尘漫天",
+        "zh-Hant": "超極巨沙塵漫天"
+      },
+      "typeSlug": "ground",
+      "formSlug": "sandaconda-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入束缚状态。",
+        "zh-Hant": "讓全體對手陷入束縛狀態。"
+      }
+    },
+    {
+      "slug": "g-max-smite",
+      "names": {
+        "zh-Hans": "超极巨天谴雷诛",
+        "zh-Hant": "超極巨天譴雷誅"
+      },
+      "typeSlug": "fairy",
+      "formSlug": "hatterene-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入混乱状态。",
+        "zh-Hant": "讓全體對手陷入混亂狀態。"
+      }
+    },
+    {
+      "slug": "g-max-snooze",
+      "names": {
+        "zh-Hans": "超极巨睡魔降临",
+        "zh-Hant": "超極巨睡魔降臨"
+      },
+      "typeSlug": "dark",
+      "formSlug": "grimmsnarl-gmax",
+      "effect": {
+        "zh-Hans": "有50%的几率使目标陷入瞌睡状态。",
+        "zh-Hant": "有50%的機率使目標陷入瞌睡狀態。"
+      }
+    },
+    {
+      "slug": "g-max-steelsurge",
+      "names": {
+        "zh-Hans": "超极巨钢铁阵法",
+        "zh-Hant": "超極巨鋼鐵陣法"
+      },
+      "typeSlug": "steel",
+      "formSlug": "copperajah-gmax",
+      "effect": {
+        "zh-Hans": "会向对手场上发射无数锐利的刺。",
+        "zh-Hant": "會向對手場上發射無數銳利的刺。"
+      }
+    },
+    {
+      "slug": "g-max-stonesurge",
+      "names": {
+        "zh-Hans": "超极巨岩阵以待",
+        "zh-Hant": "超極巨岩陣以待"
+      },
+      "typeSlug": "water",
+      "formSlug": "drednaw-gmax",
+      "effect": {
+        "zh-Hans": "会向对手场上发射无数锐利的岩石。",
+        "zh-Hant": "會向對手場上發射無數銳利的岩石。"
+      }
+    },
+    {
+      "slug": "g-max-stun-shock",
+      "names": {
+        "zh-Hans": "超极巨异毒电场",
+        "zh-Hant": "超極巨異毒電場"
+      },
+      "typeSlug": "electric",
+      "formSlug": "toxtricity-amped-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入中毒或麻痹状态。",
+        "zh-Hant": "讓全體對手陷入中毒或麻痺狀態。"
+      }
+    },
+    {
+      "slug": "g-max-sweetness",
+      "names": {
+        "zh-Hans": "超极巨琼浆玉液",
+        "zh-Hant": "超極巨瓊漿玉液"
+      },
+      "typeSlug": "grass",
+      "formSlug": "appletun-gmax",
+      "effect": {
+        "zh-Hans": "治愈全体我方的异常状态。",
+        "zh-Hant": "治癒全體我方的異常狀態。"
+      }
+    },
+    {
+      "slug": "g-max-tartness",
+      "names": {
+        "zh-Hans": "超极巨酸不溜丢",
+        "zh-Hant": "超極巨酸不溜丟"
+      },
+      "typeSlug": "grass",
+      "formSlug": "flapple-gmax",
+      "effect": {
+        "zh-Hans": "降低全体对手的闪避率。",
+        "zh-Hant": "降低全體對手的閃避率。"
+      }
+    },
+    {
+      "slug": "g-max-terror",
+      "names": {
+        "zh-Hans": "超极巨幻影幽魂",
+        "zh-Hant": "超極巨幻影幽魂"
+      },
+      "typeSlug": "ghost",
+      "formSlug": "gengar-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入无法逃走状态。",
+        "zh-Hant": "讓全體對手陷入無法逃走狀態。"
+      }
+    },
+    {
+      "slug": "g-max-vine-lash",
+      "names": {
+        "zh-Hans": "超极巨灰飞鞭灭",
+        "zh-Hant": "超極巨灰飛鞭滅"
+      },
+      "typeSlug": "grass",
+      "formSlug": "venusaur-gmax",
+      "effect": {
+        "zh-Hans": "在４回合内给予全体草属性以外的对手伤害。",
+        "zh-Hant": "在４回合內給予全體草屬性以外的對手傷害。"
+      }
+    },
+    {
+      "slug": "g-max-volcalith",
+      "names": {
+        "zh-Hans": "超极巨炎石喷发",
+        "zh-Hant": "超極巨炎石噴發"
+      },
+      "typeSlug": "rock",
+      "formSlug": "coalossal-gmax",
+      "effect": {
+        "zh-Hans": "在４回合内给予全体岩石属性以外的对手伤害。",
+        "zh-Hant": "在４回合內給予全體岩石屬性以外的對手傷害。"
+      }
+    },
+    {
+      "slug": "g-max-volt-crash",
+      "names": {
+        "zh-Hans": "超极巨万雷轰顶",
+        "zh-Hant": "超極巨萬雷轟頂"
+      },
+      "typeSlug": "electric",
+      "formSlug": "pikachu-gmax",
+      "effect": {
+        "zh-Hans": "让全体对手陷入麻痹状态。",
+        "zh-Hant": "讓全體對手陷入麻痺狀態。"
+      }
+    },
+    {
+      "slug": "g-max-wildfire",
+      "names": {
+        "zh-Hans": "超极巨深渊灭焰",
+        "zh-Hant": "超極巨地獄滅焰"
+      },
+      "typeSlug": "fire",
+      "formSlug": "charizard-gmax",
+      "effect": {
+        "zh-Hans": "在４回合内给予全体火属性以外的对手伤害。",
+        "zh-Hant": "在４回合內給予全體火屬性以外的對手傷害。"
+      }
+    },
+    {
+      "slug": "g-max-wind-rage",
+      "names": {
+        "zh-Hans": "超极巨旋风袭卷",
+        "zh-Hant": "超極巨旋風襲捲"
+      },
+      "typeSlug": "flying",
+      "formSlug": "corviknight-gmax",
+      "effect": {
+        "zh-Hans": "可消除对手的反射壁、光墙、神秘守护、白雾，双方的撒菱、毒菱、隐形岩、黏黏网、超极巨钢铁阵法和场地型状态。",
+        "zh-Hant": "可消除對手的反射壁、光牆、神秘守護、白霧，雙方的撒菱、毒菱、隱形岩、黏黏網、超極巨鋼鐵陣法和場地型狀態。"
+      }
+    }
+  ],
+  "unmatched": []
+}

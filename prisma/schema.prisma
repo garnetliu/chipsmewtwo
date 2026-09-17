@@ -114,6 +114,12 @@ model Language {
   abilityFlavors        AbilityFlavorI18n[]
   moveFlavors           MoveFlavorI18n[]
   itemFlavors           ItemFlavorI18n[]
+  zMoveNames            ZMoveI18n[]
+  zMoveEffects          ZMoveEffectI18n[]
+  zMoveFlavors          ZMoveFlavorI18n[]
+  maxMoveNames          MaxMoveI18n[]
+  maxMoveEffects        MaxMoveEffectI18n[]
+  maxMoveFlavors        MaxMoveFlavorI18n[]
 
   @@map("language")
 }
@@ -202,6 +208,8 @@ model Group {
   abilityFlavors   AbilityFlavorI18n[]
   moveFlavors      MoveFlavorI18n[]
   itemFlavors      ItemFlavorI18n[]
+  zMoveFlavors     ZMoveFlavorI18n[]
+  maxMoveFlavors   MaxMoveFlavorI18n[]
 
   @@index([generationId])
   @@index([order])
@@ -320,6 +328,10 @@ model Form {
   colors       FormColor[]
   descriptions FormDescriptionI18n[]
   moveLearns   MoveLearn[]
+
+  /// 这个形态专属的Ｚ招式和超极巨招式
+  zMoves   ZMove[]
+  maxMoves MaxMove[]
 
   evolvesTo        Evolution[] @relation("EvolutionFrom")
   evolvesFrom      Evolution[] @relation("EvolutionTo")
@@ -509,6 +521,8 @@ model Item {
 
   usedInEvolutions Evolution[] @relation("EvolutionItem")
   heldInEvolutions Evolution[] @relation("EvolutionHeldItem")
+  /// 这件道具是哪个专属Ｚ招式要携带的Ｚ纯晶
+  zMoveCrystalFor  ZMove[]     @relation("ZMoveCrystal")
 
   @@map("item")
 }
@@ -787,6 +801,8 @@ model Type {
   primaryFor       FormType[]          @relation("PrimaryType")
   secondaryFor     FormType[]          @relation("SecondaryType")
   moveGenerations  MoveGeneration[]
+  zMoves           ZMove[]
+  maxMoves         MaxMove[]
   attackingAgainst TypeEffectiveness[] @relation("AttackingType")
   defendingAgainst TypeEffectiveness[] @relation("DefendingType")
   knownMoveTypeFor Evolution[]         @relation("EvolutionKnownMoveType")
@@ -895,6 +911,14 @@ model AbilityFlavorI18n {
 }
 
 /// 招式。只留跨世代不变的身份，属性、伤害分类、威力、命中、PP 全在 MoveGeneration
+/**
+ * 招式。只装宝可梦能学会的那些 ——
+ * Z 招式和极巨招式不是学来的，是携带 Z 纯晶或极巨化之后由这些招式临场转化的，
+ * 它们在 ZMove / MaxMove 两张表，不进这里也不进 MoveLearn。
+ * 分开存是因为三者压根不是一种东西：那两类各自只活在一个世代里
+ * （Z 招式只有第七世代、极巨化只有第八世代），套不上 MoveGeneration
+ * 的「每代一行」；威力也不是固定值，按原招式换算
+ */
 model Move {
   id   Int    @id @default(autoincrement())
   slug String @unique // "knock-off"
@@ -907,8 +931,164 @@ model Move {
 
   knownMoveFor Evolution[] @relation("EvolutionKnownMove")
   usedMoveFor  Evolution[] @relation("EvolutionUsedMove")
+  /// 专属 Z 招式由哪个招式转化而来
+  zMoveFor     ZMove[]
 
   @@map("move")
+}
+
+/**
+ * Ｚ招式，第七世代独有。携带Ｚ纯晶，把对应招式升级一次使出，每场对战限一次。
+ * 两种：
+ * 泛用 —— 一个属性一个，学会该属性攻击招式的宝可梦都能用。
+ * 威力按原招式换算、伤害分类也跟原招式走，所以那两列是空的
+ * 专属 —— 限定宝可梦 + 限定原招式（皮卡丘用伏特攻击才有皮卡皮卡必杀击），
+ * 原招式固定所以威力和分类都是定值
+ * 不带世代维度：整个机制只存在于第七世代，第八世代起就废除了
+ */
+model ZMove {
+  id   Int    @id @default(autoincrement())
+  slug String @unique // "breakneck-blitz" / "catastropika"
+
+  typeId Int
+  type   Type @relation(fields: [typeId], references: [id])
+
+  /// 泛用Ｚ招式为空 —— 跟原招式相同。专属的原招式固定，所以有值
+  damageClass MoveCategory?
+  /// 泛用Ｚ招式为空 —— 按原招式威力换算
+  power       Int?
+  /// Ｚ招式一律是 1：每场对战只能使出一次
+  pp          Int?
+
+  /// 专属Ｚ招式限定的形态。泛用的为空
+  formId     Int?
+  form       Form? @relation(fields: [formId], references: [id])
+  /// 专属Ｚ招式的原始招式。泛用的为空（属性对得上就行）
+  baseMoveId Int?
+  baseMove   Move? @relation(fields: [baseMoveId], references: [id])
+  /// 要携带的Ｚ纯晶
+  itemId     Int?
+  item       Item? @relation("ZMoveCrystal", fields: [itemId], references: [id])
+
+  names   ZMoveI18n[]
+  effects ZMoveEffectI18n[]
+  flavors ZMoveFlavorI18n[]
+
+  @@index([typeId])
+  @@index([formId])
+  @@map("z_move")
+}
+
+model ZMoveI18n {
+  zMoveId      Int
+  zMove        ZMove    @relation(fields: [zMoveId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([zMoveId, languageCode])
+  @@index([name])
+  @@map("z_move_i18n")
+}
+
+/// 机制说明。不按世代分 —— Ｚ招式只有第七世代
+model ZMoveEffectI18n {
+  zMoveId      Int
+  zMove        ZMove    @relation(fields: [zMoveId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  shortEffect  String?
+  effect       String
+
+  @@id([zMoveId, languageCode])
+  @@map("z_move_effect_i18n")
+}
+
+/// 游戏文案。日月和究极日月两个版本组的文案不一样，所以还是按版本组存
+model ZMoveFlavorI18n {
+  zMoveId      Int
+  zMove        ZMove    @relation(fields: [zMoveId], references: [id], onDelete: Cascade)
+  groupId      Int
+  group        Group    @relation(fields: [groupId], references: [id])
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  text         String
+
+  @@id([zMoveId, groupId, languageCode])
+  @@index([groupId])
+  @@map("z_move_flavor_i18n")
+}
+
+/**
+ * 极巨招式，第八世代独有。极巨化之后攻击招式按属性变成对应的极巨招式，
+ * 变化招式一律变成极巨障壁。
+ * 两种：
+ * 泛用 —— 一个属性一个，加上极巨障壁共 19 个
+ * 超极巨 —— 能超极巨化的宝可梦专属，喷火龙的火属性招式变成超极巨地狱灭焰。
+ * 数据源一条都没收录，全部来自神奇宝贝百科
+ * 跟 ZMove 一样不带世代维度：极巨化只存在于第八世代，朱紫已经没有了
+ */
+model MaxMove {
+  id   Int    @id @default(autoincrement())
+  slug String @unique // "max-flare" / "g-max-wildfire"
+
+  typeId Int
+  type   Type @relation(fields: [typeId], references: [id])
+
+  /// 按原招式威力换算，数据源给的是占位值
+  power Int?
+  /// 极巨招式跟着原招式的 PP 走，数据源给的同样是占位值
+  pp    Int?
+
+  /// 超极巨招式专属的形态（喷火龙的超极巨化形态）。泛用极巨招式为空
+  formId Int?
+  form   Form? @relation(fields: [formId], references: [id])
+
+  names   MaxMoveI18n[]
+  effects MaxMoveEffectI18n[]
+  flavors MaxMoveFlavorI18n[]
+
+  @@index([typeId])
+  @@index([formId])
+  @@map("max_move")
+}
+
+model MaxMoveI18n {
+  maxMoveId    Int
+  maxMove      MaxMove  @relation(fields: [maxMoveId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([maxMoveId, languageCode])
+  @@index([name])
+  @@map("max_move_i18n")
+}
+
+model MaxMoveEffectI18n {
+  maxMoveId    Int
+  maxMove      MaxMove  @relation(fields: [maxMoveId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  shortEffect  String?
+  effect       String
+
+  @@id([maxMoveId, languageCode])
+  @@map("max_move_effect_i18n")
+}
+
+model MaxMoveFlavorI18n {
+  maxMoveId    Int
+  maxMove      MaxMove  @relation(fields: [maxMoveId], references: [id], onDelete: Cascade)
+  groupId      Int
+  group        Group    @relation(fields: [groupId], references: [id])
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  text         String
+
+  @@id([maxMoveId, groupId, languageCode])
+  @@index([groupId])
+  @@map("max_move_flavor_i18n")
 }
 
 model MoveI18n {

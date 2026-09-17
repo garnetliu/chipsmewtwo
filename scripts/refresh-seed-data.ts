@@ -36,6 +36,7 @@ import {
   type GzipSeedData,
   type ItemSnapshot,
   type Localized,
+  type MaxMoveSnapshot,
   type MoveLearnMethodSnapshot,
   type MoveLearnSnapshot,
   type MoveSnapshot,
@@ -47,6 +48,7 @@ import {
   type SeedData,
   type TypeSnapshot,
   type VersionSnapshot,
+  type ZMoveSnapshot,
 } from "@/prisma/seed-data/types";
 
 const BASE_URL = "https://pokeapi.co/api/v2";
@@ -528,7 +530,43 @@ function damageClassOf(
  * past_values 是差异不是整组，只给改过的那几项，其余为 null 表示没变，
  * 所以要从当前值出发按世代从大到小依次叠。
  */
-async function moves(index: GroupIndex): Promise<MoveSnapshot[]> {
+/**
+ * 专属Ｚ招式的 slug。
+ *
+ * 数据源没给任何标记，只能列出来 —— 它们跟泛用Ｚ招式不一样，
+ * 限定宝可梦和原招式，威力和伤害分类是定值。
+ * 谜拟Ｑ的 let-s-snuggle-forever 数据源压根没收，靠百科补
+ */
+const SIGNATURE_Z_MOVES = new Set([
+  "catastropika",
+  "10-000-000-volt-thunderbolt",
+  "stoked-sparksurfer",
+  "extreme-evoboost",
+  "pulverizing-pancake",
+  "genesis-supernova",
+  "sinister-arrow-raid",
+  "malicious-moonsault",
+  "oceanic-operetta",
+  "splintered-stormshards",
+  "clangorous-soulblaze",
+  "guardian-of-alola",
+  "searing-sunraze-smash",
+  "menacing-moonraze-maelstrom",
+  "light-that-burns-the-sky",
+  "soul-stealing-7-star-strike",
+]);
+
+/** Ｚ招式和极巨招式各自只活在一个世代 */
+const Z_MOVE_GENERATION = 7;
+const MAX_MOVE_GENERATION = 8;
+
+type SplitMoves = {
+  moves: MoveSnapshot[];
+  zMoves: ZMoveSnapshot[];
+  maxMoves: MaxMoveSnapshot[];
+};
+
+async function moves(index: GroupIndex): Promise<SplitMoves> {
   type PastValue = {
     version_group: NamedRef;
     type: NamedRef | null;
@@ -555,7 +593,7 @@ async function moves(index: GroupIndex): Promise<MoveSnapshot[]> {
   const rows = await fetchAll<Move>("move", 12);
 
   const unknown = new Set<string>();
-  const out = bySlug(
+  const all = bySlug(
     rows.map((m) => {
       const introducedIn = idFromUrl(m.generation.url);
       const past = m.past_values
@@ -608,9 +646,76 @@ async function moves(index: GroupIndex): Promise<MoveSnapshot[]> {
   if (unknown.size) {
     console.warn(`  ⚠ 有 flavor text 引用了未知版本组: ${[...unknown].sort().join(", ")}`);
   }
-  const withEffect = out.filter((m) => Object.keys(m.effects).length).length;
-  console.log(`  招式说明: 机制 ${withEffect}/${out.length}`);
-  return out;
+  const withEffect = all.filter((m) => Object.keys(m.effects).length).length;
+  console.log(`  招式说明: 机制 ${withEffect}/${all.length}`);
+  return splitMoves(all);
+}
+
+/**
+ * 把三类招式拆开。
+ *
+ * Ｚ招式和极巨招式不是学来的，是携带Ｚ纯晶或极巨化之后由普通招式临场转化的，
+ * 跟普通招式不是一种东西 —— 它们各自只活在一个世代，套不上「每代一行」，
+ * 威力也是按原招式换算的占位值。
+ *
+ * 泛用Ｚ招式数据源按伤害分类拆成了 acid-downpour--physical 和 --special 两条，
+ * 游戏里其实是同一个招式，这里合并回一条，伤害分类留空表示「跟原招式相同」
+ */
+function splitMoves(all: MoveSnapshot[]): SplitMoves {
+  const moves: MoveSnapshot[] = [];
+  const zMoves: ZMoveSnapshot[] = [];
+  const maxMoves: MaxMoveSnapshot[] = [];
+  const seenZ = new Set<string>();
+
+  /** 取登场世代那一行的数值和说明 —— 后面那些世代的行本来就不该存在 */
+  const at = (m: MoveSnapshot, generationId: number) => ({
+    values: m.generations[String(generationId)] ?? Object.values(m.generations)[0],
+    effect: m.effects[String(generationId)] ?? Object.values(m.effects)[0] ?? {},
+  });
+
+  for (const m of all) {
+    if (m.slug.startsWith("max-")) {
+      const { values, effect } = at(m, MAX_MOVE_GENERATION);
+      if (!values) continue;
+      maxMoves.push({
+        slug: m.slug,
+        typeSlug: values.typeSlug,
+        power: values.power,
+        pp: values.pp,
+        names: m.names,
+        effects: effect,
+        flavors: m.flavors,
+      });
+      continue;
+    }
+
+    const generic = /^(.+)--(physical|special)$/.exec(m.slug);
+    if (generic || SIGNATURE_Z_MOVES.has(m.slug)) {
+      const slug = generic ? generic[1]! : m.slug;
+      if (seenZ.has(slug)) continue;
+      seenZ.add(slug);
+
+      const { values, effect } = at(m, Z_MOVE_GENERATION);
+      if (!values) continue;
+      zMoves.push({
+        slug,
+        typeSlug: values.typeSlug,
+        // 泛用的跟原招式走，专属的原招式固定所以是定值
+        damageClass: generic ? null : values.damageClass,
+        power: generic ? null : values.power,
+        pp: values.pp,
+        names: m.names,
+        effects: effect,
+        flavors: m.flavors,
+      });
+      continue;
+    }
+
+    moves.push(m);
+  }
+
+  console.log(`  拆分: 普通 ${moves.length}，Ｚ招式 ${zMoves.length}，极巨招式 ${maxMoves.length}`);
+  return { moves, zMoves, maxMoves };
 }
 
 /**
@@ -952,7 +1057,10 @@ await write("abilities", await abilities(index));
 await write("pokedexes", await pokedexes());
 await write("groups", groupRows);
 await write("versions", await versions());
-await write("moves", await moves(index));
+const moveRows = await moves(index);
+await write("moves", moveRows.moves);
+await write("z-moves", moveRows.zMoves);
+await write("max-moves", moveRows.maxMoves);
 
 // 技能机器编号先备好，招式学习表里 machine 那些行要回填
 const machines = await machineNumbers();

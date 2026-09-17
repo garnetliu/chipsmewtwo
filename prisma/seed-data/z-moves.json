@@ -1,0 +1,2628 @@
+[
+  {
+    "slug": "10-000-000-volt-thunderbolt",
+    "typeSlug": "electric",
+    "damageClass": "SPECIAL",
+    "power": 195,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "千万伏特",
+      "zh-Hant": "千萬伏特",
+      "en": "10,000,000 Volt Thunderbolt",
+      "ja": "１０００まんボルト",
+      "ja-Hrkt": "１０００まんボルト",
+      "ko": "1000만볼트",
+      "fr": "Giga-Tonnerre",
+      "de": "Tausendfacher Donnerblitz",
+      "es": "Gigarrayo Fulminante",
+      "it": "Iperfulmine"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "戴着帽子的皮卡丘将通过Ｚ力量增强的电击全力释放给对手。容易击中要害。",
+        "zh-Hant": "戴著帽子的皮卡丘向對手釋放出藉由Ｚ力量增強的電流。容易擊中要害。",
+        "en": "The user, Pikachu wearing a cap, powers up a jolt of electricity using its Z-Power and unleashes it. Critical hits land more easily.",
+        "ja": "帽子を　かぶった　ピカチュウがＺパワーで　パワーアップした　電撃を放つ。　急所に　当たりやすい。",
+        "ja-Hrkt": "ぼうしを　かぶった　ピカチュウがＺパワーで　パワーアップした　でんげきをはなつ。　きゅうしょに　あたりやすい。",
+        "ko": "모자를 쓴 피카츄가 Z파워로 파워업한 전격을 쏜다. 급소에 맞기 쉽다.",
+        "fr": "Le Pikachu à casquette utilise la Force Z pour augmenter sa puissance électrique avant de la déchaîner sur la cible. Taux de critique élevé.",
+        "de": "Das eine Kappe tragende Pikachu greift das Ziel mit einem durch Z-Kraft verstärkten Elektroschock an. Hohe Volltrefferquote.",
+        "es": "Los Pikachu con gorra acumulan una carga eléctrica descomunal gracias al Poder Z y la lanzan contra el objetivo. Suele ser crítico.",
+        "it": "Grazie al Potere Z, Pikachu con il berretto scatena una potentissima scarica elettrica. Probabile brutto colpo."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "戴着帽子的皮卡丘将通过Ｚ力量增强的电击全力释放给对手。容易击中要害。",
+        "zh-Hant": "戴著帽子的皮卡丘向對手釋放出藉由Ｚ力量增強的電流。容易擊中要害。",
+        "en": "The user, Pikachu wearing a cap, powers up a jolt of electricity using its Z-Power and unleashes it. Critical hits land more easily.",
+        "ja": "帽子を　かぶった　ピカチュウがＺパワーで　パワーアップした　電撃を放つ。　急所に　当たりやすい。",
+        "ja-Hrkt": "ぼうしを　かぶった　ピカチュウがＺパワーで　パワーアップした　でんげきをはなつ。　きゅうしょに　あたりやすい。",
+        "ko": "모자를 쓴 피카츄가 Z파워로 파워업한 전격을 쏜다. 급소에 맞기 쉽다.",
+        "fr": "Le Pikachu à casquette utilise la Force Z pour augmenter sa puissance électrique avant de la déchaîner sur la cible. Taux de critique élevé.",
+        "de": "Das eine Kappe tragende Pikachu greift das Ziel mit einem durch Z-Kraft verstärkten Elektroschock an. Hohe Volltrefferquote.",
+        "es": "Los Pikachu con gorra acumulan una carga eléctrica descomunal gracias al Poder Z y la lanzan contra el objetivo. Suele ser crítico.",
+        "it": "Grazie al Potere Z, Pikachu con il berretto scatena una potentissima scarica elettrica. Probabile brutto colpo."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "戴着帽子的皮卡丘将通过Ｚ力量增强的电击全力释放给对手。容易击中要害。",
+        "zh-Hant": "戴著帽子的皮卡丘向對手釋放出藉由Ｚ力量增強的電流。容易擊中要害。",
+        "en": "The user, Pikachu wearing a cap, powers up a jolt of electricity using its Z-Power and unleashes it. Critical hits land more easily.",
+        "ja": "帽子を　かぶった　ピカチュウがＺパワーで　パワーアップした　電撃を放つ。　急所に　当たりやすい。",
+        "ja-Hrkt": "ぼうしを　かぶった　ピカチュウがＺパワーで　パワーアップした　でんげきをはなつ。　きゅうしょに　あたりやすい。",
+        "ko": "모자를 쓴 피카츄가 Z파워로 파워업한 전격을 쏜다. 급소에 맞기 쉽다.",
+        "fr": "Le Pikachu à casquette utilise la Force Z pour augmenter sa puissance électrique avant de la déchaîner sur la cible. Taux de critique élevé.",
+        "de": "Das eine Kappe tragende Pikachu greift das Ziel mit einem durch Z-Kraft verstärkten Elektroschock an. Hohe Volltrefferquote.",
+        "es": "Los Pikachu con gorra acumulan una carga eléctrica descomunal gracias al Poder Z y la lanzan contra el objetivo. Suele ser crítico.",
+        "it": "Grazie al Potere Z, Pikachu con il berretto scatena una potentissima scarica elettrica. Probabile brutto colpo."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "acid-downpour",
+    "typeSlug": "poison",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "强酸剧毒灭绝雨",
+      "zh-Hant": "強酸劇毒滅絕雨",
+      "en": "Acid Downpour",
+      "ja": "アシッドポイズンデリート",
+      "ja-Hrkt": "アシッドポイズンデリート",
+      "ko": "애시드포이즌딜리트",
+      "fr": "Déluge Causti-Toxique",
+      "de": "Vernichtender Säureregen",
+      "es": "Diluvio Corrosivo",
+      "it": "Acidiluvio Corrosivo"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量使毒沼涌起，全力让对手沉下去。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量湧起毒沼，全力使對手下沉。威力會隨原本的招式而改變。",
+        "en": "The user creates a poisonous swamp using its Z-Power and sinks the target into it at full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　毒の　沼を　湧きあがらせ全力で　相手を　沈める。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　どくの　ぬまを　わきあがらせぜんりょくで　あいてを　しずめる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 독의 늪을 만들어 전력으로 상대를 가라앉힌다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour répandre un marécage empoisonné où l’adversaire sombre. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft ein giftiges Moor, in dem das Ziel versinkt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una ciénaga venenosa en la que sumerge al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per creare una palude velenosa che sommerge il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量使毒沼涌起，全力让对手沉下去。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量湧起毒沼，全力使對手下沉。威力會隨原本的招式而改變。",
+        "en": "The user creates a poisonous swamp using its Z-Power and sinks the target into it at full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　毒の　沼を　湧きあがらせ全力で　相手を　沈める。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　どくの　ぬまを　わきあがらせぜんりょくで　あいてを　しずめる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 독의 늪을 만들어 전력으로 상대를 가라앉힌다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour répandre un marécage empoisonné où l’adversaire sombre. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft ein giftiges Moor, in dem das Ziel versinkt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una ciénaga venenosa en la que sumerge al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per creare una palude velenosa che sommerge il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量使毒沼涌起，全力让对手沉下去。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量湧起毒沼，全力使對手下沉。威力會隨原本的招式而改變。",
+        "en": "The user creates a poisonous swamp using its Z-Power and sinks the target into it at full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　毒の　沼を　湧きあがらせ全力で　相手を　沈める。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　どくの　ぬまを　わきあがらせぜんりょくで　あいてを　しずめる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 독의 늪을 만들어 전력으로 상대를 가라앉힌다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour répandre un marécage empoisonné où l’adversaire sombre. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft ein giftiges Moor, in dem das Ziel versinkt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una ciénaga venenosa en la que sumerge al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per creare una palude velenosa che sommerge il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "all-out-pummeling",
+    "typeSlug": "fighting",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "全力无双激烈拳",
+      "zh-Hant": "全力無雙激烈拳",
+      "en": "All-Out Pummeling",
+      "ja": "ぜんりょくむそうげきれつけん",
+      "ja-Hrkt": "ぜんりょくむそうげきれつけん",
+      "ko": "전력무쌍격렬권",
+      "fr": "Combo Hyper-Furie",
+      "de": "Fulminante Faustschläge",
+      "es": "Ráfaga Demoledora",
+      "it": "Iperscarica Furiosa"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量制造出能量弹，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "將透過Ｚ力量製造的能量彈全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user rams an energy orb created by its Z-Power into the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　作った　エネルギーの　弾を全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　つくった　エネルギーの　たまをぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 만든 에너지 구슬을 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer une boule d’énergie qu’il projette sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Aus Z-Kraft hergestellte Energiebälle prallen mit voller Wucht auf das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para lanzar una sarta de golpes demoledores contra el objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa scaglia sul bersaglio una scarica di colpi carichi di Potere Z. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量制造出能量弹，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "將透過Ｚ力量製造的能量彈全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user rams an energy orb created by its Z-Power into the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　作った　エネルギーの　弾を全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　つくった　エネルギーの　たまをぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 만든 에너지 구슬을 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer une boule d’énergie qu’il projette sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Aus Z-Kraft hergestellte Energiebälle prallen mit voller Wucht auf das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para lanzar una sarta de golpes demoledores contra el objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa scaglia sul bersaglio una scarica di colpi carichi di Potere Z. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量制造出能量弹，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "將透過Ｚ力量製造的能量彈全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user rams an energy orb created by its Z-Power into the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　作った　エネルギーの　弾を全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　つくった　エネルギーの　たまをぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 만든 에너지 구슬을 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer une boule d’énergie qu’il projette sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Aus Z-Kraft hergestellte Energiebälle prallen mit voller Wucht auf das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para lanzar una sarta de golpes demoledores contra el objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa scaglia sul bersaglio una scarica di colpi carichi di Potere Z. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "black-hole-eclipse",
+    "typeSlug": "dark",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "黑洞吞噬万物灭",
+      "zh-Hant": "黑洞吞噬萬物滅",
+      "en": "Black Hole Eclipse",
+      "ja": "ブラックホールイクリプス",
+      "ja-Hrkt": "ブラックホールイクリプス",
+      "ko": "블랙홀이클립스",
+      "fr": "Trou Noir des Ombres",
+      "de": "Schwarzes Loch des Grauens",
+      "es": "Agujero Negro Aniquilador",
+      "it": "Buco Nero del Non Ritorno"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量收集恶能量，全力将对手吸入。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量收集惡能量，全力將對手吸入。威力會隨原本的招式而改變。",
+        "en": "The user gathers dark energy using its Z-Power and sucks the target into it. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　悪の　エネルギーを　集め全力で　相手を　吸いよせる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　あくの　エネルギーを　あつめぜんりょくで　あいてを　すいよせる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 어둠의 에너지를 모아 전력으로 상대를 끌어당긴다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour rassembler l’énergie négative et y aspirer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender sammelt mit Z-Kraft dunkle Energie an, die das Ziel verschlingt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para generar un agujero negro que absorbe al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per concentrare energia negativa con cui inghiotte il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量收集恶能量，全力将对手吸入。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量收集惡能量，全力將對手吸入。威力會隨原本的招式而改變。",
+        "en": "The user gathers dark energy using its Z-Power and sucks the target into it. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　悪の　エネルギーを　集め全力で　相手を　吸いよせる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　あくの　エネルギーを　あつめぜんりょくで　あいてを　すいよせる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 어둠의 에너지를 모아 전력으로 상대를 끌어당긴다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour rassembler l’énergie négative et y aspirer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender sammelt mit Z-Kraft dunkle Energie an, die das Ziel verschlingt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para generar un agujero negro que absorbe al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per concentrare energia negativa con cui inghiotte il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量收集恶能量，全力将对手吸入。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量收集惡能量，全力將對手吸入。威力會隨原本的招式而改變。",
+        "en": "The user gathers dark energy using its Z-Power and sucks the target into it. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　悪の　エネルギーを　集め全力で　相手を　吸いよせる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　あくの　エネルギーを　あつめぜんりょくで　あいてを　すいよせる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 어둠의 에너지를 모아 전력으로 상대를 끌어당긴다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour rassembler l’énergie négative et y aspirer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender sammelt mit Z-Kraft dunkle Energie an, die das Ziel verschlingt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para generar un agujero negro que absorbe al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per concentrare energia negativa con cui inghiotte il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "bloom-doom",
+    "typeSlug": "grass",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "绚烂缤纷花怒放",
+      "zh-Hant": "絢爛繽紛花怒放",
+      "en": "Bloom Doom",
+      "ja": "ブルームシャインエクストラ",
+      "ja-Hrkt": "ブルームシャインエクストラ",
+      "ko": "블룸샤인엑스트라",
+      "fr": "Pétalexplosion Éblouissante",
+      "de": "Brillante Blütenpracht",
+      "es": "Megatón Floral",
+      "it": "Floriscoppio Sfolgorante"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量借助花草的能量，全力攻击对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量借助花草的能量，全力攻擊對手。威力會隨原本的招式而改變。",
+        "en": "The user collects energy from plants using its Z-Power and attacks the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　草花の　エネルギーを　借り全力で　相手を　攻撃する。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　くさばなの　エネルギーを　かりぜんりょくで　あいてを　こうげきする。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 화초들의 에너지를 빌려 전력으로 상대를 공격한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour libérer l’énergie des plantes et attaquer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender leiht sich durch Z-Kraft die Energie von Wiesenblumen und greift das Ziel damit an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para concentrar la energía de la vegetación que lo rodea y atacar al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa concentra l’energia delle piante per scatenare un potente attacco. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量借助花草的能量，全力攻击对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量借助花草的能量，全力攻擊對手。威力會隨原本的招式而改變。",
+        "en": "The user collects energy from plants using its Z-Power and attacks the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　草花の　エネルギーを　借り全力で　相手を　攻撃する。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　くさばなの　エネルギーを　かりぜんりょくで　あいてを　こうげきする。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 화초들의 에너지를 빌려 전력으로 상대를 공격한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour libérer l’énergie des plantes et attaquer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender leiht sich durch Z-Kraft die Energie von Wiesenblumen und greift das Ziel damit an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para concentrar la energía de la vegetación que lo rodea y atacar al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa concentra l’energia delle piante per scatenare un potente attacco. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量借助花草的能量，全力攻击对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量借助花草的能量，全力攻擊對手。威力會隨原本的招式而改變。",
+        "en": "The user collects energy from plants using its Z-Power and attacks the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　草花の　エネルギーを　借り全力で　相手を　攻撃する。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　くさばなの　エネルギーを　かりぜんりょくで　あいてを　こうげきする。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 화초들의 에너지를 빌려 전력으로 상대를 공격한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour libérer l’énergie des plantes et attaquer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender leiht sich durch Z-Kraft die Energie von Wiesenblumen und greift das Ziel damit an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para concentrar la energía de la vegetación que lo rodea y atacar al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa concentra l’energia delle piante per scatenare un potente attacco. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "breakneck-blitz",
+    "typeSlug": "normal",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "究极无敌大冲撞",
+      "zh-Hant": "究極無敵大衝撞",
+      "en": "Breakneck Blitz",
+      "ja": "ウルトラダッシュアタック",
+      "ja-Hrkt": "ウルトラダッシュアタック",
+      "ko": "울트라대시어택",
+      "fr": "Turbo-Charge Bulldozer",
+      "de": "Hyper-Sprintangriff",
+      "es": "Carrera Arrolladora",
+      "it": "Carica Travolgente"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量气势猛烈地全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量氣勢猛烈地全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user builds up its momentum using its Z-Power and crashes into the target at full speed. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　勢いを　つけて全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　いきおいを　つけてぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기세를 몰아 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour s’élancer à toute vitesse sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der durch Z-Kraft energiegeladene Anwender rennt mit ganzer Kraft gegen das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para coger carrerilla y arremeter contra el objetivo con gran fuerza. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa accumula energia e si lancia a tutta forza contro il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量气势猛烈地全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量氣勢猛烈地全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user builds up its momentum using its Z-Power and crashes into the target at full speed. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　勢いを　つけて全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　いきおいを　つけてぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기세를 몰아 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour s’élancer à toute vitesse sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der durch Z-Kraft energiegeladene Anwender rennt mit ganzer Kraft gegen das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para coger carrerilla y arremeter contra el objetivo con gran fuerza. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa accumula energia e si lancia a tutta forza contro il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量气势猛烈地全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量氣勢猛烈地全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user builds up its momentum using its Z-Power and crashes into the target at full speed. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　勢いを　つけて全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　いきおいを　つけてぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기세를 몰아 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour s’élancer à toute vitesse sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der durch Z-Kraft energiegeladene Anwender rennt mit ganzer Kraft gegen das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para coger carrerilla y arremeter contra el objetivo con gran fuerza. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa accumula energia e si lancia a tutta forza contro il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "catastropika",
+    "typeSlug": "electric",
+    "damageClass": "PHYSICAL",
+    "power": 210,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "皮卡皮卡必杀击",
+      "zh-Hant": "皮卡皮卡必殺擊",
+      "en": "Catastropika",
+      "ja": "ひっさつのピカチュート",
+      "ja-Hrkt": "ひっさつのピカチュート",
+      "ko": "필살피카슛",
+      "fr": "Pikachute Foudroyante",
+      "de": "Perfektes Pika-Projektil",
+      "es": "Pikavoltio Letal",
+      "it": "Super Pikaboom"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量，皮卡丘全身覆盖最强电力，全力猛扑对手。",
+        "zh-Hant": "透過Ｚ力量，全身覆蓋最大電力的皮卡丘全力猛撲對手。",
+        "en": "The user, Pikachu, surrounds itself with the maximum amount of electricity using its Z-Power and pounces on its target with full force.",
+        "ja": "Ｚパワーで　最大　電力を身に　まとったピカチュウが全力で　相手に　飛び掛る。",
+        "ja-Hrkt": "Ｚパワーで　さいだい　でんりょくをみに　まとった　ピカチュウがぜんりょくで　あいてに　とびかかる。",
+        "ko": "Z파워로 최대 전력을 몸에 두른 피카츄가 전력으로 상대에게 덤벼든다.",
+        "fr": "Pikachu utilise la Force Z pour concentrer toute son électricité avant de se jeter à toute vitesse sur l’adversaire.",
+        "de": "Pikachu umhüllt sich durch Z-Kraft mit gewaltiger elektrischer Energie und stürzt sich mit voller Kraft auf das Ziel.",
+        "es": "Pikachu emplea el Poder Z para acumular una gran cantidad de electricidad en su cuerpo y arremeter contra el objetivo.",
+        "it": "Grazie al Potere Z, Pikachu accumula un’enorme quantità di energia elettrica e si lancia contro il bersaglio a tutta forza."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量，皮卡丘全身覆盖最强电力，全力猛扑对手。",
+        "zh-Hant": "透過Ｚ力量，全身覆蓋最大電力的皮卡丘全力猛撲對手。",
+        "en": "The user, Pikachu, surrounds itself with the maximum amount of electricity using its Z-Power and pounces on its target with full force.",
+        "ja": "Ｚパワーで　最大　電力を身に　まとったピカチュウが全力で　相手に　飛び掛る。",
+        "ja-Hrkt": "Ｚパワーで　さいだい　でんりょくをみに　まとった　ピカチュウがぜんりょくで　あいてに　とびかかる。",
+        "ko": "Z파워로 최대 전력을 몸에 두른 피카츄가 전력으로 상대에게 덤벼든다.",
+        "fr": "Pikachu utilise la Force Z pour concentrer toute son électricité avant de se jeter à toute vitesse sur l’adversaire.",
+        "de": "Pikachu umhüllt sich durch Z-Kraft mit gewaltiger elektrischer Energie und stürzt sich mit voller Kraft auf das Ziel.",
+        "es": "Pikachu emplea el Poder Z para acumular una gran cantidad de electricidad en su cuerpo y arremeter contra el objetivo.",
+        "it": "Grazie al Potere Z, Pikachu accumula un’enorme quantità di energia elettrica e si lancia contro il bersaglio a tutta forza."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量，皮卡丘全身覆盖最强电力，全力猛扑对手。",
+        "zh-Hant": "透過Ｚ力量，全身覆蓋最大電力的皮卡丘全力猛撲對手。",
+        "en": "The user, Pikachu, surrounds itself with the maximum amount of electricity using its Z-Power and pounces on its target with full force.",
+        "ja": "Ｚパワーで　最大　電力を身に　まとったピカチュウが全力で　相手に　飛び掛る。",
+        "ja-Hrkt": "Ｚパワーで　さいだい　でんりょくをみに　まとった　ピカチュウがぜんりょくで　あいてに　とびかかる。",
+        "ko": "Z파워로 최대 전력을 몸에 두른 피카츄가 전력으로 상대에게 덤벼든다.",
+        "fr": "Pikachu utilise la Force Z pour concentrer toute son électricité avant de se jeter à toute vitesse sur l’adversaire.",
+        "de": "Pikachu umhüllt sich durch Z-Kraft mit gewaltiger elektrischer Energie und stürzt sich mit voller Kraft auf das Ziel.",
+        "es": "Pikachu emplea el Poder Z para acumular una gran cantidad de electricidad en su cuerpo y arremeter contra el objetivo.",
+        "it": "Grazie al Potere Z, Pikachu accumula un’enorme quantità di energia elettrica e si lancia contro il bersaglio a tutta forza."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "clangorous-soulblaze",
+    "typeSlug": "dragon",
+    "damageClass": "SPECIAL",
+    "power": 185,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "炽魂热舞烈音爆",
+      "zh-Hant": "熾魂熱舞烈音爆",
+      "en": "Clangorous Soulblaze",
+      "ja": "ブレイジングソウルビート",
+      "ja-Hrkt": "ブレイジングソウルビート",
+      "ko": "브레이징소울비트",
+      "fr": "Dracacophonie Flamboyante",
+      "de": "Rasselnder Seelentanz",
+      "es": "Estruendo Implacable",
+      "it": "Dracofonia Divampante"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts damage to all opposing Pokémon and increases the user’s Attack, Defense, Special Attack, Special Defense, and Speed by one stage each.",
+        "effect": "Inflicts sound-based damage to all opposing Pokémon and increases the user’s Attack, Defense, Special Attack, Special Defense, and Speed by one stage each. The user’s stats are not raised if the move fails to damage any opposing Pokémon."
+      },
+      "fr": {
+        "short": "Inflige des dégâts à tous les Pokémon adverses et augmente l'Attaque, Défense, Attaque Spéciale, Défense Spéciale, et Vitesse du lanceur d'un niveau chacun.",
+        "effect": "Inflige des dégâts basés sur le son à tous les Pokémon adverses et augmente l'Attaque, Défense, Attaque Spéciale, Défense Spéciale, et Vitesse du lanceur d'un niveau chacune. Les stats du lanceur ne sont pas augmentées si la capacité échoue à infliger des dégâts à n'importe quel Pokémon adverse."
+      }
+    },
+    "flavors": {
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的杖尾鳞甲龙将全力攻击对手。并且自己的能力会提高。",
+        "zh-Hant": "獲得Ｚ力量的杖尾鱗甲龍將會以全力攻擊對手，並提升自己的能力。",
+        "en": "After obtaining Z-Power, the user, Kommo-o, attacks the opposing Pokémon with full force. This move boosts the user’s stats.",
+        "ja": "Ｚパワーを　得た　ジャラランガが全力で　相手を　攻撃する。追加で　自分の　能力が　上がる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ジャラランガがぜんりょくで　あいてを　こうげきする。ついかで　じぶんの　のうりょくが　あがる。",
+        "ko": "Z파워를 얻은 짜랑고우거가 전력으로 상대를 공격한다. 추가로 자신의 능력이 올라간다.",
+        "fr": "Ékaïser utilise la Force Z pour frapper l’ennemi de toutes ses forces. Augmente aussi ses stats.",
+        "de": "Grandiras greift Gegner mithilfe von Z-Kraft mit voller Wucht an. Zusätzlich werden seine Statuswerte erhöht.",
+        "es": "Kommo-o ataca con toda su fuerza al objetivo tras imbuirse del Poder Z. Además, potencia sus propias características.",
+        "it": "Grazie al Potere Z, Kommo-o attacca i nemici con tutta la sua forza. Inoltre, aumenta le proprie statistiche."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的杖尾鳞甲龙将全力攻击对手。并且自己的能力会提高。",
+        "zh-Hant": "獲得Ｚ力量的杖尾鱗甲龍將會以全力攻擊對手，並提升自己的能力。",
+        "en": "After obtaining Z-Power, the user, Kommo-o, attacks the opposing Pokémon with full force. This move boosts the user’s stats.",
+        "ja": "Ｚパワーを　得た　ジャラランガが全力で　相手を　攻撃する。追加で　自分の　能力が　上がる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ジャラランガがぜんりょくで　あいてを　こうげきする。ついかで　じぶんの　のうりょくが　あがる。",
+        "ko": "Z파워를 얻은 짜랑고우거가 전력으로 상대를 공격한다. 추가로 자신의 능력이 올라간다.",
+        "fr": "Ékaïser utilise la Force Z pour frapper l’ennemi de toutes ses forces. Augmente aussi ses stats.",
+        "de": "Grandiras greift Gegner mithilfe von Z-Kraft mit voller Wucht an. Zusätzlich werden seine Statuswerte erhöht.",
+        "es": "Kommo-o ataca con toda su fuerza al objetivo tras imbuirse del Poder Z. Además, potencia sus propias características.",
+        "it": "Grazie al Potere Z, Kommo-o attacca i nemici con tutta la sua forza. Inoltre, aumenta le proprie statistiche."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "continental-crush",
+    "typeSlug": "rock",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "毁天灭地巨岩坠",
+      "zh-Hant": "毀天滅地巨岩墜",
+      "en": "Continental Crush",
+      "ja": "ワールズエンドフォール",
+      "ja-Hrkt": "ワールズエンドフォール",
+      "ko": "월즈엔드폴",
+      "fr": "Apocalypse Gigalithique",
+      "de": "Apokalyptische Steinpresse",
+      "es": "Aplastamiento Gigalítico",
+      "it": "Gigamacigno Polverizzante"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量召唤大大的岩山，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量召喚大大的岩山，全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user summons a huge rock mountain using its Z-Power and drops it onto the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　大きな　岩山を　呼びだし全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　おおきな　いわやまを　よびだしぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 큰 바위산을 불러내 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer un immense rocher et écraser l’adversaire avec. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender beschwört mit Z-Kraft einen großen Felsen herbei und lässt ihn auf das Ziel fallen. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una montaña rocosa con la que aplasta al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea un masso enorme e lo lancia sul bersaglio schiacciandolo. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量召唤大大的岩山，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量召喚大大的岩山，全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user summons a huge rock mountain using its Z-Power and drops it onto the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　大きな　岩山を　呼びだし全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　おおきな　いわやまを　よびだしぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 큰 바위산을 불러내 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer un immense rocher et écraser l’adversaire avec. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender beschwört mit Z-Kraft einen großen Felsen herbei und lässt ihn auf das Ziel fallen. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una montaña rocosa con la que aplasta al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea un masso enorme e lo lancia sul bersaglio schiacciandolo. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量召唤大大的岩山，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量召喚大大的岩山，全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user summons a huge rock mountain using its Z-Power and drops it onto the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　大きな　岩山を　呼びだし全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　おおきな　いわやまを　よびだしぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 큰 바위산을 불러내 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer un immense rocher et écraser l’adversaire avec. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender beschwört mit Z-Kraft einen großen Felsen herbei und lässt ihn auf das Ziel fallen. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una montaña rocosa con la que aplasta al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea un masso enorme e lo lancia sul bersaglio schiacciandolo. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "corkscrew-crash",
+    "typeSlug": "steel",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "超绝螺旋连击",
+      "zh-Hant": "超絕螺旋連擊",
+      "en": "Corkscrew Crash",
+      "ja": "ちょうぜつらせんれんげき",
+      "ja-Hrkt": "ちょうぜつらせんれんげき",
+      "ko": "초월나선연격",
+      "fr": "Vrille Maximum",
+      "de": "Turbo-Spiralkombo",
+      "es": "Hélice Trepanadora",
+      "it": "Spirale Perforante"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量进行高速旋转，全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量進行高速旋轉，全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user spins very fast and rams into the target with the full force of its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　高速回転を　おこない全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　こうそくかいてんを　おこないぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 고속 회전을 하여 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour tourner à toute vitesse et écraser l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender wirbelt durch Z-Kraft sehr schnell umher und prallt mit dem Ziel zusammen. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para girar a toda velocidad y perforar al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa vortica su se stesso e si scaglia sul bersaglio con tutte le sue forze. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量进行高速旋转，全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量進行高速旋轉，全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user spins very fast and rams into the target with the full force of its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　高速回転を　おこない全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　こうそくかいてんを　おこないぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 고속 회전을 하여 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour tourner à toute vitesse et écraser l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender wirbelt durch Z-Kraft sehr schnell umher und prallt mit dem Ziel zusammen. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para girar a toda velocidad y perforar al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa vortica su se stesso e si scaglia sul bersaglio con tutte le sue forze. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量进行高速旋转，全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量進行高速旋轉，全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user spins very fast and rams into the target with the full force of its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　高速回転を　おこない全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　こうそくかいてんを　おこないぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 고속 회전을 하여 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour tourner à toute vitesse et écraser l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender wirbelt durch Z-Kraft sehr schnell umher und prallt mit dem Ziel zusammen. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para girar a toda velocidad y perforar al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa vortica su se stesso e si scaglia sul bersaglio con tutte le sue forze. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "devastating-drake",
+    "typeSlug": "dragon",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "究极巨龙震天地",
+      "zh-Hant": "究極巨龍震天地",
+      "en": "Devastating Drake",
+      "ja": "アルティメットドラゴンバーン",
+      "ja-Hrkt": "アルティメットドラゴンバーン",
+      "ko": "얼티메이트드래곤번",
+      "fr": "Chaos Draconique",
+      "de": "Drastisches Drachendröhnen",
+      "es": "Dracoaliento Devastador",
+      "it": "Dragoschianto Finale"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量将气场实体化，向对手全力发动袭击。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量將氣場實體化，向對手全力發動襲擊。威力會隨原本的招式而改變。",
+        "en": "The user materializes its aura using its Z-Power and attacks the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　オーラを　実体化し全力で　相手に　襲いかかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　オーラを　じったいかしぜんりょくで　あいてに　おそいかかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 오라를 실체화시켜 전력으로 상대를 공격한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour matérialiser son aura et assaillir l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender materialisiert durch Z-Kraft seine Aura und greift damit das Ziel an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para materializar su aura y golpear al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa materializza la propria aura per colpire con forza il nemico. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量将气场实体化，向对手全力发动袭击。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量將氣場實體化，向對手全力發動襲擊。威力會隨原本的招式而改變。",
+        "en": "The user materializes its aura using its Z-Power and attacks the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　オーラを　実体化し全力で　相手に　襲いかかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　オーラを　じったいかしぜんりょくで　あいてに　おそいかかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 오라를 실체화시켜 전력으로 상대를 공격한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour matérialiser son aura et assaillir l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender materialisiert durch Z-Kraft seine Aura und greift damit das Ziel an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para materializar su aura y golpear al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa materializza la propria aura per colpire con forza il nemico. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量将气场实体化，向对手全力发动袭击。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量將氣場實體化，向對手全力發動襲擊。威力會隨原本的招式而改變。",
+        "en": "The user materializes its aura using its Z-Power and attacks the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　オーラを　実体化し全力で　相手に　襲いかかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　オーラを　じったいかしぜんりょくで　あいてに　おそいかかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 오라를 실체화시켜 전력으로 상대를 공격한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour matérialiser son aura et assaillir l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender materialisiert durch Z-Kraft seine Aura und greift damit das Ziel an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para materializar su aura y golpear al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa materializza la propria aura per colpire con forza il nemico. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "extreme-evoboost",
+    "typeSlug": "normal",
+    "damageClass": "STATUS",
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "九彩升华齐聚顶",
+      "zh-Hant": "九彩昇華齊聚頂",
+      "en": "Extreme Evoboost",
+      "ja": "ナインエボルブースト",
+      "ja-Hrkt": "ナインエボルブースト",
+      "ko": "나인이볼부스트",
+      "fr": "Neuf pour Un",
+      "de": "Macht der Neun",
+      "es": "Novena Potencia",
+      "it": "Potenziamento Eevolutivo"
+    },
+    "effects": {
+      "en": {
+        "short": "Raises all of the user’s stats by two stages.",
+        "effect": "Raises the user’s Attack, Defense, Special Attack, Special Defense, and Speed by two stages each."
+      },
+      "fr": {
+        "short": "Augmente toutes les stats du lanceur de deux niveaux.",
+        "effect": "Augmente l'Attaque, Défense, Attaque Spéciale, Défense Spéciale, et Vitesse du lanceur de deux niveaux chacune."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "得到Ｚ力量的伊布将借助进化后伙伴们的力量，大幅提高能力。",
+        "zh-Hant": "得到Ｚ力量的伊布借助進化後的夥伴們的力量大幅提升自己的能力。",
+        "en": "After obtaining Z-Power, the user, Eevee, gets energy from its evolved friends and boosts its stats sharply.",
+        "ja": "Ｚパワーを　得た　イーブイが進化した　仲間たちの　力を　借りて能力を　ぐーんと　上げる。",
+        "ja-Hrkt": "Ｚパワーを　えた　イーブイがしんかした　なかまたちの　ちからを　かりてのうりょくを　ぐーんと　あげる。",
+        "ko": "Z파워를 얻은 이브이가 진화한 동료들의 힘을 빌려 능력을 크게 올린다.",
+        "fr": "Évoli utilise la Force Z pour emprunter la puissance de tous ses amis évolués et beaucoup augmenter toutes ses stats.",
+        "de": "Evoli macht sich durch Z-Kraft die Stärke seiner Weiterentwicklungen zunutze und erhöht seine Statuswerte stark.",
+        "es": "Cuando Eevee obtiene el Poder Z, toma prestada la energía de sus amigos evolucionados para potenciar enormemente sus características.",
+        "it": "Grazie al Potere Z, Eevee evoca a sé tutta l’energia delle sue possibili evoluzioni e aumenta di molto le sue statistiche."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的伊布将借助进化后伙伴们的力量，大幅提高能力。",
+        "zh-Hant": "得到Ｚ力量的伊布借助進化後的夥伴們的力量大幅提升自己的能力。",
+        "en": "After obtaining Z-Power, the user, Eevee, gets energy from its evolved friends and boosts its stats sharply.",
+        "ja": "Ｚパワーを　得た　イーブイが進化した　仲間たちの　力を　借りて能力を　ぐーんと　上げる。",
+        "ja-Hrkt": "Ｚパワーを　えた　イーブイがしんかした　なかまたちの　ちからを　かりてのうりょくを　ぐーんと　あげる。",
+        "ko": "Z파워를 얻은 이브이가 진화한 동료들의 힘을 빌려 능력을 크게 올린다.",
+        "fr": "Évoli utilise la Force Z pour emprunter la puissance de tous ses amis évolués et beaucoup augmenter toutes ses stats.",
+        "de": "Evoli macht sich durch Z-Kraft die Stärke seiner Weiterentwicklungen zunutze und erhöht seine Statuswerte stark.",
+        "es": "Cuando Eevee obtiene el Poder Z, toma prestada la energía de sus amigos evolucionados para potenciar enormemente sus características.",
+        "it": "Grazie al Potere Z, Eevee evoca a sé tutta l’energia delle sue possibili evoluzioni e aumenta di molto le sue statistiche."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的伊布将借助进化后伙伴们的力量，大幅提高能力。",
+        "zh-Hant": "得到Ｚ力量的伊布借助進化後的夥伴們的力量大幅提升自己的能力。",
+        "en": "After obtaining Z-Power, the user, Eevee, gets energy from its evolved friends and boosts its stats sharply.",
+        "ja": "Ｚパワーを　得た　イーブイが進化した　仲間たちの　力を　借りて能力を　ぐーんと　上げる。",
+        "ja-Hrkt": "Ｚパワーを　えた　イーブイがしんかした　なかまたちの　ちからを　かりてのうりょくを　ぐーんと　あげる。",
+        "ko": "Z파워를 얻은 이브이가 진화한 동료들의 힘을 빌려 능력을 크게 올린다.",
+        "fr": "Évoli utilise la Force Z pour emprunter la puissance de tous ses amis évolués et beaucoup augmenter toutes ses stats.",
+        "de": "Evoli macht sich durch Z-Kraft die Stärke seiner Weiterentwicklungen zunutze und erhöht seine Statuswerte stark.",
+        "es": "Cuando Eevee obtiene el Poder Z, toma prestada la energía de sus amigos evolucionados para potenciar enormemente sus características.",
+        "it": "Grazie al Potere Z, Eevee evoca a sé tutta l’energia delle sue possibili evoluzioni e aumenta di molto le sue statistiche."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "genesis-supernova",
+    "typeSlug": "psychic",
+    "damageClass": "SPECIAL",
+    "power": 185,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "起源超新星大爆炸",
+      "zh-Hant": "起源超新星大爆炸",
+      "en": "Genesis Supernova",
+      "ja": "オリジンズスーパーノヴァ",
+      "ja-Hrkt": "オリジンズスーパーノヴァ",
+      "ko": "오리진즈슈퍼노바",
+      "fr": "Supernova Originelle",
+      "de": "Supernova des Ursprungs",
+      "es": "Supernova Original",
+      "it": "Supernova delle Origini"
+    },
+    "effects": {
+      "en": {
+        "short": "Changes the terrain to Psychic Terrain after inflicting damage.",
+        "effect": "Inflicts regular damage, then (if successful) changes the terrain to Psychic Terrain."
+      },
+      "fr": {
+        "short": "Change le terrain en Champ Psychique après avoir infligé des dégâts.",
+        "effect": "Inflige des dégâts réguliers, puis (si succès) change le terrain en Champ Psychique."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "得到Ｚ力量的梦幻将全力攻击对手。脚下会变成精神场地。",
+        "zh-Hant": "得到Ｚ力量的夢幻全力攻擊對手。腳下變成精神場地。",
+        "en": "After obtaining Z-Power, the user, Mew, attacks the target with full force. The terrain will be charged with psychic energy.",
+        "ja": "Ｚパワーを　得た　ミュウが全力で　相手を　攻撃する。足元が　サイコフィールドになる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ミュウがぜんりょくで　あいてを　こうげきする。あしもとが　サイコフィールドになる。",
+        "ko": "Z파워를 얻은 뮤가 전력으로 상대를 공격한다. 발밑이 사이코필드가 된다.",
+        "fr": "Mew utilise la Force Z pour attaquer la cible. Le terrain devient un Champ Psychique.",
+        "de": "Mew greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Der Untergrund wird dabei in ein Psychofeld verwandelt.",
+        "es": "Mew usa el Poder Z para realizar un potente ataque contra su adversario y crear un Campo Psíquico sobre el terreno.",
+        "it": "Grazie al Potere Z, Mew attacca il bersaglio con tutta la sua forza e genera un Campo Psichico a terra."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的梦幻将全力攻击对手。脚下会变成精神场地。",
+        "zh-Hant": "得到Ｚ力量的夢幻全力攻擊對手。腳下變成精神場地。",
+        "en": "After obtaining Z-Power, the user, Mew, attacks the target with full force. The terrain will be charged with psychic energy.",
+        "ja": "Ｚパワーを　得た　ミュウが全力で　相手を　攻撃する。足元が　サイコフィールドになる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ミュウがぜんりょくで　あいてを　こうげきする。あしもとが　サイコフィールドになる。",
+        "ko": "Z파워를 얻은 뮤가 전력으로 상대를 공격한다. 발밑이 사이코필드가 된다.",
+        "fr": "Mew utilise la Force Z pour attaquer la cible. Le terrain devient un Champ Psychique.",
+        "de": "Mew greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Der Untergrund wird dabei in ein Psychofeld verwandelt.",
+        "es": "Mew usa el Poder Z para realizar un potente ataque contra su adversario y crear un Campo Psíquico sobre el terreno.",
+        "it": "Grazie al Potere Z, Mew attacca il bersaglio con tutta la sua forza e genera un Campo Psichico a terra."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的梦幻将全力攻击对手。脚下会变成精神场地。",
+        "zh-Hant": "得到Ｚ力量的夢幻全力攻擊對手。腳下變成精神場地。",
+        "en": "After obtaining Z-Power, the user, Mew, attacks the target with full force. The terrain will be charged with psychic energy.",
+        "ja": "Ｚパワーを　得た　ミュウが全力で　相手を　攻撃する。足元が　サイコフィールドになる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ミュウがぜんりょくで　あいてを　こうげきする。あしもとが　サイコフィールドになる。",
+        "ko": "Z파워를 얻은 뮤가 전력으로 상대를 공격한다. 발밑이 사이코필드가 된다.",
+        "fr": "Mew utilise la Force Z pour attaquer la cible. Le terrain devient un Champ Psychique.",
+        "de": "Mew greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Der Untergrund wird dabei in ein Psychofeld verwandelt.",
+        "es": "Mew usa el Poder Z para realizar un potente ataque contra su adversario y crear un Campo Psíquico sobre el terreno.",
+        "it": "Grazie al Potere Z, Mew attacca il bersaglio con tutta la sua forza e genera un Campo Psichico a terra."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "gigavolt-havoc",
+    "typeSlug": "electric",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "终极伏特狂雷闪",
+      "zh-Hant": "終極伏特狂雷閃",
+      "en": "Gigavolt Havoc",
+      "ja": "スパーキングギガボルト",
+      "ja-Hrkt": "スパーキングギガボルト",
+      "ko": "스파킹기가볼트",
+      "fr": "Fulguro-Lance Gigavolt",
+      "de": "Gigavolt-Funkensalve",
+      "es": "Gigavoltio Destructor",
+      "it": "Gigascarica Folgorante"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量将蓄积的强大电流全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量將蓄積的強大電流全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user hits the target with a powerful electric current collected by its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　溜めた　強い　電気を全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　ためた　つよい　でんきをぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 비축한 강한 전기를 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour générer un courant électrique puissant qu’il projette sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender greift das Ziel mit durch Z-Kraft gesammelter starker Elektrizität an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para generar una fuerte descarga eléctrica con la que electrocuta al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa genera una fortissima scarica elettrica che colpisce il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量将蓄积的强大电流全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量將蓄積的強大電流全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user hits the target with a powerful electric current collected by its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　溜めた　強い　電気を全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　ためた　つよい　でんきをぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 비축한 강한 전기를 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour générer un courant électrique puissant qu’il projette sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender greift das Ziel mit durch Z-Kraft gesammelter starker Elektrizität an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para generar una fuerte descarga eléctrica con la que electrocuta al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa genera una fortissima scarica elettrica che colpisce il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量将蓄积的强大电流全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量將蓄積的強大電流全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user hits the target with a powerful electric current collected by its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　溜めた　強い　電気を全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　ためた　つよい　でんきをぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 비축한 강한 전기를 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour générer un courant électrique puissant qu’il projette sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender greift das Ziel mit durch Z-Kraft gesammelter starker Elektrizität an. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para generar una fuerte descarga eléctrica con la que electrocuta al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa genera una fortissima scarica elettrica che colpisce il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "guardian-of-alola",
+    "typeSlug": "fairy",
+    "damageClass": "SPECIAL",
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "巨人卫士・阿罗拉",
+      "zh-Hant": "巨人衛士・阿羅拉",
+      "en": "Guardian of Alola",
+      "ja": "ガーディアン・デ・アローラ",
+      "ja-Hrkt": "ガーディアン・デ・アローラ",
+      "ko": "알로라의수호자",
+      "fr": "Colère du Gardien d’Alola",
+      "de": "Alolas Wächter",
+      "es": "Cólera del Guardián",
+      "it": "Collera del Guardiano"
+    },
+    "effects": {
+      "en": {
+        "short": "Damages the target for 75% of its remaining HP.",
+        "effect": "Inflicts direct damage equal to ¾ of the target’s remaining HP."
+      },
+      "fr": {
+        "short": "Inflige des dégâts à la cible à hauteur de 75% de ses PV restants.",
+        "effect": "Inflige des dégâts directes égaux à ¾ des PV restants de la cible."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量得到阿罗拉之力的土地神宝可梦将全力进行攻击。对手的剩余ＨＰ会减少很多。",
+        "zh-Hant": "透過Ｚ力量得到阿羅拉之力的土地神寶可夢的全力攻擊。會大量減少對手的現有ＨＰ。",
+        "en": "The user, the Land Spirit Pokémon, obtains Alola’s energy using its Z-Power and attacks the target with full force. This reduces the target’s HP greatly.",
+        "ja": "Ｚパワーで　アローラの　力を　得たとちがみポケモン　全力の　攻撃。相手の　残りＨＰを　たくさん　減らす。",
+        "ja-Hrkt": "Ｚパワーで　アローラの　ちからを　えたとちがみポケモン　ぜんりょくの　こうげき。あいての　のこりＨＰを　たくさん　へらす。",
+        "ko": "Z파워로 알로라의 힘을 얻은 토속신포켓몬 전력의 공격. 상대의 남은 HP를 많이 줄인다.",
+        "fr": "Le Pokémon Tutélaire utilise la Force Z et déchaîne toute la puissance d’Alola sur sa cible. Inflige des dégâts en fonction des PV restants de celle-ci.",
+        "de": "Ein gewaltiger Angriff des Schutzpatrons, der durch Z-Kraft die Kraft Alolas erlangt hat. Reduziert die verbleibenden KP des Zieles stark.",
+        "es": "Los Pokémon Dios Nativo canalizan la energía de Alola gracias al Poder Z y atacan con gran fuerza a sus rivales reduciendo un gran porcentaje de sus PS.",
+        "it": "Grazie al Potere Z, il Nume Locale evoca l’energia di Alola e attacca con grande potenza, facendo perdere al bersaglio la maggior parte dei suoi PS."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量得到阿罗拉之力的土地神宝可梦将全力进行攻击。对手的剩余ＨＰ会减少很多。",
+        "zh-Hant": "透過Ｚ力量得到阿羅拉之力的土地神寶可夢的全力攻擊。會大量減少對手的現有ＨＰ。",
+        "en": "The user, the Land Spirit Pokémon, obtains Alola’s energy using its Z-Power and attacks the target with full force. This reduces the target’s HP greatly.",
+        "ja": "Ｚパワーで　アローラの　力を　得たとちがみポケモン　全力の　攻撃。相手の　残りＨＰを　たくさん　減らす。",
+        "ja-Hrkt": "Ｚパワーで　アローラの　ちからを　えたとちがみポケモン　ぜんりょくの　こうげき。あいての　のこりＨＰを　たくさん　へらす。",
+        "ko": "Z파워로 알로라의 힘을 얻은 토속신포켓몬 전력의 공격. 상대의 남은 HP를 많이 줄인다.",
+        "fr": "Le Pokémon Tutélaire utilise la Force Z et déchaîne toute la puissance d’Alola sur sa cible. Inflige des dégâts en fonction des PV restants de celle-ci.",
+        "de": "Ein gewaltiger Angriff des Schutzpatrons, der durch Z-Kraft die Kraft Alolas erlangt hat. Reduziert die verbleibenden KP des Zieles stark.",
+        "es": "Los Pokémon Dios Nativo canalizan la energía de Alola gracias al Poder Z y atacan con gran fuerza a sus rivales reduciendo un gran porcentaje de sus PS.",
+        "it": "Grazie al Potere Z, il Nume Locale evoca l’energia di Alola e attacca con grande potenza, facendo perdere al bersaglio la maggior parte dei suoi PS."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量得到阿罗拉之力的土地神宝可梦将全力进行攻击。对手的剩余HP会减少很多。",
+        "zh-Hant": "透過Ｚ力量得到阿羅拉之力的土地神寶可夢的全力攻擊。會大量減少對手的現有HP。",
+        "en": "The user, the Land Spirit Pokémon, obtains Alola’s energy using its Z-Power and attacks the target with full force. This reduces the target’s HP greatly.",
+        "ja": "Ｚパワーで　アローラの　力を　得たとちがみポケモン　全力の　攻撃。相手の　残りＨＰを　たくさん　減らす。",
+        "ja-Hrkt": "Ｚパワーで　アローラの　ちからを　えたとちがみポケモン　ぜんりょくの　こうげき。あいての　のこりＨＰを　たくさん　へらす。",
+        "ko": "Z파워로 알로라의 힘을 얻은 토속신포켓몬 전력의 공격. 상대의 남은 HP를 많이 줄인다.",
+        "fr": "Le Pokémon Tutélaire utilise la Force Z et déchaîne toute la puissance d’Alola sur sa cible. Inflige des dégâts en fonction des PV restants de celle-ci.",
+        "de": "Ein gewaltiger Angriff des Schutzpatrons, der durch Z-Kraft die Kraft Alolas erlangt hat. Reduziert die verbleibenden KP des Zieles stark.",
+        "es": "Los Pokémon Dios Nativo canalizan la energía de Alola gracias al Poder Z y atacan con gran fuerza a sus rivales. Reducen un gran porcentaje de sus PS.",
+        "it": "Grazie al Potere Z, il Nume Locale evoca l’energia di Alola e attacca con grande potenza, facendo perdere al bersaglio la maggior parte dei suoi PS."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "hydro-vortex",
+    "typeSlug": "water",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "超级水流大漩涡",
+      "zh-Hant": "超級水流大漩渦",
+      "en": "Hydro Vortex",
+      "ja": "スーパーアクアトルネード",
+      "ja-Hrkt": "スーパーアクアトルネード",
+      "ko": "슈퍼아쿠아토네이도",
+      "fr": "Super Tourbillon Abyssal",
+      "de": "Super-Wassertornado",
+      "es": "Hidrovórtice Abisal",
+      "it": "Idrovortice Abissale"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量制造大大的潮旋，全力吞没对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量製造大大的潮旋，全力吞沒對手。威力會隨原本的招式而改變。",
+        "en": "The user creates a huge whirling current using its Z-Power to swallow the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　大きな　渦潮を　作り全力で　相手を　飲みこむ。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　おおきな　うずしおを　つくりぜんりょくで　あいてを　のみこむ。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 큰 바다회오리를 만들어 전력으로 상대를 집어삼킨다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer un tourbillon gigantesque qui avale l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft einen riesigen Wasserstrudel, der das Ziel verschluckt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear un potente torbellino de agua que engulle al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea un enorme vortice che inghiotte il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量制造大大的潮旋，全力吞没对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量製造大大的潮旋，全力吞沒對手。威力會隨原本的招式而改變。",
+        "en": "The user creates a huge whirling current using its Z-Power to swallow the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　大きな　渦潮を　作り全力で　相手を　飲みこむ。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　おおきな　うずしおを　つくりぜんりょくで　あいてを　のみこむ。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 큰 바다회오리를 만들어 전력으로 상대를 집어삼킨다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer un tourbillon gigantesque qui avale l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft einen riesigen Wasserstrudel, der das Ziel verschluckt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear un potente torbellino de agua que engulle al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea un enorme vortice che inghiotte il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量制造大大的潮旋，全力吞没对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量製造大大的潮旋，全力吞沒對手。威力會隨原本的招式而改變。",
+        "en": "The user creates a huge whirling current using its Z-Power to swallow the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　大きな　渦潮を　作り全力で　相手を　飲みこむ。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　おおきな　うずしおを　つくりぜんりょくで　あいてを　のみこむ。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 큰 바다회오리를 만들어 전력으로 상대를 집어삼킨다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer un tourbillon gigantesque qui avale l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft einen riesigen Wasserstrudel, der das Ziel verschluckt. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear un potente torbellino de agua que engulle al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea un enorme vortice che inghiotte il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "inferno-overdrive",
+    "typeSlug": "fire",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "超强极限爆焰弹",
+      "zh-Hant": "超強極限爆焰彈",
+      "en": "Inferno Overdrive",
+      "ja": "ダイナミックフルフレイム",
+      "ja-Hrkt": "ダイナミックフルフレイム",
+      "ko": "다이내믹풀플레임",
+      "fr": "Pyro-Explosion Cataclysmique",
+      "de": "Dynamische Maxiflamme",
+      "es": "Hecatombe Pírica",
+      "it": "Fiammobomba Detonante"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量喷出熊熊烈火，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量噴出熊熊烈火，全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user breathes a stream of intense fire toward the target with the full force of its Z-Power. The power varies depending on the original move.",
+        "ja": "Ｚパワーで　燃えさかる　炎を　吐きだし全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　もえさかる　ほのおを　はきだしぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 활활 타는 불꽃을 뱉어내 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour cracher une boule de feu qui réduit l’adversaire en cendres. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender speit dank Z-Kraft eine gewaltige Kugel aus Flammen auf das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para lanzar una enorme llamarada con la que calcina a su objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per emettere fiamme incandescenti che inceneriscono il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量喷出熊熊烈火，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量噴出熊熊烈火，全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user breathes a stream of intense fire toward the target with the full force of its Z-Power. The power varies depending on the original move.",
+        "ja": "Ｚパワーで　燃えさかる　炎を　吐きだし全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　もえさかる　ほのおを　はきだしぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 활활 타는 불꽃을 뱉어내 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour cracher une boule de feu qui réduit l’adversaire en cendres. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender speit dank Z-Kraft eine gewaltige Kugel aus Flammen auf das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para lanzar una enorme llamarada con la que calcina a su objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per emettere fiamme incandescenti che inceneriscono il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量喷出熊熊烈火，全力撞向对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量噴出熊熊烈火，全力撞向對手。威力會隨原本的招式而改變。",
+        "en": "The user breathes a stream of intense fire toward the target with the full force of its Z-Power. The power varies depending on the original move.",
+        "ja": "Ｚパワーで　燃えさかる　炎を　吐きだし全力で　相手に　ぶつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　もえさかる　ほのおを　はきだしぜんりょくで　あいてに　ぶつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 활활 타는 불꽃을 뱉어내 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour cracher une boule de feu qui réduit l’adversaire en cendres. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender speit dank Z-Kraft eine gewaltige Kugel aus Flammen auf das Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para lanzar una enorme llamarada con la que calcina a su objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per emettere fiamme incandescenti che inceneriscono il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "light-that-burns-the-sky",
+    "typeSlug": "psychic",
+    "damageClass": "SPECIAL",
+    "power": 200,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "焚天灭世炽光爆",
+      "zh-Hant": "焚天滅世熾光爆",
+      "en": "Light That Burns the Sky",
+      "ja": "てんこがすめつぼうのひかり",
+      "ja-Hrkt": "てんこがすめつぼうのひかり",
+      "ko": "하늘을태우는멸망의빛",
+      "fr": "Apocalypsis Luminis",
+      "de": "Licht des Erlöschens",
+      "es": "Fotodestrucción Apocalíptica",
+      "it": "Fotodistruzione Apocalittica"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts damage using either Attack or Special Attack stat, whichever is higher.",
+        "effect": "Inflicts damage using either Attack or Special Attack stat, whichever is higher. Determining which stat is used takes into account stat changes but not held items or abilities."
+      },
+      "fr": {
+        "short": "Inflige des dégâts en utilisant soit la stat d'Attaque ou Attaque Spéciale, celle qui est la plus élevée.",
+        "effect": "Inflige des dégâts en utilisant soit la stat d'Attaque ou Attaque Spéciale, celle qui est la plus élevée. La détermination de la stat utilisée prend en compte les changements de stat mais pas les objets tenus ou talents."
+      }
+    },
+    "flavors": {
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "奈克洛兹玛会无视对手的特性效果，在攻击和特攻之间，用数值相对较高的一项给予对方伤害。",
+        "zh-Hant": "奈克洛茲瑪會無視對手特性的效果，在攻擊與特攻之間選擇數值較高的一方進行攻擊。",
+        "en": "This attack inflicts Attack or Sp. Atk damage— whichever stat is higher for the user, Necrozma. This move ignores the target’s Ability.",
+        "ja": "ネクロズマが　相手の　特性の効果を　無視して　攻撃と　特攻の高いほうで　ダメージを　与える。",
+        "ja-Hrkt": "ネクロズマが　あいての　とくせいのこうかを　むしして　こうげきと　とくこうのたかいほうで　ダメージを　あたえる。",
+        "ko": "네크로즈마가 상대의 특성 효과를 무시하고 공격과 특수공격 중 높은 쪽으로 데미지를 준다.",
+        "fr": "Compare l’Attaque et l’Attaque Spéciale, et utilise celle qui infligera le plus de dégâts. Ignore le talent de la cible.",
+        "de": "Ist der Angriff höher als der Spezial-Angriff, wird die Höhe des Schadens durch den Angriff bestimmt und umgekehrt. Ignoriert die Fähigkeit des Zieles.",
+        "es": "Necrozma escoge la característica que tenga el valor más alto entre el Ataque y el Ataque Especial para infligir daño, ignorando la habilidad del objetivo.",
+        "it": "Infligge danni in base all’Attacco o all’Attacco Speciale scegliendo il più alto tra i due. Questo attacco ignora l’abilità del bersaglio."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "奈克洛兹玛会无视对手的特性效果，在攻击和特攻之间，用数值相对较高的一项给予对方伤害。",
+        "zh-Hant": "奈克洛茲瑪會無視對手特性的效果，在攻擊與特攻之間選擇數值較高的一方進行攻擊。",
+        "en": "This attack inflicts Attack or Sp. Atk damage— whichever stat is higher for the user, Necrozma. This move ignores the target’s Ability.",
+        "ja": "ネクロズマが　相手の　特性の効果を　無視して　攻撃と　特攻の高いほうで　ダメージを　与える。",
+        "ja-Hrkt": "ネクロズマが　あいての　とくせいのこうかを　むしして　こうげきと　とくこうのたかいほうで　ダメージを　あたえる。",
+        "ko": "네크로즈마가 상대의 특성 효과를 무시하고 공격과 특수공격 중 높은 쪽으로 데미지를 준다.",
+        "fr": "Compare l’Attaque et l’Attaque Spéciale, et utilise celle qui infligera le plus de dégâts. Ignore le talent de la cible.",
+        "de": "Ist der Angriff höher als der Spezial-Angriff, wird die Höhe des Schadens durch den Angriff bestimmt und umgekehrt. Ignoriert die Fähigkeit des Zieles.",
+        "es": "Necrozma escoge la característica que tenga el valor más alto entre el Ataque y el Ataque Especial para infligir daño, ignorando la habilidad del objetivo.",
+        "it": "Infligge danni in base all’Attacco o all’Attacco Speciale scegliendo il più alto tra i due. Questo attacco ignora l’abilità del bersaglio."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "malicious-moonsault",
+    "typeSlug": "dark",
+    "damageClass": "PHYSICAL",
+    "power": 180,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "极恶飞跃粉碎击",
+      "zh-Hant": "極惡飛躍粉碎擊",
+      "en": "Malicious Moonsault",
+      "ja": "ハイパーダーククラッシャー",
+      "ja-Hrkt": "ハイパーダーククラッシャー",
+      "ko": "하이퍼다크크러셔",
+      "fr": "Dark Body Press",
+      "de": "Hyper Dark Crusher",
+      "es": "Hiperplancha Oscura",
+      "it": "Iperschianto delle Tenebre"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量得到强壮肉体的炽焰咆哮虎将全力撞向对手进行攻击。",
+        "zh-Hant": "透過Ｚ力量得到強壯肉體的熾焰咆哮虎全力撞向對手進行攻擊。",
+        "en": "The user, Incineroar, strengthens its body using its Z-Power and crashes into the target with full force.",
+        "ja": "Ｚパワーで　タフな　肉体を　得たガオガエンが　全力で相手に　ぶつかって　攻撃する。",
+        "ja-Hrkt": "Ｚパワーで　タフな　にくたいを　えたガオガエンが　ぜんりょくであいてに　ぶつかって　こうげきする。",
+        "ko": "Z파워로 강한 육체를 얻은 어흥염이 전력으로 상대에게 부딪쳐 공격한다.",
+        "fr": "Félinferno utilise la Force Z pour gonfler ses muscles et écraser la cible de toutes ses forces.",
+        "de": "Mit seinem durch Z-Kraft gestählten Körper stürzt sich Fuegro mit ganzer Kraft auf das Ziel.",
+        "es": "Incineroar refuerza sus músculos con el Poder Z para golpear con todas sus fuerzas a su oponente.",
+        "it": "Grazie al Potere Z, Incineroar richiama tutta la sua forza e si lancia impetuosamente sul bersaglio."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量得到强壮肉体的炽焰咆哮虎将全力撞向对手进行攻击。",
+        "zh-Hant": "透過Ｚ力量得到強壯肉體的熾焰咆哮虎全力撞向對手進行攻擊。",
+        "en": "The user, Incineroar, strengthens its body using its Z-Power and crashes into the target with full force.",
+        "ja": "Ｚパワーで　タフな　肉体を　得たガオガエンが　全力で相手に　ぶつかって　攻撃する。",
+        "ja-Hrkt": "Ｚパワーで　タフな　にくたいを　えたガオガエンが　ぜんりょくであいてに　ぶつかって　こうげきする。",
+        "ko": "Z파워로 강한 육체를 얻은 어흥염이 전력으로 상대에게 부딪쳐 공격한다.",
+        "fr": "Félinferno utilise la Force Z pour gonfler ses muscles et écraser la cible de toutes ses forces.",
+        "de": "Mit seinem durch Z-Kraft gestählten Körper stürzt sich Fuegro mit ganzer Kraft auf das Ziel.",
+        "es": "Incineroar refuerza sus músculos con el Poder Z para golpear con todas sus fuerzas a su oponente.",
+        "it": "Grazie al Potere Z, Incineroar richiama tutta la sua forza e si lancia impetuosamente sul bersaglio."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量得到强壮肉体的炽焰咆哮虎将全力撞向对手进行攻击。",
+        "zh-Hant": "透過Ｚ力量得到強壯肉體的熾焰咆哮虎全力撞向對手進行攻擊。",
+        "en": "The user, Incineroar, strengthens its body using its Z-Power and crashes into the target with full force.",
+        "ja": "Ｚパワーで　タフな　肉体を　得たガオガエンが　全力で相手に　ぶつかって　攻撃する。",
+        "ja-Hrkt": "Ｚパワーで　タフな　にくたいを　えたガオガエンが　ぜんりょくであいてに　ぶつかって　こうげきする。",
+        "ko": "Z파워로 강한 육체를 얻은 어흥염이 전력으로 상대에게 부딪쳐 공격한다.",
+        "fr": "Félinferno utilise la Force Z pour gonfler ses muscles et écraser la cible de toutes ses forces.",
+        "de": "Mit seinem durch Z-Kraft gestählten Körper stürzt sich Fuegro mit ganzer Kraft auf das Ziel.",
+        "es": "Incineroar refuerza sus músculos con el Poder Z para golpear con todas sus fuerzas a su oponente.",
+        "it": "Grazie al Potere Z, Incineroar richiama tutta la sua forza e si lancia impetuosamente sul bersaglio."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "menacing-moonraze-maelstrom",
+    "typeSlug": "ghost",
+    "damageClass": "SPECIAL",
+    "power": 200,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "月华飞溅落灵霄",
+      "zh-Hant": "月華飛濺落靈霄",
+      "en": "Menacing Moonraze Maelstrom",
+      "ja": "ムーンライトブラスター",
+      "ja-Hrkt": "ムーンライトブラスター",
+      "ko": "문라이트블래스터",
+      "fr": "Rayons Séléno-Explosifs",
+      "de": "Geballter Mondlaser",
+      "es": "Deflagración Lunar",
+      "it": "Deflagrazione Lunare"
+    },
+    "effects": {
+      "en": {
+        "short": "Cannot be disrupted by abilities.",
+        "effect": "Inflicts regular damage. Other Pokémon’s abilities cannot activate in response to this move. In particular, it hits through Disguise"
+      },
+      "fr": {
+        "short": "Ne peut pas être perturbé par les talents.",
+        "effect": "Inflige des dégâts réguliers. Les talents des autres Pokémon ne peuvent pas s'activer en réponse à cette capacité. En particulier, elle frappe à travers Fantômasque"
+      }
+    },
+    "flavors": {
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的露奈雅拉将全力进行攻击。可以无视对手的特性效果。",
+        "zh-Hant": "獲得Ｚ力量的露奈雅拉將會以全力進行攻擊。可以無視對手的特性效果。",
+        "en": "After obtaining Z-Power, the user, Lunala, attacks the target with full force. This move can ignore the effect of the target’s Ability.",
+        "ja": "Ｚパワーを　得た　ルナアーラが全力で　攻撃する。　相手の特性の　効果を　無視できる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ルナアーラがぜんりょくで　こうげきする。　あいてのとくせいの　こうかを　むしできる。",
+        "ko": "Z파워를 얻은 루나아라가 전력으로 공격한다. 상대의 특성 효과를 무시할 수 있다.",
+        "fr": "Baigné dans la Force Z, Lunala attaque en déchaînant toute sa puissance. Ignore le talent de la cible.",
+        "de": "Lunala greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Ignoriert die Fähigkeit des Zieles.",
+        "es": "Lunala ataca con toda su fuerza tras imbuirse del Poder Z. Este movimiento ignora la habilidad del objetivo.",
+        "it": "Grazie al Potere Z, Lunala attacca il bersaglio con tutta la sua forza. Questo attacco ignora l’abilità del bersaglio se questa ha effetto sulle mosse."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的露奈雅拉将全力进行攻击。可以无视对手的特性效果。",
+        "zh-Hant": "獲得Ｚ力量的露奈雅拉將會以全力進行攻擊。可以無視對手的特性效果。",
+        "en": "After obtaining Z-Power, the user, Lunala, attacks the target with full force. This move can ignore the effect of the target’s Ability.",
+        "ja": "Ｚパワーを　得た　ルナアーラが全力で　攻撃する。　相手の特性の　効果を　無視できる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ルナアーラがぜんりょくで　こうげきする。　あいてのとくせいの　こうかを　むしできる。",
+        "ko": "Z파워를 얻은 루나아라가 전력으로 공격한다. 상대의 특성 효과를 무시할 수 있다.",
+        "fr": "Baigné dans la Force Z, Lunala attaque en déchaînant toute sa puissance. Ignore le talent de la cible.",
+        "de": "Lunala greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Ignoriert die Fähigkeit des Zieles.",
+        "es": "Lunala ataca con toda su fuerza tras imbuirse del Poder Z. Este movimiento ignora la habilidad del objetivo.",
+        "it": "Grazie al Potere Z, Lunala attacca il bersaglio con tutta la sua forza. Questo attacco ignora l’abilità del bersaglio se questa ha effetto sulle mosse."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "never-ending-nightmare",
+    "typeSlug": "ghost",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "无尽暗夜之诱惑",
+      "zh-Hant": "無盡暗夜之誘惑",
+      "en": "Never-Ending Nightmare",
+      "ja": "むげんあんやへのいざない",
+      "ja-Hrkt": "むげんあんやへのいざない",
+      "ko": "무한암야로의유인",
+      "fr": "Appel des Ombres Éternelles",
+      "de": "Ewige Nacht",
+      "es": "Presa Espectral",
+      "it": "Abbraccio Spettrale"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量召唤强烈的怨念，全力降临到对手身上。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量召喚強烈的怨念，全力降禍到對手身上。威力會隨原本的招式而改變。",
+        "en": "Deep-seated grudges summoned by the user’s Z-Power trap the target. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　呼びよせた　強い　怨念が全力で　相手に　降りかかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　よびよせた　つよい　おんねんがぜんりょくで　あいてに　ふりかかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 불러낸 강한 원념이 전력으로 상대에게 쏟아진다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour invoquer des esprits rancuniers qui s’abattent sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender beschwört mit Z-Kraft tiefen Groll herbei und lässt diesen auf das Ziel los. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para invocar a unos espectros encolerizados que apresan al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa intrappola il bersaglio in una morsa generata dal proprio rancore. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量召唤强烈的怨念，全力降临到对手身上。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量召喚強烈的怨念，全力降禍到對手身上。威力會隨原本的招式而改變。",
+        "en": "Deep-seated grudges summoned by the user’s Z-Power trap the target. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　呼びよせた　強い　怨念が全力で　相手に　降りかかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　よびよせた　つよい　おんねんがぜんりょくで　あいてに　ふりかかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 불러낸 강한 원념이 전력으로 상대에게 쏟아진다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour invoquer des esprits rancuniers qui s’abattent sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender beschwört mit Z-Kraft tiefen Groll herbei und lässt diesen auf das Ziel los. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para invocar a unos espectros encolerizados que apresan al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa intrappola il bersaglio in una morsa generata dal proprio rancore. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量召唤强烈的怨念，全力降临到对手身上。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量召喚強烈的怨念，全力降禍到對手身上。威力會隨原本的招式而改變。",
+        "en": "Deep-seated grudges summoned by the user’s Z-Power trap the target. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　呼びよせた　強い　怨念が全力で　相手に　降りかかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　よびよせた　つよい　おんねんがぜんりょくで　あいてに　ふりかかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 불러낸 강한 원념이 전력으로 상대에게 쏟아진다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour invoquer des esprits rancuniers qui s’abattent sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender beschwört mit Z-Kraft tiefen Groll herbei und lässt diesen auf das Ziel los. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para invocar a unos espectros encolerizados que apresan al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa intrappola il bersaglio in una morsa generata dal proprio rancore. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "oceanic-operetta",
+    "typeSlug": "water",
+    "damageClass": "SPECIAL",
+    "power": 195,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "海神庄严交响乐",
+      "zh-Hant": "海神莊嚴交響樂",
+      "en": "Oceanic Operetta",
+      "ja": "わだつみのシンフォニア",
+      "ja-Hrkt": "わだつみのシンフォニア",
+      "ko": "바다의심포니",
+      "fr": "Symphonie des Ondines",
+      "de": "Grandiose Meeressymphonie",
+      "es": "Sinfonía de la Diva Marina",
+      "it": "Sinfonia del Mare"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量召唤大量水的西狮海壬将全力攻击对手。",
+        "zh-Hant": "透過Ｚ力量呼喚大量水的西獅海壬全力攻擊對手。",
+        "en": "The user, Primarina, summons a massive amount of water using its Z-Power and attacks the target with full force.",
+        "ja": "Ｚパワーで　大量の　水を　呼んだアシレーヌが　全力で相手を　攻撃する。",
+        "ja-Hrkt": "Ｚパワーで　たいりょうの　みずを　よんだアシレーヌが　ぜんりょくであいてを　こうげきする。",
+        "ko": "Z파워로 대량의 물을 부른 누리레느가 전력으로 상대를 공격한다.",
+        "fr": "Oratoria utilise la Force Z pour rassembler une grande quantité d’eau et la projeter sur la cible à pleine puissance.",
+        "de": "Primarene ruft mit Z-Kraft große Mengen an Wasser herbei und greift damit das Ziel an.",
+        "es": "Primarina invoca ingentes cantidades de agua con el Poder Z para atacar con gran potencia a su rival.",
+        "it": "Grazie al Potere Z, Primarina concentra un’enorme quantità d’acqua e attacca il bersaglio con una potenza smisurata."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量召唤大量水的西狮海壬将全力攻击对手。",
+        "zh-Hant": "透過Ｚ力量呼喚大量水的西獅海壬全力攻擊對手。",
+        "en": "The user, Primarina, summons a massive amount of water using its Z-Power and attacks the target with full force.",
+        "ja": "Ｚパワーで　大量の　水を　呼んだアシレーヌが　全力で相手を　攻撃する。",
+        "ja-Hrkt": "Ｚパワーで　たいりょうの　みずを　よんだアシレーヌが　ぜんりょくであいてを　こうげきする。",
+        "ko": "Z파워로 대량의 물을 부른 누리레느가 전력으로 상대를 공격한다.",
+        "fr": "Oratoria utilise la Force Z pour rassembler une grande quantité d’eau et la projeter sur la cible à pleine puissance.",
+        "de": "Primarene ruft mit Z-Kraft große Mengen an Wasser herbei und greift damit das Ziel an.",
+        "es": "Primarina invoca ingentes cantidades de agua con el Poder Z para atacar con gran potencia a su rival.",
+        "it": "Grazie al Potere Z, Primarina concentra un’enorme quantità d’acqua e attacca il bersaglio con una potenza smisurata."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量召唤大量水的西狮海壬将全力攻击对手。",
+        "zh-Hant": "透過Ｚ力量呼喚大量水的西獅海壬全力攻擊對手。",
+        "en": "The user, Primarina, summons a massive amount of water using its Z-Power and attacks the target with full force.",
+        "ja": "Ｚパワーで　大量の　水を　呼んだアシレーヌが　全力で相手を　攻撃する。",
+        "ja-Hrkt": "Ｚパワーで　たいりょうの　みずを　よんだアシレーヌが　ぜんりょくであいてを　こうげきする。",
+        "ko": "Z파워로 대량의 물을 부른 누리레느가 전력으로 상대를 공격한다.",
+        "fr": "Oratoria utilise la Force Z pour rassembler une grande quantité d’eau et la projeter sur la cible à pleine puissance.",
+        "de": "Primarene ruft mit Z-Kraft große Mengen an Wasser herbei und greift damit das Ziel an.",
+        "es": "Primarina invoca ingentes cantidades de agua con el Poder Z para atacar con gran potencia a su rival.",
+        "it": "Grazie al Potere Z, Primarina concentra un’enorme quantità d’acqua e attacca il bersaglio con una potenza smisurata."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "pulverizing-pancake",
+    "typeSlug": "normal",
+    "damageClass": "PHYSICAL",
+    "power": 210,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "认真起来大爆击",
+      "zh-Hant": "認真起來大爆擊",
+      "en": "Pulverizing Pancake",
+      "ja": "ほんきをだす　こうげき",
+      "ja-Hrkt": "ほんきをだす　こうげき",
+      "ko": "진심의공격",
+      "fr": "Gare au Ronflex",
+      "de": "Schluss mit lustig",
+      "es": "Arrojo Intempestivo",
+      "it": "Adesso Faccio sul Serio"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量使得认真起来的卡比兽跃动巨大身躯，全力向对手发动袭击。",
+        "zh-Hant": "透過Ｚ力量使認真起來的卡比獸躍動其巨大身軀，全力向對手發動襲擊。",
+        "en": "Z-Power brings out the true capabilities of the user, Snorlax. The Pokémon moves its enormous body energetically and attacks the target with full force.",
+        "ja": "Ｚパワーで　本気を　出した　カビゴンが巨体を　躍動させて全力で　相手に　襲いかかる。",
+        "ja-Hrkt": "Ｚパワーで　ほんきを　だした　カビゴンがきょたいを　やくどうさせてぜんりょくで　あいてに　おそいかかる。",
+        "ko": "Z파워로 진심을 낸 잠만보가 거대한 몸을 움직여서 전력으로 상대를 공격한다.",
+        "fr": "Ronflex utilise la Force Z pour montrer ce qu’il a dans le ventre et écraser la cible de tout son poids.",
+        "de": "Relaxo wird von Z-Kraft erfüllt und macht Ernst. Es bringt seinen riesigen Körper in Schwung und stürzt sich mit ganzer Kraft auf das Ziel.",
+        "es": "Gracias al Poder Z, Snorlax puede mover su enorme cuerpo con gran agilidad y determinación, cargando sobre el oponente con todas sus fuerzas.",
+        "it": "Grazie al Potere Z, Snorlax tira fuori la grinta e, muovendo energicamente il suo enorme corpo, attacca il bersaglio con tutta la sua forza."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量使得认真起来的卡比兽跃动巨大身躯，全力向对手发动袭击。",
+        "zh-Hant": "透過Ｚ力量使認真起來的卡比獸躍動其巨大身軀，全力向對手發動襲擊。",
+        "en": "Z-Power brings out the true capabilities of the user, Snorlax. The Pokémon moves its enormous body energetically and attacks the target with full force.",
+        "ja": "Ｚパワーで　本気を　出した　カビゴンが巨体を　躍動させて全力で　相手に　襲いかかる。",
+        "ja-Hrkt": "Ｚパワーで　ほんきを　だした　カビゴンがきょたいを　やくどうさせてぜんりょくで　あいてに　おそいかかる。",
+        "ko": "Z파워로 진심을 낸 잠만보가 거대한 몸을 움직여서 전력으로 상대를 공격한다.",
+        "fr": "Ronflex utilise la Force Z pour montrer ce qu’il a dans le ventre et écraser la cible de tout son poids.",
+        "de": "Relaxo wird von Z-Kraft erfüllt und macht Ernst. Es bringt seinen riesigen Körper in Schwung und stürzt sich mit ganzer Kraft auf das Ziel.",
+        "es": "Gracias al Poder Z, Snorlax puede mover su enorme cuerpo con gran agilidad y determinación, cargando sobre el oponente con todas sus fuerzas.",
+        "it": "Grazie al Potere Z, Snorlax tira fuori la grinta e, muovendo energicamente il suo enorme corpo, attacca il bersaglio con tutta la sua forza."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量使得认真起来的卡比兽跃动巨大身躯，全力向对手发动袭击。",
+        "zh-Hant": "透過Ｚ力量使認真起來的卡比獸躍動其巨大身軀，全力向對手發動襲擊。",
+        "en": "Z-Power brings out the true capabilities of the user, Snorlax. The Pokémon moves its enormous body energetically and attacks the target with full force.",
+        "ja": "Ｚパワーで　本気を　出した　カビゴンが巨体を　躍動させて全力で　相手に　襲いかかる。",
+        "ja-Hrkt": "Ｚパワーで　ほんきを　だした　カビゴンがきょたいを　やくどうさせてぜんりょくで　あいてに　おそいかかる。",
+        "ko": "Z파워로 진심을 낸 잠만보가 거대한 몸을 움직여서 전력으로 상대를 공격한다.",
+        "fr": "Ronflex utilise la Force Z pour montrer ce qu’il a dans le ventre et écraser la cible de tout son poids.",
+        "de": "Relaxo wird von Z-Kraft erfüllt und macht Ernst. Es bringt seinen riesigen Körper in Schwung und stürzt sich mit ganzer Kraft auf das Ziel.",
+        "es": "Gracias al Poder Z, Snorlax puede mover su enorme cuerpo con gran agilidad y determinación, cargando sobre el oponente con todas sus fuerzas.",
+        "it": "Grazie al Potere Z, Snorlax tira fuori la grinta e, muovendo energicamente il suo enorme corpo, attacca il bersaglio con tutta la sua forza."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "savage-spin-out",
+    "typeSlug": "bug",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "绝对捕食回旋斩",
+      "zh-Hant": "絕對捕食迴旋斬",
+      "en": "Savage Spin-Out",
+      "ja": "ぜったいほしょくかいてんざん",
+      "ja-Hrkt": "ぜったいほしょくかいてんざん",
+      "ko": "절대포식회전참",
+      "fr": "Cocon Fatal",
+      "de": "Wirbelnder Insektenhieb",
+      "es": "Guadaña Sedosa",
+      "it": "Bozzolo Fatale"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量将吐出的丝线全力束缚对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量用吐出的絲線全力束縛對手。威力會隨原本的招式而改變。",
+        "en": "The user binds the target with full force with threads of silk that the user spits using its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　吐きだした　糸が全力で　相手を　縛りつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　はきだした　いとがぜんりょくで　あいてを　しばりつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 뱉어낸 실이 전력으로 상대를 붙들어 맨다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour cracher de longs fils de soie et enserrer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Mithilfe von Z-Kraft umwickelt der Anwender das Ziel mit Fäden. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para encerrar a su oponente en un capullo contra el que arremete con fuerza. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per creare dei filamenti che intrappolano il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量将吐出的丝线全力束缚对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量用吐出的絲線全力束縛對手。威力會隨原本的招式而改變。",
+        "en": "The user binds the target with full force with threads of silk that the user spits using its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　吐きだした　糸が全力で　相手を　縛りつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　はきだした　いとがぜんりょくで　あいてを　しばりつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 뱉어낸 실이 전력으로 상대를 붙들어 맨다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour cracher de longs fils de soie et enserrer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Mithilfe von Z-Kraft umwickelt der Anwender das Ziel mit Fäden. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para encerrar a su oponente en un capullo contra el que arremete con fuerza. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per creare dei filamenti che intrappolano il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量将吐出的丝线全力束缚对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量用吐出的絲線全力束縛對手。威力會隨原本的招式而改變。",
+        "en": "The user binds the target with full force with threads of silk that the user spits using its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　吐きだした　糸が全力で　相手を　縛りつける。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　はきだした　いとがぜんりょくで　あいてを　しばりつける。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 뱉어낸 실이 전력으로 상대를 붙들어 맨다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour cracher de longs fils de soie et enserrer l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Mithilfe von Z-Kraft umwickelt der Anwender das Ziel mit Fäden. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para encerrar a su oponente en un capullo contra el que arremete con fuerza. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per creare dei filamenti che intrappolano il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "searing-sunraze-smash",
+    "typeSlug": "steel",
+    "damageClass": "PHYSICAL",
+    "power": 200,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "日光回旋下苍穹",
+      "zh-Hant": "日光迴旋下蒼穹",
+      "en": "Searing Sunraze Smash",
+      "ja": "サンシャインスマッシャー",
+      "ja-Hrkt": "サンシャインスマッシャー",
+      "ko": "선샤인스매셔",
+      "fr": "Hélio-Choc Dévastateur",
+      "de": "Schmetternde Sonnenwalze",
+      "es": "Embestida Solar",
+      "it": "Supercollisione Solare"
+    },
+    "effects": {
+      "en": {
+        "short": "Cannot be disrupted by abilities.",
+        "effect": "Inflicts regular damage. Other Pokémon’s abilities cannot activate in response to this move. In particular, it hits through Disguise"
+      },
+      "fr": {
+        "short": "Ne peut pas être perturbé par les talents.",
+        "effect": "Inflige des dégâts réguliers. Les talents des autres Pokémon ne peuvent pas s'activer en réponse à cette capacité. En particulier, elle frappe à travers Fantômasque"
+      }
+    },
+    "flavors": {
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的索尔迦雷欧将全力进行攻击。可以无视对手的特性效果。",
+        "zh-Hant": "獲得Ｚ力量的索爾迦雷歐將會以全力進行攻擊。可以無視對手的特性效果。",
+        "en": "After obtaining Z-Power, the user, Solgaleo, attacks the target with full force. This move can ignore the effect of the target’s Ability.",
+        "ja": "Ｚパワーを　得た　ソルガレオが全力で　攻撃する。　相手の特性の　効果を　無視できる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ソルガレオがぜんりょくで　こうげきする。　あいてのとくせいの　こうかを　むしできる。",
+        "ko": "Z파워를 얻은 솔가레오가 전력으로 공격한다. 상대의 특성 효과를 무시할 수 있다.",
+        "fr": "Baigné dans la Force Z, Solgaleo attaque en déchaînant toute sa puissance. Ignore le talent de la cible.",
+        "de": "Solgaleo greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Ignoriert die Fähigkeit des Zieles.",
+        "es": "Solgaleo ataca con toda su fuerza tras imbuirse del Poder Z. Este movimiento ignora la habilidad del objetivo.",
+        "it": "Grazie al Potere Z, Solgaleo attacca il bersaglio con tutta la sua forza. Questo attacco ignora l’abilità del bersaglio se questa ha effetto sulle mosse."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的索尔迦雷欧将全力进行攻击。可以无视对手的特性效果。",
+        "zh-Hant": "獲得Ｚ力量的索爾迦雷歐將會以全力進行攻擊。可以無視對手的特性效果。",
+        "en": "After obtaining Z-Power, the user, Solgaleo, attacks the target with full force. This move can ignore the effect of the target’s Ability.",
+        "ja": "Ｚパワーを　得た　ソルガレオが全力で　攻撃する。　相手の特性の　効果を　無視できる。",
+        "ja-Hrkt": "Ｚパワーを　えた　ソルガレオがぜんりょくで　こうげきする。　あいてのとくせいの　こうかを　むしできる。",
+        "ko": "Z파워를 얻은 솔가레오가 전력으로 공격한다. 상대의 특성 효과를 무시할 수 있다.",
+        "fr": "Baigné dans la Force Z, Solgaleo attaque en déchaînant toute sa puissance. Ignore le talent de la cible.",
+        "de": "Solgaleo greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Ignoriert die Fähigkeit des Zieles.",
+        "es": "Solgaleo ataca con toda su fuerza tras imbuirse del Poder Z. Este movimiento ignora la habilidad del objetivo.",
+        "it": "Grazie al Potere Z, Solgaleo attacca il bersaglio con tutta la sua forza. Questo attacco ignora l’abilità del bersaglio se questa ha effetto sulle mosse."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "shattered-psyche",
+    "typeSlug": "psychic",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "至高精神破坏波",
+      "zh-Hant": "至高精神破壞波",
+      "en": "Shattered Psyche",
+      "ja": "マキシマムサイブレイカー",
+      "ja-Hrkt": "マキシマムサイブレイカー",
+      "ko": "맥시멈사이브레이커",
+      "fr": "Psycho-Pulvérisation EX",
+      "de": "Psycho-Schmetterschlag",
+      "es": "Disruptor Psíquico",
+      "it": "Impatto Psicocinetico"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量操纵对手，全力使其感受到痛苦。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量操縱對手，全力使其感受到痛苦。威力會隨原本的招式而改變。",
+        "en": "The user controls the target with its Z-Power and hurts the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　相手を　操り全力で　痛い　思いを　させる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　あいてを　あやつりぜんりょくで　いたい　おもいを　させる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 상대를 조종해 전력으로 매서운 맛을 보여준다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour manipuler l’adversaire et lui infliger de sérieux dégâts. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kontrolliert das Ziel mit Z-Kraft und macht ihm so das Leben schwer. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para manipular la mente del objetivo, infligiéndole un daño ingente. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per manipolare la mente del bersaglio causando ingenti danni. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量操纵对手，全力使其感受到痛苦。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量操縱對手，全力使其感受到痛苦。威力會隨原本的招式而改變。",
+        "en": "The user controls the target with its Z-Power and hurts the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　相手を　操り全力で　痛い　思いを　させる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　あいてを　あやつりぜんりょくで　いたい　おもいを　させる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 상대를 조종해 전력으로 매서운 맛을 보여준다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour manipuler l’adversaire et lui infliger de sérieux dégâts. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kontrolliert das Ziel mit Z-Kraft und macht ihm so das Leben schwer. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para manipular la mente del objetivo, infligiéndole un daño ingente. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per manipolare la mente del bersaglio causando ingenti danni. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量操纵对手，全力使其感受到痛苦。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量操縱對手，全力使其感受到痛苦。威力會隨原本的招式而改變。",
+        "en": "The user controls the target with its Z-Power and hurts the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　相手を　操り全力で　痛い　思いを　させる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　あいてを　あやつりぜんりょくで　いたい　おもいを　させる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 상대를 조종해 전력으로 매서운 맛을 보여준다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour manipuler l’adversaire et lui infliger de sérieux dégâts. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kontrolliert das Ziel mit Z-Kraft und macht ihm so das Leben schwer. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para manipular la mente del objetivo, infligiéndole un daño ingente. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per manipolare la mente del bersaglio causando ingenti danni. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "sinister-arrow-raid",
+    "typeSlug": "ghost",
+    "damageClass": "PHYSICAL",
+    "power": 180,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "遮天蔽日暗影箭",
+      "zh-Hant": "遮天蔽日暗影箭",
+      "en": "Sinister Arrow Raid",
+      "ja": "シャドーアローズストライク",
+      "ja-Hrkt": "シャドーアローズストライク",
+      "ko": "섀도애로우즈스트라이크",
+      "fr": "Fureur des Plumes Spectrales",
+      "de": "Schatten-Pfeilregen",
+      "es": "Aluvión de Flechas Sombrías",
+      "it": "Dardoassalto Spettrale"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量制造出无数箭的狙射树枭将全力射穿对手进行攻击。",
+        "zh-Hant": "透過Ｚ力量製造出無數箭的狙射樹梟全力射穿對手進行攻擊。",
+        "en": "The user, Decidueye, creates countless arrows using its Z-Power and shoots the target with full force.",
+        "ja": "Ｚパワーで　無数の　矢を　作りだしたジュナイパーが　全力で相手を　射抜く　攻撃。",
+        "ja-Hrkt": "Ｚパワーで　むすうの　やを　つくりだしたジュナイパーが　ぜんりょくであいてを　いぬく　こうげき。",
+        "ko": "Z파워로 무수한 화살을 만들어낸 모크나이퍼가 전력으로 상대를 꿰뚫는 공격이다.",
+        "fr": "Archéduc utilise la Force Z pour créer un nuage de flèches qui transpercent la cible.",
+        "de": "Silvarro stellt mit Z-Kraft unzählige Pfeile her und lässt diese auf das Ziel niederprasseln.",
+        "es": "Decidueye usa el Poder Z para proyectar multitud de flechas potentísimas que atraviesan a su oponente.",
+        "it": "Grazie al Potere Z, Decidueye crea una formazione di frecce che colpisce il bersaglio a gran velocità."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量制造出无数箭的狙射树枭将全力射穿对手进行攻击。",
+        "zh-Hant": "透過Ｚ力量製造出無數箭的狙射樹梟全力射穿對手進行攻擊。",
+        "en": "The user, Decidueye, creates countless arrows using its Z-Power and shoots the target with full force.",
+        "ja": "Ｚパワーで　無数の　矢を　作りだしたジュナイパーが　全力で相手を　射抜く　攻撃。",
+        "ja-Hrkt": "Ｚパワーで　むすうの　やを　つくりだしたジュナイパーが　ぜんりょくであいてを　いぬく　こうげき。",
+        "ko": "Z파워로 무수한 화살을 만들어낸 모크나이퍼가 전력으로 상대를 꿰뚫는 공격이다.",
+        "fr": "Archéduc utilise la Force Z pour créer un nuage de flèches qui transpercent la cible.",
+        "de": "Silvarro stellt mit Z-Kraft unzählige Pfeile her und lässt diese auf das Ziel niederprasseln.",
+        "es": "Decidueye usa el Poder Z para proyectar multitud de flechas potentísimas que atraviesan a su oponente.",
+        "it": "Grazie al Potere Z, Decidueye crea una formazione di frecce che colpisce il bersaglio a gran velocità."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量制造出无数箭的狙射树枭将全力射穿对手进行攻击。",
+        "zh-Hant": "透過Ｚ力量製造出無數箭的狙射樹梟全力射穿對手進行攻擊。",
+        "en": "The user, Decidueye, creates countless arrows using its Z-Power and shoots the target with full force.",
+        "ja": "Ｚパワーで　無数の　矢を　作りだしたジュナイパーが　全力で相手を　射抜く　攻撃。",
+        "ja-Hrkt": "Ｚパワーで　むすうの　やを　つくりだしたジュナイパーが　ぜんりょくであいてを　いぬく　こうげき。",
+        "ko": "Z파워로 무수한 화살을 만들어낸 모크나이퍼가 전력으로 상대를 꿰뚫는 공격이다.",
+        "fr": "Archéduc utilise la Force Z pour créer un nuage de flèches qui transpercent la cible.",
+        "de": "Silvarro stellt mit Z-Kraft unzählige Pfeile her und lässt diese auf das Ziel niederprasseln.",
+        "es": "Decidueye usa el Poder Z para proyectar multitud de flechas potentísimas que atraviesan a su oponente.",
+        "it": "Grazie al Potere Z, Decidueye crea una formazione di frecce che colpisce il bersaglio a gran velocità."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "soul-stealing-7-star-strike",
+    "typeSlug": "ghost",
+    "damageClass": "PHYSICAL",
+    "power": 195,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "七星夺魂腿",
+      "zh-Hant": "七星奪魂腿",
+      "en": "Soul-Stealing 7-Star Strike",
+      "ja": "しちせいだっこんたい",
+      "ja-Hrkt": "しちせいだっこんたい",
+      "ko": "칠성탈혼퇴",
+      "fr": "Fauche-Âme des Sept Étoiles",
+      "de": "Sternbild des Seelenraubes",
+      "es": "Constelación Robaalmas",
+      "it": "Colpo Eptastellare Rubanima"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "得到Ｚ力量的玛夏多将全力使出拳头和脚踢的连续招式叩打对手。",
+        "zh-Hant": "得到Ｚ力量的瑪夏多全力使出拳頭和腳踢的連續招式叩打對手。",
+        "en": "After obtaining Z-Power, the user, Marshadow, punches and kicks the target consecutively with full force.",
+        "ja": "Ｚパワーを　得た　マーシャドーがパンチと　キックの　連続技を全力で　相手に　叩き込む。",
+        "ja-Hrkt": "Ｚパワーを　えた　マーシャドーがパンチと　キックの　れんぞくわざをぜんりょくで　あいてに　たたきこむ。",
+        "ko": "Z파워를 얻은 마샤도가 펀치와 킥의 연속기술을 전력으로 상대에게 퍼붓는다.",
+        "fr": "Marshadow concentre toute la Force Z dans ses poings et ses pieds pour infliger un déluge de coups à la cible.",
+        "de": "Marshadow schlägt mit durch Z-Kraft gestärkten Schlägen und Tritten in einer Serien-Attacke auf das Ziel ein.",
+        "es": "Cuando Marshadow obtiene el Poder Z, lanza una potente y continua oleada de puñetazos y patadas con la que castiga a su rival.",
+        "it": "Grazie al Potere Z, Marshadow fa appello a tutte le sue forze e colpisce il bersaglio con una scarica di calci e pugni potentissimi."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的玛夏多将全力使出拳头和脚踢的连续招式叩打对手。",
+        "zh-Hant": "得到Ｚ力量的瑪夏多全力使出拳頭和腳踢的連續招式叩打對手。",
+        "en": "After obtaining Z-Power, the user, Marshadow, punches and kicks the target consecutively with full force.",
+        "ja": "Ｚパワーを　得た　マーシャドーがパンチと　キックの　連続技を全力で　相手に　叩き込む。",
+        "ja-Hrkt": "Ｚパワーを　えた　マーシャドーがパンチと　キックの　れんぞくわざをぜんりょくで　あいてに　たたきこむ。",
+        "ko": "Z파워를 얻은 마샤도가 펀치와 킥의 연속기술을 전력으로 상대에게 퍼붓는다.",
+        "fr": "Marshadow concentre toute la Force Z dans ses poings et ses pieds pour infliger un déluge de coups à la cible.",
+        "de": "Marshadow schlägt mit durch Z-Kraft gestärkten Schlägen und Tritten in einer Serien-Attacke auf das Ziel ein.",
+        "es": "Cuando Marshadow obtiene el Poder Z, lanza una potente y continua oleada de puñetazos y patadas con la que castiga a su rival.",
+        "it": "Grazie al Potere Z, Marshadow fa appello a tutte le sue forze e colpisce il bersaglio con una scarica di calci e pugni potentissimi."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的玛夏多将全力使出拳头和脚踢的连续招式叩打对手。",
+        "zh-Hant": "得到Ｚ力量的瑪夏多全力使出拳頭和腳踢的連續招式叩打對手。",
+        "en": "After obtaining Z-Power, the user, Marshadow, punches and kicks the target consecutively with full force.",
+        "ja": "Ｚパワーを　得た　マーシャドーがパンチと　キックの　連続技を全力で　相手に　叩き込む。",
+        "ja-Hrkt": "Ｚパワーを　えた　マーシャドーがパンチと　キックの　れんぞくわざをぜんりょくで　あいてに　たたきこむ。",
+        "ko": "Z파워를 얻은 마샤도가 펀치와 킥의 연속기술을 전력으로 상대에게 퍼붓는다.",
+        "fr": "Marshadow concentre toute la Force Z dans ses poings et ses pieds pour infliger un déluge de coups à la cible.",
+        "de": "Marshadow schlägt mit durch Z-Kraft gestärkten Schlägen und Tritten in einer Serien-Attacke auf das Ziel ein.",
+        "es": "Cuando Marshadow obtiene el Poder Z, lanza una potente y continua oleada de puñetazos y patadas con la que castiga a su rival.",
+        "it": "Grazie al Potere Z, Marshadow fa appello a tutte le sue forze e colpisce il bersaglio con una scarica di calci e pugni potentissimi."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "splintered-stormshards",
+    "typeSlug": "rock",
+    "damageClass": "PHYSICAL",
+    "power": 190,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "狼啸石牙飓风暴",
+      "zh-Hant": "狼嘯石牙颶風暴",
+      "en": "Splintered Stormshards",
+      "ja": "ラジアルエッジストーム",
+      "ja-Hrkt": "ラジアルエッジストーム",
+      "ko": "레이디얼에지스톰",
+      "fr": "Hurlement des Roches-Lames",
+      "de": "Fataler Steinregen",
+      "es": "Tempestad Rocosa",
+      "it": "Litotempesta Radiale"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts damage and removes any terrain present on the battlefield.",
+        "effect": "Inflicts damage and removes any terrain present on the battlefield."
+      },
+      "fr": {
+        "short": "Inflige des dégâts et supprime n'importe quel champ présent sur le combat.",
+        "effect": "Inflige des dégâts et supprime n'importe quel champ présent sur le combat."
+      }
+    },
+    "flavors": {
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的鬃岩狼人将全力进行攻击。而且会消除场地状态。",
+        "zh-Hant": "獲得Ｚ力量的鬃岩狼人將會以全力進行攻擊，並消除場地的狀態。",
+        "en": "After obtaining Z-Power, the user, Lycanroc, attacks the target with full force. This move negates the effect on the battlefield.",
+        "ja": "Ｚパワーを　得た　ルガルガンが全力で　攻撃する。　追加でフィールド状態を　打ち消す。",
+        "ja-Hrkt": "Ｚパワーを　えた　ルガルガンがぜんりょくで　こうげきする。　ついかでフィールドじょうたいを　うちけす。",
+        "ko": "Z파워를 얻은 루가루암이 전력으로 공격한다. 추가로 필드 상태를 없앤다.",
+        "fr": "Lougaroc utilise la Force Z pour attaquer la cible de toutes ses forces. Efface aussi tout Champ existant.",
+        "de": "Wolwerock greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Herrschen besondere Feldeffekte, werden diese zusätzlich neutralisiert.",
+        "es": "Lycanroc ataca con toda su fuerza tras imbuirse del Poder Z y neutraliza el campo que esté activo.",
+        "it": "Grazie al Potere Z, Lycanroc attacca il bersaglio con tutta la sua forza. Questa mossa annulla anche gli eventuali campi attivi."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的鬃岩狼人将全力进行攻击。而且会消除场地状态。",
+        "zh-Hant": "獲得Ｚ力量的鬃岩狼人將會以全力進行攻擊，並消除場地的狀態。",
+        "en": "After obtaining Z-Power, the user, Lycanroc, attacks the target with full force. This move negates the effect on the battlefield.",
+        "ja": "Ｚパワーを　得た　ルガルガンが全力で　攻撃する。　追加でフィールド状態を　打ち消す。",
+        "ja-Hrkt": "Ｚパワーを　えた　ルガルガンがぜんりょくで　こうげきする。　ついかでフィールドじょうたいを　うちけす。",
+        "ko": "Z파워를 얻은 루가루암이 전력으로 공격한다. 추가로 필드 상태를 없앤다.",
+        "fr": "Lougaroc utilise la Force Z pour attaquer la cible de toutes ses forces. Efface aussi tout Champ existant.",
+        "de": "Wolwerock greift das Ziel mithilfe von Z-Kraft mit voller Wucht an. Herrschen besondere Feldeffekte, werden diese zusätzlich neutralisiert.",
+        "es": "Lycanroc ataca con toda su fuerza tras imbuirse del Poder Z y neutraliza el campo que esté activo.",
+        "it": "Grazie al Potere Z, Lycanroc attacca il bersaglio con tutta la sua forza. Questa mossa annulla anche gli eventuali campi attivi."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "stoked-sparksurfer",
+    "typeSlug": "electric",
+    "damageClass": "SPECIAL",
+    "power": 175,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "驾雷驭电戏冲浪",
+      "zh-Hant": "駕雷馭電戲衝浪",
+      "en": "Stoked Sparksurfer",
+      "ja": "ライトニングサーフライド",
+      "ja-Hrkt": "ライトニングサーフライド",
+      "ko": "라이트닝서프라이드",
+      "fr": "Électro-Surf Survolté",
+      "de": "Blitz-Wellenritt",
+      "es": "Surfeo Galvánico",
+      "it": "Elettrosurf Folgorante"
+    },
+    "effects": {
+      "en": {
+        "short": "Has a chance to paralyze the target.",
+        "effect": "Inflicts regular damage. Has a chance to paralyze the target."
+      },
+      "fr": {
+        "short": "A une chance de paralyser la cible.",
+        "effect": "Inflige des dégats réguliers. A une chance de paralyser la cible."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "得到Ｚ力量的阿罗拉地区的雷丘将全力进行攻击。从而让对手陷入麻痹状态。",
+        "zh-Hant": "得到Ｚ力量的阿羅拉地區的雷丘全力進行攻擊。讓對手陷入麻痺狀態。",
+        "en": "After obtaining Z-Power, the user, Alolan Raichu, attacks the target with full force. This move leaves the target with paralysis.",
+        "ja": "Ｚパワーを　得た　アローラ地方のライチュウが　全力で　攻撃する。相手を　まひ　状態に　する。",
+        "ja-Hrkt": "Ｚパワーを　えた　アローラちほうのライチュウが　ぜんりょくで　こうげきする。あいてを　まひ　じょうたいに　する。",
+        "ko": "Z파워를 얻은 알로라지방의 라이츄가 전력으로 공격한다. 상대를 마비 상태로 만든다.",
+        "fr": "Le Raichu de la région d’Alola utilise la Force Z pour frapper la cible et la paralyser.",
+        "de": "Das Alola-Raichu greift das Ziel mithilfe von Z-Kraft mit voller Wucht an und paralysiert es.",
+        "es": "Cuando un Raichu de Alola obtiene el Poder Z, lanza un potente ataque contra su enemigo y lo deja paralizado.",
+        "it": "Grazie al Potere Z, il Raichu di Alola attacca con tutta la sua potenza e paralizza il bersaglio."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "得到Ｚ力量的阿罗拉地区的雷丘将全力进行攻击。从而让对手陷入麻痹状态。",
+        "zh-Hant": "得到Ｚ力量的阿羅拉地區的雷丘全力進行攻擊。讓對手陷入麻痺狀態。",
+        "en": "After obtaining Z-Power, the user, Alolan Raichu, attacks the target with full force. This move leaves the target with paralysis.",
+        "ja": "Ｚパワーを　得た　アローラ地方のライチュウが　全力で　攻撃する。相手を　まひ　状態に　する。",
+        "ja-Hrkt": "Ｚパワーを　えた　アローラちほうのライチュウが　ぜんりょくで　こうげきする。あいてを　まひ　じょうたいに　する。",
+        "ko": "Z파워를 얻은 알로라지방의 라이츄가 전력으로 공격한다. 상대를 마비 상태로 만든다.",
+        "fr": "Le Raichu de la région d’Alola utilise la Force Z pour frapper la cible et la paralyser.",
+        "de": "Das Alola-Raichu greift das Ziel mithilfe von Z-Kraft mit voller Wucht an und paralysiert es.",
+        "es": "Cuando un Raichu de Alola obtiene el Poder Z, lanza un potente ataque contra su enemigo y lo deja paralizado.",
+        "it": "Grazie al Potere Z, il Raichu di Alola attacca con tutta la sua potenza e paralizza il bersaglio."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "得到Ｚ力量的阿罗拉地区的雷丘将全力进行攻击。从而让对手陷入麻痹状态。",
+        "zh-Hant": "得到Ｚ力量的阿羅拉地區的雷丘全力進行攻擊。讓對手陷入麻痺狀態。",
+        "en": "After obtaining Z-Power, the user, Alolan Raichu, attacks the target with full force. This move leaves the target with paralysis.",
+        "ja": "Ｚパワーを　得た　アローラ地方のライチュウが　全力で　攻撃する。相手を　まひ　状態に　する。",
+        "ja-Hrkt": "Ｚパワーを　えた　アローラちほうのライチュウが　ぜんりょくで　こうげきする。あいてを　まひ　じょうたいに　する。",
+        "ko": "Z파워를 얻은 알로라지방의 라이츄가 전력으로 공격한다. 상대를 마비 상태로 만든다.",
+        "fr": "Le Raichu de la région d’Alola utilise la Force Z pour frapper la cible et la paralyser.",
+        "de": "Das Alola-Raichu greift das Ziel mithilfe von Z-Kraft mit voller Wucht an und paralysiert es.",
+        "es": "Cuando un Raichu de Alola obtiene el Poder Z, lanza un potente ataque contra su enemigo y lo deja paralizado.",
+        "it": "Grazie al Potere Z, il Raichu di Alola attacca con tutta la sua potenza e paralizza il bersaglio."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "subzero-slammer",
+    "typeSlug": "ice",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "激狂大地万里冰",
+      "zh-Hant": "激狂大地萬里冰",
+      "en": "Subzero Slammer",
+      "ja": "レイジングジオフリーズ",
+      "ja-Hrkt": "レイジングジオフリーズ",
+      "ko": "레이징지오프리즈",
+      "fr": "Laser Cryogénique",
+      "de": "Tobender Geofrost",
+      "es": "Crioaliento Despiadado",
+      "it": "Criodistruzione Polare"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量急剧降低气温，全力冰冻对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量急遽降低氣溫，全力冰凍對手。威力會隨原本的招式而改變。",
+        "en": "The user dramatically drops the temperature using its Z-Power and freezes the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　気温を　急激に　下げ全力で　相手を　凍らせる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　きおんを　きゅうげきに　さげぜんりょくで　あいてを　こおらせる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기온을 급격하게 떨어뜨려 전력으로 상대를 얼린다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour baisser la température brutalement et congeler l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender senkt mit Z-Kraft die Temperatur drastisch und lässt das Ziel einfrieren. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para lanzar un rayo de hielo que baja la temperatura de golpe y congela al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per far calare di colpo la temperatura e congelare il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量急剧降低气温，全力冰冻对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量急遽降低氣溫，全力冰凍對手。威力會隨原本的招式而改變。",
+        "en": "The user dramatically drops the temperature using its Z-Power and freezes the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　気温を　急激に　下げ全力で　相手を　凍らせる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　きおんを　きゅうげきに　さげぜんりょくで　あいてを　こおらせる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기온을 급격하게 떨어뜨려 전력으로 상대를 얼린다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour baisser la température brutalement et congeler l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender senkt mit Z-Kraft die Temperatur drastisch und lässt das Ziel einfrieren. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para lanzar un rayo de hielo que baja la temperatura de golpe y congela al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per far calare di colpo la temperatura e congelare il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量急剧降低气温，全力冰冻对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量急遽降低氣溫，全力冰凍對手。威力會隨原本的招式而改變。",
+        "en": "The user dramatically drops the temperature using its Z-Power and freezes the target with full force. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　気温を　急激に　下げ全力で　相手を　凍らせる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　きおんを　きゅうげきに　さげぜんりょくで　あいてを　こおらせる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기온을 급격하게 떨어뜨려 전력으로 상대를 얼린다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour baisser la température brutalement et congeler l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender senkt mit Z-Kraft die Temperatur drastisch und lässt das Ziel einfrieren. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para lanzar un rayo de hielo que baja la temperatura de golpe y congela al objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa sfrutta il Potere Z per far calare di colpo la temperatura e congelare il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "supersonic-skystrike",
+    "typeSlug": "flying",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "极速俯冲轰烈撞",
+      "zh-Hant": "極速俯衝轟烈撞",
+      "en": "Supersonic Skystrike",
+      "ja": "ファイナルダイブクラッシュ",
+      "ja-Hrkt": "ファイナルダイブクラッシュ",
+      "ko": "파이널다이브클래시",
+      "fr": "Piqué Supersonique",
+      "de": "Finaler Steilflug",
+      "es": "Picado Supersónico",
+      "it": "Picchiata Devastante"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量猛烈地飞向天空，朝对手全力落下。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量猛烈地飛向天空，向著對手全力墜下。威力會隨原本的招式而改變。",
+        "en": "The user soars up with its Z-Power and plummets toward the target at full speed. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　勢いよく　飛びあがり相手に　向かって　全力で　落下。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　いきおいよく　とびあがりあいてに　むかって　ぜんりょくで　らっか。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기세 좋게 날아올라 상대를 향해 전력으로 낙하한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour s’envoler très haut dans le ciel avant de plonger sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender schwingt sich durch Z-Kraft in die Lüfte und stürzt sich dann auf das Ziel hinab. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para volar muy alto y abalanzarse en picado sobre el objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per alzarsi in volo e attaccare il bersaglio piombandogli addosso. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量猛烈地飞向天空，朝对手全力落下。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量猛烈地飛向天空，向著對手全力墜下。威力會隨原本的招式而改變。",
+        "en": "The user soars up with its Z-Power and plummets toward the target at full speed. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　勢いよく　飛びあがり相手に　向かって　全力で　落下。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　いきおいよく　とびあがりあいてに　むかって　ぜんりょくで　らっか。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기세 좋게 날아올라 상대를 향해 전력으로 낙하한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour s’envoler très haut dans le ciel avant de plonger sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender schwingt sich durch Z-Kraft in die Lüfte und stürzt sich dann auf das Ziel hinab. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para volar muy alto y abalanzarse en picado sobre el objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per alzarsi in volo e attaccare il bersaglio piombandogli addosso. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量猛烈地飞向天空，朝对手全力落下。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量猛烈地飛向天空，向著對手全力墜下。威力會隨原本的招式而改變。",
+        "en": "The user soars up with its Z-Power and plummets toward the target at full speed. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　勢いよく　飛びあがり相手に　向かって　全力で　落下。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　いきおいよく　とびあがりあいてに　むかって　ぜんりょくで　らっか。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 기세 좋게 날아올라 상대를 향해 전력으로 낙하한다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour s’envoler très haut dans le ciel avant de plonger sur l’adversaire. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender schwingt sich durch Z-Kraft in die Lüfte und stürzt sich dann auf das Ziel hinab. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para volar muy alto y abalanzarse en picado sobre el objetivo. Su potencia depende de la del movimiento original.",
+        "it": "Chi la usa si serve del Potere Z per alzarsi in volo e attaccare il bersaglio piombandogli addosso. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "tectonic-rage",
+    "typeSlug": "ground",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "地隆啸天大终结",
+      "zh-Hant": "地隆嘯天大終結",
+      "en": "Tectonic Rage",
+      "ja": "ライジングランドオーバー",
+      "ja-Hrkt": "ライジングランドオーバー",
+      "ko": "라이징랜드오버",
+      "fr": "Éruption Géo-Sismique",
+      "de": "Seismische Eruption",
+      "es": "Barrena Telúrica",
+      "it": "Furore della Terra"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量潜入地里最深处，全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量潛入地底深處，全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user burrows deep into the ground and slams into the target with the full force of its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　地面の　奥深くに　潜り全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　じめんの　おくふかくに　もぐりぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 땅 깊숙이 파고들어 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour entraîner l’adversaire dans les profondeurs de la terre. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender zerrt das Ziel mit Z-Kraft tief in den Boden und kollidiert dort mit ihm. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para abrir una profunda grieta en el suelo que se traga al oponente. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa si tuffa nelle viscere della terra e colpisce con violenza il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量潜入地里最深处，全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量潛入地底深處，全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user burrows deep into the ground and slams into the target with the full force of its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　地面の　奥深くに　潜り全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　じめんの　おくふかくに　もぐりぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 땅 깊숙이 파고들어 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour entraîner l’adversaire dans les profondeurs de la terre. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender zerrt das Ziel mit Z-Kraft tief in den Boden und kollidiert dort mit ihm. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para abrir una profunda grieta en el suelo que se traga al oponente. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa si tuffa nelle viscere della terra e colpisce con violenza il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量潜入地里最深处，全力撞上对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量潛入地底深處，全力撞擊對手。威力會隨原本的招式而改變。",
+        "en": "The user burrows deep into the ground and slams into the target with the full force of its Z-Power. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　地面の　奥深くに　潜り全力で　相手に　ぶつかる。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　じめんの　おくふかくに　もぐりぜんりょくで　あいてに　ぶつかる。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 땅 깊숙이 파고들어 전력으로 상대에게 부딪친다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour entraîner l’adversaire dans les profondeurs de la terre. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender zerrt das Ziel mit Z-Kraft tief in den Boden und kollidiert dort mit ihm. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "Emplea el Poder Z para abrir una profunda grieta en el suelo que se traga al oponente. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa si tuffa nelle viscere della terra e colpisce con violenza il bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  },
+  {
+    "slug": "twinkle-tackle",
+    "typeSlug": "fairy",
+    "damageClass": null,
+    "power": null,
+    "pp": 1,
+    "names": {
+      "zh-Hans": "可爱星星飞天撞",
+      "zh-Hant": "可愛星星飛天撞",
+      "en": "Twinkle Tackle",
+      "ja": "ラブリースターインパクト",
+      "ja-Hrkt": "ラブリースターインパクト",
+      "ko": "러블리스타임팩트",
+      "fr": "Impact Choupinova",
+      "de": "Entzückender Sternenstoß",
+      "es": "Arrumaco Sideral",
+      "it": "Astroimpatto Fatato"
+    },
+    "effects": {
+      "en": {
+        "short": "Inflicts regular damage with no additional effect.",
+        "effect": "Inflicts regular damage."
+      },
+      "fr": {
+        "short": "Inflige des dégâts réguliers avec aucun effet additionnel.",
+        "effect": "Inflige des dégats réguliers."
+      }
+    },
+    "flavors": {
+      "sun-moon": {
+        "zh-Hans": "通过Ｚ力量制造魅惑空间，全力捉弄对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量製造魅惑空間，全力玩弄對手。威力會隨原本的招式而改變。",
+        "en": "The user creates a very charming space using its Z-Power and totally toys with the target. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　魅惑の　空間を　作り全力で　相手を　もてあそぶ。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　みわくの　くうかんを　つくりぜんりょくで　あいてを　もてあそぶ。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 매혹의 공간을 만들어 전력으로 상대를 가지고 논다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer une dimension irréelle où l’adversaire est à sa merci. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft eine zauberhafte Dimension und treibt dort sein Spiel mit dem Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una dimensión fascinante que deja al rival a su merced. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea una dimensione fatata in cui fa ciò che vuole del proprio bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "ultra-sun-ultra-moon": {
+        "zh-Hans": "通过Ｚ力量制造魅惑空间，全力捉弄对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量製造魅惑空間，全力玩弄對手。威力會隨原本的招式而改變。",
+        "en": "The user creates a very charming space using its Z-Power and totally toys with the target. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　魅惑の　空間を　作り全力で　相手を　もてあそぶ。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　みわくの　くうかんを　つくりぜんりょくで　あいてを　もてあそぶ。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 매혹의 공간을 만들어 전력으로 상대를 가지고 논다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer une dimension irréelle où l’adversaire est à sa merci. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft eine zauberhafte Dimension und treibt dort sein Spiel mit dem Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una dimensión fascinante que deja al rival a su merced. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea una dimensione fatata in cui fa ciò che vuole del proprio bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "lets-go-pikachu-lets-go-eevee": {
+        "zh-Hans": "通过Ｚ力量制造魅惑空间，全力捉弄对手。威力会根据原来的招式而改变。",
+        "zh-Hant": "透過Ｚ力量製造魅惑空間，全力玩弄對手。威力會隨原本的招式而改變。",
+        "en": "The user creates a very charming space using its Z-Power and totally toys with the target. The power varies, depending on the original move.",
+        "ja": "Ｚパワーで　魅惑の　空間を　作り全力で　相手を　もてあそぶ。元になった　技で　威力が　変わる。",
+        "ja-Hrkt": "Ｚパワーで　みわくの　くうかんを　つくりぜんりょくで　あいてを　もてあそぶ。もとになった　わざで　いりょくが　かわる。",
+        "ko": "Z파워로 매혹의 공간을 만들어 전력으로 상대를 가지고 논다. 원래 기술에 따라 위력이 변한다.",
+        "fr": "Le Pokémon utilise la Force Z pour créer une dimension irréelle où l’adversaire est à sa merci. La puissance varie selon celle de la capacité originale.",
+        "de": "Der Anwender kreiert mit Z-Kraft eine zauberhafte Dimension und treibt dort sein Spiel mit dem Ziel. Die Stärke variiert je nach zugrunde liegender Attacke.",
+        "es": "El usuario emplea el Poder Z para crear una dimensión fascinante que deja al rival a su merced. Su potencia depende de la del movimiento original.",
+        "it": "Grazie al Potere Z, chi la usa crea una dimensione fatata in cui fa ciò che vuole del proprio bersaglio. La potenza varia a seconda della mossa su cui si basa."
+      },
+      "sword-shield": {
+        "zh-Hans": "无法使用这个招式。虽然忘记之后就再也想不起来了，但还是建议忘记这个招式。",
+        "zh-Hant": "無法使用此招式。雖然忘記後將無法再想起來，但還是建議忘記此招式。",
+        "en": "This move can’t be used. It’s recommended that this move is forgotten. Once forgotten, this move can’t be remembered.",
+        "ja": "この技は　使えません思い出すことが　できなくなりますが技を　忘れることを　おすすめします",
+        "ja-Hrkt": "このわざは　つかえませんおもいだすことが　できなくなりますがわざを　わすれることを　おすすめします",
+        "ko": "사용할 수 없는 기술입니다. 다시 배우게 할 수 없지만 기술을 잊게 하는 것을 권장합니다.",
+        "fr": "Cette capacité ne peut pas être utilisée. Il est recommandé de l’oublier, même s’il sera impossible de se la remémorer une fois oubliée.",
+        "de": "Diese Attacke kann nicht eingesetzt werden. Du solltest dein Pokémon sie vergessen lassen. Beachte aber, dass es sich danach nicht wieder an sie erinnern kann.",
+        "es": "Este movimiento no se puede usar, por lo que sería mejor olvidarlo, aunque eso implique que no se pueda recordar posteriormente.",
+        "it": "Questa mossa non può essere usata. È consigliabile farla dimenticare al Pokémon. Tuttavia, una volta dimenticata, non potrà più essere ricordata."
+      }
+    }
+  }
+]
