@@ -1,0 +1,477 @@
+[
+  {
+    "slug": "adamant",
+    "increasedStat": "ATTACK",
+    "decreasedStat": "SPECIAL_ATTACK",
+    "likesFlavor": "SPICY",
+    "hatesFlavor": "DRY",
+    "names": {
+      "zh-Hans": "固执",
+      "zh-Hant": "固執",
+      "en": "Adamant",
+      "ja": "いじっぱり",
+      "ja-Hrkt": "いじっぱり",
+      "ko": "고집",
+      "fr": "Rigide",
+      "de": "Hart",
+      "es": "Firme",
+      "it": "Decisa"
+    }
+  },
+  {
+    "slug": "bashful",
+    "increasedStat": null,
+    "decreasedStat": null,
+    "likesFlavor": null,
+    "hatesFlavor": null,
+    "names": {
+      "zh-Hans": "害羞",
+      "zh-Hant": "害羞",
+      "en": "Bashful",
+      "ja": "てれや",
+      "ja-Hrkt": "てれや",
+      "ko": "수줍음",
+      "fr": "Pudique",
+      "de": "Zaghaft",
+      "es": "Tímida",
+      "it": "Ritrosa"
+    }
+  },
+  {
+    "slug": "bold",
+    "increasedStat": "DEFENSE",
+    "decreasedStat": "ATTACK",
+    "likesFlavor": "SOUR",
+    "hatesFlavor": "SPICY",
+    "names": {
+      "zh-Hans": "大胆",
+      "zh-Hant": "大膽",
+      "en": "Bold",
+      "ja": "ずぶとい",
+      "ja-Hrkt": "ずぶとい",
+      "ko": "대담",
+      "fr": "Assuré",
+      "de": "Kühn",
+      "es": "Osada",
+      "it": "Sicura"
+    }
+  },
+  {
+    "slug": "brave",
+    "increasedStat": "ATTACK",
+    "decreasedStat": "SPEED",
+    "likesFlavor": "SPICY",
+    "hatesFlavor": "SWEET",
+    "names": {
+      "zh-Hans": "勇敢",
+      "zh-Hant": "勇敢",
+      "en": "Brave",
+      "ja": "ゆうかん",
+      "ja-Hrkt": "ゆうかん",
+      "ko": "용감",
+      "fr": "Brave",
+      "de": "Mutig",
+      "es": "Audaz",
+      "it": "Audace"
+    }
+  },
+  {
+    "slug": "calm",
+    "increasedStat": "SPECIAL_DEFENSE",
+    "decreasedStat": "ATTACK",
+    "likesFlavor": "BITTER",
+    "hatesFlavor": "SPICY",
+    "names": {
+      "zh-Hans": "温和",
+      "zh-Hant": "溫和",
+      "en": "Calm",
+      "ja": "おだやか",
+      "ja-Hrkt": "おだやか",
+      "ko": "차분",
+      "fr": "Calme",
+      "de": "Still",
+      "es": "Serena",
+      "it": "Calma"
+    }
+  },
+  {
+    "slug": "careful",
+    "increasedStat": "SPECIAL_DEFENSE",
+    "decreasedStat": "SPECIAL_ATTACK",
+    "likesFlavor": "BITTER",
+    "hatesFlavor": "DRY",
+    "names": {
+      "zh-Hans": "慎重",
+      "zh-Hant": "慎重",
+      "en": "Careful",
+      "ja": "しんちょう",
+      "ja-Hrkt": "しんちょう",
+      "ko": "신중",
+      "fr": "Prudent",
+      "de": "Sacht",
+      "es": "Cauta",
+      "it": "Cauta"
+    }
+  },
+  {
+    "slug": "docile",
+    "increasedStat": null,
+    "decreasedStat": null,
+    "likesFlavor": null,
+    "hatesFlavor": null,
+    "names": {
+      "zh-Hans": "坦率",
+      "zh-Hant": "坦率",
+      "en": "Docile",
+      "ja": "すなお",
+      "ja-Hrkt": "すなお",
+      "ko": "온순",
+      "fr": "Docile",
+      "de": "Sanft",
+      "es": "Dócil",
+      "it": "Docile"
+    }
+  },
+  {
+    "slug": "gentle",
+    "increasedStat": "SPECIAL_DEFENSE",
+    "decreasedStat": "DEFENSE",
+    "likesFlavor": "BITTER",
+    "hatesFlavor": "SOUR",
+    "names": {
+      "zh-Hans": "温顺",
+      "zh-Hant": "溫順",
+      "en": "Gentle",
+      "ja": "おとなしい",
+      "ja-Hrkt": "おとなしい",
+      "ko": "얌전",
+      "fr": "Gentil",
+      "de": "Zart",
+      "es": "Amable",
+      "it": "Gentile"
+    }
+  },
+  {
+    "slug": "hardy",
+    "increasedStat": null,
+    "decreasedStat": null,
+    "likesFlavor": null,
+    "hatesFlavor": null,
+    "names": {
+      "zh-Hans": "勤奋",
+      "zh-Hant": "勤奮",
+      "en": "Hardy",
+      "ja": "がんばりや",
+      "ja-Hrkt": "がんばりや",
+      "ko": "노력",
+      "fr": "Hardi",
+      "de": "Robust",
+      "es": "Fuerte",
+      "it": "Ardita"
+    }
+  },
+  {
+    "slug": "hasty",
+    "increasedStat": "SPEED",
+    "decreasedStat": "DEFENSE",
+    "likesFlavor": "SWEET",
+    "hatesFlavor": "SOUR",
+    "names": {
+      "zh-Hans": "急躁",
+      "zh-Hant": "急躁",
+      "en": "Hasty",
+      "ja": "せっかち",
+      "ja-Hrkt": "せっかち",
+      "ko": "성급",
+      "fr": "Pressé",
+      "de": "Hastig",
+      "es": "Activa",
+      "it": "Lesta"
+    }
+  },
+  {
+    "slug": "impish",
+    "increasedStat": "DEFENSE",
+    "decreasedStat": "SPECIAL_ATTACK",
+    "likesFlavor": "SOUR",
+    "hatesFlavor": "DRY",
+    "names": {
+      "zh-Hans": "淘气",
+      "zh-Hant": "淘氣",
+      "en": "Impish",
+      "ja": "わんぱく",
+      "ja-Hrkt": "わんぱく",
+      "ko": "장난꾸러기",
+      "fr": "Malin",
+      "de": "Pfiffig",
+      "es": "Agitada",
+      "it": "Scaltra"
+    }
+  },
+  {
+    "slug": "jolly",
+    "increasedStat": "SPEED",
+    "decreasedStat": "SPECIAL_ATTACK",
+    "likesFlavor": "SWEET",
+    "hatesFlavor": "DRY",
+    "names": {
+      "zh-Hans": "爽朗",
+      "zh-Hant": "爽朗",
+      "en": "Jolly",
+      "ja": "ようき",
+      "ja-Hrkt": "ようき",
+      "ko": "명랑",
+      "fr": "Jovial",
+      "de": "Froh",
+      "es": "Alegre",
+      "it": "Allegra"
+    }
+  },
+  {
+    "slug": "lax",
+    "increasedStat": "DEFENSE",
+    "decreasedStat": "SPECIAL_DEFENSE",
+    "likesFlavor": "SOUR",
+    "hatesFlavor": "BITTER",
+    "names": {
+      "zh-Hans": "乐天",
+      "zh-Hant": "樂天",
+      "en": "Lax",
+      "ja": "のうてんき",
+      "ja-Hrkt": "のうてんき",
+      "ko": "촐랑",
+      "fr": "Lâche",
+      "de": "Lasch",
+      "es": "Floja",
+      "it": "Fiacca"
+    }
+  },
+  {
+    "slug": "lonely",
+    "increasedStat": "ATTACK",
+    "decreasedStat": "DEFENSE",
+    "likesFlavor": "SPICY",
+    "hatesFlavor": "SOUR",
+    "names": {
+      "zh-Hans": "怕寂寞",
+      "zh-Hant": "怕寂寞",
+      "en": "Lonely",
+      "ja": "さみしがり",
+      "ja-Hrkt": "さみしがり",
+      "ko": "외로움",
+      "fr": "Solo",
+      "de": "Solo",
+      "es": "Huraña",
+      "it": "Schiva"
+    }
+  },
+  {
+    "slug": "mild",
+    "increasedStat": "SPECIAL_ATTACK",
+    "decreasedStat": "DEFENSE",
+    "likesFlavor": "DRY",
+    "hatesFlavor": "SOUR",
+    "names": {
+      "zh-Hans": "慢吞吞",
+      "zh-Hant": "慢吞吞",
+      "en": "Mild",
+      "ja": "おっとり",
+      "ja-Hrkt": "おっとり",
+      "ko": "의젓",
+      "fr": "Doux",
+      "de": "Mild",
+      "es": "Afable",
+      "it": "Mite"
+    }
+  },
+  {
+    "slug": "modest",
+    "increasedStat": "SPECIAL_ATTACK",
+    "decreasedStat": "ATTACK",
+    "likesFlavor": "DRY",
+    "hatesFlavor": "SPICY",
+    "names": {
+      "zh-Hans": "内敛",
+      "zh-Hant": "內斂",
+      "en": "Modest",
+      "ja": "ひかえめ",
+      "ja-Hrkt": "ひかえめ",
+      "ko": "조심",
+      "fr": "Modeste",
+      "de": "Mäßig",
+      "es": "Modesta",
+      "it": "Modesta"
+    }
+  },
+  {
+    "slug": "naive",
+    "increasedStat": "SPEED",
+    "decreasedStat": "SPECIAL_DEFENSE",
+    "likesFlavor": "SWEET",
+    "hatesFlavor": "BITTER",
+    "names": {
+      "zh-Hans": "天真",
+      "zh-Hant": "天真",
+      "en": "Naive",
+      "ja": "むじゃき",
+      "ja-Hrkt": "むじゃき",
+      "ko": "천진난만",
+      "fr": "Naïf",
+      "de": "Naiv",
+      "es": "Ingenua",
+      "it": "Ingenua"
+    }
+  },
+  {
+    "slug": "naughty",
+    "increasedStat": "ATTACK",
+    "decreasedStat": "SPECIAL_DEFENSE",
+    "likesFlavor": "SPICY",
+    "hatesFlavor": "BITTER",
+    "names": {
+      "zh-Hans": "顽皮",
+      "zh-Hant": "頑皮",
+      "en": "Naughty",
+      "ja": "やんちゃ",
+      "ja-Hrkt": "やんちゃ",
+      "ko": "개구쟁이",
+      "fr": "Mauvais",
+      "de": "Frech",
+      "es": "Pícara",
+      "it": "Birbona"
+    }
+  },
+  {
+    "slug": "quiet",
+    "increasedStat": "SPECIAL_ATTACK",
+    "decreasedStat": "SPEED",
+    "likesFlavor": "DRY",
+    "hatesFlavor": "SWEET",
+    "names": {
+      "zh-Hans": "冷静",
+      "zh-Hant": "冷靜",
+      "en": "Quiet",
+      "ja": "れいせい",
+      "ja-Hrkt": "れいせい",
+      "ko": "냉정",
+      "fr": "Discret",
+      "de": "Ruhig",
+      "es": "Mansa",
+      "it": "Quieta"
+    }
+  },
+  {
+    "slug": "quirky",
+    "increasedStat": null,
+    "decreasedStat": null,
+    "likesFlavor": null,
+    "hatesFlavor": null,
+    "names": {
+      "zh-Hans": "浮躁",
+      "zh-Hant": "浮躁",
+      "en": "Quirky",
+      "ja": "きまぐれ",
+      "ja-Hrkt": "きまぐれ",
+      "ko": "변덕",
+      "fr": "Bizarre",
+      "de": "Kauzig",
+      "es": "Rara",
+      "it": "Furba"
+    }
+  },
+  {
+    "slug": "rash",
+    "increasedStat": "SPECIAL_ATTACK",
+    "decreasedStat": "SPECIAL_DEFENSE",
+    "likesFlavor": "DRY",
+    "hatesFlavor": "BITTER",
+    "names": {
+      "zh-Hans": "马虎",
+      "zh-Hant": "馬虎",
+      "en": "Rash",
+      "ja": "うっかりや",
+      "ja-Hrkt": "うっかりや",
+      "ko": "덜렁",
+      "fr": "Foufou",
+      "de": "Hitzig",
+      "es": "Alocada",
+      "it": "Ardente"
+    }
+  },
+  {
+    "slug": "relaxed",
+    "increasedStat": "DEFENSE",
+    "decreasedStat": "SPEED",
+    "likesFlavor": "SOUR",
+    "hatesFlavor": "SWEET",
+    "names": {
+      "zh-Hans": "悠闲",
+      "zh-Hant": "悠閒",
+      "en": "Relaxed",
+      "ja": "のんき",
+      "ja-Hrkt": "のんき",
+      "ko": "무사태평",
+      "fr": "Relax",
+      "de": "Locker",
+      "es": "Plácida",
+      "it": "Placida"
+    }
+  },
+  {
+    "slug": "sassy",
+    "increasedStat": "SPECIAL_DEFENSE",
+    "decreasedStat": "SPEED",
+    "likesFlavor": "BITTER",
+    "hatesFlavor": "SWEET",
+    "names": {
+      "zh-Hans": "自大",
+      "zh-Hant": "自大",
+      "en": "Sassy",
+      "ja": "なまいき",
+      "ja-Hrkt": "なまいき",
+      "ko": "건방",
+      "fr": "Malpoli",
+      "de": "Forsch",
+      "es": "Grosera",
+      "it": "Vivace"
+    }
+  },
+  {
+    "slug": "serious",
+    "increasedStat": null,
+    "decreasedStat": null,
+    "likesFlavor": null,
+    "hatesFlavor": null,
+    "names": {
+      "zh-Hans": "认真",
+      "zh-Hant": "認真",
+      "en": "Serious",
+      "ja": "まじめ",
+      "ja-Hrkt": "まじめ",
+      "ko": "성실",
+      "fr": "Sérieux",
+      "de": "Ernst",
+      "es": "Seria",
+      "it": "Seria"
+    }
+  },
+  {
+    "slug": "timid",
+    "increasedStat": "SPEED",
+    "decreasedStat": "ATTACK",
+    "likesFlavor": "SWEET",
+    "hatesFlavor": "SPICY",
+    "names": {
+      "zh-Hans": "胆小",
+      "zh-Hant": "膽小",
+      "en": "Timid",
+      "ja": "おくびょう",
+      "ja-Hrkt": "おくびょう",
+      "ko": "겁쟁이",
+      "fr": "Timide",
+      "de": "Scheu",
+      "es": "Miedosa",
+      "it": "Timida"
+    }
+  }
+]

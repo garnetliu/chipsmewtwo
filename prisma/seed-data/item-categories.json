@@ -1,0 +1,380 @@
+[
+  {
+    "slug": "all-machines",
+    "names": {
+      "en": "All machines",
+      "fr": "Toutes les capsules"
+    }
+  },
+  {
+    "slug": "all-mail",
+    "names": {
+      "en": "All mail",
+      "fr": "Toutes les lettres"
+    }
+  },
+  {
+    "slug": "apricorn-balls",
+    "names": {
+      "en": "Apricorn balls",
+      "fr": "Noigrume balls"
+    }
+  },
+  {
+    "slug": "apricorn-box",
+    "names": {
+      "en": "Apricorn box",
+      "fr": "Boîte Noigrume"
+    }
+  },
+  {
+    "slug": "bad-held-items",
+    "names": {
+      "en": "Bad held items",
+      "fr": "Mauvais objets tenus"
+    }
+  },
+  {
+    "slug": "baking-only",
+    "names": {
+      "en": "Baking only",
+      "fr": "Cuisine uniquement"
+    }
+  },
+  {
+    "slug": "catching-bonus",
+    "names": {
+      "en": "Catching bonus",
+      "fr": "Bonus de capture"
+    }
+  },
+  {
+    "slug": "choice",
+    "names": {
+      "en": "Choice",
+      "fr": "Choix"
+    }
+  },
+  {
+    "slug": "collectibles",
+    "names": {
+      "en": "Collectibles",
+      "fr": "Monnaie d'échange"
+    }
+  },
+  {
+    "slug": "curry-ingredients",
+    "names": {
+      "en": "Curry ingredients",
+      "fr": "Ingrédients pour le curry"
+    }
+  },
+  {
+    "slug": "data-cards",
+    "names": {
+      "en": "Data cards",
+      "fr": "Cartes Mémo"
+    }
+  },
+  {
+    "slug": "dex-completion",
+    "names": {
+      "en": "Dex completion",
+      "fr": "Remplissage du Dex"
+    }
+  },
+  {
+    "slug": "dynamax-crystals",
+    "names": {
+      "en": "Dynamax crystals",
+      "fr": "Cristaux Géants"
+    }
+  },
+  {
+    "slug": "effort-drop",
+    "names": {
+      "en": "Effort drop",
+      "fr": "Diminution d'effort"
+    }
+  },
+  {
+    "slug": "effort-training",
+    "names": {
+      "en": "Effort training",
+      "fr": "Augmentation d'effort"
+    }
+  },
+  {
+    "slug": "event-items",
+    "names": {
+      "en": "Event items",
+      "fr": "Objets d’événement"
+    }
+  },
+  {
+    "slug": "evolution",
+    "names": {
+      "en": "Evolution",
+      "fr": "Évolution"
+    }
+  },
+  {
+    "slug": "flutes",
+    "names": {
+      "en": "Flutes",
+      "fr": "Flûtes"
+    }
+  },
+  {
+    "slug": "gameplay",
+    "names": {
+      "en": "Gameplay",
+      "fr": "Gameplay"
+    }
+  },
+  {
+    "slug": "healing",
+    "names": {
+      "en": "Healing",
+      "fr": "Soin"
+    }
+  },
+  {
+    "slug": "held-items",
+    "names": {
+      "en": "Held items",
+      "fr": "Objets tenus"
+    }
+  },
+  {
+    "slug": "in-a-pinch",
+    "names": {
+      "en": "In a pinch",
+      "fr": "En cas de besoin"
+    }
+  },
+  {
+    "slug": "jewels",
+    "names": {
+      "en": "Jewels",
+      "fr": "Joyaux"
+    }
+  },
+  {
+    "slug": "loot",
+    "names": {
+      "en": "Loot",
+      "fr": "Butin"
+    }
+  },
+  {
+    "slug": "medicine",
+    "names": {
+      "en": "Medicine",
+      "fr": "Médicament"
+    }
+  },
+  {
+    "slug": "mega-stones",
+    "names": {
+      "en": "Mega Stones",
+      "fr": "Méga-Gemmes"
+    }
+  },
+  {
+    "slug": "memories",
+    "names": {
+      "en": "Memories",
+      "fr": "ROMs"
+    }
+  },
+  {
+    "slug": "miracle-shooter",
+    "names": {
+      "en": "Miracle shooter",
+      "fr": "Shooter Miracle"
+    }
+  },
+  {
+    "slug": "mulch",
+    "names": {
+      "en": "Mulch",
+      "fr": "Engrais"
+    }
+  },
+  {
+    "slug": "nature-mints",
+    "names": {
+      "en": "Nature mints",
+      "fr": "Aromates"
+    }
+  },
+  {
+    "slug": "other",
+    "names": {
+      "en": "Other",
+      "fr": "Autre"
+    }
+  },
+  {
+    "slug": "picky-healing",
+    "names": {
+      "en": "Picky healing",
+      "fr": "Soin difficile"
+    }
+  },
+  {
+    "slug": "picnic",
+    "names": {
+      "en": "Picnic",
+      "fr": "Pique-nique"
+    }
+  },
+  {
+    "slug": "plates",
+    "names": {
+      "en": "Plates",
+      "fr": "Plaques"
+    }
+  },
+  {
+    "slug": "plot-advancement",
+    "names": {
+      "en": "Plot advancement",
+      "fr": "Avancement dans le jeu"
+    }
+  },
+  {
+    "slug": "pp-recovery",
+    "names": {
+      "en": "PP recovery",
+      "fr": "Récupération de PP"
+    }
+  },
+  {
+    "slug": "revival",
+    "names": {
+      "en": "Revival",
+      "fr": "Renaissance"
+    }
+  },
+  {
+    "slug": "sandwich-ingredients",
+    "names": {
+      "en": "Sandwich ingredients",
+      "fr": "Ingrédients pour les sandwichs"
+    }
+  },
+  {
+    "slug": "scarves",
+    "names": {
+      "en": "Scarves",
+      "fr": "Foulards"
+    }
+  },
+  {
+    "slug": "special-balls",
+    "names": {
+      "en": "Special balls",
+      "fr": "Balls spéciales"
+    }
+  },
+  {
+    "slug": "species-candies",
+    "names": {
+      "en": "Species candies",
+      "fr": "Bonbons propres à une espèce"
+    }
+  },
+  {
+    "slug": "species-specific",
+    "names": {
+      "en": "Species-specific",
+      "fr": "Propre à une espèce"
+    }
+  },
+  {
+    "slug": "spelunking",
+    "names": {
+      "en": "Spelunking",
+      "fr": "Spéléologie"
+    }
+  },
+  {
+    "slug": "standard-balls",
+    "names": {
+      "en": "Standard balls",
+      "fr": "Balls standard"
+    }
+  },
+  {
+    "slug": "stat-boosts",
+    "names": {
+      "en": "Stat boosts",
+      "fr": "Augmentations de stats"
+    }
+  },
+  {
+    "slug": "status-cures",
+    "names": {
+      "en": "Status cures",
+      "fr": "Soin de statut"
+    }
+  },
+  {
+    "slug": "tera-shard",
+    "names": {
+      "en": "Tera Shard",
+      "fr": "Téra-Éclat"
+    }
+  },
+  {
+    "slug": "tm-materials",
+    "names": {
+      "en": "TM materials",
+      "fr": "Échantillons"
+    }
+  },
+  {
+    "slug": "training",
+    "names": {
+      "en": "Training",
+      "fr": "Entraînement"
+    }
+  },
+  {
+    "slug": "type-enhancement",
+    "names": {
+      "en": "Type enhancement",
+      "fr": "Amélioration de type"
+    }
+  },
+  {
+    "slug": "type-protection",
+    "names": {
+      "en": "Type protection",
+      "fr": "Protection à un type"
+    }
+  },
+  {
+    "slug": "unused",
+    "names": {
+      "en": "Unused",
+      "fr": "Non utilisé"
+    }
+  },
+  {
+    "slug": "vitamins",
+    "names": {
+      "en": "Vitamins",
+      "fr": "Vitamines"
+    }
+  },
+  {
+    "slug": "z-crystals",
+    "names": {
+      "en": "Z-Crystals",
+      "fr": "Cristaux Z"
+    }
+  }
+]

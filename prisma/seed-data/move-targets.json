@@ -1,0 +1,125 @@
+[
+  {
+    "slug": "all-allies",
+    "names": {
+      "en": "All allies",
+      "fr": "Tous les alliés"
+    }
+  },
+  {
+    "slug": "all-opponents",
+    "names": {
+      "en": "All opponents",
+      "fr": "Tous les adversaires",
+      "de": "Alle Gegner"
+    }
+  },
+  {
+    "slug": "all-other-pokemon",
+    "names": {
+      "en": "All other Pokémon",
+      "fr": "Tous les autres Pokémon",
+      "de": "Alle anderen Pokémon"
+    }
+  },
+  {
+    "slug": "all-pokemon",
+    "names": {
+      "en": "All Pokémon",
+      "fr": "Tous les Pokémon",
+      "de": "Jedes Pokémon"
+    }
+  },
+  {
+    "slug": "ally",
+    "names": {
+      "en": "Ally",
+      "fr": "Allié",
+      "de": "Partner"
+    }
+  },
+  {
+    "slug": "entire-field",
+    "names": {
+      "en": "Entire field",
+      "fr": "Terrain entier",
+      "de": "Komplette Feld"
+    }
+  },
+  {
+    "slug": "fainting-pokemon",
+    "names": {}
+  },
+  {
+    "slug": "opponents-field",
+    "names": {
+      "en": "Opponent’s field",
+      "fr": "Terrain de l’adversaire",
+      "de": "Gegnerisches Feld"
+    }
+  },
+  {
+    "slug": "random-opponent",
+    "names": {
+      "en": "Random opponent",
+      "fr": "Adversaire aléatoire",
+      "de": "Zufälliger Gegner"
+    }
+  },
+  {
+    "slug": "selected-pokemon",
+    "names": {
+      "en": "Selected Pokémon",
+      "fr": "Pokémon sélectionné",
+      "de": "Ausgewähltes Pokémon"
+    }
+  },
+  {
+    "slug": "selected-pokemon-me-first",
+    "names": {
+      "en": "Selected Pokémon",
+      "fr": "Pokémon sélectionné",
+      "de": "Ausgewähltes Pokémon"
+    }
+  },
+  {
+    "slug": "specific-move",
+    "names": {
+      "en": "Specific move",
+      "fr": "Capacité spécifique",
+      "de": "Spezifische Fähigkeit"
+    }
+  },
+  {
+    "slug": "user",
+    "names": {
+      "en": "User",
+      "fr": "Lanceur",
+      "de": "Anwender"
+    }
+  },
+  {
+    "slug": "user-and-allies",
+    "names": {
+      "en": "User and allies",
+      "fr": "Lanceur et alliés",
+      "de": "Anwender und Partner"
+    }
+  },
+  {
+    "slug": "user-or-ally",
+    "names": {
+      "en": "User or ally",
+      "fr": "Lanceur ou allié",
+      "de": "Anwender oder Partner"
+    }
+  },
+  {
+    "slug": "users-field",
+    "names": {
+      "en": "User’s field",
+      "fr": "Côté du lanceur",
+      "de": "Seite des Anwenders"
+    }
+  }
+]

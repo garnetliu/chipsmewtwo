@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "ailment",
+    "names": {}
+  },
+  {
+    "slug": "damage",
+    "names": {}
+  },
+  {
+    "slug": "damage-ailment",
+    "names": {}
+  },
+  {
+    "slug": "damage-heal",
+    "names": {}
+  },
+  {
+    "slug": "damage-lower",
+    "names": {}
+  },
+  {
+    "slug": "damage-raise",
+    "names": {}
+  },
+  {
+    "slug": "field-effect",
+    "names": {}
+  },
+  {
+    "slug": "force-switch",
+    "names": {}
+  },
+  {
+    "slug": "heal",
+    "names": {}
+  },
+  {
+    "slug": "net-good-stats",
+    "names": {}
+  },
+  {
+    "slug": "ohko",
+    "names": {}
+  },
+  {
+    "slug": "swagger",
+    "names": {}
+  },
+  {
+    "slug": "unique",
+    "names": {}
+  },
+  {
+    "slug": "whole-field-effect",
+    "names": {}
+  }
+]

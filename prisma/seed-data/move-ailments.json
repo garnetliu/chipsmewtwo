@@ -1,0 +1,179 @@
+[
+  {
+    "slug": "burn",
+    "names": {
+      "en": "Burn",
+      "fr": "Brûlure",
+      "es": "Quemar"
+    }
+  },
+  {
+    "slug": "confusion",
+    "names": {
+      "en": "Confusion",
+      "fr": "Confusion",
+      "es": "Confundir"
+    }
+  },
+  {
+    "slug": "disable",
+    "names": {
+      "en": "Disable",
+      "fr": "Entrave",
+      "es": "Anulación"
+    }
+  },
+  {
+    "slug": "embargo",
+    "names": {
+      "en": "Embargo",
+      "fr": "Embargo",
+      "es": "Embargo"
+    }
+  },
+  {
+    "slug": "freeze",
+    "names": {
+      "en": "Freeze",
+      "fr": "Gel",
+      "es": "Congelar"
+    }
+  },
+  {
+    "slug": "heal-block",
+    "names": {
+      "en": "Heal Block",
+      "fr": "Anti-Soin",
+      "es": "Anticura"
+    }
+  },
+  {
+    "slug": "infatuation",
+    "names": {
+      "en": "Infatuation",
+      "fr": "Attraction",
+      "es": "Enamorar"
+    }
+  },
+  {
+    "slug": "ingrain",
+    "names": {
+      "en": "Ingrain",
+      "fr": "Racines",
+      "es": "Arraigo"
+    }
+  },
+  {
+    "slug": "leech-seed",
+    "names": {
+      "en": "Leech Seed",
+      "fr": "Vampigraine",
+      "es": "Drenadoras"
+    }
+  },
+  {
+    "slug": "nightmare",
+    "names": {
+      "en": "Nightmare",
+      "fr": "Cauchemar",
+      "es": "Maldito"
+    }
+  },
+  {
+    "slug": "no-type-immunity",
+    "names": {
+      "en": "No type immunity",
+      "fr": "Aucune immunité aux types"
+    }
+  },
+  {
+    "slug": "none",
+    "names": {
+      "en": "none",
+      "fr": "Aucun",
+      "es": "ninguno"
+    }
+  },
+  {
+    "slug": "paralysis",
+    "names": {
+      "en": "Paralysis",
+      "fr": "Paralysie",
+      "es": "Parálisis"
+    }
+  },
+  {
+    "slug": "perish-song",
+    "names": {
+      "en": "Perish Song",
+      "fr": "Requiem",
+      "es": "Canto mortal"
+    }
+  },
+  {
+    "slug": "poison",
+    "names": {
+      "en": "Poison",
+      "fr": "Empoisonnement",
+      "es": "Envenenar"
+    }
+  },
+  {
+    "slug": "protect",
+    "names": {}
+  },
+  {
+    "slug": "silence",
+    "names": {
+      "en": "Silence",
+      "fr": "Silence",
+      "es": "Silenciado"
+    }
+  },
+  {
+    "slug": "sleep",
+    "names": {
+      "en": "Sleep",
+      "fr": "Sommeil",
+      "es": "Dormir"
+    }
+  },
+  {
+    "slug": "tar-shot",
+    "names": {
+      "en": "Tar shot",
+      "fr": "Vulnérable au feu"
+    }
+  },
+  {
+    "slug": "torment",
+    "names": {
+      "en": "Torment",
+      "fr": "Tourmente",
+      "es": "Tormento"
+    }
+  },
+  {
+    "slug": "trap",
+    "names": {
+      "en": "Trap",
+      "fr": "Piège",
+      "es": "Atrapado"
+    }
+  },
+  {
+    "slug": "unknown",
+    "names": {
+      "en": "????",
+      "fr": "????"
+    }
+  },
+  {
+    "slug": "yawn",
+    "names": {
+      "en": "Yawn",
+      "fr": "Bâillement",
+      "es": "Bostezo"
+    }
+  }
+]

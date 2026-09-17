@@ -14,6 +14,13 @@
     }
   },
   {
+    "slug": "in-battle-level-up",
+    "names": {
+      "en": "Level up in battle",
+      "fr": "Montée de niveau en combat"
+    }
+  },
+  {
     "slug": "level-up",
     "names": {
       "en": "Level up",
@@ -22,10 +29,10 @@
     }
   },
   {
-    "slug": "other",
+    "slug": "meltan-candies",
     "names": {
-      "en": "Other",
-      "fr": "Autre"
+      "en": "Feed 400 Meltan Candies in Pokémon GO",
+      "fr": "Donner 400 Bonbons Meltan dans Pokémon GO"
     }
   },
   {
@@ -98,6 +105,13 @@
       "en": "Trade or Linking Cord",
       "fr": "Échange",
       "de": "Tausch oder Verbindungsschnur"
+    }
+  },
+  {
+    "slug": "unclassified",
+    "names": {
+      "en": "Unclassified",
+      "fr": "Non classé"
     }
   },
   {
