@@ -433,6 +433,123 @@ async function seedEvolutionTriggers(manual: SeedOverrides["evolutionTriggers"])
   console.log(`进化触发方式: ${triggers.length} 行`);
 }
 
+/**
+ * 性格，25 种。译名数据源自己有中文，不用 overrides
+ */
+async function seedNatures() {
+  const natures = read("natures");
+  for (const n of natures) {
+    const data = {
+      increasedStat: n.increasedStat,
+      decreasedStat: n.decreasedStat,
+      likesFlavor: n.likesFlavor,
+      hatesFlavor: n.hatesFlavor,
+    };
+    await prisma.nature.upsert({
+      where: { slug: n.slug },
+      create: { slug: n.slug, ...data },
+      update: data,
+    });
+    for (const { languageCode, value: name } of localized(n.names)) {
+      await prisma.natureI18n.upsert({
+        where: { natureSlug_languageCode: { natureSlug: n.slug, languageCode } },
+        create: { natureSlug: n.slug, languageCode, name },
+        update: { name },
+      });
+    }
+  }
+  console.log(`性格: ${natures.length} 行`);
+}
+
+/**
+ * 四张只有 slug 和译名的字典表。
+ *
+ * 数据源一条中文都不给（招式元分类连 names 数组都是空的），译名全在 overrides.json。
+ * 四张表结构一样但 Prisma 的模型各是各的类型，没法用一个泛型函数带过，
+ * 所以把「读快照 + 叠人工译名」这段抽出来，写库那两行各写各的
+ */
+function dictionaryRows(
+  name: "item-categories" | "move-targets" | "move-ailments" | "move-meta-categories",
+  manual: Record<string, { names?: Localized }> | undefined,
+) {
+  return read(name).map((row) => ({
+    slug: row.slug,
+    names: { ...row.names, ...manual?.[row.slug]?.names },
+  }));
+}
+
+async function seedItemCategories(manual: SeedOverrides["itemCategories"]) {
+  const rows = dictionaryRows("item-categories", manual);
+  for (const r of rows) {
+    await prisma.itemCategory.upsert({
+      where: { slug: r.slug },
+      create: { slug: r.slug },
+      update: {},
+    });
+    for (const { languageCode, value: name } of localized(r.names)) {
+      await prisma.itemCategoryI18n.upsert({
+        where: { categorySlug_languageCode: { categorySlug: r.slug, languageCode } },
+        create: { categorySlug: r.slug, languageCode, name },
+        update: { name },
+      });
+    }
+  }
+  console.log(`道具分类: ${rows.length} 行`);
+}
+
+async function seedMoveDictionaries(manual: SeedOverrides) {
+  const targets = dictionaryRows("move-targets", manual.moveTargets);
+  for (const r of targets) {
+    await prisma.moveTarget.upsert({
+      where: { slug: r.slug },
+      create: { slug: r.slug },
+      update: {},
+    });
+    for (const { languageCode, value: name } of localized(r.names)) {
+      await prisma.moveTargetI18n.upsert({
+        where: { targetSlug_languageCode: { targetSlug: r.slug, languageCode } },
+        create: { targetSlug: r.slug, languageCode, name },
+        update: { name },
+      });
+    }
+  }
+
+  const ailments = dictionaryRows("move-ailments", manual.moveAilments);
+  for (const r of ailments) {
+    await prisma.moveAilment.upsert({
+      where: { slug: r.slug },
+      create: { slug: r.slug },
+      update: {},
+    });
+    for (const { languageCode, value: name } of localized(r.names)) {
+      await prisma.moveAilmentI18n.upsert({
+        where: { ailmentSlug_languageCode: { ailmentSlug: r.slug, languageCode } },
+        create: { ailmentSlug: r.slug, languageCode, name },
+        update: { name },
+      });
+    }
+  }
+
+  const categories = dictionaryRows("move-meta-categories", manual.moveMetaCategories);
+  for (const r of categories) {
+    await prisma.moveMetaCategory.upsert({
+      where: { slug: r.slug },
+      create: { slug: r.slug },
+      update: {},
+    });
+    for (const { languageCode, value: name } of localized(r.names)) {
+      await prisma.moveMetaCategoryI18n.upsert({
+        where: { metaCategorySlug_languageCode: { metaCategorySlug: r.slug, languageCode } },
+        create: { metaCategorySlug: r.slug, languageCode, name },
+        update: { name },
+      });
+    }
+  }
+  console.log(
+    `招式字典: 目标 ${targets.length}、异常状态 ${ailments.length}、元分类 ${categories.length} 行`,
+  );
+}
+
 /** 图鉴。要先建它才能写 pokedex_group，所以排在版本组之前。
  *  地区编号跳过 —— 那是 PokedexNumber，得先有 pokemon 表数据 */
 async function seedPokedexes(regionIds: Map<string, number>, manual: SeedOverrides["pokedexes"]) {
@@ -596,8 +713,8 @@ async function seedItems(groupIds: Map<string, number>) {
   for (const item of items) {
     const saved = await prisma.item.upsert({
       where: { slug: item.slug },
-      create: { slug: item.slug, imageName: item.imageName },
-      update: { imageName: item.imageName },
+      create: { slug: item.slug, imageName: item.imageName, categorySlug: item.categorySlug },
+      update: { imageName: item.imageName, categorySlug: item.categorySlug },
     });
     // 邮件、超级石那批数据源一直没中文名，用百科列表页的补
     for (const { languageCode, value: name } of localized({
@@ -712,10 +829,34 @@ async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, num
 
   const ids = new Map<string, number>();
   for (const m of moves) {
+    // 标记位来自百科，数据源没有；meta 那一坨数据源不分世代，直接挂在招式上
+    const flags = wiki.get(m.slug)?.flags ?? {};
+    const data = {
+      priority: m.priority,
+      targetSlug: m.meta.targetSlug,
+      ailmentSlug: m.meta.ailmentSlug,
+      metaCategorySlug: m.meta.metaCategorySlug,
+      minHits: m.meta.minHits,
+      maxHits: m.meta.maxHits,
+      minTurns: m.meta.minTurns,
+      maxTurns: m.meta.maxTurns,
+      drain: m.meta.drain,
+      healing: m.meta.healing,
+      critRate: m.meta.critRate,
+      ailmentChance: m.meta.ailmentChance,
+      flinchChance: m.meta.flinchChance,
+      statChance: m.meta.statChance,
+      makesContact: flags.makesContact ?? null,
+      blockedByProtect: flags.blockedByProtect ?? null,
+      reflectedByMagicCoat: flags.reflectedByMagicCoat ?? null,
+      stolenBySnatch: flags.stolenBySnatch ?? null,
+      copiedByMirrorMove: flags.copiedByMirrorMove ?? null,
+      triggersKingsRock: flags.triggersKingsRock ?? null,
+    };
     const saved = await prisma.move.upsert({
       where: { slug: m.slug },
-      create: { slug: m.slug },
-      update: {},
+      create: { slug: m.slug, ...data },
+      update: data,
     });
     ids.set(m.slug, saved.id);
 
@@ -796,10 +937,31 @@ async function seedPokemon(
   const descriptions = new Map(read("pokemon-descriptions").map((d) => [d.slug, d.descriptions]));
   const chinese = wikiDescriptions();
 
+  // 传说标记会变（数据源修订过分类），所以不能只靠 skipDuplicates 建一次就不管
   await prisma.pokemon.createMany({
-    data: rows.map((p) => ({ id: p.id, slug: p.slug })),
+    data: rows.map((p) => ({
+      id: p.id,
+      slug: p.slug,
+      isBaby: p.isBaby,
+      isLegendary: p.isLegendary,
+      isMythical: p.isMythical,
+    })),
     skipDuplicates: true,
   });
+  // 先清零再按标记批量置位，四条 SQL —— 逐行 update 要打一千多次库。
+  // 清零这一步不能省：数据源修订过分类，之前标成传说的可能已经不是了
+  await prisma.pokemon.updateMany({
+    data: { isBaby: false, isLegendary: false, isMythical: false },
+  });
+  for (const [flag, ids] of [
+    ["isBaby", rows.filter((p) => p.isBaby).map((p) => p.id)],
+    ["isLegendary", rows.filter((p) => p.isLegendary).map((p) => p.id)],
+    ["isMythical", rows.filter((p) => p.isMythical).map((p) => p.id)],
+  ] as const) {
+    if (ids.length) {
+      await prisma.pokemon.updateMany({ where: { id: { in: ids } }, data: { [flag]: true } });
+    }
+  }
   // 整表重建而不是 createMany + skipDuplicates：分类要拿百科的补上，
   // 跳过重复的话库里那些空分类永远也更新不到
   let genusFromWiki = 0;
@@ -1349,6 +1511,9 @@ async function main() {
   const colorIds = await seedColors();
   await seedMoveLearnMethods(manual.moveLearnMethods);
   await seedEvolutionTriggers(manual.evolutionTriggers);
+  await seedNatures();
+  await seedItemCategories(manual.itemCategories);
+  await seedMoveDictionaries(manual);
   const pokedexIds = await seedPokedexes(regionIds, manual.pokedexes);
   const groupIds = await seedGroups(regionIds, pokedexIds, manual.groups);
   const versionIds = await seedVersions(groupIds, manual.versions);

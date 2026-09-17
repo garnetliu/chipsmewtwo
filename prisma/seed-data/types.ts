@@ -80,6 +80,27 @@ export type ColorSnapshot = {
   names: Localized;
 };
 
+/** 只有 slug 和译名的字典表。道具分类、招式目标、异常状态那几张都是这个形状 */
+export type NamedSnapshot = {
+  slug: string;
+  names: Localized;
+};
+
+/**
+ * 性格，25 种。
+ *
+ * 一项能力 ×1.1、另一项 ×0.9；增减同一项的那 5 种（勤奋、坦率、害羞、认真、浮躁）
+ * 等于没有加成，四个字段都是 null
+ */
+export type NatureSnapshot = {
+  slug: string;
+  increasedStat: "ATTACK" | "DEFENSE" | "SPECIAL_ATTACK" | "SPECIAL_DEFENSE" | "SPEED" | null;
+  decreasedStat: "ATTACK" | "DEFENSE" | "SPECIAL_ATTACK" | "SPECIAL_DEFENSE" | "SPEED" | null;
+  likesFlavor: "SPICY" | "DRY" | "SWEET" | "BITTER" | "SOUR" | null;
+  hatesFlavor: "SPICY" | "DRY" | "SWEET" | "BITTER" | "SOUR" | null;
+  names: Localized;
+};
+
 export type MoveLearnMethodSnapshot = {
   slug: string;
   names: Localized;
@@ -93,6 +114,8 @@ export type EvolutionTriggerSnapshot = {
 export type ItemSnapshot = {
   slug: string;
   names: Localized;
+  /** 在包包哪个口袋、做什么用。列表页靠它筛选 */
+  categorySlug: string | null;
   /** 图片文件名，例如 "thunder-stone.png"。数据源没收录图时是 null */
   imageName: string | null;
   /** 机制说明（effect_entries），只有 en / fr */
@@ -123,10 +146,31 @@ export type MoveGenerationSnapshot = {
   pp: number | null;
 };
 
+/** 招式的 meta，数据源统一塞在一个对象里，不分世代 */
+export type MoveMetaSnapshot = {
+  targetSlug: string | null;
+  ailmentSlug: string | null;
+  metaCategorySlug: string | null;
+  minHits: number | null;
+  maxHits: number | null;
+  minTurns: number | null;
+  maxTurns: number | null;
+  /** 百分数。正数吸血，负数是反作用力 */
+  drain: number | null;
+  healing: number | null;
+  critRate: number | null;
+  ailmentChance: number | null;
+  flinchChance: number | null;
+  statChance: number | null;
+};
+
 export type MoveSnapshot = {
   slug: string;
   introducedInGenerationId: number;
   names: Localized;
+  /** 出招顺序。电光一闪 +1、报仇 -3 */
+  priority: number;
+  meta: MoveMetaSnapshot;
   /** 每代一份，key 是世代号字符串。数值跨世代会变，压成一行就把这个信息丢了 */
   generations: Record<string, MoveGenerationSnapshot>;
   /** 机制说明，只有 en / fr。中文见 wiki-moves.json */
@@ -280,7 +324,12 @@ export type SeedData = {
   "move-learn-methods": MoveLearnMethodSnapshot[];
   "evolution-triggers": EvolutionTriggerSnapshot[];
   items: ItemSnapshot[];
+  "item-categories": NamedSnapshot[];
   abilities: AbilitySnapshot[];
+  natures: NatureSnapshot[];
+  "move-targets": NamedSnapshot[];
+  "move-ailments": NamedSnapshot[];
+  "move-meta-categories": NamedSnapshot[];
   moves: MoveSnapshot[];
   "z-moves": ZMoveSnapshot[];
   "max-moves": MaxMoveSnapshot[];
@@ -323,6 +372,11 @@ export type SeedOverrides = {
   versions?: Record<string, { names?: Localized }>;
   /** 外传的奥雷地区同理 */
   regions?: Record<string, { names?: Localized }>;
+  /** 下面四张字典表数据源一条中文都不给，全靠人工写 */
+  itemCategories?: Record<string, { names?: Localized }>;
+  moveTargets?: Record<string, { names?: Localized }>;
+  moveAilments?: Record<string, { names?: Localized }>;
+  moveMetaCategories?: Record<string, { names?: Localized }>;
 };
 
 // ── 神奇宝贝百科的快照 ────────────────────────────────────────
@@ -353,10 +407,25 @@ export type WikiSnapshot<T> = {
  *
  * flavors 是中文游戏文案，补 PokeAPI 缺的第九世代 —— 那边中文只到剑盾
  */
+/**
+ * 招式标记位，数据源完全没有，只有百科的招式信息框里有。
+ * 抓不到的字段留空
+ */
+export type MoveFlags = {
+  makesContact?: boolean;
+  blockedByProtect?: boolean;
+  reflectedByMagicCoat?: boolean;
+  stolenBySnatch?: boolean;
+  copiedByMirrorMove?: boolean;
+  triggersKingsRock?: boolean;
+};
+
 export type WikiEffectSnapshot = {
   slug: string;
   effect: Localized;
   flavors: FlavorsByGroup;
+  /** 只有招式有 */
+  flags?: MoveFlags;
   /**
    * 译名，只在数据源没给中文名时才有。
    * 邮件、超级石那批数据源一直空着，百科的列表页有

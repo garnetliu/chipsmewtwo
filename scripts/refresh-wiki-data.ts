@@ -21,6 +21,7 @@ import type { LanguageCode } from "@/lib/pokemon/language";
 import {
   type FlavorsByGroup,
   type Localized,
+  type MoveFlags,
   SEED_DATA_DIR,
   type WikiData,
   type WikiEffectSnapshot,
@@ -168,6 +169,15 @@ async function convertVariant(
 }
 
 /**
+ * 请求时给的标题 → 百科上的真实页名。
+ *
+ * query 接口能靠 converttitles 和 redirects 找到简繁不同写法的页面，
+ * parse 接口没有 converttitles 这个参数 —— 招式页在百科存的是繁体名
+ * （「衝岩（招式）」），拿简体名去 parse 直接报页面不存在
+ */
+const RESOLVED_TITLES = new Map<string, string>();
+
+/**
  * 批量取页面源码。
  *
  * redirects=1 让重定向自动跟过去 —— 百科上「茂盛」是指向「茂盛（特性）」的
@@ -225,7 +235,11 @@ async function fetchPages(titles: string[]): Promise<Map<string, string>> {
         current = next;
       }
       const content = byTitle.get(current);
-      if (content) out.set(title, content);
+      if (content) {
+        out.set(title, content);
+        // parse 接口不认 converttitles，简繁标题得靠这里解析出的真名去查
+        RESOLVED_TITLES.set(title, current);
+      }
     }
 
     if (i % (PAGE_BATCH * 10) === 0) {
@@ -264,7 +278,7 @@ async function fetchSectionHtml(title: string, variant: string): Promise<string 
   type Response = { parse?: { text: string }; error?: { code: string } };
   const data = await wiki<Response>({
     action: "parse",
-    page: title,
+    page: RESOLVED_TITLES.get(title) ?? title,
     prop: "text",
     section: "1",
     disabletoc: "1",
@@ -878,14 +892,63 @@ function parseStateBoxes(source: string, unknownAbbr: Set<string>): FlavorsByGro
 /**
  * 招式列表页一条是
  * {{Movelist/gen/ex|53|喷射火焰|かえんほうしゃ|Flamethrower|火|特殊|90|100|15}}。
- * 模板名有 /gen/ex 和几个变体，统一按 Movelist/ 开头匹配
+ *
+ * 模板名写死 gen/ex 不用 [a-z/]* —— 每个世代前面有一行
+ * {{Movelist/gen/exheader|关都}}，宽松匹配会把 exheader 和紧跟其后的
+ * 第一条招式连着吃掉，每代的头一个招式（拍击、羽栖）就这么丢了。
+ *
+ * 认条目靠英文名不靠编号：专属Ｚ招式那一段两边的编号是错开的
+ * （百科 725 是亲密无间大乱揍，数据源 725 是月华飞溅落灵霄），
+ * 按编号认会把中文说明挂到隔壁招式上
  */
-function moveIndex(source: string): Map<number, string> {
-  const out = new Map<number, string>();
-  for (const m of source.matchAll(/\{\{\s*Movelist\/[a-z/]*\s*\|([^|]*)\|([^|]*)\|/gi)) {
-    const id = Number(m[1]!.trim());
+function moveIndex(source: string): { byId: Map<number, string>; bySlug: Map<string, string> } {
+  const byId = new Map<number, string>();
+  const bySlug = new Map<string, string>();
+  // 编号 | 中文名 | 日文名 | 英文名 —— 英文名可能裹在 {{tt|…|注释}} 里
+  const line =
+    /\{\{\s*Movelist\/gen\/ex\s*\|\s*(\d+)\s*\|([^|]*)\|([^|]*)\|((?:[^|{}]|\{\{[^{}]*\}\})*)\|/gi;
+  for (const m of source.matchAll(line)) {
+    const id = Number(m[1]);
     const name = m[2]!.trim();
-    if (Number.isFinite(id) && name && !out.has(id)) out.set(id, name);
+    const en = m[4]!.replace(/\{\{\s*tt\s*\|([^|{}]*)\|[^{}]*\}\}/gi, "$1").trim();
+    if (!name) continue;
+    if (Number.isFinite(id) && !byId.has(id)) byId.set(id, name);
+    if (en && !bySlug.has(toSlug(en))) bySlug.set(toSlug(en), name);
+  }
+  return { byId, bySlug };
+}
+
+/**
+ * 招式标记位，招式信息框里的六个 yes/no。
+ *
+ * 数据源完全没有这组数据，可它们是对战判定的开关：接触与否决定静电、
+ * 粗糙皮肤那些特性触不触发，能不能被守住挡、被魔法反射弹回、被抢夺偷走，
+ * 以及携带王者之证时能不能额外触发畏缩
+ */
+function parseMoveFlags(source: string): MoveFlags {
+  const body = templateBody(source, "招式信息框");
+  if (!body) return {};
+
+  const args = namedArgs(body);
+  const flag = (key: string): boolean | undefined => {
+    const value = args.get(key)?.trim().toLowerCase();
+    if (value === "yes" || value === "y") return true;
+    if (value === "no" || value === "n") return false;
+    return undefined;
+  };
+
+  const out: MoveFlags = {};
+  const pairs: [keyof MoveFlags, string][] = [
+    ["makesContact", "touches"],
+    ["blockedByProtect", "protect"],
+    ["reflectedByMagicCoat", "magiccoat"],
+    ["stolenBySnatch", "snatch"],
+    ["copiedByMirrorMove", "mirrormove"],
+    ["triggersKingsRock", "kingsrock"],
+  ];
+  for (const [key, param] of pairs) {
+    const value = flag(param);
+    if (value !== undefined) out[key] = value;
   }
   return out;
 }
@@ -1157,32 +1220,45 @@ async function moves(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   if (!indexPage) throw new Error("读不到「招式列表」，百科那边可能改了页名");
 
   const index = moveIndex(indexPage);
-  console.log(`  招式索引: ${index.size} 条`);
+  console.log(`  招式索引: ${index.byId.size} 条（英文名索引 ${index.bySlug.size} 条）`);
 
   const titleOf = new Map<string, string>();
   const templateOf = new Map<string, string>();
   const unmatched = new Set<string>();
-  for (const [id, name] of index) {
+  // 先按英文名认，认不到的再退回编号
+  for (const slug of slugs.values()) {
+    const name = index.bySlug.get(slug);
+    if (!name) continue;
+    titleOf.set(slug, `${name}（招式）`);
+    templateOf.set(slug, `Template:${name}`);
+  }
+  for (const [id, name] of index.byId) {
     const slug = slugs.get(id);
     if (!slug) {
       unmatched.add(`${id} ${name}`);
       continue;
     }
+    if (titleOf.has(slug)) continue;
     titleOf.set(slug, `${name}（招式）`);
-    // 游戏文案不在招式页上，在同名模板页的 #switch 里
     templateOf.set(slug, `Template:${name}`);
   }
 
   const templates = await fetchPages([...templateOf.values()]);
+  // 招式页的源码用来读标记位，顺带把繁体页名解析进 RESOLVED_TITLES ——
+  // 后面 fillEffects 走的 parse 接口不认 converttitles，得靠这份映射
+  const pages = await fetchPages([...titleOf.values()]);
 
   const unknownAbbr = new Set<string>();
   const rows: WikiEffectSnapshot[] = [];
   for (const slug of titleOf.keys()) {
     const template = templates.get(templateOf.get(slug)!);
+    const page = pages.get(titleOf.get(slug)!);
+    const flags = page ? parseMoveFlags(page) : {};
     rows.push({
       slug,
       effect: {},
       flavors: template ? parseMoveTemplate(template, unknownAbbr) : {},
+      ...(Object.keys(flags).length ? { flags } : {}),
     });
   }
 
@@ -1192,7 +1268,9 @@ async function moves(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   for (const row of rows) row.effect = effects.get(row.slug) ?? {};
 
   // 两样都没抓到的条目不写进快照，留在 unmatched 里让人看见
-  const kept = rows.filter((r) => Object.keys(r.effect).length || Object.keys(r.flavors).length);
+  const kept = rows.filter(
+    (r) => Object.keys(r.effect).length || Object.keys(r.flavors).length || r.flags,
+  );
   for (const row of rows) {
     if (!kept.includes(row)) unmatched.add(`${row.slug} ${titleOf.get(row.slug)}`);
   }
@@ -1202,8 +1280,10 @@ async function moves(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   }
   const withEffect = kept.filter((r) => Object.keys(r.effect).length).length;
   const withFlavor = kept.filter((r) => Object.keys(r.flavors).length).length;
+  const withFlags = kept.filter((r) => r.flags).length;
   console.log(
-    `  招式: ${kept.length} 条，中文机制说明 ${withEffect} 条，游戏文案 ${withFlavor} 条`,
+    `  招式: ${kept.length} 条，中文机制说明 ${withEffect} 条，` +
+      `游戏文案 ${withFlavor} 条，标记位 ${withFlags} 条`,
   );
   kept.sort((a, b) => a.slug.localeCompare(b.slug));
   return wrap(kept, unmatched);
