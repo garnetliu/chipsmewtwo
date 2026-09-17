@@ -272,6 +272,10 @@ export type SeedOverrides = {
   evolutionTriggers?: Record<string, { names?: Localized }>;
   moveLearnMethods?: Record<string, { names?: Localized }>;
   forms?: Record<string, { names?: Localized }>;
+  /** 日版限定和外传作品的版本，数据源没收中文名 */
+  versions?: Record<string, { names?: Localized }>;
+  /** 外传的奥雷地区同理 */
+  regions?: Record<string, { names?: Localized }>;
 };
 
 // ── 神奇宝贝百科的快照 ────────────────────────────────────────

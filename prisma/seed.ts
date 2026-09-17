@@ -21,6 +21,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { gunzipSync } from "node:zlib";
 
+import { LATEST_GENERATION } from "@/lib/pokemon/defaults";
 import { type LanguageCode, LANGUAGES } from "@/lib/pokemon/language";
 import { prisma } from "@/lib/prisma";
 import {
@@ -133,11 +134,21 @@ type EffectRow = {
  * 贡献者以英语和欧洲语言使用者为主。中文来自神奇宝贝百科，它不分世代，
  * 所以每一代都插同一段文本，shortEffect 留空（百科上没有短版）。
  */
-function effectRows(effects: EffectsByGeneration, chinese: Localized | undefined): EffectRow[] {
+function effectRows(
+  effects: EffectsByGeneration,
+  chinese: Localized | undefined,
+  /** 登场世代。数据源一条机制说明都没给时，中文自己从这一代铺到最新代 */
+  introducedIn: number,
+): EffectRow[] {
+  // 数据源收录得不全，九十多个招式一条 effect_entries 都没有。
+  // 跟着 effects 的世代走的话，那些招式连带把百科抓到的中文也丢了
+  const generationIds = Object.keys(effects).length
+    ? Object.keys(effects).map(Number)
+    : Array.from({ length: LATEST_GENERATION - introducedIn + 1 }, (_, i) => introducedIn + i);
+
   const out: EffectRow[] = [];
-  for (const [generation, texts] of Object.entries(effects)) {
-    const generationId = Number(generation);
-    for (const [code, text] of Object.entries(texts)) {
+  for (const generationId of generationIds) {
+    for (const [code, text] of Object.entries(effects[String(generationId)] ?? {})) {
       out.push({
         generationId,
         languageCode: code as LanguageCode,
@@ -206,7 +217,7 @@ async function seedLanguages() {
   console.log(`语言: ${LANGUAGES.length} 行`);
 }
 
-async function seedRegions() {
+async function seedRegions(manual: SeedOverrides["regions"]) {
   const regions = read("regions");
 
   const ids = new Map<string, number>();
@@ -218,7 +229,10 @@ async function seedRegions() {
     });
     ids.set(r.slug, region.id);
 
-    for (const { languageCode, value: name } of localized(r.names)) {
+    for (const { languageCode, value: name } of localized({
+      ...r.names,
+      ...manual?.[r.slug]?.names,
+    })) {
       await prisma.regionI18n.upsert({
         where: { regionId_languageCode: { regionId: region.id, languageCode } },
         create: { regionId: region.id, languageCode, name },
@@ -530,7 +544,7 @@ async function seedGroups(
   return ids;
 }
 
-async function seedVersions(groupIds: Map<string, number>) {
+async function seedVersions(groupIds: Map<string, number>, manual: SeedOverrides["versions"]) {
   const versions = read("versions");
 
   const ids = new Map<string, number>();
@@ -546,7 +560,10 @@ async function seedVersions(groupIds: Map<string, number>) {
     });
     ids.set(v.slug, version.id);
 
-    for (const { languageCode, value: name } of localized(v.names)) {
+    for (const { languageCode, value: name } of localized({
+      ...v.names,
+      ...manual?.[v.slug]?.names,
+    })) {
       await prisma.versionI18n.upsert({
         where: { versionId_languageCode: { versionId: version.id, languageCode } },
         create: { versionId: version.id, languageCode, name },
@@ -586,7 +603,8 @@ async function seedItems(groupIds: Map<string, number>) {
       });
     }
 
-    for (const row of effectRows(item.effects, undefined))
+    // 道具快照没有登场世代，也没有中文机制说明，展开只跟着 effects 走
+    for (const row of effectRows(item.effects, undefined, 1))
       effects.push({ itemId: saved.id, ...row });
     for (const row of flavorRows(item.flavors, undefined, groupIds)) {
       flavors.push({ itemId: saved.id, ...row });
@@ -638,7 +656,7 @@ async function seedAbilities(groupIds: Map<string, number>) {
     }
 
     const zh = wiki.get(a.slug);
-    for (const row of effectRows(a.effects, zh?.effect))
+    for (const row of effectRows(a.effects, zh?.effect, a.introducedInGenerationId))
       effects.push({ abilityId: saved.id, ...row });
     for (const row of flavorRows(a.flavors, zh?.flavors, groupIds)) {
       flavors.push({ abilityId: saved.id, ...row });
@@ -706,7 +724,9 @@ async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, num
     }
 
     const zh = wiki.get(m.slug);
-    for (const row of effectRows(m.effects, zh?.effect)) effects.push({ moveId: saved.id, ...row });
+    for (const row of effectRows(m.effects, zh?.effect, m.introducedInGenerationId)) {
+      effects.push({ moveId: saved.id, ...row });
+    }
     for (const row of flavorRows(m.flavors, zh?.flavors, groupIds)) {
       flavors.push({ moveId: saved.id, ...row });
     }
@@ -1098,7 +1118,7 @@ async function main() {
   const manual = overrides();
 
   await seedLanguages();
-  const regionIds = await seedRegions();
+  const regionIds = await seedRegions(manual.regions);
   const generationCount = await seedGenerations(regionIds);
   const typeIds = await seedTypes(generationCount);
   const colorIds = await seedColors();
@@ -1106,7 +1126,7 @@ async function main() {
   await seedEvolutionTriggers(manual.evolutionTriggers);
   const pokedexIds = await seedPokedexes(regionIds, manual.pokedexes);
   const groupIds = await seedGroups(regionIds, pokedexIds, manual.groups);
-  const versionIds = await seedVersions(groupIds);
+  const versionIds = await seedVersions(groupIds, manual.versions);
   const itemIds = await seedItems(groupIds);
   const abilityIds = await seedAbilities(groupIds);
   const moveIds = await seedMoves(typeIds, groupIds);

@@ -1425,5 +1425,51 @@
         "zh-Hant": "超級基格爾德"
       }
     }
+  },
+  "versions": {
+    "red-japan": {
+      "names": {
+        "zh-Hans": "红（日版）",
+        "zh-Hant": "紅（日版）"
+      }
+    },
+    "green-japan": {
+      "names": {
+        "zh-Hans": "绿（日版）",
+        "zh-Hant": "綠（日版）"
+      }
+    },
+    "blue-japan": {
+      "names": {
+        "zh-Hans": "蓝（日版）",
+        "zh-Hant": "藍（日版）"
+      }
+    },
+    "colosseum": {
+      "names": {
+        "zh-Hans": "竞技场",
+        "zh-Hant": "競技場"
+      }
+    },
+    "xd": {
+      "names": {
+        "zh-Hans": "XD 暗之旋风 黑暗洛奇亚",
+        "zh-Hant": "XD 暗之旋風 黑暗洛奇亞"
+      }
+    },
+    "champions": {
+      "names": {
+        "zh-Hans": "冠军赛",
+        "zh-Hant": "冠軍賽"
+      }
+    }
+  },
+  "regions": {
+    "orre": {
+      "names": {
+        "zh-Hans": "奥雷",
+        "zh-Hant": "奧雷"
+      }
+    }
   }
 }
