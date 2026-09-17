@@ -189,7 +189,9 @@ function flavorRows(
 
 /** wiki 快照按 slug 建索引。文件不存在就当没有中文，不让 seed 挂掉 ——
  *  百科那边页面结构变了抓不到东西时，英文数据照样该能进库 */
-function wikiEffects(name: "wiki-abilities" | "wiki-moves"): Map<string, WikiEffectSnapshot> {
+function wikiEffects(
+  name: "wiki-abilities" | "wiki-moves" | "wiki-items",
+): Map<string, WikiEffectSnapshot> {
   try {
     const snapshot = readWiki(name);
     if (snapshot.unmatched.length) {
@@ -584,6 +586,7 @@ async function seedVersions(groupIds: Map<string, number>, manual: SeedOverrides
  */
 async function seedItems(groupIds: Map<string, number>) {
   const items = read("items");
+  const wiki = wikiEffects("wiki-items");
 
   const effects: (EffectRow & { itemId: number })[] = [];
   const flavors: { itemId: number; groupId: number; languageCode: LanguageCode; text: string }[] =
@@ -603,9 +606,11 @@ async function seedItems(groupIds: Map<string, number>) {
       });
     }
 
-    // 道具快照没有登场世代，也没有中文机制说明，展开只跟着 effects 走
-    for (const row of effectRows(item.effects, undefined, 1))
+    // 道具快照没有登场世代。数据源一条机制说明都没给的（一千多件）
+    // 从第一代铺开 —— 宁可多几行，也别把百科抓到的中文丢掉
+    for (const row of effectRows(item.effects, wiki.get(item.slug)?.effect, 1)) {
       effects.push({ itemId: saved.id, ...row });
+    }
     for (const row of flavorRows(item.flavors, undefined, groupIds)) {
       flavors.push({ itemId: saved.id, ...row });
     }
@@ -662,6 +667,11 @@ async function seedAbilities(groupIds: Map<string, number>) {
       flavors.push({ abilityId: saved.id, ...row });
     }
   }
+
+  // 快照里没有的清掉：数据源那 60 个外传专用特性曾经进过库，
+  // upsert 不会把它们删掉。FormAbility 没有引用它们，删得动
+  const stale = await prisma.ability.deleteMany({ where: { slug: { notIn: [...ids.keys()] } } });
+  if (stale.count) console.log(`  清掉 ${stale.count} 个不在快照里的特性`);
 
   await prisma.abilityEffectI18n.deleteMany({});
   await insertInBatches(effects, (data) => prisma.abilityEffectI18n.createMany({ data }));

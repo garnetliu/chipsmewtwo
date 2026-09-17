@@ -1362,15 +1362,6 @@
     }
   },
   {
-    "slug": "aqua-boost",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Aqua Boost"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "arena-trap",
     "introducedInGenerationId": 3,
     "names": {
@@ -3131,15 +3122,6 @@
     }
   },
   {
-    "slug": "black-hole",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Black Hole"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "blaze",
     "introducedInGenerationId": 3,
     "names": {
@@ -3365,24 +3347,6 @@
     }
   },
   {
-    "slug": "bodyguard",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Bodyguard"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "bonanza",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Bonanza"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "bulletproof",
     "introducedInGenerationId": 6,
     "names": {
@@ -3529,24 +3493,6 @@
         "fr": "Protège de certaines capacités lançant des projectiles\\ncomme des bombes et des balles."
       }
     }
-  },
-  {
-    "slug": "calming",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Calming"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "celebrate",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Celebrate"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "cheek-pouch",
@@ -4201,15 +4147,6 @@
         "fr": "Empêche les stats du Pokémon de baisser à cause du talent ou d'une capacité de l'adversaire."
       }
     }
-  },
-  {
-    "slug": "climber",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Climber"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "cloud-nine",
@@ -5158,24 +5095,6 @@
         "fr": "Les yeux à facettes du Pokémon augmentent la Précision de ses capacités."
       }
     }
-  },
-  {
-    "slug": "confidence",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Confidence"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "conqueror",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Conqueror"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "contrary",
@@ -6554,15 +6473,6 @@
     }
   },
   {
-    "slug": "daze",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Daze"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "dazzling",
     "introducedInGenerationId": 7,
     "names": {
@@ -6663,24 +6573,6 @@
         "fr": "L’adversaire est abasourdi par le Pokémon,\\nce qui l’empêche de viser ce dernier et\\nses alliés avec une capacité prioritaire."
       }
     }
-  },
-  {
-    "slug": "decoy",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Decoy"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "deep-sleep",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Deep Sleep"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "defeatist",
@@ -7398,24 +7290,6 @@
         "fr": "Le déguisement qui recouvre le corps du Pokémon\\nest capable de le protéger d’une attaque."
       }
     }
-  },
-  {
-    "slug": "disgust",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Disgust"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "dodge",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Dodge"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "download",
@@ -9119,15 +8993,6 @@
     }
   },
   {
-    "slug": "explode",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Explode"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "fairy-aura",
     "introducedInGenerationId": 6,
     "names": {
@@ -9711,15 +9576,6 @@
         "fr": "Peut brûler l'attaquant lorsque le Pokémon subit une attaque directe."
       }
     }
-  },
-  {
-    "slug": "flame-boost",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Flame Boost"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "flare-boost",
@@ -10980,15 +10836,6 @@
     }
   },
   {
-    "slug": "fortune",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Fortune"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "friend-guard",
     "introducedInGenerationId": 5,
     "names": {
@@ -11156,15 +11003,6 @@
         "fr": "Diminue les dégâts subis par les alliés."
       }
     }
-  },
-  {
-    "slug": "frighten",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Frighten"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "frisk",
@@ -11364,15 +11202,6 @@
         "fr": "Permet de connaître l'objet tenu par l'ennemi quand le combat commence."
       }
     }
-  },
-  {
-    "slug": "frostbite",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Frostbite"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "full-metal-body",
@@ -12308,15 +12137,6 @@
     }
   },
   {
-    "slug": "grass-cloak",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Grass Cloak"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "grass-pelt",
     "introducedInGenerationId": 6,
     "names": {
@@ -12656,15 +12476,6 @@
         "fr": "L’Attaque du Pokémon augmente s’il subit l’effet du\\ntalent Intimidation. Les capacités ou objets qui font\\nchanger de Pokémon n’ont aucun effet sur lui."
       }
     }
-  },
-  {
-    "slug": "gulp",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Gulp"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "gulp-missile",
@@ -13688,33 +13499,6 @@
     }
   },
   {
-    "slug": "herbivore",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Herbivore"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "hero",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Hero"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "high-rise",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "High-rise"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "honey-gather",
     "introducedInGenerationId": 4,
     "names": {
@@ -13947,15 +13731,6 @@
         "fr": "Quand il rejoint le combat, ce Pokémon est aux petits\\nsoins avec son allié et restaure quelques PV."
       }
     }
-  },
-  {
-    "slug": "hot-blooded",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Hot Blooded"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "huge-power",
@@ -16700,24 +16475,6 @@
     }
   },
   {
-    "slug": "instinct",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Instinct"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "interference",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Interference"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "intimidate",
     "introducedInGenerationId": 3,
     "names": {
@@ -17366,15 +17123,6 @@
     }
   },
   {
-    "slug": "jagged-edge",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Jagged Edge"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "justified",
     "introducedInGenerationId": 5,
     "names": {
@@ -17961,15 +17709,6 @@
     }
   },
   {
-    "slug": "last-bastion",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Last Bastion"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "leaf-guard",
     "introducedInGenerationId": 4,
     "names": {
@@ -18448,15 +18187,6 @@
         "fr": "Le Pokémon prend le type de la capacité qu’il utilise.\\nCe talent ne peut se déclencher qu’une fois par entrée\\nau combat du Pokémon."
       }
     }
-  },
-  {
-    "slug": "life-force",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Life Force"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "light-metal",
@@ -19522,24 +19252,6 @@
         "fr": "Le Pokémon est capable d’utiliser toutes ses capacités\\nsans entrer en contact direct avec sa cible."
       }
     }
-  },
-  {
-    "slug": "lullaby",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Lullaby"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "lunchbox",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Lunchbox"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "magic-bounce",
@@ -20727,15 +20439,6 @@
     }
   },
   {
-    "slug": "medic",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Medic"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "mega-launcher",
     "introducedInGenerationId": 6,
     "names": {
@@ -20912,15 +20615,6 @@
         "ja": "天気が　にほんばれ状態でなくてもにほんばれ状態として技を使うことができる。"
       }
     }
-  },
-  {
-    "slug": "melee",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Melee"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "merciless",
@@ -21694,15 +21388,6 @@
     }
   },
   {
-    "slug": "mood-maker",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Mood Maker"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "moody",
     "introducedInGenerationId": 5,
     "names": {
@@ -22063,15 +21748,6 @@
         "fr": "Si le Pokémon est touché par une capacité de type\\nÉlectrik, il ne subit aucun dégât et sa Vitesse augmente."
       }
     }
-  },
-  {
-    "slug": "mountaineer",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Mountaineer"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "moxie",
@@ -23373,15 +23049,6 @@
     }
   },
   {
-    "slug": "nomad",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Nomad"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "normalize",
     "introducedInGenerationId": 4,
     "names": {
@@ -23578,15 +23245,6 @@
         "fr": "Toutes les capacités du Pokémon deviennent\\nde type Normal, quel que soit leur type original.\\nLeur puissance augmente légèrement."
       }
     }
-  },
-  {
-    "slug": "nurse",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Nurse"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "oblivious",
@@ -23809,15 +23467,6 @@
         "fr": "Le Pokémon est un grand benêt, ce qui l'immunise contre l'attraction, la provocation ou l'intimidation."
       }
     }
-  },
-  {
-    "slug": "omnipotent",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Omnipotent"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "opportunist",
@@ -24651,15 +24300,6 @@
     }
   },
   {
-    "slug": "parry",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Parry"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "pastel-veil",
     "introducedInGenerationId": 8,
     "names": {
@@ -24713,15 +24353,6 @@
         "fr": "Protège le Pokémon et ses alliés contre toutes\\nles altérations de statut liées à l’empoisonnement."
       }
     }
-  },
-  {
-    "slug": "perception",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Perception"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "perish-body",
@@ -26295,15 +25926,6 @@
     }
   },
   {
-    "slug": "power-nap",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Power Nap"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "power-of-alchemy",
     "introducedInGenerationId": 7,
     "names": {
@@ -26844,15 +26466,6 @@
         "fr": "Met la pression à l’adversaire pour le forcer\\nà dépenser plus de PP."
       }
     }
-  },
-  {
-    "slug": "pride",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Pride"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "primordial-sea",
@@ -30206,15 +29819,6 @@
     }
   },
   {
-    "slug": "run-up",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Run Up"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "sand-force",
     "introducedInGenerationId": 5,
     "names": {
@@ -31059,15 +30663,6 @@
     }
   },
   {
-    "slug": "sandpit",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Sandpit"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "sap-sipper",
     "introducedInGenerationId": 5,
     "names": {
@@ -31624,15 +31219,6 @@
     }
   },
   {
-    "slug": "sequence",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Sequence"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "serene-grace",
     "introducedInGenerationId": 3,
     "names": {
@@ -31856,24 +31442,6 @@
         "fr": "Augmente les chances d'infliger des effets additionnels."
       }
     }
-  },
-  {
-    "slug": "shackle",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Shackle"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "shadow-dash",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Shadow Dash"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "shadow-shield",
@@ -32193,15 +31761,6 @@
         "fr": "Empêche les Pokémon ennemis de quitter le terrain."
       }
     }
-  },
-  {
-    "slug": "share",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Share"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "sharpness",
@@ -32858,15 +32417,6 @@
     }
   },
   {
-    "slug": "shield",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Shield"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "shield-dust",
     "introducedInGenerationId": 3,
     "names": {
@@ -33391,15 +32941,6 @@
         "fr": "Les changements de stats sont deux fois plus importants\\npour le Pokémon."
       }
     }
-  },
-  {
-    "slug": "skater",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Skater"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "skill-link",
@@ -35466,33 +35007,6 @@
     }
   },
   {
-    "slug": "spirit",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Spirit"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "sponge",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Sponge"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
-    "slug": "sprint",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Sprint"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "stakeout",
     "introducedInGenerationId": 7,
     "names": {
@@ -36521,15 +36035,6 @@
         "fr": "Augmente la Vitesse du Pokémon quand il a peur."
       }
     }
-  },
-  {
-    "slug": "stealth",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Stealth"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "steam-engine",
@@ -40047,15 +39552,6 @@
     }
   },
   {
-    "slug": "tenacity",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Tenacity"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "tera-shell",
     "introducedInGenerationId": 9,
     "names": {
@@ -40585,15 +40081,6 @@
         "fr": "Le Pokémon est protégé par une épaisse couche de graisse qui diminue de moitié les dégâts qu'il subit des capacités de types Feu et Glace."
       }
     }
-  },
-  {
-    "slug": "thrust",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Thrust"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "tinted-lens",
@@ -42805,15 +42292,6 @@
     }
   },
   {
-    "slug": "vanguard",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Vanguard"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "vessel-of-ruin",
     "introducedInGenerationId": 9,
     "names": {
@@ -43519,15 +42997,6 @@
     }
   },
   {
-    "slug": "warm-blanket",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Warm Blanket"
-    },
-    "effects": {},
-    "flavors": {}
-  },
-  {
     "slug": "water-absorb",
     "introducedInGenerationId": 3,
     "names": {
@@ -44175,15 +43644,6 @@
         "fr": "Le voile qui recouvre le Pokémon le protège\\ndes brûlures."
       }
     }
-  },
-  {
-    "slug": "wave-rider",
-    "introducedInGenerationId": 5,
-    "names": {
-      "en": "Wave Rider"
-    },
-    "effects": {},
-    "flavors": {}
   },
   {
     "slug": "weak-armor",

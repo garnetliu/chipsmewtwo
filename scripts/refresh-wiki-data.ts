@@ -13,6 +13,7 @@
  * 三千多个页面，批量接口一次 50 个，六十多个请求。
  * 条目跟 PokeAPI 的对应靠编号 —— 百科信息框里的 n= 就是 PokeAPI 的 id。
  */
+import { readFileSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
@@ -82,6 +83,81 @@ async function wiki<T>(params: Record<string, string>, attempt = 0): Promise<T> 
   console.log(`    ${status || "网络错误"}，${wait}ms 后重试（第 ${attempt + 1} 次）`);
   await sleep(wait);
   return wiki<T>(params, attempt + 1);
+}
+
+/** 参数多到塞不进 URL 时改用 POST，其余跟 wiki() 一样退避重试 */
+async function wikiPost<T>(params: Record<string, string>, attempt = 0): Promise<T> {
+  const body = new URLSearchParams({ format: "json", formatversion: "2", ...params });
+  try {
+    const res = await fetch(WIKI_API, {
+      method: "POST",
+      headers: {
+        "User-Agent": "chipsmewtwo-seed/1.0 (+https://github.com/garnetliu/chipsmewtwo)",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body,
+    });
+    if (res.ok) return (await res.json()) as T;
+    if (![429, 500, 502, 503, 504].includes(res.status)) {
+      throw new Error(`POST ${params.action} → ${res.status}`);
+    }
+    if (attempt >= MAX_RETRY) throw new Error(`POST ${params.action} → ${res.status}`);
+  } catch (err) {
+    if (attempt >= MAX_RETRY) throw err;
+  }
+  await sleep(1000 * 2 ** attempt);
+  return wikiPost<T>(params, attempt + 1);
+}
+
+/**
+ * 简体转繁体，一次转一批。
+ *
+ * 百科的繁体是 MediaWiki 在渲染时用字词转换表转出来的，页面源码里只有简体。
+ * 特性和招式那两批走的是渲染，带 variant 再请求一遍就有繁体；道具走的是源码
+ * （两千多件走渲染要几个小时），所以把抓到的简体交给同一套转换表转一遍。
+ *
+ * 拿 ---- 当分隔符：它渲染成 <hr>，转纯文本后正好按空行把各条切开。
+ * 切出来的条数对不上就整批放弃 —— 宁可没有繁体，也不能让文本错位串行
+ */
+async function toTraditional(texts: string[]): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  const BATCH = 30;
+
+  for (let i = 0; i < texts.length; i += BATCH) {
+    const batch = texts.slice(i, i + BATCH);
+    const data = await wikiPost<{ parse?: { text: string } }>({
+      action: "parse",
+      title: "临时",
+      contentmodel: "wikitext",
+      prop: "text",
+      disablelimitreport: "1",
+      variant: "zh-hant",
+      text: batch.join("\n\n----\n\n"),
+    });
+
+    const html = data.parse?.text;
+    if (html) {
+      // 先按块级标签断成行再切段。不能直接过 htmlToText ——
+      // 它会把连续空白压成一个空格，正好把用来分段的空行也抹掉
+      const parts = html
+        .replace(/<(p|div|hr|li|br)[^>]*>/g, "\n\n")
+        .replace(/<[^>]+>/g, "")
+        .split(/\n\s*\n/)
+        .map((s) => htmlToText(s))
+        .filter(Boolean);
+      if (parts.length === batch.length) {
+        batch.forEach((source, n) => out.set(source, parts[n]!));
+      } else {
+        console.warn(`  ⚠ 繁体转换切出 ${parts.length} 段，应是 ${batch.length} 段，这批放弃`);
+      }
+    }
+
+    if (i % (BATCH * 10) === 0) {
+      console.log(`    繁体 ${Math.min(i + BATCH, texts.length)}/${texts.length}`);
+    }
+    await sleep(THROTTLE_MS);
+  }
+  return out;
 }
 
 /**
@@ -310,6 +386,13 @@ function plainText(source: string): string {
   text = text.replace(/<br\s*\/?>/gi, " ");
   text = text.replace(/<[^>]+>/g, "");
 
+  // 纯图标和角标模板整个丢掉。{{MSP|061|蚊香君}} 是宝可梦小图，
+  // 后面紧跟着 [[蚊香君]]，按「取最后一个参数」处理会把名字写两遍
+  text = text.replace(
+    /\{\{\s*(MSP|MS|Bag|Bag\/[^|{}]*|sup|sup\/[^|{}]*|\$)\s*(\|[^{}]*)?\}\}/gi,
+    "",
+  );
+
   // 分数模板写成 1/3，不然 {{frac|1|3}} 会被当普通模板削成 "3"
   text = text.replace(/\{\{\s*frac\s*\|([^{}|]*)\|([^{}|]*)\}\}/gi, "$1/$2");
   // {{tt|显示|悬停注释}} 只留显示的那半；日文原文那类注释整个丢掉
@@ -348,6 +431,44 @@ function plainText(source: string): string {
  * 进库只会在页面上显示一个「回复」 —— 不如让它缺着，前端回退到英文
  */
 const MIN_EFFECT_LENGTH = 8;
+
+/**
+ * 道具的机制说明。
+ *
+ * 跟特性招式不一样，走页面源码而不是渲染 —— 道具页的效果段是一串 * 列表，
+ * 结构规整，源码里解析得出来。两千多件道具走渲染是四千多个请求、几个小时，
+ * 读源码只要一百来个请求。
+ *
+ * 只取顶层的 * 行：嵌套的 ** 是补充条款（讲究头带那条讲了极巨化下怎么算），
+ * 跟 PokeAPI 的 effect 不是一个粒度。===对战中=== 这类子节标题跳过，
+ * 标题下面的内容照收 —— 王者之证的效果分「对战中」和「对战外」两段，都算效果
+ */
+const ITEM_EFFECT_HEADINGS = ["使用效果", "效果", "道具效果", "游戏中"];
+
+function parseItemEffect(source: string): string | null {
+  for (const heading of ITEM_EFFECT_HEADINGS) {
+    const found = new RegExp(`^[ \\t]*==[ \\t]*${heading}[ \\t]*==[ \\t]*$`, "m").exec(source);
+    if (!found) continue;
+
+    const rest = source.slice(found.index + found[0].length);
+    const end = /^[ \t]*==[^=]/m.exec(rest);
+    const body = end ? rest.slice(0, end.index) : rest;
+
+    const lines: string[] = [];
+    for (const raw of body.split("\n")) {
+      const line = raw.trim();
+      if (!line || line.startsWith("=")) continue;
+      // 嵌套列表是细则，百科写成 ** 或 :* 都有；表格和模板调用行不是正文
+      if (/^(\*\*|:|#\*|[|!{}])/.test(line)) continue;
+      const text = plainText(line.replace(/^[*#]+\s*/, ""));
+      if (text) lines.push(text);
+    }
+
+    const joined = lines.join("");
+    if (joined.length >= MIN_EFFECT_LENGTH) return joined;
+  }
+  return null;
+}
 
 // ── 版本组与版本的对照 ────────────────────────────────────────
 
@@ -904,6 +1025,66 @@ async function moves(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
 }
 
 /**
+ * 道具的中文机制说明。
+ *
+ * PokeAPI 的 effect_entries 只有英法，两千多件道具一条中文都没有。
+ * 页名用 PokeAPI 的简体中文名，百科那边裸名字会重定向到「某某（道具）」。
+ *
+ * 技能机器和秘传学习器在百科上没有独立条目，会落进 unmatched —— 正常，
+ * 它们的说明本来就是「教会宝可梦某个招式」这一句，没有单独写的必要
+ */
+async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
+  type Item = { slug: string; names: Partial<Record<LanguageCode, string>> };
+  const snapshot = JSON.parse(readFileSync(join(SEED_DATA_DIR, "items.json"), "utf8")) as Item[];
+
+  // 页名带「（道具）」后缀：裸中文名有跟招式、宝可梦重名的（「日光」是招式），
+  // 重定向会把我们带到那些条目上去。带后缀查不到的再退回裸名字
+  const titleOf = new Map<string, string>();
+  const unmatched = new Set<string>();
+  for (const item of snapshot) {
+    const name = item.names["zh-Hans"];
+    if (name) titleOf.set(item.slug, name);
+    else unmatched.add(item.slug);
+  }
+  console.log(`  道具: ${titleOf.size} 件有中文名，${unmatched.size} 件没有`);
+
+  const suffixed = await fetchPages([...titleOf.values()].map((n) => `${n}（道具）`));
+  const bare = await fetchPages([...titleOf.values()].filter((n) => !suffixed.has(`${n}（道具）`)));
+  const pages = new Map<string, string>();
+  for (const [title, content] of bare) pages.set(title, content);
+  for (const [title, content] of suffixed) pages.set(title.replace(/（道具）$/, ""), content);
+
+  const rows: WikiEffectSnapshot[] = [];
+  for (const [slug, title] of titleOf) {
+    const source = pages.get(title);
+    // 中文名撞上宝可梦或招式条目时会拿到别的页，用信息框确认这是道具页
+    if (!source || !source.includes("{{道具信息框")) {
+      unmatched.add(`${slug} ${title}`);
+      continue;
+    }
+    const effect = parseItemEffect(source);
+    if (!effect) {
+      unmatched.add(`${slug} ${title}`);
+      continue;
+    }
+    rows.push({ slug, effect: { "zh-Hans": effect }, flavors: {} });
+  }
+
+  // 源码里只有简体，繁体交给百科的字词转换表转一遍
+  const traditional = await toTraditional([...new Set(rows.map((r) => r.effect["zh-Hans"]!))]);
+  for (const row of rows) {
+    const hant = traditional.get(row.effect["zh-Hans"]!);
+    if (hant) row.effect["zh-Hant"] = hant;
+  }
+
+  console.log(
+    `  道具机制说明: ${rows.length} 件，其中 ${rows.filter((r) => r.effect["zh-Hant"]).length} 件有繁体`,
+  );
+  rows.sort((a, b) => a.slug.localeCompare(b.slug));
+  return wrap(rows, unmatched);
+}
+
+/**
  * 图鉴说明。页名直接用 PokeAPI 的简体中文名 ——
  * 宝可梦的中文名两边是同一套官方译名，不像特性招式那样需要索引页对编号
  */
@@ -971,6 +1152,7 @@ async function pokemonDescriptions(): Promise<WikiSnapshot<WikiPokemonDescriptio
 const only = process.argv[2];
 if (!only || only === "abilities") await write("wiki-abilities", await abilities());
 if (!only || only === "moves") await write("wiki-moves", await moves());
+if (!only || only === "items") await write("wiki-items", await items());
 if (!only || only === "pokemon") {
   await write("wiki-pokemon-descriptions", await pokemonDescriptions());
 }

@@ -444,7 +444,13 @@ async function items(index: GroupIndex): Promise<ItemSnapshot[]> {
   return unique;
 }
 
-/** 特性，374 个。全是 Gen3 起的东西 —— Gen1/2 没有特性这个概念 */
+/**
+ * 特性，314 个。全是 Gen3 起的东西 —— Gen1/2 没有特性这个概念。
+ *
+ * 只收正统系列：数据源还收了 60 个外传专用特性（id 10001 起，信长的野望和
+ * 不可思议迷宫那些），一个译名都没有，本篇游戏里也不存在。
+ * 传说系列算正统，它那几个新特性（超级日光、辣椒喷发、波导防护）在 id 310~314
+ */
 async function abilities(index: GroupIndex): Promise<AbilitySnapshot[]> {
   type Ability = {
     name: string;
@@ -455,7 +461,9 @@ async function abilities(index: GroupIndex): Promise<AbilitySnapshot[]> {
     effect_changes: EffectChange[];
     flavor_text_entries: ({ flavor_text: string } & FlavorEntry)[];
   };
-  const rows = await fetchAll<Ability>("ability", 12);
+  const all = await fetchAll<Ability>("ability", 12);
+  const rows = all.filter((a) => a.is_main_series);
+  console.log(`  跳过 ${all.length - rows.length} 个外传专用特性`);
 
   const unknown = new Set<string>();
   const out = bySlug(
