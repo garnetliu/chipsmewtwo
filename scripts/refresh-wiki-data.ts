@@ -611,11 +611,16 @@ function parseItemBoost(source: string, types: Map<string, string>): string | nu
 
 function parseItemEffect(source: string): string | null {
   for (const heading of ITEM_EFFECT_HEADINGS) {
-    const found = new RegExp(`^[ \\t]*==[ \\t]*${heading}[ \\t]*==[ \\t]*$`, "m").exec(source);
+    // 章节层级不固定：多数道具页写成 ==效果==，而伤药、精灵球这些
+    // 一页装几个道具的写成 ===效果===，精灵球那页还一连三个
+    const found = new RegExp(`^[ \\t]*(={2,4})[ \\t]*${heading}[ \\t]*\\1[ \\t]*$`, "m").exec(
+      source,
+    );
     if (!found) continue;
 
     const rest = source.slice(found.index + found[0].length);
-    const end = /^[ \t]*==[^=]/m.exec(rest);
+    // 到同级或更上级的标题为止 —— 下一级的子节（「仅在ＬＡ中」）还算这一节的
+    const end = new RegExp(`^[ \\t]*={2,${found[1]!.length}}[^=]`, "m").exec(rest);
     const body = end ? rest.slice(0, end.index) : rest;
 
     const lines: string[] = [];
@@ -1635,6 +1640,7 @@ async function zMoves(): Promise<WikiSnapshot<WikiZMoveSnapshot>> {
     rows.push({
       slug,
       names: names.get(name) ?? splitVariants(name),
+      effect: {},
       formSlug: dex ? (formSlugOf(dex.number, dex.suffix) ?? null) : null,
       baseMoveSlug: baseMove ? (moveSlugOf.get(baseMove) ?? null) : null,
       itemSlug: crystal ? (itemSlugOf.get(crystal) ?? null) : null,
@@ -1651,6 +1657,41 @@ async function zMoves(): Promise<WikiSnapshot<WikiZMoveSnapshot>> {
 
   const linked = rows.filter((r) => r.formSlug && r.baseMoveSlug).length;
   console.log(`  专属Ｚ招式: ${rows.length} 条，形态和原招式都认出来的 ${linked} 条`);
+
+  // 机制说明按每条Ｚ招式的页面抓，泛用那十八条上面的表格里没有，
+  // 在这儿补出行来 —— 数据源的 effect_entries 只有英法，中文一条都没有
+  const all = readSnapshot<{ slug: string; names: Localized }>("z-moves");
+  const bySlug = new Map(rows.map((r) => [r.slug, r]));
+  const titleOf = new Map<string, string>();
+  for (const z of all) {
+    // 页名就是招式中文名，Ｚ招式的名字不跟别的条目重名，不用加后缀
+    const name = z.names["zh-Hans"] ?? bySlug.get(z.slug)?.names["zh-Hans"];
+    if (name) titleOf.set(z.slug, name);
+  }
+  // 先走一趟 query 把繁体真实页名解析进 RESOLVED_TITLES，
+  // 后面 fillEffects 走的 parse 接口不认 converttitles
+  await fetchPages([...titleOf.values()]);
+  const effects = await fillEffects([...titleOf].map(([slug, title]) => ({ slug, title })));
+  for (const [slug, effect] of effects) {
+    const row = bySlug.get(slug);
+    if (row) {
+      row.effect = effect;
+      continue;
+    }
+    const names = all.find((z) => z.slug === slug)?.names ?? {};
+    rows.push({
+      slug,
+      names: { "zh-Hans": names["zh-Hans"] ?? "", "zh-Hant": names["zh-Hant"] ?? "" },
+      effect,
+      formSlug: null,
+      baseMoveSlug: null,
+      itemSlug: null,
+      power: null,
+      damageClass: null,
+    });
+  }
+  console.log(`  Ｚ招式机制说明: ${effects.size}/${titleOf.size} 条`);
+
   rows.sort((a, b) => a.slug.localeCompare(b.slug));
   return wrap(rows, unmatched);
 }
@@ -1720,6 +1761,31 @@ async function maxMoves(): Promise<WikiSnapshot<WikiMaxMoveSnapshot>> {
   console.log(
     `  超极巨招式: ${rows.length} 条，认出形态的 ${rows.filter((r) => r.formSlug).length} 条`,
   );
+
+  // 泛用的十九条数据源有本体但只给了英法说明，中文从各自的招式页抓。
+  // 它们的效果段整段是模板（{{招式效果/天气影响|大晴天|炽热岩石}}），
+  // 源码里展不开，只能走渲染那条路
+  const plain = readSnapshot<{ slug: string; typeSlug: string; names: Localized }>("max-moves");
+  const titleOf = new Map<string, string>();
+  for (const m of plain) {
+    const name = m.names["zh-Hans"];
+    if (name) titleOf.set(m.slug, name);
+  }
+  await fetchPages([...titleOf.values()]);
+  const plainEffects = await fillEffects([...titleOf].map(([slug, title]) => ({ slug, title })));
+  for (const m of plain) {
+    const effect = plainEffects.get(m.slug);
+    if (!effect) continue;
+    rows.push({
+      slug: m.slug,
+      names: { "zh-Hans": m.names["zh-Hans"] ?? "", "zh-Hant": m.names["zh-Hant"] ?? "" },
+      typeSlug: m.typeSlug,
+      formSlug: null,
+      effect,
+    });
+  }
+  console.log(`  泛用极巨招式机制说明: ${plainEffects.size}/${titleOf.size} 条`);
+
   rows.sort((a, b) => a.slug.localeCompare(b.slug));
   return wrap(rows, unmatched);
 }

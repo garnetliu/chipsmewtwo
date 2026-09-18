@@ -8,6 +8,10 @@
         "zh-Hans": "千万伏特",
         "zh-Hant": "千萬伏特"
       },
+      "effect": {
+        "zh-Hans": "作为十万伏特的增强版，千万伏特会造成更高伤害。",
+        "zh-Hant": "作為十萬伏特的增強版，千萬伏特會造成更高傷害。"
+      },
       "formSlug": "pikachu",
       "baseMoveSlug": "thunderbolt",
       "itemSlug": "pikashunium-z--bag",
@@ -15,10 +19,94 @@
       "damageClass": "SPECIAL"
     },
     {
+      "slug": "acid-downpour",
+      "names": {
+        "zh-Hans": "强酸剧毒灭绝雨",
+        "zh-Hant": "強酸劇毒滅絕雨"
+      },
+      "effect": {
+        "zh-Hans": "强酸剧毒灭绝雨会造成伤害。",
+        "zh-Hant": "強酸劇毒滅絕雨會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "all-out-pummeling",
+      "names": {
+        "zh-Hans": "全力无双激烈拳",
+        "zh-Hant": "全力無雙激烈拳"
+      },
+      "effect": {
+        "zh-Hans": "全力无双激烈拳会造成伤害。",
+        "zh-Hant": "全力無雙激烈拳會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "black-hole-eclipse",
+      "names": {
+        "zh-Hans": "黑洞吞噬万物灭",
+        "zh-Hant": "黑洞吞噬萬物滅"
+      },
+      "effect": {
+        "zh-Hans": "黑洞吞噬万物灭会造成伤害。",
+        "zh-Hant": "黑洞吞噬萬物滅會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "bloom-doom",
+      "names": {
+        "zh-Hans": "绚烂缤纷花怒放",
+        "zh-Hant": "絢爛繽紛花怒放"
+      },
+      "effect": {
+        "zh-Hans": "绚烂缤纷花怒放会造成伤害。",
+        "zh-Hant": "絢爛繽紛花怒放會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "breakneck-blitz",
+      "names": {
+        "zh-Hans": "究极无敌大冲撞",
+        "zh-Hant": "究極無敵大衝撞"
+      },
+      "effect": {
+        "zh-Hans": "究极无敌大冲撞会造成伤害。",
+        "zh-Hant": "究極無敵大衝撞會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
       "slug": "catastropika",
       "names": {
         "zh-Hans": "皮卡皮卡必杀击",
         "zh-Hant": "皮卡皮卡必殺擊"
+      },
+      "effect": {
+        "zh-Hans": "皮卡皮卡必杀击会造成伤害。攻击必定会命中。",
+        "zh-Hant": "皮卡皮卡必殺擊會造成傷害。攻擊必定會命中。"
       },
       "formSlug": "pikachu",
       "baseMoveSlug": "volt-tackle",
@@ -32,6 +120,10 @@
         "zh-Hans": "炽魂热舞烈音爆",
         "zh-Hant": "熾魂熱舞烈音爆"
       },
+      "effect": {
+        "zh-Hans": "攻击目标造成伤害。令使用者的攻击、防御、特攻、特防和速度提升1级。",
+        "zh-Hant": "攻擊目標造成傷害。令使用者的攻擊、防禦、特攻、特防和速度提升1級。"
+      },
       "formSlug": "kommo-o",
       "baseMoveSlug": "clanging-scales",
       "itemSlug": "kommonium-z--bag",
@@ -39,10 +131,62 @@
       "damageClass": "SPECIAL"
     },
     {
+      "slug": "continental-crush",
+      "names": {
+        "zh-Hans": "毁天灭地巨岩坠",
+        "zh-Hant": "毀天滅地巨岩墜"
+      },
+      "effect": {
+        "zh-Hans": "毁天灭地巨岩坠会造成伤害。",
+        "zh-Hant": "毀天滅地巨岩墜會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "corkscrew-crash",
+      "names": {
+        "zh-Hans": "超绝螺旋连击",
+        "zh-Hant": "超絕螺旋連擊"
+      },
+      "effect": {
+        "zh-Hans": "超绝螺旋连击会造成伤害。",
+        "zh-Hant": "超絕螺旋連擊會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "devastating-drake",
+      "names": {
+        "zh-Hans": "究极巨龙震天地",
+        "zh-Hant": "究極巨龍震天地"
+      },
+      "effect": {
+        "zh-Hans": "究极巨龙震天地会造成伤害。",
+        "zh-Hant": "究極巨龍震天地會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
       "slug": "extreme-evoboost",
       "names": {
         "zh-Hans": "九彩升华齐聚顶",
         "zh-Hant": "九彩昇華齊聚頂"
+      },
+      "effect": {
+        "zh-Hans": "得到Ｚ力量的伊布将借助进化后伙伴们的力量，大幅提高能力。令使用者的攻击、防御、特攻、特防和速度提升2级。",
+        "zh-Hant": "得到Ｚ力量的伊布將藉助進化後夥伴們的力量，大幅提高能力。令使用者的攻擊、防禦、特攻、特防和速度提升2級。"
       },
       "formSlug": "eevee",
       "baseMoveSlug": "last-resort",
@@ -56,6 +200,10 @@
         "zh-Hans": "起源超新星大爆炸",
         "zh-Hant": "起源超新星大爆炸"
       },
+      "effect": {
+        "zh-Hans": "起源超新星大爆炸会造成伤害，攻击后会发动精神场地。",
+        "zh-Hant": "起源超新星大爆炸會造成傷害，攻擊後會發動精神場地。"
+      },
       "formSlug": "mew",
       "baseMoveSlug": "psychic",
       "itemSlug": "mewnium-z--bag",
@@ -63,10 +211,30 @@
       "damageClass": "SPECIAL"
     },
     {
+      "slug": "gigavolt-havoc",
+      "names": {
+        "zh-Hans": "终极伏特狂雷闪",
+        "zh-Hant": "終極伏特狂雷閃"
+      },
+      "effect": {
+        "zh-Hans": "终极伏特狂雷闪会造成伤害。",
+        "zh-Hant": "終極伏特狂雷閃會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
       "slug": "guardian-of-alola",
       "names": {
         "zh-Hans": "巨人卫士・阿罗拉",
         "zh-Hant": "巨人衛士・阿羅拉"
+      },
+      "effect": {
+        "zh-Hans": "对目标造成目标当前ＨＰ3⁄4（向下取整）的伤害。该招式无法对没有效果的属性的宝可梦造成伤害，但忽略其他属性相克和属性一致加成。对守住状态的宝可梦使用也能成功，但伤害减少至目标当前ＨＰ的3⁄16。目标当前ＨＰ过低时，至少造成1伤害。",
+        "zh-Hant": "對目標造成目標當前ＨＰ3⁄4（向下取整）的傷害。該招式無法對沒有效果的屬性的寶可夢造成傷害，但忽略其他屬性相剋和屬性一致加成。對守住狀態的寶可夢使用也能成功，但傷害減少至目標當前ＨＰ的3⁄16。目標當前ＨＰ過低時，至少造成1傷害。"
       },
       "formSlug": "tapu-koko",
       "baseMoveSlug": "natures-madness",
@@ -75,10 +243,62 @@
       "damageClass": "SPECIAL"
     },
     {
+      "slug": "hydro-vortex",
+      "names": {
+        "zh-Hans": "超级水流大漩涡",
+        "zh-Hant": "超級水流大漩渦"
+      },
+      "effect": {
+        "zh-Hans": "超级水流大漩涡会造成伤害。",
+        "zh-Hant": "超級水流大漩渦會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "inferno-overdrive",
+      "names": {
+        "zh-Hans": "超强极限爆焰弹",
+        "zh-Hant": "超強極限爆焰彈"
+      },
+      "effect": {
+        "zh-Hans": "超强极限爆焰弹会造成伤害。",
+        "zh-Hant": "超強極限爆焰彈會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "lets-snuggle-forever",
+      "names": {
+        "zh-Hans": "亲密无间大乱揍",
+        "zh-Hant": "親密無間大亂揍"
+      },
+      "effect": {
+        "zh-Hans": "亲密无间大乱揍会造成伤害。",
+        "zh-Hant": "親密無間大亂揍會造成傷害。"
+      },
+      "formSlug": "mimikyu-disguised",
+      "baseMoveSlug": "play-rough",
+      "itemSlug": "mimikium-z--bag",
+      "power": 190,
+      "damageClass": "PHYSICAL"
+    },
+    {
       "slug": "light-that-burns-the-sky",
       "names": {
         "zh-Hans": "焚天灭世炽光爆",
         "zh-Hant": "焚天滅世熾光爆"
+      },
+      "effect": {
+        "zh-Hans": "焚天灭世炽光爆会造成伤害。如果使用者的攻击大于特攻，则此招式变成物理招式。攻击时能够使目标、同伴以及目标同伴的一部分特性失效。",
+        "zh-Hant": "焚天滅世熾光爆會造成傷害。如果使用者的攻擊大於特攻，則此招式變成物理招式。攻擊時能夠使目標、同伴以及目標同伴的一部分特性失效。"
       },
       "formSlug": "necrozma",
       "baseMoveSlug": "photon-geyser",
@@ -92,6 +312,10 @@
         "zh-Hans": "极恶飞跃粉碎击",
         "zh-Hant": "極惡飛躍粉碎擊"
       },
+      "effect": {
+        "zh-Hans": "作为ＤＤ金勾臂的增强版，极恶飞跃粉碎击会造成伤害。攻击必定会命中。",
+        "zh-Hant": "作為ＤＤ金勾臂的增強版，極惡飛躍粉碎擊會造成傷害。攻擊必定會命中。"
+      },
       "formSlug": "incineroar",
       "baseMoveSlug": "darkest-lariat",
       "itemSlug": "incinium-z--bag",
@@ -104,6 +328,10 @@
         "zh-Hans": "月华飞溅落灵霄",
         "zh-Hant": "月華飛濺落靈霄"
       },
+      "effect": {
+        "zh-Hans": "月华飞溅落灵霄会造成伤害。攻击时能够使目标、同伴以及目标同伴的一部分特性失效。",
+        "zh-Hant": "月華飛濺落靈霄會造成傷害。攻擊時能夠使目標、同伴以及目標同伴的一部分特性失效。"
+      },
       "formSlug": "lunala",
       "baseMoveSlug": "moongeist-beam",
       "itemSlug": "lunalium-z--bag",
@@ -111,10 +339,30 @@
       "damageClass": "SPECIAL"
     },
     {
+      "slug": "never-ending-nightmare",
+      "names": {
+        "zh-Hans": "无尽暗夜之诱惑",
+        "zh-Hant": "無盡暗夜之誘惑"
+      },
+      "effect": {
+        "zh-Hans": "无尽暗夜之诱惑会造成伤害。",
+        "zh-Hant": "無盡暗夜之誘惑會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
       "slug": "oceanic-operetta",
       "names": {
         "zh-Hans": "海神庄严交响乐",
         "zh-Hant": "海神莊嚴交響樂"
+      },
+      "effect": {
+        "zh-Hans": "作为泡影的咏叹调的增强版，海神庄严交响乐会造成伤害。攻击必定会命中。",
+        "zh-Hant": "作為泡影的詠歎調的增強版，海神莊嚴交響樂會造成傷害。攻擊必定會命中。"
       },
       "formSlug": "primarina",
       "baseMoveSlug": "sparkling-aria",
@@ -128,6 +376,10 @@
         "zh-Hans": "认真起来大爆击",
         "zh-Hant": "認真起來大爆擊"
       },
+      "effect": {
+        "zh-Hans": "认真起来大爆击会造成伤害。攻击必定会命中。",
+        "zh-Hant": "認真起來大爆擊會造成傷害。攻擊必定會命中。"
+      },
       "formSlug": "snorlax",
       "baseMoveSlug": "giga-impact",
       "itemSlug": "snorlium-z--bag",
@@ -135,10 +387,30 @@
       "damageClass": "PHYSICAL"
     },
     {
+      "slug": "savage-spin-out",
+      "names": {
+        "zh-Hans": "绝对捕食回旋斩",
+        "zh-Hant": "絕對捕食迴旋斬"
+      },
+      "effect": {
+        "zh-Hans": "绝对捕食回旋斩会造成伤害。",
+        "zh-Hant": "絕對捕食迴旋斬會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
       "slug": "searing-sunraze-smash",
       "names": {
         "zh-Hans": "日光回旋下苍穹",
         "zh-Hant": "日光迴旋下蒼穹"
+      },
+      "effect": {
+        "zh-Hans": "日光回旋下苍穹会造成伤害。攻击时能够使目标、同伴以及目标同伴的一部分特性失效。",
+        "zh-Hant": "日光迴旋下蒼穹會造成傷害。攻擊時能夠使目標、同伴以及目標同伴的一部分特性失效。"
       },
       "formSlug": "solgaleo",
       "baseMoveSlug": "sunsteel-strike",
@@ -147,10 +419,30 @@
       "damageClass": "PHYSICAL"
     },
     {
+      "slug": "shattered-psyche",
+      "names": {
+        "zh-Hans": "至高精神破坏波",
+        "zh-Hant": "至高精神破壞波"
+      },
+      "effect": {
+        "zh-Hans": "至高精神破坏波会造成伤害。",
+        "zh-Hant": "至高精神破壞波會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
       "slug": "sinister-arrow-raid",
       "names": {
         "zh-Hans": "遮天蔽日暗影箭",
         "zh-Hant": "遮天蔽日暗影箭"
+      },
+      "effect": {
+        "zh-Hans": "作为缝影的增强版，遮天蔽日暗影箭会造成伤害。攻击必定会命中。",
+        "zh-Hant": "作為縫影的增強版，遮天蔽日暗影箭會造成傷害。攻擊必定會命中。"
       },
       "formSlug": "decidueye",
       "baseMoveSlug": "spirit-shackle",
@@ -164,6 +456,10 @@
         "zh-Hans": "七星夺魂腿",
         "zh-Hant": "七星奪魂腿"
       },
+      "effect": {
+        "zh-Hans": "作为暗影偷盗的增强版，七星夺魂腿会造成伤害。攻击必定会命中。",
+        "zh-Hant": "作為暗影偷盜的增強版，七星奪魂腿會造成傷害。攻擊必定會命中。"
+      },
       "formSlug": "marshadow",
       "baseMoveSlug": "spectral-thief",
       "itemSlug": "marshadium-z--bag",
@@ -175,6 +471,10 @@
       "names": {
         "zh-Hans": "狼啸石牙飓风暴",
         "zh-Hant": "狼嘯石牙颶風暴"
+      },
+      "effect": {
+        "zh-Hans": "攻击目标造成伤害。使电气场地、精神场地、青草场地和薄雾场地消失。",
+        "zh-Hant": "攻擊目標造成傷害。使電氣場地、精神場地、青草場地和薄霧場地消失。"
       },
       "formSlug": "lycanroc-midday",
       "baseMoveSlug": "stone-edge",
@@ -188,14 +488,80 @@
         "zh-Hans": "驾雷驭电戏冲浪",
         "zh-Hant": "駕雷馭電戲衝浪"
       },
+      "effect": {
+        "zh-Hans": "驾雷驭电戏冲浪会造成伤害。攻击必定会命中。对象会陷入麻痹状态。",
+        "zh-Hant": "駕雷馭電戲衝浪會造成傷害。攻擊必定會命中。對象會陷入麻痺狀態。"
+      },
       "formSlug": "raichu-alola",
       "baseMoveSlug": "thunderbolt",
       "itemSlug": "aloraichium-z--bag",
       "power": 175,
       "damageClass": "SPECIAL"
+    },
+    {
+      "slug": "subzero-slammer",
+      "names": {
+        "zh-Hans": "激狂大地万里冰",
+        "zh-Hant": "激狂大地萬里冰"
+      },
+      "effect": {
+        "zh-Hans": "激狂大地万里冰会造成伤害。",
+        "zh-Hant": "激狂大地萬里冰會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "supersonic-skystrike",
+      "names": {
+        "zh-Hans": "极速俯冲轰烈撞",
+        "zh-Hant": "極速俯衝轟烈撞"
+      },
+      "effect": {
+        "zh-Hans": "极速俯冲轰烈撞会造成伤害。",
+        "zh-Hant": "極速俯衝轟烈撞會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "tectonic-rage",
+      "names": {
+        "zh-Hans": "地隆啸天大终结",
+        "zh-Hant": "地隆嘯天大終結"
+      },
+      "effect": {
+        "zh-Hans": "地隆啸天大终结会造成伤害。",
+        "zh-Hant": "地隆嘯天大終結會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
+    },
+    {
+      "slug": "twinkle-tackle",
+      "names": {
+        "zh-Hans": "可爱星星飞天撞",
+        "zh-Hant": "可愛星星飛天撞"
+      },
+      "effect": {
+        "zh-Hans": "可爱星星飞天撞会造成伤害。",
+        "zh-Hant": "可愛星星飛天撞會造成傷害。"
+      },
+      "formSlug": null,
+      "baseMoveSlug": null,
+      "itemSlug": null,
+      "power": null,
+      "damageClass": null
     }
   ],
-  "unmatched": [
-    "親密無間大亂揍"
-  ]
+  "unmatched": []
 }

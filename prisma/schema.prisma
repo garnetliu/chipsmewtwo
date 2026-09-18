@@ -903,8 +903,9 @@ model Nature {
   likesFlavor   BerryFlavor?
   hatesFlavor   BerryFlavor?
 
-  names       NatureI18n[]
-  itemNatures ItemNature[]
+  names            NatureI18n[]
+  itemNatures      ItemNature[]
+  evolutionNatures EvolutionNature[]
 
   @@map("nature")
 }
@@ -1013,7 +1014,20 @@ model Evolution {
   turnUpsideDown   Boolean                  @default(false) // 好啦鱿要把主机倒过来
   attackVsDefense  EvolutionStatComparison?
 
-  notes EvolutionNoteI18n[]
+  // ── 靠宝可梦内部随机值分歧的 ──
+  //
+  // 刺尾虫变甲壳茧还是盾甲茧、土龙节节变双节还是三节、貪吃彩生三只还是四只，
+  // 游戏里看的是宝可梦身上那个玩家看不见的随机值。数据源给的是一条后缀表达式
+  // 加一个概率，两条分支各一行，条件其余部分完全相同
+  /// 后缀表达式，例如 "EC 100 % 0 =="：加密常数对 100 取余等于 0。
+  /// EC 是加密常数、PID 是个体值种子，第六世代前后用的不是同一个
+  conditionExpression String?
+  /// 这条分支大概多少概率走到，百分数
+  conditionChance     Int?
+
+  notes   EvolutionNoteI18n[]
+  /// 性格决定走哪条分支。只有毒电婴 —— 十三种性格变高亢、十二种变低沉
+  natures EvolutionNature[]
 
   @@index([fromFormId])
   @@index([toFormId])
@@ -1035,6 +1049,19 @@ model Evolution {
 /// 按语言存而不是在 evolution 上加一列：这里存的恰好是给用户看的展示文案，
 /// 是最需要多语言的那类内容，而且独立表才能用 lib/pokemon/language.ts 的
 /// pickByLanguage 走「请求语言 → 默认语言 → 有的第一条」那套回退
+/// 这条进化路线要求的性格。只有毒电婴用得上，所以是张关联表
+/// 而不是 Evolution 上的一列 —— 一条路线对应十几种性格
+model EvolutionNature {
+  evolutionId Int
+  evolution   Evolution @relation(fields: [evolutionId], references: [id], onDelete: Cascade)
+  natureSlug  String
+  nature      Nature    @relation(fields: [natureSlug], references: [slug])
+
+  @@id([evolutionId, natureSlug])
+  @@index([natureSlug])
+  @@map("evolution_nature")
+}
+
 model EvolutionNoteI18n {
   evolutionId  Int
   evolution    Evolution @relation(fields: [evolutionId], references: [id], onDelete: Cascade)

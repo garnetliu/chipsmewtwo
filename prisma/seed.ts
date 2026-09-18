@@ -1421,6 +1421,12 @@ async function seedEvolutions(dict: {
   const rows = read("evolutions");
 
   const skipped = new Set<string>();
+  /** 「进化行 → 要求的性格」。签名用两端形态加版本组 —— 毒电婴那两条
+   *  别的条件一模一样，靠进化去向（高亢/低沉）分开 */
+  const naturesOf = new Map<string, string[]>();
+  const signature = (r: { fromFormId: number; toFormId: number; groupId: number }) =>
+    `${r.fromFormId} ${r.toFormId} ${r.groupId}`;
+
   const data = rows.flatMap((e) => {
     const fromFormId = dict.forms.get(e.fromFormSlug);
     const toFormId = dict.forms.get(e.toFormSlug);
@@ -1432,6 +1438,9 @@ async function seedEvolutions(dict: {
     if (!dict.triggers.has(e.triggerSlug)) {
       skipped.add(e.triggerSlug);
       return [];
+    }
+    if (e.natureSlugs.length) {
+      naturesOf.set(signature({ fromFormId, toFormId, groupId }), e.natureSlugs);
     }
     return [
       {
@@ -1465,16 +1474,32 @@ async function seedEvolutions(dict: {
         nearSpecialRock: e.nearSpecialRock,
         turnUpsideDown: e.turnUpsideDown,
         attackVsDefense: e.attackVsDefense,
+        conditionExpression: e.conditionExpression,
+        conditionChance: e.conditionChance,
       },
     ];
   });
 
-  // 整表重建。链是从这些行算出来的，所以链也一起重建
+  // 整表重建。链是从这些行算出来的，所以链也一起重建。
+  //
+  // 带性格条件的逐条 create —— 关联表要 evolution 的自增 id，而 createMany
+  // 不回传。全库只有毒电婴那两条，成本可以忽略
+  let natureRows = 0;
   await rebuild(async (tx) => {
     await tx.form.updateMany({ data: { evolutionChainId: null } });
     await tx.evolutionChain.deleteMany({});
     await tx.evolution.deleteMany({});
-    await insertInBatches(data, (batch) => tx.evolution.createMany({ data: batch }));
+
+    const plain = data.filter((d) => !naturesOf.has(signature(d)));
+    await insertInBatches(plain, (batch) => tx.evolution.createMany({ data: batch }));
+
+    for (const row of data.filter((d) => naturesOf.has(signature(d)))) {
+      const slugs = naturesOf.get(signature(row))!;
+      await tx.evolution.create({
+        data: { ...row, natures: { create: slugs.map((natureSlug) => ({ natureSlug })) } },
+      });
+      natureRows += slugs.length;
+    }
   });
 
   // 并查集：把首尾相接的进化关系并成一组
@@ -1519,7 +1544,11 @@ async function seedEvolutions(dict: {
   if (skipped.size) {
     console.warn(`⚠ ${skipped.size} 条进化关系两端或版本组不在库里，已跳过`);
   }
-  console.log(`进化: ${data.length} 行，进化链 ${members.size} 条`);
+  console.log(
+    `进化: ${data.length} 行，进化链 ${members.size} 条，` +
+      `分歧条件 ${data.filter((d) => d.conditionExpression).length} 行，` +
+      `性格条件 ${natureRows} 行`,
+  );
 }
 
 /**
@@ -1598,6 +1627,10 @@ async function seedZMoves(dict: {
         effect: text.effect,
       });
     }
+    // 中文全部来自百科 —— 数据源的 effect_entries 只有英法
+    for (const { languageCode, value: effect } of localized(link?.effect ?? {})) {
+      effects.push({ zMoveId: saved.id, languageCode, shortEffect: null, effect });
+    }
     for (const row of flavorRows(z.flavors, undefined, dict.groups)) {
       flavors.push({ zMoveId: saved.id, ...row });
     }
@@ -1653,6 +1686,7 @@ async function seedMaxMoves(dict: {
     text: string;
   }[] = [];
 
+  const existing = new Map<string, number>();
   for (const m of rows) {
     const typeId = dict.types.get(m.typeSlug);
     if (typeId === undefined) continue;
@@ -1662,6 +1696,7 @@ async function seedMaxMoves(dict: {
       create: { slug: m.slug, ...data },
       update: data,
     });
+    existing.set(m.slug, saved.id);
     for (const { languageCode, value: name } of localized(m.names)) {
       await prisma.maxMoveI18n.upsert({
         where: { maxMoveId_languageCode: { maxMoveId: saved.id, languageCode } },
@@ -1682,30 +1717,41 @@ async function seedMaxMoves(dict: {
     }
   }
 
-  // 超极巨招式：百科只给招式名、属性、所属形态和一句附加效果
+  // 百科那份混着两类：超极巨招式是整条新的（数据源一条没收），
+  // 泛用那十九条上面已经按数据源建好了，这里只补中文说明 ——
+  // 照着 upsert 会把数据源给的威力和 PP 抹成空
+  const fromSource = new Set(rows.map((m) => m.slug));
   for (const g of gmax) {
     const typeId = dict.types.get(g.typeSlug);
     if (typeId === undefined) continue;
-    const data = {
-      typeId,
-      power: null,
-      pp: null,
-      formId: g.formSlug ? (dict.forms.get(g.formSlug) ?? null) : null,
-    };
-    const saved = await prisma.maxMove.upsert({
-      where: { slug: g.slug },
-      create: { slug: g.slug, ...data },
-      update: data,
-    });
-    for (const { languageCode, value: name } of localized(g.names)) {
-      await prisma.maxMoveI18n.upsert({
-        where: { maxMoveId_languageCode: { maxMoveId: saved.id, languageCode } },
-        create: { maxMoveId: saved.id, languageCode, name },
-        update: { name },
+
+    let maxMoveId = existing.get(g.slug);
+    if (maxMoveId === undefined) {
+      const data = {
+        typeId,
+        power: null,
+        pp: null,
+        formId: g.formSlug ? (dict.forms.get(g.formSlug) ?? null) : null,
+      };
+      const saved = await prisma.maxMove.upsert({
+        where: { slug: g.slug },
+        create: { slug: g.slug, ...data },
+        update: data,
       });
+      maxMoveId = saved.id;
+      existing.set(g.slug, saved.id);
+    }
+    if (!fromSource.has(g.slug)) {
+      for (const { languageCode, value: name } of localized(g.names)) {
+        await prisma.maxMoveI18n.upsert({
+          where: { maxMoveId_languageCode: { maxMoveId, languageCode } },
+          create: { maxMoveId, languageCode, name },
+          update: { name },
+        });
+      }
     }
     for (const { languageCode, value: effect } of localized(g.effect)) {
-      effects.push({ maxMoveId: saved.id, languageCode, shortEffect: null, effect });
+      effects.push({ maxMoveId, languageCode, shortEffect: null, effect });
     }
   }
 

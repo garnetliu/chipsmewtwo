@@ -336,6 +336,12 @@ export type EvolutionSnapshot = {
   nearSpecialRock: boolean;
   turnUpsideDown: boolean;
   attackVsDefense: "ATTACK_HIGHER" | "EQUAL" | "DEFENSE_HIGHER" | null;
+  /** 靠宝可梦内部随机值分歧的，后缀表达式，例如 "EC 100 % 0 ==" */
+  conditionExpression: string | null;
+  /** 上面那条分支大概多少概率走到，百分数 */
+  conditionChance: number | null;
+  /** 性格决定走哪条分支。只有毒电婴用得上，别的都是空数组 */
+  natureSlugs: string[];
 };
 
 /**
@@ -535,6 +541,9 @@ export type WikiZMoveSnapshot = {
   /** 对上数据源的 slug；数据源没收的那个（谜拟Ｑ的）靠中文名认 */
   slug: string;
   names: Localized;
+  /** 中文机制说明。数据源的 effect_entries 只有英法，Ｚ招式一条中文都没有 */
+  effect: Localized;
+  /** 下面这些只有专属Ｚ招式有，泛用的十八条全是空 */
   formSlug: string | null;
   baseMoveSlug: string | null;
   itemSlug: string | null;
@@ -543,15 +552,16 @@ export type WikiZMoveSnapshot = {
 };
 
 /**
- * 超极巨招式。数据源一条都没有，slug 由英文名生成
+ * 极巨招式。超极巨那批数据源一条都没有，slug 由英文名生成；
+ * 泛用那十九条数据源有本体，这里只补中文机制说明
  */
 export type WikiMaxMoveSnapshot = {
   slug: string;
   names: Localized;
   typeSlug: string;
-  /** 专属于哪个形态 */
+  /** 专属于哪个形态。泛用的是 null */
   formSlug: string | null;
-  /** 附加效果，百科列表页那一列 */
+  /** 超极巨的来自列表页那一列，泛用的来自招式页的效果段 */
   effect: Localized;
 };
 

@@ -1153,6 +1153,11 @@ async function evolutions(
     min_move_count: number | null;
     min_damage_taken: number | null;
     relative_physical_stats: number | null;
+    condition_expression: {
+      expression: string;
+      percentage_chance: number | null;
+    } | null;
+    allowed_natures: NamedRef[] | null;
     needs_overworld_rain: boolean;
     needs_multiplayer: boolean;
     near_special_rock: boolean;
@@ -1226,6 +1231,9 @@ async function evolutions(
           // 数据源用 1 = 雌性、2 = 雄性。结草儿那条能对出来：
           // 1 变结草贵妇（雌性专属）、2 变绅士蛾（雄性专属）
           gender: d.gender === 1 ? "FEMALE" : d.gender === 2 ? "MALE" : null,
+          conditionExpression: d.condition_expression?.expression ?? null,
+          conditionChance: d.condition_expression?.percentage_chance ?? null,
+          natureSlugs: (d.allowed_natures ?? []).map((n) => n.name).sort(),
           needsRain: d.needs_overworld_rain,
           needsMultiplayer: d.needs_multiplayer,
           nearSpecialRock: d.near_special_rock,
