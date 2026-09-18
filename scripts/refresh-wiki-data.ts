@@ -580,6 +580,29 @@ function typeSlugByName(): Map<string, string> {
  * 只认这一句。属性招式在别的语境里也会出现（「对{{type|水}}招式免疫」），
  * 所以「威力提升」这几个字是必须的
  */
+/**
+ * 树果打出的自然之恩是什么属性、多少威力。
+ *
+ * 数据源有几颗第六世代的新树果这两项空着，百科的树果信息框里写着：
+ *   {{树果/信息框 |type=妖精 |power=80 ...}}
+ *
+ * 威力第六世代调过，老树果那栏写成
+ * 「60{{tt|*|第六世代之前}}<br>80{{tt|*|第六世代起}}」—— 取现行值，
+ * 也就是最后一个数字
+ */
+function parseBerryNaturalGift(
+  source: string,
+  types: Map<string, string>,
+): { typeSlug: string; power: number } | null {
+  if (!source.includes("{{树果/信息框")) return null;
+
+  const typeName = /^\|type=\s*(\S+?)\s*$/m.exec(source)?.[1];
+  const powerField = /^\|power=\s*(.+?)\s*$/m.exec(source)?.[1];
+  const typeSlug = typeName ? types.get(typeName) : undefined;
+  const power = powerField ? [...powerField.matchAll(/\d+/g)].pop()?.[0] : undefined;
+  return typeSlug && power ? { typeSlug, power: Number(power) } : null;
+}
+
 function parseItemBoost(source: string, types: Map<string, string>): string | null {
   const plain = source.replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, "$1").replace(/\[\[|\]\]/g, "");
   const found = /\{\{type\|([^}|]+)\}\}招式威力提升/.exec(plain);
@@ -1466,7 +1489,8 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
     const effect = parseItemEffect(source);
     const flavors = parseItemFlavors(source, unknownAbbr);
     const boostTypeSlug = parseItemBoost(source, types);
-    if (!effect && !boostTypeSlug && !Object.keys(flavors).length) {
+    const naturalGift = parseBerryNaturalGift(source, types);
+    if (!effect && !boostTypeSlug && !naturalGift && !Object.keys(flavors).length) {
       unmatched.add(`${slug} ${title}`);
       continue;
     }
@@ -1475,13 +1499,17 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
       effect: effect ? { "zh-Hans": effect } : {},
       flavors,
       ...(boostTypeSlug ? { boostTypeSlug } : {}),
+      ...(naturalGift ? { naturalGift } : {}),
       ...(nameFromWiki.has(slug) ? { names: { "zh-Hans": nameFromWiki.get(slug)! } } : {}),
     });
   }
   if (unknownAbbr.size) {
     console.warn(`  ⚠ 认不出的游戏缩写: ${[...unknownAbbr].sort().join(", ")}`);
   }
-  console.log(`  属性强化: ${rows.filter((r) => r.boostTypeSlug).length} 件`);
+  console.log(
+    `  属性强化: ${rows.filter((r) => r.boostTypeSlug).length} 件，` +
+      `自然之恩: ${rows.filter((r) => r.naturalGift).length} 颗树果`,
+  );
 
   // 源码里只有简体，繁体交给百科的字词转换表转一遍
   // 游戏文案不用转，它在源码里就是 -{zh-hans:…;zh-hant:…}- 写死的
