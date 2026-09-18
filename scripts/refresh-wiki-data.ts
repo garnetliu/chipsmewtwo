@@ -25,6 +25,7 @@ import {
   SEED_DATA_DIR,
   type WikiData,
   type WikiEffectSnapshot,
+  type WikiFormSnapshot,
   type WikiMaxMoveSnapshot,
   type WikiPokemonDescriptionSnapshot,
   type WikiSnapshot,
@@ -512,6 +513,9 @@ function plainText(source: string): string {
  * 进库只会在页面上显示一个「回复」 —— 不如让它缺着，前端回退到英文
  */
 const MIN_EFFECT_LENGTH = 8;
+/** 道具的效果段是逐条列出来的，短句本来就成立 ——
+ *  高级球整段只有「捕获率×2。」六个字，按上面那个门槛会被当噪音丢掉 */
+const MIN_ITEM_EFFECT_LENGTH = 4;
 
 /**
  * 道具的机制说明。
@@ -634,7 +638,7 @@ function parseItemEffect(source: string): string | null {
     }
 
     const joined = lines.join("");
-    if (joined.length >= MIN_EFFECT_LENGTH) return joined;
+    if (joined.length >= MIN_ITEM_EFFECT_LENGTH) return joined;
   }
   return null;
 }
@@ -1459,24 +1463,30 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   // 页名带「（道具）」后缀：裸中文名有跟招式、宝可梦重名的（「日光」是招式），
   // 重定向会把我们带到那些条目上去。带后缀查不到的再退回裸名字
   const titleOf = new Map<string, string>();
+  /** 百科上的叫法跟数据源不一样时的第二候选 ——
+   *  magost-berry 数据源叫「岳竹果」，百科的条目是「芒芒果」 */
+  const aliasOf = new Map<string, string>();
   const nameFromWiki = new Map<string, string>();
   const unmatched = new Set<string>();
   for (const item of snapshot) {
     const own = item.names["zh-Hans"];
-    const name = own ?? nameIndex.get(item.slug);
+    const fromIndex = nameIndex.get(item.slug);
+    const name = own ?? fromIndex;
     if (!name) {
       unmatched.add(item.slug);
       continue;
     }
     titleOf.set(item.slug, name);
+    if (fromIndex && fromIndex !== name) aliasOf.set(item.slug, fromIndex);
     if (!own) nameFromWiki.set(item.slug, name);
   }
   console.log(
     `  道具: ${titleOf.size} 件能定位，其中 ${nameFromWiki.size} 件的中文名是从列表页补的`,
   );
 
-  const suffixed = await fetchPages([...titleOf.values()].map((n) => `${n}（道具）`));
-  const bare = await fetchPages([...titleOf.values()].filter((n) => !suffixed.has(`${n}（道具）`)));
+  const wanted = [...new Set([...titleOf.values(), ...aliasOf.values()])];
+  const suffixed = await fetchPages(wanted.map((n) => `${n}（道具）`));
+  const bare = await fetchPages(wanted.filter((n) => !suffixed.has(`${n}（道具）`)));
   const pages = new Map<string, string>();
   for (const [title, content] of bare) pages.set(title, content);
   for (const [title, content] of suffixed) pages.set(title.replace(/（道具）$/, ""), content);
@@ -1485,9 +1495,15 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   const unknownAbbr = new Set<string>();
   const rows: WikiEffectSnapshot[] = [];
   for (const [slug, title] of titleOf) {
-    const source = pages.get(title);
     // 中文名撞上宝可梦或招式条目时会拿到别的页，用信息框确认这是道具页
-    if (!source || !source.includes("{{道具信息框")) {
+    const isItemPage = (text: string | undefined) => !!text?.includes("{{道具信息框");
+    const alias = aliasOf.get(slug);
+    const source = isItemPage(pages.get(title))
+      ? pages.get(title)
+      : alias && isItemPage(pages.get(alias))
+        ? pages.get(alias)
+        : undefined;
+    if (!source) {
       unmatched.add(`${slug} ${title}`);
       continue;
     }
@@ -1819,6 +1835,73 @@ function formIndex(): (dex: number, suffix: string) => string | undefined {
 }
 
 /**
+ * 形态的中文名。
+ *
+ * 数据源有三十多个形态一种中文都没给（故勒顿的四种骑乘形态、换装皮卡丘
+ * 那五套装扮、太乐巴戈斯的太晶和星晶形态）。百科有一张按图鉴编号排的
+ * 全形态对照表，每行是
+ *   {{Rdexn/form|1007|2|故勒顿|疾驰形态|しっそうけいたい|Sprinting Build|L|form=}}
+ * 中日英三种形态名都在，靠英文那列对上数据源的形态 slug
+ */
+async function forms(): Promise<WikiSnapshot<WikiFormSnapshot>> {
+  const title = "宝可梦列表（按全国图鉴编号）/形态变化";
+  const [source] = [...(await fetchPages([title])).values()];
+  if (!source) throw new Error(`读不到「${title}」，百科那边可能改了页名`);
+
+  type Pokemon = { id: number; slug: string; forms: { slug: string }[] };
+  const byDex = new Map(readSnapshot<Pokemon>("pokemon").map((p) => [p.id, p]));
+
+  const unmatched = new Set<string>();
+  const parsed: { slug: string; zh: string }[] = [];
+  for (const [, args] of source.matchAll(/\{\{Rdexn\/form\|([^}]*)\}\}/g)) {
+    const [dex, , , zhName, , enName] = args!.split("|").map((s) => s.trim());
+    const zh = plainText(zhName ?? "");
+    if (!zh || !enName) continue;
+
+    const pokemon = byDex.get(Number(dex));
+    if (!pokemon) continue;
+
+    const suffix = formSuffix(enName);
+    const slug = `${pokemon.slug}-${suffix}`;
+    if (!pokemon.forms.some((f) => f.slug === slug)) {
+      unmatched.add(`${pokemon.slug} ${enName}`);
+      continue;
+    }
+    parsed.push({ slug, zh });
+  }
+
+  const traditional = await convertVariant([...new Set(parsed.map((r) => r.zh))], "zh-hant");
+  const rows = parsed.map(({ slug, zh }) => ({
+    slug,
+    names: { "zh-Hans": zh, "zh-Hant": traditional.get(zh) ?? zh } as Localized,
+  }));
+
+  console.log(`  形态名: ${rows.length} 条，对不上数据源形态的 ${unmatched.size} 条`);
+  rows.sort((a, b) => a.slug.localeCompare(b.slug));
+  return wrap(rows, unmatched);
+}
+
+/**
+ * 英文形态名 → 形态 slug 的后半截。
+ *
+ * 百科写的是「Alolan Form」「Mega Charizard X」「Sprinting Build」这种人话，
+ * 数据源那边是 -alola、-mega-x、-sprinting-build
+ */
+function formSuffix(en: string): string {
+  const name = en.trim();
+  const mega = /^Mega\b(.*?)(?:\s+([XY]))?$/.exec(name);
+  if (mega) return mega[2] ? `mega-${mega[2].toLowerCase()}` : "mega";
+  if (/^Alolan/i.test(name)) return "alola";
+  if (/^Galarian/i.test(name)) return "galar";
+  if (/^Hisuian/i.test(name)) return "hisui";
+  if (/^Paldean/i.test(name)) return "paldea";
+  if (/^Gigantamax/i.test(name)) return "gmax";
+  if (/^Primal/i.test(name)) return "primal";
+  // 其余照字面来，「Terastal Form」「Blade Forme」这种把结尾的 Form(e) 去掉
+  return toSlug(name.replace(/\s+Formes?$/i, "").replace(/\s+Form$/i, ""));
+}
+
+/**
  * 图鉴说明。页名直接用 PokeAPI 的简体中文名 ——
  * 宝可梦的中文名两边是同一套官方译名，不像特性招式那样需要索引页对编号
  */
@@ -1891,6 +1974,7 @@ if (!only || only === "moves") await write("wiki-moves", await moves());
 if (!only || only === "items") await write("wiki-items", await items());
 if (!only || only === "z-moves") await write("wiki-z-moves", await zMoves());
 if (!only || only === "max-moves") await write("wiki-max-moves", await maxMoves());
+if (!only || only === "forms") await write("wiki-forms", await forms());
 if (!only || only === "pokemon") {
   await write("wiki-pokemon-descriptions", await pokemonDescriptions());
 }

@@ -83,7 +83,10 @@
     },
     {
       "slug": "ability-urge",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "diamond-pearl": {
           "zh-Hans": "———"
@@ -1702,7 +1705,10 @@
     },
     {
       "slug": "autograph",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "沒有效果",
+        "zh-Hant": "沒有效果"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "枯叶市道馆馆主马志士给你的彩色签名纸。上面写着“Good Luck！”。",
@@ -2425,7 +2431,10 @@
     },
     {
       "slug": "beach-glass",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "受到波浪的洗刷从而变成圆形的彩色玻璃片。表面摸起来有点粗糙不平。",
@@ -2594,7 +2603,10 @@
     },
     {
       "slug": "belue-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出靛莓。",
@@ -4167,7 +4179,10 @@
     },
     {
       "slug": "bluk-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出墨莓。",
@@ -5434,7 +5449,10 @@
     },
     {
       "slug": "candy-jar",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "用来存放糖果。",
+        "zh-Hant": "用來存放糖果。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "ーーー"
@@ -5906,7 +5924,10 @@
     },
     {
       "slug": "chalky-stone",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "路边捡到的白白的小石头。",
@@ -7605,7 +7626,10 @@
     },
     {
       "slug": "common-stone",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "x-y": {
           "zh-Hans": "在有些人看来可能会觉得它十分贵重。但其实是块普通的石头。",
@@ -7790,7 +7814,10 @@
     },
     {
       "slug": "cornn-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出玉黍。",
@@ -11607,7 +11634,10 @@
     },
     {
       "slug": "durin-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出金枕。",
@@ -17070,7 +17100,10 @@
     },
     {
       "slug": "gold-leaf",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "gold-silver": {
           "zh-Hans": "神奇的金色叶子。",
@@ -21239,7 +21272,10 @@
     },
     {
       "slug": "item-drop",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "diamond-pearl": {
           "zh-Hans": "———"
@@ -21275,7 +21311,10 @@
     },
     {
       "slug": "item-urge",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "diamond-pearl": {
           "zh-Hans": "———"
@@ -23084,7 +23123,10 @@
     },
     {
       "slug": "laultra-ball",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "捕获率×2。",
+        "zh-Hant": "捕獲率×2。"
+      },
       "flavors": {
         "gold-silver": {
           "zh-Hans": "有很高的几率可以捕捉到宝可梦的精灵球。"
@@ -23323,7 +23365,10 @@
     },
     {
       "slug": "leaf-letter--eevee",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "以树叶制作的信件。上面留有皮卡丘的足迹，好像是要表达些什么。",
@@ -23349,7 +23394,10 @@
     },
     {
       "slug": "leaf-letter--pikachu",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "以树叶制作的信件。上面留有皮卡丘的足迹，好像是要表达些什么。",
@@ -24533,7 +24581,10 @@
     },
     {
       "slug": "lone-earring",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "某人遗失的单只耳环。",
@@ -26261,7 +26312,10 @@
     },
     {
       "slug": "magost-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出岳竹。",
@@ -26530,7 +26584,10 @@
     },
     {
       "slug": "marble",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "非常圆润的玻璃球。能在透明的球体中看见彩色玻璃的花纹。",
@@ -30325,7 +30382,10 @@
     },
     {
       "slug": "nomel-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出檬柠。",
@@ -31609,7 +31669,10 @@
     },
     {
       "slug": "pamtre-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出椰木。",
@@ -32720,7 +32783,10 @@
     },
     {
       "slug": "photo-album",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "保存照片。",
+        "zh-Hant": "保存照片。"
+      },
       "flavors": {
         "heartgold-soulsilver": {
           "zh-Hans": "用来摆放在冒险中拍摄的纪念相片的相册。",
@@ -33569,7 +33635,10 @@
     },
     {
       "slug": "poffin-case",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "存放宝芬。",
+        "zh-Hant": "存放寶芬。"
+      },
       "flavors": {
         "diamond-pearl": {
           "zh-Hans": "用来保存烹饪好的宝芬的容器。",
@@ -34217,7 +34286,10 @@
     },
     {
       "slug": "polished-mud-ball",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "用泥土制作的丸子。花了大把时间打磨，表面油光水滑。",
@@ -35153,7 +35225,10 @@
     },
     {
       "slug": "premier-ball",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "捕获率×1。",
+        "zh-Hant": "捕獲率×1。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "为了纪念某些事件制作的稀有的精灵球。"
@@ -36410,7 +36485,10 @@
     },
     {
       "slug": "rabuta-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出茸丹。",
@@ -38274,7 +38352,10 @@
     },
     {
       "slug": "reset-urge",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "diamond-pearl": {
           "zh-Hans": "———"
@@ -40208,7 +40289,10 @@
     },
     {
       "slug": "safari-ball",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "捕获率×1。",
+        "zh-Hant": "捕獲率×1。"
+      },
       "flavors": {
         "gold-silver": {
           "zh-Hans": "能在狩猎地带中捕捉野生宝可梦的球。"
@@ -41111,7 +41195,10 @@
     },
     {
       "slug": "seal-case",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "存放贴纸。",
+        "zh-Hant": "存放貼紙。"
+      },
       "flavors": {
         "diamond-pearl": {
           "zh-Hans": "放有贴在球壳上的贴纸的容器。"
@@ -42305,7 +42392,10 @@
     },
     {
       "slug": "silver-leaf",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "gold-silver": {
           "zh-Hans": "神奇的银色叶子。",
@@ -42892,7 +42982,10 @@
     },
     {
       "slug": "slowpoke-tail",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "gold-silver": {
           "zh-Hans": "非常美味，可以高价出售。"
@@ -42946,7 +43039,10 @@
     },
     {
       "slug": "small-bouquet",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "竭尽心力制作的素雅花束。里面满满都是对训练家的心意。",
@@ -43570,7 +43666,10 @@
     },
     {
       "slug": "sonias-book",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "sword-shield": {
           "zh-Hans": "索妮亚博士出版的书。以风趣的文笔展示了关于伽勒尔地区传说的最新发现。",
@@ -43914,7 +44013,10 @@
     },
     {
       "slug": "spelon-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出刺角。",
@@ -44152,7 +44254,10 @@
     },
     {
       "slug": "sport-ball",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "捕获率×1。",
+        "zh-Hant": "捕獲率×1。"
+      },
       "flavors": {
         "heartgold-soulsilver": {
           "zh-Hans": "在捕虫大赛上使用的特殊的球。"
@@ -45550,7 +45655,10 @@
     },
     {
       "slug": "strange-souvenir",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "x-y": {
           "zh-Hans": "据说是在远离卡洛斯地区的地方，模仿古时候被称为守护神的宝可梦而制作的摆设。",
@@ -45623,7 +45731,10 @@
     },
     {
       "slug": "stretchy-spring",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "细小的弹簧。被拉得太长了，不知道能派上什么用。",
@@ -46115,7 +46226,10 @@
     },
     {
       "slug": "surge-badge",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "无效果。",
+        "zh-Hant": "無效果。"
+      },
       "flavors": {
         "ultra-sun-ultra-moon": {
           "zh-Hans": "能从关都之道馆那里得到的徽章赠品。好像仿照了某个地区的道馆徽章。",
@@ -47835,7 +47949,10 @@
     },
     {
       "slug": "tropical-shell",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "不能使用。",
+        "zh-Hant": "不能使用。"
+      },
       "flavors": {
         "lets-go-pikachu-lets-go-eevee": {
           "zh-Hans": "美丽的白色贝壳。或许是从温暖的海域那里漂流到这里的。",
@@ -48020,7 +48137,10 @@
     },
     {
       "slug": "ultra-ball",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "捕获率×2。",
+        "zh-Hant": "捕獲率×2。"
+      },
       "flavors": {
         "gold-silver": {
           "zh-Hans": "有很高的几率可以捕捉到宝可梦的精灵球。"
@@ -49013,7 +49133,10 @@
     },
     {
       "slug": "watmel-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出瓜西。",
@@ -49242,7 +49365,10 @@
     },
     {
       "slug": "wepear-berry",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "ruby-sapphire": {
           "zh-Hans": "宝可方块的材料。埋在土地里可以培育出西梨。",
@@ -49792,7 +49918,10 @@
     },
     {
       "slug": "wishing-chip",
-      "effect": {},
+      "effect": {
+        "zh-Hans": "没有效果。",
+        "zh-Hant": "沒有效果。"
+      },
       "flavors": {
         "sword-shield": {
           "zh-Hans": "投掷数个到宝可梦的巢穴里，可能就会有极巨化宝可梦出现。",
