@@ -502,6 +502,11 @@ export type WikiEffectSnapshot = {
    */
   boostTypeSlug?: string;
   /**
+   * 只有树果有：自然之恩打出来的属性和威力。
+   * 数据源有几颗第六世代的新树果空着，百科的树果信息框里有
+   */
+  naturalGift?: { typeSlug: string; power: number };
+  /**
    * 译名，只在数据源没给中文名时才有。
    * 邮件、超级石那批数据源一直空着，百科的列表页有
    */

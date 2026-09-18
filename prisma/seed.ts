@@ -869,7 +869,12 @@ async function seedItemMechanics(dict: {
       missing.add(b.itemSlug);
       return [];
     }
-    const { naturalGiftTypeSlug } = b;
+    // 自然之恩数据源有几颗第六世代的新树果空着，用百科的补。
+    // 只在数据源没给时才用，免得两边的世代口径混在一起 ——
+    // 百科写的是现行值，数据源给老树果的是第六世代之前的旧威力
+    const zhGift = wiki.get(b.itemSlug)?.naturalGift;
+    const naturalGiftTypeSlug = b.naturalGiftTypeSlug ?? zhGift?.typeSlug ?? null;
+    const naturalGiftPower = b.naturalGiftPower ?? zhGift?.power ?? null;
     return [
       {
         itemId: item,
@@ -879,7 +884,7 @@ async function seedItemMechanics(dict: {
         smoothness: b.smoothness,
         soilDryness: b.soilDryness,
         firmness: b.firmness,
-        naturalGiftPower: b.naturalGiftPower,
+        naturalGiftPower,
         naturalGiftTypeId: naturalGiftTypeSlug
           ? (dict.types.get(naturalGiftTypeSlug) ?? null)
           : null,
