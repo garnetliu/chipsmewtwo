@@ -24,6 +24,7 @@ import { gunzipSync } from "node:zlib";
 import { LATEST_GENERATION } from "@/lib/pokemon/defaults";
 import { type LanguageCode, LANGUAGES } from "@/lib/pokemon/language";
 import { prisma } from "@/lib/prisma";
+import type { Prisma } from "@/prisma/generated/client";
 import {
   type DamageTo,
   type EffectsByGeneration,
@@ -125,6 +126,18 @@ async function insertInBatches<T>(rows: T[], insert: (batch: T[]) => Promise<unk
   for (let i = 0; i < rows.length; i += BATCH) await insert(rows.slice(i, i + BATCH));
 }
 
+/**
+ * 整表重建：清空再灌，两步在同一个事务里。
+ *
+ * 不包事务的话中途挂掉就留下「已经清空、还没灌完」的半截库 ——
+ * 一条行的字段对不上就能把六张机制表清空后卡在第六张。
+ *
+ * 招式学习那张表六十多万行，所以超时给得很宽
+ */
+async function rebuild(steps: (tx: Prisma.TransactionClient) => Promise<unknown>) {
+  await prisma.$transaction(steps, { timeout: 20 * 60 * 1000, maxWait: 60 * 1000 });
+}
+
 // ── 说明文本的两个数据源合并 ──────────────────────────────────
 
 type EffectRow = {
@@ -205,9 +218,10 @@ function wikiEffects(
   try {
     const snapshot = readWiki(name);
     if (snapshot.unmatched.length) {
-      // 多半是百科收了而 PokeAPI 还没收的新条目（传说 Z-A 那批特性就是），
-      // 本体表以 PokeAPI 为准，这些中文没有可挂的行
-      console.warn(`⚠ ${name}: ${snapshot.unmatched.length} 个条目在 PokeAPI 里没有对应记录`);
+      // 百科收了而 PokeAPI 没收的条目。本体表以 PokeAPI 为准，这些中文没有
+      // 可挂的行 —— 道具那边常年六百多条（百科把各代删掉的道具也留着），
+      // 属于常态，不当警告打
+      console.log(`  ${name}: ${snapshot.unmatched.length} 个条目在 PokeAPI 里没有对应记录`);
     }
     return new Map(snapshot.rows.map((r) => [r.slug, r]));
   } catch {
@@ -368,8 +382,10 @@ async function seedTypeEffectiveness(
   }
 
   // 两三千行，整表重建比逐行 upsert 快得多，而且它是纯派生数据，删了没损失
-  await prisma.typeEffectiveness.deleteMany({});
-  await prisma.typeEffectiveness.createMany({ data: rows });
+  await rebuild(async (tx) => {
+    await tx.typeEffectiveness.deleteMany({});
+    await tx.typeEffectiveness.createMany({ data: rows });
+  });
   console.log(`相克表: ${rows.length} 行`);
 }
 
@@ -747,10 +763,19 @@ async function seedItems(groupIds: Map<string, number>) {
     }
   }
 
-  await prisma.itemEffectI18n.deleteMany({});
-  await insertInBatches(effects, (data) => prisma.itemEffectI18n.createMany({ data }));
-  await prisma.itemFlavorI18n.deleteMany({});
-  await insertInBatches(flavors, (data) => prisma.itemFlavorI18n.createMany({ data }));
+  await rebuild(async (tx) => {
+    await tx.itemEffectI18n.deleteMany({});
+    await insertInBatches(effects, (data) => tx.itemEffectI18n.createMany({ data }));
+    await tx.itemFlavorI18n.deleteMany({});
+    await insertInBatches(flavors, (data) => tx.itemFlavorI18n.createMany({ data }));
+  });
+  // 快照里没有的清掉。数据源改过 slug 或者删掉条目时，upsert 不会动旧行。
+  // 进化条件和Ｚ纯晶的引用都在后面重建，这里删得动
+  const stale = await prisma.item.deleteMany({
+    where: { slug: { notIn: items.map((i) => i.slug) } },
+  });
+  if (stale.count) console.log(`  清掉 ${stale.count} 件不在快照里的道具`);
+
   console.log(
     `道具: ${items.length} 行，机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行`,
   );
@@ -897,18 +922,20 @@ async function seedItemMechanics(dict: {
     ];
   });
 
-  await prisma.itemFormChange.deleteMany({});
-  await insertInBatches(formChanges, (data) => prisma.itemFormChange.createMany({ data }));
-  await prisma.itemTypeChange.deleteMany({});
-  await insertInBatches(typeChanges, (data) => prisma.itemTypeChange.createMany({ data }));
-  await prisma.itemTypeBoost.deleteMany({});
-  await insertInBatches([...boosts.values()], (data) => prisma.itemTypeBoost.createMany({ data }));
-  await prisma.itemNature.deleteMany({});
-  await insertInBatches(natures, (data) => prisma.itemNature.createMany({ data }));
-  await prisma.machine.deleteMany({});
-  await insertInBatches(machines, (data) => prisma.machine.createMany({ data }));
-  await prisma.berry.deleteMany({});
-  await insertInBatches(berries, (data) => prisma.berry.createMany({ data }));
+  await rebuild(async (tx) => {
+    await tx.itemFormChange.deleteMany({});
+    await insertInBatches(formChanges, (data) => tx.itemFormChange.createMany({ data }));
+    await tx.itemTypeChange.deleteMany({});
+    await insertInBatches(typeChanges, (data) => tx.itemTypeChange.createMany({ data }));
+    await tx.itemTypeBoost.deleteMany({});
+    await insertInBatches([...boosts.values()], (data) => tx.itemTypeBoost.createMany({ data }));
+    await tx.itemNature.deleteMany({});
+    await insertInBatches(natures, (data) => tx.itemNature.createMany({ data }));
+    await tx.machine.deleteMany({});
+    await insertInBatches(machines, (data) => tx.machine.createMany({ data }));
+    await tx.berry.deleteMany({});
+    await insertInBatches(berries, (data) => tx.berry.createMany({ data }));
+  });
 
   if (missing.size) {
     console.warn(
@@ -969,10 +996,12 @@ async function seedAbilities(groupIds: Map<string, number>) {
   const stale = await prisma.ability.deleteMany({ where: { slug: { notIn: [...ids.keys()] } } });
   if (stale.count) console.log(`  清掉 ${stale.count} 个不在快照里的特性`);
 
-  await prisma.abilityEffectI18n.deleteMany({});
-  await insertInBatches(effects, (data) => prisma.abilityEffectI18n.createMany({ data }));
-  await prisma.abilityFlavorI18n.deleteMany({});
-  await insertInBatches(flavors, (data) => prisma.abilityFlavorI18n.createMany({ data }));
+  await rebuild(async (tx) => {
+    await tx.abilityEffectI18n.deleteMany({});
+    await insertInBatches(effects, (data) => tx.abilityEffectI18n.createMany({ data }));
+    await tx.abilityFlavorI18n.deleteMany({});
+    await insertInBatches(flavors, (data) => tx.abilityFlavorI18n.createMany({ data }));
+  });
   console.log(
     `特性: ${abilities.length} 行，机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行`,
   );
@@ -1071,14 +1100,16 @@ async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, num
   const stale = await prisma.move.deleteMany({ where: { slug: { notIn: [...ids.keys()] } } });
   if (stale.count) console.log(`  清掉 ${stale.count} 条已拆走的招式`);
 
-  await prisma.moveGeneration.deleteMany({});
-  await insertInBatches(generations, (data) => prisma.moveGeneration.createMany({ data }));
-  await prisma.moveEffectI18n.deleteMany({});
-  await insertInBatches(effects, (data) => prisma.moveEffectI18n.createMany({ data }));
-  await prisma.moveFlavorI18n.deleteMany({});
-  await insertInBatches(flavors, (data) => prisma.moveFlavorI18n.createMany({ data }));
-  await prisma.moveStatChange.deleteMany({});
-  await insertInBatches(statChanges, (data) => prisma.moveStatChange.createMany({ data }));
+  await rebuild(async (tx) => {
+    await tx.moveGeneration.deleteMany({});
+    await insertInBatches(generations, (data) => tx.moveGeneration.createMany({ data }));
+    await tx.moveEffectI18n.deleteMany({});
+    await insertInBatches(effects, (data) => tx.moveEffectI18n.createMany({ data }));
+    await tx.moveFlavorI18n.deleteMany({});
+    await insertInBatches(flavors, (data) => tx.moveFlavorI18n.createMany({ data }));
+    await tx.moveStatChange.deleteMany({});
+    await insertInBatches(statChanges, (data) => tx.moveStatChange.createMany({ data }));
+  });
   console.log(
     `招式: ${moves.length} 行，世代数值 ${generations.length} 行，` +
       `机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行，` +
@@ -1195,53 +1226,40 @@ async function seedPokemon(
   );
   const ids = [...formIds.values()];
 
-  await prisma.formI18n.deleteMany({ where: { formId: { in: ids } } });
-  await prisma.formI18n.createMany({
-    data: forms.flatMap(({ id, form }) => {
-      // 形态名只有非默认形态有（「阿罗拉的样子」）；数据源缺中文，靠 overrides 补
-      const names: Localized = { ...manual?.[form.slug]?.names };
-      for (const n of form.names) names[n.languageCode as LanguageCode] ??= n.name;
-      return localized(names).map(({ languageCode, value: name }) => ({
-        formId: id,
-        languageCode,
-        name,
-      }));
+  const nameRows = forms.flatMap(({ id, form }) => {
+    // 形态名只有非默认形态有（「阿罗拉的样子」）；数据源缺中文，靠 overrides 补
+    const names: Localized = { ...manual?.[form.slug]?.names };
+    for (const n of form.names) names[n.languageCode as LanguageCode] ??= n.name;
+    return localized(names).map(({ languageCode, value: name }) => ({
+      formId: id,
+      languageCode,
+      name,
+    }));
+  });
+
+  const typeRows = forms.flatMap(({ id, form }) =>
+    form.types.flatMap((t) => {
+      const primaryTypeId = dict.types.get(t.primarySlug);
+      if (primaryTypeId === undefined) return [];
+      return [
+        {
+          formId: id,
+          generationId: t.generationId,
+          primaryTypeId,
+          secondaryTypeId: t.secondarySlug ? (dict.types.get(t.secondarySlug) ?? null) : null,
+        },
+      ];
     }),
-  });
+  );
 
-  await prisma.formType.deleteMany({ where: { formId: { in: ids } } });
-  await prisma.formType.createMany({
-    data: forms.flatMap(({ id, form }) =>
-      form.types.flatMap((t) => {
-        const primaryTypeId = dict.types.get(t.primarySlug);
-        if (primaryTypeId === undefined) return [];
-        return [
-          {
-            formId: id,
-            generationId: t.generationId,
-            primaryTypeId,
-            secondaryTypeId: t.secondarySlug ? (dict.types.get(t.secondarySlug) ?? null) : null,
-          },
-        ];
-      }),
-    ),
-  });
+  const colorRows = forms.flatMap(({ id, form }) =>
+    form.colors.flatMap((c) => {
+      const colorId = dict.colors.get(c.colorSlug);
+      return colorId === undefined ? [] : [{ formId: id, generationId: c.generationId, colorId }];
+    }),
+  );
 
-  await prisma.formColor.deleteMany({ where: { formId: { in: ids } } });
-  await prisma.formColor.createMany({
-    data: forms.flatMap(({ id, form }) =>
-      form.colors.flatMap((c) => {
-        const colorId = dict.colors.get(c.colorSlug);
-        return colorId === undefined ? [] : [{ formId: id, generationId: c.generationId, colorId }];
-      }),
-    ),
-  });
-
-  await prisma.formStat.deleteMany({ where: { formId: { in: ids } } });
   const statRows = forms.flatMap(({ id, form }) => form.stats.map((st) => ({ formId: id, ...st })));
-  await insertInBatches(statRows, (data) => prisma.formStat.createMany({ data }));
-
-  await prisma.formAbility.deleteMany({ where: { formId: { in: ids } } });
   const abilityRows = forms.flatMap(({ id, form }) =>
     form.abilities.flatMap((a) => {
       const abilityId = dict.abilities.get(a.abilitySlug);
@@ -1250,14 +1268,11 @@ async function seedPokemon(
         : [{ formId: id, generationId: a.generationId, abilityId, slot: a.slot }];
     }),
   );
-  await insertInBatches(abilityRows, (data) => prisma.formAbility.createMany({ data }));
-
   // 图鉴说明两个数据源合并后一次写入。同一 (版本, 语言) 以百科为准 ——
   // PokeAPI 的中文只有 8 个版本组、722 只，朱紫那 127 只一条都没有。
   //
   // 不分两趟写：先插 PokeAPI 再删了重插百科的话，那个 deleteMany 得按
   // (形态, 版本, 语言) 三元组匹配几万行，一批五千个 OR 条件能跑几分钟
-  await prisma.formDescriptionI18n.deleteMany({ where: { formId: { in: ids } } });
   let chineseRows = 0;
   const descriptionRows = forms.flatMap(({ id, species }) => {
     const merged = new Map<string, { versionSlug: string; languageCode: string; text: string }>();
@@ -1276,9 +1291,32 @@ async function seedPokemon(
         : [{ formId: id, versionId, languageCode: d.languageCode as LanguageCode, text: d.text }];
     });
   });
-  await insertInBatches(descriptionRows, (data) =>
-    prisma.formDescriptionI18n.createMany({ data, skipDuplicates: true }),
-  );
+  await rebuild(async (tx) => {
+    await tx.formI18n.deleteMany({ where: { formId: { in: ids } } });
+    await insertInBatches(nameRows, (data) => tx.formI18n.createMany({ data }));
+    await tx.formType.deleteMany({ where: { formId: { in: ids } } });
+    await insertInBatches(typeRows, (data) => tx.formType.createMany({ data }));
+    await tx.formColor.deleteMany({ where: { formId: { in: ids } } });
+    await insertInBatches(colorRows, (data) => tx.formColor.createMany({ data }));
+    await tx.formStat.deleteMany({ where: { formId: { in: ids } } });
+    await insertInBatches(statRows, (data) => tx.formStat.createMany({ data }));
+    await tx.formAbility.deleteMany({ where: { formId: { in: ids } } });
+    await insertInBatches(abilityRows, (data) => tx.formAbility.createMany({ data }));
+    await tx.formDescriptionI18n.deleteMany({ where: { formId: { in: ids } } });
+    await insertInBatches(descriptionRows, (data) =>
+      tx.formDescriptionI18n.createMany({ data, skipDuplicates: true }),
+    );
+  });
+
+  // 快照里没有的清掉。形态的子表、招式学习、进化关系都是级联删除，
+  // 而后两者本来就在后面整表重建
+  const staleForms = await prisma.form.deleteMany({ where: { id: { notIn: ids } } });
+  const stalePokemon = await prisma.pokemon.deleteMany({
+    where: { id: { notIn: rows.map((p) => p.id) } },
+  });
+  if (staleForms.count || stalePokemon.count) {
+    console.log(`  清掉 ${stalePokemon.count} 只、${staleForms.count} 个不在快照里的形态`);
+  }
 
   console.log(
     `宝可梦: ${rows.length} 只 / ${forms.length} 个形态，种族值 ${statRows.length} 行，` +
@@ -1325,8 +1363,6 @@ async function seedMoveLearns(dict: {
 }) {
   const snapshot = readGzip("move-learns");
 
-  await prisma.moveLearn.deleteMany({});
-
   type Row = {
     formId: number;
     moveId: number;
@@ -1335,29 +1371,34 @@ async function seedMoveLearns(dict: {
     level: number;
     machineNumber: string | null;
   };
-  let batch: Row[] = [];
   let total = 0;
-  const flush = async () => {
-    if (!batch.length) return;
-    // skipDuplicates：同一 (形态, 招式, 版本组, 学法, 等级) 数据源偶尔给两条，
-    // 唯一键会挡下来，不该让整批炸掉
-    await prisma.moveLearn.createMany({ data: batch, skipDuplicates: true });
-    total += batch.length;
-    batch = [];
-  };
+  await rebuild(async (tx) => {
+    await tx.moveLearn.deleteMany({});
 
-  for (const entry of snapshot) {
-    const formId = dict.forms.get(entry.formSlug);
-    if (formId === undefined) continue;
-    for (const [moveSlug, groupSlug, methodSlug, level, machineNumber] of entry.learns) {
-      const moveId = dict.moves.get(moveSlug);
-      const groupId = dict.groups.get(groupSlug);
-      if (moveId === undefined || groupId === undefined || !dict.methods.has(methodSlug)) continue;
-      batch.push({ formId, moveId, groupId, methodSlug, level, machineNumber });
-      if (batch.length >= BATCH) await flush();
+    let batch: Row[] = [];
+    const flush = async () => {
+      if (!batch.length) return;
+      // skipDuplicates：同一 (形态, 招式, 版本组, 学法, 等级) 数据源偶尔给两条，
+      // 唯一键会挡下来，不该让整批炸掉
+      await tx.moveLearn.createMany({ data: batch, skipDuplicates: true });
+      total += batch.length;
+      batch = [];
+    };
+
+    for (const entry of snapshot) {
+      const formId = dict.forms.get(entry.formSlug);
+      if (formId === undefined) continue;
+      for (const [moveSlug, groupSlug, methodSlug, level, machineNumber] of entry.learns) {
+        const moveId = dict.moves.get(moveSlug);
+        const groupId = dict.groups.get(groupSlug);
+        if (moveId === undefined || groupId === undefined || !dict.methods.has(methodSlug))
+          continue;
+        batch.push({ formId, moveId, groupId, methodSlug, level, machineNumber });
+        if (batch.length >= BATCH) await flush();
+      }
     }
-  }
-  await flush();
+    await flush();
+  });
   console.log(`招式学习: ${total} 行`);
 }
 
@@ -1429,10 +1470,12 @@ async function seedEvolutions(dict: {
   });
 
   // 整表重建。链是从这些行算出来的，所以链也一起重建
-  await prisma.form.updateMany({ data: { evolutionChainId: null } });
-  await prisma.evolutionChain.deleteMany({});
-  await prisma.evolution.deleteMany({});
-  await insertInBatches(data, (batch) => prisma.evolution.createMany({ data: batch }));
+  await rebuild(async (tx) => {
+    await tx.form.updateMany({ data: { evolutionChainId: null } });
+    await tx.evolutionChain.deleteMany({});
+    await tx.evolution.deleteMany({});
+    await insertInBatches(data, (batch) => tx.evolution.createMany({ data: batch }));
+  });
 
   // 并查集：把首尾相接的进化关系并成一组
   const parent = new Map<number, number>();
@@ -1560,10 +1603,12 @@ async function seedZMoves(dict: {
     }
   }
 
-  await prisma.zMoveEffectI18n.deleteMany({});
-  await insertInBatches(effects, (data) => prisma.zMoveEffectI18n.createMany({ data }));
-  await prisma.zMoveFlavorI18n.deleteMany({});
-  await insertInBatches(flavors, (data) => prisma.zMoveFlavorI18n.createMany({ data }));
+  await rebuild(async (tx) => {
+    await tx.zMoveEffectI18n.deleteMany({});
+    await insertInBatches(effects, (data) => tx.zMoveEffectI18n.createMany({ data }));
+    await tx.zMoveFlavorI18n.deleteMany({});
+    await insertInBatches(flavors, (data) => tx.zMoveFlavorI18n.createMany({ data }));
+  });
   console.log(`Ｚ招式: ${rows.length} 条，转化关系认全的 ${linked} 条，说明 ${effects.length} 行`);
 }
 
@@ -1664,10 +1709,12 @@ async function seedMaxMoves(dict: {
     }
   }
 
-  await prisma.maxMoveEffectI18n.deleteMany({});
-  await insertInBatches(effects, (data) => prisma.maxMoveEffectI18n.createMany({ data }));
-  await prisma.maxMoveFlavorI18n.deleteMany({});
-  await insertInBatches(flavors, (data) => prisma.maxMoveFlavorI18n.createMany({ data }));
+  await rebuild(async (tx) => {
+    await tx.maxMoveEffectI18n.deleteMany({});
+    await insertInBatches(effects, (data) => tx.maxMoveEffectI18n.createMany({ data }));
+    await tx.maxMoveFlavorI18n.deleteMany({});
+    await insertInBatches(flavors, (data) => tx.maxMoveFlavorI18n.createMany({ data }));
+  });
   console.log(
     `极巨招式: 泛用 ${rows.length} 条 + 超极巨 ${gmax.length} 条，` +
       `认出形态的 ${gmax.filter((g) => g.formSlug).length} 条，说明 ${effects.length} 行`,
