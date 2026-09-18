@@ -5,6 +5,7 @@ import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 
 import { RootHeader } from "@/components/root-header";
 import { RootProvider } from "@/components/root-privider";
+import { SearchDialogProvider } from "@/components/search-modal";
 import { cn } from "@/lib/utils";
 
 /** 正文与 UI。variable 版本一次请求覆盖全部字重 */
@@ -58,8 +59,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col">
         <RootProvider>
-          <RootHeader />
-          {children}
+          {/* 搜索模态框不占路由，挂在这一层：头部的触发框和 ⌘K 都指向同一个它 */}
+          <SearchDialogProvider>
+            <RootHeader />
+            {children}
+          </SearchDialogProvider>
         </RootProvider>
       </body>
     </html>
