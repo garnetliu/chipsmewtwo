@@ -15,6 +15,7 @@
       "it": "Assorbimento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -311,6 +312,7 @@
       "it": "Rocciarapida"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -454,6 +456,12 @@
       "it": "Acido"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -750,6 +758,12 @@
       "it": "Scudo Acido"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -1046,6 +1060,12 @@
       "it": "Acidobomba"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -1250,6 +1270,7 @@
       "it": "Acrobazia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -1454,6 +1475,7 @@
       "it": "Acupressione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user-or-ally",
       "ailmentSlug": "none",
@@ -1684,6 +1706,7 @@
       "it": "Aeroassalto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -1940,6 +1963,7 @@
       "it": "Aerocolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -2219,6 +2243,7 @@
       "it": "Cortesia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -2423,6 +2448,12 @@
       "it": "Agilità"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -2719,6 +2750,7 @@
       "it": "Aerasoio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -2975,6 +3007,7 @@
       "it": "Eterelama"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -3205,6 +3238,7 @@
       "it": "Ammaliavoce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -3253,6 +3287,7 @@
       "it": "Cambiaposto"
     },
     "priority": 2,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -3457,6 +3492,12 @@
       "it": "Amnesia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -3753,6 +3794,7 @@
       "it": "Colpo d’Ancora"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -3883,6 +3925,28 @@
       "it": "Forzantica"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -4162,6 +4226,12 @@
       "it": "Acido Malico"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -4244,6 +4314,7 @@
       "it": "Idrotaglio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -4292,6 +4363,7 @@
       "it": "Acquagetto"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -4522,6 +4594,7 @@
       "it": "Acquanello"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -4752,6 +4825,12 @@
       "it": "Idroballetto"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -4800,6 +4879,7 @@
       "it": "Idrondata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -5030,6 +5110,7 @@
       "it": "Sberletese"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -5286,6 +5367,16 @@
       "it": "Corazza Cannone"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -5334,6 +5425,7 @@
       "it": "Aromaterapia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -5583,6 +5675,12 @@
       "it": "Nebularoma"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "ally",
       "ailmentSlug": "none",
@@ -5763,6 +5861,7 @@
       "it": "Assistente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -5999,6 +6098,7 @@
       "it": "Garanzia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -6229,6 +6329,7 @@
       "it": "Sgomento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -6485,6 +6586,7 @@
       "it": "Schegge Astrali"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -6575,6 +6677,7 @@
       "it": "Comandourto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -6805,6 +6908,7 @@
       "it": "Attrazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "infatuation",
@@ -7084,6 +7188,7 @@
       "it": "Forzasfera"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -7314,6 +7419,12 @@
       "it": "Ruota d’Aura"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -7396,6 +7507,12 @@
       "it": "Raggiaurora"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -7692,6 +7809,7 @@
       "it": "Velaurora"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -7835,6 +7953,12 @@
       "it": "Sganciapesi"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -8026,6 +8150,7 @@
       "it": "Slavina"
     },
     "priority": -4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -8256,6 +8381,7 @@
       "it": "Calcio ad Ascia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -8304,6 +8430,12 @@
       "it": "Occhioni Teneri"
     },
     "priority": 1,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -8484,6 +8616,7 @@
       "it": "Zona Buiabuia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -8583,6 +8716,7 @@
       "it": "Fortino"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -8726,6 +8860,7 @@
       "it": "Mille Fielespine"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -8785,6 +8920,7 @@
       "it": "Attacco Pioggia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -9061,6 +9197,12 @@
       "it": "Barriera"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -9337,6 +9479,7 @@
       "it": "Staffetta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -9616,6 +9759,7 @@
       "it": "Cannonbecco"
     },
     "priority": -3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -9759,6 +9903,7 @@
       "it": "Picchiaduro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -10038,6 +10183,7 @@
       "it": "Colpo Maestoso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -10122,6 +10268,7 @@
       "it": "Taglio Maestoso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -10206,6 +10353,7 @@
       "it": "Rutto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -10386,6 +10534,7 @@
       "it": "Panciamburo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -10665,6 +10814,7 @@
       "it": "Cediregalo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -10849,6 +10999,7 @@
       "it": "Pazienza"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -11125,6 +11276,7 @@
       "it": "Legatutto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -11421,6 +11573,7 @@
       "it": "Morso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -11717,6 +11870,7 @@
       "it": "Lama del Rimorso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -11765,6 +11919,7 @@
       "it": "Livore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -11824,6 +11979,7 @@
       "it": "Incendio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -12077,6 +12233,7 @@
       "it": "Calciardente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -12333,6 +12490,7 @@
       "it": "Turboustione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -12376,6 +12534,7 @@
       "it": "Tempesta Boreale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": null,
@@ -12435,6 +12594,7 @@
       "it": "Bora"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "freeze",
@@ -12731,6 +12891,7 @@
       "it": "Blocco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -12987,6 +13148,7 @@
       "it": "Luna Rossa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -13035,6 +13197,7 @@
       "it": "Fuocoblu"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -13239,6 +13402,7 @@
       "it": "Schiacciacorpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -13321,6 +13485,7 @@
       "it": "Corposcontro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -13617,6 +13782,7 @@
       "it": "Beccoshock"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -13686,6 +13852,7 @@
       "it": "Lucesiluro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -13890,6 +14057,7 @@
       "it": "Ossoclava"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -14166,6 +14334,7 @@
       "it": "Ossoraffica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -14445,6 +14614,7 @@
       "it": "Ossomerang"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -14728,6 +14898,7 @@
       "it": "Ondaboato"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -14908,6 +15079,7 @@
       "it": "Rimbalzo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -15164,6 +15336,7 @@
       "it": "Bollaslurp"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -15263,6 +15436,7 @@
       "it": "Ramostoccata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -15353,6 +15527,7 @@
       "it": "Baldeali"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -15583,6 +15758,12 @@
       "it": "Vastoimpatto"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -15673,6 +15854,7 @@
       "it": "Breccia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -15929,6 +16111,7 @@
       "it": "Acquadisale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -16159,6 +16342,7 @@
       "it": "Vorticolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -16302,6 +16486,12 @@
       "it": "Bolla"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -16585,6 +16775,12 @@
       "it": "Bollaraggio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -16881,6 +17077,7 @@
       "it": "Coleomorso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -17111,6 +17308,12 @@
       "it": "Ronzio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -17341,6 +17544,16 @@
       "it": "Granfisico"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -17597,6 +17810,12 @@
       "it": "Battiterra"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -17801,6 +18020,7 @@
       "it": "Pugnoscarica"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -18031,6 +18251,7 @@
       "it": "Semitraglia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -18287,6 +18508,7 @@
       "it": "Ultima Fiamma"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -18424,6 +18646,7 @@
       "it": "Egida Ignea"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -18472,6 +18695,7 @@
       "it": "Fiamminvidia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "burn",
@@ -18554,6 +18778,7 @@
       "it": "Elettrozap"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -18653,6 +18878,16 @@
       "it": "Calmamente"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -18909,6 +19144,7 @@
       "it": "Camuffamento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -19145,6 +19381,12 @@
       "it": "Incanto"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -19355,6 +19597,7 @@
       "it": "Lama Milleflutti"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -19414,6 +19657,7 @@
       "it": "Auguri"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -19588,6 +19832,12 @@
       "it": "Sottocarica"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -19844,6 +20094,12 @@
       "it": "Raggioscossa"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -20074,6 +20330,12 @@
       "it": "Fascino"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -20353,6 +20615,7 @@
       "it": "Schiamazzo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -20570,6 +20833,12 @@
       "it": "Doccia Fredda"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -20618,6 +20887,7 @@
       "it": "Freddura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": null,
@@ -20666,6 +20936,7 @@
       "it": "Insidia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -20850,6 +21121,7 @@
       "it": "Clorofillaser"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -20909,6 +21181,7 @@
       "it": "Ribaltiro"
     },
     "priority": -6,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -21113,6 +21386,7 @@
       "it": "Tenaglia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -21389,6 +21663,12 @@
       "it": "Clamorsquame"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -21532,6 +21812,28 @@
       "it": "Dracofonia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -21614,6 +21916,7 @@
       "it": "Pulifumo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -21818,6 +22121,16 @@
       "it": "Zuffa"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -22048,6 +22361,16 @@
       "it": "Coaching"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -22130,6 +22453,20 @@
       "it": "Arrotola"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "ACCURACY",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -22334,6 +22671,7 @@
       "it": "Turboschianto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -22382,6 +22720,7 @@
       "it": "Turborissa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -22425,6 +22764,7 @@
       "it": "Cometapugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -22701,6 +23041,7 @@
       "it": "Ritorsione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "specific-move",
       "ailmentSlug": null,
@@ -22749,6 +23090,12 @@
       "it": "Confidenza"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -22929,6 +23276,7 @@
       "it": "Stordiraggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -23225,6 +23573,7 @@
       "it": "Confusione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -23521,6 +23870,12 @@
       "it": "Limitazione"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -23797,6 +24152,7 @@
       "it": "Conversione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -24093,6 +24449,7 @@
       "it": "Conversione2"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -24372,6 +24729,7 @@
       "it": "Copione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -24602,6 +24960,7 @@
       "it": "Nucleocastigo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -24732,6 +25091,7 @@
       "it": "Gas Corrosivo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -24816,6 +25176,16 @@
       "it": "Cosmoforza"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -25072,6 +25442,12 @@
       "it": "Cotonscudo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 3
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -25276,6 +25652,12 @@
       "it": "Cottonspora"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -25555,6 +25937,7 @@
       "it": "Contrattacco"
     },
     "priority": -5,
+    "statChanges": [],
     "meta": {
       "targetSlug": "specific-move",
       "ailmentSlug": "none",
@@ -25851,6 +26234,7 @@
       "it": "Cambiocampo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -25933,6 +26317,7 @@
       "it": "Supplica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -26189,6 +26574,7 @@
       "it": "Martellata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -26485,6 +26871,7 @@
       "it": "Truccodifesa"
     },
     "priority": 3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -26652,6 +27039,7 @@
       "it": "Incrocolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -26931,6 +27319,7 @@
       "it": "Velenocroce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -27161,6 +27550,12 @@
       "it": "Sgranocchio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -27440,6 +27835,12 @@
       "it": "Tritartigli"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -27696,6 +28097,7 @@
       "it": "Sbriciolmano"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -27926,6 +28328,7 @@
       "it": "Maledizione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "specific-move",
       "ailmentSlug": "none",
@@ -28205,6 +28608,7 @@
       "it": "Taglio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -28488,6 +28892,7 @@
       "it": "Neropulsar"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -28718,6 +29123,7 @@
       "it": "Vuototetro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "sleep",
@@ -28948,6 +29354,7 @@
       "it": "Braccioteso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -29091,6 +29498,7 @@
       "it": "Magibrillio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -29271,6 +29679,16 @@
       "it": "Decorazione"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 2
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -29353,6 +29771,16 @@
       "it": "Comandoscudo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -29583,6 +30011,12 @@
       "it": "Ricciolscudo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -29879,6 +30313,12 @@
       "it": "Scacciabruma"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "EVASION",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -30109,6 +30549,7 @@
       "it": "Destinobbligato"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -30388,6 +30829,7 @@
       "it": "Individua"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "protect",
@@ -30667,6 +31109,12 @@
       "it": "Diamantempesta"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -30847,6 +31295,7 @@
       "it": "Fossa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -31143,6 +31592,7 @@
       "it": "Artigli Fatali"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -31202,6 +31652,7 @@
       "it": "Inibitore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "disable",
@@ -31498,6 +31949,7 @@
       "it": "Incantavoce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -31678,6 +32130,7 @@
       "it": "Scarica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "paralysis",
@@ -31908,6 +32361,7 @@
       "it": "Sub"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -32164,6 +32618,7 @@
       "it": "Stordipugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -32440,6 +32895,7 @@
       "it": "Ricalco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -32488,6 +32944,7 @@
       "it": "Obbliderio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -32747,6 +33204,7 @@
       "it": "Sdoppiatore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -33043,6 +33501,7 @@
       "it": "Doppiosmash"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -33273,6 +33732,7 @@
       "it": "Pugni Corazzati"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -33379,6 +33839,7 @@
       "it": "Doppiocalcio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -33675,6 +34136,7 @@
       "it": "Doppiolampo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -33723,6 +34185,7 @@
       "it": "Doppiasberla"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -33999,6 +34462,12 @@
       "it": "Doppioteam"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "EVASION",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -34295,6 +34764,12 @@
       "it": "Dragobolide"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -34525,6 +35000,16 @@
       "it": "Ascesa del Drago"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -34695,6 +35180,7 @@
       "it": "Dragospiro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -34974,6 +35460,7 @@
       "it": "Grido del Drago"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-allies",
       "ailmentSlug": null,
@@ -35022,6 +35509,7 @@
       "it": "Dragartigli"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -35278,6 +35766,16 @@
       "it": "Dragodanza"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -35534,6 +36032,7 @@
       "it": "Dragofrecce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -35616,6 +36115,7 @@
       "it": "Dragoenergia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -35706,6 +36206,7 @@
       "it": "Marteldrago"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -35849,6 +36350,7 @@
       "it": "Dragopulsar"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -36079,6 +36581,7 @@
       "it": "Ira di Drago"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -36355,6 +36858,7 @@
       "it": "Dragofuria"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -36585,6 +37089,7 @@
       "it": "Codadrago"
     },
     "priority": -6,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -36789,6 +37294,7 @@
       "it": "Assorbipugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -37019,6 +37525,7 @@
       "it": "Assorbibacio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -37199,6 +37706,7 @@
       "it": "Mangiasogni"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -37495,6 +38003,7 @@
       "it": "Perforbecco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -37791,6 +38300,7 @@
       "it": "Giravvita"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -37995,6 +38505,12 @@
       "it": "Tamburattacco"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -38085,6 +38601,7 @@
       "it": "Doppiocolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -38276,6 +38793,7 @@
       "it": "Doppia Ala"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -38366,6 +38884,7 @@
       "it": "Cannone Dynamax"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -38456,6 +38975,7 @@
       "it": "Dinamipugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -38735,6 +39255,12 @@
       "it": "Geoforza"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -38965,6 +39491,7 @@
       "it": "Terremoto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -39261,6 +39788,7 @@
       "it": "Echeggiavoce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -39465,6 +39993,12 @@
       "it": "Elettromistero"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -39645,6 +40179,7 @@
       "it": "Inquietantesimo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -39727,6 +40262,7 @@
       "it": "Uovobomba"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -40003,6 +40539,7 @@
       "it": "Campo Elettrico"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -40183,6 +40720,7 @@
       "it": "Elettrocontagio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -40357,6 +40895,7 @@
       "it": "Energisfera"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -40561,6 +41100,7 @@
       "it": "Fulmiscatto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -40609,6 +41149,12 @@
       "it": "Elettroraggio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -40657,6 +41203,12 @@
       "it": "Elettrotela"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -40861,6 +41413,7 @@
       "it": "Divieto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "embargo",
@@ -41071,6 +41624,7 @@
       "it": "Braciere"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -41367,6 +41921,7 @@
       "it": "Ripeti"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -41646,6 +42201,7 @@
       "it": "Rimonta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -41902,6 +42458,7 @@
       "it": "Resistenza"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -42181,6 +42738,12 @@
       "it": "Energipalla"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -42411,6 +42974,7 @@
       "it": "Saltamicizia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -42615,6 +43179,7 @@
       "it": "Eruzione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -42871,6 +43436,7 @@
       "it": "Ali d’Aura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -42930,6 +43496,7 @@
       "it": "Raggio Infinito"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -43007,6 +43574,7 @@
       "it": "Vastenergia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -43089,6 +43657,7 @@
       "it": "Esplosione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -43385,6 +43954,7 @@
       "it": "Extrasenso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -43641,6 +44211,7 @@
       "it": "Extrarapido"
     },
     "priority": 2,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -43920,6 +44491,7 @@
       "it": "Facciata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -44176,6 +44748,7 @@
       "it": "Blocco Fatato"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -44356,6 +44929,7 @@
       "it": "Vento di Fata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -44536,6 +45110,7 @@
       "it": "Bruciapelo"
     },
     "priority": 3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -44792,6 +45367,12 @@
       "it": "Falselacrime"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -45048,6 +45629,7 @@
       "it": "Supplicolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -45138,6 +45720,7 @@
       "it": "Falsofinale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -45417,6 +46000,12 @@
       "it": "Danzadipiume"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -45673,6 +46262,7 @@
       "it": "Fintoattacco"
     },
     "priority": 2,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -45903,6 +46493,7 @@
       "it": "Finta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -46162,6 +46753,7 @@
       "it": "Pungiglione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -46342,6 +46934,7 @@
       "it": "Irregolaser"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -46390,6 +46983,12 @@
       "it": "Voldifuoco"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -46594,6 +47193,7 @@
       "it": "Furia Ardente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -46684,6 +47284,20 @@
       "it": "Alleggerimento"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 2
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 2
+      },
+      {
+        "stat": "SPEED",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -46732,6 +47346,7 @@
       "it": "Azzardo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -46936,6 +47551,7 @@
       "it": "Fuocobomba"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -47232,6 +47848,7 @@
       "it": "Rogodenti"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -47462,6 +48079,12 @@
       "it": "Frusta di Fuoco"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -47605,6 +48228,7 @@
       "it": "Fiammapatto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -47809,6 +48433,7 @@
       "it": "Fuocopugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -48105,6 +48730,7 @@
       "it": "Turbofuoco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -48401,6 +49027,7 @@
       "it": "Schermaglia"
     },
     "priority": 2,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -48544,6 +49171,7 @@
       "it": "Branchiomorso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -48613,6 +49241,7 @@
       "it": "Abisso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -48909,6 +49538,7 @@
       "it": "Flagello"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -49188,6 +49818,7 @@
       "it": "Pirolancio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -49372,6 +50003,12 @@
       "it": "Nitrocarica"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -49576,6 +50213,7 @@
       "it": "Ruotafuoco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -49855,6 +50493,7 @@
       "it": "Lanciafiamme"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -50151,6 +50790,7 @@
       "it": "Fuococarica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -50381,6 +51021,12 @@
       "it": "Flash"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -50664,6 +51310,12 @@
       "it": "Cannonflash"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -50894,6 +51546,12 @@
       "it": "Adulazione"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -51150,6 +51808,12 @@
       "it": "Cannonfiore"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -51293,6 +51957,7 @@
       "it": "Lancio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -51523,6 +52188,7 @@
       "it": "Virata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -51613,6 +52279,7 @@
       "it": "Piombaflap"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -51712,6 +52379,7 @@
       "it": "Cura Floreale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -51855,6 +52523,12 @@
       "it": "Fiordifesa"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "all-pokemon",
       "ailmentSlug": "none",
@@ -52022,6 +52696,7 @@
       "it": "Prestigiafiore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -52070,6 +52745,7 @@
       "it": "Volo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -52366,6 +53042,7 @@
       "it": "Schiacciatuffo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -52546,6 +53223,12 @@
       "it": "Focalcolpo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -52776,6 +53459,7 @@
       "it": "Focalenergia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -53072,6 +53756,7 @@
       "it": "Centripugno"
     },
     "priority": -3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -53328,6 +54013,7 @@
       "it": "Sonoqui"
     },
     "priority": 2,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -53584,6 +54270,7 @@
       "it": "Palmoforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -53814,6 +54501,7 @@
       "it": "Preveggenza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "no-type-immunity",
@@ -54073,6 +54761,7 @@
       "it": "Boscomalocchio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -54253,6 +54942,7 @@
       "it": "Ripicca"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -54457,6 +55147,7 @@
       "it": "Liofilizzazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "freeze",
@@ -54637,6 +55328,7 @@
       "it": "Elettrogelo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -54841,6 +55533,7 @@
       "it": "Sguardo Gelido"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "freeze",
@@ -54931,6 +55624,7 @@
       "it": "Scricchiagelo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -55030,6 +55724,7 @@
       "it": "Radicalbero"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -55286,6 +55981,7 @@
       "it": "Alitogelido"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -55490,6 +56186,7 @@
       "it": "Frustrazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -55749,6 +56446,7 @@
       "it": "Furia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -56045,6 +56743,7 @@
       "it": "Tagliofuria"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -56324,6 +57023,7 @@
       "it": "Sfuriate"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -56620,6 +57320,7 @@
       "it": "Incrotuono"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -56824,6 +57525,7 @@
       "it": "Incrofiamma"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -57028,6 +57730,7 @@
       "it": "Divinazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -57307,6 +58010,7 @@
       "it": "Gastroacido"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -57537,6 +58241,7 @@
       "it": "Ingracolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -57728,6 +58433,16 @@
       "it": "Marciainpiù"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -57858,6 +58573,20 @@
       "it": "Geocontrollo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 2
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 2
+      },
+      {
+        "stat": "SPEED",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -58025,6 +58754,7 @@
       "it": "Gigassorbimento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -58304,6 +59034,7 @@
       "it": "Gigaimpatto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -58534,6 +59265,7 @@
       "it": "Granmartello"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -58582,6 +59314,7 @@
       "it": "Lancia Glaciale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -58672,6 +59405,12 @@
       "it": "Gelamondo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -58876,6 +59615,7 @@
       "it": "Spadoncarica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -58924,6 +59664,7 @@
       "it": "Sguardo Feroce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -59220,6 +59961,7 @@
       "it": "Auraswoosh"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -59319,6 +60061,7 @@
       "it": "Laccioerboso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -59549,6 +60292,7 @@
       "it": "Erbapatto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -59753,6 +60497,7 @@
       "it": "Meloderba"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "sleep",
@@ -59989,6 +60734,7 @@
       "it": "Erboscivolata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -60071,6 +60817,7 @@
       "it": "Campo Erboso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -60251,6 +60998,12 @@
       "it": "Forza G"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -60333,6 +61086,7 @@
       "it": "Gravità"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -60563,6 +61317,12 @@
       "it": "Ruggito"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -60859,6 +61619,16 @@
       "it": "Crescita"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -61155,6 +61925,7 @@
       "it": "Rancore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -61398,6 +62169,7 @@
       "it": "Paridifesa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -61602,6 +62374,7 @@
       "it": "Barattoscudo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -61832,6 +62605,7 @@
       "it": "Ghigliottina"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -62128,6 +62902,7 @@
       "it": "Sporcolancio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -62358,6 +63133,7 @@
       "it": "Raffica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -62654,6 +63430,7 @@
       "it": "Vortexpalla"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -62884,6 +63661,7 @@
       "it": "Grandine"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -63127,6 +63905,12 @@
       "it": "Martelpugno"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -63357,6 +64141,7 @@
       "it": "Cuccagna"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -63531,6 +64316,7 @@
       "it": "Pressa d’Acciaio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -63579,6 +64365,12 @@
       "it": "Rafforzatore"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -63875,6 +64667,7 @@
       "it": "Nube"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -64171,6 +64964,7 @@
       "it": "Ricciolata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -64362,6 +65156,7 @@
       "it": "Zuccata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -64592,6 +65387,7 @@
       "it": "Bottintesta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -64888,6 +65684,7 @@
       "it": "Scontro Frontale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -64947,6 +65744,7 @@
       "it": "Rintoccasana"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -65226,6 +66024,7 @@
       "it": "Anticura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "heal-block",
@@ -65436,6 +66235,7 @@
       "it": "Comandocura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -65646,6 +66446,7 @@
       "it": "Ondasana"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -65850,6 +66651,7 @@
       "it": "Curardore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -66080,6 +66882,7 @@
       "it": "Cuorestampo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -66264,6 +67067,7 @@
       "it": "Cuorbaratto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -66497,6 +67301,7 @@
       "it": "Marchiafuoco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -66701,6 +67506,7 @@
       "it": "Ondacalda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "burn",
@@ -66957,6 +67763,7 @@
       "it": "Pesobomba"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -67161,6 +67968,7 @@
       "it": "Altruismo"
     },
     "priority": 5,
+    "statChanges": [],
     "meta": {
       "targetSlug": "ally",
       "ailmentSlug": "none",
@@ -67417,6 +68225,7 @@
       "it": "Sciagura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -67621,6 +68430,7 @@
       "it": "Introforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -67887,6 +68697,7 @@
       "it": "Forza Equina"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -68030,6 +68841,7 @@
       "it": "Calcinvolo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -68326,6 +69138,7 @@
       "it": "Riguardo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -68500,6 +69313,7 @@
       "it": "Mano nella Mano"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "ally",
       "ailmentSlug": "none",
@@ -68674,6 +69488,16 @@
       "it": "Unghiaguzze"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "ACCURACY",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -68878,6 +69702,7 @@
       "it": "Incornata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -69174,6 +69999,7 @@
       "it": "Perforcorno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -69470,6 +70296,7 @@
       "it": "Legnicorno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -69674,6 +70501,12 @@
       "it": "Gridodilotta"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -69930,6 +70763,7 @@
       "it": "Tifone"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -70134,6 +70968,7 @@
       "it": "Idrocannone"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -70387,6 +71222,7 @@
       "it": "Idropompa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -70683,6 +71519,7 @@
       "it": "Idrovapore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -70731,6 +71568,7 @@
       "it": "Iper Raggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -71027,6 +71865,7 @@
       "it": "Ipertrapano"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -71075,6 +71914,7 @@
       "it": "Iperzanna"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -71351,6 +72191,7 @@
       "it": "Granvoce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -71607,6 +72448,12 @@
       "it": "Urtodimensionale"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -71777,6 +72624,7 @@
       "it": "Forodimensionale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -71957,6 +72805,7 @@
       "it": "Ipnosi"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "sleep",
@@ -72253,6 +73102,7 @@
       "it": "Palla Gelo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -72496,6 +73346,7 @@
       "it": "Geloraggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "freeze",
@@ -72792,6 +73643,7 @@
       "it": "Vampagelida"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -72996,6 +73848,7 @@
       "it": "Gelodenti"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "freeze",
@@ -73226,6 +74079,12 @@
       "it": "Martelgelo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -73369,6 +74228,7 @@
       "it": "Gelopugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "freeze",
@@ -73665,6 +74525,7 @@
       "it": "Geloscheggia"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -73895,6 +74756,7 @@
       "it": "Vortighiaccio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -73943,6 +74805,7 @@
       "it": "Scagliagelo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -74147,6 +75010,7 @@
       "it": "Gelolancia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -74403,6 +75267,12 @@
       "it": "Ventogelato"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -74682,6 +75552,7 @@
       "it": "Esclusiva"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -74938,6 +75809,7 @@
       "it": "Bruciatutto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -75142,6 +76014,7 @@
       "it": "Corteo Spettrale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -75201,6 +76074,7 @@
       "it": "Marchiatura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -75405,6 +76279,7 @@
       "it": "Assillo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -75585,6 +76460,7 @@
       "it": "Radicamento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "ingrain",
@@ -75841,6 +76717,7 @@
       "it": "Imposizione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -75984,6 +76861,7 @@
       "it": "Pioggiaplasma"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -76144,6 +77022,12 @@
       "it": "Ferroscudo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -76400,6 +77284,7 @@
       "it": "Metaltestata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -76630,6 +77515,12 @@
       "it": "Codacciaio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -76909,6 +77800,7 @@
       "it": "Clava di Liane"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -76957,6 +77849,7 @@
       "it": "Morsostretto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -77039,6 +77932,7 @@
       "it": "Pugnojet"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -77087,6 +77981,7 @@
       "it": "Giudizio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -77317,6 +78212,7 @@
       "it": "Calciosalto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -77593,6 +78489,7 @@
       "it": "Giunglacura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -77675,6 +78572,7 @@
       "it": "Colpokarate"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -77951,6 +78849,12 @@
       "it": "Cinèsi"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -78234,6 +79138,7 @@
       "it": "Scudo Reale"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -78408,6 +79313,7 @@
       "it": "Privazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -78664,6 +79570,7 @@
       "it": "Genufendente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -78712,6 +79619,7 @@
       "it": "Forza Tellurica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -78879,6 +79787,7 @@
       "it": "Concentrazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -79009,6 +79918,7 @@
       "it": "Sfogarabbia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -79091,6 +80001,7 @@
       "it": "Ultimascelta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -79321,6 +80232,7 @@
       "it": "Omaggio ai KO"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -79369,6 +80281,7 @@
       "it": "Lavasbuffo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "burn",
@@ -79599,6 +80512,7 @@
       "it": "Fendifoglia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -79855,6 +80769,12 @@
       "it": "Verdebufera"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -80085,6 +81005,12 @@
       "it": "Vorticerba"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -80276,6 +81202,7 @@
       "it": "Fogliame"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -80419,6 +81346,7 @@
       "it": "Sanguisuga"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -80715,6 +81643,7 @@
       "it": "Parassiseme"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "leech-seed",
@@ -81011,6 +81940,12 @@
       "it": "Fulmisguardo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -81307,6 +82242,7 @@
       "it": "Leccata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -81603,6 +82539,7 @@
       "it": "Goccia Vitale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -81685,6 +82622,7 @@
       "it": "Luce Nefasta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -81859,6 +82797,7 @@
       "it": "Schermoluce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -82155,6 +83094,12 @@
       "it": "Idrobreccia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -82298,6 +83243,7 @@
       "it": "Localizza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -82577,6 +83523,7 @@
       "it": "Demonbacio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "sleep",
@@ -82860,6 +83807,7 @@
       "it": "Colpo Basso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -83156,6 +84104,12 @@
       "it": "Calciobasso"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -83360,6 +84314,7 @@
       "it": "Fortuncanto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -83570,6 +84525,12 @@
       "it": "Fotocollisione"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -83618,6 +84579,7 @@
       "it": "Invocaluna"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-allies",
       "ailmentSlug": null,
@@ -83677,6 +84639,7 @@
       "it": "Lunardanza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -83907,6 +84870,12 @@
       "it": "Assalto"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -84050,6 +85019,12 @@
       "it": "Abbagliante"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -84306,6 +85281,7 @@
       "it": "Pugnorapido"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -84585,6 +85561,7 @@
       "it": "Magivelo"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -84828,6 +85805,7 @@
       "it": "Magipolvere"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -84910,6 +85888,7 @@
       "it": "Magicozona"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -85114,6 +86093,7 @@
       "it": "Fogliamagica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -85370,6 +86350,7 @@
       "it": "Turboincanto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -85413,6 +86394,7 @@
       "it": "Magmaclisma"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -85643,6 +86625,7 @@
       "it": "Bombagnete"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -85853,6 +86836,7 @@
       "it": "Magnetascesa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -86083,6 +87067,16 @@
       "it": "Controllo Polare"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user-and-allies",
       "ailmentSlug": "none",
@@ -86263,6 +87257,7 @@
       "it": "Magnitudo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -86522,6 +87517,12 @@
       "it": "Corsa all’Oro"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": null,
@@ -86570,6 +87571,7 @@
       "it": "Intossicatena"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -86618,6 +87620,7 @@
       "it": "Ribaltappeto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -86778,6 +87781,7 @@
       "it": "Spruzzatè"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -86826,6 +87830,7 @@
       "it": "Precedenza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon-me-first",
       "ailmentSlug": "none",
@@ -87036,6 +88041,7 @@
       "it": "Malosguardo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -87315,6 +88321,12 @@
       "it": "Meditazione"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -87591,6 +88603,7 @@
       "it": "Megassorbimento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -87887,6 +88900,7 @@
       "it": "Megacalcio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -88183,6 +89197,7 @@
       "it": "Megapugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -88479,6 +89494,7 @@
       "it": "Megacorno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -88758,6 +89774,16 @@
       "it": "Memento"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -2
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -89014,6 +90040,7 @@
       "it": "Metalscoppio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "specific-move",
       "ailmentSlug": "none",
@@ -89244,6 +90271,12 @@
       "it": "Ferrartigli"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -89523,6 +90556,12 @@
       "it": "Ferrostrido"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -89779,6 +90818,7 @@
       "it": "Sfolgorassalto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -89856,6 +90896,7 @@
       "it": "Raggiometeora"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -89938,6 +90979,12 @@
       "it": "Meteorpugno"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -90194,6 +91241,7 @@
       "it": "Metronomo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -90490,6 +91538,7 @@
       "it": "Taglio Poderoso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -90538,6 +91587,7 @@
       "it": "Buonlatte"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -90817,6 +91867,7 @@
       "it": "Mimica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -91113,6 +92164,7 @@
       "it": "Sbalorditesta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -91231,6 +92283,7 @@
       "it": "Leggimente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -91497,6 +92550,12 @@
       "it": "Minimizzato"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "EVASION",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -91793,6 +92852,7 @@
       "it": "Miracolvista"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "no-type-immunity",
@@ -92003,6 +93063,7 @@
       "it": "Specchiovelo"
     },
     "priority": -5,
+    "statChanges": [],
     "meta": {
       "targetSlug": "specific-move",
       "ailmentSlug": "none",
@@ -92282,6 +93343,7 @@
       "it": "Speculmossa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -92558,6 +93620,12 @@
       "it": "Cristalcolpo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -92768,6 +93836,7 @@
       "it": "Nebbia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -93064,6 +94133,12 @@
       "it": "Foschisfera"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -93320,6 +94395,7 @@
       "it": "Nebbioscoppio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -93402,6 +94478,7 @@
       "it": "Campo Nebbioso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -93582,6 +94659,12 @@
       "it": "Forza Lunare"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -93762,6 +94845,7 @@
       "it": "Raggio d’Ombra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -93905,6 +94989,7 @@
       "it": "Lucelunare"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -94184,6 +95269,7 @@
       "it": "Mattindoro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -94463,6 +95549,7 @@
       "it": "Glitturbine"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": null,
@@ -94511,6 +95598,7 @@
       "it": "Soffio d’Iceberg"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -94570,6 +95658,12 @@
       "it": "Pantanobomba"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -94787,6 +95881,12 @@
       "it": "Colpodifango"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -95043,6 +96143,12 @@
       "it": "Fangosberla"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -95322,6 +96428,7 @@
       "it": "Fangata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -95558,6 +96665,12 @@
       "it": "Fanghiglia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -95814,6 +96927,7 @@
       "it": "Multiattacco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -95944,6 +97058,12 @@
       "it": "Magifiamma"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -96124,6 +97244,7 @@
       "it": "Forza Mistica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -96183,6 +97304,12 @@
       "it": "Congiura"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -96413,6 +97540,7 @@
       "it": "Dononaturale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -96623,6 +97751,7 @@
       "it": "Naturforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -96866,6 +97995,7 @@
       "it": "Ira della Natura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -96996,6 +98126,7 @@
       "it": "Pugnospine"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -97232,6 +98363,12 @@
       "it": "Urtoscuro"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -97436,6 +98573,7 @@
       "it": "Ombra Notturna"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -97732,6 +98870,7 @@
       "it": "Nottesferza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -97962,6 +99101,7 @@
       "it": "Incubo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "nightmare",
@@ -98221,6 +99361,28 @@
       "it": "Spalle al Muro"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -98303,6 +99465,16 @@
       "it": "Urlo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -98483,6 +99655,7 @@
       "it": "Turbotossina"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -98526,6 +99699,7 @@
       "it": "Elettrococcola"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -98706,6 +99880,7 @@
       "it": "Ali del Fato"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -98873,6 +100048,7 @@
       "it": "Sbarramento"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -98942,6 +100118,12 @@
       "it": "Octazooka"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -99208,6 +100390,7 @@
       "it": "Tentacolock"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -99277,6 +100460,7 @@
       "it": "Segugio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "no-type-immunity",
@@ -99513,6 +100697,28 @@
       "it": "Funestovento"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -99730,6 +100936,7 @@
       "it": "Alta Cucina"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -99778,6 +100985,7 @@
       "it": "Primopulsar"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -99948,6 +101156,7 @@
       "it": "Oltraggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "random-opponent",
       "ailmentSlug": "none",
@@ -100227,6 +101436,7 @@
       "it": "Overdrive"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -100317,6 +101527,12 @@
       "it": "Vampata"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -100573,6 +101789,7 @@
       "it": "Malcomune"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -100852,6 +102069,7 @@
       "it": "Caricaparabola"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -101032,6 +102250,16 @@
       "it": "Monito"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -101212,6 +102440,7 @@
       "it": "Giornopaga"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -101508,6 +102737,7 @@
       "it": "Rivincita"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -101738,6 +102968,7 @@
       "it": "Beccata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -102034,6 +103265,7 @@
       "it": "Ultimocanto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-pokemon",
       "ailmentSlug": "perish-song",
@@ -102313,6 +103545,7 @@
       "it": "Fiortempesta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -102493,6 +103726,7 @@
       "it": "Petalodanza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "random-opponent",
       "ailmentSlug": "none",
@@ -102789,6 +104023,7 @@
       "it": "Spettrotuffo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -102969,6 +104204,7 @@
       "it": "Geyser Fotonico"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -103100,6 +104336,7 @@
       "it": "Pikasaetta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -103213,6 +104450,7 @@
       "it": "Missilspillo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -103509,6 +104747,7 @@
       "it": "Pugni Plasma"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -103627,6 +104866,12 @@
       "it": "Simpatia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -103807,6 +105052,12 @@
       "it": "Carineria"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -103987,6 +105238,7 @@
       "it": "Spennata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -104217,6 +105469,7 @@
       "it": "Velenodenti"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -104473,6 +105726,7 @@
       "it": "Velenogas"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "poison",
@@ -104769,6 +106023,7 @@
       "it": "Velenpuntura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -104999,6 +106254,7 @@
       "it": "Velenpolvere"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -105295,6 +106551,7 @@
       "it": "Velenospina"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -105591,6 +106848,7 @@
       "it": "Velenocoda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -105847,6 +107105,7 @@
       "it": "Sferapolline"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -105990,6 +107249,7 @@
       "it": "Poltergeist"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -106072,6 +107332,7 @@
       "it": "Infestazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -106120,6 +107381,12 @@
       "it": "Balzo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -106168,6 +107435,7 @@
       "it": "Botta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -106464,6 +107732,7 @@
       "it": "Pulviscoppio"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -106624,6 +107893,7 @@
       "it": "Polneve"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "freeze",
@@ -106903,6 +108173,7 @@
       "it": "Gemmoforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -107133,6 +108404,7 @@
       "it": "Scambioforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -107185,6 +108457,7 @@
       "it": "Pariattacco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -107389,6 +108662,7 @@
       "it": "Barattoforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -107619,6 +108893,7 @@
       "it": "Ingannoforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -107849,6 +109124,7 @@
       "it": "Tracotanza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -107992,6 +109268,12 @@
       "it": "Crescipugno"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -108159,6 +109441,7 @@
       "it": "Vigorcolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -108389,6 +109672,7 @@
       "it": "Spade Telluriche"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -108559,6 +109843,7 @@
       "it": "Regalino"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -108838,6 +110123,7 @@
       "it": "Prismalaser"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -108981,6 +110267,7 @@
       "it": "Protezione"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "protect",
@@ -109260,6 +110547,7 @@
       "it": "Psicoraggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -109556,6 +110844,7 @@
       "it": "Psicolama"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -109604,6 +110893,7 @@
       "it": "Psicamisù"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -109883,6 +111173,12 @@
       "it": "Psichico"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -110179,6 +111475,7 @@
       "it": "Psicozanna"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -110322,6 +111619,7 @@
       "it": "Psicorumore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -110370,6 +111668,7 @@
       "it": "Campo Psichico"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -110513,6 +111812,12 @@
       "it": "Psicoslancio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -110772,6 +112077,7 @@
       "it": "Psicotaglio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -111002,6 +112308,7 @@
       "it": "Psicotransfer"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -111219,6 +112526,7 @@
       "it": "Barrierassalto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -111278,6 +112586,7 @@
       "it": "Psicoshock"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -111482,6 +112791,7 @@
       "it": "Psicobotta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -111686,6 +112996,7 @@
       "it": "Psiconda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -111962,6 +113273,7 @@
       "it": "Punizione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -112172,6 +113484,7 @@
       "it": "Purificazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -112302,6 +113615,7 @@
       "it": "Inseguimento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -112561,6 +113875,7 @@
       "it": "Palla Infuocata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -112651,6 +113966,7 @@
       "it": "Spintone"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -112855,6 +114171,7 @@
       "it": "Attacco Rapido"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -113151,6 +114468,7 @@
       "it": "Anticipo"
     },
     "priority": 3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -113355,6 +114673,20 @@
       "it": "Eledanza"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -113559,6 +114891,7 @@
       "it": "Ira"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -113835,6 +115168,7 @@
       "it": "Pugno Furibondo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -113883,6 +115217,7 @@
       "it": "Polverabbia"
     },
     "priority": 2,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -114087,6 +115422,7 @@
       "it": "Scatenatoro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -114135,6 +115471,7 @@
       "it": "Ira Furente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "random-opponent",
       "ailmentSlug": null,
@@ -114194,6 +115531,7 @@
       "it": "Pioggiadanza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -114473,6 +115811,12 @@
       "it": "Rapigiro"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -114752,6 +116096,7 @@
       "it": "Foglielama"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -115048,6 +116393,12 @@
       "it": "Conchilama"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -115252,6 +116603,7 @@
       "it": "Ventagliente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -115528,6 +116880,7 @@
       "it": "Ripresa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -115824,6 +117177,7 @@
       "it": "Riciclo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -116080,6 +117434,7 @@
       "it": "Riflesso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -116376,6 +117731,7 @@
       "it": "Riflettipo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -116580,6 +117936,7 @@
       "it": "Rinfrescata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -116816,6 +118173,7 @@
       "it": "Cantoantico"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "sleep",
@@ -117020,6 +118378,7 @@
       "it": "Riposo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -117316,6 +118675,7 @@
       "it": "Nemesi"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -117520,6 +118880,7 @@
       "it": "Ritorno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -117779,6 +119140,7 @@
       "it": "Mutadanza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -117922,6 +119284,7 @@
       "it": "Vendetta"
     },
     "priority": -4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -118165,6 +119528,7 @@
       "it": "Contropiede"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -118444,6 +119808,7 @@
       "it": "Preghiera Vitale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "fainting-pokemon",
       "ailmentSlug": null,
@@ -118492,6 +119857,7 @@
       "it": "Elettroimpennata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -118574,6 +119940,7 @@
       "it": "Boato"
     },
     "priority": -6,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -118870,6 +120237,7 @@
       "it": "Fragortempo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -119100,6 +120468,7 @@
       "it": "Cadutamassi"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -119356,6 +120725,7 @@
       "it": "Scalaroccia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -119573,6 +120943,12 @@
       "it": "Lucidatura"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -119803,6 +121179,7 @@
       "it": "Frana"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -120099,6 +121476,12 @@
       "it": "Spaccaroccia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -120378,6 +121761,7 @@
       "it": "Sassata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -120674,6 +122058,12 @@
       "it": "Rocciotomba"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -120930,6 +122320,7 @@
       "it": "Devastomasso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -121160,6 +122551,7 @@
       "it": "Giocodiruolo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -121416,6 +122808,7 @@
       "it": "Calciorullo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -121692,6 +123085,7 @@
       "it": "Rotolamento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -121971,6 +123365,7 @@
       "it": "Trespolo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -122201,6 +123596,16 @@
       "it": "Aracampo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "all-pokemon",
       "ailmentSlug": "none",
@@ -122361,6 +123766,7 @@
       "it": "Coro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -122565,6 +123971,7 @@
       "it": "Catastrofe"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -122613,6 +124020,7 @@
       "it": "Magifuoco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -122892,6 +124300,7 @@
       "it": "Spadasolenne"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -123096,6 +124505,7 @@
       "it": "Salvaguardia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -123375,6 +124785,7 @@
       "it": "Sotto Sale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -123423,6 +124834,12 @@
       "it": "Turbosabbia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -123719,6 +125136,7 @@
       "it": "Sabbiotomba"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -123975,6 +125393,7 @@
       "it": "Tempesta Ardente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": null,
@@ -124034,6 +125453,7 @@
       "it": "Terrempesta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -124313,6 +125733,7 @@
       "it": "Bombafrush"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "leech-seed",
@@ -124412,6 +125833,7 @@
       "it": "Idrovampata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -124616,6 +126038,7 @@
       "it": "Squamacolpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -124706,6 +126129,12 @@
       "it": "Visotruce"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -124985,6 +126414,7 @@
       "it": "Sabbiardente"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -125075,6 +126505,7 @@
       "it": "Graffio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -125371,6 +126802,12 @@
       "it": "Stridio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -125667,6 +127104,7 @@
       "it": "Sparafuoco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "burn",
@@ -125858,6 +127296,7 @@
       "it": "Forzasegreta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -126094,6 +127533,7 @@
       "it": "Spadamistica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -126298,6 +127738,7 @@
       "it": "Semebomba"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -126528,6 +127969,12 @@
       "it": "Infuriaseme"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -126758,6 +128205,7 @@
       "it": "Movim. Sismico"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -127054,6 +128502,7 @@
       "it": "Autodistruzione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -127350,6 +128799,12 @@
       "it": "Palla Ombra"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -127625,6 +129080,7 @@
       "it": "Ombrolame"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -127777,6 +129233,7 @@
       "it": "Ombrattacco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -127929,6 +129386,7 @@
       "it": "Fulminombra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -128085,6 +129543,12 @@
       "it": "Ossotetro"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -128211,6 +129675,7 @@
       "it": "Ombrospinta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -128363,6 +129828,7 @@
       "it": "Gelodombra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -128519,6 +129985,7 @@
       "it": "Ombrartigli"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -128745,6 +130212,7 @@
       "it": "Declinoscuro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": null,
@@ -128897,6 +130365,7 @@
       "it": "Fineoscuro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -129049,6 +130518,7 @@
       "it": "Fuocoscuro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -129205,6 +130675,7 @@
       "it": "Oscurotuffo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -129431,6 +130902,7 @@
       "it": "Iraoscura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": null,
@@ -129583,6 +131055,7 @@
       "it": "Retedombra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": null,
@@ -129735,6 +131208,7 @@
       "it": "Nebbiascura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": null,
@@ -129887,6 +131361,7 @@
       "it": "Ombrapanico"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": null,
@@ -130043,6 +131518,7 @@
       "it": "Pugnodombra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -130295,6 +131771,7 @@
       "it": "Ombrolancia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": null,
@@ -130447,6 +131924,7 @@
       "it": "Ombroraffica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -130599,6 +132077,7 @@
       "it": "Ombrannulla"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": null,
@@ -130751,6 +132230,7 @@
       "it": "Cieloscuro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": null,
@@ -130907,6 +132387,7 @@
       "it": "Furtivombra"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -131133,6 +132614,7 @@
       "it": "Turbinombra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": null,
@@ -131285,6 +132767,7 @@
       "it": "Ondascura"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": null,
@@ -131441,6 +132924,12 @@
       "it": "Affilatore"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -131717,6 +133206,7 @@
       "it": "Tagliacoda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -131765,6 +133255,7 @@
       "it": "Purogelo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -132018,6 +133509,7 @@
       "it": "Armaguscio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -132100,6 +133592,28 @@
       "it": "Gettaguscio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      },
+      {
+        "stat": "ATTACK",
+        "change": 2
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 2
+      },
+      {
+        "stat": "SPEED",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -132304,6 +133818,7 @@
       "it": "Gusciotrappola"
     },
     "priority": -3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -132434,6 +133949,7 @@
       "it": "Barricata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -132493,6 +134009,16 @@
       "it": "Cambiomarcia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -132697,6 +134223,7 @@
       "it": "Ondashock"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -132953,6 +134480,7 @@
       "it": "Sabbiaccumulo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -133096,6 +134624,7 @@
       "it": "Segnoraggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -133332,6 +134861,12 @@
       "it": "Telatrappola"
     },
     "priority": 4,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -133380,6 +134915,28 @@
       "it": "Ventargenteo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -133623,6 +135180,7 @@
       "it": "Ondisinvolta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -133827,6 +135385,7 @@
       "it": "Canto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "sleep",
@@ -134123,6 +135682,7 @@
       "it": "Fiammabam"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -134222,6 +135782,7 @@
       "it": "Schizzo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -134501,6 +136062,7 @@
       "it": "Baratto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -134757,6 +136319,12 @@
       "it": "Strisciacolpo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -134847,6 +136415,7 @@
       "it": "Capocciata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -135130,6 +136699,7 @@
       "it": "Aeroattacco"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -135426,6 +136996,7 @@
       "it": "Cadutalibera"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -135610,6 +137181,7 @@
       "it": "Stramontante"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -135846,6 +137418,7 @@
       "it": "Pigro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -136102,6 +137675,7 @@
       "it": "Schianto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -136398,6 +137972,7 @@
       "it": "Lacerazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -136694,6 +138269,7 @@
       "it": "Sonnifero"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "sleep",
@@ -136990,6 +138566,7 @@
       "it": "Sonnolalia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -137269,6 +138846,7 @@
       "it": "Fango"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -137565,6 +139143,7 @@
       "it": "Fangobomba"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -137844,6 +139423,7 @@
       "it": "Fangonda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "poison",
@@ -138048,6 +139628,7 @@
       "it": "Abbattimento"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "unknown",
@@ -138252,6 +139833,7 @@
       "it": "Sottilcorno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -138395,6 +139977,7 @@
       "it": "Maniereforti"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -138631,6 +140214,7 @@
       "it": "Smog"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -138927,6 +140511,12 @@
       "it": "Muro di Fumo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ACCURACY",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -139223,6 +140813,7 @@
       "it": "Tagliola"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -139307,6 +140898,12 @@
       "it": "Urlorabbia"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -139511,6 +141108,7 @@
       "it": "Scippo"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -139747,6 +141345,7 @@
       "it": "Tiromirato"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -139837,6 +141436,7 @@
       "it": "Russare"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -140116,6 +141716,7 @@
       "it": "Vista Innevata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": null,
@@ -140164,6 +141765,7 @@
       "it": "Inondazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -140368,6 +141970,7 @@
       "it": "Covauova"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -140664,6 +142267,7 @@
       "it": "Solarraggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -140960,6 +142564,7 @@
       "it": "Lama Solare"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -141103,6 +142708,7 @@
       "it": "Sonicboom"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -141379,6 +142985,7 @@
       "it": "Fendispazio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -141609,6 +143216,7 @@
       "it": "Scintilla"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -141888,6 +143496,7 @@
       "it": "Canto Effimero"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -142031,6 +143640,7 @@
       "it": "Sbrilluccibufera"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -142130,6 +143740,7 @@
       "it": "Ombrafurto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -142260,6 +143871,7 @@
       "it": "Velociscambio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -142403,6 +144015,16 @@
       "it": "Essenza Piccante"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 2
+      },
+      {
+        "stat": "DEFENSE",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -142451,6 +144073,7 @@
       "it": "Ragnatela"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -142710,6 +144333,7 @@
       "it": "Sparalance"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -142986,6 +144610,7 @@
       "it": "Punte"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": "none",
@@ -143265,6 +144890,7 @@
       "it": "Agodifesa"
     },
     "priority": 4,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -143445,6 +145071,12 @@
       "it": "Slittaruote"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -143493,6 +145125,12 @@
       "it": "Frantumanima"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -143583,6 +145221,7 @@
       "it": "Cucitura d’Ombra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -143726,6 +145365,7 @@
       "it": "Sfoghenergia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -143982,6 +145622,7 @@
       "it": "Dispetto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -144261,6 +145902,7 @@
       "it": "Splash"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -144557,6 +146199,7 @@
       "it": "Surfasplash"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "paralysis",
@@ -144656,6 +146299,7 @@
       "it": "Spora"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "sleep",
@@ -144952,6 +146596,7 @@
       "it": "Riflettore"
     },
     "priority": 3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -145075,6 +146720,7 @@
       "it": "Tempesta Zefirea"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": null,
@@ -145134,6 +146780,7 @@
       "it": "Levitoroccia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": "none",
@@ -145364,6 +147011,7 @@
       "it": "Vaporscoppio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -145544,6 +147192,7 @@
       "it": "Rulloduro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -145728,6 +147377,7 @@
       "it": "Raggio d’Acciaio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -145818,6 +147468,7 @@
       "it": "Ferrorullo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -145900,6 +147551,12 @@
       "it": "Alacciaio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -146179,6 +147836,7 @@
       "it": "Rete Vischiosa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": "none",
@@ -146359,6 +148017,16 @@
       "it": "Accumulo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -146615,6 +148283,7 @@
       "it": "Pestone"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -146911,6 +148580,7 @@
       "it": "Battipiedi"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -147054,6 +148724,7 @@
       "it": "Rocciascure"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -147113,6 +148784,7 @@
       "it": "Pietrataglio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -147343,6 +149015,7 @@
       "it": "Veicolaforza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -147547,6 +149220,7 @@
       "it": "Tempestretta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -147745,6 +149419,7 @@
       "it": "Vapore Incantato"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -147835,6 +149510,7 @@
       "it": "Forza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -148131,6 +149807,12 @@
       "it": "Assorbiforza"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -148274,6 +149956,12 @@
       "it": "Millebave"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -148570,6 +150258,7 @@
       "it": "Scontro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "random-opponent",
       "ailmentSlug": "none",
@@ -148860,6 +150549,12 @@
       "it": "Entomoblocco"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -149064,6 +150759,12 @@
       "it": "Riempiguance"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -149146,6 +150847,7 @@
       "it": "Paralizzante"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -149442,6 +151144,7 @@
       "it": "Sottomissione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -149725,6 +151428,7 @@
       "it": "Sostituto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -150021,6 +151725,7 @@
       "it": "Sbigoattacco"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -150251,6 +151956,7 @@
       "it": "Giornodisole"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -150530,6 +152236,7 @@
       "it": "Astrocarica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -150673,6 +152380,7 @@
       "it": "Superzanna"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -150969,6 +152677,7 @@
       "it": "Elettrotuffo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -151017,6 +152726,16 @@
       "it": "Troppoforte"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -151273,6 +152992,7 @@
       "it": "Supersuono"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -151569,6 +153289,7 @@
       "it": "Surf"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -151865,6 +153586,7 @@
       "it": "Idroraffica"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -151947,6 +153669,12 @@
       "it": "Bullo"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -152226,6 +153954,7 @@
       "it": "Introenergia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -152482,6 +154211,7 @@
       "it": "Dolcebacio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -152761,6 +154491,12 @@
       "it": "Profumino"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "EVASION",
+        "change": -2
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -153040,6 +154776,7 @@
       "it": "Comete"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -153336,6 +155073,7 @@
       "it": "Rapidscambio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -153566,6 +155304,12 @@
       "it": "Danzaspada"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 2
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -153862,6 +155606,7 @@
       "it": "Sincrumore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "none",
@@ -154046,6 +155791,7 @@
       "it": "Sintesi"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -154325,6 +156071,12 @@
       "it": "Bomba Sciroppata"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -154373,6 +156125,7 @@
       "it": "Tachiontaglio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -154421,6 +156174,7 @@
       "it": "Azione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -154717,6 +156471,12 @@
       "it": "Codadiluce"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 3
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -154976,6 +156736,7 @@
       "it": "Spazzasberla"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -155180,6 +156941,12 @@
       "it": "Colpocoda"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -155476,6 +157243,7 @@
       "it": "Ventoincoda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -155706,6 +157474,7 @@
       "it": "Riduttore"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -156002,6 +157771,7 @@
       "it": "Baldimpulso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-allies",
       "ailmentSlug": null,
@@ -156061,6 +157831,12 @@
       "it": "Colpocatrame"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "tar-shot",
@@ -156143,6 +157919,7 @@
       "it": "Provocazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -156399,6 +158176,16 @@
       "it": "Occhionilucidi"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -156542,6 +158329,7 @@
       "it": "Ora del Tè"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-pokemon",
       "ailmentSlug": "none",
@@ -156624,6 +158412,7 @@
       "it": "Tecnobotto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -156815,6 +158604,7 @@
       "it": "Strampadanza"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-other-pokemon",
       "ailmentSlug": "confusion",
@@ -157071,6 +158861,7 @@
       "it": "Telecinesi"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "unknown",
@@ -157255,6 +159046,7 @@
       "it": "Teletrasporto"
     },
     "priority": -6,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -157551,6 +159343,7 @@
       "it": "Rabbia Bruciante"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -157599,6 +159392,16 @@
       "it": "Terascoppio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -157647,6 +159450,7 @@
       "it": "Teracluster"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": null,
@@ -157695,6 +159499,7 @@
       "it": "Campopulsar"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -157777,6 +159582,7 @@
       "it": "Furto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -158056,6 +159862,7 @@
       "it": "Mille Frecce"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "unknown",
@@ -158223,6 +160030,7 @@
       "it": "Mille Onde"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -158390,6 +160198,7 @@
       "it": "Colpo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "random-opponent",
       "ailmentSlug": "none",
@@ -158686,6 +160495,7 @@
       "it": "Colpo Infernale"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "silence",
@@ -158829,6 +160639,7 @@
       "it": "Tuono"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -159125,6 +160936,7 @@
       "it": "Elettrogabbia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -159215,6 +161027,7 @@
       "it": "Fulmindenti"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -159445,6 +161258,7 @@
       "it": "Tuonopugno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -159741,6 +161555,7 @@
       "it": "Tuonoshock"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -160037,6 +161852,7 @@
       "it": "Tuononda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -160333,6 +162149,7 @@
       "it": "Fulmine"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -160629,6 +162446,7 @@
       "it": "Saetta"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -160677,6 +162495,12 @@
       "it": "Calcio Tonante"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -160767,6 +162591,16 @@
       "it": "Solletico"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -161023,6 +162857,16 @@
       "it": "Pulizie"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -161071,6 +162915,7 @@
       "it": "Sottosopra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -161251,6 +163096,12 @@
       "it": "Canzone Ardente"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -161299,6 +163150,7 @@
       "it": "Attaccalite"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "torment",
@@ -161555,6 +163407,7 @@
       "it": "Tossina"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -161851,6 +163704,7 @@
       "it": "Fielepunte"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "opponents-field",
       "ailmentSlug": "none",
@@ -162081,6 +163935,12 @@
       "it": "Velenotela"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -162224,6 +164084,12 @@
       "it": "Apripista"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "SPEED",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -162272,6 +164138,7 @@
       "it": "Trasformazione"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -162568,6 +164435,7 @@
       "it": "Tripletta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "unknown",
@@ -162864,6 +164732,7 @@
       "it": "Raggiro"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -163120,6 +164989,7 @@
       "it": "Halloween"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -163294,6 +165164,7 @@
       "it": "Distortozona"
     },
     "priority": -7,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -163524,6 +165395,7 @@
       "it": "Triplodardo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -163583,6 +165455,7 @@
       "it": "Triplo Axel"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -163673,6 +165546,7 @@
       "it": "Triplo Tuffo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -163721,6 +165595,7 @@
       "it": "Triplocalcio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -164000,6 +165875,12 @@
       "it": "Tropicalcio"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -164143,6 +166024,7 @@
       "it": "Asso"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -164353,6 +166235,7 @@
       "it": "Doppioraggio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -164401,6 +166284,7 @@
       "it": "Doppio Ago"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "poison",
@@ -164677,6 +166561,7 @@
       "it": "Tornado"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -164956,6 +166841,7 @@
       "it": "Retromarcia"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -165186,6 +167072,7 @@
       "it": "Colpo di Mano"
     },
     "priority": 3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -165234,6 +167121,7 @@
       "it": "Baraonda"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "random-opponent",
       "ailmentSlug": "none",
@@ -165490,6 +167378,20 @@
       "it": "Generatore V"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_DEFENSE",
+        "change": -1
+      },
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -165681,6 +167583,7 @@
       "it": "Vuotonda"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -165911,6 +167814,7 @@
       "it": "Eeveempatto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -166024,6 +167928,20 @@
       "it": "Velenotrappola"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": -1
+      },
+      {
+        "stat": "SPEED",
+        "change": -1
+      }
+    ],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -166191,6 +168109,7 @@
       "it": "Velenoshock"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -166395,6 +168314,7 @@
       "it": "Presa"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -166691,6 +168611,7 @@
       "it": "Danzavittoria"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": null,
@@ -166750,6 +168671,7 @@
       "it": "Frustata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -167046,6 +168968,7 @@
       "it": "Vitaltiro"
     },
     "priority": -1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -167312,6 +169235,7 @@
       "it": "Invertivolt"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -167516,6 +169440,7 @@
       "it": "Locomovolt"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -167766,6 +169691,7 @@
       "it": "Svegliopacca"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -167976,6 +169902,7 @@
       "it": "Pistolacqua"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -168272,6 +170199,7 @@
       "it": "Acquapatto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -168476,6 +170404,7 @@
       "it": "Idropulsar"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "confusion",
@@ -168732,6 +170661,7 @@
       "it": "Acqualame"
     },
     "priority": 1,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -168912,6 +170842,7 @@
       "it": "Docciascudo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -169148,6 +171079,7 @@
       "it": "Zampillo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": "none",
@@ -169404,6 +171336,7 @@
       "it": "Cascata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -169700,6 +171633,7 @@
       "it": "Ondaschianto"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -169759,6 +171693,7 @@
       "it": "Palla Clima"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -170015,6 +171950,7 @@
       "it": "Mulinello"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -170294,6 +172230,7 @@
       "it": "Turbine"
     },
     "priority": -6,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -170590,6 +172527,7 @@
       "it": "Pugnotenebra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -170680,6 +172618,7 @@
       "it": "Turbotenebra"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": null,
@@ -170723,6 +172662,7 @@
       "it": "Bodyguard"
     },
     "priority": 3,
+    "statChanges": [],
     "meta": {
       "targetSlug": "users-field",
       "ailmentSlug": "none",
@@ -170927,6 +172867,7 @@
       "it": "Sprizzalampo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -171131,6 +173072,7 @@
       "it": "Tempesta Tonante"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "all-opponents",
       "ailmentSlug": null,
@@ -171190,6 +173132,7 @@
       "it": "Fuocofatuo"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "burn",
@@ -171446,6 +173389,7 @@
       "it": "Attacco d’Ala"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -171742,6 +173686,7 @@
       "it": "Desiderio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -171998,6 +173943,12 @@
       "it": "Ritirata"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "DEFENSE",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -172294,6 +174245,7 @@
       "it": "Mirabilzona"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "entire-field",
       "ailmentSlug": "none",
@@ -172498,6 +174450,7 @@
       "it": "Mazzuolegno"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -172728,6 +174681,16 @@
       "it": "Cuordileone"
     },
     "priority": 0,
+    "statChanges": [
+      {
+        "stat": "ATTACK",
+        "change": 1
+      },
+      {
+        "stat": "SPECIAL_ATTACK",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "user",
       "ailmentSlug": "none",
@@ -172932,6 +174895,7 @@
       "it": "Affannoseme"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -173162,6 +175126,7 @@
       "it": "Avvolgibotta"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "trap",
@@ -173458,6 +175423,7 @@
       "it": "Strizzata"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -173668,6 +175634,7 @@
       "it": "Forbice X"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -173898,6 +175865,7 @@
       "it": "Sbadiglio"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "yawn",
@@ -174154,6 +176122,7 @@
       "it": "Falcecannone"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "paralysis",
@@ -174433,6 +176402,7 @@
       "it": "Cozzata Zen"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -174663,6 +176633,7 @@
       "it": "Elettropizzico"
     },
     "priority": 0,
+    "statChanges": [],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",
@@ -174806,6 +176777,12 @@
       "it": "Sprintaboom"
     },
     "priority": 2,
+    "statChanges": [
+      {
+        "stat": "EVASION",
+        "change": 1
+      }
+    ],
     "meta": {
       "targetSlug": "selected-pokemon",
       "ailmentSlug": "none",

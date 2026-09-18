@@ -1,0 +1,230 @@
+[
+  {
+    "itemSlug": "blank-plate",
+    "typeSlug": "normal"
+  },
+  {
+    "itemSlug": "bug-memory",
+    "typeSlug": "bug"
+  },
+  {
+    "itemSlug": "bug-tera-shard",
+    "typeSlug": "bug"
+  },
+  {
+    "itemSlug": "burn-drive",
+    "typeSlug": "bug"
+  },
+  {
+    "itemSlug": "chill-drive",
+    "typeSlug": "bug"
+  },
+  {
+    "itemSlug": "dark-memory",
+    "typeSlug": "dark"
+  },
+  {
+    "itemSlug": "dark-tera-shard",
+    "typeSlug": "dark"
+  },
+  {
+    "itemSlug": "douse-drive",
+    "typeSlug": "bug"
+  },
+  {
+    "itemSlug": "draco-plate",
+    "typeSlug": "dragon"
+  },
+  {
+    "itemSlug": "dragon-memory",
+    "typeSlug": "dragon"
+  },
+  {
+    "itemSlug": "dragon-tera-shard",
+    "typeSlug": "dragon"
+  },
+  {
+    "itemSlug": "dread-plate",
+    "typeSlug": "dark"
+  },
+  {
+    "itemSlug": "earth-plate",
+    "typeSlug": "ground"
+  },
+  {
+    "itemSlug": "electric-memory",
+    "typeSlug": "electric"
+  },
+  {
+    "itemSlug": "electric-tera-shard",
+    "typeSlug": "electric"
+  },
+  {
+    "itemSlug": "fairy-memory",
+    "typeSlug": "fairy"
+  },
+  {
+    "itemSlug": "fairy-tera-shard",
+    "typeSlug": "fairy"
+  },
+  {
+    "itemSlug": "fighting-memory",
+    "typeSlug": "fighting"
+  },
+  {
+    "itemSlug": "fighting-tera-shard",
+    "typeSlug": "fighting"
+  },
+  {
+    "itemSlug": "fire-memory",
+    "typeSlug": "fire"
+  },
+  {
+    "itemSlug": "fire-tera-shard",
+    "typeSlug": "fire"
+  },
+  {
+    "itemSlug": "fist-plate",
+    "typeSlug": "fighting"
+  },
+  {
+    "itemSlug": "flame-plate",
+    "typeSlug": "fire"
+  },
+  {
+    "itemSlug": "flying-memory",
+    "typeSlug": "flying"
+  },
+  {
+    "itemSlug": "flying-tera-shard",
+    "typeSlug": "flying"
+  },
+  {
+    "itemSlug": "ghost-memory",
+    "typeSlug": "ghost"
+  },
+  {
+    "itemSlug": "ghost-tera-shard",
+    "typeSlug": "ghost"
+  },
+  {
+    "itemSlug": "grass-memory",
+    "typeSlug": "grass"
+  },
+  {
+    "itemSlug": "grass-tera-shard",
+    "typeSlug": "grass"
+  },
+  {
+    "itemSlug": "ground-memory",
+    "typeSlug": "ground"
+  },
+  {
+    "itemSlug": "ground-tera-shard",
+    "typeSlug": "ground"
+  },
+  {
+    "itemSlug": "ice-memory",
+    "typeSlug": "ice"
+  },
+  {
+    "itemSlug": "ice-tera-shard",
+    "typeSlug": "ice"
+  },
+  {
+    "itemSlug": "icicle-plate",
+    "typeSlug": "ice"
+  },
+  {
+    "itemSlug": "insect-plate",
+    "typeSlug": "bug"
+  },
+  {
+    "itemSlug": "iron-plate",
+    "typeSlug": "steel"
+  },
+  {
+    "itemSlug": "meadow-plate",
+    "typeSlug": "grass"
+  },
+  {
+    "itemSlug": "mind-plate",
+    "typeSlug": "psychic"
+  },
+  {
+    "itemSlug": "normal-tera-shard",
+    "typeSlug": "normal"
+  },
+  {
+    "itemSlug": "pixie-plate",
+    "typeSlug": "fairy"
+  },
+  {
+    "itemSlug": "poison-memory",
+    "typeSlug": "poison"
+  },
+  {
+    "itemSlug": "poison-tera-shard",
+    "typeSlug": "poison"
+  },
+  {
+    "itemSlug": "psychic-memory",
+    "typeSlug": "psychic"
+  },
+  {
+    "itemSlug": "psychic-tera-shard",
+    "typeSlug": "psychic"
+  },
+  {
+    "itemSlug": "rock-memory",
+    "typeSlug": "rock"
+  },
+  {
+    "itemSlug": "rock-tera-shard",
+    "typeSlug": "rock"
+  },
+  {
+    "itemSlug": "shock-drive",
+    "typeSlug": "bug"
+  },
+  {
+    "itemSlug": "sky-plate",
+    "typeSlug": "flying"
+  },
+  {
+    "itemSlug": "splash-plate",
+    "typeSlug": "water"
+  },
+  {
+    "itemSlug": "spooky-plate",
+    "typeSlug": "ghost"
+  },
+  {
+    "itemSlug": "steel-memory",
+    "typeSlug": "steel"
+  },
+  {
+    "itemSlug": "steel-tera-shard",
+    "typeSlug": "steel"
+  },
+  {
+    "itemSlug": "stone-plate",
+    "typeSlug": "rock"
+  },
+  {
+    "itemSlug": "toxic-plate",
+    "typeSlug": "poison"
+  },
+  {
+    "itemSlug": "water-memory",
+    "typeSlug": "water"
+  },
+  {
+    "itemSlug": "water-tera-shard",
+    "typeSlug": "water"
+  },
+  {
+    "itemSlug": "zap-plate",
+    "typeSlug": "electric"
+  }
+]

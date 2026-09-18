@@ -1,0 +1,567 @@
+[
+  {
+    "itemSlug": "abomasite",
+    "formSlug": "abomasnow-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "absolite",
+    "formSlug": "absol-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "absolite-z",
+    "formSlug": "absol-mega-z",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "adamant-crystal",
+    "formSlug": "dialga-origin",
+    "groupSlug": "legends-arceus"
+  },
+  {
+    "itemSlug": "aerodactylite",
+    "formSlug": "aerodactyl-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "aggronite",
+    "formSlug": "aggron-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "alakazite",
+    "formSlug": "alakazam-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "altarianite",
+    "formSlug": "altaria-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "ampharosite",
+    "formSlug": "ampharos-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "audinite",
+    "formSlug": "audino-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "banettite",
+    "formSlug": "banette-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "barbaracite",
+    "formSlug": "barbaracle-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "baxcalibrite",
+    "formSlug": "baxcalibur-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "beedrillite",
+    "formSlug": "beedrill-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "blastoisinite",
+    "formSlug": "blastoise-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "blazikenite",
+    "formSlug": "blaziken-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "blue-orb",
+    "formSlug": "kyogre-primal",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "cameruptite",
+    "formSlug": "camerupt-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "chandelurite",
+    "formSlug": "chandelure-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "charizardite-x",
+    "formSlug": "charizard-mega-x",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "charizardite-y",
+    "formSlug": "charizard-mega-y",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "chesnaughtite",
+    "formSlug": "chesnaught-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "chimechite",
+    "formSlug": "chimecho-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "clefablite",
+    "formSlug": "clefable-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "cornerstone-mask",
+    "formSlug": "ogerpon-cornerstone-mask",
+    "groupSlug": "the-teal-mask"
+  },
+  {
+    "itemSlug": "crabominite",
+    "formSlug": "crabominable-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "darkranite",
+    "formSlug": "darkrai-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "delphoxite",
+    "formSlug": "delphox-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "diancite",
+    "formSlug": "diancie-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "dragalgite",
+    "formSlug": "dragalge-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "dragoninite",
+    "formSlug": "dragonite-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "drampanite",
+    "formSlug": "drampa-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "eelektrossite",
+    "formSlug": "eelektross-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "emboarite",
+    "formSlug": "emboar-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "excadrite",
+    "formSlug": "excadrill-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "falinksite",
+    "formSlug": "falinks-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "feraligite",
+    "formSlug": "feraligatr-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "floettite",
+    "formSlug": "floette-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "froslassite",
+    "formSlug": "froslass-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "galladite",
+    "formSlug": "gallade-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "garchompite",
+    "formSlug": "garchomp-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "garchompite-z",
+    "formSlug": "garchomp-mega-z",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "gardevoirite",
+    "formSlug": "gardevoir-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "gengarite",
+    "formSlug": "gengar-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "glalitite",
+    "formSlug": "glalie-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "glimmoranite",
+    "formSlug": "glimmora-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "golisopite",
+    "formSlug": "golisopod-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "golurkite",
+    "formSlug": "golurk-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "greninjite",
+    "formSlug": "greninja-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "griseous-core",
+    "formSlug": "giratina-origin",
+    "groupSlug": "platinum"
+  },
+  {
+    "itemSlug": "griseous-orb",
+    "formSlug": "giratina-origin",
+    "groupSlug": "platinum"
+  },
+  {
+    "itemSlug": "gyaradosite",
+    "formSlug": "gyarados-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "hawluchanite",
+    "formSlug": "hawlucha-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "hearthflame-mask",
+    "formSlug": "ogerpon-hearthflame-mask",
+    "groupSlug": "the-teal-mask"
+  },
+  {
+    "itemSlug": "heatranite",
+    "formSlug": "heatran-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "heracronite",
+    "formSlug": "heracross-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "houndoominite",
+    "formSlug": "houndoom-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "kangaskhanite",
+    "formSlug": "kangaskhan-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "latiasite",
+    "formSlug": "latias-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "latiosite",
+    "formSlug": "latios-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "lopunnite",
+    "formSlug": "lopunny-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "lucarionite",
+    "formSlug": "lucario-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "lucarionite-z",
+    "formSlug": "lucario-mega-z",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "lustrous-globe",
+    "formSlug": "palkia-origin",
+    "groupSlug": "legends-arceus"
+  },
+  {
+    "itemSlug": "magearnite",
+    "formSlug": "magearna-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "magearnite",
+    "formSlug": "magearna-original-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "malamarite",
+    "formSlug": "malamar-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "manectite",
+    "formSlug": "manectric-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "mawilite",
+    "formSlug": "mawile-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "medichamite",
+    "formSlug": "medicham-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "meganiumite",
+    "formSlug": "meganium-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "meowsticite",
+    "formSlug": "meowstic-female-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "meowsticite",
+    "formSlug": "meowstic-male-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "metagrossite",
+    "formSlug": "metagross-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "mewtwonite-x",
+    "formSlug": "mewtwo-mega-x",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "mewtwonite-y",
+    "formSlug": "mewtwo-mega-y",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "pidgeotite",
+    "formSlug": "pidgeot-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "pinsirite",
+    "formSlug": "pinsir-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "pyroarite",
+    "formSlug": "pyroar-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "raichunite-x",
+    "formSlug": "raichu-mega-x",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "raichunite-y",
+    "formSlug": "raichu-mega-y",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "red-orb",
+    "formSlug": "groudon-primal",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "rusted-shield",
+    "formSlug": "zamazenta-crowned",
+    "groupSlug": "sword-shield"
+  },
+  {
+    "itemSlug": "rusted-sword",
+    "formSlug": "zacian-crowned",
+    "groupSlug": "sword-shield"
+  },
+  {
+    "itemSlug": "sablenite",
+    "formSlug": "sableye-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "salamencite",
+    "formSlug": "salamence-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "sceptilite",
+    "formSlug": "sceptile-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "scizorite",
+    "formSlug": "scizor-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "scolipite",
+    "formSlug": "scolipede-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "scovillainite",
+    "formSlug": "scovillain-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "scraftinite",
+    "formSlug": "scrafty-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "sharpedonite",
+    "formSlug": "sharpedo-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "skarmorite",
+    "formSlug": "skarmory-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "slowbronite",
+    "formSlug": "slowbro-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "staraptite",
+    "formSlug": "staraptor-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "starminite",
+    "formSlug": "starmie-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "steelixite",
+    "formSlug": "steelix-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "swampertite",
+    "formSlug": "swampert-mega",
+    "groupSlug": "omega-ruby-alpha-sapphire"
+  },
+  {
+    "itemSlug": "tatsugirinite",
+    "formSlug": "tatsugiri-curly-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "tatsugirinite",
+    "formSlug": "tatsugiri-droopy-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "tatsugirinite",
+    "formSlug": "tatsugiri-stretchy-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "teal-mask",
+    "formSlug": "ogerpon",
+    "groupSlug": "the-teal-mask"
+  },
+  {
+    "itemSlug": "tyranitarite",
+    "formSlug": "tyranitar-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "ultranecrozium-z--held",
+    "formSlug": "necrozma-ultra",
+    "groupSlug": "ultra-sun-ultra-moon"
+  },
+  {
+    "itemSlug": "venusaurite",
+    "formSlug": "venusaur-mega",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "victreebelite",
+    "formSlug": "victreebel-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "wellspring-mask",
+    "formSlug": "ogerpon-wellspring-mask",
+    "groupSlug": "the-teal-mask"
+  },
+  {
+    "itemSlug": "zeraorite",
+    "formSlug": "zeraora-mega",
+    "groupSlug": "mega-dimension"
+  },
+  {
+    "itemSlug": "zygarde-cube",
+    "formSlug": "zygarde-10",
+    "groupSlug": "sun-moon"
+  },
+  {
+    "itemSlug": "zygarde-cube",
+    "formSlug": "zygarde-10-power-construct",
+    "groupSlug": "sun-moon"
+  },
+  {
+    "itemSlug": "zygarde-cube",
+    "formSlug": "zygarde-50",
+    "groupSlug": "x-y"
+  },
+  {
+    "itemSlug": "zygarde-cube",
+    "formSlug": "zygarde-50-power-construct",
+    "groupSlug": "sun-moon"
+  },
+  {
+    "itemSlug": "zygardite",
+    "formSlug": "zygarde-mega",
+    "groupSlug": "mega-dimension"
+  }
+]

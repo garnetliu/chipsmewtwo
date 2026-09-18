@@ -25,6 +25,7 @@ import {
 } from "@/prisma/seed-data/pokeapi-pokemon";
 import {
   type AbilitySnapshot,
+  type BerrySnapshot,
   type ColorSnapshot,
   type DamageTo,
   type EffectsByGeneration,
@@ -34,8 +35,13 @@ import {
   type GenerationSnapshot,
   type GroupSnapshot,
   type GzipSeedData,
+  type ItemFormChangeSnapshot,
+  type ItemNatureSnapshot,
   type ItemSnapshot,
+  type ItemTypeBoostSnapshot,
+  type ItemTypeChangeSnapshot,
   type Localized,
+  type MachineSnapshot,
   type MaxMoveSnapshot,
   type MoveLearnMethodSnapshot,
   type MoveLearnSnapshot,
@@ -48,6 +54,7 @@ import {
   type RegionSnapshot,
   SEED_DATA_DIR,
   type SeedData,
+  type StatName,
   type TypeSnapshot,
   type VersionSnapshot,
   type ZMoveSnapshot,
@@ -94,20 +101,36 @@ async function getJson<T>(path: string, attempt = 0): Promise<T> {
 }
 
 /** 按 URL 逐个拉详情。
- *  分批并发而不是一口气打完 —— PokeAPI 没有硬性限流，但没必要给人家添麻烦 */
+ *  分批并发而不是一口气打完 —— PokeAPI 没有硬性限流，但没必要给人家添麻烦。
+ *
+ *  列表里有、详情却 404 的条目直接跳过：数据源自己就对不齐，
+ *  /evolution-chain 列了 429 号，点进去是 Not Found */
 async function fetchDetails<T>(refs: NamedRef[], batchSize = 8): Promise<T[]> {
   const out: T[] = [];
+  const missing: string[] = [];
   for (let i = 0; i < refs.length; i += batchSize) {
     const batch = refs.slice(i, i + batchSize);
     out.push(
-      ...(await Promise.all(
-        batch.map((r) => getJson<T>(new URL(r.url).pathname.replace("/api/v2", ""))),
-      )),
+      ...(
+        await Promise.all(
+          batch.map(async (r): Promise<T | undefined> => {
+            const path = new URL(r.url).pathname.replace("/api/v2", "");
+            try {
+              return await getJson<T>(path);
+            } catch (err) {
+              if (!(err instanceof Error) || !err.message.includes("→ 404")) throw err;
+              missing.push(path);
+              return undefined;
+            }
+          }),
+        )
+      ).filter((x) => x !== undefined),
     );
     if (refs.length > 500 && (i / batchSize) % 25 === 0) {
       console.log(`    ${Math.min(i + batchSize, refs.length)}/${refs.length}`);
     }
   }
+  if (missing.length) console.warn(`  ⚠ ${missing.length} 条详情 404：${missing.join(", ")}`);
   return out;
 }
 
@@ -436,6 +459,60 @@ async function evolutionTriggers(): Promise<EvolutionTriggerSnapshot[]> {
   return bySlug(rows.map((t) => ({ slug: t.name, names: byLanguage(t.names, (e) => e.name) })));
 }
 
+/**
+ * 树果自己那套数值，68 条。
+ *
+ * 树果本身在 items 里也有一行（带译名、图片、说明），这里只抓
+ * 「只有树果才有」的：种下去多久能收、五种口味各多强，以及自然之恩
+ * 这个招式的威力和属性 —— 那招式没有固定数值，全看携带的树果
+ */
+async function berries(): Promise<BerrySnapshot[]> {
+  type Berry = {
+    name: string;
+    growth_time: number | null;
+    max_harvest: number | null;
+    size: number | null;
+    smoothness: number | null;
+    soil_dryness: number | null;
+    firmness: NamedRef | null;
+    natural_gift_power: number | null;
+    natural_gift_type: NamedRef | null;
+    item: NamedRef;
+    flavors: { potency: number; flavor: NamedRef }[];
+  };
+  const rows = await fetchAll<Berry>("berry", 12);
+
+  const FIRMNESS: Record<string, NonNullable<BerrySnapshot["firmness"]>> = {
+    "very-soft": "VERY_SOFT",
+    soft: "SOFT",
+    hard: "HARD",
+    "very-hard": "VERY_HARD",
+    "super-hard": "SUPER_HARD",
+  };
+
+  return [...rows]
+    .map((b) => {
+      const potency = new Map(b.flavors.map((f) => [f.flavor.name, f.potency]));
+      return {
+        itemSlug: b.item.name,
+        growthTime: b.growth_time,
+        maxHarvest: b.max_harvest,
+        size: b.size,
+        smoothness: b.smoothness,
+        soilDryness: b.soil_dryness,
+        firmness: b.firmness ? (FIRMNESS[b.firmness.name] ?? null) : null,
+        naturalGiftPower: b.natural_gift_power,
+        naturalGiftTypeSlug: b.natural_gift_type?.name ?? null,
+        spicy: potency.get("spicy") ?? 0,
+        dry: potency.get("dry") ?? 0,
+        sweet: potency.get("sweet") ?? 0,
+        bitter: potency.get("bitter") ?? 0,
+        sour: potency.get("sour") ?? 0,
+      };
+    })
+    .sort((a, b) => a.itemSlug.localeCompare(b.itemSlug));
+}
+
 /** 版本组 slug → 世代号 / 发售顺序。说明按世代或版本组存，全靠这两张表换算 */
 type GroupIndex = {
   generationOf: (slug: string) => number | undefined;
@@ -559,6 +636,17 @@ async function abilities(index: GroupIndex): Promise<AbilitySnapshot[]> {
  * 数据源的 damage_class 是招式当前的分类，照抄到老世代就会把
  * Gen1 的拍落（恶系，那时算特殊）写成物理
  */
+/** 数据源的能力项 slug → 枚举。ＨＰ不参与能力变化，所以不在表里 */
+const STAT_NAMES: Record<string, StatName> = {
+  attack: "ATTACK",
+  defense: "DEFENSE",
+  "special-attack": "SPECIAL_ATTACK",
+  "special-defense": "SPECIAL_DEFENSE",
+  speed: "SPEED",
+  accuracy: "ACCURACY",
+  evasion: "EVASION",
+};
+
 const SPECIAL_TYPES = new Set([
   "fire",
   "water",
@@ -682,6 +770,7 @@ async function moves(index: GroupIndex, learns: MoveLearnSnapshot[]): Promise<Sp
     flavor_text_entries: ({ flavor_text: string } & FlavorEntry)[];
     priority: number;
     target: NamedRef | null;
+    stat_changes: { change: number; stat: NamedRef }[];
     meta: {
       ailment: NamedRef | null;
       category: NamedRef | null;
@@ -742,6 +831,11 @@ async function moves(index: GroupIndex, learns: MoveLearnSnapshot[]): Promise<Sp
         introducedInGenerationId: introducedIn,
         names: byLanguage(m.names, (e) => e.name),
         priority: m.priority,
+        // 改哪项能力、改几级。数据源给的是 stat 资源的 slug
+        statChanges: m.stat_changes.flatMap((s) => {
+          const stat = STAT_NAMES[s.stat.name];
+          return stat ? [{ stat, change: s.change }] : [];
+        }),
         meta: {
           targetSlug: m.target?.name ?? null,
           ailmentSlug: m.meta?.ailment?.name ?? null,
@@ -849,24 +943,163 @@ function splitMoves(all: MoveSnapshot[]): SplitMoves {
 }
 
 /**
- * 技能机器编号。
+ * 携带道具触发的形态变化。
+ *
+ * 数据源把这层关系挂在形态那头（pokemon-form 的 trigger_conditions），
+ * 所以得遍历全部形态反着建。一千五百多个请求。
+ *
+ * 分两种落法：
+ *   形态在 Form 表里（超级石那 100 件、原始回归的宝珠）→ item_form_change
+ *   形态不在（阿尔宙斯的石板、银伴战兽的存储碟 —— 它们的属性形态在数据源
+ *   那边是 pokemon-form 级，我们的 Form 表是 variety 级）→ 退一步存属性，
+ *   反正这两类道具的效果本来就是「变成某属性」
+ */
+async function formTriggers(known: Set<string>): Promise<{
+  formChanges: ItemFormChangeSnapshot[];
+  typeChanges: ItemTypeChangeSnapshot[];
+}> {
+  const rows = await fetchAll<PokemonFormResponse>("pokemon-form", 10);
+
+  const formChanges = new Map<string, ItemFormChangeSnapshot>();
+  const typeChanges = new Map<string, ItemTypeChangeSnapshot>();
+  for (const form of rows) {
+    for (const cond of form.trigger_conditions ?? []) {
+      if (cond.trigger !== "held-item") continue;
+
+      if (known.has(form.name)) {
+        // 同一对（道具，形态）会出现两次：究极奈克洛兹玛的黄昏鬃和拂晓翼
+        // 是两个 pokemon-form，落到 Form 表是同一个 necrozma-ultra
+        formChanges.set(`${cond.name} ${form.name}`, {
+          itemSlug: cond.name,
+          formSlug: form.name,
+          groupSlug: form.version_group?.name ?? null,
+        });
+        continue;
+      }
+      // 形态不在 Form 表里，退一步记属性
+      const typeSlug = form.types.find((x) => x.slot === 1)?.type.name;
+      if (typeSlug && !typeChanges.has(cond.name)) {
+        typeChanges.set(cond.name, { itemSlug: cond.name, typeSlug });
+      }
+    }
+  }
+
+  const formRows = [...formChanges.values()].sort(
+    (a, b) => a.itemSlug.localeCompare(b.itemSlug) || a.formSlug.localeCompare(b.formSlug),
+  );
+  console.log(`  形态变化: ${formRows.length} 条挂到形态，${typeChanges.size} 条退成属性`);
+  return {
+    formChanges: formRows,
+    typeChanges: [...typeChanges.values()].sort((a, b) => a.itemSlug.localeCompare(b.itemSlug)),
+  };
+}
+
+/**
+ * 技能机器。
  *
  * /machine 一条记录是「某个版本组里，某号机器教某个招式」—— 编号在 item 那边
- * （item.name 是 "tm35"），所以拉回来按 (招式, 版本组) 建索引，
- * 招式学习表里 method 是 machine 的那些行回填编号。
+ * （item.name 是 "tm35"）。同一批数据两个用处：
+ *   rows   → machines.json，机器这件道具的机制就是「教这个招式」
+ *   byMove → 招式学习表里 method 是 machine 的那些行回填编号
  *
- * 同一招在同一版本组可能既是 TM 又是 HM（极少），取先遇到的那条
+ * 同一招在同一版本组可能既是 TM 又是 HM（极少），byMove 取先遇到的那条
  */
-async function machineNumbers(): Promise<Map<string, string>> {
+async function machines(): Promise<{ rows: MachineSnapshot[]; byMove: Map<string, string> }> {
   type Machine = { item: NamedRef; move: NamedRef; version_group: NamedRef };
-  const rows = await fetchAll<Machine>("machine", 16);
+  const list = await fetchAll<Machine>("machine", 16);
 
-  const out = new Map<string, string>();
-  for (const m of rows) {
+  const byMove = new Map<string, string>();
+  const rows = new Map<string, MachineSnapshot>();
+  for (const m of list) {
     const key = `${m.move.name} ${m.version_group.name}`;
-    if (!out.has(key)) out.set(key, m.item.name.toUpperCase());
+    if (!byMove.has(key)) byMove.set(key, m.item.name.toUpperCase());
+
+    // 主键是「道具 + 版本组」，同一版本组里一号机器只教一招
+    const rowKey = `${m.item.name} ${m.version_group.name}`;
+    if (!rows.has(rowKey)) {
+      rows.set(rowKey, {
+        itemSlug: m.item.name,
+        groupSlug: m.version_group.name,
+        moveSlug: m.move.name,
+      });
+    }
   }
-  return out;
+  console.log(`  技能机器: ${rows.size} 条（${list.length} 条原始记录）`);
+  return {
+    rows: [...rows.values()].sort(
+      (a, b) => a.itemSlug.localeCompare(b.itemSlug) || a.groupSlug.localeCompare(b.groupSlug),
+    ),
+    byMove,
+  };
+}
+
+/** 宝石强化幅度：第五世代 +50%，第六世代起 +30%。表里只留现行值，带上改动的世代 */
+const GEM_BOOST = { boostPercent: 30, generationId: 6 };
+/** 石板强化它对应属性的招式 +20%，从第四世代起没变过 */
+const PLATE_BOOST = 20;
+
+/**
+ * 能从 slug 直接推出来的那几类机制。
+ *
+ * 这几类道具是成套出的，名字里就写着作用对象：
+ *   {属性}-gem         宝石，强化该属性招式一次
+ *   {属性}-tera-shard  太晶碎块，换宝可梦的太晶属性
+ *   {性格}-mint        性格薄荷，改成该性格的能力加成
+ *   *-plate            石板，属性从形态那边来（plateTypes），这里只补威力加成
+ *
+ * 剩下的属性强化道具（木炭、磁铁、各种薰香）名字推不出属性，在百科那边抓
+ */
+function slugMechanics(
+  itemSlugs: string[],
+  natures: NatureSnapshot[],
+  typeRows: TypeSnapshot[],
+  plateTypes: Map<string, string>,
+): {
+  typeChanges: ItemTypeChangeSnapshot[];
+  typeBoosts: ItemTypeBoostSnapshot[];
+  natureItems: ItemNatureSnapshot[];
+} {
+  const typeSet = new Set(typeRows.map((x) => x.slug));
+  const natureSet = new Set(natures.map((n) => n.slug));
+
+  const typeChanges: ItemTypeChangeSnapshot[] = [];
+  const typeBoosts: ItemTypeBoostSnapshot[] = [];
+  const natureItems: ItemNatureSnapshot[] = [];
+
+  for (const slug of itemSlugs) {
+    const gem = slug.endsWith("-gem") ? slug.slice(0, -"-gem".length) : null;
+    if (gem && typeSet.has(gem)) {
+      typeBoosts.push({ itemSlug: slug, typeSlug: gem, ...GEM_BOOST });
+      continue;
+    }
+
+    const shard = slug.endsWith("-tera-shard") ? slug.slice(0, -"-tera-shard".length) : null;
+    if (shard && typeSet.has(shard)) {
+      typeChanges.push({ itemSlug: slug, typeSlug: shard });
+      continue;
+    }
+
+    const mint = slug.endsWith("-mint") ? slug.slice(0, -"-mint".length) : null;
+    if (mint && natureSet.has(mint)) {
+      natureItems.push({ itemSlug: slug, natureSlug: mint });
+      continue;
+    }
+
+    const plate = plateTypes.get(slug);
+    if (slug.endsWith("-plate") && plate) {
+      typeBoosts.push({
+        itemSlug: slug,
+        typeSlug: plate,
+        boostPercent: PLATE_BOOST,
+        generationId: null,
+      });
+    }
+  }
+  console.log(
+    `  slug 推导: 属性变化 ${typeChanges.length}、威力加成 ${typeBoosts.length}、` +
+      `性格薄荷 ${natureItems.length}`,
+  );
+  return { typeChanges, typeBoosts, natureItems };
 }
 
 /**
@@ -1186,13 +1419,16 @@ const index = groupIndex(groupRows);
 
 await write("regions", await regions());
 await write("generations", await generations());
-await write("types", await types());
+const typeRows = await types();
+await write("types", typeRows);
 await write("colors", await colors());
 await write("move-learn-methods", await moveLearnMethods());
 await write("evolution-triggers", await evolutionTriggers());
 await write("item-categories", await named("item-category"));
-await write("items", await items(index));
-await write("natures", await natures());
+const itemRows = await items(index);
+await write("items", itemRows);
+const natureRows = await natures();
+await write("natures", natureRows);
 await write("move-targets", await named("move-target"));
 await write("move-ailments", await named("move-ailment"));
 await write("move-meta-categories", await named("move-category"));
@@ -1200,11 +1436,12 @@ await write("abilities", await abilities(index));
 await write("pokedexes", await pokedexes());
 await write("groups", groupRows);
 await write("versions", await versions());
-// 技能机器编号先备好，招式学习表里 machine 那些行要回填
-const machines = await machineNumbers();
+// 技能机器先备好，招式学习表里 machine 那些行要回填编号
+const machineRows = await machines();
+await write("machines", machineRows.rows);
 
 // 宝可梦排在招式之前：招式的世代范围要靠学习表反推上界
-const species = await pokemon(machines);
+const species = await pokemon(machineRows.byMove);
 await write("pokemon", species.pokemon);
 await write("pokemon-descriptions", species.descriptions);
 await writeGzip("move-learns", species.moveLearns);
@@ -1216,3 +1453,30 @@ await write("max-moves", moveRows.maxMoves);
 
 // 进化两端是形态，要先知道每个物种的默认形态叫什么
 await write("evolutions", await evolutions(species.defaultFormOf));
+
+await write("berries", await berries());
+
+// 道具机制。形态变化那头要知道 Form 表里有哪些形态，不在的退成属性变化
+const knownForms = new Set(species.pokemon.flatMap((p) => p.forms.map((f) => f.slug)));
+const triggers = await formTriggers(knownForms);
+const derived = slugMechanics(
+  itemRows.map((i) => i.slug),
+  natureRows,
+  typeRows,
+  new Map(triggers.typeChanges.map((c) => [c.itemSlug, c.typeSlug])),
+);
+await write("item-form-changes", triggers.formChanges);
+await write(
+  "item-type-changes",
+  [...triggers.typeChanges, ...derived.typeChanges].sort((a, b) =>
+    a.itemSlug.localeCompare(b.itemSlug),
+  ),
+);
+await write(
+  "item-type-boosts",
+  derived.typeBoosts.sort((a, b) => a.itemSlug.localeCompare(b.itemSlug)),
+);
+await write(
+  "item-natures",
+  derived.natureItems.sort((a, b) => a.itemSlug.localeCompare(b.itemSlug)),
+);

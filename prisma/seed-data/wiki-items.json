@@ -3356,7 +3356,8 @@
         "champions": {
           "zh-Hans": "格斗属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "fighting"
     },
     {
       "slug": "black-flute",
@@ -3487,7 +3488,8 @@
         "champions": {
           "zh-Hans": "恶属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "dark"
     },
     {
       "slug": "black-mane-hair",
@@ -6013,7 +6015,8 @@
         "champions": {
           "zh-Hans": "火属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "fire"
     },
     {
       "slug": "charizardite-x",
@@ -10716,7 +10719,8 @@
           "zh-Hans": "龙属性的石板。携带后，龙属性的招式威力就会增强。",
           "zh-Hant": "龍屬性的石板。攜帶後，龍屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "dragon"
     },
     {
       "slug": "dragalgite",
@@ -10799,7 +10803,8 @@
         "champions": {
           "zh-Hans": "龙属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "dragon"
     },
     {
       "slug": "dragon-gem",
@@ -10940,7 +10945,8 @@
           "zh-Hans": "又硬又坚固的鳞片。龙属性宝可梦有时会携带它。",
           "zh-Hant": "又硬又結實的鱗片。有時龍屬性寶可夢會攜帶著它。"
         }
-      }
+      },
+      "boostTypeSlug": "dragon"
     },
     {
       "slug": "dragon-skull",
@@ -11185,7 +11191,8 @@
           "zh-Hans": "恶属性的石板。携带后，恶属性的招式威力就会增强。",
           "zh-Hant": "惡屬性的石板。攜帶後，惡屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "dark"
     },
     {
       "slug": "dream-ball",
@@ -11970,7 +11977,8 @@
           "zh-Hans": "地面属性的石板。携带后，地面属性的招式威力就会增强。",
           "zh-Hant": "地面屬性的石板。攜帶後，地面屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "ground"
     },
     {
       "slug": "eelektrossite",
@@ -13702,7 +13710,8 @@
         "champions": {
           "zh-Hans": "妖精属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "fairy"
     },
     {
       "slug": "fairy-gem",
@@ -14675,7 +14684,8 @@
           "zh-Hans": "格斗属性的石板。携带后，格斗属性的招式威力就会增强。",
           "zh-Hant": "格鬥屬性的石板。攜帶後，格鬥屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "fighting"
     },
     {
       "slug": "flabebe-pollen",
@@ -14803,7 +14813,8 @@
           "zh-Hans": "火属性的石板。携带后，火属性的招式威力就会增强。",
           "zh-Hant": "火屬性的石板。攜帶後，火屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "fire"
     },
     {
       "slug": "flamigo-down",
@@ -18862,7 +18873,8 @@
         "champions": {
           "zh-Hans": "岩石属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "rock"
     },
     {
       "slug": "hasty-mint",
@@ -20523,7 +20535,8 @@
           "zh-Hans": "冰属性的石板。携带后，冰属性的招式威力就会增强。",
           "zh-Hant": "冰屬性的石板。攜帶後，冰屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "ice"
     },
     {
       "slug": "icium-z--bag",
@@ -20855,7 +20868,8 @@
           "zh-Hans": "虫属性的石板。携带后，虫属性的招式威力就会增强。",
           "zh-Hant": "蟲屬性的石板。攜帶後，蟲屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "bug"
     },
     {
       "slug": "instant-noodles",
@@ -21089,7 +21103,8 @@
           "zh-Hans": "钢属性的石板。携带后，钢属性的招式威力就会增强。",
           "zh-Hant": "鋼屬性的石板。攜帶後，鋼屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "steel"
     },
     {
       "slug": "item-drop",
@@ -25993,7 +26008,8 @@
         "champions": {
           "zh-Hans": "电属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "electric"
     },
     {
       "slug": "mago-berry",
@@ -27073,7 +27089,8 @@
           "zh-Hans": "草属性的石板。携带后，草属性的招式威力就会增强。",
           "zh-Hant": "草屬性的石板。攜帶後，草屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "grass"
     },
     {
       "slug": "mech-mail",
@@ -27970,7 +27987,8 @@
         "champions": {
           "zh-Hans": "钢属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "steel"
     },
     {
       "slug": "metal-powder",
@@ -28723,7 +28741,8 @@
           "zh-Hans": "超能力属性的石板。携带后，超能力属性的招式威力就会增强。",
           "zh-Hant": "超能力屬性的石板。攜帶後，超能力屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "psychic"
     },
     {
       "slug": "mint-tablecloth",
@@ -28803,7 +28822,8 @@
         "champions": {
           "zh-Hans": "草属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "grass"
     },
     {
       "slug": "miraidons-poke-ball",
@@ -29551,7 +29571,8 @@
         "champions": {
           "zh-Hans": "水属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "water"
     },
     {
       "slug": "n-lunarizer--merge",
@@ -30544,7 +30565,8 @@
           "zh-Hans": "有着神奇香气的薰香。携带后，超能力属性的招式威力就会提高。",
           "zh-Hant": "有著神奇香氣的薰香。攜帶後，超能力屬性的招式威力就會提高。"
         }
-      }
+      },
+      "boostTypeSlug": "psychic"
     },
     {
       "slug": "odd-keystone",
@@ -33175,7 +33197,8 @@
           "zh-Hans": "妖精属性的石板。携带后，妖精属性的招式威力就会增强。",
           "zh-Hant": "妖精屬性的石板。攜帶後，妖精屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "fairy"
     },
     {
       "slug": "plaid-tablecloth-b",
@@ -33441,7 +33464,8 @@
         "champions": {
           "zh-Hans": "毒属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "poison"
     },
     {
       "slug": "poison-gem",
@@ -38587,7 +38611,8 @@
           "zh-Hans": "有着神奇香气的薰香。携带后，岩石属性的招式威力就会提高。",
           "zh-Hant": "有著神奇香氣的薰香。攜帶後，岩石屬性的招式威力就會提高。"
         }
-      }
+      },
+      "boostTypeSlug": "rock"
     },
     {
       "slug": "rock-memory",
@@ -38948,7 +38973,8 @@
           "zh-Hans": "有着神奇香气的薰香。携带后，草属性的招式威力就会提高。",
           "zh-Hant": "有著神奇香氣的薰香。攜帶後，草屬性的招式威力就會提高。"
         }
-      }
+      },
+      "boostTypeSlug": "grass"
     },
     {
       "slug": "roseli-berry",
@@ -40728,7 +40754,8 @@
           "zh-Hans": "有着神奇香气的薰香。携带后，水属性的招式威力就会提高。",
           "zh-Hant": "有著神奇香氣的薰香。攜帶後，水屬性的招式威力就會提高。"
         }
-      }
+      },
+      "boostTypeSlug": "water"
     },
     {
       "slug": "seal-bag",
@@ -41236,7 +41263,8 @@
         "champions": {
           "zh-Hans": "飞行属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "flying"
     },
     {
       "slug": "sharpedonite",
@@ -41903,7 +41931,8 @@
         "champions": {
           "zh-Hans": "一般属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "normal"
     },
     {
       "slug": "silph-scope",
@@ -42115,7 +42144,8 @@
         "champions": {
           "zh-Hans": "虫属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "bug"
     },
     {
       "slug": "silver-razz-berry",
@@ -42426,7 +42456,8 @@
           "zh-Hans": "飞行属性的石板。携带后，飞行属性的招式威力就会增强。",
           "zh-Hant": "飛行屬性的石板。攜帶後，飛行屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "flying"
     },
     {
       "slug": "slakoth-fur",
@@ -43146,7 +43177,8 @@
         "champions": {
           "zh-Hans": "地面属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "ground"
     },
     {
       "slug": "solganium-z--bag",
@@ -43555,7 +43587,8 @@
         "champions": {
           "zh-Hans": "幽灵属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "ghost"
     },
     {
       "slug": "spelon-berry",
@@ -43717,7 +43750,8 @@
           "zh-Hans": "水属性的石板。携带后，水属性的招式威力就会增强。",
           "zh-Hant": "水屬性的石板。攜帶後，水屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "water"
     },
     {
       "slug": "spoink-pearl",
@@ -43777,7 +43811,8 @@
           "zh-Hans": "幽灵属性的石板。携带后，幽灵属性的招式威力就会增强。",
           "zh-Hant": "幽靈屬性的石板。攜帶後，幽靈屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "ghost"
     },
     {
       "slug": "spooky-tablecloth",
@@ -44969,7 +45004,8 @@
           "zh-Hans": "岩石属性的石板。携带后，岩石属性的招式威力就会增强。",
           "zh-Hant": "岩石屬性的石板。攜帶後，岩石屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "rock"
     },
     {
       "slug": "stonjourner-stone",
@@ -47386,7 +47422,8 @@
           "zh-Hans": "毒属性的石板。携带后，毒属性的招式威力就会增强。",
           "zh-Hant": "毒屬性的石板。攜帶後，毒屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "poison"
     },
     {
       "slug": "travel-trunk",
@@ -47570,7 +47607,8 @@
         "champions": {
           "zh-Hans": "超能力属性招式的威力会变为1.2倍。"
         }
-      }
+      },
+      "boostTypeSlug": "psychic"
     },
     {
       "slug": "tynamo-slime",
@@ -48737,7 +48775,8 @@
           "zh-Hans": "有着神奇香气的薰香。携带后，水属性的招式威力就会提高。",
           "zh-Hant": "有著神奇香氣的薰香。攜帶後，水屬性的招式威力就會提高。"
         }
-      }
+      },
+      "boostTypeSlug": "water"
     },
     {
       "slug": "wave-mail",
@@ -51242,7 +51281,8 @@
           "zh-Hans": "电属性的石板。携带后，电属性的招式威力就会增强。",
           "zh-Hant": "電屬性的石板。攜帶後，電屬性的招式威力就會增強。"
         }
-      }
+      },
+      "boostTypeSlug": "electric"
     },
     {
       "slug": "zapdos-candy",
