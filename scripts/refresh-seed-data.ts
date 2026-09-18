@@ -1109,10 +1109,14 @@ function slugMechanics(
  * 「fromForm 在某版本组按某条件变成 toForm」，树形结构不进快照 ——
  * 库里的 EvolutionChain 是 seed 时从这些关系反推出来的分组编号。
  *
- * 两端都是形态：数据源给了 base_form / evolved_form 指向具体形态，
- * 没给的时候回落到该物种的默认形态（也就是跟物种同名那条）
+ * 两端都是形态：数据源指到具体形态时按它来，没指或者指到的是
+ * pokemon-form 级、Form 表里没有的（结草儿的三种蓑衣就是这样，
+ * 它在物种那头只有一个 variety），回落到该物种的默认形态
  */
-async function evolutions(defaultFormOf: Map<string, string>): Promise<EvolutionSnapshot[]> {
+async function evolutions(
+  defaultFormOf: Map<string, string>,
+  knownForms: Set<string>,
+): Promise<EvolutionSnapshot[]> {
   // 触发方式按 id 认，不按名字 —— 数据源给进化链里的名字和字典表对不上：
   // /evolution-trigger 里 18 号已经叫 unclassified，进化链里还写着旧名 other，
   // 照名字存进去会因为外键找不到而整条丢掉
@@ -1134,8 +1138,11 @@ async function evolutions(defaultFormOf: Map<string, string>): Promise<Evolution
     trade_species: NamedRef | null;
     region: NamedRef | null;
     location: NamedRef | null;
-    base_form: NamedRef | null;
-    evolved_form: NamedRef | null;
+    // 两端的形态。2026-09 数据源把这两个字段从 pokemon 级挪到了
+    // pokemon-form 级，名字也从 base_form / evolved_form 改成了现在这对 ——
+    // 读旧名字的话全是 undefined，地区形态的进化会整片退回默认形态
+    required_pokemon_form: NamedRef | null;
+    evolved_pokemon_form: NamedRef | null;
     gender: number | null;
     time_of_day: string;
     min_level: number | null;
@@ -1161,14 +1168,31 @@ async function evolutions(defaultFormOf: Map<string, string>): Promise<Evolution
   /** 物种 slug → 默认形态 slug。多数情况两者同名，代欧奇希斯那种不同 */
   const formOf = (speciesSlug: string) => defaultFormOf.get(speciesSlug) ?? speciesSlug;
 
+  /**
+   * 数据源指的形态在 Form 表里有就用；没指的话，条件里写了地区就试
+   * 「物种-地区」这个形态（阿罗拉雷丘那条只给了 region，没给形态）；
+   * 都不行就退回物种的默认形态
+   */
+  const pick = (ref: NamedRef | null, speciesSlug: string, region: string | null) => {
+    if (ref && knownForms.has(ref.name)) return ref.name;
+    const regional = region ? `${speciesSlug}-${region}` : null;
+    if (regional && knownForms.has(regional)) return regional;
+    return formOf(speciesSlug);
+  };
+
   const rows: EvolutionSnapshot[] = [];
   const missing = new Set<string>();
+  const dropped = new Set<string>();
 
   const walk = (node: Link) => {
     for (const next of node.evolves_to) {
       for (const d of next.evolution_details) {
-        const fromFormSlug = d.base_form?.name ?? formOf(node.species.name);
-        const toFormSlug = d.evolved_form?.name ?? formOf(next.species.name);
+        const region = d.region?.name ?? null;
+        const fromFormSlug = pick(d.required_pokemon_form, node.species.name, region);
+        const toFormSlug = pick(d.evolved_pokemon_form, next.species.name, region);
+        for (const ref of [d.required_pokemon_form, d.evolved_pokemon_form]) {
+          if (ref && !knownForms.has(ref.name)) dropped.add(ref.name);
+        }
         if (!defaultFormOf.has(node.species.name)) missing.add(node.species.name);
 
         rows.push({
@@ -1199,8 +1223,9 @@ async function evolutions(defaultFormOf: Map<string, string>): Promise<Evolution
           timeOfDay: d.time_of_day
             ? (d.time_of_day.toUpperCase().replace(/-/g, "_") as EvolutionSnapshot["timeOfDay"])
             : null,
-          // 数据源用 1 = 雄性、2 = 雌性
-          gender: d.gender === 1 ? "MALE" : d.gender === 2 ? "FEMALE" : null,
+          // 数据源用 1 = 雌性、2 = 雄性。结草儿那条能对出来：
+          // 1 变结草贵妇（雌性专属）、2 变绅士蛾（雄性专属）
+          gender: d.gender === 1 ? "FEMALE" : d.gender === 2 ? "MALE" : null,
           needsRain: d.needs_overworld_rain,
           needsMultiplayer: d.needs_multiplayer,
           nearSpecialRock: d.near_special_rock,
@@ -1225,15 +1250,27 @@ async function evolutions(defaultFormOf: Map<string, string>): Promise<Evolution
   if (missing.size) {
     console.warn(`  ⚠ 进化链引用了不在物种快照里的 ${missing.size} 个物种，按同名形态处理`);
   }
+  if (dropped.size) {
+    console.warn(
+      `  ⚠ ${dropped.size} 个形态只在 pokemon-form 级、Form 表里没有，` +
+        `按默认形态处理：${[...dropped].sort().slice(0, 5).join(", ")}`,
+    );
+  }
+  // 两端都退回默认形态之后会撞出一模一样的行 —— 四季鹿四种季节、
+  // 花蓓蓓五种花色在数据源那边是按形态分开写的，而这些形态是
+  // pokemon-form 级、Form 表里没有，落下来就成了四条五条同样的关系
+  const unique = new Map(rows.map((r) => [JSON.stringify(r), r]));
+  const deduped = [...unique.values()];
+
   // 排序只为 diff 稳定，跟落库顺序无关
-  rows.sort(
+  deduped.sort(
     (a, b) =>
       a.fromFormSlug.localeCompare(b.fromFormSlug) ||
       a.toFormSlug.localeCompare(b.toFormSlug) ||
       a.groupSlug.localeCompare(b.groupSlug),
   );
-  console.log(`  进化关系: ${rows.length} 行`);
-  return rows;
+  console.log(`  进化关系: ${deduped.length} 行（去掉 ${rows.length - deduped.length} 条重复）`);
+  return deduped;
 }
 
 async function pokedexes(): Promise<PokedexSnapshot[]> {
@@ -1451,13 +1488,13 @@ await write("moves", moveRows.moves);
 await write("z-moves", moveRows.zMoves);
 await write("max-moves", moveRows.maxMoves);
 
-// 进化两端是形态，要先知道每个物种的默认形态叫什么
-await write("evolutions", await evolutions(species.defaultFormOf));
+// 进化两端是形态，要先知道 Form 表里有哪些形态、每个物种的默认形态叫什么
+const knownForms = new Set(species.pokemon.flatMap((p) => p.forms.map((f) => f.slug)));
+await write("evolutions", await evolutions(species.defaultFormOf, knownForms));
 
 await write("berries", await berries());
 
-// 道具机制。形态变化那头要知道 Form 表里有哪些形态，不在的退成属性变化
-const knownForms = new Set(species.pokemon.flatMap((p) => p.forms.map((f) => f.slug)));
+// 道具机制。形态变化那头也要 knownForms，不在的退成属性变化
 const triggers = await formTriggers(knownForms);
 const derived = slugMechanics(
   itemRows.map((i) => i.slug),
