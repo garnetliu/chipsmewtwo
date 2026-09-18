@@ -16,6 +16,7 @@ import { gzipSync } from "node:zlib";
 import { type LanguageCode, LANGUAGES } from "@/lib/pokemon/language";
 import { resolveLanguageCode } from "@/prisma/seed-data/pokeapi-language";
 import {
+  fileNameOf,
   LATEST_GENERATION,
   type PokemonFormResponse,
   type PokemonResponse,
@@ -32,6 +33,7 @@ import {
   type EvolutionSnapshot,
   type EvolutionTriggerSnapshot,
   type FlavorsByGroup,
+  type FormVariantSnapshot,
   type GenerationSnapshot,
   type GroupSnapshot,
   type GzipSeedData,
@@ -954,12 +956,13 @@ function splitMoves(all: MoveSnapshot[]): SplitMoves {
  *   那边是 pokemon-form 级，我们的 Form 表是 variety 级）→ 退一步存属性，
  *   反正这两类道具的效果本来就是「变成某属性」
  */
-async function formTriggers(known: Set<string>): Promise<{
+async function formTriggers(
+  known: Set<string>,
+  rows: PokemonFormResponse[],
+): Promise<{
   formChanges: ItemFormChangeSnapshot[];
   typeChanges: ItemTypeChangeSnapshot[];
 }> {
-  const rows = await fetchAll<PokemonFormResponse>("pokemon-form", 10);
-
   const formChanges = new Map<string, ItemFormChangeSnapshot>();
   const typeChanges = new Map<string, ItemTypeChangeSnapshot>();
   for (const form of rows) {
@@ -992,6 +995,40 @@ async function formTriggers(known: Set<string>): Promise<{
     formChanges: formRows,
     typeChanges: [...typeChanges.values()].sort((a, b) => a.itemSlug.localeCompare(b.itemSlug)),
   };
+}
+
+/**
+ * 形态下面的变体。
+ *
+ * 数据源的 pokemon-form 比我们的 Form（variety 级）细一层：霜奶仙的
+ * 六十三种奶油、未知图腾的二十八个字母、阿尔宙斯的十九种属性形态都在这一级。
+ * 它们跟本体形态共用种族值和招式表，所以只取身份、图、译名和属性。
+ *
+ * 跟本体同名的那条不收 —— 那不是变体，就是形态本身
+ */
+function formVariants(rows: PokemonFormResponse[], known: Set<string>): FormVariantSnapshot[] {
+  const out: FormVariantSnapshot[] = [];
+  for (const form of rows) {
+    if (known.has(form.name)) continue;
+
+    const formSlug = form.pokemon.name;
+    if (!known.has(formSlug)) continue;
+
+    const byType = new Map(form.types.map((t) => [t.slot, t.type.name]));
+    out.push({
+      slug: form.name,
+      formSlug,
+      isDefault: form.is_default,
+      order: form.form_order,
+      fullImage: null,
+      detailImage: fileNameOf(form.sprites.front_default),
+      primaryTypeSlug: byType.get(1) ?? null,
+      secondaryTypeSlug: byType.get(2) ?? null,
+      names: byLanguage(form.form_names, (e) => e.name),
+    });
+  }
+  console.log(`  形态变体: ${out.length} 条`);
+  return out.sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
 /**
@@ -1116,6 +1153,7 @@ function slugMechanics(
 async function evolutions(
   defaultFormOf: Map<string, string>,
   knownForms: Set<string>,
+  knownVariants: Set<string>,
 ): Promise<EvolutionSnapshot[]> {
   // 触发方式按 id 认，不按名字 —— 数据源给进化链里的名字和字典表对不上：
   // /evolution-trigger 里 18 号已经叫 unclassified，进化链里还写着旧名 other，
@@ -1195,6 +1233,10 @@ async function evolutions(
         const region = d.region?.name ?? null;
         const fromFormSlug = pick(d.required_pokemon_form, node.species.name, region);
         const toFormSlug = pick(d.evolved_pokemon_form, next.species.name, region);
+        // 数据源指到了变体那一级（结草儿的草木蓑衣）就单独记一份，
+        // 两端的形态仍然是 variety 级的本体
+        const variant = (ref: NamedRef | null) =>
+          ref && knownVariants.has(ref.name) ? ref.name : null;
         for (const ref of [d.required_pokemon_form, d.evolved_pokemon_form]) {
           if (ref && !knownForms.has(ref.name)) dropped.add(ref.name);
         }
@@ -1231,6 +1273,8 @@ async function evolutions(
           // 数据源用 1 = 雌性、2 = 雄性。结草儿那条能对出来：
           // 1 变结草贵妇（雌性专属）、2 变绅士蛾（雄性专属）
           gender: d.gender === 1 ? "FEMALE" : d.gender === 2 ? "MALE" : null,
+          fromVariantSlug: variant(d.required_pokemon_form),
+          toVariantSlug: variant(d.evolved_pokemon_form),
           conditionExpression: d.condition_expression?.expression ?? null,
           conditionChance: d.condition_expression?.percentage_chance ?? null,
           natureSlugs: (d.allowed_natures ?? []).map((n) => n.name).sort(),
@@ -1498,12 +1542,21 @@ await write("max-moves", moveRows.maxMoves);
 
 // 进化两端是形态，要先知道 Form 表里有哪些形态、每个物种的默认形态叫什么
 const knownForms = new Set(species.pokemon.flatMap((p) => p.forms.map((f) => f.slug)));
-await write("evolutions", await evolutions(species.defaultFormOf, knownForms));
+
+// pokemon-form 比 Form 细一层，进化和道具机制都要用它，拉一次
+const formRows = await fetchAll<PokemonFormResponse>("pokemon-form", 10);
+const variants = formVariants(formRows, knownForms);
+await write("form-variants", variants);
+
+await write(
+  "evolutions",
+  await evolutions(species.defaultFormOf, knownForms, new Set(variants.map((v) => v.slug))),
+);
 
 await write("berries", await berries());
 
 // 道具机制。形态变化那头也要 knownForms，不在的退成属性变化
-const triggers = await formTriggers(knownForms);
+const triggers = await formTriggers(knownForms, formRows);
 const derived = slugMechanics(
   itemRows.map((i) => i.slug),
   natureRows,

@@ -336,6 +336,9 @@ export type EvolutionSnapshot = {
   nearSpecialRock: boolean;
   turnUpsideDown: boolean;
   attackVsDefense: "ATTACK_HIGHER" | "EQUAL" | "DEFENSE_HIGHER" | null;
+  /** 两端细到变体那一级时才有。结草儿的草木蓑衣变结草贵妇的草木蓑衣 */
+  fromVariantSlug: string | null;
+  toVariantSlug: string | null;
   /** 靠宝可梦内部随机值分歧的，后缀表达式，例如 "EC 100 % 0 ==" */
   conditionExpression: string | null;
   /** 上面那条分支大概多少概率走到，百分数 */
@@ -354,6 +357,27 @@ export type EvolutionSnapshot = {
  */
 export type PokemonSnapshot = Omit<Snapshot, "forms"> & {
   forms: Omit<Snapshot["forms"][number], "descriptions">[];
+};
+
+/**
+ * 形态下面的变体。
+ *
+ * 霜奶仙六十三种奶油、未知图腾二十八个字母、阿尔宙斯十九种属性、
+ * 结草儿三种蓑衣 —— 数据源把这些放在 pokemon-form 这一级，比形态更细一层，
+ * 种族值和招式表都跟本体共用
+ */
+export type FormVariantSnapshot = {
+  slug: string;
+  /** 挂在哪个形态下 */
+  formSlug: string;
+  isDefault: boolean;
+  order: number;
+  fullImage: string | null;
+  detailImage: string | null;
+  /** 只有阿尔宙斯和银伴战兽的属性真的跟本体不同，其余照抄 */
+  primaryTypeSlug: string | null;
+  secondaryTypeSlug: string | null;
+  names: Localized;
 };
 
 /** 图鉴说明。按物种 slug 分组，一只一条记录 */
@@ -415,6 +439,7 @@ export type SeedData = {
   versions: VersionSnapshot[];
   pokemon: PokemonSnapshot[];
   "pokemon-descriptions": PokemonDescriptionSnapshot[];
+  "form-variants": FormVariantSnapshot[];
 };
 
 /**

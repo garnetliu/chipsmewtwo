@@ -1849,7 +1849,10 @@ async function forms(): Promise<WikiSnapshot<WikiFormSnapshot>> {
   if (!source) throw new Error(`读不到「${title}」，百科那边可能改了页名`);
 
   type Pokemon = { id: number; slug: string; forms: { slug: string }[] };
-  const byDex = new Map(readSnapshot<Pokemon>("pokemon").map((p) => [p.id, p]));
+  const pokemon = readSnapshot<Pokemon>("pokemon");
+  const byDex = new Map(pokemon.map((p) => [p.id, p]));
+  // 变体那一级（霜奶仙的奶油、未知图腾的字母）也在这张表里，一起认
+  const variants = new Set(readSnapshot<{ slug: string }>("form-variants").map((v) => v.slug));
 
   const unmatched = new Set<string>();
   const parsed: { slug: string; zh: string }[] = [];
@@ -1858,13 +1861,13 @@ async function forms(): Promise<WikiSnapshot<WikiFormSnapshot>> {
     const zh = plainText(zhName ?? "");
     if (!zh || !enName) continue;
 
-    const pokemon = byDex.get(Number(dex));
-    if (!pokemon) continue;
+    const species = byDex.get(Number(dex));
+    if (!species) continue;
 
     const suffix = formSuffix(enName);
-    const slug = `${pokemon.slug}-${suffix}`;
-    if (!pokemon.forms.some((f) => f.slug === slug)) {
-      unmatched.add(`${pokemon.slug} ${enName}`);
+    const slug = `${species.slug}-${suffix}`;
+    if (!species.forms.some((f) => f.slug === slug) && !variants.has(slug)) {
+      unmatched.add(`${species.slug} ${enName}`);
       continue;
     }
     parsed.push({ slug, zh });
@@ -1888,7 +1891,8 @@ async function forms(): Promise<WikiSnapshot<WikiFormSnapshot>> {
  * 数据源那边是 -alola、-mega-x、-sprinting-build
  */
 function formSuffix(en: string): string {
-  const name = en.trim();
+  // 银伴战兽的十八个属性形态写成「Type: Fire」
+  const name = en.trim().replace(/^Type:\s*/i, "");
   const mega = /^Mega\b(.*?)(?:\s+([XY]))?$/.exec(name);
   if (mega) return mega[2] ? `mega-${mega[2].toLowerCase()}` : "mega";
   if (/^Alolan/i.test(name)) return "alola";
@@ -1897,8 +1901,12 @@ function formSuffix(en: string): string {
   if (/^Paldean/i.test(name)) return "paldea";
   if (/^Gigantamax/i.test(name)) return "gmax";
   if (/^Primal/i.test(name)) return "primal";
-  // 其余照字面来，「Terastal Form」「Blade Forme」这种把结尾的 Form(e) 去掉
-  return toSlug(name.replace(/\s+Formes?$/i, "").replace(/\s+Form$/i, ""));
+  // 其余照字面来，把结尾那个分类词去掉：「Terastal Form」「Blade Forme」
+  // 「Icy Snow Pattern」（彩粉蝶花纹）、「Red Flower」（花叶蒂花色）、
+  // 「Heart Trim」（多丽米亚修剪）、「Small Size」（南瓜怪人大小）、
+  // 「Baile Style」（花舞鸟舞姿）。Mode 和 Build 不能去 —— 数据源的
+  // slug 里带着它们（miraidon-drive-mode）
+  return toSlug(name.replace(/\s+(Formes?|Pattern|Flower|Cloak|Trim|Size|Style)$/i, ""));
 }
 
 /**
