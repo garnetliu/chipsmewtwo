@@ -4,3 +4,5 @@ allowBuilds:
   esbuild: true
   prisma: true
   unrs-resolver: false
+minimumReleaseAgeExclude:
+  - jsdom@30.1.0
