@@ -1226,9 +1226,14 @@ async function seedPokemon(
   );
   const ids = [...formIds.values()];
 
+  const zhForms = wikiForms();
   const nameRows = forms.flatMap(({ id, form }) => {
-    // 形态名只有非默认形态有（「阿罗拉的样子」）；数据源缺中文，靠 overrides 补
+    // 形态名只有非默认形态有（「阿罗拉的样子」）。中文优先用人工译名，
+    // 其次百科的形态对照表，最后才是数据源 —— 数据源那边中文缺得厉害
     const names: Localized = { ...manual?.[form.slug]?.names };
+    for (const [code, name] of Object.entries(zhForms.get(form.slug) ?? {})) {
+      names[code as LanguageCode] ??= name;
+    }
     for (const n of form.names) names[n.languageCode as LanguageCode] ??= n.name;
     return localized(names).map(({ languageCode, value: name }) => ({
       formId: id,
@@ -1332,6 +1337,17 @@ async function seedPokemon(
  * PokeAPI 的中文只覆盖 722 只、8 个版本组，朱紫那 127 只一条都没有；
  * 百科从红绿版到朱紫全有。文件读不到就当没有中文，不让 seed 挂掉
  */
+/** 形态名的中文。数据源那边有三十多个形态一种中文都没给 */
+function wikiForms(): Map<string, Localized> {
+  try {
+    const snapshot = readWiki("wiki-forms");
+    return new Map(snapshot.rows.map((r) => [r.slug, r.names]));
+  } catch {
+    console.warn("⚠ 读不到 wiki-forms.json，部分形态名会缺中文");
+    return new Map();
+  }
+}
+
 function wikiDescriptions(): Map<string, WikiPokemonDescriptionSnapshot> {
   try {
     const snapshot = readWiki("wiki-pokemon-descriptions");

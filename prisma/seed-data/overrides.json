@@ -753,6 +753,12 @@
     }
   },
   "forms": {
+    "absol-mega-z": {
+      "names": {
+        "zh-Hans": "超级阿勃梭鲁Ｚ",
+        "zh-Hant": "超級阿勃梭魯Ｚ"
+      }
+    },
     "alcremie-gmax": {
       "names": {
         "zh-Hans": "超极巨化的样子",
@@ -939,6 +945,12 @@
         "zh-Hant": "超極巨化的樣子"
       }
     },
+    "eevee-starter": {
+      "names": {
+        "zh-Hans": "搭档伊布",
+        "zh-Hant": "搭檔伊布"
+      }
+    },
     "electrode-hisui": {
       "names": {
         "zh-Hans": "洗翠的样子",
@@ -975,6 +987,12 @@
         "zh-Hant": "超極巨化的樣子"
       }
     },
+    "floette-eternal": {
+      "names": {
+        "zh-Hans": "永恒之花",
+        "zh-Hant": "永恆之花"
+      }
+    },
     "floette-mega": {
       "names": {
         "zh-Hans": "超级花叶蒂",
@@ -991,6 +1009,12 @@
       "names": {
         "zh-Hans": "超极巨化的样子",
         "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "garchomp-mega-z": {
+      "names": {
+        "zh-Hans": "超级烈咬陆鲨Ｚ",
+        "zh-Hant": "超級烈咬陸鯊Ｚ"
       }
     },
     "gengar-gmax": {
@@ -1021,6 +1045,12 @@
       "names": {
         "zh-Hans": "洗翠的样子",
         "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "greninja-battle-bond": {
+      "names": {
+        "zh-Hans": "牵绊变身甲贺忍蛙",
+        "zh-Hant": "牽絆變身甲賀忍蛙"
       }
     },
     "greninja-mega": {
@@ -1093,6 +1123,12 @@
       "names": {
         "zh-Hans": "洗翠的样子",
         "zh-Hant": "洗翠的樣子"
+      }
+    },
+    "lucario-mega-z": {
+      "names": {
+        "zh-Hans": "超级路卡利欧Ｚ",
+        "zh-Hant": "超級路卡利歐Ｚ"
       }
     },
     "lurantis-totem": {
@@ -1179,10 +1215,52 @@
         "zh-Hant": "超極巨化的樣子"
       }
     },
+    "pikachu-belle": {
+      "names": {
+        "zh-Hans": "贵妇皮卡丘",
+        "zh-Hant": "貴婦皮卡丘"
+      }
+    },
+    "pikachu-cosplay": {
+      "names": {
+        "zh-Hans": "换装皮卡丘",
+        "zh-Hant": "換裝皮卡丘"
+      }
+    },
     "pikachu-gmax": {
       "names": {
         "zh-Hans": "超极巨化的样子",
         "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "pikachu-libre": {
+      "names": {
+        "zh-Hans": "面罩摔角手皮卡丘",
+        "zh-Hant": "面罩摔角手皮卡丘"
+      }
+    },
+    "pikachu-phd": {
+      "names": {
+        "zh-Hans": "博士皮卡丘",
+        "zh-Hant": "博士皮卡丘"
+      }
+    },
+    "pikachu-pop-star": {
+      "names": {
+        "zh-Hans": "偶像皮卡丘",
+        "zh-Hant": "偶像皮卡丘"
+      }
+    },
+    "pikachu-rock-star": {
+      "names": {
+        "zh-Hans": "硬摇滚皮卡丘",
+        "zh-Hant": "硬搖滾皮卡丘"
+      }
+    },
+    "pikachu-starter": {
+      "names": {
+        "zh-Hans": "搭档皮卡丘",
+        "zh-Hant": "搭檔皮卡丘"
       }
     },
     "pyroar-mega": {
@@ -1225,6 +1303,12 @@
       "names": {
         "zh-Hans": "超极巨化的样子",
         "zh-Hant": "超極巨化的樣子"
+      }
+    },
+    "rockruff-own-tempo": {
+      "names": {
+        "zh-Hans": "特殊岩狗狗",
+        "zh-Hant": "特殊岩狗狗"
       }
     },
     "salazzle-totem": {

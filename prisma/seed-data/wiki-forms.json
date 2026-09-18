@@ -1,0 +1,2075 @@
+{
+  "source": "https://wiki.52poke.com",
+  "license": "CC BY-NC-SA 3.0",
+  "rows": [
+    {
+      "slug": "abomasnow-mega",
+      "names": {
+        "zh-Hans": "超级暴雪王",
+        "zh-Hant": "超級暴雪王"
+      }
+    },
+    {
+      "slug": "absol-mega",
+      "names": {
+        "zh-Hans": "超级阿勃梭鲁",
+        "zh-Hant": "超級阿勃梭魯"
+      }
+    },
+    {
+      "slug": "absol-mega",
+      "names": {
+        "zh-Hans": "超级阿勃梭鲁Ｚ",
+        "zh-Hant": "超級阿勃梭魯Ｚ"
+      }
+    },
+    {
+      "slug": "aegislash-blade",
+      "names": {
+        "zh-Hans": "刀剑形态",
+        "zh-Hant": "刀劍形態"
+      }
+    },
+    {
+      "slug": "aegislash-shield",
+      "names": {
+        "zh-Hans": "盾牌形态",
+        "zh-Hant": "盾牌形態"
+      }
+    },
+    {
+      "slug": "aerodactyl-mega",
+      "names": {
+        "zh-Hans": "超级化石翼龙",
+        "zh-Hant": "超級化石翼龍"
+      }
+    },
+    {
+      "slug": "aggron-mega",
+      "names": {
+        "zh-Hans": "超级波士可多拉",
+        "zh-Hant": "超級波士可多拉"
+      }
+    },
+    {
+      "slug": "alakazam-mega",
+      "names": {
+        "zh-Hans": "超级胡地",
+        "zh-Hant": "超級胡地"
+      }
+    },
+    {
+      "slug": "alcremie-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "altaria-mega",
+      "names": {
+        "zh-Hans": "超级七夕青鸟",
+        "zh-Hant": "超級七夕青鳥"
+      }
+    },
+    {
+      "slug": "ampharos-mega",
+      "names": {
+        "zh-Hans": "超级电龙",
+        "zh-Hant": "超級電龍"
+      }
+    },
+    {
+      "slug": "appletun-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "arcanine-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "articuno-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "audino-mega",
+      "names": {
+        "zh-Hans": "超级差不多娃娃",
+        "zh-Hant": "超級差不多娃娃"
+      }
+    },
+    {
+      "slug": "avalugg-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "banette-mega",
+      "names": {
+        "zh-Hans": "超级诅咒娃娃",
+        "zh-Hant": "超級詛咒娃娃"
+      }
+    },
+    {
+      "slug": "barbaracle-mega",
+      "names": {
+        "zh-Hans": "超级龟足巨铠",
+        "zh-Hant": "超級龜足巨鎧"
+      }
+    },
+    {
+      "slug": "basculegion-female",
+      "names": {
+        "zh-Hans": "雌性的样子",
+        "zh-Hant": "雌性的樣子"
+      }
+    },
+    {
+      "slug": "basculegion-male",
+      "names": {
+        "zh-Hans": "雄性的样子",
+        "zh-Hant": "雄性的樣子"
+      }
+    },
+    {
+      "slug": "basculin-blue-striped",
+      "names": {
+        "zh-Hans": "蓝条纹的样子",
+        "zh-Hant": "藍條紋的樣子"
+      }
+    },
+    {
+      "slug": "basculin-red-striped",
+      "names": {
+        "zh-Hans": "红条纹的样子",
+        "zh-Hant": "紅條紋的樣子"
+      }
+    },
+    {
+      "slug": "basculin-white-striped",
+      "names": {
+        "zh-Hans": "白条纹的样子",
+        "zh-Hant": "白條紋的樣子"
+      }
+    },
+    {
+      "slug": "baxcalibur-mega",
+      "names": {
+        "zh-Hans": "超级戟脊龙",
+        "zh-Hant": "超級戟脊龍"
+      }
+    },
+    {
+      "slug": "beedrill-mega",
+      "names": {
+        "zh-Hans": "超级大针蜂",
+        "zh-Hant": "超級大針蜂"
+      }
+    },
+    {
+      "slug": "blastoise-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "blastoise-mega",
+      "names": {
+        "zh-Hans": "超级水箭龟",
+        "zh-Hant": "超級水箭龜"
+      }
+    },
+    {
+      "slug": "blaziken-mega",
+      "names": {
+        "zh-Hans": "超级火焰鸡",
+        "zh-Hant": "超級火焰雞"
+      }
+    },
+    {
+      "slug": "braviary-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "butterfree-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "camerupt-mega",
+      "names": {
+        "zh-Hans": "超级喷火驼",
+        "zh-Hant": "超級噴火駝"
+      }
+    },
+    {
+      "slug": "castform-rainy",
+      "names": {
+        "zh-Hans": "雨水的样子",
+        "zh-Hant": "雨水的樣子"
+      }
+    },
+    {
+      "slug": "castform-snowy",
+      "names": {
+        "zh-Hans": "雪云的样子",
+        "zh-Hant": "雪雲的樣子"
+      }
+    },
+    {
+      "slug": "castform-sunny",
+      "names": {
+        "zh-Hans": "太阳的样子",
+        "zh-Hant": "太陽的樣子"
+      }
+    },
+    {
+      "slug": "centiskorch-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "chandelure-mega",
+      "names": {
+        "zh-Hans": "超级水晶灯火灵",
+        "zh-Hant": "超級水晶燈火靈"
+      }
+    },
+    {
+      "slug": "charizard-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "charizard-mega-x",
+      "names": {
+        "zh-Hans": "超级喷火龙Ｘ",
+        "zh-Hant": "超級噴火龍Ｘ"
+      }
+    },
+    {
+      "slug": "charizard-mega-y",
+      "names": {
+        "zh-Hans": "超级喷火龙Ｙ",
+        "zh-Hant": "超級噴火龍Ｙ"
+      }
+    },
+    {
+      "slug": "chesnaught-mega",
+      "names": {
+        "zh-Hans": "超级布里卡隆",
+        "zh-Hant": "超級布里卡隆"
+      }
+    },
+    {
+      "slug": "chimecho-mega",
+      "names": {
+        "zh-Hans": "超级风铃铃",
+        "zh-Hant": "超級風鈴鈴"
+      }
+    },
+    {
+      "slug": "cinderace-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "clefable-mega",
+      "names": {
+        "zh-Hans": "超级皮可西",
+        "zh-Hant": "超級皮可西"
+      }
+    },
+    {
+      "slug": "coalossal-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "copperajah-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "corsola-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "corviknight-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "crabominable-mega",
+      "names": {
+        "zh-Hans": "超级好胜毛蟹",
+        "zh-Hant": "超級好勝毛蟹"
+      }
+    },
+    {
+      "slug": "cramorant-gorging",
+      "names": {
+        "zh-Hans": "大口吞的样子",
+        "zh-Hant": "大口吞的樣子"
+      }
+    },
+    {
+      "slug": "cramorant-gulping",
+      "names": {
+        "zh-Hans": "一口吞的样子",
+        "zh-Hant": "一口吞的樣子"
+      }
+    },
+    {
+      "slug": "darkrai-mega",
+      "names": {
+        "zh-Hans": "超级达克莱伊",
+        "zh-Hant": "超級達克萊伊"
+      }
+    },
+    {
+      "slug": "darumaka-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "decidueye-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "delphox-mega",
+      "names": {
+        "zh-Hans": "超级妖火红狐",
+        "zh-Hant": "超級妖火紅狐"
+      }
+    },
+    {
+      "slug": "deoxys-attack",
+      "names": {
+        "zh-Hans": "攻击形态",
+        "zh-Hant": "攻擊形態"
+      }
+    },
+    {
+      "slug": "deoxys-defense",
+      "names": {
+        "zh-Hans": "防御形态",
+        "zh-Hant": "防禦形態"
+      }
+    },
+    {
+      "slug": "deoxys-normal",
+      "names": {
+        "zh-Hans": "普通形态",
+        "zh-Hant": "普通形態"
+      }
+    },
+    {
+      "slug": "deoxys-speed",
+      "names": {
+        "zh-Hans": "速度形态",
+        "zh-Hant": "速度形態"
+      }
+    },
+    {
+      "slug": "dialga-origin",
+      "names": {
+        "zh-Hans": "起源形态",
+        "zh-Hant": "起源形態"
+      }
+    },
+    {
+      "slug": "diancie-mega",
+      "names": {
+        "zh-Hans": "超级蒂安希",
+        "zh-Hant": "超級蒂安希"
+      }
+    },
+    {
+      "slug": "diglett-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "dragalge-mega",
+      "names": {
+        "zh-Hans": "超级毒藻龙",
+        "zh-Hant": "超級毒藻龍"
+      }
+    },
+    {
+      "slug": "dragonite-mega",
+      "names": {
+        "zh-Hans": "超级快龙",
+        "zh-Hant": "超級快龍"
+      }
+    },
+    {
+      "slug": "drampa-mega",
+      "names": {
+        "zh-Hans": "超级老翁龙",
+        "zh-Hant": "超級老翁龍"
+      }
+    },
+    {
+      "slug": "drednaw-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "dudunsparce-three-segment",
+      "names": {
+        "zh-Hans": "三节形态",
+        "zh-Hant": "三節形態"
+      }
+    },
+    {
+      "slug": "dudunsparce-two-segment",
+      "names": {
+        "zh-Hans": "二节形态",
+        "zh-Hant": "二節形態"
+      }
+    },
+    {
+      "slug": "dugtrio-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "duraludon-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "eelektross-mega",
+      "names": {
+        "zh-Hans": "超级麻麻鳗鱼王",
+        "zh-Hant": "超級麻麻鰻魚王"
+      }
+    },
+    {
+      "slug": "eevee-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "electrode-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "emboar-mega",
+      "names": {
+        "zh-Hans": "超级炎武王",
+        "zh-Hant": "超級炎武王"
+      }
+    },
+    {
+      "slug": "enamorus-incarnate",
+      "names": {
+        "zh-Hans": "化身形态",
+        "zh-Hant": "化身形態"
+      }
+    },
+    {
+      "slug": "enamorus-therian",
+      "names": {
+        "zh-Hans": "灵兽形态",
+        "zh-Hant": "靈獸形態"
+      }
+    },
+    {
+      "slug": "eternatus-eternamax",
+      "names": {
+        "zh-Hans": "无极巨化",
+        "zh-Hant": "無極巨化"
+      }
+    },
+    {
+      "slug": "eternatus-eternamax",
+      "names": {
+        "zh-Hans": "无极巨化",
+        "zh-Hant": "無極巨化"
+      }
+    },
+    {
+      "slug": "excadrill-mega",
+      "names": {
+        "zh-Hans": "超级龙头地鼠",
+        "zh-Hant": "超級龍頭地鼠"
+      }
+    },
+    {
+      "slug": "exeggutor-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "falinks-mega",
+      "names": {
+        "zh-Hans": "超级列阵兵",
+        "zh-Hant": "超級列陣兵"
+      }
+    },
+    {
+      "slug": "farfetchd-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "feraligatr-mega",
+      "names": {
+        "zh-Hans": "超级大力鳄",
+        "zh-Hant": "超級大力鱷"
+      }
+    },
+    {
+      "slug": "flapple-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "floette-mega",
+      "names": {
+        "zh-Hans": "超级花叶蒂",
+        "zh-Hant": "超級花葉蒂"
+      }
+    },
+    {
+      "slug": "froslass-mega",
+      "names": {
+        "zh-Hans": "超级雪妖女",
+        "zh-Hant": "超級雪妖女"
+      }
+    },
+    {
+      "slug": "gallade-mega",
+      "names": {
+        "zh-Hans": "超级艾路雷朵",
+        "zh-Hant": "超級艾路雷朵"
+      }
+    },
+    {
+      "slug": "garbodor-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "garchomp-mega",
+      "names": {
+        "zh-Hans": "超级烈咬陆鲨",
+        "zh-Hant": "超級烈咬陸鯊"
+      }
+    },
+    {
+      "slug": "garchomp-mega",
+      "names": {
+        "zh-Hans": "超级烈咬陆鲨Ｚ",
+        "zh-Hant": "超級烈咬陸鯊Ｚ"
+      }
+    },
+    {
+      "slug": "gardevoir-mega",
+      "names": {
+        "zh-Hans": "超级沙奈朵",
+        "zh-Hant": "超級沙奈朵"
+      }
+    },
+    {
+      "slug": "gengar-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "gengar-mega",
+      "names": {
+        "zh-Hans": "超级耿鬼",
+        "zh-Hant": "超級耿鬼"
+      }
+    },
+    {
+      "slug": "geodude-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "gimmighoul-roaming",
+      "names": {
+        "zh-Hans": "徒步形态",
+        "zh-Hant": "徒步形態"
+      }
+    },
+    {
+      "slug": "giratina-altered",
+      "names": {
+        "zh-Hans": "别种形态",
+        "zh-Hant": "別種形態"
+      }
+    },
+    {
+      "slug": "giratina-origin",
+      "names": {
+        "zh-Hans": "起源形态",
+        "zh-Hant": "起源形態"
+      }
+    },
+    {
+      "slug": "glalie-mega",
+      "names": {
+        "zh-Hans": "超级冰鬼护",
+        "zh-Hant": "超級冰鬼護"
+      }
+    },
+    {
+      "slug": "glimmora-mega",
+      "names": {
+        "zh-Hans": "超级晶光花",
+        "zh-Hant": "超級晶光花"
+      }
+    },
+    {
+      "slug": "golem-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "golisopod-mega",
+      "names": {
+        "zh-Hans": "超级具甲武者",
+        "zh-Hant": "超級具甲武者"
+      }
+    },
+    {
+      "slug": "golurk-mega",
+      "names": {
+        "zh-Hans": "超级泥偶巨人",
+        "zh-Hant": "超級泥偶巨人"
+      }
+    },
+    {
+      "slug": "goodra-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "graveler-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "greninja-mega",
+      "names": {
+        "zh-Hans": "超级甲贺忍蛙",
+        "zh-Hant": "超級甲賀忍蛙"
+      }
+    },
+    {
+      "slug": "grimer-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "grimmsnarl-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "groudon-primal",
+      "names": {
+        "zh-Hans": "原始回归的样子",
+        "zh-Hant": "原始回歸的樣子"
+      }
+    },
+    {
+      "slug": "growlithe-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "gyarados-mega",
+      "names": {
+        "zh-Hans": "超级暴鲤龙",
+        "zh-Hant": "超級暴鯉龍"
+      }
+    },
+    {
+      "slug": "hatterene-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "hawlucha-mega",
+      "names": {
+        "zh-Hans": "超级摔角鹰人",
+        "zh-Hant": "超級摔角鷹人"
+      }
+    },
+    {
+      "slug": "heatran-mega",
+      "names": {
+        "zh-Hans": "超级席多蓝恩",
+        "zh-Hant": "超級席多藍恩"
+      }
+    },
+    {
+      "slug": "heracross-mega",
+      "names": {
+        "zh-Hans": "超级赫拉克罗斯",
+        "zh-Hant": "超級赫拉克羅斯"
+      }
+    },
+    {
+      "slug": "houndoom-mega",
+      "names": {
+        "zh-Hans": "超级黑鲁加",
+        "zh-Hant": "超級黑魯加"
+      }
+    },
+    {
+      "slug": "indeedee-female",
+      "names": {
+        "zh-Hans": "雌性的样子",
+        "zh-Hant": "雌性的樣子"
+      }
+    },
+    {
+      "slug": "indeedee-male",
+      "names": {
+        "zh-Hans": "雄性的样子",
+        "zh-Hant": "雄性的樣子"
+      }
+    },
+    {
+      "slug": "inteleon-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "kangaskhan-mega",
+      "names": {
+        "zh-Hans": "超级袋兽",
+        "zh-Hant": "超級袋獸"
+      }
+    },
+    {
+      "slug": "keldeo-ordinary",
+      "names": {
+        "zh-Hans": "平常的样子",
+        "zh-Hant": "平常的樣子"
+      }
+    },
+    {
+      "slug": "keldeo-resolute",
+      "names": {
+        "zh-Hans": "觉悟的样子",
+        "zh-Hant": "覺悟的樣子"
+      }
+    },
+    {
+      "slug": "kingler-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "koraidon-gliding-build",
+      "names": {
+        "zh-Hans": "乘风形态",
+        "zh-Hant": "乘風形態"
+      }
+    },
+    {
+      "slug": "koraidon-limited-build",
+      "names": {
+        "zh-Hans": "制限形态",
+        "zh-Hant": "制限形態"
+      }
+    },
+    {
+      "slug": "koraidon-sprinting-build",
+      "names": {
+        "zh-Hans": "疾驰形态",
+        "zh-Hant": "疾馳形態"
+      }
+    },
+    {
+      "slug": "koraidon-swimming-build",
+      "names": {
+        "zh-Hans": "破浪形态",
+        "zh-Hant": "破浪形態"
+      }
+    },
+    {
+      "slug": "kyogre-primal",
+      "names": {
+        "zh-Hans": "原始回归的样子",
+        "zh-Hant": "原始回歸的樣子"
+      }
+    },
+    {
+      "slug": "landorus-incarnate",
+      "names": {
+        "zh-Hans": "化身形态",
+        "zh-Hant": "化身形態"
+      }
+    },
+    {
+      "slug": "landorus-therian",
+      "names": {
+        "zh-Hans": "灵兽形态",
+        "zh-Hant": "靈獸形態"
+      }
+    },
+    {
+      "slug": "lapras-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "latias-mega",
+      "names": {
+        "zh-Hans": "超级拉帝亚斯",
+        "zh-Hant": "超級拉帝亞斯"
+      }
+    },
+    {
+      "slug": "latios-mega",
+      "names": {
+        "zh-Hans": "超级拉帝欧斯",
+        "zh-Hant": "超級拉帝歐斯"
+      }
+    },
+    {
+      "slug": "lilligant-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "linoone-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "lopunny-mega",
+      "names": {
+        "zh-Hans": "超级长耳兔",
+        "zh-Hant": "超級長耳兔"
+      }
+    },
+    {
+      "slug": "lucario-mega",
+      "names": {
+        "zh-Hans": "超级路卡利欧",
+        "zh-Hant": "超級路卡利歐"
+      }
+    },
+    {
+      "slug": "lucario-mega",
+      "names": {
+        "zh-Hans": "超级路卡利欧Ｚ",
+        "zh-Hant": "超級路卡利歐Ｚ"
+      }
+    },
+    {
+      "slug": "lycanroc-dusk",
+      "names": {
+        "zh-Hans": "黄昏的样子",
+        "zh-Hant": "黃昏的樣子"
+      }
+    },
+    {
+      "slug": "lycanroc-midday",
+      "names": {
+        "zh-Hans": "白昼的样子",
+        "zh-Hant": "白晝的樣子"
+      }
+    },
+    {
+      "slug": "lycanroc-midnight",
+      "names": {
+        "zh-Hans": "黑夜的样子",
+        "zh-Hant": "黑夜的樣子"
+      }
+    },
+    {
+      "slug": "machamp-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "magearna-mega",
+      "names": {
+        "zh-Hans": "超级玛机雅娜",
+        "zh-Hant": "超級瑪機雅娜"
+      }
+    },
+    {
+      "slug": "magearna-mega",
+      "names": {
+        "zh-Hans": "超级玛机雅娜",
+        "zh-Hant": "超級瑪機雅娜"
+      }
+    },
+    {
+      "slug": "malamar-mega",
+      "names": {
+        "zh-Hans": "超级乌贼王",
+        "zh-Hant": "超級烏賊王"
+      }
+    },
+    {
+      "slug": "manectric-mega",
+      "names": {
+        "zh-Hans": "超级雷电兽",
+        "zh-Hant": "超級雷電獸"
+      }
+    },
+    {
+      "slug": "marowak-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "maushold-family-of-four",
+      "names": {
+        "zh-Hans": "四只家庭",
+        "zh-Hant": "四隻家庭"
+      }
+    },
+    {
+      "slug": "maushold-family-of-three",
+      "names": {
+        "zh-Hans": "三只家庭",
+        "zh-Hant": "三隻家庭"
+      }
+    },
+    {
+      "slug": "mawile-mega",
+      "names": {
+        "zh-Hans": "超级大嘴娃",
+        "zh-Hant": "超級大嘴娃"
+      }
+    },
+    {
+      "slug": "medicham-mega",
+      "names": {
+        "zh-Hans": "超级恰雷姆",
+        "zh-Hant": "超級恰雷姆"
+      }
+    },
+    {
+      "slug": "meganium-mega",
+      "names": {
+        "zh-Hans": "超级大竺葵",
+        "zh-Hant": "超級大竺葵"
+      }
+    },
+    {
+      "slug": "melmetal-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "meloetta-aria",
+      "names": {
+        "zh-Hans": "歌声形态",
+        "zh-Hant": "歌聲形態"
+      }
+    },
+    {
+      "slug": "meloetta-pirouette",
+      "names": {
+        "zh-Hans": "舞步形态",
+        "zh-Hant": "舞步形態"
+      }
+    },
+    {
+      "slug": "meowstic-female",
+      "names": {
+        "zh-Hans": "雌性的样子",
+        "zh-Hant": "雌性的樣子"
+      }
+    },
+    {
+      "slug": "meowstic-male",
+      "names": {
+        "zh-Hans": "雄性的样子",
+        "zh-Hant": "雄性的樣子"
+      }
+    },
+    {
+      "slug": "meowth-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "meowth-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "meowth-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "metagross-mega",
+      "names": {
+        "zh-Hans": "超级巨金怪",
+        "zh-Hant": "超級巨金怪"
+      }
+    },
+    {
+      "slug": "mewtwo-mega-x",
+      "names": {
+        "zh-Hans": "超级超梦Ｘ",
+        "zh-Hant": "超級超夢Ｘ"
+      }
+    },
+    {
+      "slug": "mewtwo-mega-y",
+      "names": {
+        "zh-Hans": "超级超梦Ｙ",
+        "zh-Hant": "超級超夢Ｙ"
+      }
+    },
+    {
+      "slug": "mimikyu-busted",
+      "names": {
+        "zh-Hans": "现形的样子",
+        "zh-Hant": "現形的樣子"
+      }
+    },
+    {
+      "slug": "mimikyu-disguised",
+      "names": {
+        "zh-Hans": "化形的样子",
+        "zh-Hant": "化形的樣子"
+      }
+    },
+    {
+      "slug": "miraidon-aquatic-mode",
+      "names": {
+        "zh-Hans": "浮水模式",
+        "zh-Hant": "浮水模式"
+      }
+    },
+    {
+      "slug": "miraidon-drive-mode",
+      "names": {
+        "zh-Hans": "行驶模式",
+        "zh-Hant": "行駛模式"
+      }
+    },
+    {
+      "slug": "miraidon-glide-mode",
+      "names": {
+        "zh-Hans": "滑翔模式",
+        "zh-Hant": "滑翔模式"
+      }
+    },
+    {
+      "slug": "miraidon-low-power-mode",
+      "names": {
+        "zh-Hans": "受限模式",
+        "zh-Hant": "受限模式"
+      }
+    },
+    {
+      "slug": "moltres-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "mr-mime-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "muk-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "ninetales-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "ogerpon-cornerstone-mask",
+      "names": {
+        "zh-Hans": "础石面具",
+        "zh-Hant": "礎石面具"
+      }
+    },
+    {
+      "slug": "ogerpon-hearthflame-mask",
+      "names": {
+        "zh-Hans": "火灶面具",
+        "zh-Hant": "火灶面具"
+      }
+    },
+    {
+      "slug": "ogerpon-wellspring-mask",
+      "names": {
+        "zh-Hans": "水井面具",
+        "zh-Hant": "水井面具"
+      }
+    },
+    {
+      "slug": "oinkologne-female",
+      "names": {
+        "zh-Hans": "雌性的样子",
+        "zh-Hant": "雌性的樣子"
+      }
+    },
+    {
+      "slug": "oinkologne-male",
+      "names": {
+        "zh-Hans": "雄性的样子",
+        "zh-Hant": "雄性的樣子"
+      }
+    },
+    {
+      "slug": "orbeetle-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "palafin-hero",
+      "names": {
+        "zh-Hans": "全能形态",
+        "zh-Hant": "全能形態"
+      }
+    },
+    {
+      "slug": "palafin-zero",
+      "names": {
+        "zh-Hans": "平凡形态",
+        "zh-Hant": "平凡形態"
+      }
+    },
+    {
+      "slug": "palkia-origin",
+      "names": {
+        "zh-Hans": "起源形态",
+        "zh-Hant": "起源形態"
+      }
+    },
+    {
+      "slug": "persian-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "pidgeot-mega",
+      "names": {
+        "zh-Hans": "超级大比鸟",
+        "zh-Hant": "超級大比鳥"
+      }
+    },
+    {
+      "slug": "pikachu-alola-cap",
+      "names": {
+        "zh-Hans": "阿罗拉帽子",
+        "zh-Hant": "阿羅拉帽子"
+      }
+    },
+    {
+      "slug": "pikachu-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "pikachu-hoenn-cap",
+      "names": {
+        "zh-Hans": "丰缘帽子",
+        "zh-Hant": "豐緣帽子"
+      }
+    },
+    {
+      "slug": "pikachu-kalos-cap",
+      "names": {
+        "zh-Hans": "卡洛斯帽子",
+        "zh-Hant": "卡洛斯帽子"
+      }
+    },
+    {
+      "slug": "pikachu-original-cap",
+      "names": {
+        "zh-Hans": "初始帽子",
+        "zh-Hant": "初始帽子"
+      }
+    },
+    {
+      "slug": "pikachu-partner-cap",
+      "names": {
+        "zh-Hans": "就决定是你了之帽子",
+        "zh-Hant": "就決定是你了之帽子"
+      }
+    },
+    {
+      "slug": "pikachu-sinnoh-cap",
+      "names": {
+        "zh-Hans": "神奥帽子",
+        "zh-Hant": "神奧帽子"
+      }
+    },
+    {
+      "slug": "pikachu-unova-cap",
+      "names": {
+        "zh-Hans": "合众帽子",
+        "zh-Hant": "合眾帽子"
+      }
+    },
+    {
+      "slug": "pikachu-world-cap",
+      "names": {
+        "zh-Hans": "世界帽子",
+        "zh-Hant": "世界帽子"
+      }
+    },
+    {
+      "slug": "pinsir-mega",
+      "names": {
+        "zh-Hans": "超级凯罗斯",
+        "zh-Hant": "超級凱羅斯"
+      }
+    },
+    {
+      "slug": "ponyta-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "pyroar-mega",
+      "names": {
+        "zh-Hans": "超级火炎狮",
+        "zh-Hant": "超級火炎獅"
+      }
+    },
+    {
+      "slug": "qwilfish-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "raichu-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "raichu-mega-x",
+      "names": {
+        "zh-Hans": "超级雷丘Ｘ",
+        "zh-Hant": "超級雷丘Ｘ"
+      }
+    },
+    {
+      "slug": "raichu-mega-y",
+      "names": {
+        "zh-Hans": "超级雷丘Ｙ",
+        "zh-Hant": "超級雷丘Ｙ"
+      }
+    },
+    {
+      "slug": "rapidash-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "raticate-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "rattata-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "rayquaza-mega",
+      "names": {
+        "zh-Hans": "超级烈空坐",
+        "zh-Hant": "超級烈空坐"
+      }
+    },
+    {
+      "slug": "rillaboom-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "sableye-mega",
+      "names": {
+        "zh-Hans": "超级勾魂眼",
+        "zh-Hant": "超級勾魂眼"
+      }
+    },
+    {
+      "slug": "salamence-mega",
+      "names": {
+        "zh-Hans": "超级暴飞龙",
+        "zh-Hant": "超級暴飛龍"
+      }
+    },
+    {
+      "slug": "samurott-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "sandaconda-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "sandshrew-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "sandslash-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "sceptile-mega",
+      "names": {
+        "zh-Hans": "超级蜥蜴王",
+        "zh-Hant": "超級蜥蜴王"
+      }
+    },
+    {
+      "slug": "scizor-mega",
+      "names": {
+        "zh-Hans": "超级巨钳螳螂",
+        "zh-Hant": "超級巨鉗螳螂"
+      }
+    },
+    {
+      "slug": "scolipede-mega",
+      "names": {
+        "zh-Hans": "超级蜈蚣王",
+        "zh-Hant": "超級蜈蚣王"
+      }
+    },
+    {
+      "slug": "scovillain-mega",
+      "names": {
+        "zh-Hans": "超级狠辣椒",
+        "zh-Hant": "超級狠辣椒"
+      }
+    },
+    {
+      "slug": "scrafty-mega",
+      "names": {
+        "zh-Hans": "超级头巾混混",
+        "zh-Hant": "超級頭巾混混"
+      }
+    },
+    {
+      "slug": "sharpedo-mega",
+      "names": {
+        "zh-Hans": "超级巨牙鲨",
+        "zh-Hant": "超級巨牙鯊"
+      }
+    },
+    {
+      "slug": "shaymin-land",
+      "names": {
+        "zh-Hans": "陆上形态",
+        "zh-Hant": "陸上形態"
+      }
+    },
+    {
+      "slug": "shaymin-sky",
+      "names": {
+        "zh-Hans": "天空形态",
+        "zh-Hant": "天空形態"
+      }
+    },
+    {
+      "slug": "skarmory-mega",
+      "names": {
+        "zh-Hans": "超级盔甲鸟",
+        "zh-Hant": "超級盔甲鳥"
+      }
+    },
+    {
+      "slug": "sliggoo-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "slowbro-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "slowbro-mega",
+      "names": {
+        "zh-Hans": "超级呆壳兽",
+        "zh-Hant": "超級呆殼獸"
+      }
+    },
+    {
+      "slug": "slowking-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "slowpoke-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "sneasel-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "snorlax-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "squawkabilly-blue-plumage",
+      "names": {
+        "zh-Hans": "蓝羽毛",
+        "zh-Hant": "藍羽毛"
+      }
+    },
+    {
+      "slug": "squawkabilly-green-plumage",
+      "names": {
+        "zh-Hans": "绿羽毛",
+        "zh-Hant": "綠羽毛"
+      }
+    },
+    {
+      "slug": "squawkabilly-white-plumage",
+      "names": {
+        "zh-Hans": "白羽毛",
+        "zh-Hant": "白羽毛"
+      }
+    },
+    {
+      "slug": "squawkabilly-yellow-plumage",
+      "names": {
+        "zh-Hans": "黄羽毛",
+        "zh-Hant": "黃羽毛"
+      }
+    },
+    {
+      "slug": "staraptor-mega",
+      "names": {
+        "zh-Hans": "超级姆克鹰",
+        "zh-Hant": "超級姆克鷹"
+      }
+    },
+    {
+      "slug": "starmie-mega",
+      "names": {
+        "zh-Hans": "超级宝石海星",
+        "zh-Hant": "超級寶石海星"
+      }
+    },
+    {
+      "slug": "steelix-mega",
+      "names": {
+        "zh-Hans": "超级大钢蛇",
+        "zh-Hant": "超級大鋼蛇"
+      }
+    },
+    {
+      "slug": "stunfisk-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "swampert-mega",
+      "names": {
+        "zh-Hans": "超级巨沼怪",
+        "zh-Hant": "超級巨沼怪"
+      }
+    },
+    {
+      "slug": "tatsugiri-curly",
+      "names": {
+        "zh-Hans": "上弓姿势",
+        "zh-Hant": "上弓姿勢"
+      }
+    },
+    {
+      "slug": "tatsugiri-droopy",
+      "names": {
+        "zh-Hans": "下垂姿势",
+        "zh-Hant": "下垂姿勢"
+      }
+    },
+    {
+      "slug": "tatsugiri-stretchy",
+      "names": {
+        "zh-Hans": "平挺姿势",
+        "zh-Hant": "平挺姿勢"
+      }
+    },
+    {
+      "slug": "terapagos-stellar",
+      "names": {
+        "zh-Hans": "星晶形态",
+        "zh-Hant": "星晶形態"
+      }
+    },
+    {
+      "slug": "terapagos-terastal",
+      "names": {
+        "zh-Hans": "太晶形态",
+        "zh-Hant": "太晶形態"
+      }
+    },
+    {
+      "slug": "thundurus-incarnate",
+      "names": {
+        "zh-Hans": "化身形态",
+        "zh-Hant": "化身形態"
+      }
+    },
+    {
+      "slug": "thundurus-therian",
+      "names": {
+        "zh-Hans": "灵兽形态",
+        "zh-Hant": "靈獸形態"
+      }
+    },
+    {
+      "slug": "tornadus-incarnate",
+      "names": {
+        "zh-Hans": "化身形态",
+        "zh-Hant": "化身形態"
+      }
+    },
+    {
+      "slug": "tornadus-therian",
+      "names": {
+        "zh-Hans": "灵兽形态",
+        "zh-Hant": "靈獸形態"
+      }
+    },
+    {
+      "slug": "toxtricity-amped",
+      "names": {
+        "zh-Hans": "高调的样子",
+        "zh-Hant": "高調的樣子"
+      }
+    },
+    {
+      "slug": "toxtricity-low-key",
+      "names": {
+        "zh-Hans": "低调的样子",
+        "zh-Hant": "低調的樣子"
+      }
+    },
+    {
+      "slug": "typhlosion-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "tyranitar-mega",
+      "names": {
+        "zh-Hans": "超级班基拉斯",
+        "zh-Hant": "超級班基拉斯"
+      }
+    },
+    {
+      "slug": "ursaluna-bloodmoon",
+      "names": {
+        "zh-Hans": "赫月",
+        "zh-Hant": "赫月"
+      }
+    },
+    {
+      "slug": "venusaur-gmax",
+      "names": {
+        "zh-Hans": "超极巨化",
+        "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "venusaur-mega",
+      "names": {
+        "zh-Hans": "超级妙蛙花",
+        "zh-Hant": "超級妙蛙花"
+      }
+    },
+    {
+      "slug": "victreebel-mega",
+      "names": {
+        "zh-Hans": "超级大食花",
+        "zh-Hant": "超級大食花"
+      }
+    },
+    {
+      "slug": "voltorb-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "vulpix-alola",
+      "names": {
+        "zh-Hans": "阿罗拉的样子",
+        "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "weezing-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "wishiwashi-school",
+      "names": {
+        "zh-Hans": "鱼群的样子",
+        "zh-Hant": "魚群的樣子"
+      }
+    },
+    {
+      "slug": "wishiwashi-solo",
+      "names": {
+        "zh-Hans": "单独的样子",
+        "zh-Hant": "單獨的樣子"
+      }
+    },
+    {
+      "slug": "wooper-paldea",
+      "names": {
+        "zh-Hans": "帕底亚的样子",
+        "zh-Hant": "帕底亞的樣子"
+      }
+    },
+    {
+      "slug": "yamask-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "zapdos-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "zarude-dada",
+      "names": {
+        "zh-Hans": "阿爸",
+        "zh-Hant": "阿爸"
+      }
+    },
+    {
+      "slug": "zeraora-mega",
+      "names": {
+        "zh-Hans": "超级捷拉奥拉",
+        "zh-Hant": "超級捷拉奧拉"
+      }
+    },
+    {
+      "slug": "zigzagoon-galar",
+      "names": {
+        "zh-Hans": "伽勒尔的样子",
+        "zh-Hant": "伽勒爾的樣子"
+      }
+    },
+    {
+      "slug": "zoroark-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "zorua-hisui",
+      "names": {
+        "zh-Hans": "洗翠的样子",
+        "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "zygarde-10",
+      "names": {
+        "zh-Hans": "１０％形态",
+        "zh-Hant": "１０％形態"
+      }
+    },
+    {
+      "slug": "zygarde-10",
+      "names": {
+        "zh-Hans": "１０％形态",
+        "zh-Hant": "１０％形態"
+      }
+    },
+    {
+      "slug": "zygarde-50",
+      "names": {
+        "zh-Hans": "５０％形态",
+        "zh-Hant": "５０％形態"
+      }
+    },
+    {
+      "slug": "zygarde-50",
+      "names": {
+        "zh-Hans": "５０％形态",
+        "zh-Hant": "５０％形態"
+      }
+    },
+    {
+      "slug": "zygarde-complete",
+      "names": {
+        "zh-Hans": "完全体形态",
+        "zh-Hant": "完全體形態"
+      }
+    },
+    {
+      "slug": "zygarde-mega",
+      "names": {
+        "zh-Hans": "超级基格尔德",
+        "zh-Hant": "超級基格爾德"
+      }
+    }
+  ],
+  "unmatched": [
+    "alcremie Caramel Swirl",
+    "alcremie Lemon Cream",
+    "alcremie Matcha Cream",
+    "alcremie Mint Cream",
+    "alcremie Rainbow Swirl",
+    "alcremie Ruby Cream",
+    "alcremie Ruby Swirl",
+    "alcremie Salted Cream",
+    "alcremie Vanilla Cream",
+    "arcanine Lord Form",
+    "arceus Arceus",
+    "avalugg Lord Form",
+    "burmy Plant Cloak",
+    "burmy Sandy Cloak",
+    "burmy Trash Cloak",
+    "calyrex Ice Rider",
+    "calyrex Shadow Rider",
+    "castform Normal",
+    "cherrim Overcast Form",
+    "cherrim Sunshine Form",
+    "darmanitan Galarian Form",
+    "darmanitan Standard Mode",
+    "darmanitan Zen Mode",
+    "deerling Autumn Form",
+    "deerling Spring Form",
+    "deerling Summer Form",
+    "deerling Winter Form",
+    "eiscue Ice Face",
+    "eiscue Noice Face",
+    "electrode Lord Form",
+    "flabebe Blue Flower",
+    "flabebe Orange Flower",
+    "flabebe Red Flower",
+    "flabebe White Flower",
+    "flabebe Yellow Flower",
+    "floette Blue Flower",
+    "floette Eternal Flower",
+    "floette Orange Flower",
+    "floette Red Flower",
+    "floette White Flower",
+    "floette Yellow Flower",
+    "florges Blue Flower",
+    "florges Orange Flower",
+    "florges Red Flower",
+    "florges White Flower",
+    "florges Yellow Flower",
+    "furfrou Dandy Trim",
+    "furfrou Debutante Trim",
+    "furfrou Diamond Trim",
+    "furfrou Heart Trim",
+    "furfrou Kabuki Trim",
+    "furfrou La Reine Trim",
+    "furfrou Matron Trim",
+    "furfrou Natural Form",
+    "furfrou Pharaoh Trim",
+    "furfrou Star Trim",
+    "gastrodon East Sea",
+    "gastrodon West Sea",
+    "genesect Genesect",
+    "gimmighoul Chest Form",
+    "gourgeist Jumbo Variety",
+    "gourgeist Large Variety",
+    "gourgeist Medium Variety",
+    "gourgeist Small Variety",
+    "greninja Ash-Greninja",
+    "groudon Groudon",
+    "hoopa Hoopa Confined",
+    "hoopa Hoopa Unbound",
+    "kleavor Lord Form",
+    "koraidon Apex Build",
+    "kyogre Kyogre",
+    "kyurem Black Kyurem",
+    "kyurem Kyurem",
+    "kyurem White Kyurem",
+    "lilligant Lady Form",
+    "magearna Original Color",
+    "meowstic Mega Meowstic",
+    "minior Blue Core",
+    "minior Green Core",
+    "minior Indigo Core",
+    "minior Meteor Form",
+    "minior Orange Core",
+    "minior Red Core",
+    "minior Violet Core",
+    "minior Yellow Core",
+    "miraidon Ultimate Mode",
+    "morpeko Full Belly Mode",
+    "morpeko Hangry Mode",
+    "necrozma Dawn Wings",
+    "necrozma Dusk Mane",
+    "necrozma Ultra Necrozma",
+    "ogerpon Teal Mask",
+    "oricorio Baile Style",
+    "oricorio Pa’u Style",
+    "oricorio Pom-Pom Style",
+    "oricorio Sensu Style",
+    "poltchageist Artisan Form",
+    "poltchageist Counterfeit Form",
+    "polteageist Antique Form",
+    "polteageist Phony Form",
+    "pumpkaboo Jumbo Variety",
+    "pumpkaboo Large Variety",
+    "pumpkaboo Medium Variety",
+    "pumpkaboo Small Variety",
+    "rotom Fan Rotom",
+    "rotom Frost Rotom",
+    "rotom Heat Rotom",
+    "rotom Mow Rotom",
+    "rotom Rotom",
+    "rotom Wash Rotom",
+    "sawsbuck Autumn Form",
+    "sawsbuck Spring Form",
+    "sawsbuck Summer Form",
+    "sawsbuck Winter Form",
+    "shellos East Sea",
+    "shellos West Sea",
+    "silvally Type: Bug",
+    "silvally Type: Dark",
+    "silvally Type: Dragon",
+    "silvally Type: Electric",
+    "silvally Type: Fairy",
+    "silvally Type: Fighting",
+    "silvally Type: Fire",
+    "silvally Type: Flying",
+    "silvally Type: Ghost",
+    "silvally Type: Grass",
+    "silvally Type: Ground",
+    "silvally Type: Ice",
+    "silvally Type: Normal",
+    "silvally Type: Poison",
+    "silvally Type: Psychic",
+    "silvally Type: Rock",
+    "silvally Type: Steel",
+    "silvally Type: Water",
+    "sinistcha Masterpiece Form",
+    "sinistcha Unremarkable Form",
+    "sinistea Antique Form",
+    "sinistea Phony Form",
+    "tatsugiri Mega Tatsugiri",
+    "tauros Paldean Form / Aqua Breed",
+    "tauros Paldean Form / Blaze Breed",
+    "tauros Paldean Form / Combat Breed",
+    "terapagos Normal Form",
+    "toxtricity Gigantamax",
+    "unown One form",
+    "urshifu Gigantamax",
+    "urshifu Rapid Strike Style",
+    "urshifu Single Strike Style",
+    "vivillon Archipelago Pattern",
+    "vivillon Continental Pattern",
+    "vivillon Elegant Pattern",
+    "vivillon Fancy Pattern",
+    "vivillon Garden Pattern",
+    "vivillon High Plains Pattern",
+    "vivillon Icy Snow Pattern",
+    "vivillon Jungle Pattern",
+    "vivillon Marine Pattern",
+    "vivillon Meadow Pattern",
+    "vivillon Modern Pattern",
+    "vivillon Monsoon Pattern",
+    "vivillon Ocean Pattern",
+    "vivillon Poké Ball Pattern",
+    "vivillon Polar Pattern",
+    "vivillon River Pattern",
+    "vivillon Sandstorm Pattern",
+    "vivillon Savanna Pattern",
+    "vivillon Sun Pattern",
+    "vivillon Tundra Pattern",
+    "wormadam Plant Cloak",
+    "wormadam Sandy Cloak",
+    "wormadam Trash Cloak",
+    "xerneas Active Mode",
+    "xerneas Neutral Mode",
+    "zacian Crowned Sword",
+    "zacian Hero of Many Battles",
+    "zamazenta Crowned Shield",
+    "zamazenta Hero of Many Battles"
+  ]
+}

@@ -565,6 +565,15 @@ export type WikiMaxMoveSnapshot = {
   effect: Localized;
 };
 
+/**
+ * 形态的中文名。百科有一张按图鉴编号排的全形态对照表，
+ * 每行带中日英三种形态名 —— 英文那列用来对上数据源的形态 slug
+ */
+export type WikiFormSnapshot = {
+  slug: string;
+  names: Localized;
+};
+
 /** wiki 快照的文件名 → 内容类型 */
 export type WikiData = {
   "wiki-abilities": WikiSnapshot<WikiEffectSnapshot>;
@@ -576,6 +585,8 @@ export type WikiData = {
   /** 超极巨招式全部来自百科，数据源一条都没收 */
   "wiki-max-moves": WikiSnapshot<WikiMaxMoveSnapshot>;
   "wiki-pokemon-descriptions": WikiSnapshot<WikiPokemonDescriptionSnapshot>;
+  /** 形态名，数据源那边有三十多个形态一种中文都没给 */
+  "wiki-forms": WikiSnapshot<WikiFormSnapshot>;
 };
 
 /** 这个文件所在的目录，相对项目根 —— seed 和刷新脚本都由 pnpm 从根目录启动 */
