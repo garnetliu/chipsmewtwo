@@ -1,0 +1,4407 @@
+[
+  {
+    "slug": "alcremie-caramel-swirl-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 17,
+    "fullImage": null,
+    "detailImage": "869-caramel-swirl-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Caramel Swirl Berry Sweet",
+      "fr": "Mélange Caramel Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-caramel-swirl-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 44,
+    "fullImage": null,
+    "detailImage": "869-caramel-swirl-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Caramel Swirl Clover Sweet",
+      "fr": "Mélange Caramel Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-caramel-swirl-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 53,
+    "fullImage": null,
+    "detailImage": "869-caramel-swirl-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Caramel Swirl Flower Sweet",
+      "fr": "Mélange Caramel Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-caramel-swirl-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 26,
+    "fullImage": null,
+    "detailImage": "869-caramel-swirl-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Caramel Swirl Love Sweet",
+      "fr": "Mélange Caramel Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-caramel-swirl-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 62,
+    "fullImage": null,
+    "detailImage": "869-caramel-swirl-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Caramel Swirl Ribbon Sweet",
+      "fr": "Mélange Caramel Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-caramel-swirl-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 35,
+    "fullImage": null,
+    "detailImage": "869-caramel-swirl-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Caramel Swirl Star Sweet",
+      "fr": "Mélange Caramel Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-caramel-swirl-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": "869-caramel-swirl-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "焦糖综合",
+      "zh-Hant": "焦糖綜合",
+      "en": "Caramel Swirl Strawberry Sweet",
+      "ja": "キャラメルミックス",
+      "ja-Hrkt": "キャラメルミックス",
+      "ko": "캐러멜믹스",
+      "fr": "Mélange Caramel Fraise en Sucre",
+      "de": "Karamell-Mix",
+      "es": "Mezcla Caramelo",
+      "it": "Caramelmix"
+    }
+  },
+  {
+    "slug": "alcremie-lemon-cream-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 14,
+    "fullImage": null,
+    "detailImage": "869-lemon-cream-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Lemon Cream Berry Sweet",
+      "fr": "Lait Citron Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-lemon-cream-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 41,
+    "fullImage": null,
+    "detailImage": "869-lemon-cream-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Lemon Cream Clover Sweet",
+      "fr": "Lait Citron Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-lemon-cream-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 50,
+    "fullImage": null,
+    "detailImage": "869-lemon-cream-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Lemon Cream Flower Sweet",
+      "fr": "Lait Citron Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-lemon-cream-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 23,
+    "fullImage": null,
+    "detailImage": "869-lemon-cream-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Lemon Cream Love Sweet",
+      "fr": "Lait Citron Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-lemon-cream-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 59,
+    "fullImage": null,
+    "detailImage": "869-lemon-cream-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Lemon Cream Ribbon Sweet",
+      "fr": "Lait Citron Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-lemon-cream-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 32,
+    "fullImage": null,
+    "detailImage": "869-lemon-cream-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Lemon Cream Star Sweet",
+      "fr": "Lait Citron Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-lemon-cream-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "869-lemon-cream-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "奶香柠檬",
+      "zh-Hant": "奶香檸檬",
+      "en": "Lemon Cream Strawberry Sweet",
+      "ja": "ミルキィレモン",
+      "ja-Hrkt": "ミルキィレモン",
+      "ko": "밀키레몬",
+      "fr": "Lait Citron Fraise en Sucre",
+      "de": "Zitronen-Creme",
+      "es": "Crema de Limón",
+      "it": "Lattelimone"
+    }
+  },
+  {
+    "slug": "alcremie-matcha-cream-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 12,
+    "fullImage": null,
+    "detailImage": "869-matcha-cream-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Matcha Cream Berry Sweet",
+      "fr": "Lait Matcha Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-matcha-cream-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 39,
+    "fullImage": null,
+    "detailImage": "869-matcha-cream-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Matcha Cream Clover Sweet",
+      "fr": "Lait Matcha Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-matcha-cream-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 48,
+    "fullImage": null,
+    "detailImage": "869-matcha-cream-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Matcha Cream Flower Sweet",
+      "fr": "Lait Matcha Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-matcha-cream-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 21,
+    "fullImage": null,
+    "detailImage": "869-matcha-cream-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Matcha Cream Love Sweet",
+      "fr": "Lait Matcha Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-matcha-cream-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 57,
+    "fullImage": null,
+    "detailImage": "869-matcha-cream-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Matcha Cream Ribbon Sweet",
+      "fr": "Lait Matcha Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-matcha-cream-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 30,
+    "fullImage": null,
+    "detailImage": "869-matcha-cream-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Matcha Cream Star Sweet",
+      "fr": "Lait Matcha Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-matcha-cream-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "869-matcha-cream-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "奶香抹茶",
+      "zh-Hant": "奶香抹茶",
+      "en": "Matcha Cream Strawberry Sweet",
+      "ja": "ミルキィまっちゃ",
+      "ja-Hrkt": "ミルキィまっちゃ",
+      "ko": "밀키말차",
+      "fr": "Lait Matcha Fraise en Sucre",
+      "de": "Matcha-Creme",
+      "es": "Crema de Té",
+      "it": "Lattematcha"
+    }
+  },
+  {
+    "slug": "alcremie-mint-cream-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 13,
+    "fullImage": null,
+    "detailImage": "869-mint-cream-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Mint Cream Berry Sweet",
+      "fr": "Lait Menthe Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-mint-cream-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 40,
+    "fullImage": null,
+    "detailImage": "869-mint-cream-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Mint Cream Clover Sweet",
+      "fr": "Lait Menthe Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-mint-cream-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 49,
+    "fullImage": null,
+    "detailImage": "869-mint-cream-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Mint Cream Flower Sweet",
+      "fr": "Lait Menthe Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-mint-cream-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 22,
+    "fullImage": null,
+    "detailImage": "869-mint-cream-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Mint Cream Love Sweet",
+      "fr": "Lait Menthe Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-mint-cream-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 58,
+    "fullImage": null,
+    "detailImage": "869-mint-cream-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Mint Cream Ribbon Sweet",
+      "fr": "Lait Menthe Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-mint-cream-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 31,
+    "fullImage": null,
+    "detailImage": "869-mint-cream-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Mint Cream Star Sweet",
+      "fr": "Lait Menthe Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-mint-cream-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "869-mint-cream-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "奶香薄荷",
+      "zh-Hant": "奶香薄荷",
+      "en": "Mint Cream Strawberry Sweet",
+      "ja": "ミルキィミント",
+      "ja-Hrkt": "ミルキィミント",
+      "ko": "밀키민트",
+      "fr": "Lait Menthe Fraise en Sucre",
+      "de": "Minz-Creme",
+      "es": "Crema de Menta",
+      "it": "Lattementa"
+    }
+  },
+  {
+    "slug": "alcremie-rainbow-swirl-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 18,
+    "fullImage": null,
+    "detailImage": "869-rainbow-swirl-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Rainbow Swirl Berry Sweet",
+      "fr": "Mélange Tricolore Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-rainbow-swirl-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 45,
+    "fullImage": null,
+    "detailImage": "869-rainbow-swirl-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Rainbow Swirl Clover Sweet",
+      "fr": "Mélange Tricolore Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-rainbow-swirl-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 54,
+    "fullImage": null,
+    "detailImage": "869-rainbow-swirl-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Rainbow Swirl Flower Sweet",
+      "fr": "Mélange Tricolore Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-rainbow-swirl-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 27,
+    "fullImage": null,
+    "detailImage": "869-rainbow-swirl-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Rainbow Swirl Love Sweet",
+      "fr": "Mélange Tricolore Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-rainbow-swirl-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 63,
+    "fullImage": null,
+    "detailImage": "869-rainbow-swirl-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Rainbow Swirl Ribbon Sweet",
+      "fr": "Mélange Tricolore Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-rainbow-swirl-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 36,
+    "fullImage": null,
+    "detailImage": "869-rainbow-swirl-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Rainbow Swirl Star Sweet",
+      "fr": "Mélange Tricolore Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-rainbow-swirl-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": "869-rainbow-swirl-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "三色综合",
+      "zh-Hant": "三色綜合",
+      "en": "Rainbow Swirl Strawberry Sweet",
+      "ja": "トリプルミックス",
+      "ja-Hrkt": "トリプルミックス",
+      "ko": "트리플믹스",
+      "fr": "Mélange Tricolore Fraise en Sucre",
+      "de": "Trio-Mix",
+      "es": "Tres Sabores",
+      "it": "Triplomix"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-cream-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 11,
+    "fullImage": null,
+    "detailImage": "869-ruby-cream-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Cream Berry Sweet",
+      "fr": "Lait Ruby Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-cream-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 38,
+    "fullImage": null,
+    "detailImage": "869-ruby-cream-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Cream Clover Sweet",
+      "fr": "Lait Ruby Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-cream-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 47,
+    "fullImage": null,
+    "detailImage": "869-ruby-cream-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Cream Flower Sweet",
+      "fr": "Lait Ruby Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-cream-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 20,
+    "fullImage": null,
+    "detailImage": "869-ruby-cream-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Cream Love Sweet",
+      "fr": "Lait Ruby Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-cream-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 56,
+    "fullImage": null,
+    "detailImage": "869-ruby-cream-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Cream Ribbon Sweet",
+      "fr": "Lait Ruby Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-cream-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 29,
+    "fullImage": null,
+    "detailImage": "869-ruby-cream-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Cream Star Sweet",
+      "fr": "Lait Ruby Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-cream-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "869-ruby-cream-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "奶香红钻",
+      "zh-Hant": "奶香紅鑽",
+      "en": "Ruby Cream Strawberry Sweet",
+      "ja": "ミルキィルビー",
+      "ja-Hrkt": "ミルキィルビー",
+      "ko": "밀키루비",
+      "fr": "Lait Ruby Fraise en Sucre",
+      "de": "Ruby-Creme",
+      "es": "Crema Rosa",
+      "it": "Latterosa"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-swirl-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 16,
+    "fullImage": null,
+    "detailImage": "869-ruby-swirl-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Swirl Berry Sweet",
+      "fr": "Mélange Ruby Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-swirl-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 43,
+    "fullImage": null,
+    "detailImage": "869-ruby-swirl-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Swirl Clover Sweet",
+      "fr": "Mélange Ruby Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-swirl-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 52,
+    "fullImage": null,
+    "detailImage": "869-ruby-swirl-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Swirl Flower Sweet",
+      "fr": "Mélange Ruby Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-swirl-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 25,
+    "fullImage": null,
+    "detailImage": "869-ruby-swirl-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Swirl Love Sweet",
+      "fr": "Mélange Ruby Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-swirl-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 61,
+    "fullImage": null,
+    "detailImage": "869-ruby-swirl-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Swirl Ribbon Sweet",
+      "fr": "Mélange Ruby Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-swirl-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 34,
+    "fullImage": null,
+    "detailImage": "869-ruby-swirl-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ruby Swirl Star Sweet",
+      "fr": "Mélange Ruby Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-ruby-swirl-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": "869-ruby-swirl-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "红钻综合",
+      "zh-Hant": "紅鑽綜合",
+      "en": "Ruby Swirl Strawberry Sweet",
+      "ja": "ルビーミックス",
+      "ja-Hrkt": "ルビーミックス",
+      "ko": "루비믹스",
+      "fr": "Mélange Ruby Fraise en Sucre",
+      "de": "Ruby-Mix",
+      "es": "Mezcla Rosa",
+      "it": "Rosamix"
+    }
+  },
+  {
+    "slug": "alcremie-salted-cream-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 15,
+    "fullImage": null,
+    "detailImage": "869-salted-cream-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Salted Cream Berry Sweet",
+      "fr": "Lait Salé Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-salted-cream-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 42,
+    "fullImage": null,
+    "detailImage": "869-salted-cream-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Salted Cream Clover Sweet",
+      "fr": "Lait Salé Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-salted-cream-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 51,
+    "fullImage": null,
+    "detailImage": "869-salted-cream-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Salted Cream Flower Sweet",
+      "fr": "Lait Salé Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-salted-cream-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 24,
+    "fullImage": null,
+    "detailImage": "869-salted-cream-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Salted Cream Love Sweet",
+      "fr": "Lait Salé Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-salted-cream-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 60,
+    "fullImage": null,
+    "detailImage": "869-salted-cream-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Salted Cream Ribbon Sweet",
+      "fr": "Lait Salé Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-salted-cream-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 33,
+    "fullImage": null,
+    "detailImage": "869-salted-cream-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Salted Cream Star Sweet",
+      "fr": "Lait Salé Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-salted-cream-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": "869-salted-cream-strawberry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "奶香雪盐",
+      "zh-Hant": "奶香雪鹽",
+      "en": "Salted Cream Strawberry Sweet",
+      "ja": "ミルキィソルト",
+      "ja-Hrkt": "ミルキィソルト",
+      "ko": "밀키솔트",
+      "fr": "Lait Salé Fraise en Sucre",
+      "de": "Salz-Creme",
+      "es": "Crema Salada",
+      "it": "Lattesale"
+    }
+  },
+  {
+    "slug": "alcremie-vanilla-cream-berry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": "869-vanilla-cream-berry-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Vanilla Cream Berry Sweet",
+      "fr": "Lait Vanille Baie en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-vanilla-cream-clover-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 37,
+    "fullImage": null,
+    "detailImage": "869-vanilla-cream-clover-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Vanilla Cream Clover Sweet",
+      "fr": "Lait Vanille Trèfle en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-vanilla-cream-flower-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 46,
+    "fullImage": null,
+    "detailImage": "869-vanilla-cream-flower-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Vanilla Cream Flower Sweet",
+      "fr": "Lait Vanille Fleur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-vanilla-cream-love-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 19,
+    "fullImage": null,
+    "detailImage": "869-vanilla-cream-love-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Vanilla Cream Love Sweet",
+      "fr": "Lait Vanille Cœur en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-vanilla-cream-ribbon-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 55,
+    "fullImage": null,
+    "detailImage": "869-vanilla-cream-ribbon-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Vanilla Cream Ribbon Sweet",
+      "fr": "Lait Vanille Ruban en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-vanilla-cream-star-sweet",
+    "formSlug": "alcremie",
+    "isDefault": false,
+    "order": 28,
+    "fullImage": null,
+    "detailImage": "869-vanilla-cream-star-sweet.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Vanilla Cream Star Sweet",
+      "fr": "Lait Vanille Étoile en Sucre"
+    }
+  },
+  {
+    "slug": "alcremie-vanilla-cream-strawberry-sweet",
+    "formSlug": "alcremie",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "869.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "奶香香草",
+      "zh-Hant": "奶香香草",
+      "en": "Vanilla Cream Strawberry Sweet",
+      "ja": "ミルキィバニラ",
+      "ja-Hrkt": "ミルキィバニラ",
+      "ko": "밀키바닐라",
+      "fr": "Lait Vanille Fraise en Sucre",
+      "de": "Vanille-Creme",
+      "es": "Crema de Vainilla",
+      "it": "Lattevaniglia"
+    }
+  },
+  {
+    "slug": "arceus-bug",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": "493-bug.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Bug Type",
+      "ja": "むしタイプ",
+      "ja-Hrkt": "むしタイプ",
+      "fr": "Insecte",
+      "de": "Käfer",
+      "es": "Tipo Bicho",
+      "it": "Tipo Coleottero"
+    }
+  },
+  {
+    "slug": "arceus-dark",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 17,
+    "fullImage": null,
+    "detailImage": "493-dark.png",
+    "primaryTypeSlug": "dark",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Dark Type",
+      "ja": "あくタイプ",
+      "ja-Hrkt": "あくタイプ",
+      "fr": "Ténèbres",
+      "de": "Unlicht",
+      "es": "Tipo Siniestro",
+      "it": "Tipo Buio"
+    }
+  },
+  {
+    "slug": "arceus-dragon",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 16,
+    "fullImage": null,
+    "detailImage": "493-dragon.png",
+    "primaryTypeSlug": "dragon",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Dragon Type",
+      "ja": "ドラゴンタイプ",
+      "ja-Hrkt": "ドラゴンタイプ",
+      "fr": "Dragon",
+      "de": "Drache",
+      "es": "Tipo Dragón",
+      "it": "Tipo Drago"
+    }
+  },
+  {
+    "slug": "arceus-electric",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 13,
+    "fullImage": null,
+    "detailImage": "493-electric.png",
+    "primaryTypeSlug": "electric",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Electric Type",
+      "ja": "でんきタイプ",
+      "ja-Hrkt": "でんきタイプ",
+      "fr": "Électrik",
+      "de": "Elektro",
+      "es": "Tipo Eléctrico",
+      "it": "Tipo Elettro"
+    }
+  },
+  {
+    "slug": "arceus-fairy",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 18,
+    "fullImage": null,
+    "detailImage": "493-fairy.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Fairy Type",
+      "ja": "フェアリータイプ",
+      "ja-Hrkt": "フェアリータイプ",
+      "fr": "Fée",
+      "de": "Fee",
+      "es": "Tipo Hada",
+      "it": "Tipo Folletto"
+    }
+  },
+  {
+    "slug": "arceus-fighting",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "493-fighting.png",
+    "primaryTypeSlug": "fighting",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Fighting Type",
+      "ja": "かくとうタイプ",
+      "ja-Hrkt": "かくとうタイプ",
+      "fr": "Combat",
+      "de": "Kampf",
+      "es": "Tipo Lucha",
+      "it": "Tipo Lotta"
+    }
+  },
+  {
+    "slug": "arceus-fire",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": "493-fire.png",
+    "primaryTypeSlug": "fire",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Fire Type",
+      "ja": "ほのおタイプ",
+      "ja-Hrkt": "ほのおタイプ",
+      "fr": "Feu",
+      "de": "Feuer",
+      "es": "Tipo Fuego",
+      "it": "Tipo Fuoco"
+    }
+  },
+  {
+    "slug": "arceus-flying",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "493-flying.png",
+    "primaryTypeSlug": "flying",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Flying Type",
+      "ja": "ひこうタイプ",
+      "ja-Hrkt": "ひこうタイプ",
+      "fr": "Vol",
+      "de": "Flug",
+      "es": "Tipo Volador",
+      "it": "Tipo Volante"
+    }
+  },
+  {
+    "slug": "arceus-ghost",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": "493-ghost.png",
+    "primaryTypeSlug": "ghost",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ghost Type",
+      "ja": "ゴーストタイプ",
+      "ja-Hrkt": "ゴーストタイプ",
+      "fr": "Spectre",
+      "de": "Geist",
+      "es": "Tipo Fantasma",
+      "it": "Tipo Spettro"
+    }
+  },
+  {
+    "slug": "arceus-grass",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 12,
+    "fullImage": null,
+    "detailImage": "493-grass.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Grass Type",
+      "ja": "くさタイプ",
+      "ja-Hrkt": "くさタイプ",
+      "fr": "Plante",
+      "de": "Pflanze",
+      "es": "Tipo Planta",
+      "it": "Tipo Erba"
+    }
+  },
+  {
+    "slug": "arceus-ground",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "493-ground.png",
+    "primaryTypeSlug": "ground",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ground Type",
+      "ja": "じめんタイプ",
+      "ja-Hrkt": "じめんタイプ",
+      "fr": "Sol",
+      "de": "Boden",
+      "es": "Tipo Tierra",
+      "it": "Tipo Terra"
+    }
+  },
+  {
+    "slug": "arceus-ice",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 15,
+    "fullImage": null,
+    "detailImage": "493-ice.png",
+    "primaryTypeSlug": "ice",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Ice Type",
+      "ja": "こおりタイプ",
+      "ja-Hrkt": "こおりタイプ",
+      "fr": "Glace",
+      "de": "Eis",
+      "es": "Tipo Hielo",
+      "it": "Tipo Ghiaccio"
+    }
+  },
+  {
+    "slug": "arceus-normal",
+    "formSlug": "arceus",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "493.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Normal Type",
+      "ja": "ノーマルタイプ",
+      "ja-Hrkt": "ノーマルタイプ",
+      "fr": "Normal",
+      "de": "Normalform",
+      "es": "Tipo Normal",
+      "it": "Tipo Normale"
+    }
+  },
+  {
+    "slug": "arceus-poison",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "493-poison.png",
+    "primaryTypeSlug": "poison",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Poison Type",
+      "ja": "どくタイプ",
+      "ja-Hrkt": "どくタイプ",
+      "fr": "Poison",
+      "de": "Gift",
+      "es": "Tipo Veneno",
+      "it": "Tipo Veleno"
+    }
+  },
+  {
+    "slug": "arceus-psychic",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 14,
+    "fullImage": null,
+    "detailImage": "493-psychic.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Psychic Type",
+      "ja": "エスパータイプ",
+      "ja-Hrkt": "エスパータイプ",
+      "fr": "Psy",
+      "de": "Psycho",
+      "es": "Tipo Psíquico",
+      "it": "Tipo Psico"
+    }
+  },
+  {
+    "slug": "arceus-rock",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": "493-rock.png",
+    "primaryTypeSlug": "rock",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Rock Type",
+      "ja": "いわタイプ",
+      "ja-Hrkt": "いわタイプ",
+      "fr": "Roche",
+      "de": "Gestein",
+      "es": "Tipo Roca",
+      "it": "Tipo Roccia"
+    }
+  },
+  {
+    "slug": "arceus-steel",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": "493-steel.png",
+    "primaryTypeSlug": "steel",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Steel Type",
+      "ja": "はがねタイプ",
+      "ja-Hrkt": "はがねタイプ",
+      "fr": "Acier",
+      "de": "Stahl",
+      "es": "Tipo Acero",
+      "it": "Tipo Acciaio"
+    }
+  },
+  {
+    "slug": "arceus-unknown",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 19,
+    "fullImage": null,
+    "detailImage": "493-unknown.png",
+    "primaryTypeSlug": "unknown",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "??? Type",
+      "ja": "？？？タイプ",
+      "ja-Hrkt": "？？？タイプ",
+      "fr": "???",
+      "de": "???",
+      "es": "Tipo ???",
+      "it": "Tipo ???"
+    }
+  },
+  {
+    "slug": "arceus-water",
+    "formSlug": "arceus",
+    "isDefault": false,
+    "order": 11,
+    "fullImage": null,
+    "detailImage": "493-water.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Water Type",
+      "ja": "みずタイプ",
+      "ja-Hrkt": "みずタイプ",
+      "fr": "Eau",
+      "de": "Wasser",
+      "es": "Tipo Agua",
+      "it": "Tipo Acqua"
+    }
+  },
+  {
+    "slug": "burmy-plant",
+    "formSlug": "burmy",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "412.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Plant Cloak",
+      "ja": "くさきのミノ",
+      "ja-Hrkt": "くさきのミノ",
+      "ko": "초목도롱",
+      "fr": "Cape Plante",
+      "de": "Pflanzenumhang",
+      "es": "Tronco Planta",
+      "it": "Manto Pianta"
+    }
+  },
+  {
+    "slug": "burmy-sandy",
+    "formSlug": "burmy",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "412-sandy.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Sandy Cloak",
+      "ja": "すなちのミノ",
+      "ja-Hrkt": "すなちのミノ",
+      "ko": "모래땅도롱",
+      "fr": "Cape Sable",
+      "de": "Sandumhang",
+      "es": "Tronco Arena",
+      "it": "Manto Sabbia"
+    }
+  },
+  {
+    "slug": "burmy-trash",
+    "formSlug": "burmy",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "412-trash.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Trash Cloak",
+      "ja": "ゴミのミノ",
+      "ja-Hrkt": "ゴミのミノ",
+      "ko": "슈레도롱",
+      "fr": "Cape Déchet",
+      "de": "Lumpenumhang",
+      "es": "Tronco Basura",
+      "it": "Manto Scarti"
+    }
+  },
+  {
+    "slug": "cherrim-overcast",
+    "formSlug": "cherrim",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "421.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "阴天形态",
+      "zh-Hant": "陰天形態",
+      "en": "Overcast Form",
+      "ja": "ネガフォルム",
+      "ja-Hrkt": "ネガフォルム",
+      "ko": "네거폼",
+      "fr": "Temps Couvert",
+      "de": "Wolkenform",
+      "es": "Forma Encapotado",
+      "it": "Forma Nuvola"
+    }
+  },
+  {
+    "slug": "cherrim-sunshine",
+    "formSlug": "cherrim",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "421-sunshine.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "晴天形态",
+      "zh-Hant": "晴天形態",
+      "en": "Sunshine Form",
+      "ja": "ポジフォルム",
+      "ja-Hrkt": "ポジフォルム",
+      "ko": "포지폼",
+      "fr": "Temps Ensoleillé",
+      "de": "Sonnenform",
+      "es": "Forma Soleado",
+      "it": "Forma Splendore"
+    }
+  },
+  {
+    "slug": "deerling-autumn",
+    "formSlug": "deerling",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "585-autumn.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Autumn Form",
+      "ja": "あきのすがた",
+      "ja-Hrkt": "あきのすがた",
+      "ko": "가을의 모습",
+      "fr": "Forme Automne",
+      "de": "Herbstform",
+      "es": "Forma Otoño",
+      "it": "Forma Autunno"
+    }
+  },
+  {
+    "slug": "deerling-spring",
+    "formSlug": "deerling",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "585.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Spring Form",
+      "ja": "はるのすがた",
+      "ja-Hrkt": "はるのすがた",
+      "ko": "봄의 모습",
+      "fr": "Forme Printemps",
+      "de": "Frühlingsform",
+      "es": "Forma Primavera",
+      "it": "Forma Primavera"
+    }
+  },
+  {
+    "slug": "deerling-summer",
+    "formSlug": "deerling",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "585-summer.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Summer Form",
+      "ja": "なつのすがた",
+      "ja-Hrkt": "なつのすがた",
+      "ko": "여름의 모습",
+      "fr": "Forme Été",
+      "de": "Sommerform",
+      "es": "Forma Verano",
+      "it": "Forma Estate"
+    }
+  },
+  {
+    "slug": "deerling-winter",
+    "formSlug": "deerling",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "585-winter.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Winter Form",
+      "ja": "ふゆのすがた",
+      "ja-Hrkt": "ふゆのすがた",
+      "ko": "겨울의 모습",
+      "fr": "Forme Hiver",
+      "de": "Winterform",
+      "es": "Forma Invierno",
+      "it": "Forma Inverno"
+    }
+  },
+  {
+    "slug": "flabebe-blue",
+    "formSlug": "flabebe",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "669-blue.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Blue Flower",
+      "ja": "あおいはな",
+      "ja-Hrkt": "あおいはな",
+      "ko": "파란 꽃",
+      "fr": "Fleur Bleue",
+      "de": "Blaublütler",
+      "es": "Flor Azul",
+      "it": "Fiore Blu"
+    }
+  },
+  {
+    "slug": "flabebe-orange",
+    "formSlug": "flabebe",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "669-orange.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Orange Flower",
+      "ja": "オレンジいろのはな",
+      "ja-Hrkt": "オレンジいろのはな",
+      "ko": "오렌지색 꽃",
+      "fr": "Fleur Orange",
+      "de": "Orangeblütler",
+      "es": "Flor Naranja",
+      "it": "Fiore Arancione"
+    }
+  },
+  {
+    "slug": "flabebe-red",
+    "formSlug": "flabebe",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "669.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Red Flower",
+      "ja": "あかいはな",
+      "ja-Hrkt": "あかいはな",
+      "ko": "빨간 꽃",
+      "fr": "Fleur Rouge",
+      "de": "Rotblütler",
+      "es": "Flor Roja",
+      "it": "Fiore Rosso"
+    }
+  },
+  {
+    "slug": "flabebe-white",
+    "formSlug": "flabebe",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "669-white.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "White Flower",
+      "ja": "しろいはな",
+      "ja-Hrkt": "しろいはな",
+      "ko": "하얀 꽃",
+      "fr": "Fleur Blanche",
+      "de": "Weißblütler",
+      "es": "Flor Blanca",
+      "it": "Fiore Bianco"
+    }
+  },
+  {
+    "slug": "flabebe-yellow",
+    "formSlug": "flabebe",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "669-yellow.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Yellow Flower",
+      "ja": "きいろのはな",
+      "ja-Hrkt": "きいろのはな",
+      "ko": "노란 꽃",
+      "fr": "Fleur Jaune",
+      "de": "Gelbblütler",
+      "es": "Flor Amarilla",
+      "it": "Fiore Giallo"
+    }
+  },
+  {
+    "slug": "floette-blue",
+    "formSlug": "floette",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "670-blue.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Blue Flower",
+      "ja": "あおいはな",
+      "ja-Hrkt": "あおいはな",
+      "ko": "파란 꽃",
+      "fr": "Fleur Bleue",
+      "de": "Blaublütler",
+      "es": "Flor Azul",
+      "it": "Fiore Blu"
+    }
+  },
+  {
+    "slug": "floette-orange",
+    "formSlug": "floette",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "670-orange.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Orange Flower",
+      "ja": "オレンジいろのはな",
+      "ja-Hrkt": "オレンジいろのはな",
+      "ko": "오렌지색 꽃",
+      "fr": "Fleur Orange",
+      "de": "Orangeblütler",
+      "es": "Flor Naranja",
+      "it": "Fiore Arancione"
+    }
+  },
+  {
+    "slug": "floette-red",
+    "formSlug": "floette",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "670.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Red Flower",
+      "ja": "あかいはな",
+      "ja-Hrkt": "あかいはな",
+      "ko": "빨간 꽃",
+      "fr": "Fleur Rouge",
+      "de": "Rotblütler",
+      "es": "Flor Roja",
+      "it": "Fiore Rosso"
+    }
+  },
+  {
+    "slug": "floette-white",
+    "formSlug": "floette",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "670-white.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "White Flower",
+      "ja": "しろいはな",
+      "ja-Hrkt": "しろいはな",
+      "ko": "하얀 꽃",
+      "fr": "Fleur Blanche",
+      "de": "Weißblütler",
+      "es": "Flor Blanca",
+      "it": "Fiore Bianco"
+    }
+  },
+  {
+    "slug": "floette-yellow",
+    "formSlug": "floette",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "670-yellow.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Yellow Flower",
+      "ja": "きいろのはな",
+      "ja-Hrkt": "きいろのはな",
+      "ko": "노란 꽃",
+      "fr": "Fleur Jaune",
+      "de": "Gelbblütler",
+      "es": "Flor Amarilla",
+      "it": "Fiore Giallo"
+    }
+  },
+  {
+    "slug": "florges-blue",
+    "formSlug": "florges",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "671-blue.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Blue Flower",
+      "ja": "あおいはな",
+      "ja-Hrkt": "あおいはな",
+      "ko": "파란 꽃",
+      "fr": "Fleur Bleue",
+      "de": "Blaublütler",
+      "es": "Flor Azul",
+      "it": "Fiore Blu"
+    }
+  },
+  {
+    "slug": "florges-orange",
+    "formSlug": "florges",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "671-orange.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Orange Flower",
+      "ja": "オレンジいろのはな",
+      "ja-Hrkt": "オレンジいろのはな",
+      "ko": "오렌지색 꽃",
+      "fr": "Fleur Orange",
+      "de": "Orangeblütler",
+      "es": "Flor Naranja",
+      "it": "Fiore Arancione"
+    }
+  },
+  {
+    "slug": "florges-red",
+    "formSlug": "florges",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "671.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Red Flower",
+      "ja": "あかいはな",
+      "ja-Hrkt": "あかいはな",
+      "ko": "빨간 꽃",
+      "fr": "Fleur Rouge",
+      "de": "Rotblütler",
+      "es": "Flor Roja",
+      "it": "Fiore Rosso"
+    }
+  },
+  {
+    "slug": "florges-white",
+    "formSlug": "florges",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "671-white.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "White Flower",
+      "ja": "しろいはな",
+      "ja-Hrkt": "しろいはな",
+      "ko": "하얀 꽃",
+      "fr": "Fleur Blanche",
+      "de": "Weißblütler",
+      "es": "Flor Blanca",
+      "it": "Fiore Bianco"
+    }
+  },
+  {
+    "slug": "florges-yellow",
+    "formSlug": "florges",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "671-yellow.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Yellow Flower",
+      "ja": "きいろのはな",
+      "ja-Hrkt": "きいろのはな",
+      "ko": "노란 꽃",
+      "fr": "Fleur Jaune",
+      "de": "Gelbblütler",
+      "es": "Flor Amarilla",
+      "it": "Fiore Giallo"
+    }
+  },
+  {
+    "slug": "frillish-female",
+    "formSlug": "frillish-male",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "592-female.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": "ghost",
+    "names": {
+      "zh-Hans": "雌性的样子",
+      "zh-Hant": "雌性的樣子",
+      "en": "Female",
+      "ja": "メスのすがた",
+      "ja-Hrkt": "メスのすがた",
+      "ko": "암컷의 모습",
+      "fr": "Femelle",
+      "de": "Weiblich",
+      "es": "Hembra",
+      "it": "Femmina"
+    }
+  },
+  {
+    "slug": "furfrou-dandy",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": "676-dandy.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Dandy Trim",
+      "ja": "ジェントルカット",
+      "ja-Hrkt": "ジェントルカット",
+      "ko": "젠틀컷",
+      "fr": "Coupe Monsieur",
+      "de": "Kavaliersschnitt",
+      "es": "Corte Caballero",
+      "it": "Taglio Gentiluomo"
+    }
+  },
+  {
+    "slug": "furfrou-debutante",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "676-debutante.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Debutante Trim",
+      "ja": "レディカット",
+      "ja-Hrkt": "レディカット",
+      "ko": "레이디컷",
+      "fr": "Coupe Demoiselle",
+      "de": "Fräuleinschnitt",
+      "es": "Corte Señorita",
+      "it": "Taglio Signorina"
+    }
+  },
+  {
+    "slug": "furfrou-diamond",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "676-diamond.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Diamond Trim",
+      "ja": "ダイヤカット",
+      "ja-Hrkt": "ダイヤカット",
+      "ko": "다이아컷",
+      "fr": "Coupe Diamant",
+      "de": "Diamantenschnitt",
+      "es": "Corte Rombo",
+      "it": "Taglio Diamante"
+    }
+  },
+  {
+    "slug": "furfrou-heart",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "676-heart.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Heart Trim",
+      "ja": "ハートカット",
+      "ja-Hrkt": "ハートカット",
+      "ko": "하트컷",
+      "fr": "Coupe Cœur",
+      "de": "Herzchenschnitt",
+      "es": "Corte Corazón",
+      "it": "Taglio Cuore"
+    }
+  },
+  {
+    "slug": "furfrou-kabuki",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": "676-kabuki.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Kabuki Trim",
+      "ja": "カブキカット",
+      "ja-Hrkt": "カブキカット",
+      "ko": "가부키컷",
+      "fr": "Coupe Kabuki",
+      "de": "Kabuki-Schnitt",
+      "es": "Corte Kabuki",
+      "it": "Taglio Kabuki"
+    }
+  },
+  {
+    "slug": "furfrou-la-reine",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": "676-la-reine.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "La Reine Trim",
+      "ja": "クイーンカット",
+      "ja-Hrkt": "クイーンカット",
+      "ko": "퀸컷",
+      "fr": "Coupe Reine",
+      "de": "Königinnenschnitt",
+      "es": "Corte Aristocrático",
+      "it": "Taglio Regina"
+    }
+  },
+  {
+    "slug": "furfrou-matron",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": "676-matron.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Matron Trim",
+      "ja": "マダムカット",
+      "ja-Hrkt": "マダムカット",
+      "ko": "마담컷",
+      "fr": "Coupe Madame",
+      "de": "Damenschnitt",
+      "es": "Corte Dama",
+      "it": "Taglio Gentildonna"
+    }
+  },
+  {
+    "slug": "furfrou-natural",
+    "formSlug": "furfrou",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "676.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Natural Form",
+      "ja": "やせいのすがた",
+      "ja-Hrkt": "やせいのすがた",
+      "ko": "야생의 모습",
+      "fr": "Forme Sauvage",
+      "de": "Zottelform",
+      "es": "Forma Salvaje",
+      "it": "Forma Selvatica"
+    }
+  },
+  {
+    "slug": "furfrou-pharaoh",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": "676-pharaoh.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Pharaoh Trim",
+      "ja": "キングダムカット",
+      "ja-Hrkt": "キングダムカット",
+      "ko": "킹덤컷",
+      "fr": "Coupe Pharaon",
+      "de": "Herrscherschnitt",
+      "es": "Corte Faraónico",
+      "it": "Taglio Faraone"
+    }
+  },
+  {
+    "slug": "furfrou-star",
+    "formSlug": "furfrou",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "676-star.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Star Trim",
+      "ja": "スターカット",
+      "ja-Hrkt": "スターカット",
+      "ko": "스타컷",
+      "fr": "Coupe Étoile",
+      "de": "Sternchenschnitt",
+      "es": "Corte Estrella",
+      "it": "Taglio Stella"
+    }
+  },
+  {
+    "slug": "gastrodon-east",
+    "formSlug": "gastrodon",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "423-east.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": "ground",
+    "names": {
+      "zh-Hans": "东海",
+      "zh-Hant": "東海",
+      "en": "East Sea",
+      "ja": "ひがしのうみ",
+      "ja-Hrkt": "ひがしのうみ",
+      "ko": "동쪽바다",
+      "fr": "Mer Orient",
+      "de": "Östliches Meer",
+      "es": "Mar Este",
+      "it": "Mare Est"
+    }
+  },
+  {
+    "slug": "gastrodon-west",
+    "formSlug": "gastrodon",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "423.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": "ground",
+    "names": {
+      "zh-Hans": "西海",
+      "zh-Hant": "西海",
+      "en": "West Sea",
+      "ja": "にしのうみ",
+      "ja-Hrkt": "にしのうみ",
+      "ko": "서쪽바다",
+      "fr": "Mer Occident",
+      "de": "Westliches Meer",
+      "es": "Mar Oeste",
+      "it": "Mare Ovest"
+    }
+  },
+  {
+    "slug": "genesect-burn",
+    "formSlug": "genesect",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "649-burn.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "steel",
+    "names": {
+      "en": "Burn Drive",
+      "ja": "ブレイズカセット",
+      "ja-Hrkt": "ブレイズカセット",
+      "ko": "블레이즈카세트",
+      "fr": "Module Pyro",
+      "de": "Flammenmodul",
+      "es": "PiroROM",
+      "it": "Piromodulo"
+    }
+  },
+  {
+    "slug": "genesect-chill",
+    "formSlug": "genesect",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "649-chill.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "steel",
+    "names": {
+      "en": "Chill Drive",
+      "ja": "フリーズカセット",
+      "ja-Hrkt": "フリーズカセット",
+      "ko": "프리즈카세트",
+      "fr": "Module Cryo",
+      "de": "Gefriermodul",
+      "es": "CrioROM",
+      "it": "Gelomodulo"
+    }
+  },
+  {
+    "slug": "genesect-douse",
+    "formSlug": "genesect",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "649-douse.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "steel",
+    "names": {
+      "en": "Douse Drive",
+      "ja": "アクアカセット",
+      "ja-Hrkt": "アクアカセット",
+      "ko": "아쿠아카세트",
+      "fr": "Module Aqua",
+      "de": "Aquamodul",
+      "es": "HidroROM",
+      "it": "Idromodulo"
+    }
+  },
+  {
+    "slug": "genesect-shock",
+    "formSlug": "genesect",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "649-shock.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "steel",
+    "names": {
+      "en": "Shock Drive",
+      "ja": "イナズマカセット",
+      "ja-Hrkt": "イナズマカセット",
+      "ko": "번개카세트",
+      "fr": "Module Choc",
+      "de": "Blitzmodul",
+      "es": "FulgoROM",
+      "it": "Voltmodulo"
+    }
+  },
+  {
+    "slug": "gimmighoul-chest",
+    "formSlug": "gimmighoul",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "999.png",
+    "primaryTypeSlug": "ghost",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Chest Form",
+      "ja": "はこフォルム",
+      "ja-Hrkt": "はこフォルム",
+      "fr": "Forme Coffre"
+    }
+  },
+  {
+    "slug": "jellicent-female",
+    "formSlug": "jellicent-male",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "593-female.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": "ghost",
+    "names": {
+      "zh-Hans": "雌性的样子",
+      "zh-Hant": "雌性的樣子",
+      "en": "Female",
+      "ja": "メスのすがた",
+      "ja-Hrkt": "メスのすがた",
+      "ko": "암컷의 모습",
+      "fr": "Femelle",
+      "de": "Weiblich",
+      "es": "Hembra",
+      "it": "Femmina"
+    }
+  },
+  {
+    "slug": "koraidon-apex-build",
+    "formSlug": "koraidon",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "1007.png",
+    "primaryTypeSlug": "fighting",
+    "secondaryTypeSlug": "dragon",
+    "names": {
+      "en": "Apex Build",
+      "ja": "かんぜんけいたい",
+      "ja-Hrkt": "かんぜんけいたい",
+      "fr": "Forme Finale"
+    }
+  },
+  {
+    "slug": "miraidon-ultimate-mode",
+    "formSlug": "miraidon",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "1008.png",
+    "primaryTypeSlug": "electric",
+    "secondaryTypeSlug": "dragon",
+    "names": {
+      "en": "Ultimate Mode",
+      "ja": "コンプリートモード",
+      "ja-Hrkt": "コンプリートモード",
+      "fr": "Mode Ultime"
+    }
+  },
+  {
+    "slug": "mothim-plant",
+    "formSlug": "mothim",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "414.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {}
+  },
+  {
+    "slug": "mothim-sandy",
+    "formSlug": "mothim",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {}
+  },
+  {
+    "slug": "mothim-trash",
+    "formSlug": "mothim",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {}
+  },
+  {
+    "slug": "pichu-spiky-eared",
+    "formSlug": "pichu",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "172-spiky-eared.png",
+    "primaryTypeSlug": "electric",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Spiky-eared",
+      "fr": "Troizépi",
+      "de": "Strubbelohrform"
+    }
+  },
+  {
+    "slug": "poltchageist-artisan",
+    "formSlug": "poltchageist",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "1012-artisan.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": "ghost",
+    "names": {
+      "zh-Hans": "高档货的样子",
+      "zh-Hant": "高檔貨的樣子",
+      "en": "Artisan Form",
+      "ja": "タカイモノのすがた",
+      "ja-Hrkt": "タカイモノのすがた",
+      "ko": "알짜배기의 모습",
+      "fr": "Forme Onéreuse",
+      "de": "Kostbarkeitsform",
+      "es": "Forma Opulenta",
+      "it": "Forma Pregiata"
+    }
+  },
+  {
+    "slug": "poltchageist-counterfeit",
+    "formSlug": "poltchageist",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "1012.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": "ghost",
+    "names": {
+      "zh-Hans": "高檔貨的樣子",
+      "zh-Hant": "冒牌貨的樣子",
+      "en": "Counterfeit Form",
+      "ja": "マガイモノのすがた",
+      "ja-Hrkt": "マガイモノのすがた",
+      "ko": "가짜배기의 모습",
+      "fr": "Forme Imitation",
+      "de": "Imitationsform",
+      "es": "Forma Fraudulenta",
+      "it": "Forma Taroccata"
+    }
+  },
+  {
+    "slug": "polteageist-antique",
+    "formSlug": "polteageist",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "855-antique.png",
+    "primaryTypeSlug": "ghost",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Antique Form",
+      "ja": "しんさくフォルム",
+      "ja-Hrkt": "しんさくフォルム",
+      "fr": "Forme Authentique",
+      "de": "Originalform"
+    }
+  },
+  {
+    "slug": "polteageist-phony",
+    "formSlug": "polteageist",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "855.png",
+    "primaryTypeSlug": "ghost",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Phony Form",
+      "ja": "がんさくフォルム",
+      "ja-Hrkt": "がんさくフォルム",
+      "fr": "Forme Contrefaçon",
+      "de": "Fälschungsform"
+    }
+  },
+  {
+    "slug": "pyroar-female",
+    "formSlug": "pyroar-male",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "668-female.png",
+    "primaryTypeSlug": "fire",
+    "secondaryTypeSlug": "normal",
+    "names": {
+      "zh-Hans": "雌性的样子",
+      "zh-Hant": "雌性的樣子",
+      "en": "Female",
+      "ja": "メスのすがた",
+      "ja-Hrkt": "メスのすがた",
+      "ko": "암컷의 모습",
+      "fr": "Femelle",
+      "de": "Weiblich",
+      "es": "Hembra",
+      "it": "Femmina"
+    }
+  },
+  {
+    "slug": "sawsbuck-autumn",
+    "formSlug": "sawsbuck",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "586-autumn.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Autumn Form",
+      "ja": "あきのすがた",
+      "ja-Hrkt": "あきのすがた",
+      "ko": "가을의 모습",
+      "fr": "Forme Automne",
+      "de": "Herbstform",
+      "es": "Forma Otoño",
+      "it": "Forma Autunno"
+    }
+  },
+  {
+    "slug": "sawsbuck-spring",
+    "formSlug": "sawsbuck",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "586.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Spring Form",
+      "ja": "はるのすがた",
+      "ja-Hrkt": "はるのすがた",
+      "ko": "봄의 모습",
+      "fr": "Forme Printemps",
+      "de": "Frühlingsform",
+      "es": "Forma Primavera",
+      "it": "Forma Primavera"
+    }
+  },
+  {
+    "slug": "sawsbuck-summer",
+    "formSlug": "sawsbuck",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "586-summer.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Summer Form",
+      "ja": "なつのすがた",
+      "ja-Hrkt": "なつのすがた",
+      "ko": "여름의 모습",
+      "fr": "Forme Été",
+      "de": "Sommerform",
+      "es": "Forma Verano",
+      "it": "Forma Estate"
+    }
+  },
+  {
+    "slug": "sawsbuck-winter",
+    "formSlug": "sawsbuck",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "586-winter.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": "grass",
+    "names": {
+      "en": "Winter Form",
+      "ja": "ふゆのすがた",
+      "ja-Hrkt": "ふゆのすがた",
+      "ko": "겨울의 모습",
+      "fr": "Forme Hiver",
+      "de": "Winterform",
+      "es": "Forma Invierno",
+      "it": "Forma Inverno"
+    }
+  },
+  {
+    "slug": "scatterbug-archipelago",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-continental",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-elegant",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-fancy",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 19,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-garden",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-high-plains",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 11,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-icy-snow",
+    "formSlug": "scatterbug",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "664.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-jungle",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 18,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-marine",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-meadow",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-modern",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-monsoon",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 14,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-ocean",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 17,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-poke-ball",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 20,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-polar",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-river",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 13,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-sandstorm",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 12,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-savanna",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 15,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-sun",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 16,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "scatterbug-tundra",
+    "formSlug": "scatterbug",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "shellos-east",
+    "formSlug": "shellos",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "422-east.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "东海",
+      "zh-Hant": "東海",
+      "en": "East Sea",
+      "ja": "ひがしのうみ",
+      "ja-Hrkt": "ひがしのうみ",
+      "ko": "동쪽바다",
+      "fr": "Mer Orient",
+      "de": "Östliches Meer",
+      "es": "Mar Este",
+      "it": "Mare Est"
+    }
+  },
+  {
+    "slug": "shellos-west",
+    "formSlug": "shellos",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "422.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "西海",
+      "zh-Hant": "西海",
+      "en": "West Sea",
+      "ja": "にしのうみ",
+      "ja-Hrkt": "にしのうみ",
+      "ko": "서쪽바다",
+      "fr": "Mer Occident",
+      "de": "Westliches Meer",
+      "es": "Mar Oeste",
+      "it": "Mare Ovest"
+    }
+  },
+  {
+    "slug": "silvally-bug",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": "773-bug.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：虫子",
+      "zh-Hant": "屬性：蟲子",
+      "en": "Type: Bug",
+      "ja": "タイプ：バグ",
+      "ja-Hrkt": "タイプ：バグ",
+      "ko": "타입:버그",
+      "fr": "Type : Insecte",
+      "de": "Typ:Käfer",
+      "es": "Tipo: Bicho",
+      "it": "Tipo Coleottero"
+    }
+  },
+  {
+    "slug": "silvally-dark",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 17,
+    "fullImage": null,
+    "detailImage": "773-dark.png",
+    "primaryTypeSlug": "dark",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：黑暗",
+      "zh-Hant": "屬性：黑暗",
+      "en": "Type: Dark",
+      "ja": "タイプ：ダーク",
+      "ja-Hrkt": "タイプ：ダーク",
+      "ko": "타입:다크",
+      "fr": "Type : Ténèbres",
+      "de": "Typ:Unlicht",
+      "es": "Tipo: Siniestro",
+      "it": "Tipo Buio"
+    }
+  },
+  {
+    "slug": "silvally-dragon",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 16,
+    "fullImage": null,
+    "detailImage": "773-dragon.png",
+    "primaryTypeSlug": "dragon",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：龙",
+      "zh-Hant": "屬性：龍",
+      "en": "Type: Dragon",
+      "ja": "タイプ：ドラゴン",
+      "ja-Hrkt": "タイプ：ドラゴン",
+      "ko": "타입:드래곤",
+      "fr": "Type : Dragon",
+      "de": "Typ:Drache",
+      "es": "Tipo: Dragón",
+      "it": "Tipo Drago"
+    }
+  },
+  {
+    "slug": "silvally-electric",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 13,
+    "fullImage": null,
+    "detailImage": "773-electric.png",
+    "primaryTypeSlug": "electric",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：电子",
+      "zh-Hant": "屬性：電子",
+      "en": "Type: Electric",
+      "ja": "タイプ：エレクトロ",
+      "ja-Hrkt": "タイプ：エレクトロ",
+      "ko": "타입:일렉트릭",
+      "fr": "Type : Électrik",
+      "de": "Typ:Elektro",
+      "es": "Tipo: Eléctrico",
+      "it": "Tipo Elettro"
+    }
+  },
+  {
+    "slug": "silvally-fairy",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 18,
+    "fullImage": null,
+    "detailImage": "773-fairy.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：妖精",
+      "zh-Hant": "屬性：妖精",
+      "en": "Type: Fairy",
+      "ja": "タイプ：フェアリー",
+      "ja-Hrkt": "タイプ：フェアリー",
+      "ko": "타입:페어리",
+      "fr": "Type : Fée",
+      "de": "Typ:Fee",
+      "es": "Tipo: Hada",
+      "it": "Tipo Folletto"
+    }
+  },
+  {
+    "slug": "silvally-fighting",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "773-fighting.png",
+    "primaryTypeSlug": "fighting",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：战斗",
+      "zh-Hant": "屬性：戰鬥",
+      "en": "Type: Fighting",
+      "ja": "タイプ：ファイト",
+      "ja-Hrkt": "タイプ：ファイト",
+      "ko": "타입:파이팅",
+      "fr": "Type : Combat",
+      "de": "Typ:Kampf",
+      "es": "Tipo: Lucha",
+      "it": "Tipo Lotta"
+    }
+  },
+  {
+    "slug": "silvally-fire",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": "773-fire.png",
+    "primaryTypeSlug": "fire",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：火焰",
+      "zh-Hant": "屬性：火焰",
+      "en": "Type: Fire",
+      "ja": "タイプ：ファイヤー",
+      "ja-Hrkt": "タイプ：ファイヤー",
+      "ko": "타입:파이어",
+      "fr": "Type : Feu",
+      "de": "Typ:Feuer",
+      "es": "Tipo: Fuego",
+      "it": "Tipo Fuoco"
+    }
+  },
+  {
+    "slug": "silvally-flying",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "773-flying.png",
+    "primaryTypeSlug": "flying",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：飞翔",
+      "zh-Hant": "屬性：飛翔",
+      "en": "Type: Flying",
+      "ja": "タイプ：フライング",
+      "ja-Hrkt": "タイプ：フライング",
+      "ko": "타입:플라잉",
+      "fr": "Type : Vol",
+      "de": "Typ:Flug",
+      "es": "Tipo: Volador",
+      "it": "Tipo Volante"
+    }
+  },
+  {
+    "slug": "silvally-ghost",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": "773-ghost.png",
+    "primaryTypeSlug": "ghost",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：幽灵",
+      "zh-Hant": "屬性：幽靈",
+      "en": "Type: Ghost",
+      "ja": "タイプ：ゴースト",
+      "ja-Hrkt": "タイプ：ゴースト",
+      "ko": "타입:고스트",
+      "fr": "Type : Spectre",
+      "de": "Typ:Geist",
+      "es": "Tipo: Fantasma",
+      "it": "Tipo Spettro"
+    }
+  },
+  {
+    "slug": "silvally-grass",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 12,
+    "fullImage": null,
+    "detailImage": "773-grass.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：青草",
+      "zh-Hant": "屬性：青草",
+      "en": "Type: Grass",
+      "ja": "タイプ：グラス",
+      "ja-Hrkt": "タイプ：グラス",
+      "ko": "타입:그래스",
+      "fr": "Type : Plante",
+      "de": "Typ:Pflanze",
+      "es": "Tipo: Planta",
+      "it": "Tipo Erba"
+    }
+  },
+  {
+    "slug": "silvally-ground",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "773-ground.png",
+    "primaryTypeSlug": "ground",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：大地",
+      "zh-Hant": "屬性：大地",
+      "en": "Type: Ground",
+      "ja": "タイプ：グラウンド",
+      "ja-Hrkt": "タイプ：グラウンド",
+      "ko": "타입:그라운드",
+      "fr": "Type : Sol",
+      "de": "Typ:Boden",
+      "es": "Tipo: Tierra",
+      "it": "Tipo Terra"
+    }
+  },
+  {
+    "slug": "silvally-ice",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 15,
+    "fullImage": null,
+    "detailImage": "773-ice.png",
+    "primaryTypeSlug": "ice",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：冰雪",
+      "zh-Hant": "屬性：冰雪",
+      "en": "Type: Ice",
+      "ja": "タイプ：アイス",
+      "ja-Hrkt": "タイプ：アイス",
+      "ko": "타입:아이스",
+      "fr": "Type : Glace",
+      "de": "Typ:Eis",
+      "es": "Tipo: Hielo",
+      "it": "Tipo Ghiaccio"
+    }
+  },
+  {
+    "slug": "silvally-normal",
+    "formSlug": "silvally",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "773.png",
+    "primaryTypeSlug": "normal",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：一般",
+      "zh-Hant": "屬性：一般",
+      "en": "Type: Normal",
+      "ja": "タイプ：ノーマル",
+      "ja-Hrkt": "タイプ：ノーマル",
+      "ko": "타입:노말",
+      "fr": "Type : Normal",
+      "de": "Typ:Normal",
+      "es": "Tipo: Normal",
+      "it": "Tipo Normale"
+    }
+  },
+  {
+    "slug": "silvally-poison",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "773-poison.png",
+    "primaryTypeSlug": "poison",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：毒",
+      "zh-Hant": "屬性：毒",
+      "en": "Type: Poison",
+      "ja": "タイプ：ポイズン",
+      "ja-Hrkt": "タイプ：ポイズン",
+      "ko": "타입:포이즌",
+      "fr": "Type : Poison",
+      "de": "Typ:Gift",
+      "es": "Tipo: Veneno",
+      "it": "Tipo Veleno"
+    }
+  },
+  {
+    "slug": "silvally-psychic",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 14,
+    "fullImage": null,
+    "detailImage": "773-psychic.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：精神",
+      "zh-Hant": "屬性：精神",
+      "en": "Type: Psychic",
+      "ja": "タイプ：サイキック",
+      "ja-Hrkt": "タイプ：サイキック",
+      "ko": "타입:사이킥",
+      "fr": "Type : Psy",
+      "de": "Typ:Psycho",
+      "es": "Tipo: Psíquico",
+      "it": "Tipo Psico"
+    }
+  },
+  {
+    "slug": "silvally-rock",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": "773-rock.png",
+    "primaryTypeSlug": "rock",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：岩石",
+      "zh-Hant": "屬性：岩石",
+      "en": "Type: Rock",
+      "ja": "タイプ：ロック",
+      "ja-Hrkt": "タイプ：ロック",
+      "ko": "타입:락",
+      "fr": "Type : Roche",
+      "de": "Typ:Gestein",
+      "es": "Tipo: Roca",
+      "it": "Tipo Roccia"
+    }
+  },
+  {
+    "slug": "silvally-steel",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": "773-steel.png",
+    "primaryTypeSlug": "steel",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：钢铁",
+      "zh-Hant": "屬性：鋼鐵",
+      "en": "Type: Steel",
+      "ja": "タイプ：スチール",
+      "ja-Hrkt": "タイプ：スチール",
+      "ko": "타입:스틸",
+      "fr": "Type : Acier",
+      "de": "Typ:Stahl",
+      "es": "Tipo: Acero",
+      "it": "Tipo Acciaio"
+    }
+  },
+  {
+    "slug": "silvally-water",
+    "formSlug": "silvally",
+    "isDefault": false,
+    "order": 11,
+    "fullImage": null,
+    "detailImage": "773-water.png",
+    "primaryTypeSlug": "water",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "属性：清水",
+      "zh-Hant": "屬性：清水",
+      "en": "Type: Water",
+      "ja": "タイプ：ウオーター",
+      "ja-Hrkt": "タイプ：ウオーター",
+      "ko": "타입:워터",
+      "fr": "Type : Eau",
+      "de": "Typ:Wasser",
+      "es": "Tipo: Agua",
+      "it": "Tipo Acqua"
+    }
+  },
+  {
+    "slug": "sinistcha-masterpiece",
+    "formSlug": "sinistcha",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "1013-masterpiece.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": "ghost",
+    "names": {
+      "zh-Hans": "杰作的样子",
+      "zh-Hant": "傑作的樣子",
+      "en": "Masterpiece Form",
+      "ja": "ケッサクのすがた",
+      "ja-Hrkt": "ケッサクのすがた",
+      "ko": "걸작의 모습",
+      "fr": "Forme Exceptionnelle",
+      "de": "Edle Form",
+      "es": "Forma Exquisita",
+      "it": "Forma Eccezionale"
+    }
+  },
+  {
+    "slug": "sinistcha-unremarkable",
+    "formSlug": "sinistcha",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "1013.png",
+    "primaryTypeSlug": "grass",
+    "secondaryTypeSlug": "ghost",
+    "names": {
+      "zh-Hans": "凡作的样子",
+      "zh-Hant": "凡作的樣子",
+      "en": "Unremarkable Form",
+      "ja": "ボンサクのすがた",
+      "ja-Hrkt": "ボンサクのすがた",
+      "ko": "범작의 모습",
+      "fr": "Forme Médiocre",
+      "de": "Simple Form",
+      "es": "Forma Mediocre",
+      "it": "Forma Dozzinale"
+    }
+  },
+  {
+    "slug": "sinistea-antique",
+    "formSlug": "sinistea",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "854-antique.png",
+    "primaryTypeSlug": "ghost",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Antique Form",
+      "ja": "しんさくフォルム",
+      "ja-Hrkt": "しんさくフォルム",
+      "fr": "Forme Authentique",
+      "de": "Originalform"
+    }
+  },
+  {
+    "slug": "sinistea-phony",
+    "formSlug": "sinistea",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "854.png",
+    "primaryTypeSlug": "ghost",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Phony Form",
+      "ja": "がんさくフォルム",
+      "ja-Hrkt": "がんさくフォルム",
+      "fr": "Forme Contrefaçon",
+      "de": "Fälschungsform"
+    }
+  },
+  {
+    "slug": "spewpa-archipelago",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-continental",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-elegant",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-fancy",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 19,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-garden",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-high-plains",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 11,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-icy-snow",
+    "formSlug": "spewpa",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "665.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-jungle",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 18,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-marine",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-meadow",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-modern",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-monsoon",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 14,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-ocean",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 17,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-poke-ball",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 20,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-polar",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-river",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 13,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-sandstorm",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 12,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-savanna",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 15,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-sun",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 16,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "spewpa-tundra",
+    "formSlug": "spewpa",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": null,
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": null,
+    "names": {}
+  },
+  {
+    "slug": "unown-a",
+    "formSlug": "unown",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "201.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "A",
+      "ja": "Ａ",
+      "ja-Hrkt": "Ａ",
+      "ko": "A",
+      "fr": "A",
+      "de": "A",
+      "es": "A",
+      "it": "A"
+    }
+  },
+  {
+    "slug": "unown-b",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "201-b.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "B",
+      "ja": "Ｂ",
+      "ja-Hrkt": "Ｂ",
+      "ko": "B",
+      "fr": "B",
+      "de": "B",
+      "es": "B",
+      "it": "B"
+    }
+  },
+  {
+    "slug": "unown-c",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "201-c.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "C",
+      "ja": "Ｃ",
+      "ja-Hrkt": "Ｃ",
+      "ko": "C",
+      "fr": "C",
+      "de": "C",
+      "es": "C",
+      "it": "C"
+    }
+  },
+  {
+    "slug": "unown-d",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "201-d.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "D",
+      "ja": "Ｄ",
+      "ja-Hrkt": "Ｄ",
+      "ko": "D",
+      "fr": "D",
+      "de": "D",
+      "es": "D",
+      "it": "D"
+    }
+  },
+  {
+    "slug": "unown-e",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "201-e.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "E",
+      "ja": "Ｅ",
+      "ja-Hrkt": "Ｅ",
+      "ko": "E",
+      "fr": "E",
+      "de": "E",
+      "es": "E",
+      "it": "E"
+    }
+  },
+  {
+    "slug": "unown-exclamation",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 27,
+    "fullImage": null,
+    "detailImage": "201-exclamation.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "!",
+      "ja": "!",
+      "ja-Hrkt": "!",
+      "ko": "!",
+      "fr": "!",
+      "de": "!",
+      "es": "!",
+      "it": "!"
+    }
+  },
+  {
+    "slug": "unown-f",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": "201-f.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "F",
+      "ja": "Ｆ",
+      "ja-Hrkt": "Ｆ",
+      "ko": "F",
+      "fr": "F",
+      "de": "F",
+      "es": "F",
+      "it": "F"
+    }
+  },
+  {
+    "slug": "unown-g",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": "201-g.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "G",
+      "ja": "Ｇ",
+      "ja-Hrkt": "Ｇ",
+      "ko": "G",
+      "fr": "G",
+      "de": "G",
+      "es": "G",
+      "it": "G"
+    }
+  },
+  {
+    "slug": "unown-h",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": "201-h.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "H",
+      "ja": "Ｈ",
+      "ja-Hrkt": "Ｈ",
+      "ko": "H",
+      "fr": "H",
+      "de": "H",
+      "es": "H",
+      "it": "H"
+    }
+  },
+  {
+    "slug": "unown-i",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": "201-i.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "I",
+      "ja": "Ｉ",
+      "ja-Hrkt": "Ｉ",
+      "ko": "I",
+      "fr": "I",
+      "de": "I",
+      "es": "I",
+      "it": "I"
+    }
+  },
+  {
+    "slug": "unown-j",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": "201-j.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "J",
+      "ja": "Ｊ",
+      "ja-Hrkt": "Ｊ",
+      "ko": "J",
+      "fr": "J",
+      "de": "J",
+      "es": "J",
+      "it": "J"
+    }
+  },
+  {
+    "slug": "unown-k",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 11,
+    "fullImage": null,
+    "detailImage": "201-k.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "K",
+      "ja": "Ｋ",
+      "ja-Hrkt": "Ｋ",
+      "ko": "K",
+      "fr": "K",
+      "de": "K",
+      "es": "K",
+      "it": "K"
+    }
+  },
+  {
+    "slug": "unown-l",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 12,
+    "fullImage": null,
+    "detailImage": "201-l.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "L",
+      "ja": "Ｌ",
+      "ja-Hrkt": "Ｌ",
+      "ko": "L",
+      "fr": "L",
+      "de": "L",
+      "es": "L",
+      "it": "L"
+    }
+  },
+  {
+    "slug": "unown-m",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 13,
+    "fullImage": null,
+    "detailImage": "201-m.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "M",
+      "ja": "Ｍ",
+      "ja-Hrkt": "Ｍ",
+      "ko": "M",
+      "fr": "M",
+      "de": "M",
+      "es": "M",
+      "it": "M"
+    }
+  },
+  {
+    "slug": "unown-n",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 14,
+    "fullImage": null,
+    "detailImage": "201-n.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "N",
+      "ja": "Ｎ",
+      "ja-Hrkt": "Ｎ",
+      "ko": "N",
+      "fr": "N",
+      "de": "N",
+      "es": "N",
+      "it": "N"
+    }
+  },
+  {
+    "slug": "unown-o",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 15,
+    "fullImage": null,
+    "detailImage": "201-o.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "O",
+      "ja": "Ｏ",
+      "ja-Hrkt": "Ｏ",
+      "ko": "O",
+      "fr": "O",
+      "de": "O",
+      "es": "O",
+      "it": "O"
+    }
+  },
+  {
+    "slug": "unown-p",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 16,
+    "fullImage": null,
+    "detailImage": "201-p.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "P",
+      "ja": "Ｐ",
+      "ja-Hrkt": "Ｐ",
+      "ko": "P",
+      "fr": "P",
+      "de": "P",
+      "es": "P",
+      "it": "P"
+    }
+  },
+  {
+    "slug": "unown-q",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 17,
+    "fullImage": null,
+    "detailImage": "201-q.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Q",
+      "ja": "Ｑ",
+      "ja-Hrkt": "Ｑ",
+      "ko": "Q",
+      "fr": "Q",
+      "de": "Q",
+      "es": "Q",
+      "it": "Q"
+    }
+  },
+  {
+    "slug": "unown-question",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 28,
+    "fullImage": null,
+    "detailImage": "201-question.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "?",
+      "ja": "?",
+      "ja-Hrkt": "?",
+      "ko": "?",
+      "fr": "?",
+      "de": "?",
+      "es": "?",
+      "it": "?"
+    }
+  },
+  {
+    "slug": "unown-r",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 18,
+    "fullImage": null,
+    "detailImage": "201-r.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "R",
+      "ja": "Ｒ",
+      "ja-Hrkt": "Ｒ",
+      "ko": "R",
+      "fr": "R",
+      "de": "R",
+      "es": "R",
+      "it": "R"
+    }
+  },
+  {
+    "slug": "unown-s",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 19,
+    "fullImage": null,
+    "detailImage": "201-s.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "S",
+      "ja": "Ｓ",
+      "ja-Hrkt": "Ｓ",
+      "ko": "S",
+      "fr": "S",
+      "de": "S",
+      "es": "S",
+      "it": "S"
+    }
+  },
+  {
+    "slug": "unown-t",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 20,
+    "fullImage": null,
+    "detailImage": "201-t.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "T",
+      "ja": "Ｔ",
+      "ja-Hrkt": "Ｔ",
+      "ko": "T",
+      "fr": "T",
+      "de": "T",
+      "es": "T",
+      "it": "T"
+    }
+  },
+  {
+    "slug": "unown-u",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 21,
+    "fullImage": null,
+    "detailImage": "201-u.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "U",
+      "ja": "Ｕ",
+      "ja-Hrkt": "Ｕ",
+      "ko": "U",
+      "fr": "U",
+      "de": "U",
+      "es": "U",
+      "it": "U"
+    }
+  },
+  {
+    "slug": "unown-v",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 22,
+    "fullImage": null,
+    "detailImage": "201-v.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "V",
+      "ja": "Ｖ",
+      "ja-Hrkt": "Ｖ",
+      "ko": "V",
+      "fr": "V",
+      "de": "V",
+      "es": "V",
+      "it": "V"
+    }
+  },
+  {
+    "slug": "unown-w",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 23,
+    "fullImage": null,
+    "detailImage": "201-w.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "W",
+      "ja": "Ｗ",
+      "ja-Hrkt": "Ｗ",
+      "ko": "W",
+      "fr": "W",
+      "de": "W",
+      "es": "W",
+      "it": "W"
+    }
+  },
+  {
+    "slug": "unown-x",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 24,
+    "fullImage": null,
+    "detailImage": "201-x.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "X",
+      "ja": "Ｘ",
+      "ja-Hrkt": "Ｘ",
+      "ko": "X",
+      "fr": "X",
+      "de": "X",
+      "es": "X",
+      "it": "X"
+    }
+  },
+  {
+    "slug": "unown-y",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 25,
+    "fullImage": null,
+    "detailImage": "201-y.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Y",
+      "ja": "Ｙ",
+      "ja-Hrkt": "Ｙ",
+      "ko": "Y",
+      "fr": "Y",
+      "de": "Y",
+      "es": "Y",
+      "it": "Y"
+    }
+  },
+  {
+    "slug": "unown-z",
+    "formSlug": "unown",
+    "isDefault": false,
+    "order": 26,
+    "fullImage": null,
+    "detailImage": "201-z.png",
+    "primaryTypeSlug": "psychic",
+    "secondaryTypeSlug": null,
+    "names": {
+      "en": "Z",
+      "ja": "Ｚ",
+      "ja-Hrkt": "Ｚ",
+      "ko": "Z",
+      "fr": "Z",
+      "de": "Z",
+      "es": "Z",
+      "it": "Z"
+    }
+  },
+  {
+    "slug": "vivillon-archipelago",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 10,
+    "fullImage": null,
+    "detailImage": "666-archipelago.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Archipelago Pattern",
+      "ja": "ぐんとうのもよう",
+      "ja-Hrkt": "ぐんとうのもよう",
+      "ko": "군도의 모양",
+      "fr": "Motif Archipel",
+      "de": "Archipelmuster",
+      "es": "Motivo Isleño",
+      "it": "Motivo Arcipelago"
+    }
+  },
+  {
+    "slug": "vivillon-continental",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 4,
+    "fullImage": null,
+    "detailImage": "666-continental.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Continental Pattern",
+      "ja": "たいりくのもよう",
+      "ja-Hrkt": "たいりくのもよう",
+      "ko": "대륙의 모양",
+      "fr": "Motif Continent",
+      "de": "Kontinentalmuster",
+      "es": "Motivo Continental",
+      "it": "Motivo Continentale"
+    }
+  },
+  {
+    "slug": "vivillon-elegant",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 6,
+    "fullImage": null,
+    "detailImage": "666-elegant.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Elegant Pattern",
+      "ja": "みやびなもよう",
+      "ja-Hrkt": "みやびなもよう",
+      "ko": "우아한 모양",
+      "fr": "Motif Monarchie",
+      "de": "Prunkmuster",
+      "es": "Motivo Oriental",
+      "it": "Motivo Eleganza"
+    }
+  },
+  {
+    "slug": "vivillon-fancy",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 19,
+    "fullImage": null,
+    "detailImage": "666-fancy.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Fancy Pattern",
+      "ja": "ファンシーなもよう",
+      "ja-Hrkt": "ファンシーなもよう",
+      "ko": "팬시한 모양",
+      "fr": "Motif Fantaisie",
+      "de": "Fantasiemuster",
+      "es": "Motivo Fantasía",
+      "it": "Motivo Sbarazzino"
+    }
+  },
+  {
+    "slug": "vivillon-garden",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 5,
+    "fullImage": null,
+    "detailImage": "666-garden.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Garden Pattern",
+      "ja": "ていえんのもよう",
+      "ja-Hrkt": "ていえんのもよう",
+      "ko": "정원의 모양",
+      "fr": "Motif Verdure",
+      "de": "Ziergartenmuster",
+      "es": "Motivo Vergel",
+      "it": "Motivo Prato"
+    }
+  },
+  {
+    "slug": "vivillon-high-plains",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 11,
+    "fullImage": null,
+    "detailImage": "666-high-plains.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "High Plains Pattern",
+      "ja": "こうやのもよう",
+      "ja-Hrkt": "こうやのもよう",
+      "ko": "황야의 모양",
+      "fr": "Motif Sécheresse",
+      "de": "Dürremuster",
+      "es": "Motivo Estepa",
+      "it": "Motivo Deserto"
+    }
+  },
+  {
+    "slug": "vivillon-icy-snow",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "666-icy-snow.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Icy Snow Pattern",
+      "ja": "ひょうせつのもよう",
+      "ja-Hrkt": "ひょうせつのもよう",
+      "ko": "빙설의 모양",
+      "fr": "Motif Blizzard",
+      "de": "Frostmuster",
+      "es": "Motivo Polar",
+      "it": "Motivo Nevi Perenni"
+    }
+  },
+  {
+    "slug": "vivillon-jungle",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 18,
+    "fullImage": null,
+    "detailImage": "666-jungle.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Jungle Pattern",
+      "ja": "ジャングルのもよう",
+      "ja-Hrkt": "ジャングルのもよう",
+      "ko": "정글의 모양",
+      "fr": "Motif Jungle",
+      "de": "Dschungelmuster",
+      "es": "Motivo Jungla",
+      "it": "Motivo Giungla"
+    }
+  },
+  {
+    "slug": "vivillon-marine",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 9,
+    "fullImage": null,
+    "detailImage": "666-marine.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Marine Pattern",
+      "ja": "マリンのもよう",
+      "ja-Hrkt": "マリンのもよう",
+      "ko": "마린의 모양",
+      "fr": "Motif Rivage",
+      "de": "Aquamarinmuster",
+      "es": "Motivo Marino",
+      "it": "Motivo Marino"
+    }
+  },
+  {
+    "slug": "vivillon-meadow",
+    "formSlug": "vivillon",
+    "isDefault": true,
+    "order": 7,
+    "fullImage": null,
+    "detailImage": "666.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Meadow Pattern",
+      "ja": "はなぞののもよう",
+      "ja-Hrkt": "はなぞののもよう",
+      "ko": "화원의 모양",
+      "fr": "Motif Floraison",
+      "de": "Blumenmeermuster",
+      "es": "Motivo Floral",
+      "it": "Motivo Giardinfiore"
+    }
+  },
+  {
+    "slug": "vivillon-modern",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 8,
+    "fullImage": null,
+    "detailImage": "666-modern.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Modern Pattern",
+      "ja": "モダンなもよう",
+      "ja-Hrkt": "モダンなもよう",
+      "ko": "모던한 모양",
+      "fr": "Motif Métropole",
+      "de": "Innovationsmuster",
+      "es": "Motivo Moderno",
+      "it": "Motivo Trendy"
+    }
+  },
+  {
+    "slug": "vivillon-monsoon",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 14,
+    "fullImage": null,
+    "detailImage": "666-monsoon.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Monsoon Pattern",
+      "ja": "スコールのもよう",
+      "ja-Hrkt": "スコールのもよう",
+      "ko": "스콜의 모양",
+      "fr": "Motif Cyclone",
+      "de": "Monsunmuster",
+      "es": "Motivo Monzón",
+      "it": "Motivo Pluviale"
+    }
+  },
+  {
+    "slug": "vivillon-ocean",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 17,
+    "fullImage": null,
+    "detailImage": "666-ocean.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Ocean Pattern",
+      "ja": "オーシャンのもよう",
+      "ja-Hrkt": "オーシャンのもよう",
+      "ko": "오션의 모양",
+      "fr": "Motif Soleil Levant",
+      "de": "Ozeanmuster",
+      "es": "Motivo Océano",
+      "it": "Motivo Oceanico"
+    }
+  },
+  {
+    "slug": "vivillon-poke-ball",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 20,
+    "fullImage": null,
+    "detailImage": "666-poke-ball.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Poké Ball Pattern",
+      "ja": "ボールのもよう",
+      "ja-Hrkt": "ボールのもよう",
+      "ko": "볼의 모양",
+      "fr": "Motif Poké Ball",
+      "de": "Pokéball-Muster",
+      "es": "Motivo Poké Ball",
+      "it": "Motivo Poké Ball"
+    }
+  },
+  {
+    "slug": "vivillon-polar",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "666-polar.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Polar Pattern",
+      "ja": "ゆきぐにのもよう",
+      "ja-Hrkt": "ゆきぐにのもよう",
+      "ko": "설국의 모양",
+      "fr": "Motif Banquise",
+      "de": "Schneefeldmuster",
+      "es": "Motivo Taiga",
+      "it": "Motivo Nordico"
+    }
+  },
+  {
+    "slug": "vivillon-river",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 13,
+    "fullImage": null,
+    "detailImage": "666-river.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "River Pattern",
+      "ja": "たいがのもよう",
+      "ja-Hrkt": "たいがのもよう",
+      "ko": "대하의 모양",
+      "fr": "Motif Delta",
+      "de": "Flussdeltamuster",
+      "es": "Motivo Oasis",
+      "it": "Motivo Fluviale"
+    }
+  },
+  {
+    "slug": "vivillon-sandstorm",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 12,
+    "fullImage": null,
+    "detailImage": "666-sandstorm.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Sandstorm Pattern",
+      "ja": "さじんのもよう",
+      "ja-Hrkt": "さじんのもよう",
+      "ko": "사진의 모양",
+      "fr": "Motif Sable",
+      "de": "Sandmuster",
+      "es": "Motivo Desierto",
+      "it": "Motivo Sabbia"
+    }
+  },
+  {
+    "slug": "vivillon-savanna",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 15,
+    "fullImage": null,
+    "detailImage": "666-savanna.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Savanna Pattern",
+      "ja": "サバンナのもよう",
+      "ja-Hrkt": "サバンナのもよう",
+      "ko": "사바나의 모양",
+      "fr": "Motif Mangrove",
+      "de": "Savannenmuster",
+      "es": "Motivo Pantano",
+      "it": "Motivo Savana"
+    }
+  },
+  {
+    "slug": "vivillon-sun",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 16,
+    "fullImage": null,
+    "detailImage": "666-sun.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Sun Pattern",
+      "ja": "たいようのもよう",
+      "ja-Hrkt": "たいようのもよう",
+      "ko": "태양의 모양",
+      "fr": "Motif Zénith",
+      "de": "Sonnenmuster",
+      "es": "Motivo Solar",
+      "it": "Motivo Solare"
+    }
+  },
+  {
+    "slug": "vivillon-tundra",
+    "formSlug": "vivillon",
+    "isDefault": false,
+    "order": 3,
+    "fullImage": null,
+    "detailImage": "666-tundra.png",
+    "primaryTypeSlug": "bug",
+    "secondaryTypeSlug": "flying",
+    "names": {
+      "en": "Tundra Pattern",
+      "ja": "せつげんのもよう",
+      "ja-Hrkt": "せつげんのもよう",
+      "ko": "설원의 모양",
+      "fr": "Motif Glace",
+      "de": "Flockenmuster",
+      "es": "Motivo Tundra",
+      "it": "Motivo Manto di Neve"
+    }
+  },
+  {
+    "slug": "xerneas-active",
+    "formSlug": "xerneas",
+    "isDefault": false,
+    "order": 2,
+    "fullImage": null,
+    "detailImage": "716-active.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "活跃模式",
+      "zh-Hant": "活躍模式",
+      "en": "Active Mode",
+      "ja": "アクティブモード",
+      "ja-Hrkt": "アクティブモード",
+      "ko": "액티브모드",
+      "fr": "Mode Déchaîné",
+      "de": "Aktiv-Modus",
+      "es": "Modo Activo",
+      "it": "Modo Attivo"
+    }
+  },
+  {
+    "slug": "xerneas-neutral",
+    "formSlug": "xerneas",
+    "isDefault": true,
+    "order": 1,
+    "fullImage": null,
+    "detailImage": "716.png",
+    "primaryTypeSlug": "fairy",
+    "secondaryTypeSlug": null,
+    "names": {
+      "zh-Hans": "放松模式",
+      "zh-Hant": "放鬆模式",
+      "en": "Neutral Mode",
+      "ja": "リラックスモード",
+      "ja-Hrkt": "リラックスモード",
+      "ko": "릴랙스모드",
+      "fr": "Mode Paisible",
+      "de": "Ruhe-Modus",
+      "es": "Modo Relajado",
+      "it": "Modo Relax"
+    }
+  }
+]

@@ -143,27 +143,6 @@
       }
     },
     {
-      "slug": "basculin-blue-striped",
-      "names": {
-        "zh-Hans": "蓝条纹的样子",
-        "zh-Hant": "藍條紋的樣子"
-      }
-    },
-    {
-      "slug": "basculin-red-striped",
-      "names": {
-        "zh-Hans": "红条纹的样子",
-        "zh-Hant": "紅條紋的樣子"
-      }
-    },
-    {
-      "slug": "basculin-white-striped",
-      "names": {
-        "zh-Hans": "白条纹的样子",
-        "zh-Hant": "白條紋的樣子"
-      }
-    },
-    {
       "slug": "baxcalibur-mega",
       "names": {
         "zh-Hans": "超级戟脊龙",
@@ -206,6 +185,27 @@
       }
     },
     {
+      "slug": "burmy-plant",
+      "names": {
+        "zh-Hans": "草木蓑衣",
+        "zh-Hant": "草木蓑衣"
+      }
+    },
+    {
+      "slug": "burmy-sandy",
+      "names": {
+        "zh-Hans": "砂土蓑衣",
+        "zh-Hant": "砂土蓑衣"
+      }
+    },
+    {
+      "slug": "burmy-trash",
+      "names": {
+        "zh-Hans": "垃圾蓑衣",
+        "zh-Hant": "垃圾蓑衣"
+      }
+    },
+    {
       "slug": "butterfree-gmax",
       "names": {
         "zh-Hans": "超极巨化",
@@ -217,27 +217,6 @@
       "names": {
         "zh-Hans": "超级喷火驼",
         "zh-Hant": "超級噴火駝"
-      }
-    },
-    {
-      "slug": "castform-rainy",
-      "names": {
-        "zh-Hans": "雨水的样子",
-        "zh-Hant": "雨水的樣子"
-      }
-    },
-    {
-      "slug": "castform-snowy",
-      "names": {
-        "zh-Hans": "雪云的样子",
-        "zh-Hant": "雪雲的樣子"
-      }
-    },
-    {
-      "slug": "castform-sunny",
-      "names": {
-        "zh-Hans": "太阳的样子",
-        "zh-Hant": "太陽的樣子"
       }
     },
     {
@@ -336,20 +315,6 @@
       "names": {
         "zh-Hans": "超级好胜毛蟹",
         "zh-Hant": "超級好勝毛蟹"
-      }
-    },
-    {
-      "slug": "cramorant-gorging",
-      "names": {
-        "zh-Hans": "大口吞的样子",
-        "zh-Hant": "大口吞的樣子"
-      }
-    },
-    {
-      "slug": "cramorant-gulping",
-      "names": {
-        "zh-Hans": "一口吞的样子",
-        "zh-Hant": "一口吞的樣子"
       }
     },
     {
@@ -458,20 +423,6 @@
       }
     },
     {
-      "slug": "dudunsparce-three-segment",
-      "names": {
-        "zh-Hans": "三节形态",
-        "zh-Hant": "三節形態"
-      }
-    },
-    {
-      "slug": "dudunsparce-two-segment",
-      "names": {
-        "zh-Hans": "二节形态",
-        "zh-Hant": "二節形態"
-      }
-    },
-    {
       "slug": "dugtrio-alola",
       "names": {
         "zh-Hans": "阿罗拉的样子",
@@ -577,10 +528,59 @@
       }
     },
     {
+      "slug": "flabebe-blue",
+      "names": {
+        "zh-Hans": "蓝花",
+        "zh-Hant": "藍花"
+      }
+    },
+    {
+      "slug": "flabebe-orange",
+      "names": {
+        "zh-Hans": "橙花",
+        "zh-Hant": "橙花"
+      }
+    },
+    {
+      "slug": "flabebe-red",
+      "names": {
+        "zh-Hans": "红花",
+        "zh-Hant": "紅花"
+      }
+    },
+    {
+      "slug": "flabebe-white",
+      "names": {
+        "zh-Hans": "白花",
+        "zh-Hant": "白花"
+      }
+    },
+    {
+      "slug": "flabebe-yellow",
+      "names": {
+        "zh-Hans": "黄花",
+        "zh-Hant": "黃花"
+      }
+    },
+    {
       "slug": "flapple-gmax",
       "names": {
         "zh-Hans": "超极巨化",
         "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "floette-blue",
+      "names": {
+        "zh-Hans": "蓝花",
+        "zh-Hant": "藍花"
+      }
+    },
+    {
+      "slug": "floette-eternal",
+      "names": {
+        "zh-Hans": "永恒之花",
+        "zh-Hant": "永恆之花"
       }
     },
     {
@@ -591,10 +591,136 @@
       }
     },
     {
+      "slug": "floette-orange",
+      "names": {
+        "zh-Hans": "橙花",
+        "zh-Hant": "橙花"
+      }
+    },
+    {
+      "slug": "floette-red",
+      "names": {
+        "zh-Hans": "红花",
+        "zh-Hant": "紅花"
+      }
+    },
+    {
+      "slug": "floette-white",
+      "names": {
+        "zh-Hans": "白花",
+        "zh-Hant": "白花"
+      }
+    },
+    {
+      "slug": "floette-yellow",
+      "names": {
+        "zh-Hans": "黄花",
+        "zh-Hant": "黃花"
+      }
+    },
+    {
+      "slug": "florges-blue",
+      "names": {
+        "zh-Hans": "蓝花",
+        "zh-Hant": "藍花"
+      }
+    },
+    {
+      "slug": "florges-orange",
+      "names": {
+        "zh-Hans": "橙花",
+        "zh-Hant": "橙花"
+      }
+    },
+    {
+      "slug": "florges-red",
+      "names": {
+        "zh-Hans": "红花",
+        "zh-Hant": "紅花"
+      }
+    },
+    {
+      "slug": "florges-white",
+      "names": {
+        "zh-Hans": "白花",
+        "zh-Hant": "白花"
+      }
+    },
+    {
+      "slug": "florges-yellow",
+      "names": {
+        "zh-Hans": "黄花",
+        "zh-Hant": "黃花"
+      }
+    },
+    {
       "slug": "froslass-mega",
       "names": {
         "zh-Hans": "超级雪妖女",
         "zh-Hant": "超級雪妖女"
+      }
+    },
+    {
+      "slug": "furfrou-dandy",
+      "names": {
+        "zh-Hans": "绅士造型",
+        "zh-Hant": "紳士造型"
+      }
+    },
+    {
+      "slug": "furfrou-debutante",
+      "names": {
+        "zh-Hans": "淑女造型",
+        "zh-Hant": "淑女造型"
+      }
+    },
+    {
+      "slug": "furfrou-diamond",
+      "names": {
+        "zh-Hans": "菱形造型",
+        "zh-Hant": "菱形造型"
+      }
+    },
+    {
+      "slug": "furfrou-heart",
+      "names": {
+        "zh-Hans": "心形造型",
+        "zh-Hant": "心形造型"
+      }
+    },
+    {
+      "slug": "furfrou-kabuki",
+      "names": {
+        "zh-Hans": "歌舞伎造型",
+        "zh-Hant": "歌舞伎造型"
+      }
+    },
+    {
+      "slug": "furfrou-la-reine",
+      "names": {
+        "zh-Hans": "女王造型",
+        "zh-Hant": "女王造型"
+      }
+    },
+    {
+      "slug": "furfrou-matron",
+      "names": {
+        "zh-Hans": "贵妇造型",
+        "zh-Hant": "貴婦造型"
+      }
+    },
+    {
+      "slug": "furfrou-pharaoh",
+      "names": {
+        "zh-Hans": "国王造型",
+        "zh-Hant": "國王造型"
+      }
+    },
+    {
+      "slug": "furfrou-star",
+      "names": {
+        "zh-Hans": "星形造型",
+        "zh-Hant": "星形造型"
       }
     },
     {
@@ -651,13 +777,6 @@
       "names": {
         "zh-Hans": "阿罗拉的样子",
         "zh-Hant": "阿羅拉的樣子"
-      }
-    },
-    {
-      "slug": "gimmighoul-roaming",
-      "names": {
-        "zh-Hans": "徒步形态",
-        "zh-Hant": "徒步形態"
       }
     },
     {
@@ -829,24 +948,17 @@
       }
     },
     {
-      "slug": "keldeo-ordinary",
-      "names": {
-        "zh-Hans": "平常的样子",
-        "zh-Hant": "平常的樣子"
-      }
-    },
-    {
-      "slug": "keldeo-resolute",
-      "names": {
-        "zh-Hans": "觉悟的样子",
-        "zh-Hant": "覺悟的樣子"
-      }
-    },
-    {
       "slug": "kingler-gmax",
       "names": {
         "zh-Hans": "超极巨化",
         "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "koraidon-apex-build",
+      "names": {
+        "zh-Hans": "完全形态",
+        "zh-Hant": "完全形態"
       }
     },
     {
@@ -952,27 +1064,6 @@
       "names": {
         "zh-Hans": "超级路卡利欧Ｚ",
         "zh-Hant": "超級路卡利歐Ｚ"
-      }
-    },
-    {
-      "slug": "lycanroc-dusk",
-      "names": {
-        "zh-Hans": "黄昏的样子",
-        "zh-Hant": "黃昏的樣子"
-      }
-    },
-    {
-      "slug": "lycanroc-midday",
-      "names": {
-        "zh-Hans": "白昼的样子",
-        "zh-Hant": "白晝的樣子"
-      }
-    },
-    {
-      "slug": "lycanroc-midnight",
-      "names": {
-        "zh-Hans": "黑夜的样子",
-        "zh-Hant": "黑夜的樣子"
       }
     },
     {
@@ -1130,20 +1221,6 @@
       }
     },
     {
-      "slug": "mimikyu-busted",
-      "names": {
-        "zh-Hans": "现形的样子",
-        "zh-Hant": "現形的樣子"
-      }
-    },
-    {
-      "slug": "mimikyu-disguised",
-      "names": {
-        "zh-Hans": "化形的样子",
-        "zh-Hant": "化形的樣子"
-      }
-    },
-    {
       "slug": "miraidon-aquatic-mode",
       "names": {
         "zh-Hans": "浮水模式",
@@ -1169,6 +1246,13 @@
       "names": {
         "zh-Hans": "受限模式",
         "zh-Hant": "受限模式"
+      }
+    },
+    {
+      "slug": "miraidon-ultimate-mode",
+      "names": {
+        "zh-Hans": "完整模式",
+        "zh-Hant": "完整模式"
       }
     },
     {
@@ -1242,17 +1326,31 @@
       }
     },
     {
-      "slug": "palafin-hero",
+      "slug": "oricorio-baile",
       "names": {
-        "zh-Hans": "全能形态",
-        "zh-Hant": "全能形態"
+        "zh-Hans": "热辣热辣风格",
+        "zh-Hant": "熱辣熱辣風格"
       }
     },
     {
-      "slug": "palafin-zero",
+      "slug": "oricorio-pau",
       "names": {
-        "zh-Hans": "平凡形态",
-        "zh-Hant": "平凡形態"
+        "zh-Hans": "呼拉呼拉风格",
+        "zh-Hant": "呼拉呼拉風格"
+      }
+    },
+    {
+      "slug": "oricorio-pom-pom",
+      "names": {
+        "zh-Hans": "啪滋啪滋风格",
+        "zh-Hant": "啪滋啪滋風格"
+      }
+    },
+    {
+      "slug": "oricorio-sensu",
+      "names": {
+        "zh-Hans": "轻盈轻盈风格",
+        "zh-Hant": "輕盈輕盈風格"
       }
     },
     {
@@ -1522,6 +1620,132 @@
       }
     },
     {
+      "slug": "silvally-bug",
+      "names": {
+        "zh-Hans": "属性：虫子",
+        "zh-Hant": "屬性：蟲子"
+      }
+    },
+    {
+      "slug": "silvally-dark",
+      "names": {
+        "zh-Hans": "属性：黑暗",
+        "zh-Hant": "屬性：黑暗"
+      }
+    },
+    {
+      "slug": "silvally-dragon",
+      "names": {
+        "zh-Hans": "属性：龙",
+        "zh-Hant": "屬性：龍"
+      }
+    },
+    {
+      "slug": "silvally-electric",
+      "names": {
+        "zh-Hans": "属性：电子",
+        "zh-Hant": "屬性：電子"
+      }
+    },
+    {
+      "slug": "silvally-fairy",
+      "names": {
+        "zh-Hans": "属性：妖精",
+        "zh-Hant": "屬性：妖精"
+      }
+    },
+    {
+      "slug": "silvally-fighting",
+      "names": {
+        "zh-Hans": "属性：战斗",
+        "zh-Hant": "屬性：戰鬥"
+      }
+    },
+    {
+      "slug": "silvally-fire",
+      "names": {
+        "zh-Hans": "属性：火焰",
+        "zh-Hant": "屬性：火焰"
+      }
+    },
+    {
+      "slug": "silvally-flying",
+      "names": {
+        "zh-Hans": "属性：飞翔",
+        "zh-Hant": "屬性：飛翔"
+      }
+    },
+    {
+      "slug": "silvally-ghost",
+      "names": {
+        "zh-Hans": "属性：幽灵",
+        "zh-Hant": "屬性：幽靈"
+      }
+    },
+    {
+      "slug": "silvally-grass",
+      "names": {
+        "zh-Hans": "属性：青草",
+        "zh-Hant": "屬性：青草"
+      }
+    },
+    {
+      "slug": "silvally-ground",
+      "names": {
+        "zh-Hans": "属性：大地",
+        "zh-Hant": "屬性：大地"
+      }
+    },
+    {
+      "slug": "silvally-ice",
+      "names": {
+        "zh-Hans": "属性：冰雪",
+        "zh-Hant": "屬性：冰雪"
+      }
+    },
+    {
+      "slug": "silvally-normal",
+      "names": {
+        "zh-Hans": "属性：一般",
+        "zh-Hant": "屬性：一般"
+      }
+    },
+    {
+      "slug": "silvally-poison",
+      "names": {
+        "zh-Hans": "属性：毒",
+        "zh-Hant": "屬性：毒"
+      }
+    },
+    {
+      "slug": "silvally-psychic",
+      "names": {
+        "zh-Hans": "属性：精神",
+        "zh-Hant": "屬性：精神"
+      }
+    },
+    {
+      "slug": "silvally-rock",
+      "names": {
+        "zh-Hans": "属性：岩石",
+        "zh-Hant": "屬性：岩石"
+      }
+    },
+    {
+      "slug": "silvally-steel",
+      "names": {
+        "zh-Hans": "属性：钢铁",
+        "zh-Hant": "屬性：鋼鐵"
+      }
+    },
+    {
+      "slug": "silvally-water",
+      "names": {
+        "zh-Hans": "属性：清水",
+        "zh-Hant": "屬性：清水"
+      }
+    },
+    {
       "slug": "skarmory-mega",
       "names": {
         "zh-Hans": "超级盔甲鸟",
@@ -1641,41 +1865,6 @@
       }
     },
     {
-      "slug": "tatsugiri-curly",
-      "names": {
-        "zh-Hans": "上弓姿势",
-        "zh-Hant": "上弓姿勢"
-      }
-    },
-    {
-      "slug": "tatsugiri-droopy",
-      "names": {
-        "zh-Hans": "下垂姿势",
-        "zh-Hant": "下垂姿勢"
-      }
-    },
-    {
-      "slug": "tatsugiri-stretchy",
-      "names": {
-        "zh-Hans": "平挺姿势",
-        "zh-Hant": "平挺姿勢"
-      }
-    },
-    {
-      "slug": "terapagos-stellar",
-      "names": {
-        "zh-Hans": "星晶形态",
-        "zh-Hant": "星晶形態"
-      }
-    },
-    {
-      "slug": "terapagos-terastal",
-      "names": {
-        "zh-Hans": "太晶形态",
-        "zh-Hant": "太晶形態"
-      }
-    },
-    {
       "slug": "thundurus-incarnate",
       "names": {
         "zh-Hans": "化身形态",
@@ -1704,20 +1893,6 @@
       }
     },
     {
-      "slug": "toxtricity-amped",
-      "names": {
-        "zh-Hans": "高调的样子",
-        "zh-Hant": "高調的樣子"
-      }
-    },
-    {
-      "slug": "toxtricity-low-key",
-      "names": {
-        "zh-Hans": "低调的样子",
-        "zh-Hant": "低調的樣子"
-      }
-    },
-    {
       "slug": "typhlosion-hisui",
       "names": {
         "zh-Hans": "洗翠的样子",
@@ -1736,6 +1911,20 @@
       "names": {
         "zh-Hans": "赫月",
         "zh-Hant": "赫月"
+      }
+    },
+    {
+      "slug": "urshifu-rapid-strike",
+      "names": {
+        "zh-Hans": "连击流",
+        "zh-Hant": "連擊流"
+      }
+    },
+    {
+      "slug": "urshifu-single-strike",
+      "names": {
+        "zh-Hans": "一击流",
+        "zh-Hant": "一擊流"
       }
     },
     {
@@ -1760,6 +1949,139 @@
       }
     },
     {
+      "slug": "vivillon-archipelago",
+      "names": {
+        "zh-Hans": "群岛花纹",
+        "zh-Hant": "群島花紋"
+      }
+    },
+    {
+      "slug": "vivillon-continental",
+      "names": {
+        "zh-Hans": "大陆花纹",
+        "zh-Hant": "大陸花紋"
+      }
+    },
+    {
+      "slug": "vivillon-elegant",
+      "names": {
+        "zh-Hans": "高雅花纹",
+        "zh-Hant": "高雅花紋"
+      }
+    },
+    {
+      "slug": "vivillon-fancy",
+      "names": {
+        "zh-Hans": "幻彩花纹",
+        "zh-Hant": "幻彩花紋"
+      }
+    },
+    {
+      "slug": "vivillon-garden",
+      "names": {
+        "zh-Hans": "庭园花纹",
+        "zh-Hant": "庭園花紋"
+      }
+    },
+    {
+      "slug": "vivillon-high-plains",
+      "names": {
+        "zh-Hans": "荒野花纹",
+        "zh-Hant": "荒野花紋"
+      }
+    },
+    {
+      "slug": "vivillon-icy-snow",
+      "names": {
+        "zh-Hans": "冰雪花纹",
+        "zh-Hant": "冰雪花紋"
+      }
+    },
+    {
+      "slug": "vivillon-jungle",
+      "names": {
+        "zh-Hans": "热带雨林花纹",
+        "zh-Hant": "熱帶雨林花紋"
+      }
+    },
+    {
+      "slug": "vivillon-marine",
+      "names": {
+        "zh-Hans": "大海花纹",
+        "zh-Hant": "大海花紋"
+      }
+    },
+    {
+      "slug": "vivillon-meadow",
+      "names": {
+        "zh-Hans": "花园花纹",
+        "zh-Hant": "花園花紋"
+      }
+    },
+    {
+      "slug": "vivillon-modern",
+      "names": {
+        "zh-Hans": "摩登花纹",
+        "zh-Hant": "摩登花紋"
+      }
+    },
+    {
+      "slug": "vivillon-monsoon",
+      "names": {
+        "zh-Hans": "骤雨花纹",
+        "zh-Hant": "驟雨花紋"
+      }
+    },
+    {
+      "slug": "vivillon-ocean",
+      "names": {
+        "zh-Hans": "大洋花纹",
+        "zh-Hant": "大洋花紋"
+      }
+    },
+    {
+      "slug": "vivillon-polar",
+      "names": {
+        "zh-Hans": "雪国花纹",
+        "zh-Hant": "雪國花紋"
+      }
+    },
+    {
+      "slug": "vivillon-river",
+      "names": {
+        "zh-Hans": "大河花纹",
+        "zh-Hant": "大河花紋"
+      }
+    },
+    {
+      "slug": "vivillon-sandstorm",
+      "names": {
+        "zh-Hans": "沙尘花纹",
+        "zh-Hant": "沙塵花紋"
+      }
+    },
+    {
+      "slug": "vivillon-savanna",
+      "names": {
+        "zh-Hans": "热带草原花纹",
+        "zh-Hant": "熱帶草原花紋"
+      }
+    },
+    {
+      "slug": "vivillon-sun",
+      "names": {
+        "zh-Hans": "太阳花纹",
+        "zh-Hant": "太陽花紋"
+      }
+    },
+    {
+      "slug": "vivillon-tundra",
+      "names": {
+        "zh-Hans": "雪原花纹",
+        "zh-Hant": "雪原花紋"
+      }
+    },
+    {
       "slug": "voltorb-hisui",
       "names": {
         "zh-Hans": "洗翠的样子",
@@ -1781,24 +2103,31 @@
       }
     },
     {
-      "slug": "wishiwashi-school",
-      "names": {
-        "zh-Hans": "鱼群的样子",
-        "zh-Hant": "魚群的樣子"
-      }
-    },
-    {
-      "slug": "wishiwashi-solo",
-      "names": {
-        "zh-Hans": "单独的样子",
-        "zh-Hant": "單獨的樣子"
-      }
-    },
-    {
       "slug": "wooper-paldea",
       "names": {
         "zh-Hans": "帕底亚的样子",
         "zh-Hant": "帕底亞的樣子"
+      }
+    },
+    {
+      "slug": "wormadam-plant",
+      "names": {
+        "zh-Hans": "草木蓑衣",
+        "zh-Hant": "草木蓑衣"
+      }
+    },
+    {
+      "slug": "wormadam-sandy",
+      "names": {
+        "zh-Hans": "砂土蓑衣",
+        "zh-Hant": "砂土蓑衣"
+      }
+    },
+    {
+      "slug": "wormadam-trash",
+      "names": {
+        "zh-Hans": "垃圾蓑衣",
+        "zh-Hant": "垃圾蓑衣"
       }
     },
     {
@@ -1906,14 +2235,19 @@
     "arcanine Lord Form",
     "arceus Arceus",
     "avalugg Lord Form",
-    "burmy Plant Cloak",
-    "burmy Sandy Cloak",
-    "burmy Trash Cloak",
+    "basculin Blue-Striped Form",
+    "basculin Red-Striped Form",
+    "basculin White-Striped Form",
     "calyrex Ice Rider",
     "calyrex Shadow Rider",
     "castform Normal",
+    "castform Rainy Form",
+    "castform Snowy Form",
+    "castform Sunny Form",
     "cherrim Overcast Form",
     "cherrim Sunshine Form",
+    "cramorant Gorging Form",
+    "cramorant Gulping Form",
     "darmanitan Galarian Form",
     "darmanitan Standard Mode",
     "darmanitan Zen Mode",
@@ -1921,39 +2255,17 @@
     "deerling Spring Form",
     "deerling Summer Form",
     "deerling Winter Form",
+    "dudunsparce Three-Segment Form",
+    "dudunsparce Two-Segment Form",
     "eiscue Ice Face",
     "eiscue Noice Face",
     "electrode Lord Form",
-    "flabebe Blue Flower",
-    "flabebe Orange Flower",
-    "flabebe Red Flower",
-    "flabebe White Flower",
-    "flabebe Yellow Flower",
-    "floette Blue Flower",
-    "floette Eternal Flower",
-    "floette Orange Flower",
-    "floette Red Flower",
-    "floette White Flower",
-    "floette Yellow Flower",
-    "florges Blue Flower",
-    "florges Orange Flower",
-    "florges Red Flower",
-    "florges White Flower",
-    "florges Yellow Flower",
-    "furfrou Dandy Trim",
-    "furfrou Debutante Trim",
-    "furfrou Diamond Trim",
-    "furfrou Heart Trim",
-    "furfrou Kabuki Trim",
-    "furfrou La Reine Trim",
-    "furfrou Matron Trim",
     "furfrou Natural Form",
-    "furfrou Pharaoh Trim",
-    "furfrou Star Trim",
     "gastrodon East Sea",
     "gastrodon West Sea",
     "genesect Genesect",
     "gimmighoul Chest Form",
+    "gimmighoul Roaming Form",
     "gourgeist Jumbo Variety",
     "gourgeist Large Variety",
     "gourgeist Medium Variety",
@@ -1962,15 +2274,21 @@
     "groudon Groudon",
     "hoopa Hoopa Confined",
     "hoopa Hoopa Unbound",
+    "keldeo Ordinary Form",
+    "keldeo Resolute Form",
     "kleavor Lord Form",
-    "koraidon Apex Build",
     "kyogre Kyogre",
     "kyurem Black Kyurem",
     "kyurem Kyurem",
     "kyurem White Kyurem",
     "lilligant Lady Form",
+    "lycanroc Dusk Form",
+    "lycanroc Midday Form",
+    "lycanroc Midnight Form",
     "magearna Original Color",
     "meowstic Mega Meowstic",
+    "mimikyu Busted Form",
+    "mimikyu Disguised Form",
     "minior Blue Core",
     "minior Green Core",
     "minior Indigo Core",
@@ -1979,17 +2297,14 @@
     "minior Red Core",
     "minior Violet Core",
     "minior Yellow Core",
-    "miraidon Ultimate Mode",
     "morpeko Full Belly Mode",
     "morpeko Hangry Mode",
     "necrozma Dawn Wings",
     "necrozma Dusk Mane",
     "necrozma Ultra Necrozma",
     "ogerpon Teal Mask",
-    "oricorio Baile Style",
-    "oricorio Pa’u Style",
-    "oricorio Pom-Pom Style",
-    "oricorio Sensu Style",
+    "palafin Hero Form",
+    "palafin Zero Form",
     "poltchageist Artisan Form",
     "poltchageist Counterfeit Form",
     "polteageist Antique Form",
@@ -2010,61 +2325,28 @@
     "sawsbuck Winter Form",
     "shellos East Sea",
     "shellos West Sea",
-    "silvally Type: Bug",
-    "silvally Type: Dark",
-    "silvally Type: Dragon",
-    "silvally Type: Electric",
-    "silvally Type: Fairy",
-    "silvally Type: Fighting",
-    "silvally Type: Fire",
-    "silvally Type: Flying",
-    "silvally Type: Ghost",
-    "silvally Type: Grass",
-    "silvally Type: Ground",
-    "silvally Type: Ice",
-    "silvally Type: Normal",
-    "silvally Type: Poison",
-    "silvally Type: Psychic",
-    "silvally Type: Rock",
-    "silvally Type: Steel",
-    "silvally Type: Water",
     "sinistcha Masterpiece Form",
     "sinistcha Unremarkable Form",
     "sinistea Antique Form",
     "sinistea Phony Form",
+    "tatsugiri Curly Form",
+    "tatsugiri Droopy Form",
     "tatsugiri Mega Tatsugiri",
+    "tatsugiri Stretchy Form",
     "tauros Paldean Form / Aqua Breed",
     "tauros Paldean Form / Blaze Breed",
     "tauros Paldean Form / Combat Breed",
     "terapagos Normal Form",
+    "terapagos Stellar Form",
+    "terapagos Terastal Form",
+    "toxtricity Amped Form",
     "toxtricity Gigantamax",
+    "toxtricity Low Key Form",
     "unown One form",
     "urshifu Gigantamax",
-    "urshifu Rapid Strike Style",
-    "urshifu Single Strike Style",
-    "vivillon Archipelago Pattern",
-    "vivillon Continental Pattern",
-    "vivillon Elegant Pattern",
-    "vivillon Fancy Pattern",
-    "vivillon Garden Pattern",
-    "vivillon High Plains Pattern",
-    "vivillon Icy Snow Pattern",
-    "vivillon Jungle Pattern",
-    "vivillon Marine Pattern",
-    "vivillon Meadow Pattern",
-    "vivillon Modern Pattern",
-    "vivillon Monsoon Pattern",
-    "vivillon Ocean Pattern",
     "vivillon Poké Ball Pattern",
-    "vivillon Polar Pattern",
-    "vivillon River Pattern",
-    "vivillon Sandstorm Pattern",
-    "vivillon Savanna Pattern",
-    "vivillon Sun Pattern",
-    "vivillon Tundra Pattern",
-    "wormadam Plant Cloak",
-    "wormadam Sandy Cloak",
-    "wormadam Trash Cloak",
+    "wishiwashi School Form",
+    "wishiwashi Solo Form",
     "xerneas Active Mode",
     "xerneas Neutral Mode",
     "zacian Crowned Sword",

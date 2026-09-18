@@ -125,6 +125,7 @@ model Language {
   maxMoveNames          MaxMoveI18n[]
   maxMoveEffects        MaxMoveEffectI18n[]
   maxMoveFlavors        MaxMoveFlavorI18n[]
+  formVariantNames      FormVariantI18n[]
 
   @@map("language")
 }
@@ -351,6 +352,8 @@ model Form {
   maxMoves        MaxMove[]
   /// 变成这个形态要携带哪件道具（超级石、宝珠）
   itemFormChanges ItemFormChange[]
+  /// 这个形态下面的外观变体（霜奶仙的奶油、未知图腾的字母）
+  variants        FormVariant[]
 
   evolvesTo        Evolution[] @relation("EvolutionFrom")
   evolvesFrom      Evolution[] @relation("EvolutionTo")
@@ -419,6 +422,58 @@ model FormDescriptionI18n {
 
   @@unique([formId, versionId, languageCode])
   @@map("form_description_i18n")
+}
+
+/// 形态下面的变体。
+///
+/// 霜奶仙的六十三种奶油、未知图腾的二十八个字母、阿尔宙斯的十九种属性、
+/// 结草儿的三种蓑衣 —— 数据源把这些放在 pokemon-form 这一级，
+/// 比 Form（variety 级）更细一层。
+///
+/// 它们跟本体形态共用种族值、特性和招式表，所以这里只存身份、图、译名
+/// 和属性 —— 阿尔宙斯和银伴战兽是唯二属性真的跟着变的
+model FormVariant {
+  id     Int    @id @default(autoincrement())
+  formId Int
+  form   Form   @relation(fields: [formId], references: [id], onDelete: Cascade)
+  slug   String @unique // "burmy-plant"
+
+  /// 这个形态默认显示的那个变体
+  isDefault Boolean @default(false)
+  /// 在同一形态下排第几个，数据源给的 form_order
+  order     Int
+
+  /// 图片文件名，跟 Form 上那两列一个意思
+  fullImage   String?
+  detailImage String?
+
+  /// 变体自己的属性。只有阿尔宙斯和银伴战兽跟本体不同，
+  /// 其余变体照抄本体，不分世代 —— 这一级的形态没有跨世代的属性变更
+  primaryTypeId   Int?
+  primaryType     Type? @relation("VariantPrimaryType", fields: [primaryTypeId], references: [id])
+  secondaryTypeId Int?
+  secondaryType   Type? @relation("VariantSecondaryType", fields: [secondaryTypeId], references: [id])
+
+  names FormVariantI18n[]
+
+  evolvesTo   Evolution[] @relation("EvolutionFromVariant")
+  evolvesFrom Evolution[] @relation("EvolutionToVariant")
+
+  @@index([formId])
+  @@index([primaryTypeId])
+  @@map("form_variant")
+}
+
+model FormVariantI18n {
+  variantId    Int
+  variant      FormVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language    @relation(fields: [languageCode], references: [code])
+  name         String // 「草木蓑衣」
+
+  @@id([variantId, languageCode])
+  @@index([name])
+  @@map("form_variant_i18n")
 }
 
 model FormI18n {
@@ -961,15 +1016,22 @@ enum EvolutionStatComparison {
 /// 只会把同一列复制进多张表，查的时候还要把几张表并起来，加一种触发方式就得建表改代码。
 /// 一次进化的条件必须同时成立，本来就属于同一条记录，跟 FormStat 的六项一个道理。
 model Evolution {
-  id          Int              @id @default(autoincrement())
-  fromFormId  Int
-  fromForm    Form             @relation("EvolutionFrom", fields: [fromFormId], references: [id], onDelete: Cascade)
-  toFormId    Int
-  toForm      Form             @relation("EvolutionTo", fields: [toFormId], references: [id], onDelete: Cascade)
-  groupId     Int
-  group       Group            @relation(fields: [groupId], references: [id])
-  triggerSlug String
-  trigger     EvolutionTrigger @relation(fields: [triggerSlug], references: [slug])
+  id         Int  @id @default(autoincrement())
+  fromFormId Int
+  fromForm   Form @relation("EvolutionFrom", fields: [fromFormId], references: [id], onDelete: Cascade)
+  toFormId   Int
+  toForm     Form @relation("EvolutionTo", fields: [toFormId], references: [id], onDelete: Cascade)
+
+  // 两端细到变体那一级的进化。结草儿的草木蓑衣变结草贵妇的草木蓑衣、
+  // 沙土蓑衣变沙土蓑衣，条件一模一样，只有变体不同
+  fromVariantId Int?
+  fromVariant   FormVariant?     @relation("EvolutionFromVariant", fields: [fromVariantId], references: [id])
+  toVariantId   Int?
+  toVariant     FormVariant?     @relation("EvolutionToVariant", fields: [toVariantId], references: [id])
+  groupId       Int
+  group         Group            @relation(fields: [groupId], references: [id])
+  triggerSlug   String
+  trigger       EvolutionTrigger @relation(fields: [triggerSlug], references: [slug])
 
   // ── 数值门槛 ──
   minLevel       Int? // 升到几级
@@ -1097,6 +1159,9 @@ model Type {
   defendingAgainst TypeEffectiveness[] @relation("DefendingType")
   knownMoveTypeFor Evolution[]         @relation("EvolutionKnownMoveType")
   partyTypeFor     Evolution[]         @relation("EvolutionPartyType")
+  /// 变体自己的属性。只有阿尔宙斯和银伴战兽用得上
+  variantPrimary   FormVariant[]       @relation("VariantPrimaryType")
+  variantSecondary FormVariant[]       @relation("VariantSecondaryType")
 
   @@index([introducedInGenerationId])
   @@map("type")

@@ -1337,6 +1337,65 @@ async function seedPokemon(
  * PokeAPI 的中文只覆盖 722 只、8 个版本组，朱紫那 127 只一条都没有；
  * 百科从红绿版到朱紫全有。文件读不到就当没有中文，不让 seed 挂掉
  */
+/**
+ * 形态下面的变体。
+ *
+ * 霜奶仙六十三种奶油、未知图腾二十八个字母、阿尔宙斯十九种属性形态 ——
+ * 数据源把它们放在比形态更细的一层，种族值和招式表跟本体共用。
+ * 纯派生数据，整表重建
+ */
+async function seedFormVariants(dict: {
+  forms: Map<string, number>;
+  types: Map<string, number>;
+}): Promise<Map<string, number>> {
+  const rows = read("form-variants");
+  const zh = wikiForms();
+
+  const ids = new Map<string, number>();
+  const names: { variantId: number; languageCode: LanguageCode; name: string }[] = [];
+  for (const v of rows) {
+    const formId = dict.forms.get(v.formSlug);
+    if (formId === undefined) continue;
+    const data = {
+      formId,
+      isDefault: v.isDefault,
+      order: v.order,
+      fullImage: v.fullImage,
+      detailImage: v.detailImage,
+      primaryTypeId: v.primaryTypeSlug ? (dict.types.get(v.primaryTypeSlug) ?? null) : null,
+      secondaryTypeId: v.secondaryTypeSlug ? (dict.types.get(v.secondaryTypeSlug) ?? null) : null,
+    };
+    const saved = await prisma.formVariant.upsert({
+      where: { slug: v.slug },
+      create: { slug: v.slug, ...data },
+      update: data,
+    });
+    ids.set(v.slug, saved.id);
+
+    // 中文来自百科的形态对照表，数据源那边这一级基本只有日英
+    const merged: Localized = { ...zh.get(v.slug) };
+    for (const [code, name] of Object.entries(v.names)) merged[code as LanguageCode] ??= name;
+    for (const { languageCode, value: name } of localized(merged)) {
+      names.push({ variantId: saved.id, languageCode, name });
+    }
+  }
+
+  const stale = await prisma.formVariant.deleteMany({
+    where: { slug: { notIn: [...ids.keys()] } },
+  });
+  if (stale.count) console.log(`  清掉 ${stale.count} 个不在快照里的变体`);
+
+  await rebuild(async (tx) => {
+    await tx.formVariantI18n.deleteMany({});
+    await insertInBatches(names, (data) => tx.formVariantI18n.createMany({ data }));
+  });
+  console.log(
+    `形态变体: ${ids.size} 个，译名 ${names.length} 行` +
+      `（其中中文 ${names.filter((n) => n.languageCode.startsWith("zh")).length} 行）`,
+  );
+  return ids;
+}
+
 /** 形态名的中文。数据源那边有三十多个形态一种中文都没给 */
 function wikiForms(): Map<string, Localized> {
   try {
@@ -1427,6 +1486,7 @@ async function seedMoveLearns(dict: {
  */
 async function seedEvolutions(dict: {
   forms: Map<string, number>;
+  variants: Map<string, number>;
   groups: Map<string, number>;
   items: Map<string, number>;
   moves: Map<string, number>;
@@ -1490,6 +1550,8 @@ async function seedEvolutions(dict: {
         nearSpecialRock: e.nearSpecialRock,
         turnUpsideDown: e.turnUpsideDown,
         attackVsDefense: e.attackVsDefense,
+        fromVariantId: e.fromVariantSlug ? (dict.variants.get(e.fromVariantSlug) ?? null) : null,
+        toVariantId: e.toVariantSlug ? (dict.variants.get(e.toVariantSlug) ?? null) : null,
         conditionExpression: e.conditionExpression,
         conditionChance: e.conditionChance,
       },
@@ -1563,7 +1625,8 @@ async function seedEvolutions(dict: {
   console.log(
     `进化: ${data.length} 行，进化链 ${members.size} 条，` +
       `分歧条件 ${data.filter((d) => d.conditionExpression).length} 行，` +
-      `性格条件 ${natureRows} 行`,
+      `性格条件 ${natureRows} 行，` +
+      `细到变体的 ${data.filter((d) => d.toVariantId).length} 行`,
   );
 }
 
@@ -1842,9 +1905,12 @@ async function main() {
     moves: moveIds,
   });
 
+  const variantIds = await seedFormVariants({ forms: formIds, types: typeIds });
+
   const triggers = new Set(read("evolution-triggers").map((t) => t.slug));
   await seedEvolutions({
     forms: formIds,
+    variants: variantIds,
     groups: groupIds,
     items: itemIds,
     moves: moveIds,

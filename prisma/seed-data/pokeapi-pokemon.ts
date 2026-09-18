@@ -93,6 +93,12 @@ export type PokemonFormResponse = {
   types: { slot: number; type: NamedRef }[];
   /** 这个机制哪个版本组引入的 */
   version_group: NamedRef | null;
+  /** 这个变体挂在哪个 variety 下。"wormadam-plant" 这种细分形态用它认回本体 */
+  pokemon: NamedRef;
+  is_default: boolean;
+  /** 同一形态下排第几个 */
+  form_order: number;
+  sprites: { front_default: string | null };
 };
 
 export type ListResponse = { count: number; results: NamedRef[] };
