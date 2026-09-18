@@ -143,6 +143,27 @@
       }
     },
     {
+      "slug": "basculin-blue-striped",
+      "names": {
+        "zh-Hans": "蓝条纹的样子",
+        "zh-Hant": "藍條紋的樣子"
+      }
+    },
+    {
+      "slug": "basculin-red-striped",
+      "names": {
+        "zh-Hans": "红条纹的样子",
+        "zh-Hant": "紅條紋的樣子"
+      }
+    },
+    {
+      "slug": "basculin-white-striped",
+      "names": {
+        "zh-Hans": "白条纹的样子",
+        "zh-Hant": "白條紋的樣子"
+      }
+    },
+    {
       "slug": "baxcalibur-mega",
       "names": {
         "zh-Hans": "超级戟脊龙",
@@ -220,6 +241,27 @@
       }
     },
     {
+      "slug": "castform-rainy",
+      "names": {
+        "zh-Hans": "雨水的样子",
+        "zh-Hant": "雨水的樣子"
+      }
+    },
+    {
+      "slug": "castform-snowy",
+      "names": {
+        "zh-Hans": "雪云的样子",
+        "zh-Hant": "雪雲的樣子"
+      }
+    },
+    {
+      "slug": "castform-sunny",
+      "names": {
+        "zh-Hans": "太阳的样子",
+        "zh-Hant": "太陽的樣子"
+      }
+    },
+    {
       "slug": "centiskorch-gmax",
       "names": {
         "zh-Hans": "超极巨化",
@@ -252,6 +294,20 @@
       "names": {
         "zh-Hans": "超级喷火龙Ｙ",
         "zh-Hant": "超級噴火龍Ｙ"
+      }
+    },
+    {
+      "slug": "cherrim-overcast",
+      "names": {
+        "zh-Hans": "阴天形态",
+        "zh-Hant": "陰天形態"
+      }
+    },
+    {
+      "slug": "cherrim-sunshine",
+      "names": {
+        "zh-Hans": "晴天形态",
+        "zh-Hant": "晴天形態"
       }
     },
     {
@@ -318,6 +374,20 @@
       }
     },
     {
+      "slug": "cramorant-gorging",
+      "names": {
+        "zh-Hans": "大口吞的样子",
+        "zh-Hant": "大口吞的樣子"
+      }
+    },
+    {
+      "slug": "cramorant-gulping",
+      "names": {
+        "zh-Hans": "一口吞的样子",
+        "zh-Hant": "一口吞的樣子"
+      }
+    },
+    {
       "slug": "darkrai-mega",
       "names": {
         "zh-Hans": "超级达克莱伊",
@@ -336,6 +406,34 @@
       "names": {
         "zh-Hans": "洗翠的样子",
         "zh-Hant": "洗翠的樣子"
+      }
+    },
+    {
+      "slug": "deerling-autumn",
+      "names": {
+        "zh-Hans": "秋天的样子",
+        "zh-Hant": "秋天的樣子"
+      }
+    },
+    {
+      "slug": "deerling-spring",
+      "names": {
+        "zh-Hans": "春天的样子",
+        "zh-Hant": "春天的樣子"
+      }
+    },
+    {
+      "slug": "deerling-summer",
+      "names": {
+        "zh-Hans": "夏天的样子",
+        "zh-Hant": "夏天的樣子"
+      }
+    },
+    {
+      "slug": "deerling-winter",
+      "names": {
+        "zh-Hans": "冬天的样子",
+        "zh-Hant": "冬天的樣子"
       }
     },
     {
@@ -420,6 +518,20 @@
       "names": {
         "zh-Hans": "超极巨化",
         "zh-Hant": "超極巨化"
+      }
+    },
+    {
+      "slug": "dudunsparce-three-segment",
+      "names": {
+        "zh-Hans": "三节形态",
+        "zh-Hant": "三節形態"
+      }
+    },
+    {
+      "slug": "dudunsparce-two-segment",
+      "names": {
+        "zh-Hans": "二节形态",
+        "zh-Hant": "二節形態"
       }
     },
     {
@@ -710,6 +822,13 @@
       }
     },
     {
+      "slug": "furfrou-natural",
+      "names": {
+        "zh-Hans": "野生的样子",
+        "zh-Hant": "野生的樣子"
+      }
+    },
+    {
       "slug": "furfrou-pharaoh",
       "names": {
         "zh-Hans": "国王造型",
@@ -777,6 +896,20 @@
       "names": {
         "zh-Hans": "阿罗拉的样子",
         "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "gimmighoul-chest",
+      "names": {
+        "zh-Hans": "宝箱形态",
+        "zh-Hant": "寶箱形態"
+      }
+    },
+    {
+      "slug": "gimmighoul-roaming",
+      "names": {
+        "zh-Hans": "徒步形态",
+        "zh-Hant": "徒步形態"
       }
     },
     {
@@ -948,6 +1081,20 @@
       }
     },
     {
+      "slug": "keldeo-ordinary",
+      "names": {
+        "zh-Hans": "平常的样子",
+        "zh-Hant": "平常的樣子"
+      }
+    },
+    {
+      "slug": "keldeo-resolute",
+      "names": {
+        "zh-Hans": "觉悟的样子",
+        "zh-Hant": "覺悟的樣子"
+      }
+    },
+    {
       "slug": "kingler-gmax",
       "names": {
         "zh-Hans": "超极巨化",
@@ -1064,6 +1211,27 @@
       "names": {
         "zh-Hans": "超级路卡利欧Ｚ",
         "zh-Hant": "超級路卡利歐Ｚ"
+      }
+    },
+    {
+      "slug": "lycanroc-dusk",
+      "names": {
+        "zh-Hans": "黄昏的样子",
+        "zh-Hant": "黃昏的樣子"
+      }
+    },
+    {
+      "slug": "lycanroc-midday",
+      "names": {
+        "zh-Hans": "白昼的样子",
+        "zh-Hant": "白晝的樣子"
+      }
+    },
+    {
+      "slug": "lycanroc-midnight",
+      "names": {
+        "zh-Hans": "黑夜的样子",
+        "zh-Hant": "黑夜的樣子"
       }
     },
     {
@@ -1221,6 +1389,20 @@
       }
     },
     {
+      "slug": "mimikyu-busted",
+      "names": {
+        "zh-Hans": "现形的样子",
+        "zh-Hant": "現形的樣子"
+      }
+    },
+    {
+      "slug": "mimikyu-disguised",
+      "names": {
+        "zh-Hans": "化形的样子",
+        "zh-Hant": "化形的樣子"
+      }
+    },
+    {
       "slug": "miraidon-aquatic-mode",
       "names": {
         "zh-Hans": "浮水模式",
@@ -1354,6 +1536,20 @@
       }
     },
     {
+      "slug": "palafin-hero",
+      "names": {
+        "zh-Hans": "全能形态",
+        "zh-Hant": "全能形態"
+      }
+    },
+    {
+      "slug": "palafin-zero",
+      "names": {
+        "zh-Hans": "平凡形态",
+        "zh-Hant": "平凡形態"
+      }
+    },
+    {
       "slug": "palkia-origin",
       "names": {
         "zh-Hans": "起源形态",
@@ -1442,6 +1638,34 @@
       "names": {
         "zh-Hans": "超级凯罗斯",
         "zh-Hant": "超級凱羅斯"
+      }
+    },
+    {
+      "slug": "poltchageist-artisan",
+      "names": {
+        "zh-Hans": "高档货的样子",
+        "zh-Hant": "高檔貨的樣子"
+      }
+    },
+    {
+      "slug": "poltchageist-counterfeit",
+      "names": {
+        "zh-Hans": "冒牌货的样子",
+        "zh-Hant": "冒牌貨的樣子"
+      }
+    },
+    {
+      "slug": "polteageist-antique",
+      "names": {
+        "zh-Hans": "真品形态",
+        "zh-Hant": "真品形態"
+      }
+    },
+    {
+      "slug": "polteageist-phony",
+      "names": {
+        "zh-Hans": "赝品形态",
+        "zh-Hant": "贗品形態"
       }
     },
     {
@@ -1561,6 +1785,34 @@
       "names": {
         "zh-Hans": "阿罗拉的样子",
         "zh-Hant": "阿羅拉的樣子"
+      }
+    },
+    {
+      "slug": "sawsbuck-autumn",
+      "names": {
+        "zh-Hans": "秋天的样子",
+        "zh-Hant": "秋天的樣子"
+      }
+    },
+    {
+      "slug": "sawsbuck-spring",
+      "names": {
+        "zh-Hans": "春天的样子",
+        "zh-Hant": "春天的樣子"
+      }
+    },
+    {
+      "slug": "sawsbuck-summer",
+      "names": {
+        "zh-Hans": "夏天的样子",
+        "zh-Hant": "夏天的樣子"
+      }
+    },
+    {
+      "slug": "sawsbuck-winter",
+      "names": {
+        "zh-Hans": "冬天的样子",
+        "zh-Hant": "冬天的樣子"
       }
     },
     {
@@ -1746,6 +1998,34 @@
       }
     },
     {
+      "slug": "sinistcha-masterpiece",
+      "names": {
+        "zh-Hans": "杰作的样子",
+        "zh-Hant": "傑作的樣子"
+      }
+    },
+    {
+      "slug": "sinistcha-unremarkable",
+      "names": {
+        "zh-Hans": "凡作的样子",
+        "zh-Hant": "凡作的樣子"
+      }
+    },
+    {
+      "slug": "sinistea-antique",
+      "names": {
+        "zh-Hans": "真品形态",
+        "zh-Hant": "真品形態"
+      }
+    },
+    {
+      "slug": "sinistea-phony",
+      "names": {
+        "zh-Hans": "赝品形态",
+        "zh-Hant": "贗品形態"
+      }
+    },
+    {
       "slug": "skarmory-mega",
       "names": {
         "zh-Hans": "超级盔甲鸟",
@@ -1865,6 +2145,41 @@
       }
     },
     {
+      "slug": "tatsugiri-curly",
+      "names": {
+        "zh-Hans": "上弓姿势",
+        "zh-Hant": "上弓姿勢"
+      }
+    },
+    {
+      "slug": "tatsugiri-droopy",
+      "names": {
+        "zh-Hans": "下垂姿势",
+        "zh-Hant": "下垂姿勢"
+      }
+    },
+    {
+      "slug": "tatsugiri-stretchy",
+      "names": {
+        "zh-Hans": "平挺姿势",
+        "zh-Hant": "平挺姿勢"
+      }
+    },
+    {
+      "slug": "terapagos-stellar",
+      "names": {
+        "zh-Hans": "星晶形态",
+        "zh-Hant": "星晶形態"
+      }
+    },
+    {
+      "slug": "terapagos-terastal",
+      "names": {
+        "zh-Hans": "太晶形态",
+        "zh-Hant": "太晶形態"
+      }
+    },
+    {
       "slug": "thundurus-incarnate",
       "names": {
         "zh-Hans": "化身形态",
@@ -1890,6 +2205,20 @@
       "names": {
         "zh-Hans": "灵兽形态",
         "zh-Hant": "靈獸形態"
+      }
+    },
+    {
+      "slug": "toxtricity-amped",
+      "names": {
+        "zh-Hans": "高调的样子",
+        "zh-Hant": "高調的樣子"
+      }
+    },
+    {
+      "slug": "toxtricity-low-key",
+      "names": {
+        "zh-Hans": "低调的样子",
+        "zh-Hant": "低調的樣子"
       }
     },
     {
@@ -2103,6 +2432,20 @@
       }
     },
     {
+      "slug": "wishiwashi-school",
+      "names": {
+        "zh-Hans": "鱼群的样子",
+        "zh-Hant": "魚群的樣子"
+      }
+    },
+    {
+      "slug": "wishiwashi-solo",
+      "names": {
+        "zh-Hans": "单独的样子",
+        "zh-Hant": "單獨的樣子"
+      }
+    },
+    {
       "slug": "wooper-paldea",
       "names": {
         "zh-Hans": "帕底亚的样子",
@@ -2235,37 +2578,18 @@
     "arcanine Lord Form",
     "arceus Arceus",
     "avalugg Lord Form",
-    "basculin Blue-Striped Form",
-    "basculin Red-Striped Form",
-    "basculin White-Striped Form",
     "calyrex Ice Rider",
     "calyrex Shadow Rider",
     "castform Normal",
-    "castform Rainy Form",
-    "castform Snowy Form",
-    "castform Sunny Form",
-    "cherrim Overcast Form",
-    "cherrim Sunshine Form",
-    "cramorant Gorging Form",
-    "cramorant Gulping Form",
     "darmanitan Galarian Form",
     "darmanitan Standard Mode",
     "darmanitan Zen Mode",
-    "deerling Autumn Form",
-    "deerling Spring Form",
-    "deerling Summer Form",
-    "deerling Winter Form",
-    "dudunsparce Three-Segment Form",
-    "dudunsparce Two-Segment Form",
     "eiscue Ice Face",
     "eiscue Noice Face",
     "electrode Lord Form",
-    "furfrou Natural Form",
     "gastrodon East Sea",
     "gastrodon West Sea",
     "genesect Genesect",
-    "gimmighoul Chest Form",
-    "gimmighoul Roaming Form",
     "gourgeist Jumbo Variety",
     "gourgeist Large Variety",
     "gourgeist Medium Variety",
@@ -2274,21 +2598,14 @@
     "groudon Groudon",
     "hoopa Hoopa Confined",
     "hoopa Hoopa Unbound",
-    "keldeo Ordinary Form",
-    "keldeo Resolute Form",
     "kleavor Lord Form",
     "kyogre Kyogre",
     "kyurem Black Kyurem",
     "kyurem Kyurem",
     "kyurem White Kyurem",
     "lilligant Lady Form",
-    "lycanroc Dusk Form",
-    "lycanroc Midday Form",
-    "lycanroc Midnight Form",
     "magearna Original Color",
     "meowstic Mega Meowstic",
-    "mimikyu Busted Form",
-    "mimikyu Disguised Form",
     "minior Blue Core",
     "minior Green Core",
     "minior Indigo Core",
@@ -2303,12 +2620,6 @@
     "necrozma Dusk Mane",
     "necrozma Ultra Necrozma",
     "ogerpon Teal Mask",
-    "palafin Hero Form",
-    "palafin Zero Form",
-    "poltchageist Artisan Form",
-    "poltchageist Counterfeit Form",
-    "polteageist Antique Form",
-    "polteageist Phony Form",
     "pumpkaboo Jumbo Variety",
     "pumpkaboo Large Variety",
     "pumpkaboo Medium Variety",
@@ -2319,34 +2630,17 @@
     "rotom Mow Rotom",
     "rotom Rotom",
     "rotom Wash Rotom",
-    "sawsbuck Autumn Form",
-    "sawsbuck Spring Form",
-    "sawsbuck Summer Form",
-    "sawsbuck Winter Form",
     "shellos East Sea",
     "shellos West Sea",
-    "sinistcha Masterpiece Form",
-    "sinistcha Unremarkable Form",
-    "sinistea Antique Form",
-    "sinistea Phony Form",
-    "tatsugiri Curly Form",
-    "tatsugiri Droopy Form",
     "tatsugiri Mega Tatsugiri",
-    "tatsugiri Stretchy Form",
     "tauros Paldean Form / Aqua Breed",
     "tauros Paldean Form / Blaze Breed",
     "tauros Paldean Form / Combat Breed",
     "terapagos Normal Form",
-    "terapagos Stellar Form",
-    "terapagos Terastal Form",
-    "toxtricity Amped Form",
     "toxtricity Gigantamax",
-    "toxtricity Low Key Form",
     "unown One form",
     "urshifu Gigantamax",
     "vivillon Poké Ball Pattern",
-    "wishiwashi School Form",
-    "wishiwashi Solo Form",
     "xerneas Active Mode",
     "xerneas Neutral Mode",
     "zacian Crowned Sword",

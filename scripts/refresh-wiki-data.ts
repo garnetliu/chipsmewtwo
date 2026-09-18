@@ -1906,7 +1906,7 @@ function formSuffix(en: string): string {
   // 「Heart Trim」（多丽米亚修剪）、「Small Size」（南瓜怪人大小）、
   // 「Baile Style」（花舞鸟舞姿）。Mode 和 Build 不能去 —— 数据源的
   // slug 里带着它们（miraidon-drive-mode）
-  return toSlug(name.replace(/\s+(Formes?|Pattern|Flower|Cloak|Trim|Size|Style)$/i, ""));
+  return toSlug(name.replace(/\s+(Forme?s?|Pattern|Flower|Cloak|Trim|Size|Style)$/i, ""));
 }
 
 /**
