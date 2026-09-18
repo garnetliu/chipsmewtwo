@@ -323,6 +323,9 @@ function renderedParagraphs(html: string): string | null {
       : text.slice(first.index + first[0].length, headings[1]?.index ?? text.length);
   }
 
+  // 选定小节之后的全文留一份 —— 一个 <p> 都没有的条目要从这里面捞列表项
+  const section = text;
+
   // 正文之后的第一个列表起是补充条款，整段切掉。
   // 从第一个 <p> 往后找，不从头找 ——「主页面：某某」那种提示框是 <dl>，
   // 排在正文前面，从头找的话一上来就截没了（飘浮、寄生种子都栽在这儿）
@@ -338,8 +341,42 @@ function renderedParagraphs(html: string): string | null {
     const line = htmlToText(m[1]!);
     if (line) paragraphs.push(line);
   }
-  const joined = paragraphs.join("");
+
+  // 有些条目的效果段整段是列表，一个 <p> 都没有（腐蚀、一猩一意就是这样）。
+  // 那就取最外层的 <li>，嵌套那层是补充条款，性质跟段落后面跟的列表一样
+  const joined = paragraphs.length ? paragraphs.join("") : topLevelListItems(section).join("");
   return joined.length >= MIN_EFFECT_LENGTH ? joined : null;
+}
+
+/**
+ * 最外层的 <li> 文本。
+ *
+ * 嵌套进去的那层是补充条款，跳过 —— 跟段落后面跟的列表一个性质，
+ * 比 PokeAPI 的 effect 细一个量级
+ */
+function topLevelListItems(html: string): string[] {
+  const out: string[] = [];
+  let depth = 0;
+  let buffer: string | null = null;
+
+  for (const m of html.matchAll(/<(\/?)(ul|ol|li)\b[^>]*>|([^<]+)|<[^>]+>/g)) {
+    const [, closing, tag, text] = m;
+    if (tag === "ul" || tag === "ol") {
+      depth += closing ? -1 : 1;
+      continue;
+    }
+    if (tag === "li") {
+      if (!closing && depth === 1) buffer = "";
+      else if (closing && buffer !== null) {
+        const line = htmlToText(buffer);
+        if (line) out.push(line);
+        buffer = null;
+      }
+      continue;
+    }
+    if (buffer !== null && depth === 1 && text) buffer += text;
+  }
+  return out;
 }
 
 /** 行内标签直接拆掉，不补空格 —— 中文里 <a> 包的是词，补了就断句 */
@@ -1170,6 +1207,16 @@ async function abilities(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
     if (!titleOf.has(slug) && [...slugs.values()].includes(slug)) {
       titleOf.set(slug, `${name}（特性）`);
       nameOf.set(slug, name);
+    }
+  }
+
+  // 索引页本身有漏（气闸就不在列表里），拿数据源的中文名兜底 ——
+  // 百科的条目是有的，只是没被列进去
+  for (const item of readSnapshot<{ slug: string; names: Localized }>("abilities")) {
+    const name = item.names["zh-Hans"];
+    if (name && !titleOf.has(item.slug)) {
+      titleOf.set(item.slug, `${name}（特性）`);
+      nameOf.set(item.slug, name);
     }
   }
 
