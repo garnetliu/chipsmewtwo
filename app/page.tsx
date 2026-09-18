@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="container mx-auto flex flex-col gap-6 py-4">
+    <main data-slot="home-entries" className="flex flex-col gap-6 px-6 py-8">
       <Link href="/pokemon" className={buttonVariants({ variant: "secondary", size: "sm" })}>
         Pokemon
       </Link>
@@ -20,6 +20,6 @@ export default function Home() {
       <Link href="/effort-values" className={buttonVariants({ variant: "secondary", size: "sm" })}>
         努力值模拟器
       </Link>
-    </div>
+    </main>
   );
 }
