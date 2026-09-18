@@ -106,12 +106,17 @@ function overrides(): SeedOverrides {
   return JSON.parse(readFileSync(path, "utf8")) as SeedOverrides;
 }
 
-/** { code: 文本 } → 一行行的 upsert 数据。缺的语言是数据源没收录，不插行 */
+/**
+ * { code: 文本 } → 一行行的 upsert 数据。
+ *
+ * 缺的语言是数据源没收录，不插行；空字符串一样当没有 ——
+ * 数据源有些条目给的就是空串，插进去等于「有这一行但读出来是空」，
+ * 前端没法把它和真的没收录区分开
+ */
 function localized(texts: Localized): { languageCode: LanguageCode; value: string }[] {
-  return Object.entries(texts).map(([languageCode, value]) => ({
-    languageCode: languageCode as LanguageCode,
-    value,
-  }));
+  return Object.entries(texts).flatMap(([languageCode, value]) =>
+    value?.trim() ? [{ languageCode: languageCode as LanguageCode, value }] : [],
+  );
 }
 
 /** 分批塞。十万行一次性过去会超出 Postgres 的参数上限 */
@@ -150,10 +155,12 @@ function effectRows(
   const out: EffectRow[] = [];
   for (const generationId of generationIds) {
     for (const [code, text] of Object.entries(effects[String(generationId)] ?? {})) {
+      // 数据源偶尔给空串，跳过 —— 没有说明就该没有这一行
+      if (!text.effect.trim()) continue;
       out.push({
         generationId,
         languageCode: code as LanguageCode,
-        shortEffect: text.short,
+        shortEffect: text.short?.trim() ? text.short : null,
         effect: text.effect,
       });
     }
@@ -181,6 +188,7 @@ function flavorRows(
     const groupId = groupIds.get(slug);
     if (groupId === undefined) continue;
     const merged = { ...flavors[slug], ...chinese?.[slug] };
+    // localized 已经把空串挡掉了
     for (const { languageCode, value: text } of localized(merged)) {
       out.push({ groupId, languageCode, text });
     }
