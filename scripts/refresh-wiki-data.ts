@@ -271,16 +271,20 @@ async function slugsById(resource: string): Promise<Map<number, string>> {
  * （蓄电的效果段整段是 {{特性效果/属性无效|电|回复}}），源码里展不开，
  * 渲染完才是「具有该特性的宝可梦不受电属性招式的影响……」。
  *
- * 节号写死 1 —— 特性页的第 1 节固定是「特性效果」，招式页是「招式附加效果」。
+ * 节号默认 1 —— 特性页的第 1 节固定是「特性效果」，招式页是「招式附加效果」。
  * 返回的 HTML 带着那一节的标题，调用方顺手核对，对不上就当这页没有说明
  */
-async function fetchSectionHtml(title: string, variant: string): Promise<string | null> {
+async function fetchSectionHtml(
+  title: string,
+  variant: string,
+  section = "1",
+): Promise<string | null> {
   type Response = { parse?: { text: string }; error?: { code: string } };
   const data = await wiki<Response>({
     action: "parse",
     page: RESOLVED_TITLES.get(title) ?? title,
     prop: "text",
-    section: "1",
+    section,
     disabletoc: "1",
     redirects: "1",
     converttitles: "zh-hans",
@@ -346,6 +350,25 @@ function renderedParagraphs(html: string): string | null {
   // 那就取最外层的 <li>，嵌套那层是补充条款，性质跟段落后面跟的列表一样
   const joined = paragraphs.length ? paragraphs.join("") : topLevelListItems(section).join("");
   return joined.length >= MIN_EFFECT_LENGTH ? joined : null;
+}
+
+/**
+ * 提示框里「主页面：某某」指到哪一页。
+ *
+ * 有些招式的正文就一句「主页面：森林咒术（状态）」，内容全在那个条目上。
+ * renderedParagraphs 会把提示框当噪音删掉，所以正文为空时回来这儿看一眼。
+ *
+ * 提示框有时是 <div class="hatnote">，有时就是个裸 <dl><dd>（森林诅咒那页），
+ * 所以两种都扫，靠里面有没有「主页面」认
+ */
+function hatnoteTarget(html: string): string | null {
+  for (const block of html.matchAll(/<(div|dl)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
+    const body = block[2]!;
+    if (!/主页面|主頁面/.test(htmlToText(body))) continue;
+    const link = /<a[^>]*href="\/wiki\/([^"#?]+)"/.exec(body);
+    if (link) return decodeURIComponent(link[1]!.replace(/_/g, " "));
+  }
+  return null;
 }
 
 /**
@@ -533,6 +556,35 @@ function parseItemFlavors(source: string, unknownAbbr: Set<string>): FlavorsByGr
 }
 
 const ITEM_EFFECT_HEADINGS = ["使用效果", "效果", "道具效果", "游戏中"];
+
+/** 中文属性名 → slug。简繁两份都收，源码里两种写法都有 */
+function typeSlugByName(): Map<string, string> {
+  type Type = { slug: string; names: Partial<Record<LanguageCode, string>> };
+  const rows = JSON.parse(readFileSync(join(SEED_DATA_DIR, "types.json"), "utf8")) as Type[];
+  const out = new Map<string, string>();
+  for (const row of rows) {
+    for (const name of [row.names["zh-Hans"], row.names["zh-Hant"]]) {
+      if (name) out.set(name, row.slug);
+    }
+  }
+  return out;
+}
+
+/**
+ * 这件道具强化哪个属性的招式。
+ *
+ * 木炭、磁铁、各种薰香这二十来件，slug 里没有属性（charcoal 不含 fire），
+ * 只能从正文认。百科的写法很齐整：
+ *   * 携带该道具的宝可梦的{{type|火}}招式威力提升20%。
+ *
+ * 只认这一句。属性招式在别的语境里也会出现（「对{{type|水}}招式免疫」），
+ * 所以「威力提升」这几个字是必须的
+ */
+function parseItemBoost(source: string, types: Map<string, string>): string | null {
+  const plain = source.replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, "$1").replace(/\[\[|\]\]/g, "");
+  const found = /\{\{type\|([^}|]+)\}\}招式威力提升/.exec(plain);
+  return found ? (types.get(found[1]!.trim()) ?? null) : null;
+}
 
 function parseItemEffect(source: string): string | null {
   for (const heading of ITEM_EFFECT_HEADINGS) {
@@ -1129,6 +1181,31 @@ function wrap<T>(rows: T[], unmatched: Set<string>): WikiSnapshot<T> {
  * 简繁是 MediaWiki 在渲染时转换出来的，源码里只有一份（正文按简体写），
  * 所以要拿繁体就得带 variant 再请求一遍
  */
+/**
+ * 一页一个变体的正文。
+ *
+ * 正文空了但提示框写着「主页面：某某」的话跟过去再抓一次 —— 森林诅咒的
+ * 招式页整节就只有那一句，说明在「森林咒术（状态）」上。那种条目的正文在
+ * 第 0 节（开头没有标题的那段），所以两节都试
+ */
+async function sectionText(title: string, variant: string): Promise<string | null> {
+  const html = await fetchSectionHtml(title, variant);
+  if (!html) return null;
+
+  const text = renderedParagraphs(html);
+  if (text) return text;
+
+  const target = hatnoteTarget(html);
+  if (!target) return null;
+
+  for (const section of ["1", "0"]) {
+    const linked = await fetchSectionHtml(target, variant, section);
+    const linkedText = linked ? renderedParagraphs(linked) : null;
+    if (linkedText) return linkedText;
+  }
+  return null;
+}
+
 async function fillEffects(
   entries: { slug: string; title: string }[],
 ): Promise<Map<string, Localized>> {
@@ -1143,14 +1220,10 @@ async function fillEffects(
         // 而这一轮已经跑掉的几百页全在内存里，抛出去就都没了
         try {
           const [hans, hant] = await Promise.all([
-            fetchSectionHtml(entry.title, "zh-hans"),
-            fetchSectionHtml(entry.title, "zh-hant"),
+            sectionText(entry.title, "zh-hans"),
+            sectionText(entry.title, "zh-hant"),
           ]);
-          return {
-            slug: entry.slug,
-            hans: hans ? renderedParagraphs(hans) : null,
-            hant: hant ? renderedParagraphs(hant) : null,
-          };
+          return { slug: entry.slug, hans, hant };
         } catch (err) {
           failed.push(`${entry.title}: ${err instanceof Error ? err.message : String(err)}`);
           return { slug: entry.slug, hans: null, hant: null };
@@ -1380,6 +1453,7 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
   for (const [title, content] of bare) pages.set(title, content);
   for (const [title, content] of suffixed) pages.set(title.replace(/（道具）$/, ""), content);
 
+  const types = typeSlugByName();
   const unknownAbbr = new Set<string>();
   const rows: WikiEffectSnapshot[] = [];
   for (const [slug, title] of titleOf) {
@@ -1391,7 +1465,8 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
     }
     const effect = parseItemEffect(source);
     const flavors = parseItemFlavors(source, unknownAbbr);
-    if (!effect && !Object.keys(flavors).length) {
+    const boostTypeSlug = parseItemBoost(source, types);
+    if (!effect && !boostTypeSlug && !Object.keys(flavors).length) {
       unmatched.add(`${slug} ${title}`);
       continue;
     }
@@ -1399,12 +1474,14 @@ async function items(): Promise<WikiSnapshot<WikiEffectSnapshot>> {
       slug,
       effect: effect ? { "zh-Hans": effect } : {},
       flavors,
+      ...(boostTypeSlug ? { boostTypeSlug } : {}),
       ...(nameFromWiki.has(slug) ? { names: { "zh-Hans": nameFromWiki.get(slug)! } } : {}),
     });
   }
   if (unknownAbbr.size) {
     console.warn(`  ⚠ 认不出的游戏缩写: ${[...unknownAbbr].sort().join(", ")}`);
   }
+  console.log(`  属性强化: ${rows.filter((r) => r.boostTypeSlug).length} 件`);
 
   // 源码里只有简体，繁体交给百科的字词转换表转一遍
   // 游戏文案不用转，它在源码里就是 -{zh-hans:…;zh-hant:…}- 写死的

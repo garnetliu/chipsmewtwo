@@ -150,6 +150,7 @@ model Generation {
   itemEffects       ItemEffectI18n[]
   introducedTypes   Type[]
   typeEffectiveness TypeEffectiveness[]
+  itemTypeBoosts    ItemTypeBoost[]
 
   @@index([mainRegionId])
   @@map("generation")
@@ -214,6 +215,8 @@ model Group {
   moveFlavors      MoveFlavorI18n[]
   itemFlavors      ItemFlavorI18n[]
   zMoveFlavors     ZMoveFlavorI18n[]
+  itemFormChanges  ItemFormChange[]
+  machines         Machine[]
   maxMoveFlavors   MaxMoveFlavorI18n[]
 
   @@index([generationId])
@@ -344,8 +347,10 @@ model Form {
   moveLearns   MoveLearn[]
 
   /// 这个形态专属的Ｚ招式和超极巨招式
-  zMoves   ZMove[]
-  maxMoves MaxMove[]
+  zMoves          ZMove[]
+  maxMoves        MaxMove[]
+  /// 变成这个形态要携带哪件道具（超级石、宝珠）
+  itemFormChanges ItemFormChange[]
 
   evolvesTo        Evolution[] @relation("EvolutionFrom")
   evolvesFrom      Evolution[] @relation("EvolutionTo")
@@ -559,10 +564,16 @@ model Item {
   effects ItemEffectI18n[]
   flavors ItemFlavorI18n[]
 
-  usedInEvolutions Evolution[] @relation("EvolutionItem")
-  heldInEvolutions Evolution[] @relation("EvolutionHeldItem")
+  usedInEvolutions Evolution[]      @relation("EvolutionItem")
+  heldInEvolutions Evolution[]      @relation("EvolutionHeldItem")
   /// 这件道具是哪个专属Ｚ招式要携带的Ｚ纯晶
-  zMoveCrystalFor  ZMove[]     @relation("ZMoveCrystal")
+  zMoveCrystalFor  ZMove[]          @relation("ZMoveCrystal")
+  itemFormChanges  ItemFormChange[]
+  itemTypeChange   ItemTypeChange?
+  itemTypeBoosts   ItemTypeBoost[]
+  itemNature       ItemNature?
+  machines         Machine[]
+  berry            Berry?
 
   @@index([categorySlug])
   @@map("item")
@@ -633,6 +644,160 @@ model ItemFlavorI18n {
   @@map("item_flavor_i18n")
 }
 
+// ─────────────────────────────────────────────────────────────
+// 道具的机制。
+//
+// 不同类型道具的机制压根不是一种数据：超级石的机制是一条关系
+// （哪件石头让哪只宝可梦变成哪个形态），石板既改属性又强化招式威力，
+// 技能机器教的招式还随版本组变；而剩饭那句「每回合回复 1/16」
+// 只能是文字，校园桌巾干脆没有机制。
+//
+// 所以能结构化的按形状各建一张窄表，只能是文字的留在 ItemEffectI18n，
+// 没有机制的在这些表里一行都没有 —— 「机制表里查不到这件道具」本身就是
+// 信息，前端据此显示「无对战效果」而不是「说明暂缺」。
+//
+// 拆表而不是像 Evolution 那样用一排可空列：那边同一个条件
+// （itemId、minLevel）会出现在多种触发方式下，拆表只会把同一列
+// 复制进多张表；这里几种机制的列互不重叠，拆完每张表的列都是必填的。
+// 一件道具可以同时出现在多张表里 —— 石板既改属性又强化威力，
+// 金属膜既强化钢招式又是携带进化道具（后者在 Evolution.heldItemId）
+// ─────────────────────────────────────────────────────────────
+
+/// 携带某道具就变成某形态。超级石那 100 件，加上红蓝色宝珠的原始回归。
+///
+/// 数据源是从形态那头给的（pokemon-form 的 trigger_conditions），
+/// 导入时反向建关系。烈空坐没有行 —— 它靠画龙点睛超级进化，不靠石头
+model ItemFormChange {
+  itemId Int
+  item   Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  formId Int
+  form   Form @relation(fields: [formId], references: [id], onDelete: Cascade)
+
+  /// 这个机制哪个版本组引入的。超级石是 x-y 或 oras，传说 Z-A 那批是 mega-dimension
+  groupId Int?
+  group   Group? @relation(fields: [groupId], references: [id])
+
+  @@id([itemId, formId])
+  @@index([formId])
+  @@index([groupId])
+  @@map("item_form_change")
+}
+
+/// 携带或使用某道具改变属性。石板改阿尔宙斯、记忆碟改银伴战兽，
+/// 太晶碎块换的是太晶属性。
+///
+/// 存属性而不是形态：阿尔宙斯和银伴战兽的属性形态在数据源那边是
+/// pokemon-form 级的，而 Form 表是 variety 级 —— 走形态得先补两百多个
+/// 形态导入，而这几类道具的效果本来就是「变成某属性」
+model ItemTypeChange {
+  itemId Int  @id
+  item   Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  typeId Int
+  type   Type @relation(fields: [typeId], references: [id])
+
+  @@index([typeId])
+  @@map("item_type_change")
+}
+
+/// 强化某属性招式的威力。宝石、木炭磁铁那类属性强化道具，石板也兼这个作用
+model ItemTypeBoost {
+  itemId Int
+  item   Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  typeId Int
+  type   Type @relation(fields: [typeId], references: [id])
+
+  /// 百分数，20 表示威力 +20%
+  boostPercent Int
+
+  /// 倍率改过的带世代：宝石第五世代是 +50%，第六世代起 +30%。
+  /// 一直没变的留空
+  generationId Int?
+  generation   Generation? @relation(fields: [generationId], references: [id])
+
+  @@id([itemId, typeId])
+  @@index([typeId])
+  @@map("item_type_boost")
+}
+
+/// 性格薄荷。加成不用存 —— 连到 Nature 就带出「攻击 ×1.1 / 特攻 ×0.9」
+model ItemNature {
+  itemId     Int    @id
+  item       Item   @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  natureSlug String
+  nature     Nature @relation(fields: [natureSlug], references: [slug])
+
+  @@index([natureSlug])
+  @@map("item_nature")
+}
+
+/// 技能机器教哪个招式。
+///
+/// 同一个编号在不同版本组教的不一样 —— 招式学习器 01 在红蓝是百万吨拳击，
+/// 在朱紫是别的，所以主键是「道具 + 版本组」。
+/// 跟 MoveLearn 不是一回事：那张是「形态 × 招式 × 学习方式」
+model Machine {
+  itemId  Int
+  item    Item  @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  groupId Int
+  group   Group @relation(fields: [groupId], references: [id])
+  moveId  Int
+  move    Move  @relation(fields: [moveId], references: [id])
+
+  @@id([itemId, groupId])
+  @@index([moveId])
+  @@index([groupId])
+  @@map("machine")
+}
+
+/// 树果的硬度，5 级。做树果奶昔和宝芬时用得上
+enum BerryFirmness {
+  VERY_SOFT
+  SOFT
+  HARD
+  VERY_HARD
+  SUPER_HARD
+}
+
+/// 树果自己那套数值。
+///
+/// 树果本身也是道具（item 表里有行，带译名、图片、说明），这张表只装
+/// 「只有树果才有」的 —— 种下去多久能收、五种口味各多强，以及自然之恩
+/// 这个招式的威力和属性（那招式没有固定数值，全看携带的树果）
+model Berry {
+  itemId Int  @id
+  item   Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  // 种植那一组数值数据源有四颗没给（智慧果、芒果果、荷泡果、蔷薇果），
+  // 所以整组可空 —— 空着不猜
+
+  /// 每个生长阶段要多少小时，一共四个阶段
+  growthTime  Int?
+  /// 一次最多收几颗
+  maxHarvest  Int?
+  /// 大小，毫米
+  size        Int?
+  /// 光滑度，做宝芬时影响品质
+  smoothness  Int?
+  /// 土壤干燥速度，越大越费水
+  soilDryness Int?
+  firmness    BerryFirmness?
+
+  naturalGiftPower  Int?
+  naturalGiftTypeId Int?
+  naturalGiftType   Type? @relation(fields: [naturalGiftTypeId], references: [id])
+
+  /// 五种口味的强度。性格决定宝可梦喜欢哪种口味（见 Nature.likesFlavor），
+  /// 吃到喜欢的涨亲密度、讨厌的掉亲密度
+  spicy  Int
+  dry    Int
+  sweet  Int
+  bitter Int
+  sour   Int
+
+  @@index([naturalGiftTypeId])
+  @@map("berry")
+}
+
 /// 进化链。同一条链上的形态共享一个 id，一句 where evolutionChainId
 /// 就能取出整条链的全部成员，不用顺着 Evolution 一条条往前后追。
 ///
@@ -701,13 +866,18 @@ model PokedexNumber {
   @@map("pokedex_number")
 }
 
-/// 性格影响的能力项。ＨＰ不受性格影响，所以不在里面
+/// 能力项。
+///
+/// 性格只碰前五项（ＨＰ不受性格影响，命中和闪避也不是性格管的），
+/// 招式的能力变化会碰到命中和闪避 —— 泼沙降命中、软软叫降闪避
 enum StatKind {
   ATTACK
   DEFENSE
   SPECIAL_ATTACK
   SPECIAL_DEFENSE
   SPEED
+  ACCURACY
+  EVASION
 }
 
 /// 树果的五种口味。性格决定宝可梦喜欢和讨厌哪一种
@@ -733,7 +903,8 @@ model Nature {
   likesFlavor   BerryFlavor?
   hatesFlavor   BerryFlavor?
 
-  names NatureI18n[]
+  names       NatureI18n[]
+  itemNatures ItemNature[]
 
   @@map("nature")
 }
@@ -892,6 +1063,9 @@ model Type {
   moveGenerations  MoveGeneration[]
   zMoves           ZMove[]
   maxMoves         MaxMove[]
+  itemTypeChanges  ItemTypeChange[]
+  itemTypeBoosts   ItemTypeBoost[]
+  berryNaturalGift Berry[]
   attackingAgainst TypeEffectiveness[] @relation("AttackingType")
   defendingAgainst TypeEffectiveness[] @relation("DefendingType")
   knownMoveTypeFor Evolution[]         @relation("EvolutionKnownMoveType")
@@ -1095,17 +1269,17 @@ model Move {
   metaCategory     MoveMetaCategory? @relation(fields: [metaCategorySlug], references: [slug])
 
   /// 连击招式的次数范围。双弹瓦斯是 2~2，乱击是 2~5，非连击招式为空
-  minHits  Int?
-  maxHits  Int?
+  minHits       Int?
+  maxHits       Int?
   /// 持续回合数范围。撒水雾那种持续状态用得上
-  minTurns Int?
-  maxTurns Int?
+  minTurns      Int?
+  maxTurns      Int?
   /// 吸血比例，百分数。正数回血（吸取 50），负数是反作用力（舍身冲撞 -33）
-  drain    Int?
+  drain         Int?
   /// 回复自身的比例，百分数。自我再生是 50
-  healing  Int?
+  healing       Int?
   /// 击中要害等级的加成。攀瀑、飞叶快刀是 1
-  critRate Int?
+  critRate      Int?
   /// 触发异常状态的几率，百分数
   ailmentChance Int?
   /// 让对手畏缩的几率
@@ -1134,10 +1308,13 @@ model Move {
   flavors     MoveFlavorI18n[]
   learns      MoveLearn[]
 
-  knownMoveFor Evolution[] @relation("EvolutionKnownMove")
-  usedMoveFor  Evolution[] @relation("EvolutionUsedMove")
+  knownMoveFor Evolution[]      @relation("EvolutionKnownMove")
+  usedMoveFor  Evolution[]      @relation("EvolutionUsedMove")
   /// 专属 Z 招式由哪个招式转化而来
   zMoveFor     ZMove[]
+  /// 哪些技能机器教这个招式
+  machines     Machine[]
+  statChanges  MoveStatChange[]
 
   @@index([targetSlug])
   @@index([ailmentSlug])
@@ -1361,6 +1538,22 @@ model MoveEffectI18n {
 
   @@id([moveId, generationId, languageCode])
   @@map("move_effect_i18n")
+}
+
+/// 招式改哪项能力、改几级。
+///
+/// 剑舞是攻击 +2，破壳是防御 −1 特防 −1 攻击 +2 特攻 +2 速度 +2，
+/// 近身战是防御 −1 特防 −1。Move.statChance 存的是触发几率，
+/// 这张表存改什么、改多少 —— 光有几率不知道改的是哪一项
+model MoveStatChange {
+  moveId Int
+  move   Move     @relation(fields: [moveId], references: [id], onDelete: Cascade)
+  stat   StatKind
+  /// −3 到 +3
+  change Int
+
+  @@id([moveId, stat])
+  @@map("move_stat_change")
 }
 
 /// 招式在游戏里显示的那句介绍文案，按版本组存。

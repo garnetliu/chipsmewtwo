@@ -135,6 +135,68 @@ export type AbilitySnapshot = {
   flavors: FlavorsByGroup;
 };
 
+/** 能力项。性格只碰前五项，招式的能力变化会碰到命中和闪避 */
+export type StatName =
+  "ATTACK" | "DEFENSE" | "SPECIAL_ATTACK" | "SPECIAL_DEFENSE" | "SPEED" | "ACCURACY" | "EVASION";
+
+/**
+ * 道具机制。能结构化的按形状分开存，只能是文字的留在 ItemSnapshot.effects。
+ * 一件道具可以同时出现在几份里（石板既改属性又强化威力），也可以一份都不在
+ */
+export type ItemFormChangeSnapshot = {
+  itemSlug: string;
+  formSlug: string;
+  /** 这个机制哪个版本组引入的 */
+  groupSlug: string | null;
+};
+
+export type ItemTypeChangeSnapshot = {
+  itemSlug: string;
+  typeSlug: string;
+};
+
+export type ItemTypeBoostSnapshot = {
+  itemSlug: string;
+  typeSlug: string;
+  /** 百分数，20 表示威力 +20% */
+  boostPercent: number;
+  /** 倍率改过的带世代，一直没变的留空 */
+  generationId: number | null;
+};
+
+export type ItemNatureSnapshot = {
+  itemSlug: string;
+  natureSlug: string;
+};
+
+/** 技能机器教哪个招式。同一个编号在不同版本组教的不一样 */
+export type MachineSnapshot = {
+  itemSlug: string;
+  groupSlug: string;
+  moveSlug: string;
+};
+
+/** 树果自己那套数值。树果本身在 items 里也有一行 */
+export type BerrySnapshot = {
+  itemSlug: string;
+  /** 种植那组数值数据源有四颗没给，整组可空 */
+  growthTime: number | null;
+  maxHarvest: number | null;
+  size: number | null;
+  smoothness: number | null;
+  soilDryness: number | null;
+  firmness: "VERY_SOFT" | "SOFT" | "HARD" | "VERY_HARD" | "SUPER_HARD" | null;
+  /** 自然之恩的威力和属性 —— 那招式没有固定数值，全看携带的树果 */
+  naturalGiftPower: number | null;
+  naturalGiftTypeSlug: string | null;
+  /** 五种口味的强度 */
+  spicy: number;
+  dry: number;
+  sweet: number;
+  bitter: number;
+  sour: number;
+};
+
 /** 招式在某一世代的数值 */
 export type MoveGenerationSnapshot = {
   typeSlug: string;
@@ -171,6 +233,8 @@ export type MoveSnapshot = {
   /** 出招顺序。电光一闪 +1、报仇 -3 */
   priority: number;
   meta: MoveMetaSnapshot;
+  /** 改哪项能力、改几级。剑舞是攻击 +2，破壳有五项 */
+  statChanges: { stat: StatName; change: number }[];
   /** 每代一份，key 是世代号字符串。数值跨世代会变，压成一行就把这个信息丢了 */
   generations: Record<string, MoveGenerationSnapshot>;
   /** 机制说明，只有 en / fr。中文见 wiki-moves.json */
@@ -330,6 +394,12 @@ export type SeedData = {
   "move-targets": NamedSnapshot[];
   "move-ailments": NamedSnapshot[];
   "move-meta-categories": NamedSnapshot[];
+  "item-form-changes": ItemFormChangeSnapshot[];
+  "item-type-changes": ItemTypeChangeSnapshot[];
+  "item-type-boosts": ItemTypeBoostSnapshot[];
+  "item-natures": ItemNatureSnapshot[];
+  machines: MachineSnapshot[];
+  berries: BerrySnapshot[];
   moves: MoveSnapshot[];
   "z-moves": ZMoveSnapshot[];
   "max-moves": MaxMoveSnapshot[];
@@ -426,6 +496,11 @@ export type WikiEffectSnapshot = {
   flavors: FlavorsByGroup;
   /** 只有招式有 */
   flags?: MoveFlags;
+  /**
+   * 只有道具有：这件道具强化哪个属性的招式。
+   * 木炭、磁铁那类 slug 推不出来，从百科的 {{type|火}} 模板抓
+   */
+  boostTypeSlug?: string;
   /**
    * 译名，只在数据源没给中文名时才有。
    * 邮件、超级石那批数据源一直空着，百科的列表页有

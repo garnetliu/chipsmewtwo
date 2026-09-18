@@ -1,0 +1,218 @@
+[
+  {
+    "itemSlug": "blank-plate",
+    "typeSlug": "normal",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "bug-gem",
+    "typeSlug": "bug",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "dark-gem",
+    "typeSlug": "dark",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "draco-plate",
+    "typeSlug": "dragon",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "dragon-gem",
+    "typeSlug": "dragon",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "dread-plate",
+    "typeSlug": "dark",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "earth-plate",
+    "typeSlug": "ground",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "electric-gem",
+    "typeSlug": "electric",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "fairy-gem",
+    "typeSlug": "fairy",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "fighting-gem",
+    "typeSlug": "fighting",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "fire-gem",
+    "typeSlug": "fire",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "fist-plate",
+    "typeSlug": "fighting",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "flame-plate",
+    "typeSlug": "fire",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "flying-gem",
+    "typeSlug": "flying",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "ghost-gem",
+    "typeSlug": "ghost",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "grass-gem",
+    "typeSlug": "grass",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "ground-gem",
+    "typeSlug": "ground",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "ice-gem",
+    "typeSlug": "ice",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "icicle-plate",
+    "typeSlug": "ice",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "insect-plate",
+    "typeSlug": "bug",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "iron-plate",
+    "typeSlug": "steel",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "meadow-plate",
+    "typeSlug": "grass",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "mind-plate",
+    "typeSlug": "psychic",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "normal-gem",
+    "typeSlug": "normal",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "pixie-plate",
+    "typeSlug": "fairy",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "poison-gem",
+    "typeSlug": "poison",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "psychic-gem",
+    "typeSlug": "psychic",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "rock-gem",
+    "typeSlug": "rock",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "sky-plate",
+    "typeSlug": "flying",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "splash-plate",
+    "typeSlug": "water",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "spooky-plate",
+    "typeSlug": "ghost",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "steel-gem",
+    "typeSlug": "steel",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "stone-plate",
+    "typeSlug": "rock",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "toxic-plate",
+    "typeSlug": "poison",
+    "boostPercent": 20,
+    "generationId": null
+  },
+  {
+    "itemSlug": "water-gem",
+    "typeSlug": "water",
+    "boostPercent": 30,
+    "generationId": 6
+  },
+  {
+    "itemSlug": "zap-plate",
+    "typeSlug": "electric",
+    "boostPercent": 20,
+    "generationId": null
+  }
+]

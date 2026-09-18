@@ -76,12 +76,23 @@ export type PokemonResponse = {
   };
 };
 
-/** /pokemon-form 的响应，只取形态名那一段 */
+/** /pokemon-form 的响应 */
 export type PokemonFormResponse = {
   id: number;
   name: string;
   /** 「阿罗拉的样子」这种修饰词。默认形态是空数组 */
   form_names: LocalizedName[];
+  is_mega: boolean;
+  /**
+   * 变成这个形态的触发条件。trigger 是 "held-item" 时 name 就是道具 slug ——
+   * 超级石、原始回归的宝珠、阿尔宙斯的石板、银伴战兽的存储碟都靠它。
+   * 这是「道具 → 形态」这层关系唯一的结构化来源，而且方向是反的
+   */
+  trigger_conditions: { trigger: string; name: string; url: string }[] | null;
+  /** 这个形态的属性。石板和存储碟改的就是它 */
+  types: { slot: number; type: NamedRef }[];
+  /** 这个机制哪个版本组引入的 */
+  version_group: NamedRef | null;
 };
 
 export type ListResponse = { count: number; results: NamedRef[] };

@@ -34,6 +34,7 @@ import {
   SEED_OVERRIDES_FILE,
   type SeedData,
   type SeedOverrides,
+  type StatName,
   type TypeSnapshot,
   type WikiData,
   type WikiEffectSnapshot,
@@ -760,6 +761,162 @@ async function seedItems(groupIds: Map<string, number>) {
   );
 }
 
+/**
+ * 道具的机制，按数据形状分开的五张表加树果。
+ *
+ * 主表只存道具的身份（slug、译名、图片、分类），机制在这儿 —— 因为不同类型
+ * 道具的机制压根不是一种东西：超级石的机制是「阿勃梭鲁进化石 → 超级阿勃梭鲁」
+ * 这么一条关系，剩饭的「每回合回复 1/16」只能是文字（留在 ItemEffectI18n），
+ * 校园桌巾这类根本没有机制 —— 它在所有机制表里都没有行，「没有行」本身就是信息。
+ *
+ * 纯派生数据，没有下游引用，所以整表重建
+ */
+async function seedItemMechanics(dict: {
+  items: Map<string, number>;
+  forms: Map<string, number>;
+  types: Map<string, number>;
+  groups: Map<string, number>;
+  moves: Map<string, number>;
+}) {
+  const itemId = (slug: string) => dict.items.get(slug);
+  const missing = new Set<string>();
+
+  const formChanges = read("item-form-changes").flatMap((c) => {
+    const item = itemId(c.itemSlug);
+    const formId = dict.forms.get(c.formSlug);
+    if (item === undefined || formId === undefined) {
+      missing.add(c.itemSlug);
+      return [];
+    }
+    return [
+      {
+        itemId: item,
+        formId,
+        groupId: c.groupSlug ? (dict.groups.get(c.groupSlug) ?? null) : null,
+      },
+    ];
+  });
+
+  const typeChanges = read("item-type-changes").flatMap((c) => {
+    const item = itemId(c.itemSlug);
+    const typeId = dict.types.get(c.typeSlug);
+    if (item === undefined || typeId === undefined) {
+      missing.add(c.itemSlug);
+      return [];
+    }
+    return [{ itemId: item, typeId }];
+  });
+
+  // 百科抓到的属性强化（木炭、磁铁、薰香那类）跟 slug 推出来的（宝石、石板）
+  // 合成一张。主键是「道具 + 属性」，重了取先来的
+  const wiki = wikiEffects("wiki-items");
+  const boosts = new Map<
+    string,
+    { itemId: number; typeId: number; boostPercent: number; generationId: number | null }
+  >();
+  for (const b of read("item-type-boosts")) {
+    const item = itemId(b.itemSlug);
+    const typeId = dict.types.get(b.typeSlug);
+    if (item === undefined || typeId === undefined) {
+      missing.add(b.itemSlug);
+      continue;
+    }
+    boosts.set(`${item} ${typeId}`, {
+      itemId: item,
+      typeId,
+      boostPercent: b.boostPercent,
+      generationId: b.generationId,
+    });
+  }
+  for (const [slug, row] of wiki) {
+    if (!row.boostTypeSlug) continue;
+    const item = itemId(slug);
+    const typeId = dict.types.get(row.boostTypeSlug);
+    if (item === undefined || typeId === undefined) {
+      missing.add(slug);
+      continue;
+    }
+    const key = `${item} ${typeId}`;
+    // 百科上这批一律 +20%，第二世代是 +10%，改动的世代记在 generationId
+    if (!boosts.has(key)) {
+      boosts.set(key, { itemId: item, typeId, boostPercent: 20, generationId: 4 });
+    }
+  }
+
+  const natures = read("item-natures").flatMap((n) => {
+    const item = itemId(n.itemSlug);
+    if (item === undefined) {
+      missing.add(n.itemSlug);
+      return [];
+    }
+    return [{ itemId: item, natureSlug: n.natureSlug }];
+  });
+
+  const machines = read("machines").flatMap((m) => {
+    const item = itemId(m.itemSlug);
+    const groupId = dict.groups.get(m.groupSlug);
+    const moveId = dict.moves.get(m.moveSlug);
+    if (item === undefined || groupId === undefined || moveId === undefined) {
+      missing.add(m.itemSlug);
+      return [];
+    }
+    return [{ itemId: item, groupId, moveId }];
+  });
+
+  const berries = read("berries").flatMap((b) => {
+    const item = itemId(b.itemSlug);
+    if (item === undefined) {
+      missing.add(b.itemSlug);
+      return [];
+    }
+    const { naturalGiftTypeSlug } = b;
+    return [
+      {
+        itemId: item,
+        growthTime: b.growthTime,
+        maxHarvest: b.maxHarvest,
+        size: b.size,
+        smoothness: b.smoothness,
+        soilDryness: b.soilDryness,
+        firmness: b.firmness,
+        naturalGiftPower: b.naturalGiftPower,
+        naturalGiftTypeId: naturalGiftTypeSlug
+          ? (dict.types.get(naturalGiftTypeSlug) ?? null)
+          : null,
+        spicy: b.spicy,
+        dry: b.dry,
+        sweet: b.sweet,
+        bitter: b.bitter,
+        sour: b.sour,
+      },
+    ];
+  });
+
+  await prisma.itemFormChange.deleteMany({});
+  await insertInBatches(formChanges, (data) => prisma.itemFormChange.createMany({ data }));
+  await prisma.itemTypeChange.deleteMany({});
+  await insertInBatches(typeChanges, (data) => prisma.itemTypeChange.createMany({ data }));
+  await prisma.itemTypeBoost.deleteMany({});
+  await insertInBatches([...boosts.values()], (data) => prisma.itemTypeBoost.createMany({ data }));
+  await prisma.itemNature.deleteMany({});
+  await insertInBatches(natures, (data) => prisma.itemNature.createMany({ data }));
+  await prisma.machine.deleteMany({});
+  await insertInBatches(machines, (data) => prisma.machine.createMany({ data }));
+  await prisma.berry.deleteMany({});
+  await insertInBatches(berries, (data) => prisma.berry.createMany({ data }));
+
+  if (missing.size) {
+    console.warn(
+      `  ⚠ ${missing.size} 件道具在库里找不到，机制没入表：${[...missing].slice(0, 5).join(", ")}`,
+    );
+  }
+  console.log(
+    `道具机制: 形态变化 ${formChanges.length}、属性变化 ${typeChanges.length}、` +
+      `威力加成 ${boosts.size}、性格薄荷 ${natures.length}、技能机器 ${machines.length}、` +
+      `树果 ${berries.length}`,
+  );
+}
+
 /** 特性，374 个。中文机制说明来自神奇宝贝百科 —— PokeAPI 那边只有英法德 */
 async function seedAbilities(groupIds: Map<string, number>) {
   const abilities = read("abilities");
@@ -834,6 +991,7 @@ async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, num
   const effects: (EffectRow & { moveId: number })[] = [];
   const flavors: { moveId: number; groupId: number; languageCode: LanguageCode; text: string }[] =
     [];
+  const statChanges: { moveId: number; stat: StatName; change: number }[] = [];
 
   const ids = new Map<string, number>();
   for (const m of moves) {
@@ -898,6 +1056,9 @@ async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, num
     for (const row of flavorRows(m.flavors, zh?.flavors, groupIds)) {
       flavors.push({ moveId: saved.id, ...row });
     }
+    for (const s of m.statChanges) {
+      statChanges.push({ moveId: saved.id, stat: s.stat, change: s.change });
+    }
   }
 
   // Ｚ招式和极巨招式已经拆去各自的表，库里旧的那七十多条得清掉。
@@ -911,9 +1072,12 @@ async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, num
   await insertInBatches(effects, (data) => prisma.moveEffectI18n.createMany({ data }));
   await prisma.moveFlavorI18n.deleteMany({});
   await insertInBatches(flavors, (data) => prisma.moveFlavorI18n.createMany({ data }));
+  await prisma.moveStatChange.deleteMany({});
+  await insertInBatches(statChanges, (data) => prisma.moveStatChange.createMany({ data }));
   console.log(
     `招式: ${moves.length} 行，世代数值 ${generations.length} 行，` +
-      `机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行`,
+      `机制说明 ${effects.length} 行，游戏文案 ${flavors.length} 行，` +
+      `能力变化 ${statChanges.length} 行`,
   );
   return ids;
 }
@@ -1554,6 +1718,15 @@ async function main() {
     groups: groupIds,
   });
   await seedMaxMoves({ types: typeIds, forms: formIds, groups: groupIds });
+
+  // 机制表两端都得先在：形态变化指向 Form、技能机器指向 Move
+  await seedItemMechanics({
+    items: itemIds,
+    forms: formIds,
+    types: typeIds,
+    groups: groupIds,
+    moves: moveIds,
+  });
 
   const triggers = new Set(read("evolution-triggers").map((t) => t.slug));
   await seedEvolutions({
