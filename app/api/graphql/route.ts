@@ -6,8 +6,11 @@ import type { NextRequest } from "next/server";
 import {
   AbilitySource,
   FormSource,
+  ItemSource,
+  MoveSource,
   MyContext,
   PokemonSource,
+  SearchSource,
   TypeSource,
   VersionSource,
 } from "@/graphql/context";
@@ -33,7 +36,10 @@ const handler = startServerAndCreateNextHandler<NextRequest, MyContext>(apolloSe
         form: new FormSource(),
         type: new TypeSource(),
         ability: new AbilitySource(),
+        move: new MoveSource(),
+        item: new ItemSource(),
         version: new VersionSource(),
+        search: new SearchSource(),
       },
     };
   },

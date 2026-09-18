@@ -1,18 +1,8 @@
-import { GraphQLError } from "graphql";
-
 import type { QueryResolvers } from "./../../../types.generated";
 
-export const pokemon: NonNullable<QueryResolvers["pokemon"]> = async (_parent, arg, ctx) => {
-  const idOrSlug = String(arg.id);
-  const { pokemon: pokemonSource } = ctx.dataSources;
-
-  const row = await pokemonSource.findOne(idOrSlug);
-
-  if (!row) {
-    throw new GraphQLError(`找不到宝可梦 ${idOrSlug}`, {
-      extensions: { code: "NOT_FOUND", idOrSlug },
-    });
-  }
-
-  return row;
-};
+/**
+ * 库里没有这一只时返回 null，不抛错 —— 「查不到某一条」不是故障，
+ * 前端靠字段是不是 null 展示「未找到该 Pokémon」，不解析 errors
+ */
+export const pokemon: NonNullable<QueryResolvers["pokemon"]> = (_parent, arg, ctx) =>
+  ctx.dataSources.pokemon.findOne(String(arg.id));

@@ -1,17 +1,54 @@
 extend type Query {
   """
   按全国图鉴编号（37）或英文 slug（vulpix）查一只。
-  库里没有时会尝试补数据（见 POKEMON_FETCH_MODE），两边都没有则报 NOT_FOUND。
+  只查本地库，库里没有这一只时返回 null，不进 errors
   """
   pokemon(id: ID!): Pokemon
 
-  """按全国图鉴编号翻页。这一页在库里凑不满 limit 条时会尝试补数据"""
-  pokemonList(offset: Int!, limit: Int!): PokemonList
+  """
+  按英文 slug 查一只，/pokemon/[name] 路由传下来的就是它。
+  只查本地库，库里没有这一只时返回 null，不进 errors
+  """
+  pokemonBySlug(slug: String!): Pokemon
+
+  """
+  按全国图鉴编号翻页，只查本地库。offset 超出库里的总数时这一页没有数据。
+
+  generation 给了就只留那一代新增的宝可梦（第一代 151 只，第九代 120 只），
+  不给是全量 1025 只。pagination.total 跟着筛选走
+  """
+  pokemonList(offset: Int!, limit: Int!, generation: Int): PokemonList
 }
 
 type PokemonList {
-  data: [Pokemon!]
+  data: [PokemonSummary!]
   pagination: PaginationMeta
+}
+
+"""
+列表里的一只。跟 Pokemon 分成两个类型，为的是把 forms 和 evolutionChain
+挡在列表之外 —— 那两个字段一条要摊成好几行、还要把链上每只都查一遍，
+共用一个类型的话 SDL 上拦不住列表页去取它们。
+
+ability / move / item 三个域都是这个形状（XxxSummary 进列表、Xxx 进详情）
+"""
+type PokemonSummary {
+  """全国图鉴编号"""
+  id: ID!
+  """英文标识，例如 vulpix"""
+  slug: String!
+  """译名。回退规则同 Pokemon.name"""
+  name(language: String): String
+  """分类，例如「狐狸宝可梦」。回退规则同 name"""
+  genus(language: String): String
+  """默认形态。列表卡的缩略图和属性取这个。这只还没导入形态时是 null"""
+  defaultForm: Form
+  """
+  登场版本，按发售顺序排，取法同 Pokemon.versions。
+  四个列表页的卡片上都有「登场版本」这一行，所以它进 Summary ——
+  和 AbilitySummary / MoveSummary / ItemSummary 的 versions 一个待遇
+  """
+  versions: [Version!]!
 }
 
 """
@@ -33,8 +70,26 @@ type Pokemon {
   """默认形态。列表页缩略图和详情页主视图取这个。这只还没导入形态时是 null"""
   defaultForm: Form
   """
-  全部形态，默认形态排第一。
-  目前库里只导了默认形态，所以实际只会返回一条
+  全部形态，默认形态排第一。喷火龙有四条（喷火龙、超极巨化的样子、
+  超级喷火龙 X、超级喷火龙 Y），只有默认形态的宝可梦返回一条。
+  种族值、属性、图鉴说明都在形态上，按需要挑一条取
   """
   forms: [Form!]!
+  """
+  进化链上的全部成员，按进化顺序排，这只自己也在里面；分叉（伊布那一支）
+  按全国图鉴编号排。链挂在形态上 —— 关都六尾和阿罗拉六尾各走一条 ——
+  这里取默认形态那条。库里没有这只的进化关系时是空数组。
+
+  一次要把链上每只的身份查出来，留给详情页，列表页别取。
+  链上的成员给的是 PokemonSummary —— 页面只用得到编号、译名和 slug，
+  给完整 Pokemon 的话这个字段可以一层层套下去
+  """
+  evolutionChain: [PokemonSummary!]!
+  """
+  登场版本，按发售顺序排。沿形态的招式表走到版本组、再到版本 ——
+  有招式表就说明这只在那个版本组的游戏里能用。任一形态算数，不限默认形态。
+
+  一只要扫上千行招式记录，留给详情页，列表页别取
+  """
+  versions: [Version!]!
 }

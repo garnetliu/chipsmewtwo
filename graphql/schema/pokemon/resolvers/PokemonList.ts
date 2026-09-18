@@ -3,10 +3,10 @@ import type { PokemonListResolvers } from "./../../types.generated";
 /** data 和 pagination 都由 Query.pokemonList 一次性拼好 */
 export const PokemonList: PokemonListResolvers = {
   pagination: async (parent, _arg, ctx) => {
-    const { offset, limit, data } = parent;
+    const { offset, limit, data, generation } = parent;
     const { pokemon } = ctx.dataSources;
 
-    const total = await pokemon.countAll();
+    const total = await pokemon.countAll(generation);
 
     return {
       // offset/limit 换算成页码给前端用。limit 是 0 时页码没有意义，当第一页

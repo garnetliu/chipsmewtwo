@@ -28,4 +28,10 @@ export const Pokemon: PokemonResolvers = {
   },
 
   forms: (parent, _args, ctx) => ctx.dataSources.form.ofPokemon(parent.id),
+
+  // 下面两个是重字段，详情页才取 —— 进化链要把链上每只都查出来，
+  // 登场版本要扫这只全部形态的招式表
+  evolutionChain: (parent, _args, ctx) => ctx.dataSources.pokemon.chainOf(Number(parent.id)),
+
+  versions: (parent, _args, ctx) => ctx.dataSources.pokemon.versionsOf(Number(parent.id)),
 };

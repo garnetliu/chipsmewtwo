@@ -2,13 +2,19 @@ import type { LanguageCode } from "@/lib/pokemon/language";
 
 import type { AbilitySource } from "./ability-source";
 import type { FormSource } from "./form-source";
+import type { ItemSource } from "./item-source";
+import type { MoveSource } from "./move-source";
 import type { PokemonSource } from "./pokemon-source";
+import type { SearchSource } from "./search-source";
 import type { TypeSource } from "./type-source";
 import type { VersionSource } from "./version-source";
 
 export * from "./ability-source";
 export * from "./form-source";
+export * from "./item-source";
+export * from "./move-source";
 export * from "./pokemon-source";
+export * from "./search-source";
 export * from "./type-source";
 export * from "./version-source";
 
@@ -28,6 +34,9 @@ export interface MyContext {
     form: FormSource;
     type: TypeSource;
     ability: AbilitySource;
+    move: MoveSource;
+    item: ItemSource;
     version: VersionSource;
+    search: SearchSource;
   };
 }

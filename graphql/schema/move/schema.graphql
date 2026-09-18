@@ -1,0 +1,118 @@
+extend type Query {
+  """
+  按英文 slug 查一条，/move/[name] 路由传下来的就是它。
+  只查本地库，库里没有这一条时返回 null，不进 errors
+  """
+  moveBySlug(slug: String!): Move
+
+  """
+  招式列表，按英文标识的字母序翻页，只查本地库。
+  offset 超出这个筛选条件下的总数（全量 937 条）时这一页没有数据。
+
+  generation 给了就只留那一代新增的招式（第一代 165 条，第九代 69 条），
+  不给是全量。pagination.total 跟着筛选走
+  """
+  moveList(offset: Int!, limit: Int!, generation: Int): MoveList
+}
+
+type MoveList {
+  data: [MoveSummary!]
+  pagination: PaginationMeta
+}
+
+"""
+列表里的一条招式。跟 Move 分成两个类型，为的是把数值表（versionStats）
+挡在列表之外 —— 一条招式要摊成三十几行，共用一个类型的话 SDL 上拦不住列表页去取它
+"""
+type MoveSummary {
+  """move 表主键"""
+  id: ID!
+  """例如 razor-leaf"""
+  slug: String!
+  """招式译名，例如「飞叶快刀」。回退规则同 Pokemon.name"""
+  name(language: String): String
+  """
+  说明，取最新一版效果说明里的完整版。回退规则同 name，
+  所以拿到的可能是别的语种的文本：有说明的 844 条里，126 条最新一代没有简中行，
+  请求简中时会回退成英文。数据源没收录这条招式的说明时（93 条）是 null
+
+  取的是完整版 effect 而不是一句话版 shortEffect —— 后者数据源只给了英法两种语言，
+  中文那一版 4432 行全是空的，列表页那一列会整列空着
+  """
+  effect(language: String): String
+  """
+  登场版本，按发售顺序排。沿招式有数值的世代走到版本组、再到版本。
+  数据源没给这条招式数值时（18 条暗影招式）是空数组
+  """
+  versions: [Version!]!
+}
+
+"""
+招式。哪只宝可梦怎么学会它存在 move_learn 里，这里是招式本身
+"""
+type Move {
+  id: ID!
+  """例如 flamethrower"""
+  slug: String!
+  """招式译名。回退规则同 Pokemon.name"""
+  name(language: String): String
+  """
+  说明，取最新一版效果说明里的完整版。回退和缺数据的情况同 MoveSummary.effect
+  """
+  effect(language: String): String
+  """登场版本，按发售顺序排，取法同 MoveSummary.versions"""
+  versions: [Version!]!
+  """
+  按版本组分行的数值表，按游戏发售顺序排。库里数值是按世代存的，
+  这里把一个世代摊到它下面的每个版本组：第一世代有四个版本组（日版红/绿、日版蓝、
+  红/蓝、黄），就摊成四行，数值都取第一世代的值。
+  招式还没登场的世代没有行，所以那些版本组不会出现在表里。
+
+  一条从第一世代活到现在的招式有 32 行，留给详情页，列表页别取
+  """
+  versionStats: [MoveVersionStat!]!
+}
+
+"""数值表的一行：一个版本组里这条招式的属性、分类和数值"""
+type MoveVersionStat {
+  """
+  这个版本组包含的版本，按库里的顺序排。红/蓝是两条，黄单独一条 ——
+  32 个版本组里 21 个含两条、11 个含一条，没有更多的
+  """
+  versions: [Version!]!
+  """
+  招式属性。跟着世代走 —— 咬住在第一世代是一般属性，第二世代起是恶属性。
+  库里改过属性的只有 7 条（咬住、撒娇、起风、空手劈、月光、泼沙、天使之吻）
+  """
+  type: Type!
+  """
+  伤害分类。跟着世代走 —— 第四世代之前分类跟属性绑定，
+  飞叶快刀在前三代是特殊、第四代起才是物理
+  """
+  category: MoveCategory!
+  """威力。变化招式没有威力，是 null，前端渲染成「—」"""
+  power: Int
+  """命中。必中招式（例如 swift）没有命中，是 null，前端渲染成「—」"""
+  accuracy: Int
+  """PP。库里这一列可空，目前 4925 行都有值"""
+  pp: Int
+  """
+  版本说明。原型图上有这一列，但库里和 PokeAPI 都没有版本级的说明文案
+  （move_effect_i18n 是按世代存的机制说明，不是版本级的），所以恒为 null，
+  前端渲染成「—」。不拿招式的通用说明来填这一列
+  """
+  note: String
+}
+
+"""
+招式的伤害分类。决定伤害用哪组种族值算：
+PHYSICAL 物理（攻击 打 防御）、SPECIAL 特殊（特攻 打 特防）、STATUS 变化（不直接造成伤害）。
+
+原样透出库里的枚举值，不在这里转成中文 —— 库里没有分类的译名表，
+中文只能写死，写死的展示文案归前端
+"""
+enum MoveCategory {
+  PHYSICAL
+  SPECIAL
+  STATUS
+}

@@ -11,9 +11,16 @@ import type { PokemonRow } from "@/graphql/context/pokemon-source";
 
 export type PokemonMapper = PokemonRow;
 
-/** offset 和 limit 带下来给 pagination 算页码，data 是这一页的行 */
+/** 列表项。库里跟 Pokemon 是同一行，差别只在 GraphQL 那边能取哪些字段 */
+export type PokemonSummaryMapper = PokemonRow;
+
+/**
+ * offset 和 limit 带下来给 pagination 算页码，data 是这一页的行。
+ * generation 也带下来 —— 总数要按同一个筛选条件数，否则翻页翻到空页
+ */
 export type PokemonListMapper = {
-  data: PokemonMapper[];
+  data: PokemonSummaryMapper[];
   offset: number;
   limit: number;
+  generation: number | null;
 };

@@ -1,0 +1,111 @@
+extend type Query {
+  """
+  按英文 slug 查一条，/item/[name] 路由传下来的就是它。
+  只查本地库，库里没有这一条时返回 null，不进 errors
+  """
+  itemBySlug(slug: String!): Item
+
+  """
+  道具列表，按英文标识的字母序翻页，只查本地库。
+  offset 超出这个筛选条件下的总数（不筛就是 item 表的全部条数）时这一页没有数据。
+
+  generation 给了就只留那一代引入的道具（第一代最多），不给是全量。
+  pagination.total 跟着筛选走。
+
+  注意引入世代是从说明的世代推出来的（见 ItemSummary.introducedGeneration），
+  数据源没收录说明的那一批推不出世代，任何 generation 都筛不到它们；
+  第八代只筛得出 linking-cord 一条、第九代一条都没有，不是漏了筛
+  """
+  itemList(offset: Int!, limit: Int!, generation: Int): ItemList
+}
+
+type ItemList {
+  data: [ItemSummary!]
+  pagination: PaginationMeta
+}
+
+"""
+列表里的一条道具。跟 Item 分成两个类型，为的是把版本可用性表挡在列表之外 ——
+一条第一世代的道具要摊成 32 行，共用一个类型的话 SDL 上拦不住列表页去取它
+"""
+type ItemSummary {
+  """item 表主键"""
+  id: ID!
+  """例如 leftovers"""
+  slug: String!
+  """
+  道具译名，例如「吃剩的东西」。回退规则同 Pokemon.name。
+  绝大多数道具有简体中文名，少数没有的按回退规则给别的语种；
+  一条译名都没有的才是 null
+  """
+  name(language: String): String
+  """
+  一句话说明，取最新一版说明里的一句话版。
+
+  这一列只有英法两种语言有文案，简中那一行在库里但一列都没填，所以请求简中时
+  一律给英文。挑语言之前先把没文案的行滤掉，不是「简中行在就用简中行」——
+  否则这个字段几乎永远是 null。
+
+  给不出这一句的有三种：数据源没收录任何说明的、最新一代只有中文行没有英法行的，
+  以及英法行在、这一列却是 NULL 的（honey）。三种都给 null。
+  空文案一律给 null，不给空字符串 —— 前端靠是不是 null 决定要不要显示「说明暂缺」
+  """
+  shortEffect(language: String): String
+  """
+  第几代引入 —— 最早有说明的那一代。说明是按世代存的，某一代有它的说明，
+  它在那一代的游戏里就存在；有说明的道具里没有一条世代是断开的，
+  都是从引入那代一路排到第九代。
+  数据源没收录说明的那一批是 null
+  """
+  introducedGeneration: Int
+  """
+  登场版本，按发售顺序排。沿说明的世代走到版本组、再到版本。
+  数据源没收录这条道具的说明时是空数组
+  """
+  versions: [Version!]!
+}
+
+"""
+道具。哪只宝可梦用它进化、进化时要携带它存在 evolution 里，这里是道具本身
+"""
+type Item {
+  id: ID!
+  """例如 thunder-stone"""
+  slug: String!
+  """道具译名。回退和缺数据的情况同 ItemSummary.name"""
+  name(language: String): String
+  """一句话说明。回退和缺数据的情况同 ItemSummary.shortEffect"""
+  shortEffect(language: String): String
+  """第几代引入，取法同 ItemSummary.introducedGeneration"""
+  introducedGeneration: Int
+  """登场版本，按发售顺序排，取法同 ItemSummary.versions"""
+  versions: [Version!]!
+  """
+  按版本组分行的可用性表，按游戏发售顺序排。一个版本组一行 ——
+  thunder-stone 从第一世代活到现在，32 个版本组就是 32 行；
+  leftovers 第二世代引入，前四个版本组没有它，是 28 行。
+  数据源没收录这条道具的说明时是空数组。
+
+  行数不少，留给详情页，列表页别取
+  """
+  availability: [ItemAvailability!]!
+}
+
+"""可用性表的一行：一个版本组里这条道具能不能拿、怎么拿"""
+type ItemAvailability {
+  """
+  这个版本组包含的版本，按库里的顺序排。32 个版本组里 21 个含两条、11 个含一条，
+  没有更多的 —— 红/蓝是两条，黄单独一组一条
+  """
+  versions: [Version!]!
+  """
+  获取方式。原型图上有这一列，但库里没有这个数据 —— 跟道具沾边的四张表
+  （item / item_i18n / item_effect_i18n / item_flavor_i18n）里没有获取地点这一类列，
+  seed 的 items.json 也没抓。所以恒为 null，前端渲染成「—」。不拿别的字段来凑
+  """
+  obtainMethod: String
+  """
+  可用性。同 obtainMethod，库里没有这个数据，恒为 null，前端渲染成「—」
+  """
+  availability: String
+}

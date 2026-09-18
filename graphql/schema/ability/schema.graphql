@@ -1,6 +1,55 @@
+extend type Query {
+  """
+  按英文 slug 查一条，/ability/[name] 路由传下来的就是它。
+  只查本地库，库里没有这一条时返回 null，不进 errors
+  """
+  abilityBySlug(slug: String!): Ability
+
+  """
+  特性列表，按英文标识的字母序翻页，只查本地库。
+  offset 超出库里的总数（374 条）时这一页没有数据。
+
+  列表页没有筛选行，所以不收筛选参数
+  """
+  abilityList(offset: Int!, limit: Int!): AbilityList
+}
+
+type AbilityList {
+  data: [AbilitySummary!]
+  pagination: PaginationMeta
+}
+
 """
-特性。这里只有身份和译名 —— 效果说明（AbilityEffectI18n）和特性列表查询
-等这个域自己建起来时再 extend
+列表里的一条特性。跟 Ability 分成两个类型，为的是把「拥有该特性的宝可梦」
+挡在列表之外 —— 那个字段要扫整张 form_ability，共用一个类型的话，
+SDL 上拦不住列表页去取它
+"""
+type AbilitySummary {
+  """ability 表主键"""
+  id: ID!
+  """例如 overgrow"""
+  slug: String!
+  """特性译名，例如「茂盛」。回退规则同 Pokemon.name"""
+  name(language: String): String
+  """
+  一句话说明，取最新一版效果说明里的。回退规则同 name。
+
+  数据源只给了英法德三种语言的一句话版，中文那一版是空的，所以请求中文时
+  基本都是 null；少数几条特性最新一代没有中文行，会按回退规则拿到英文。
+  完整说明（Ability.effect）不受影响
+  """
+  shortEffect(language: String): String
+  """
+  登场版本，按发售顺序排。沿效果说明的世代走到版本组、再到版本 ——
+  某一代有这条特性的说明，就说明它在那一代的游戏里存在。
+  数据源没收录这条特性的说明时是空数组
+  """
+  versions: [Version!]!
+}
+
+"""
+特性。哪个形态在哪一代有哪个特性存在 form_ability 里（见 FormAbility），
+这里是特性本身
 """
 type Ability {
   id: ID!
@@ -8,4 +57,28 @@ type Ability {
   slug: String!
   """特性译名。回退规则同 Pokemon.name"""
   name(language: String): String
+  """
+  完整效果说明，取最新一版 —— 说明是按世代存的，蓄电 Gen4 起才改成吸引电系招式。
+  回退规则同 name，所以拿到的可能是别的语种的文本。
+  数据源没收录这条特性的说明时是 null
+  """
+  effect(language: String): String
+  """
+  第几代引入 —— 最早有效果说明的那一代。
+  数据源没收录这条特性的说明时是 null
+  """
+  introducedGeneration: Int
+  """登场版本，按发售顺序排，取法同 AbilitySummary.versions"""
+  versions: [Version!]!
+  """
+  拥有该特性的宝可梦，按全国图鉴编号排。普通特性和隐藏特性都算，
+  任一形态、任一世代有这条特性就在里面，同一只只出现一次。
+  没有宝可梦拥有它时是空数组。
+
+  一条特性要扫它在 form_ability 里的全部行（多的有两百多行），
+  这个字段留给详情页，列表页别取。
+  给的是 PokemonSummary —— 这里摆的是卡片，两百多只每只再带上形态和进化链
+  没有页面用得上
+  """
+  pokemon: [PokemonSummary!]!
 }
