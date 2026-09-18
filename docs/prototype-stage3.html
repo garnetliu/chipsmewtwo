@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokémon 中文资料站 · 交互原型</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { ink:{900:'#17203a',700:'#3b4767',500:'#677191',400:'#8a94b3'} },
+      fontFamily: { sans: ['"PingFang SC"','"Hiragino Sans GB"','"Microsoft YaHei"','system-ui','sans-serif'] }
+    }}
+  }
+</script>
+<style>
+  :root{
+    --primary:#3b7dd8; --primary-hover:#2f6bc0; --primary-active:#265aa8;
+    --primary-soft:#e4edfa; --primary-border:#c2d7f2;
+    --canvas:#f4f6fb; --surface:#fff; --border:#e2e7f2;
+    --ink-900:#17203a; --ink-700:#3b4767; --ink-500:#677191; --ink-400:#8a94b3;
+    --success:#3d9b62; --success-soft:#e8f5ec;
+    --warning:#d9901a; --warning-soft:#fdf3e0;
+    --danger:#e03e3e; --danger-soft:#fdecec;
+    --ver-red:#e03e3e; --ver-green:#3d9b62; --ver-blue:#3b7dd8; --ver-yellow:#f2c531;
+    --ver-gold:#c9a227; --ver-silver:#8a94a8;
+    --radius-sm:6px; --radius-md:8px; --radius-lg:12px; --radius-full:9999px;
+    --shadow-sm:0 1px 2px rgba(23,32,58,.05); --shadow-md:0 2px 8px rgba(23,32,58,.08);
+    --shadow-primary:0 2px 8px rgba(59,125,216,.28);
+  }
+  body{background:var(--canvas);}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);}
+  .ver-badge{display:inline-flex;align-items:center;justify-content:center;min-width:1.5rem;height:1.25rem;padding:0 .3rem;font-size:.625rem;font-weight:700;line-height:1;border-radius:var(--radius-sm);letter-spacing:.02em;color:#fff;}
+  .type-tag{display:inline-flex;align-items:center;height:1.375rem;padding:0 .55rem;font-size:.6875rem;font-weight:600;border-radius:var(--radius-full);color:#fff;}
+  .gen-chip{display:inline-flex;align-items:center;height:2rem;padding:0 .85rem;font-size:.8125rem;font-weight:600;border-radius:var(--radius-full);background:#fff;color:var(--ink-700);border:1px solid var(--border);cursor:pointer;user-select:none;}
+  .gen-chip:hover{border-color:var(--primary-border);}
+  .gen-chip.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:var(--shadow-primary);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;height:2.25rem;padding:0 1rem;border-radius:var(--radius-md);font-size:.8125rem;font-weight:600;border:1px solid transparent;cursor:pointer;}
+  .btn-primary{background:var(--primary);color:#fff;box-shadow:var(--shadow-primary);}
+  .btn-primary:hover{background:var(--primary-hover);}
+  .btn-secondary{background:#fff;color:var(--ink-700);border-color:var(--border);}
+  .btn-secondary:hover{border-color:var(--primary-border);color:var(--primary);}
+  .nav-link{position:relative;font-size:.875rem;font-weight:600;color:var(--ink-700);cursor:pointer;padding:.25rem 0;}
+  .nav-link:hover{color:var(--primary);}
+  .nav-link.active{color:var(--primary);}
+  .nav-link.active::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-1.28rem;width:1.5rem;height:3px;border-radius:2px;background:var(--primary);}
+  .poke-card{transition:box-shadow .15s ease, transform .15s ease;cursor:pointer;}
+  .poke-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+  .row-click{cursor:pointer;}
+  .row-click:hover{background:var(--primary-soft);}
+  .field-input{width:100%;height:2.5rem;padding:0 .75rem;border-radius:var(--radius-md);border:1px solid var(--border);font-size:.8125rem;color:var(--ink-900);outline:none;background:#fff;}
+  .field-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft);}
+  .field-input.invalid{border-color:var(--danger);box-shadow:0 0 0 3px var(--danger-soft);color:var(--danger);}
+  .field-label{font-size:.75rem;font-weight:600;color:var(--ink-700);margin-bottom:.375rem;display:block;}
+  .field-err{font-size:.6875rem;color:var(--danger);margin-top:.3rem;display:none;}
+  .field-err.show{display:block;}
+  .data-table{width:100%;text-align:left;font-size:.8125rem;}
+  .data-table thead th{background:#f8fafd;font-size:.75rem;color:var(--ink-500);font-weight:600;padding:.65rem 1rem;}
+  .data-table tbody td{padding:.75rem 1rem;border-top:1px solid #f0f3f9;}
+  .link-primary{color:var(--primary);font-weight:600;font-size:.75rem;cursor:pointer;}
+  .link-primary:hover{color:var(--primary-hover);}
+  .badge-mini{font-size:.625rem;font-weight:600;border-radius:.25rem;padding:.15rem .45rem;}
+  .stat-bar-track{flex:1;height:.5rem;border-radius:9999px;background:#eef1f7;overflow:hidden;}
+  .stat-bar-fill{height:.5rem;border-radius:9999px;}
+  [data-bp-view]{display:none;}
+  [data-bp-view].active{display:block;}
+</style>
+<style id="prototype-artifact-guard">.mermaid,.mermaidTooltip,[id^="mermaid-"],svg[id^="mermaid-"],.error-icon,.error-text{display:none!important}html{scroll-behavior:smooth;overflow-anchor:none}body{overflow-anchor:none}section[id],h1[id],h2[id],h3[id],h4[id]{scroll-margin-top:32px}[class*="badge"],[class*="pill"],[class*="tag"]{max-width:100%;line-height:1.35;white-space:normal}.hero [class*="badge"],header [class*="badge"],[class*="hero"] [class*="badge"],[class*="hero"] [class*="pill"],[class*="hero"] [class*="tag"]{display:inline-flex!important;width:max-content;max-width:100%;margin:0 0 14px 0!important;position:relative!important;top:auto!important;left:auto!important;right:auto!important;transform:none!important}.hero p,header p,[class*="hero"] p{clear:both;margin-top:10px!important;line-height:1.8!important}.hero h1,.hero h2,.hero h3,header h1,header h2,header h3,[class*="hero"] h1,[class*="hero"] h2,[class*="hero"] h3{clear:both;margin-top:8px!important;line-height:1.25!important}</style></head>
+<body class="font-sans text-ink-900 antialiased" data-bp-role-current="visitor">
+
+<!-- ===== 顶部导航（全站外壳） ===== -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40" data-bp-shared>
+  <div class="px-6 h-16 flex items-center gap-8">
+    <a class="flex items-center gap-2.5 shrink-0 cursor-pointer" data-bp-nav="pokemon-list">
+      <span class="w-9 h-9 rounded-full flex items-center justify-center shadow-sm" style="background:linear-gradient(180deg,#ef4444 0%,#ef4444 46%,#17203a 46%,#17203a 54%,#ffffff 54%,#ffffff 100%);">
+        <span class="w-3 h-3 rounded-full bg-white border-2 border-ink-900"></span>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-[15px] font-bold tracking-tight">Pokémon 中文资料站</span>
+        <span class="block text-[11px] text-ink-400">对战资料查询 · 努力值模拟</span>
+      </span>
+    </a>
+    <nav class="flex items-center gap-7 ml-2">
+      <a class="nav-link active" data-bp-nav="pokemon-list" aria-current="page">精灵</a>
+      <a class="nav-link" data-bp-nav="move-list">招式</a>
+      <a class="nav-link" data-bp-nav="item-list">道具</a>
+      <a class="nav-link" data-bp-nav="ability-list">特性</a>
+      <a class="nav-link" data-bp-nav="ev-simulator">努力值模拟器</a>
+    </nav>
+    <div class="ml-auto w-96">
+      <button class="w-full flex items-center gap-2 h-10 px-3.5 rounded-lg bg-slate-100 border border-slate-200 text-ink-400 hover:border-[#c2d7f2] transition-colors" data-bp-open="search-modal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+        <span class="text-[13px]">搜索 Pokémon / 招式 / 道具 / 特性…</span>
+        <kbd class="ml-auto text-[10px] font-semibold bg-white border border-slate-200 rounded px-1.5 py-0.5 whitespace-nowrap">Ctrl K</kbd>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 视图容器 ===== -->
+<main class="px-6 py-8">
+  <div data-bp-view="pokemon-list" data-bp-view-label="精灵列表" class="active"></div>
+  <div data-bp-view="pokemon-detail" data-bp-view-label="精灵详情"></div>
+  <div data-bp-view="move-list" data-bp-view-label="招式列表"></div>
+  <div data-bp-view="move-detail" data-bp-view-label="招式详情"></div>
+  <div data-bp-view="item-list" data-bp-view-label="道具列表"></div>
+  <div data-bp-view="item-detail" data-bp-view-label="道具详情"></div>
+  <div data-bp-view="ability-list" data-bp-view-label="特性列表"></div>
+  <div data-bp-view="ability-detail" data-bp-view-label="特性详情"></div>
+  <div data-bp-view="ev-simulator" data-bp-view-label="努力值模拟器"></div>
+</main>
+<!-- ===== 顶部搜索模态框 ===== -->
+<div id="search-modal" role="dialog" data-bp-panel="search-modal" data-bp-panel-label="顶部搜索模态框"
+     class="fixed inset-0 z-50 hidden" aria-modal="true">
+  <div class="absolute inset-0 bg-ink-900/40" id="search-backdrop"></div>
+  <div class="relative mx-auto mt-24 w-[640px] max-w-[92vw] bg-white rounded-xl shadow-lg overflow-hidden">
+    <div class="flex items-center gap-3 px-5 h-14 border-b border-slate-100">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b7dd8" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+      <input id="search-input" data-bp-state="search-keyword" class="flex-1 outline-none text-[14px] placeholder:text-ink-400" placeholder="输入 Pokémon、招式、道具或特性名称…" autocomplete="off">
+      <button id="search-close" class="text-[11px] font-semibold text-ink-400 border border-slate-200 rounded px-2 py-1 hover:text-ink-700">ESC 关闭</button>
+    </div>
+    <div id="search-body" class="max-h-[380px] overflow-y-auto"></div>
+  </div>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<footer class="border-t border-slate-200 bg-white mt-6" data-bp-shared>
+  <div class="px-6 py-6 flex items-center justify-between">
+    <div class="text-[12px] text-ink-400">Pokémon 中文资料站 · 交互原型（数据均为 Mock）· 面向中文对战玩家的公开资料查询与努力值模拟工具</div>
+    <div class="flex items-center gap-5 text-[12px] text-ink-500 font-medium">
+      <a class="cursor-pointer hover:text-[#3b7dd8]" data-bp-nav="pokemon-list">精灵</a>
+      <a class="cursor-pointer hover:text-[#3b7dd8]" data-bp-nav="move-list">招式</a>
+      <a class="cursor-pointer hover:text-[#3b7dd8]" data-bp-nav="item-list">道具</a>
+      <a class="cursor-pointer hover:text-[#3b7dd8]" data-bp-nav="ability-list">特性</a>
+      <a class="cursor-pointer hover:text-[#3b7dd8]" data-bp-nav="ev-simulator">努力值模拟器</a>
+    </div>
+  </div>
+</footer>
+<script>
+/* ================= Mock 数据 ================= */
+const TYPE_COLORS = {'草':'#4cae6c','毒':'#9b59d0','火':'#e8703a','水':'#3b7dd8','飞行':'#7fa6e8','电':'#e0b52c','地面':'#b8a24a','一般':'#8a94a8','超能力':'#e05c8a','虫':'#8aa83c'};
+const GENS = [
+  {id:1, label:'Gen 1 · 红/绿/蓝'},{id:2, label:'Gen 2 · 金/银'},{id:3, label:'Gen 3 · 红宝石/蓝宝石'},
+  {id:4, label:'Gen 4 · 钻石/珍珠'},{id:5, label:'Gen 5 · 黑/白'},{id:6, label:'Gen 6 · X/Y'},
+  {id:7, label:'Gen 7 · 太阳/月亮'},{id:8, label:'Gen 8 · 剑/盾'},{id:9, label:'Gen 9 · 朱/紫'}
+];
+const VERSION_BADGES = {
+  '红':'#e03e3e','绿':'#3d9b62','蓝':'#3b7dd8','黄':'#f2c531','金':'#c9a227','银':'#8a94a8',
+  '剑':'#4a4a6a','盾':'#8a5a8a','朱':'#d64f6e','紫':'#6a5acd'
+};
+const POKEMON = [
+  {id:1,no:'0001',name:'妙蛙种子',category:'种子宝可梦',types:['草','毒'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[45,49,49,65,65,45],abilities:['茂盛','叶绿素'],
+   desc:'背上的种子里储存着营养，出生后的一段时间靠种子中的养分成长。'},
+  {id:2,no:'0002',name:'妙蛙草',category:'种子宝可梦',types:['草','毒'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[60,62,63,80,80,60],abilities:['茂盛','叶绿素'],
+   desc:'背上的花苞逐渐长大，为了支撑花苞的重量，腰腿变得更强壮。'},
+  {id:3,no:'0003',name:'妙蛙花',category:'种子宝可梦',types:['草','毒'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[80,82,83,100,100,80],abilities:['茂盛','叶绿素'],
+   desc:'盛开的大花能吸收太阳光并转化为能量，雨天会发出沁人心脾的香味。',forms:['妙蛙花','超级妙蛙花']},
+  {id:4,no:'0004',name:'小火龙',category:'蜥蜴宝可梦',types:['火'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[39,52,43,60,50,65],abilities:['猛火','太阳之力'],
+   desc:'尾巴上的火焰代表它的生命力，精神好时火焰会烧得更旺。'},
+  {id:5,no:'0005',name:'火恐龙',category:'火焰宝可梦',types:['火'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[58,64,58,80,65,80],abilities:['猛火','太阳之力'],
+   desc:'性格变得好战，会用尾巴上的火焰威吓对手。'},
+  {id:6,no:'0006',name:'喷火龙',category:'火焰宝可梦',types:['火','飞行'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[78,84,78,109,85,100],abilities:['猛火','太阳之力'],
+   desc:'据说喷火龙喷出的烈焰足以融化岩石，飞行高度可达一千四百米。',forms:['喷火龙','超级喷火龙X','超级喷火龙Y']},
+  {id:7,no:'0007',name:'杰尼龟',category:'小龟宝可梦',types:['水'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[44,48,65,50,64,43],abilities:['激流','雨盘'],
+   desc:'把脖子缩进壳里时，会从口中喷出强力的水流反击。'},
+  {id:8,no:'0008',name:'卡咪龟',category:'龟宝可梦',types:['水'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[59,63,80,65,80,58],abilities:['激流','雨盘'],
+   desc:'毛茸茸的尾巴是长寿的象征，在水中游动时能保持平衡。'},
+  {id:9,no:'0009',name:'水箭龟',category:'甲壳宝可梦',types:['水'],gen:1,badges:['红','绿','蓝','黄'],
+   stats:[79,83,100,85,105,78],abilities:['激流','雨盘'],
+   desc:'甲壳上的两门水炮威力巨大，可以精准命中远处的目标。'}
+];
+const MOVES = [
+  {id:1,name:'飞叶快刀',desc:'用锋利的叶片切割对手，容易击中要害。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'草',cat:'物理',power:55,acc:95,pp:25,note:'容易击中要害。'},{ver:['剑','盾'],type:'草',cat:'物理',power:55,acc:95,pp:25,note:'效果与前作一致。'},{ver:['朱','紫'],type:'草',cat:'物理',power:55,acc:95,pp:25,note:'效果与前作一致。'}]},
+  {id:2,name:'寄生种子',desc:'在对手身上种下种子，每回合吸取体力。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'草',cat:'变化',power:'—',acc:90,pp:10,note:'每回合吸取对手最大体力的 1/8。'},{ver:['剑','盾'],type:'草',cat:'变化',power:'—',acc:90,pp:10,note:'每回合吸取 1/8，对草属性无效。'},{ver:['朱','紫'],type:'草',cat:'变化',power:'—',acc:90,pp:10,note:'效果与剑/盾一致。'}]},
+  {id:3,name:'藤鞭',desc:'挥舞细长的藤蔓抽打对手进行攻击。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'草',cat:'物理',power:35,acc:100,pp:25,note:'威力较低的基础招式。'},{ver:['金','银'],type:'草',cat:'物理',power:45,acc:100,pp:25,note:'威力自第二世代起上调。'},{ver:['朱','紫'],type:'草',cat:'物理',power:45,acc:100,pp:25,note:'威力保持 45。'}]},
+  {id:4,name:'日光束',desc:'第一回合吸收阳光，第二回合发射强光束攻击。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'草',cat:'特殊',power:120,acc:100,pp:10,note:'晴天时无需蓄力。'},{ver:['剑','盾'],type:'草',cat:'特殊',power:120,acc:100,pp:10,note:'雨天威力减半。'},{ver:['朱','紫'],type:'草',cat:'特殊',power:120,acc:100,pp:10,note:'效果与剑/盾一致。'}]},
+  {id:5,name:'喷射火焰',desc:'喷出灼热的火焰攻击对手，有时会让对手灼伤。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'火',cat:'特殊',power:95,acc:100,pp:15,note:'10% 概率灼伤。'},{ver:['金','银'],type:'火',cat:'特殊',power:90,acc:100,pp:15,note:'威力调整为 90。'},{ver:['朱','紫'],type:'火',cat:'特殊',power:90,acc:100,pp:15,note:'威力保持 90。'}]},
+  {id:6,name:'水炮',desc:'发射高压水柱攻击对手，威力巨大但命中较低。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'水',cat:'特殊',power:120,acc:80,pp:5,note:'高威力低 PP。'},{ver:['剑','盾'],type:'水',cat:'特殊',power:110,acc:80,pp:5,note:'威力调整为 110。'},{ver:['朱','紫'],type:'水',cat:'特殊',power:110,acc:80,pp:5,note:'效果与剑/盾一致。'}]},
+  {id:7,name:'十万伏特',desc:'释放强烈的电击攻击对手，有时会让对手麻痹。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'电',cat:'特殊',power:95,acc:100,pp:15,note:'10% 概率麻痹。'},{ver:['剑','盾'],type:'电',cat:'特殊',power:90,acc:100,pp:15,note:'威力调整为 90。'},{ver:['朱','紫'],type:'电',cat:'特殊',power:90,acc:100,pp:15,note:'威力保持 90。'}]},
+  {id:8,name:'地震',desc:'引发强烈的地震攻击场上所有宝可梦。',gen:1,badges:['红','绿','蓝'],
+   byVersion:[{ver:['红','绿','蓝'],type:'地面',cat:'物理',power:100,acc:100,pp:10,note:'对飞行属性无效。'},{ver:['剑','盾'],type:'地面',cat:'物理',power:100,acc:100,pp:10,note:'效果与前作一致。'},{ver:['朱','紫'],type:'地面',cat:'物理',power:100,acc:100,pp:10,note:'效果与前作一致。'}]}
+];
+const ITEMS = [
+  {id:1,name:'讲究头带',desc:'携带后攻击提高 50%，但只能使出同一个招式。',gen:3,badges:['红','蓝','剑','盾','朱','紫']},
+  {id:2,name:'讲究眼镜',desc:'携带后特攻提高 50%，但只能使出同一个招式。',gen:3,badges:['红','蓝','剑','盾','朱','紫']},
+  {id:3,name:'生命宝珠',desc:'携带后招式威力提高 30%，但每次攻击都会损失少量体力。',gen:4,badges:['剑','盾','朱','紫']},
+  {id:4,name:'吃剩的东西',desc:'携带后每回合结束时回复少量体力。',gen:2,badges:['金','银','剑','盾','朱','紫']},
+  {id:5,name:'气势披带',desc:'满体力时受到致命攻击，可以保留 1 点体力。',gen:4,badges:['剑','盾','朱','紫']},
+  {id:6,name:'先制之爪',desc:'携带后有时可以先于对手行动。',gen:4,badges:['剑','盾']},
+  {id:7,name:'王者之证',desc:'携带后攻击有时会让对手畏缩。',gen:2,badges:['金','银','剑','盾']},
+  {id:8,name:'博识眼镜',desc:'携带后特殊招式的威力少量提高。',gen:3,badges:['红','蓝','剑','盾']}
+];
+const ABILITIES = [
+  {id:1,name:'茂盛',short:'体力减少时，草属性招式的威力会提高。',gen:3,badges:['红','蓝','剑','盾','朱','紫'],
+   detail:'当体力降到 1/3 以下时，草属性招式的威力提升为原来的 1.5 倍。是草属性初始伙伴宝可梦的标志性特性。',owners:[1,2,3]},
+  {id:2,name:'猛火',short:'体力减少时，火属性招式的威力会提高。',gen:3,badges:['红','蓝','剑','盾','朱','紫'],
+   detail:'当体力降到 1/3 以下时，火属性招式的威力提升为原来的 1.5 倍。火属性初始伙伴的标志性特性。',owners:[4,5,6]},
+  {id:3,name:'激流',short:'体力减少时，水属性招式的威力会提高。',gen:3,badges:['红','蓝','剑','盾','朱','紫'],
+   detail:'当体力降到 1/3 以下时，水属性招式的威力提升为原来的 1.5 倍。水属性初始伙伴的标志性特性。',owners:[7,8,9]},
+  {id:4,name:'叶绿素',short:'天气为晴天时，速度会翻倍。',gen:3,badges:['红','蓝','剑','盾','朱','紫'],
+   detail:'在大晴天天气下，速度翻倍。常与日光束、光合作用等晴天体系招式搭配。',owners:[1,2,3]},
+  {id:5,name:'太阳之力',short:'晴天时特攻提高，但每回合会损失体力。',gen:4,badges:['剑','盾','朱','紫'],
+   detail:'大晴天下特攻提升 1.5 倍，但每回合结束损失最大体力的 1/8。喷火龙的隐藏特性。',owners:[4,5,6]},
+  {id:6,name:'雨盘',short:'下雨天气时，每回合回复少量体力。',gen:3,badges:['红','蓝','剑','盾','朱','紫'],
+   detail:'下雨天气时每回合结束回复最大体力的 1/16。水箭龟的隐藏特性。',owners:[7,8,9]},
+  {id:7,name:'厚脂肪',short:'受到火与冰属性招式的伤害减半。',gen:3,badges:['红','蓝','剑','盾'],
+   detail:'厚厚的脂肪层能抵御严寒与高温，使火属性与冰属性招式造成的伤害减半。',owners:[]},
+  {id:8,name:'坚硬脑袋',short:'不会受到反作用力伤害。',gen:3,badges:['红','蓝','剑','盾'],
+   detail:'使用具有反作用力的招式时，不会受到反作用力伤害，适合高威力舍身类招式。',owners:[]}
+];
+const NATURES = [
+  {name:'认真',up:null,down:null},{name:'固执',up:1,down:3},{name:'爽朗',up:5,down:3},
+  {name:'内敛',up:3,down:1},{name:'胆小',up:5,down:1},{name:'大胆',up:2,down:1},{name:'温和',up:4,down:1}
+];
+const STAT_NAMES = ['HP','攻击','防御','特攻','特防','速度'];
+</script>
+<script>
+/* ================= 路由与通用渲染 ================= */
+const $ = s => document.querySelector(s);
+const viewOf = id => document.querySelector(`[data-bp-view="${id}"]`);
+let navStack = [];
+
+function showView(id){
+  document.querySelectorAll('[data-bp-view]').forEach(v => v.classList.toggle('active', v.dataset.bpView === id));
+  const top = { 'pokemon-detail':'pokemon-list','move-detail':'move-list','item-detail':'item-list','ability-detail':'ability-list' }[id] || id;
+  document.querySelectorAll('[data-bp-nav]').forEach(n => {
+    const on = n.dataset.bpNav === top;
+    n.classList.toggle('active', on);
+    if (on) n.setAttribute('aria-current','page'); else n.removeAttribute('aria-current');
+  });
+  window.scrollTo({top:0});
+}
+function go(id, payload){
+  if (id === 'pokemon-list') renderPokemonList();
+  if (id === 'move-list') renderMoveList();
+  if (id === 'item-list') renderItemList();
+  if (id === 'ability-list') renderAbilityList();
+  if (id === 'pokemon-detail') renderPokemonDetail(payload);
+  if (id === 'move-detail') renderMoveDetail(payload);
+  if (id === 'item-detail') renderItemDetail(payload);
+  if (id === 'ability-detail') renderAbilityDetail(payload);
+  if (id === 'ev-simulator') renderSimulator();
+  showView(id);
+}
+document.addEventListener('click', e => {
+  const nav = e.target.closest('[data-bp-nav]');
+  if (nav) { navStack = []; go(nav.dataset.bpNav); return; }
+  const back = e.target.closest('[data-bp-back]');
+  if (back) { const prev = navStack.pop() || back.dataset.bpBack; go(prev.view, prev.payload); }
+});
+function badgesHTML(list){
+  return list.map(b => `<span class="ver-badge" style="background:${VERSION_BADGES[b]||'#8a94a8'};${b==='黄'?'color:var(--ink-900);':''}">${b}</span>`).join(' ');
+}
+function typesHTML(types){
+  return types.map(t => `<span class="type-tag" style="background:${TYPE_COLORS[t]||'#8a94a8'};">${t}</span>`).join(' ');
+}
+function genChipsHTML(stateKey, current, gens){
+  return `<div class="flex items-center gap-2.5 flex-wrap">` +
+    GENS.filter(g => !gens || gens.includes(g.id)).map(g =>
+      `<span class="gen-chip ${current===g.id?'active':''}" data-bp-state="${stateKey}" data-gen="${g.id}" data-key="${stateKey}">${g.label}</span>`).join('') +
+    `</div>`;
+}
+
+/* ================= 精灵列表 ================= */
+let pokemonGen = 1;
+function renderPokemonList(){
+  const items = POKEMON.filter(p => p.gen === pokemonGen);
+  viewOf('pokemon-list').innerHTML = `
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-4">
+      <div>
+        <div class="flex items-center gap-3">
+          <h1 class="text-[26px] font-bold tracking-tight">精灵列表</h1>
+          <span class="text-xs font-semibold rounded-full px-2.5 py-1" style="color:var(--primary);background:var(--primary-soft);border:1px solid var(--primary-border);">P0 · 核心资料</span>
+        </div>
+        <p class="mt-1.5 text-[13px] text-ink-500">按全国编号浏览 Pokémon 条目，查看各精灵在具体游戏版本中的可用性。</p>
+      </div>
+      <div class="flex items-center gap-6 text-center">
+        <div><div class="text-xl font-bold tabular-nums">${items.length}</div><div class="text-[11px] text-ink-400 mt-0.5">当前条目</div></div>
+        <div class="w-px h-8 bg-slate-200"></div>
+        <div><div class="text-xl font-bold">Gen ${pokemonGen}</div><div class="text-[11px] text-ink-400 mt-0.5">当前世代</div></div>
+        <div class="w-px h-8 bg-slate-200"></div>
+        <div><div class="text-xl font-bold">编号序</div><div class="text-[11px] text-ink-400 mt-0.5">排序方式</div></div>
+      </div>
+    </div>
+    <div class="card px-5 py-4 mb-6 flex items-center gap-3 flex-wrap">
+      <span class="text-[13px] font-semibold text-ink-700 mr-1">世代筛选</span>
+      ${genChipsHTML('pokemon-gen-filter', pokemonGen)}
+      <span class="ml-auto text-[12px] text-ink-400">单选筛选 · 当前共 ${items.length} 条结果</span>
+    </div>
+    ${items.length ? `<div class="grid grid-cols-3 gap-4">${items.map(p => `
+      <div class="poke-card card p-4 flex gap-4" data-bp-anchor="pokemon-${p.id}" data-open-pokemon="${p.id}">
+        <div class="w-20 h-20 rounded-lg shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,${TYPE_COLORS[p.types[0]]}22,${TYPE_COLORS[p.types[0]]}0d);">
+          <span class="text-[22px] font-black" style="color:${TYPE_COLORS[p.types[0]]};opacity:.75;">${p.name.slice(-2)}</span>
+        </div>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-baseline gap-2">
+            <span class="text-[11px] font-bold text-ink-400 tabular-nums">No.${p.no}</span>
+            <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 rounded px-1.5 py-0.5">${p.category}</span>
+          </div>
+          <div class="text-[16px] font-bold mt-0.5">${p.name}</div>
+          <div class="flex gap-1.5 mt-1.5">${typesHTML(p.types)}</div>
+          <div class="flex items-center gap-1 mt-2.5">
+            <span class="text-[10px] text-ink-400 mr-1">登场版本</span>${badgesHTML(p.badges)}
+          </div>
+        </div>
+      </div>`).join('')}</div>`
+    : `<div class="card p-12 text-center">
+        <div class="text-[14px] font-semibold text-ink-700">当前筛选条件下暂无结果</div>
+        <div class="text-[12px] text-ink-400 mt-1.5">演示数据仅覆盖 Gen 1，请切换其他世代查看空态或返回 Gen 1</div>
+      </div>`}`;
+  viewOf('pokemon-list').querySelectorAll('.gen-chip').forEach(c => c.onclick = () => { pokemonGen = +c.dataset.gen; renderPokemonList(); });
+  viewOf('pokemon-list').querySelectorAll('[data-open-pokemon]').forEach(el => el.onclick = () => {
+    navStack.push({view:'pokemon-list'}); go('pokemon-detail', +el.dataset.openPokemon);
+  });
+}
+</script>
+<script>
+/* ================= 精灵详情 ================= */
+function renderPokemonDetail(id){
+  const p = POKEMON.find(x => x.id === id);
+  if (!p){ viewOf('pokemon-detail').innerHTML = `<div class="card p-12 text-center"><div class="text-[14px] font-semibold">未找到该 Pokémon</div><button class="btn btn-secondary mt-4" data-bp-back="pokemon-list">返回列表</button></div>`; return; }
+  const back = navStack.length ? navStack[navStack.length-1].view : 'pokemon-list';
+  const statBars = p.stats.map((s,i) => `
+    <div class="flex items-center gap-3 text-[12px]">
+      <span class="w-12 text-ink-500">${STAT_NAMES[i]}</span>
+      <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${Math.round(s/160*100)}%;background:${s>=100?'var(--success)':s>=80?'var(--primary)':'var(--warning)'};"></div></div>
+      <span class="w-8 text-right font-bold tabular-nums">${s}</span>
+    </div>`).join('');
+  const formChips = (p.forms || [p.name]).map((f,i) =>
+    `<span class="gen-chip ${i===0?'active':''}" style="cursor:default;">${f}</span>`).join('');
+  const abilityLinks = p.abilities.map(a => {
+    const ab = ABILITIES.find(x => x.name === a);
+    return `<div class="flex items-center justify-between rounded-lg border border-slate-200 px-4 py-3">
+      <div><span class="text-[13px] font-bold">${a}</span><span class="text-[11px] text-ink-400 ml-2">${ab ? ab.short : ''}</span></div>
+      ${ab ? `<span class="link-primary" data-open-ability="${ab.id}">特性详情 →</span>` : ''}
+    </div>`;}).join('');
+  const evo = POKEMON.filter(x => (x.id>=1&&x.id<=3&&p.id<=3)||(x.id>=4&&x.id<=6&&p.id>=4&&p.id<=6)||(x.id>=7&&p.id>=7));
+  viewOf('pokemon-detail').innerHTML = `
+    <div class="flex items-center gap-2 text-[13px] mb-4">
+      <span class="link-primary" data-bp-back="${back}">← 返回${back==='pokemon-list'?'精灵列表':back==='ability-detail'?'特性详情':'搜索结果'}</span>
+      <span class="text-ink-400">/</span><span class="text-ink-500">精灵详情</span><span class="text-ink-400">/</span>
+      <span class="font-semibold">${p.name}</span>
+    </div>
+    <div class="card p-6 mb-5" data-bp-anchor="pokemon-detail-hero">
+      <div class="flex gap-6 items-center flex-wrap">
+        <div class="w-28 h-28 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,${TYPE_COLORS[p.types[0]]}26,${TYPE_COLORS[p.types[0]]}0d);">
+          <span class="text-[30px] font-black" style="color:${TYPE_COLORS[p.types[0]]};opacity:.8;">${p.name.slice(-2)}</span>
+        </div>
+        <div class="flex-1 min-w-[260px]">
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="text-[11px] font-bold text-ink-400 tabular-nums">No.${p.no}</span>
+            <span class="badge-mini text-emerald-700 bg-emerald-50">${p.category}</span>
+            ${typesHTML(p.types)}
+          </div>
+          <h1 class="text-[26px] font-bold tracking-tight mt-1">${p.name}</h1>
+          <p class="text-[13px] text-ink-500 mt-1.5 leading-6">${p.desc}</p>
+          <div class="flex items-center gap-1.5 mt-3">
+            <span class="text-[11px] text-ink-400 mr-1">登场版本</span>${badgesHTML(p.badges)}
+          </div>
+        </div>
+        <div class="card p-4 w-72" style="box-shadow:none;">
+          <div class="text-[12px] font-bold text-ink-700 mb-2.5">种族值</div>
+          <div class="space-y-2">${statBars}</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-5">
+      <div class="card p-5">
+        <div class="flex items-center justify-between mb-3"><span class="text-[15px] font-bold">形态</span><span class="text-[11px] text-ink-400">同一全国编号下不同形态</span></div>
+        <div class="flex items-center gap-2.5 flex-wrap">${formChips}</div>
+        <div class="text-[12px] font-bold text-ink-700 mt-5 mb-2.5">进化链</div>
+        <div class="flex items-center gap-2 flex-wrap">
+          ${evo.map((x,i) => `${i?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a94b3" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>':''}<span class="${x.id===p.id?'font-bold text-[13px]':'link-primary text-[13px]'}" ${x.id===p.id?'':`data-open-pokemon="${x.id}"`}>${x.name}</span>`).join('')}
+        </div>
+      </div>
+      <div class="card p-5">
+        <div class="flex items-center justify-between mb-3"><span class="text-[15px] font-bold">特性资料</span><span class="text-[11px] text-ink-400">第二项为隐藏特性</span></div>
+        <div class="space-y-2.5">${abilityLinks}</div>
+      </div>
+    </div>
+    <div class="card p-5 mt-5">
+      <div class="flex items-center justify-between mb-3"><span class="text-[15px] font-bold">具体版本可用性</span><span class="text-[11px] text-ink-400">更完整的版本资料</span></div>
+      <table class="data-table">
+        <thead><tr><th>游戏版本</th><th>世代</th><th>获取方式</th><th>可用性</th></tr></thead>
+        <tbody>
+          <tr><td class="py-2.5">${badgesHTML(['红','绿','蓝'])}</td><td>第一世代</td><td>初始伙伴 / 野外捕捉</td><td><span class="badge-mini" style="background:var(--success-soft);color:var(--success);">可正常获得</span></td></tr>
+          <tr><td class="py-2.5"><span class="ver-badge" style="background:var(--ver-yellow);color:var(--ink-900);">黄</span></td><td>第一世代</td><td>剧情获得</td><td><span class="badge-mini" style="background:var(--success-soft);color:var(--success);">可正常获得</span></td></tr>
+          <tr><td class="py-2.5">${badgesHTML(['剑','盾'])}</td><td>第八世代</td><td>联动传送</td><td><span class="badge-mini" style="background:var(--warning-soft);color:var(--warning);">需联动</span></td></tr>
+          <tr><td class="py-2.5">${badgesHTML(['朱','紫'])}</td><td>第九世代</td><td>未收录</td><td><span class="badge-mini" style="background:#eef1f7;color:var(--ink-400);">暂不可用</span></td></tr>
+        </tbody>
+      </table>
+    </div>`;
+  const v = viewOf('pokemon-detail');
+  v.querySelectorAll('[data-open-ability]').forEach(el => el.onclick = () => { navStack.push({view:'pokemon-detail',payload:p.id}); go('ability-detail', +el.dataset.openAbility); });
+  v.querySelectorAll('[data-open-pokemon]').forEach(el => el.onclick = () => { navStack.push({view:'pokemon-detail',payload:p.id}); go('pokemon-detail', +el.dataset.openPokemon); });
+}
+
+/* ================= 招式列表 / 详情 ================= */
+let moveGen = 1;
+function renderMoveList(){
+  const items = MOVES.filter(m => m.gen === moveGen);
+  viewOf('move-list').innerHTML = `
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-4">
+      <div>
+        <div class="flex items-center gap-3"><h1 class="text-[26px] font-bold tracking-tight">招式列表</h1>
+        <span class="text-xs font-semibold rounded-full px-2.5 py-1" style="color:var(--primary);background:var(--primary-soft);border:1px solid var(--primary-border);">P0 · 核心资料</span></div>
+        <p class="mt-1.5 text-[13px] text-ink-500">浏览招式名称与说明，详情页按不同游戏版本组织属性、分类、威力、命中与 PP。</p>
+      </div>
+      <div class="text-center"><div class="text-xl font-bold tabular-nums">${items.length}</div><div class="text-[11px] text-ink-400 mt-0.5">当前条目</div></div>
+    </div>
+    <div class="card px-5 py-4 mb-6 flex items-center gap-3 flex-wrap">
+      <span class="text-[13px] font-semibold text-ink-700 mr-1">世代筛选</span>
+      ${genChipsHTML('move-gen-filter', moveGen)}
+      <span class="ml-auto text-[12px] text-ink-400">单选筛选 · 当前共 ${items.length} 条结果</span>
+    </div>
+    ${items.length ? `<div class="card overflow-hidden">
+      <table class="data-table">
+        <thead><tr><th>名称</th><th style="width:46%;">说明</th><th>登场版本</th><th class="text-right">操作</th></tr></thead>
+        <tbody>${items.map(m => `
+          <tr class="row-click" data-open-move="${m.id}" data-bp-anchor="move-${m.id}">
+            <td class="font-bold">${m.name}</td>
+            <td class="text-ink-500">${m.desc || '说明暂缺'}</td>
+            <td>${badgesHTML(m.badges)}</td>
+            <td class="text-right"><span class="link-primary">查看详情</span></td>
+          </tr>`).join('')}</tbody>
+      </table></div>`
+    : `<div class="card p-12 text-center"><div class="text-[14px] font-semibold text-ink-700">当前筛选条件下暂无结果</div><div class="text-[12px] text-ink-400 mt-1.5">演示数据集中在 Gen 1，请切换筛选查看</div></div>`}`;
+  const v = viewOf('move-list');
+  v.querySelectorAll('.gen-chip').forEach(c => c.onclick = () => { moveGen = +c.dataset.gen; renderMoveList(); });
+  v.querySelectorAll('[data-open-move]').forEach(el => el.onclick = () => { navStack.push({view:'move-list'}); go('move-detail', +el.dataset.openMove); });
+}
+function renderMoveDetail(id){
+  const m = MOVES.find(x => x.id === id);
+  if (!m){ viewOf('move-detail').innerHTML = `<div class="card p-12 text-center"><div class="text-[14px] font-semibold">未找到该招式</div><button class="btn btn-secondary mt-4" data-bp-back="move-list">返回列表</button></div>`; return; }
+  viewOf('move-detail').innerHTML = `
+    <div class="flex items-center gap-2 text-[13px] mb-4">
+      <span class="link-primary" data-bp-back="move-list">← 返回招式列表</span>
+      <span class="text-ink-400">/</span><span class="text-ink-500">招式详情</span><span class="text-ink-400">/</span>
+      <span class="font-semibold">${m.name}</span>
+    </div>
+    <div class="card p-6 mb-5" data-bp-anchor="move-detail-hero">
+      <div class="flex items-center gap-3 flex-wrap">
+        <span class="type-tag" style="background:${TYPE_COLORS[m.byVersion[0].type]};">${m.byVersion[0].type}</span>
+        <span class="badge-mini" style="background:#eef1f7;color:var(--ink-700);">${m.byVersion[0].cat}招式</span>
+      </div>
+      <h1 class="text-[26px] font-bold tracking-tight mt-2">${m.name}</h1>
+      <p class="text-[13px] text-ink-500 mt-1.5">${m.desc}</p>
+      <div class="flex items-center gap-1.5 mt-3"><span class="text-[11px] text-ink-400 mr-1">登场版本</span>${badgesHTML(m.badges)}</div>
+    </div>
+    <div class="card p-5">
+      <div class="flex items-center justify-between mb-3"><span class="text-[15px] font-bold">按游戏版本组织的招式资料</span><span class="text-[11px] text-ink-400">属性 / 分类 / 威力 / 命中 / PP</span></div>
+      <table class="data-table">
+        <thead><tr><th>游戏版本</th><th>属性</th><th>分类</th><th>威力</th><th>命中</th><th>PP</th><th style="width:34%;">版本说明</th></tr></thead>
+        <tbody>${m.byVersion.map(r => `
+          <tr>
+            <td>${badgesHTML(r.ver)}</td>
+            <td><span class="type-tag" style="background:${TYPE_COLORS[r.type]};">${r.type}</span></td>
+            <td class="font-semibold">${r.cat}</td>
+            <td class="font-bold tabular-nums">${r.power}</td>
+            <td class="tabular-nums">${r.acc}%</td>
+            <td class="tabular-nums">${r.pp}</td>
+            <td class="text-ink-500 text-[12px]">${r.note}</td>
+          </tr>`).join('')}</tbody>
+      </table>
+    </div>`;
+}
+</script>
+<script>
+/* ================= 道具列表 / 详情 ================= */
+let itemGen = 2;
+function renderItemList(){
+  const items = ITEMS.filter(i => i.gen === itemGen);
+  viewOf('item-list').innerHTML = `
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-4">
+      <div>
+        <div class="flex items-center gap-3"><h1 class="text-[26px] font-bold tracking-tight">道具列表</h1>
+        <span class="text-xs font-semibold rounded-full px-2.5 py-1" style="color:var(--primary);background:var(--primary-soft);border:1px solid var(--primary-border);">P0 · 核心资料</span></div>
+        <p class="mt-1.5 text-[13px] text-ink-500">浏览对战常用携带道具的名称、说明与登场版本。</p>
+      </div>
+      <div class="text-center"><div class="text-xl font-bold tabular-nums">${items.length}</div><div class="text-[11px] text-ink-400 mt-0.5">当前条目</div></div>
+    </div>
+    <div class="card px-5 py-4 mb-6 flex items-center gap-3 flex-wrap">
+      <span class="text-[13px] font-semibold text-ink-700 mr-1">世代筛选</span>
+      ${genChipsHTML('item-gen-filter', itemGen)}
+      <span class="ml-auto text-[12px] text-ink-400">单选筛选 · 当前共 ${items.length} 条结果</span>
+    </div>
+    ${items.length ? `<div class="grid grid-cols-2 gap-4">${items.map(i => `
+      <div class="poke-card card p-5" data-open-item="${i.id}" data-bp-anchor="item-${i.id}">
+        <div class="flex items-center justify-between">
+          <span class="text-[15px] font-bold">${i.name}</span>
+          <span class="badge-mini" style="background:var(--primary-soft);color:var(--primary);">Gen ${i.gen}</span>
+        </div>
+        <p class="text-[12.5px] text-ink-500 mt-2 leading-5">${i.desc || '说明暂缺'}</p>
+        <div class="flex items-center gap-1 mt-3"><span class="text-[10px] text-ink-400 mr-1">登场版本</span>${badgesHTML(i.badges)}</div>
+      </div>`).join('')}</div>`
+    : `<div class="card p-12 text-center"><div class="text-[14px] font-semibold text-ink-700">当前筛选条件下暂无结果</div><div class="text-[12px] text-ink-400 mt-1.5">演示数据集中在 Gen 2–Gen 4，请切换筛选查看</div></div>`}`;
+  const v = viewOf('item-list');
+  v.querySelectorAll('.gen-chip').forEach(c => c.onclick = () => { itemGen = +c.dataset.gen; renderItemList(); });
+  v.querySelectorAll('[data-open-item]').forEach(el => el.onclick = () => { navStack.push({view:'item-list'}); go('item-detail', +el.dataset.openItem); });
+}
+function renderItemDetail(id){
+  const it = ITEMS.find(x => x.id === id);
+  if (!it){ viewOf('item-detail').innerHTML = `<div class="card p-12 text-center"><div class="text-[14px] font-semibold">未找到该道具</div><button class="btn btn-secondary mt-4" data-bp-back="item-list">返回列表</button></div>`; return; }
+  viewOf('item-detail').innerHTML = `
+    <div class="flex items-center gap-2 text-[13px] mb-4">
+      <span class="link-primary" data-bp-back="item-list">← 返回道具列表</span>
+      <span class="text-ink-400">/</span><span class="text-ink-500">道具详情</span><span class="text-ink-400">/</span>
+      <span class="font-semibold">${it.name}</span>
+    </div>
+    <div class="card p-6 mb-5" data-bp-anchor="item-detail-hero">
+      <div class="flex items-center gap-3"><span class="badge-mini" style="background:var(--primary-soft);color:var(--primary);">携带道具</span><span class="badge-mini" style="background:#eef1f7;color:var(--ink-700);">第 ${it.gen} 世代引入</span></div>
+      <h1 class="text-[26px] font-bold tracking-tight mt-2">${it.name}</h1>
+      <p class="text-[13px] text-ink-500 mt-1.5">${it.desc}</p>
+      <div class="flex items-center gap-1.5 mt-3"><span class="text-[11px] text-ink-400 mr-1">登场版本</span>${badgesHTML(it.badges)}</div>
+    </div>
+    <div class="card p-5">
+      <div class="flex items-center justify-between mb-3"><span class="text-[15px] font-bold">具体版本可用性</span><span class="text-[11px] text-ink-400">更完整的版本资料</span></div>
+      <table class="data-table">
+        <thead><tr><th>游戏版本</th><th>获取方式</th><th>可用性</th></tr></thead>
+        <tbody>
+          <tr><td class="py-2.5">${badgesHTML(it.badges.slice(0,2))}</td><td>商店购买 / 野外拾取</td><td><span class="badge-mini" style="background:var(--success-soft);color:var(--success);">可正常获得</span></td></tr>
+          <tr><td class="py-2.5">${badgesHTML(it.badges.slice(2,4).length?it.badges.slice(2,4):it.badges.slice(0,1))}</td><td>对战设施兑换</td><td><span class="badge-mini" style="background:var(--warning-soft);color:var(--warning);">需 BP 兑换</span></td></tr>
+        </tbody>
+      </table>
+    </div>`;
+}
+
+/* ================= 特性列表 / 详情 ================= */
+function renderAbilityList(){
+  viewOf('ability-list').innerHTML = `
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-4">
+      <div>
+        <div class="flex items-center gap-3"><h1 class="text-[26px] font-bold tracking-tight">特性列表</h1>
+        <span class="text-xs font-semibold rounded-full px-2.5 py-1" style="color:var(--primary);background:var(--primary-soft);border:1px solid var(--primary-border);">P0 · 核心资料</span></div>
+        <p class="mt-1.5 text-[13px] text-ink-500">浏览特性条目，详情页可查看拥有该特性的 Pokémon 并跳转精灵详情。</p>
+      </div>
+      <div class="text-center"><div class="text-xl font-bold tabular-nums">${ABILITIES.length}</div><div class="text-[11px] text-ink-400 mt-0.5">当前条目</div></div>
+    </div>
+    <div class="card overflow-hidden">
+      <table class="data-table">
+        <thead><tr><th style="width:22%;">名称</th><th>简短说明</th><th style="width:22%;">登场版本</th><th class="text-right">操作</th></tr></thead>
+        <tbody>${ABILITIES.map(a => `
+          <tr class="row-click" data-open-ability="${a.id}" data-bp-anchor="ability-${a.id}">
+            <td class="font-bold">${a.name}</td>
+            <td class="text-ink-500">${a.short || '说明暂缺'}</td>
+            <td>${badgesHTML(a.badges)}</td>
+            <td class="text-right"><span class="link-primary">查看详情</span></td>
+          </tr>`).join('')}</tbody>
+      </table>
+    </div>`;
+  viewOf('ability-list').querySelectorAll('[data-open-ability]').forEach(el => el.onclick = () => { navStack.push({view:'ability-list'}); go('ability-detail', +el.dataset.openAbility); });
+}
+function renderAbilityDetail(id){
+  const a = ABILITIES.find(x => x.id === id);
+  if (!a){ viewOf('ability-detail').innerHTML = `<div class="card p-12 text-center"><div class="text-[14px] font-semibold">未找到该特性</div><button class="btn btn-secondary mt-4" data-bp-back="ability-list">返回列表</button></div>`; return; }
+  const back = navStack.length ? navStack[navStack.length-1].view : 'ability-list';
+  const owners = a.owners.map(pid => POKEMON.find(p => p.id === pid)).filter(Boolean);
+  viewOf('ability-detail').innerHTML = `
+    <div class="flex items-center gap-2 text-[13px] mb-4">
+      <span class="link-primary" data-bp-back="${back}">← 返回${back==='ability-list'?'特性列表':'精灵详情'}</span>
+      <span class="text-ink-400">/</span><span class="text-ink-500">特性详情</span><span class="text-ink-400">/</span>
+      <span class="font-semibold">${a.name}</span>
+    </div>
+    <div class="card p-6 mb-5" data-bp-anchor="ability-detail-hero">
+      <div class="flex items-center gap-3"><span class="badge-mini" style="background:#e6f4ee;color:#2c7a4b;">特性</span><span class="badge-mini" style="background:#eef1f7;color:var(--ink-700);">第 ${a.gen} 世代引入</span></div>
+      <h1 class="text-[26px] font-bold tracking-tight mt-2">${a.name}</h1>
+      <p class="text-[13px] text-ink-500 mt-1.5 leading-6">${a.detail}</p>
+      <div class="flex items-center gap-1.5 mt-3"><span class="text-[11px] text-ink-400 mr-1">登场版本</span>${badgesHTML(a.badges)}</div>
+    </div>
+    <div class="card p-5">
+      <div class="flex items-center justify-between mb-3"><span class="text-[15px] font-bold">拥有该特性的 Pokémon</span><span class="text-[11px] text-ink-400">点击条目进入精灵详情</span></div>
+      ${owners.length ? `<div class="grid grid-cols-3 gap-4">${owners.map(p => `
+        <div class="poke-card card p-4 flex gap-3 items-center" data-open-pokemon="${p.id}" data-bp-anchor="ability-owner-${p.id}">
+          <div class="w-12 h-12 rounded-lg shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,${TYPE_COLORS[p.types[0]]}22,${TYPE_COLORS[p.types[0]]}0d);">
+            <span class="text-[13px] font-black" style="color:${TYPE_COLORS[p.types[0]]};opacity:.8;">${p.name.slice(-2)}</span>
+          </div>
+          <div class="min-w-0">
+            <div class="text-[11px] font-bold text-ink-400 tabular-nums">No.${p.no}</div>
+            <div class="text-[14px] font-bold">${p.name}</div>
+            <div class="flex gap-1 mt-1">${typesHTML(p.types)}</div>
+          </div>
+        </div>`).join('')}</div>`
+      : `<div class="py-8 text-center"><div class="text-[13px] font-semibold text-ink-700">演示数据中暂无拥有该特性的 Pokémon</div><div class="text-[12px] text-ink-400 mt-1">完整版本将展示全部拥有该特性的条目</div></div>`}
+    </div>`;
+  viewOf('ability-detail').querySelectorAll('[data-open-pokemon]').forEach(el => el.onclick = () => { navStack.push({view:'ability-detail',payload:a.id}); go('pokemon-detail', +el.dataset.openPokemon); });
+}
+</script>
+<script>
+/* ================= 努力值模拟器 ================= */
+const sim = { pokemon:null, level:50, nature:0, ivs:[31,31,31,31,31,31], evs:[0,0,0,0,0,0] };
+function renderSimulator(){
+  viewOf('ev-simulator').innerHTML = `
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-4">
+      <div>
+        <div class="flex items-center gap-3"><h1 class="text-[26px] font-bold tracking-tight">努力值模拟器</h1>
+        <span class="text-xs font-semibold rounded-full px-2.5 py-1" style="color:var(--primary);background:var(--primary-soft);border:1px solid var(--primary-border);">独立工具</span></div>
+        <p class="mt-1.5 text-[13px] text-ink-500">选择 Pokémon 后输入等级、性格、个体值与努力值，系统实时计算六项能力值。</p>
+      </div>
+    </div>
+    <div id="sim-body"></div>`;
+  renderSimBody();
+}
+function renderSimBody(){
+  const body = viewOf('ev-simulator').querySelector('#sim-body');
+  if (!sim.pokemon){
+    body.innerHTML = `
+      <div class="grid grid-cols-2 gap-5">
+        <div class="card p-5" data-bp-anchor="sim-picker">
+          <div class="text-[15px] font-bold mb-3">选择 Pokémon</div>
+          <div class="grid grid-cols-3 gap-2.5">
+            ${POKEMON.map(p => `<button class="gen-chip w-full justify-center" data-sim-pick="${p.id}">${p.name}</button>`).join('')}
+          </div>
+        </div>
+        <div class="card p-10 flex flex-col items-center justify-center text-center" style="background:var(--canvas);border-style:dashed;">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:var(--warning-soft);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d9901a" stroke-width="2.2" stroke-linecap="round"><path d="M12 3l10 17H2z"/><path d="M12 10v4M12 17.5v.01"/></svg>
+          </div>
+          <div class="text-[14px] font-semibold mt-4">请选择 Pokémon 后开始计算</div>
+          <div class="text-[12px] text-ink-400 mt-1.5">从左侧选择一只 Pokémon，即可输入参数并查看计算结果</div>
+        </div>
+      </div>`;
+    body.querySelectorAll('[data-sim-pick]').forEach(b => b.onclick = () => { sim.pokemon = +b.dataset.simPick; renderSimBody(); });
+    return;
+  }
+  const p = POKEMON.find(x => x.id === sim.pokemon);
+  const nature = NATURES[sim.nature];
+  const evTotal = sim.evs.reduce((a,b)=>a+b,0);
+  const errors = {};
+  if (!(sim.level>=1 && sim.level<=100)) errors.level = '等级需在 1–100 之间';
+  sim.ivs.forEach((v,i) => { if (!(v>=0 && v<=31)) errors['iv'+i] = '个体值需在 0–31 之间'; });
+  sim.evs.forEach((v,i) => { if (!(v>=0 && v<=252)) errors['ev'+i] = '单项努力值需在 0–252 之间'; });
+  if (evTotal > 510) errors.evTotal = '努力值总和不能超过 510（当前 ' + evTotal + '）';
+  const hasErr = Object.keys(errors).length > 0;
+  const results = p.stats.map((base,i) => {
+    const iv = Math.min(31, Math.max(0, sim.ivs[i]||0)), ev = Math.min(252, Math.max(0, sim.evs[i]||0));
+    const lv = (sim.level>=1 && sim.level<=100) ? sim.level : 50;
+    if (i === 0) return Math.floor((2*base+iv+Math.floor(ev/4))*lv/100) + lv + 10;
+    let v = Math.floor((2*base+iv+Math.floor(ev/4))*lv/100) + 5;
+    if (nature.up === i) v = Math.floor(v*1.1);
+    if (nature.down === i) v = Math.floor(v*0.9);
+    return v;
+  });
+  const statRow = (i) => `
+    <div class="grid grid-cols-12 gap-3 items-center">
+      <span class="col-span-2 text-[13px] font-semibold text-ink-700">${STAT_NAMES[i]} <span class="text-[10px] text-ink-400 font-normal tabular-nums">${p.stats[i]}</span></span>
+      <div class="col-span-3"><input class="field-input ${errors['iv'+i]?'invalid':''}" data-iv="${i}" type="number" min="0" max="31" value="${sim.ivs[i]}"><div class="field-err ${errors['iv'+i]?'show':''}">${errors['iv'+i]||''}</div></div>
+      <div class="col-span-3"><input class="field-input ${errors['ev'+i]?'invalid':''}" data-ev="${i}" type="number" min="0" max="252" step="4" value="${sim.evs[i]}"><div class="field-err ${errors['ev'+i]?'show':''}">${errors['ev'+i]||''}</div></div>
+      <div class="col-span-4 flex items-center gap-3">
+        <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${Math.min(100,Math.round(results[i]/300*100))}%;background:${i===0?'var(--success)':'var(--primary)'};"></div></div>
+        <span class="text-[17px] font-bold tabular-nums w-12 text-right" style="color:var(--primary);">${results[i]}</span>
+      </div>
+    </div>`;
+  body.innerHTML = `
+    <div class="grid grid-cols-3 gap-5">
+      <div class="card p-5" data-bp-anchor="sim-config">
+        <div class="flex items-center justify-between mb-3"><span class="text-[15px] font-bold">参数设置</span>
+          <button class="link-primary" id="sim-repick">更换 Pokémon</button></div>
+        <div class="flex items-center gap-3 rounded-lg border border-slate-200 p-3 mb-4" style="background:var(--primary-soft);">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center bg-white"><span class="text-[12px] font-black" style="color:${TYPE_COLORS[p.types[0]]};">${p.name.slice(-2)}</span></div>
+          <div><div class="text-[14px] font-bold">${p.name}</div><div class="text-[10.5px] text-ink-400">No.${p.no} · ${p.types.join(' / ')}</div></div>
+        </div>
+        <label class="field-label">等级（1–100）</label>
+        <input class="field-input ${errors.level?'invalid':''}" id="sim-level" data-bp-state="sim-level" type="number" min="1" max="100" value="${sim.level}">
+        <div class="field-err ${errors.level?'show':''}">${errors.level||''}</div>
+        <label class="field-label mt-4">性格</label>
+        <select class="field-input" id="sim-nature" data-bp-state="sim-nature">
+          ${NATURES.map((n,i) => `<option value="${i}" ${i===sim.nature?'selected':''}>${n.name}${n.up?`（${STAT_NAMES[n.up]}↑ ${STAT_NAMES[n.down]}↓）`:'（无修正）'}</option>`).join('')}
+        </select>
+        <div class="flex items-center justify-between mt-4 text-[12px]">
+          <span class="text-ink-500 font-semibold">努力值总和</span>
+          <span class="font-bold tabular-nums ${evTotal>510?'':'text-ink-700'}" style="${evTotal>510?'color:var(--danger);':''}">${evTotal} / 510</span>
+        </div>
+        <div class="field-err ${errors.evTotal?'show':''}">${errors.evTotal||''}</div>
+        <button class="btn btn-secondary w-full mt-4" id="sim-reset">重置全部输入</button>
+      </div>
+      <div class="card p-5 col-span-2" data-bp-anchor="sim-result">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[15px] font-bold">计算结果</span>
+          <div class="grid grid-cols-2 gap-x-4 text-[11px] text-ink-400"><span>中间两列：个体值 / 努力值</span><span class="text-right">右侧：实时能力值</span></div>
+        </div>
+        ${hasErr ? `<div class="rounded-lg px-4 py-3 mb-4 flex items-center gap-2.5 text-[13px] font-medium" style="background:var(--danger-soft);color:var(--danger);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+          输入有误，修正标红字段后将自动重新计算</div>` : ''}
+        <div class="space-y-3.5">${[0,1,2,3,4,5].map(statRow).join('')}</div>
+      </div>
+    </div>`;
+  const b2 = viewOf('ev-simulator');
+  b2.querySelector('#sim-repick').onclick = () => { sim.pokemon = null; renderSimBody(); };
+  b2.querySelector('#sim-level').onchange = e => { sim.level = parseInt(e.target.value)||0; renderSimBody(); };
+  b2.querySelector('#sim-nature').onchange = e => { sim.nature = +e.target.value; renderSimBody(); };
+  b2.querySelectorAll('[data-iv]').forEach(inp => inp.onchange = e => { sim.ivs[+e.target.dataset.iv] = parseInt(e.target.value)||0; renderSimBody(); });
+  b2.querySelectorAll('[data-ev]').forEach(inp => inp.onchange = e => { sim.evs[+e.target.dataset.ev] = parseInt(e.target.value)||0; renderSimBody(); });
+  b2.querySelector('#sim-reset').onclick = () => { sim.level=50; sim.nature=0; sim.ivs=[31,31,31,31,31,31]; sim.evs=[0,0,0,0,0,0]; renderSimBody(); };
+}
+</script>
+<script>
+/* ================= 顶部搜索模态框 ================= */
+const modal = $('#search-modal'), sInput = $('#search-input'), sBody = $('#search-body');
+let searchTimer = null;
+const SEARCH_INDEX = [
+  ...POKEMON.map(p => ({kind:'精灵', name:p.name, sub:`No.${p.no} · ${p.types.join('/')}`, view:'pokemon-detail', id:p.id, color:'var(--primary)', bg:'var(--primary-soft)'})),
+  ...MOVES.map(m => ({kind:'招式', name:m.name, sub:m.desc, view:'move-detail', id:m.id, color:'#c2571d', bg:'#fdf0e4'})),
+  ...ITEMS.map(i => ({kind:'道具', name:i.name, sub:i.desc, view:'item-detail', id:i.id, color:'#7a4fc9', bg:'#f1eafc'})),
+  ...ABILITIES.map(a => ({kind:'特性', name:a.name, sub:a.short, view:'ability-detail', id:a.id, color:'#1f8a8a', bg:'#e3f4f4'}))
+];
+function openSearch(){
+  modal.classList.remove('hidden');
+  renderSearchState('empty');
+  setTimeout(() => sInput.focus(), 30);
+}
+function closeSearch(){ modal.classList.add('hidden'); sInput.value=''; }
+function renderSearchState(state, results){
+  if (state === 'empty'){
+    sBody.innerHTML = `<div class="px-5 py-10 text-center">
+      <div class="text-[13px] font-semibold text-ink-700">输入名称开始搜索</div>
+      <div class="text-[12px] text-ink-400 mt-1.5">支持 Pokémon / 招式 / 道具 / 特性，例如「妙蛙」「飞叶快刀」「讲究头带」「茂盛」</div></div>`;
+  } else if (state === 'loading'){
+    sBody.innerHTML = `<div class="px-5 py-10"><div class="flex items-center gap-3 justify-center text-[13px] text-ink-500">
+      <span class="inline-block w-4 h-4 rounded-full border-2 border-slate-200 animate-spin" style="border-top-color:var(--primary);"></span>搜索中…</div></div>`;
+  } else if (state === 'none'){
+    sBody.innerHTML = `<div class="px-5 py-10 text-center">
+      <div class="text-[13px] font-semibold text-ink-700">未找到匹配结果</div>
+      <div class="text-[12px] text-ink-400 mt-1.5">换个关键词试试，支持四类资料对象的名称搜索</div></div>`;
+  } else if (state === 'error'){
+    sBody.innerHTML = `<div class="px-5 py-10 text-center">
+      <div class="text-[13px] font-semibold" style="color:var(--danger);">搜索暂时不可用，请稍后再试</div>
+      <div class="text-[12px] text-ink-400 mt-1.5">已保留你的输入，可直接重试</div>
+      <button class="btn btn-secondary mt-4" id="search-retry" style="height:2rem;font-size:.75rem;">重试</button></div>`;
+    $('#search-retry').onclick = () => doSearch(sInput.value.trim());
+  } else {
+    sBody.innerHTML = `<div class="py-2">${results.map(r => `
+      <div class="row-click flex items-center gap-3 px-5 py-3 cursor-pointer" data-hit="${r.view}:${r.id}">
+        <span class="badge-mini shrink-0" style="background:${r.bg};color:${r.color};">${r.kind}</span>
+        <span class="text-[13.5px] font-bold shrink-0">${r.name}</span>
+        <span class="text-[12px] text-ink-400 truncate">${r.sub||''}</span>
+        <svg class="ml-auto shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8a94b3" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </div>`).join('')}</div>`;
+    sBody.querySelectorAll('[data-hit]').forEach(el => el.onclick = () => {
+      const [view, id] = el.dataset.hit.split(':');
+      closeSearch(); navStack = [{view:'pokemon-list'}]; go(view, +id);
+    });
+  }
+}
+function doSearch(kw){
+  if (!kw){ renderSearchState('empty'); return; }
+  renderSearchState('loading');
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    if (kw.includes('错误') || kw.includes('故障')){ renderSearchState('error'); return; } // 演示失败态
+    const hits = SEARCH_INDEX.filter(x => x.name.includes(kw));
+    renderSearchState(hits.length ? 'results' : 'none', hits.slice(0, 10));
+  }, 420);
+}
+sInput.addEventListener('input', () => doSearch(sInput.value.trim()));
+document.addEventListener('click', e => { if (e.target.closest('[data-bp-open="search-modal"]')) openSearch(); });
+$('#search-close').onclick = closeSearch;
+$('#search-backdrop').onclick = closeSearch;
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){ e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeSearch();
+});
+
+/* ================= 初始化 ================= */
+renderPokemonList();
+</script>
+<script id="prototype-artifact-guard-script">(function(){var cleaning=false;function cleanMermaidErrors(){if(cleaning)return;cleaning=true;document.querySelectorAll(".mermaid,.mermaidTooltip,[id^=mermaid-],svg[id^=mermaid-],.error-icon,.error-text").forEach(function(n){n.remove();});document.querySelectorAll("body *").forEach(function(n){var t=(n.textContent||"").trim();if(!t)return;if(t.includes("Syntax error in text")||t.includes("mermaid version")){var target=n.closest("svg,div,section,pre,body>*")||n;if(target&&target!==document.body)target.remove();}});cleaning=false;}function fixDesignHeroSpacing(){document.querySelectorAll(".hero,[class*=hero],header").forEach(function(root){root.querySelectorAll("[class*=badge],[class*=pill],[class*=tag]").forEach(function(el){el.style.position="relative";el.style.top="auto";el.style.left="auto";el.style.right="auto";el.style.transform="none";el.style.display="inline-flex";el.style.marginBottom="14px";});root.querySelectorAll("p,h1,h2,h3").forEach(function(el){el.style.clear="both";if(!el.style.marginTop)el.style.marginTop="10px";});});}function removeStage2TopRightMenu(){document.querySelectorAll(".ds-nav-links,.top-links,.top-nav-links,.header-links,.nav-links").forEach(function(n){var t=(n.textContent||"").replace(/\s+/g,"");if(/(颜色|字体|间距|圆角|阴影|组件|速查|Colors|Type|Typography|Spacing|Radius|Shadow|Components|Patterns)/i.test(t)){n.style.display="none";n.setAttribute("aria-hidden","true");}});}function revealStage2Content(){document.querySelectorAll("main,[role=main],.ds-body,.content,.main-content,.design-content,.design-system-content,.container,.page-content,section").forEach(function(n){n.style.visibility="visible";n.style.opacity="1";n.style.transform="none";n.style.filter="none";if(getComputedStyle(n).display==="none")n.style.display="block";});document.documentElement.style.visibility="visible";document.body.style.visibility="visible";document.body.style.opacity="1";document.body.style.transform="none";}function stabilizeStage2Toc(){document.querySelectorAll(".ds-toc,.toc,.sidebar,.side-nav,.left-nav,.nav-panel").forEach(function(n){var pos=getComputedStyle(n).position;if(pos==="static"||pos==="relative"){n.style.position="sticky";n.style.top="0";n.style.alignSelf="start";n.style.maxHeight="100vh";n.style.overflow="auto";n.style.zIndex="10";}});}function resetStage2InitialScroll(){try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}if(location.hash)return;var reset=function(){var scroller=document.scrollingElement||document.documentElement;window.scrollTo(0,0);if(scroller)scroller.scrollTop=0;document.body.scrollTop=0;window.dispatchEvent(new Event("resize"));};requestAnimationFrame(function(){reset();requestAnimationFrame(reset);});}function removeUselessPrototypeModals(){document.querySelectorAll("[role=dialog],.modal,[class*=modal],[class*=overlay],[class*=backdrop]").forEach(function(n){var t=(n.textContent||"").trim();if(/(发现一个本地草稿|本地草稿|Session recovery|恢复草稿|草稿)/i.test(t)){n.remove();}});document.body.style.filter="";document.body.style.backdropFilter="";}cleanMermaidErrors();fixDesignHeroSpacing();removeUselessPrototypeModals();new MutationObserver(function(){requestAnimationFrame(function(){cleanMermaidErrors();removeUselessPrototypeModals();});}).observe(document.documentElement,{childList:true,subtree:true,characterData:true});})();</script></body>
+</html>

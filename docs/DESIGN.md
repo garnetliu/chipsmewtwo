@@ -90,7 +90,9 @@ totalPages, hasNext, hasPrev }`，四个列表页共用。
 新环境变量，换来的能力这个项目并不需要）；留着注释标「尚未实现」（契约里留一个
 没人兑现的承诺）。
 
-**已改**：那两段文档字符串已改写，不再提 `POKEMON_FETCH_MODE`。
+**已改**：那两段文档字符串已改写，不再提 `POKEMON_FETCH_MODE`；`Query.pokemon`
+的 resolver 也已跟上 —— 原先查不到会抛 `NOT_FOUND`，现在返回 `null`（DEC-004），
+`graphql/schema/typeDefs.generated.ts` 同步重新生成过。
 
 ---
 
