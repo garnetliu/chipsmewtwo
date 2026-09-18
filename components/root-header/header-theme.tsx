@@ -16,17 +16,21 @@ export function HeaderTheme() {
       onValueChange={(value) => setTheme(String(value))}
     >
       <TabsList>
+        {/*
+          文字标签在 1024px 以下收成 sr-only：三个词占 140px，是头部最容易让位的一段。
+          收的是视觉不是可访问名 —— 读屏和 getByRole("tab", { name })  照样拿得到
+        */}
         <TabsTrigger value="light">
           <Sun />
-          Light
+          <span className="sr-only lg:not-sr-only">Light</span>
         </TabsTrigger>
         <TabsTrigger value="dark">
           <Moon />
-          Dark
+          <span className="sr-only lg:not-sr-only">Dark</span>
         </TabsTrigger>
         <TabsTrigger value="system">
           <Computer />
-          Computer
+          <span className="sr-only lg:not-sr-only">Computer</span>
         </TabsTrigger>
       </TabsList>
     </Tabs>

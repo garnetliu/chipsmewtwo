@@ -56,6 +56,136 @@
   --color-warning-foreground: var(--warning-foreground);
 }
 
+/**
+ * 图鉴专用调色板。
+ *
+ * 属性色和版本色是固定的品牌色，不跟着主题走，所以只写一份、不进 .dark；
+ * 承载它们的容器底色、边框、文字仍然用 shadcn 那套主题变量。
+ *
+ * static 不能省 —— 这些变量由组件按 slug 现拼成 var(--color-type-fire) 用，
+ * Tailwind 扫源码时看不到，默认会当成未使用裁掉。
+ */
+@theme static {
+  /* 属性色 18 种。前十种取自 prototype，其余八种按同一明度、彩度补齐，
+     两两 ΔE2000 均在 11 以上 */
+  --color-type-normal: #8a94a8;
+  --color-type-fighting: #cc4c3c;
+  --color-type-flying: #7fa6e8;
+  --color-type-poison: #9b59d0;
+  --color-type-ground: #b8a24a;
+  --color-type-rock: #a4744c;
+  --color-type-bug: #8aa83c;
+  --color-type-ghost: #705898;
+  --color-type-steel: #608494;
+  --color-type-fire: #e8703a;
+  --color-type-water: #3b7dd8;
+  --color-type-grass: #4cae6c;
+  --color-type-electric: #e0b52c;
+  --color-type-psychic: #e05c8a;
+  --color-type-ice: #18a3b3;
+  --color-type-dragon: #4854c8;
+  --color-type-dark: #5c4c48;
+  --color-type-fairy: #c67cb2;
+  /* 库里查不到的属性走这个，免得标签变透明 */
+  --color-type-unknown: #8a94a8;
+
+  /* 浅底版本色块上的字。prototype 的 ink-900 */
+  --color-badge-ink: #17203a;
+
+  /* 版本色 53 种，和库里 version.slug 一一对应。
+     同一作品的 DLC 版本直接引用本体，撞色的也只写一次值 */
+  --color-version-red: #e03e3e;
+  --color-version-green-japan: #3d9b62;
+  --color-version-blue: var(--color-type-water); /* 版本蓝和水属性是同一个蓝 */
+  --color-version-yellow: #f2c531;
+  --color-version-yellow-ink: var(--color-badge-ink);
+  --color-version-red-japan: var(--color-version-red);
+  --color-version-blue-japan: var(--color-version-blue);
+
+  --color-version-gold: #c9a227;
+  --color-version-gold-ink: var(--color-badge-ink);
+  --color-version-silver: var(--color-type-normal); /* 版本银和一般属性是同一个灰 */
+  --color-version-crystal: #4fb3cc;
+  --color-version-crystal-ink: var(--color-badge-ink);
+
+  --color-version-ruby: #c0392f;
+  --color-version-sapphire: #2f62b8;
+  --color-version-emerald: #2f9e6b;
+  --color-version-firered: #e8613a;
+  --color-version-leafgreen: #6cb648;
+  --color-version-leafgreen-ink: var(--color-badge-ink);
+  --color-version-colosseum: #6a6a7a;
+  --color-version-xd: #5a4a7a;
+
+  --color-version-diamond: #8fb0d8;
+  --color-version-diamond-ink: var(--color-badge-ink);
+  --color-version-pearl: #e2a3bd;
+  --color-version-pearl-ink: var(--color-badge-ink);
+  --color-version-platinum: #9aa4b4;
+  --color-version-platinum-ink: var(--color-badge-ink);
+  --color-version-heartgold: #d0a83a;
+  --color-version-heartgold-ink: var(--color-badge-ink);
+  --color-version-soulsilver: #a8b0bd;
+  --color-version-soulsilver-ink: var(--color-badge-ink);
+
+  --color-version-black: #3c3c4a;
+  --color-version-white: #c3c8d2;
+  --color-version-white-ink: var(--color-badge-ink);
+  --color-version-black-2: #4a4a5f;
+  --color-version-white-2: #d2d7e0;
+  --color-version-white-2-ink: var(--color-badge-ink);
+
+  --color-version-x: #2f74c8;
+  --color-version-y: #d94040;
+  --color-version-omega-ruby: var(--color-version-ruby);
+  --color-version-alpha-sapphire: var(--color-version-sapphire);
+
+  --color-version-sun: #e8913a;
+  --color-version-sun-ink: var(--color-badge-ink);
+  --color-version-moon: #5a63b0;
+  --color-version-ultra-sun: #d9762c;
+  --color-version-ultra-moon: #454c94;
+  --color-version-lets-go-pikachu: var(--color-version-yellow);
+  --color-version-lets-go-pikachu-ink: var(--color-badge-ink);
+  --color-version-lets-go-eevee: #b98a5a;
+
+  --color-version-sword: #4a4a6a;
+  --color-version-shield: #8a5a8a;
+  --color-version-the-isle-of-armor-sword: var(--color-version-sword);
+  --color-version-the-crown-tundra-sword: var(--color-version-sword);
+  --color-version-the-isle-of-armor-shield: var(--color-version-shield);
+  --color-version-the-crown-tundra-shield: var(--color-version-shield);
+  --color-version-brilliant-diamond: #7fa4d4;
+  --color-version-brilliant-diamond-ink: var(--color-badge-ink);
+  --color-version-shining-pearl: #dfa0bb;
+  --color-version-shining-pearl-ink: var(--color-badge-ink);
+  --color-version-legends-arceus: #a08a5e;
+
+  --color-version-scarlet: #d64f6e;
+  --color-version-violet: #6a5acd;
+  --color-version-the-teal-mask-scarlet: var(--color-version-scarlet);
+  --color-version-the-indigo-disk-scarlet: var(--color-version-scarlet);
+  --color-version-the-teal-mask-violet: var(--color-version-violet);
+  --color-version-the-indigo-disk-violet: var(--color-version-violet);
+  --color-version-legends-za: #3fa08f;
+  --color-version-mega-dimension: #7a5ad0;
+  --color-version-champions: #d4823a;
+  --color-version-champions-ink: var(--color-badge-ink);
+
+  /* 库里查不到的版本走这个 */
+  --color-version-unknown: #8a94a8;
+
+  /* 种族值条三档。值跟着主题走，档位不跟着变 */
+  --color-stat-high: var(--success); /* >= 100 */
+  --color-stat-mid: var(--primary); /* >= 80 */
+  --color-stat-low: var(--warning); /* 其余 */
+
+  /* 卡片与 chip 的投影。深色下黑影看不见，改成更重的纯黑，见 .dark */
+  --shadow-pokedex: 0 1px 2px rgb(23 32 58 / 5%);
+  --shadow-pokedex-lifted: 0 2px 8px rgb(23 32 58 / 8%);
+  --shadow-pokedex-chip: 0 2px 8px color-mix(in oklch, var(--primary) 28%, transparent);
+}
+
 :root {
   --font-sans: var(--font-inter);
   --font-heading: var(--font-space-grotesk), var(--font-inter);
@@ -145,6 +275,10 @@
   --success-foreground: oklch(0.26 0.06 150);
   --warning: oklch(0.769 0.165 70.1);
   --warning-foreground: oklch(0.29 0.07 60);
+
+  /* 深色下淡投影等于没有，卡片靠边框区分之外再压一层重影 */
+  --shadow-pokedex: 0 1px 2px rgb(0 0 0 / 45%);
+  --shadow-pokedex-lifted: 0 4px 14px rgb(0 0 0 / 55%);
 }
 
 @layer base {
@@ -161,7 +295,10 @@
   }
 
   /* 标题走 display 字体，和 logo 同源 */
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-heading), serif;
     letter-spacing: -0.015em;
   }

@@ -54,7 +54,7 @@ interface IProps extends PropsWithChildren, ComponentProps<"div"> {
 }
 
 export function PaginationList(props: Readonly<IProps>) {
-  const { children, className, pagination, maxSlots = 5 } = props;
+  const { children, className, pagination, maxSlots = 5, ...rest } = props;
   const { page, total, totalPages, hasNext, hasPrev } = pagination;
 
   const pathname = usePathname();
@@ -62,13 +62,18 @@ export function PaginationList(props: Readonly<IProps>) {
 
   // 其余 query 原样带着走，只有 page 是这里换的。前缀拼一次，
   // 后面每个页码接个数字就完事
-  const rest = new URLSearchParams(searchParams);
-  rest.delete("page");
+  const restQuery = new URLSearchParams(searchParams);
+  restQuery.delete("page");
 
-  const pageHrefPrefix = `${pathname}?${rest.toString()}&page=`;
+  const query = restQuery.toString();
+  const pageHrefPrefix = query ? `${pathname}?${query}&page=` : `${pathname}?page=`;
 
   return (
-    <div className={cn("flex flex-col gap-4 py-4", className)}>
+    <div
+      data-slot="pagination-list"
+      className={cn("flex flex-col gap-4 py-4", className)}
+      {...rest}
+    >
       {children}
 
       <div className="flex items-center justify-end gap-4">
