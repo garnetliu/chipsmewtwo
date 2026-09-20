@@ -52,10 +52,7 @@ export type AbilitynameArgs = {
  */
 export type Form = {
   __typename?: "Form";
-  /**
-   * 特性，按世代取，按槽位排序。Gen1/Gen2 没有特性，那两代是空数组。
-   * 注意 form_ability 还没有导入路径，这个字段目前恒为空数组
-   */
+  /** 特性，按世代取，按槽位排序。Gen1/Gen2 没有特性，那两代是空数组 */
   abilities: Array<FormAbility>;
   /**
    * 图鉴颜色，按世代取。「按颜色查找图鉴」是 Gen3 才有的功能，
@@ -77,17 +74,30 @@ export type Form = {
    * 数据源没收录这个形态的图时是 null
    */
   fullImageUrl?: Maybe<Scalars["String"]["output"]>;
+  /**
+   * 分类，例如「狐狸宝可梦」。回退规则同 name。
+   * 两个数据源现在都只按物种给，所以同物种的形态拿到的是同一份
+   */
+  genus?: Maybe<Scalars["String"]["output"]>;
   /** form 表主键。地区形态和原形态是两条不同的 Form，用它当缓存键 */
   id: Scalars["ID"]["output"];
+  /**
+   * 只在对战里存在的形态：超级进化、超极巨化、究极奈克洛兹玛。
+   * 跟阿罗拉形态那种平时就能带在身上的不是一回事
+   */
+  isBattleOnly: Scalars["Boolean"]["output"];
   isDefault: Scalars["Boolean"]["output"];
   /**
    * 形态名，例如「阿罗拉的样子」。原形态没有这一项。
-   * 回退规则同 Pokemon.name。注意 form_i18n 还没有导入路径，这个字段目前恒为 null
+   * 回退规则同 Pokemon.name
    */
   name?: Maybe<Scalars["String"]["output"]>;
   /** 例如 vulpix-alola */
   slug: Scalars["String"]["output"];
-  /** 按世代取。目前只导入了最新世代（数据源没有历史种族值），查老世代是 null */
+  /**
+   * 按世代取。历史种族值也导了 —— 第一世代那批填的是合并的特殊值，
+   * specialAttack / specialDefense 为 null，special 有值
+   */
   stats?: Maybe<FormStats>;
   /**
    * 按世代取。数组顺序就是属性槽位：第一个是第一属性、第二个是第二属性，
@@ -117,6 +127,14 @@ export type FormcolorArgs = {
  * 默认形态也是一条 Form（isDefault = true），没有形态的宝可梦不存在
  */
 export type FormdescriptionsArgs = {
+  language?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+/**
+ * 形态。属性、种族值、图片、图鉴颜色、特性、图鉴说明都挂在这一层。
+ * 默认形态也是一条 Form（isDefault = true），没有形态的宝可梦不存在
+ */
+export type FormgenusArgs = {
   language?: InputMaybe<Scalars["String"]["input"]>;
 };
 
@@ -234,10 +252,13 @@ export type Pokemon = {
   defaultForm?: Maybe<Form>;
   /**
    * 全部形态，默认形态排第一。
-   * 目前库里只导了默认形态，所以实际只会返回一条
+   * 超级进化、地区形态、超极巨化都在这里，喵喵有三条
    */
   forms: Array<Form>;
-  /** 分类，例如「狐狸宝可梦」。回退规则同 name */
+  /**
+   * 分类，例如「狐狸宝可梦」。回退规则同 name。
+   * 分类存在形态那一级，这里取的是默认形态的
+   */
   genus?: Maybe<Scalars["String"]["output"]>;
   /** 全国图鉴编号 */
   id: Scalars["ID"]["output"];
@@ -506,7 +527,14 @@ export type FormResolvers<
   >;
   detailImageUrl?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
   fullImageUrl?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  genus?: Resolver<
+    Maybe<ResolversTypes["String"]>,
+    ParentType,
+    ContextType,
+    Partial<FormgenusArgs>
+  >;
   id?: Resolver<ResolversTypes["ID"], ParentType, ContextType>;
+  isBattleOnly?: Resolver<ResolversTypes["Boolean"], ParentType, ContextType>;
   isDefault?: Resolver<ResolversTypes["Boolean"], ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType, Partial<FormnameArgs>>;
   slug?: Resolver<ResolversTypes["String"], ParentType, ContextType>;

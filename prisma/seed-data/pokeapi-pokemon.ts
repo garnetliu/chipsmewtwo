@@ -98,6 +98,8 @@ export type PokemonFormResponse = {
   is_default: boolean;
   /** 同一形态下排第几个 */
   form_order: number;
+  /** 只在对战里存在的形态：超级进化、超极巨化、究极奈克洛兹玛 */
+  is_battle_only: boolean;
   sprites: { front_default: string | null };
 };
 
@@ -108,12 +110,20 @@ export type ListResponse = { count: number; results: NamedRef[] };
 export type FormSnapshot = {
   slug: string;
   isDefault: boolean;
+  /** 只在对战里存在，平时不能带在身上 */
+  isBattleOnly: boolean;
   /** 大图文件名，数据源没收录时是 null */
   fullImage: string | null;
   /** 小图文件名，同上 */
   detailImage: string | null;
   /** 形态名（「阿罗拉的样子」）。默认形态没有，是空数组 */
   names: { languageCode: string; name: string }[];
+  /**
+   * 分类（「狐狸宝可梦」）。两个数据源都只按物种给，所以同物种的形态
+   * 现在拿到的是同一份 —— 位置摆在形态这一级，因为游戏里
+   * 阿罗拉六尾是冰狐宝可梦、关都六尾是狐狸宝可梦
+   */
+  genera: { languageCode: string; genus: string }[];
   /** 已经按世代展开好，每代一行 */
   types: { generationId: number; primarySlug: string; secondarySlug: string | null }[];
   /** 同样每代一行 */
@@ -141,7 +151,7 @@ export type Snapshot = {
   isLegendary: boolean;
   /// 幻之宝可梦，通常只能靠活动配信拿到
   isMythical: boolean;
-  names: { languageCode: string; name: string; genus: string | null }[];
+  names: { languageCode: string; name: string }[];
   dexNumbers: { pokedexSlug: string; number: number }[];
   /** 物种的全部形态，默认形态排在最前 */
   forms: FormSnapshot[];
@@ -184,9 +194,11 @@ function toForm({ pokemon, form }: Variety, species: SpeciesResponse): FormSnaps
   return {
     slug: pokemon.name,
     isDefault: pokemon.is_default,
+    isBattleOnly: form?.is_battle_only ?? false,
     fullImage: fileNameOf(pokemon.sprites.other["official-artwork"].front_default),
     detailImage: fileNameOf(pokemon.sprites.front_default),
     names: toFormNames(form),
+    genera: toGenera(species),
     types: toTypes(pokemon, species),
     colors: toColors(pokemon, species),
     stats: toStats(pokemon, species),
@@ -195,19 +207,23 @@ function toForm({ pokemon, form }: Variety, species: SpeciesResponse): FormSnaps
   };
 }
 
-/** names 给名字、genera 给分类，两者按语言合并成一行 */
+/** 物种译名 */
 function toNames(species: SpeciesResponse): Snapshot["names"] {
-  const genusByCode = new Map<string, string>();
-  for (const g of species.genera) {
-    const code = resolveLanguageCode(g.language.name);
-    if (code) genusByCode.set(code, g.genus);
-  }
-
   const out: Snapshot["names"] = [];
   for (const n of species.names) {
     const code = resolveLanguageCode(n.language.name);
     if (!code) continue;
-    out.push({ languageCode: code, name: n.name, genus: genusByCode.get(code) ?? null });
+    out.push({ languageCode: code, name: n.name });
+  }
+  return out;
+}
+
+/** 分类。数据源只按物种给，同物种的每个形态都写一份 */
+function toGenera(species: SpeciesResponse): FormSnapshot["genera"] {
+  const out: FormSnapshot["genera"] = [];
+  for (const g of species.genera) {
+    const code = resolveLanguageCode(g.language.name);
+    if (code) out.push({ languageCode: code, genus: g.genus });
   }
   return out;
 }

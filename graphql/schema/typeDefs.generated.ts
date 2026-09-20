@@ -220,10 +220,41 @@ export const typeDefs = {
           description: {
             kind: "StringValue",
             value:
-              "形态名，例如「阿罗拉的样子」。原形态没有这一项。\n回退规则同 Pokemon.name。注意 form_i18n 还没有导入路径，这个字段目前恒为 null",
+              "只在对战里存在的形态：超级进化、超极巨化、究极奈克洛兹玛。\n跟阿罗拉形态那种平时就能带在身上的不是一回事",
+            block: true,
+          },
+          name: { kind: "Name", value: "isBattleOnly" },
+          type: {
+            kind: "NonNullType",
+            type: { kind: "NamedType", name: { kind: "Name", value: "Boolean" } },
+          },
+        },
+        {
+          kind: "FieldDefinition",
+          description: {
+            kind: "StringValue",
+            value: "形态名，例如「阿罗拉的样子」。原形态没有这一项。\n回退规则同 Pokemon.name",
             block: true,
           },
           name: { kind: "Name", value: "name" },
+          arguments: [
+            {
+              kind: "InputValueDefinition",
+              name: { kind: "Name", value: "language" },
+              type: { kind: "NamedType", name: { kind: "Name", value: "String" } },
+            },
+          ],
+          type: { kind: "NamedType", name: { kind: "Name", value: "String" } },
+        },
+        {
+          kind: "FieldDefinition",
+          description: {
+            kind: "StringValue",
+            value:
+              "分类，例如「狐狸宝可梦」。回退规则同 name。\n两个数据源现在都只按物种给，所以同物种的形态拿到的是同一份",
+            block: true,
+          },
+          name: { kind: "Name", value: "genus" },
           arguments: [
             {
               kind: "InputValueDefinition",
@@ -281,7 +312,8 @@ export const typeDefs = {
           kind: "FieldDefinition",
           description: {
             kind: "StringValue",
-            value: "按世代取。目前只导入了最新世代（数据源没有历史种族值），查老世代是 null",
+            value:
+              "按世代取。历史种族值也导了 —— 第一世代那批填的是合并的特殊值，\nspecialAttack / specialDefense 为 null，special 有值",
             block: true,
           },
           name: { kind: "Name", value: "stats" },
@@ -316,8 +348,7 @@ export const typeDefs = {
           kind: "FieldDefinition",
           description: {
             kind: "StringValue",
-            value:
-              "特性，按世代取，按槽位排序。Gen1/Gen2 没有特性，那两代是空数组。\n注意 form_ability 还没有导入路径，这个字段目前恒为空数组",
+            value: "特性，按世代取，按槽位排序。Gen1/Gen2 没有特性，那两代是空数组",
             block: true,
           },
           name: { kind: "Name", value: "abilities" },
@@ -663,7 +694,8 @@ export const typeDefs = {
           kind: "FieldDefinition",
           description: {
             kind: "StringValue",
-            value: "分类，例如「狐狸宝可梦」。回退规则同 name",
+            value:
+              "分类，例如「狐狸宝可梦」。回退规则同 name。\n分类存在形态那一级，这里取的是默认形态的",
             block: true,
           },
           name: { kind: "Name", value: "genus" },
@@ -690,7 +722,7 @@ export const typeDefs = {
           kind: "FieldDefinition",
           description: {
             kind: "StringValue",
-            value: "全部形态，默认形态排第一。\n目前库里只导了默认形态，所以实际只会返回一条",
+            value: "全部形态，默认形态排第一。\n超级进化、地区形态、超极巨化都在这里，喵喵有三条",
             block: true,
           },
           name: { kind: "Name", value: "forms" },

@@ -1151,7 +1151,10 @@ function switchBranches(source: string): { keys: string[]; value: string }[] {
  * 模板名在页面里写的是繁体，简体重定向也认，两种都匹配
  */
 function parseGenus(source: string): Localized {
-  const body = templateBody(source, "[寶宝]可[夢梦]信息框");
+  // 有形态页的写 {{寶可夢信息框/形態，名字里的「形態」也在模板名上
+  const body =
+    templateBody(source, "[寶宝]可[夢梦]信息框/形[態态]") ??
+    templateBody(source, "[寶宝]可[夢梦]信息框");
   if (!body) return {};
   const species = namedArgs(body).get("species");
   return species ? splitVariants(plainText(species)) : {};

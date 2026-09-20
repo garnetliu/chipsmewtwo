@@ -6,8 +6,8 @@ import type { PokemonResolvers } from "./../../types.generated";
  * id 和 slug 不用写 —— Query 那边 findOne 返回的对象里就有，
  * GraphQL 默认解析取同名属性。
  *
- * name 和 genus 调的是同一个 nameOf，DataLoader 会把两次调用合并成一次查询；
- * defaultForm 和 forms 同理共用 formsOf
+ * genus 存在形态那一级（游戏里阿罗拉六尾是冰狐宝可梦、关都六尾是狐狸宝可梦），
+ * 这里取默认形态的那份；defaultForm 和 forms 共用 formsOf
  */
 export const Pokemon: PokemonResolvers = {
   name: async (parent, { language }, ctx) => {
@@ -16,8 +16,9 @@ export const Pokemon: PokemonResolvers = {
   },
 
   genus: async (parent, { language }, ctx) => {
-    const row = await ctx.dataSources.pokemon.nameOf(Number(parent.id), language ?? ctx.language);
-    return row?.genus ?? null;
+    const forms = await ctx.dataSources.form.ofPokemon(parent.id);
+    const form = forms.find((f) => f.isDefault);
+    return form ? ctx.dataSources.form.genusOf(form.id, language ?? ctx.language) : null;
   },
 
   // formsOf 已经把默认形态排在第一位，这里再 find 一次而不是取 [0]：

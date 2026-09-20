@@ -28,7 +28,10 @@ type Pokemon {
   所以拿到的可能是别的语种的文本，一条译名都没有才是 null
   """
   name(language: String): String
-  """分类，例如「狐狸宝可梦」。回退规则同 name"""
+  """
+  分类，例如「狐狸宝可梦」。回退规则同 name。
+  分类存在形态那一级，这里取的是默认形态的
+  """
   genus(language: String): String
   """默认形态。列表页缩略图和详情页主视图取这个。这只还没导入形态时是 null"""
   defaultForm: Form
