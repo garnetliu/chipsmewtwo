@@ -220,6 +220,29 @@ export type PkhexPokemonSnapshot = {
   groupSlugs: string[];
 };
 
+/**
+ * PKHeX 进化表的一条：这个版本组里、这条进化以这种方式触发。
+ *
+ * 每张表对应一作游戏，同一进化会在多个版本组各有一行 ——
+ * 跟 PokeAPI 的「只在引入时的版本组记一行」是两种切法，两种合起来
+ * 才是完整事实：引入时的条件 PKHeX 不带（条件全靠复制 PokeAPI 的行）
+ *
+ * method 是 PKHeX 的 EvolutionType 编号（62 种），arg 是它的参数 ——
+ * 进化道具/招式的游戏内部编号或数值阈值，随表所属游戏不同含义不同，
+ * 没有翻译成 slug，只有「引入行」覆盖不到的少数行才需要人去解它
+ */
+export type PkhexEvolutionSnapshot = {
+  groupSlug: string;
+  fromFormSlug: string;
+  fromVariantSlug: string | null;
+  toFormSlug: string;
+  toVariantSlug: string | null;
+  method: number;
+  arg: number;
+  /** 升级进化的等级，非升级是 0 */
+  level: number;
+};
+
 /** 树果自己那套数值。树果本身在 items 里也有一行 */
 export type BerrySnapshot = {
   itemSlug: string;
@@ -477,6 +500,7 @@ export type SeedData = {
   machines: MachineSnapshot[];
   berries: BerrySnapshot[];
   "pkhex-pokemon": PkhexPokemonSnapshot[];
+  "pkhex-evolutions": PkhexEvolutionSnapshot[];
   moves: MoveSnapshot[];
   "z-moves": ZMoveSnapshot[];
   "max-moves": MaxMoveSnapshot[];
