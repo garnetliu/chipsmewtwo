@@ -53,7 +53,7 @@ import {
   type MoveSnapshot,
   type NamedSnapshot,
   type NatureSnapshot,
-  type PkhexColorSnapshot,
+  type PkhexPokemonSnapshot,
   type PokedexSnapshot,
   type PokemonDescriptionSnapshot,
   type PokemonSnapshot,
@@ -227,6 +227,130 @@ function clonePkhex(): string {
   return join(PKHEX_DIR, "PKHeX.Core/Resources/byte/personal");
 }
 
+/**
+ * 每张表的布局：世代、文件、每条字节数、各字段偏移、物种上限、覆盖哪些版本组。
+ *
+ * 存在性很关键：表里不在本作的物种填的是默认值，照抄会把整批洗成
+ * 假数据 —— 剑盾的表第 899 位往后全是垃圾。剑盾和阿尔宙斯的颜色
+ * 和存在性挤在同一个字节（低 6 位颜色、bit6 存在性），presentAt 传 -1
+ */
+const PKHEX_TABLES: {
+  generationId: number;
+  file: string;
+  size: number;
+  catchRate: number;
+  evoStage: number;
+  evYield: number;
+  gender: number;
+  hatch: number;
+  friendship: number;
+  growth: number;
+  eggGroups: [number, number];
+  color: number;
+  presentAt: number;
+  height: number;
+  weight: number;
+  maxSpecies: number;
+  /** 表覆盖的版本组，存在性挂在这些组上 */
+  groupSlugs: string[];
+}[] = [
+  {
+    generationId: 8,
+    file: "personal_swsh",
+    size: 0xb0,
+    catchRate: 0x08,
+    evoStage: 0x09,
+    evYield: 0x0a,
+    gender: 0x12,
+    hatch: 0x13,
+    friendship: 0x14,
+    growth: 0x15,
+    eggGroups: [0x16, 0x17],
+    color: 0x21,
+    presentAt: -1,
+    height: 0x24,
+    weight: 0x26,
+    maxSpecies: 898,
+    groupSlugs: ["sword-shield", "isle-of-armor", "crown-tundra"],
+  },
+  {
+    generationId: 8,
+    file: "personal_la",
+    size: 0xb0,
+    catchRate: 0x08,
+    evoStage: 0x09,
+    evYield: 0x0a,
+    gender: 0x12,
+    hatch: 0x13,
+    friendship: 0x14,
+    growth: 0x15,
+    eggGroups: [0x16, 0x17],
+    color: 0x21,
+    presentAt: -1,
+    height: 0x24,
+    weight: 0x26,
+    maxSpecies: 999,
+    groupSlugs: ["legends-arceus"],
+  },
+  {
+    generationId: 8,
+    file: "personal_bdsp",
+    size: 0x44,
+    catchRate: 0x08,
+    evoStage: 0x09,
+    evYield: 0x0a,
+    gender: 0x12,
+    hatch: 0x13,
+    friendship: 0x14,
+    growth: 0x15,
+    eggGroups: [0x16, 0x17],
+    color: 0x21,
+    presentAt: -1,
+    height: 0x24,
+    weight: 0x26,
+    maxSpecies: 493,
+    groupSlugs: ["brilliant-diamond-shining-pearl"],
+  },
+  {
+    generationId: 9,
+    file: "personal_sv",
+    size: 0x50,
+    catchRate: 0x08,
+    evoStage: 0x09,
+    evYield: 0x0a,
+    gender: 0x0c,
+    hatch: 0x0d,
+    friendship: 0x0e,
+    growth: 0x0f,
+    eggGroups: [0x10, 0x11],
+    color: 0x1b,
+    presentAt: 0x1c,
+    height: 0x20,
+    weight: 0x22,
+    maxSpecies: 1025,
+    groupSlugs: ["scarlet-violet", "the-teal-mask", "the-indigo-disk"],
+  },
+  {
+    generationId: 9,
+    file: "personal_za",
+    size: 0x50,
+    catchRate: 0x08,
+    evoStage: 0x09,
+    evYield: 0x0a,
+    gender: 0x0c,
+    hatch: 0x0d,
+    friendship: 0x0e,
+    growth: 0x0f,
+    eggGroups: [0x10, 0x11],
+    color: 0x1b,
+    presentAt: 0x1c,
+    height: 0x20,
+    weight: 0x22,
+    maxSpecies: 1025,
+    groupSlugs: ["legends-za"],
+  },
+];
+
 /** PKHeX 颜色枚举的顺序，跟库里 Color 的 slug 一致 */
 const PKHEX_COLORS = [
   "red",
@@ -241,67 +365,73 @@ const PKHEX_COLORS = [
   "pink",
 ] as const;
 
-/**
- * 每张表的（每条字节数、颜色偏移、是否存在偏移、物种上限）。
- *
- * 存在性很关键：表里不在本作的物种填的是默认值，图鉴颜色那一列
- * 不能信 —— 剑盾的表第 899 位往后全是垃圾，照抄会把整批洗成 yellow
- */
-const PKHEX_TABLES: Record<
-  number,
-  { file: string; size: number; colorAt: number; presentAt: number; maxSpecies: number }
-> = {
-  8: { file: "personal_swsh", size: 0xb0, colorAt: 0x21, presentAt: -1, maxSpecies: 898 },
-  9: { file: "personal_sv", size: 0x50, colorAt: 0x1b, presentAt: 0x1c, maxSpecies: 1025 },
-};
-
-/** 一张表的默认形态颜色。颜色和存在性共用 0x21 那个字节时 presentAt 传 -1 */
-function colorsOfTable(
+/** 一条物种条目的全部字段。present=false 时其余字段是表尾默认填充，不可信 */
+function entryOf(
   data: Buffer,
-  { size, colorAt, presentAt, maxSpecies }: (typeof PKHEX_TABLES)[number],
-): (string | null)[] {
-  const out: (string | null)[] = [];
-  for (let id = 0; id <= maxSpecies; id++) {
-    const b = data.subarray(id * size, (id + 1) * size);
-    if (b.length < size) {
-      out.push(null);
-      continue;
-    }
-    // 剑盾的颜色和存在性挤在同一个字节：低 6 位颜色、bit6 存在性
-    const present = presentAt === -1 ? ((b[colorAt]! >> 6) & 1) === 1 : b[presentAt]! !== 0;
-    const color = presentAt === -1 ? b[colorAt]! & 0x3f : b[colorAt]!;
-    out.push(present ? (PKHEX_COLORS[color] ?? null) : null);
-  }
-  return out;
+  table: (typeof PKHEX_TABLES)[number],
+  id: number,
+): (PkhexPokemonSnapshot & { present: boolean }) | null {
+  const b = data.subarray(id * table.size, (id + 1) * table.size);
+  if (b.length < table.size) return null;
+
+  const present =
+    table.presentAt === -1 ? ((b[table.color]! >> 6) & 1) === 1 : b[table.presentAt]! !== 0;
+  // 颜色和存在性共用一个字节时，颜色取低 6 位
+  const colorByte = table.presentAt === -1 ? b[table.color]! & 0x3f : b[table.color]!;
+
+  // 努力值是个 12 bit 的位段：HP/攻/防/速/特攻/特防各占 2 bit，都是 0~3
+  const evYield = b[table.evYield]! | (b[table.evYield + 1]! << 8);
+
+  return {
+    pokemonId: id,
+    generationId: table.generationId,
+    present,
+    height: b.readUInt16LE(table.height),
+    weight: b.readUInt16LE(table.weight),
+    evs: {
+      hp: (evYield >> 0) & 3,
+      attack: (evYield >> 2) & 3,
+      defense: (evYield >> 4) & 3,
+      speed: (evYield >> 6) & 3,
+      specialAttack: (evYield >> 8) & 3,
+      specialDefense: (evYield >> 10) & 3,
+    },
+    captureRate: b[table.catchRate]!,
+    baseHappiness: b[table.friendship]!,
+    hatchCycles: b[table.hatch]!,
+    genderCode: b[table.gender]!,
+    growthRateId: b[table.growth]!,
+    eggGroupIds: [b[table.eggGroups[0]]!, b[table.eggGroups[1]]!],
+    evoStage: b[table.evoStage]!,
+    colorSlug: PKHEX_COLORS[colorByte]!,
+    groupSlugs: table.groupSlugs,
+  };
 }
 
 /**
- * 图鉴颜色，按 PKHeX 的表为准 —— PokeAPI 的 species.color 是志愿者
- * 手填的，第八九世代那批填错了十几只（润水鸭写成白、赛富豪写成蓝），
- * 而 PKHeX 直接读 ROM。只导物种表的默认形态，其他形态的颜色
- * （超极巨、地区形态）PokeAPI 目前没出过错，仍以它为准
+ * PKHeX 五张表的物种条目：图鉴颜色、身高体重、努力值、捕获率、亲密度、
+ * 孵化周期、性别比、成长速度、蛋组、进化阶段、存在性。
+ *
+ * 图鉴颜色那列 PokeAPI 是志愿者手填的、第八九世代错了一批，身高体重
+ * 努力值那批它压根没有 —— 全按 PKHeX（直接读 ROM）为准。
+ *
+ * 每行属于「物种 × 世代」，挂到版本组的那些存在性标记在 groupSlugs 里。
+ * 第一版只导物种区的默认形态条目；地区形态和超级形态的这些数值
+ * 在表里的形态区，需要 slug↔form 编号的映射，还没做
  */
-async function pkhexColors(): Promise<PkhexColorSnapshot[]> {
+async function pkhexPokemon(): Promise<PkhexPokemonSnapshot[]> {
   const dir = clonePkhex();
-  const snap = JSON.parse(await readFile(join(SEED_DATA_DIR, "pokemon.json"), "utf8")) as {
-    id: number;
-    slug: string;
-    forms: { slug: string; isDefault: boolean }[];
-  }[];
-  const defaultFormOf = new Map(snap.map((p) => [p.id, p.forms.find((f) => f.isDefault)?.slug]));
-
-  const rows: PkhexColorSnapshot[] = [];
-  for (const [generation, table] of Object.entries(PKHEX_TABLES)) {
+  const rows: PkhexPokemonSnapshot[] = [];
+  for (const table of PKHEX_TABLES) {
     const data = await readFile(join(dir, table.file));
-    const colors = colorsOfTable(data, table);
-    const before = rows.length;
-    for (let id = 1; id < colors.length; id++) {
-      const color = colors[id];
-      const formSlug = defaultFormOf.get(id);
-      if (!color || !formSlug) continue;
-      rows.push({ formSlug, generationId: Number(generation), colorSlug: color });
+    let present = 0;
+    for (let id = 1; id <= table.maxSpecies; id++) {
+      const entry = entryOf(data, table, id);
+      if (!entry || !entry.present) continue;
+      present++;
+      rows.push(entry);
     }
-    console.log(`  PKHeX gen${generation} 颜色: ${rows.length - before} 条`);
+    console.log(`  PKHeX gen${table.generationId} ${table.file}: ${present} 只在场`);
   }
   return rows;
 }
@@ -1620,8 +1750,8 @@ await mkdir(SEED_DATA_DIR, { recursive: true });
 // 单步逃生口：只要一步的快照时不用整套重刷（一万多个请求、十几分钟）。
 // 依赖已有快照文件的步骤放这儿，不碰内存里的中间产物
 const only = process.argv[2];
-if (only === "pkhex-colors") {
-  await write("pkhex-colors", await pkhexColors());
+if (only === "pkhex-pokemon") {
+  await write("pkhex-pokemon", await pkhexPokemon());
   process.exit(0);
 }
 
@@ -1678,9 +1808,9 @@ await write(
 
 await write("berries", await berries());
 
-// PKHeX 的图鉴颜色。PokeAPI 的这列是手填的，错了一批，
-// 用 ROM 数据覆盖（clonePkhex 有缓存，第二次跑不重新下载）
-await write("pkhex-colors", await pkhexColors());
+// PKHeX 的物种数值。PokeAPI 的颜色是手填的、错了一批，身高体重
+// 努力值那批它压根没有，全用 ROM 数据补和盖（clonePkhex 有缓存）
+await write("pkhex-pokemon", await pkhexPokemon());
 
 // 道具机制。形态变化那头也要 knownForms，不在的退成属性变化
 const triggers = await formTriggers(knownForms, formRows);

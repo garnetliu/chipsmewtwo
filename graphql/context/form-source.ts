@@ -172,6 +172,12 @@ export class FormSource {
           specialDefense: true,
           speed: true,
           special: true,
+          evHp: true,
+          evAttack: true,
+          evDefense: true,
+          evSpecialAttack: true,
+          evSpecialDefense: true,
+          evSpeed: true,
         },
       });
 
