@@ -28,6 +28,7 @@ import type { Prisma } from "@/prisma/generated/client";
 import {
   type DamageTo,
   type EffectsByGeneration,
+  type EvolutionSnapshot,
   type FlavorsByGroup,
   type GzipSeedData,
   type Localized,
@@ -1748,6 +1749,113 @@ async function seedEvolutions(dict: {
       },
     ];
   });
+
+  // ── PKHeX 的版本组展开 ──
+  //
+  // 上面的行来自 PokeAPI：一条进化只记在它引入时的版本组里
+  // （妙蛙种子→妙蛙草只有 red-blue 一行），前端按世代切换查不到
+  // 「朱紫里这只能怎么进化」。PKHeX 的表每作一份、全部在场的进化
+  // 都有，拿它决定 (from, to, group) 该有哪些行；条件这列 PKHeX
+  // 不给 —— 条件跨作几乎不变（352 条等级校对零不一致），直接复制
+  // 引入行的，等级用 PKHeX 的覆盖
+  {
+    // 引入行按归约后的 (from, to) 索引：变体抹掉、非默认 variety
+    // 抹成物种默认 —— 徒步索财灵→赛富豪才能命中宝箱索财灵的引入行
+    const snap = read("pokemon");
+    const speciesOf = new Map(snap.flatMap((p) => p.forms.map((f) => [f.slug, p.slug] as const)));
+    const defaultVariety = new Map(
+      snap.flatMap((p) => p.forms.filter((f) => f.isDefault).map((f) => [p.slug, f.slug] as const)),
+    );
+    const varietyOfVariant = new Map(
+      read("form-variants").map((v) => [v.slug, v.formSlug] as const),
+    );
+    const reduce = (slug: string) => {
+      const asVariety = varietyOfVariant.get(slug);
+      if (asVariety) return asVariety;
+      const species = speciesOf.get(slug);
+      return (species && defaultVariety.get(species)) || slug;
+    };
+    const introOf = new Map<string, EvolutionSnapshot>();
+    for (const r of rows) {
+      const key = `${reduce(r.fromFormSlug)}|${reduce(r.toFormSlug)}`;
+      // 重复时（同 from/to 的多版本组行）取第一条，条件反正一致
+      if (!introOf.has(key)) introOf.set(key, r);
+    }
+
+    const added: (typeof data)[number][] = [];
+    let noIntro = 0;
+    const seen = new Set(
+      data.map(
+        (d) => `${d.fromFormId} ${d.fromVariantId} ${d.toFormId} ${d.toVariantId} ${d.groupId}`,
+      ),
+    );
+    for (const r of read("pkhex-evolutions")) {
+      const fromFormId = dict.forms.get(r.fromFormSlug);
+      const toFormId = dict.forms.get(r.toFormSlug);
+      const groupId = dict.groups.get(r.groupSlug);
+      if (fromFormId === undefined || toFormId === undefined || groupId === undefined) continue;
+
+      const fromVariantId = r.fromVariantSlug
+        ? (dict.variants.get(r.fromVariantSlug) ?? null)
+        : null;
+      const toVariantId = r.toVariantSlug ? (dict.variants.get(r.toVariantSlug) ?? null) : null;
+      // 引入行已经覆盖的组不动 —— 条件以 PokeAPI 的为准
+      if (seen.has(`${fromFormId} ${fromVariantId} ${toFormId} ${toVariantId} ${groupId}`))
+        continue;
+
+      const intro = introOf.get(`${reduce(r.fromFormSlug)}|${reduce(r.toFormSlug)}`);
+      if (!intro) {
+        noIntro++;
+        continue;
+      }
+      seen.add(`${fromFormId} ${fromVariantId} ${toFormId} ${toVariantId} ${groupId}`);
+      added.push({
+        fromFormId,
+        toFormId,
+        groupId,
+        triggerSlug: intro.triggerSlug,
+        // PKHeX 的等级是这作的真实值，覆盖引入行的（等级跨作变过：
+        // 呆呆兽在阿尔宙斯 37 级、在剑盾 35 级这种）
+        minLevel: r.method === 4 && r.level > 0 ? r.level : intro.minLevel,
+        minHappiness: intro.minHappiness,
+        minAffection: intro.minAffection,
+        minBeauty: intro.minBeauty,
+        minSteps: intro.minSteps,
+        minMoveCount: intro.minMoveCount,
+        minDamageTaken: intro.minDamageTaken,
+        itemId: intro.itemSlug ? (dict.items.get(intro.itemSlug) ?? null) : null,
+        heldItemId: intro.heldItemSlug ? (dict.items.get(intro.heldItemSlug) ?? null) : null,
+        knownMoveId: intro.knownMoveSlug ? (dict.moves.get(intro.knownMoveSlug) ?? null) : null,
+        knownMoveTypeId: intro.knownMoveTypeSlug
+          ? (dict.types.get(intro.knownMoveTypeSlug) ?? null)
+          : null,
+        usedMoveId: intro.usedMoveSlug ? (dict.moves.get(intro.usedMoveSlug) ?? null) : null,
+        partyFormId: intro.partyFormSlug ? (dict.forms.get(intro.partyFormSlug) ?? null) : null,
+        partyTypeId: intro.partyTypeSlug ? (dict.types.get(intro.partyTypeSlug) ?? null) : null,
+        tradeFormId: intro.tradeFormSlug ? (dict.forms.get(intro.tradeFormSlug) ?? null) : null,
+        regionId: intro.regionSlug ? (dict.regions.get(intro.regionSlug) ?? null) : null,
+        locationName: intro.locationName,
+        timeOfDay: intro.timeOfDay,
+        gender: intro.gender,
+        needsRain: intro.needsRain,
+        needsMultiplayer: intro.needsMultiplayer,
+        nearSpecialRock: intro.nearSpecialRock,
+        turnUpsideDown: intro.turnUpsideDown,
+        attackVsDefense: intro.attackVsDefense,
+        fromVariantId,
+        toVariantId,
+        conditionExpression: intro.conditionExpression,
+        conditionChance: intro.conditionChance,
+      });
+      // 毒电婴那种按性格分化的，新组也带上
+      if (intro.natureSlugs.length) {
+        naturesOf.set(signature({ fromFormId, toFormId, groupId }), intro.natureSlugs);
+      }
+    }
+    data.push(...added);
+    if (noIntro) console.warn(`  ⚠ ${noIntro} 条 PKHeX 进化没有引入行可复制条件，已跳过`);
+    console.log(`  PKHeX 展开补了 ${added.length} 行（每作在场的进化）`);
+  }
 
   // 整表重建。链是从这些行算出来的，所以链也一起重建。
   //

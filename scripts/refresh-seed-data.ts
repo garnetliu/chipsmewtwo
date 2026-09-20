@@ -53,6 +53,7 @@ import {
   type MoveSnapshot,
   type NamedSnapshot,
   type NatureSnapshot,
+  type PkhexEvolutionSnapshot,
   type PkhexPokemonSnapshot,
   type PokedexSnapshot,
   type PokemonDescriptionSnapshot,
@@ -216,7 +217,7 @@ function clonePkhex(): string {
       stdio: "pipe",
     });
   }
-  execSync(`git -C ${PKHEX_DIR} sparse-checkout set PKHeX.Core/Resources/byte/personal`, {
+  execSync(`git -C ${PKHEX_DIR} sparse-checkout set PKHeX.Core/Resources/byte`, {
     stdio: "pipe",
   });
   try {
@@ -433,6 +434,300 @@ async function pkhexPokemon(): Promise<PkhexPokemonSnapshot[]> {
     }
     console.log(`  PKHeX gen${table.generationId} ${table.file}: ${present} 只在场`);
   }
+  return rows;
+}
+
+// ── PKHeX 的进化表 ────────────────────────────────────────────
+
+/**
+ * 进化表跟 personal 表是分开的资源：一张一张 evos_XX.pkl，
+ * 每张对应一作游戏（不是世代 —— 剑盾、阿尔宙斯、复刻各一张）。
+ *
+ * from 端要么是物种 id（默认形态），要么是 personal 表里该物种
+ * 形态区的条目 id —— 地区形态的进化（伽勒尔喵喵→喵头刀）就是这么编码的。
+ * to 端是物种 id + form 编号（0/255 默认）
+ */
+const PKHEX_EVO_TABLES: {
+  evoFile: string;
+  /** 老世代（1~5）的表没有地区形态，from/to 全是物种 id，不用 personal */
+  personalFile: string | null;
+  personalSize?: number;
+  formStatsAt?: number;
+  formCountAt?: number;
+  maxSpecies: number;
+  groupSlugs: string[];
+}[] = [
+  {
+    evoFile: "evos_g1.pkl",
+    personalFile: null,
+    maxSpecies: 193,
+    groupSlugs: ["red-blue", "yellow", "red-green-japan", "blue-japan"],
+  },
+  {
+    evoFile: "evos_g2.pkl",
+    personalFile: null,
+    maxSpecies: 252,
+    groupSlugs: ["gold-silver", "crystal"],
+  },
+  {
+    evoFile: "evos_g3.pkl",
+    personalFile: null,
+    maxSpecies: 387,
+    groupSlugs: ["ruby-sapphire", "emerald", "firered-leafgreen"],
+  },
+  {
+    evoFile: "evos_g4.pkl",
+    personalFile: null,
+    maxSpecies: 494,
+    groupSlugs: ["diamond-pearl", "platinum", "heartgold-soulsilver"],
+  },
+  {
+    evoFile: "evos_g5.pkl",
+    personalFile: null,
+    maxSpecies: 650,
+    groupSlugs: ["black-white", "black-2-white-2"],
+  },
+  // 表跟哪张 personal 配对是 PKHeX 源码里定死的：g6 用 AO 的表、
+  // uu 用 USUM 的 —— 配错了地区形态的条目编号就对不上，解析出来全是乱配
+  {
+    evoFile: "evos_g6.pkl",
+    personalFile: "personal_ao",
+    personalSize: 0x50,
+    formStatsAt: 0x1c,
+    formCountAt: 0x20,
+    maxSpecies: 722,
+    groupSlugs: ["x-y", "omega-ruby-alpha-sapphire"],
+  },
+  {
+    evoFile: "evos_uu.pkl",
+    personalFile: "personal_uu",
+    personalSize: 0x54,
+    formStatsAt: 0x1c,
+    formCountAt: 0x20,
+    maxSpecies: 807,
+    groupSlugs: ["sun-moon", "ultra-sun-ultra-moon"],
+  },
+  {
+    evoFile: "evos_gg.pkl",
+    personalFile: "personal_gg",
+    personalSize: 0x54,
+    formStatsAt: 0x1c,
+    formCountAt: 0x20,
+    maxSpecies: 809,
+    groupSlugs: ["lets-go-pikachu-lets-go-eevee"],
+  },
+  {
+    evoFile: "evos_ss.pkl",
+    personalFile: "personal_swsh",
+    personalSize: 0xb0,
+    formStatsAt: 0x1e,
+    formCountAt: 0x20,
+    maxSpecies: 898,
+    groupSlugs: ["sword-shield", "isle-of-armor", "crown-tundra"],
+  },
+  {
+    evoFile: "evos_la.pkl",
+    personalFile: "personal_la",
+    personalSize: 0xb0,
+    formStatsAt: 0x1e,
+    formCountAt: 0x20,
+    maxSpecies: 905,
+    groupSlugs: ["legends-arceus"],
+  },
+  {
+    evoFile: "evos_bs.pkl",
+    personalFile: "personal_bdsp",
+    personalSize: 0x44,
+    formStatsAt: 0x1e,
+    formCountAt: 0x20,
+    maxSpecies: 493,
+    groupSlugs: ["brilliant-diamond-shining-pearl"],
+  },
+  {
+    evoFile: "evos_sv.pkl",
+    personalFile: "personal_sv",
+    personalSize: 0x50,
+    formStatsAt: 0x18,
+    formCountAt: 0x1a,
+    maxSpecies: 1025,
+    groupSlugs: ["scarlet-violet", "the-teal-mask", "the-indigo-disk"],
+  },
+  {
+    evoFile: "evos_za.pkl",
+    personalFile: "personal_za",
+    personalSize: 0x50,
+    formStatsAt: 0x18,
+    formCountAt: 0x1a,
+    maxSpecies: 1025,
+    groupSlugs: ["legends-za"],
+  },
+];
+
+/** 解一张 evo pkl。容器头是 2 字节标识 + 条数，之后每条 8 字节 */
+function readEvoPkl(
+  data: Buffer,
+): { from: number; method: number; arg: number; to: number; toForm: number; level: number }[][] {
+  const count = data.readUInt16LE(2);
+  const offsetAt = (i: number) => data.readUInt16LE(4 + 2 * i);
+  const out: {
+    from: number;
+    method: number;
+    arg: number;
+    to: number;
+    toForm: number;
+    level: number;
+  }[][] = [];
+  for (let species = 0; species < count; species++) {
+    const start = offsetAt(species);
+    const end = offsetAt(species + 1);
+    const methods: {
+      from: number;
+      method: number;
+      arg: number;
+      to: number;
+      toForm: number;
+      level: number;
+    }[] = [];
+    for (let i = start; i + 8 <= end; i += 8) {
+      methods.push({
+        from: species,
+        method: data[i]!,
+        arg: data.readUInt16LE(i + 2),
+        to: data.readUInt16LE(i + 4),
+        toForm: data[i + 6]!,
+        level: data[i + 7]!,
+      });
+    }
+    out.push(methods);
+  }
+  return out;
+}
+
+/**
+ * PKHeX 的条目 id → 我们的形态。personal 表物种条目里
+ * FormStatsIndex 指着形态区，条目 = fs + i - 1（i 从 1 数，0 是默认），
+ * 再靠 pokemon-form 的 form_order（= 游戏 form 编号 + 1）对回 slug。
+ * 变体那一级（结草儿蓑衣）顺带认出来：pokemon-form 名 ≠ variety 名就是变体
+ */
+async function pkhexEvolutions(formRows: PokemonFormResponse[]): Promise<PkhexEvolutionSnapshot[]> {
+  const dir = clonePkhex();
+
+  // variety slug → 物种 id，还有物种默认形态
+  const snap = JSON.parse(await readFile(join(SEED_DATA_DIR, "pokemon.json"), "utf8")) as {
+    id: number;
+    forms: { slug: string; isDefault: boolean }[];
+  }[];
+  const speciesOfVariety = new Map<string, number>();
+  const defaultVariety = new Map<number, string>();
+  for (const p of snap) {
+    for (const f of p.forms) {
+      speciesOfVariety.set(f.slug, p.id);
+      if (f.isDefault) defaultVariety.set(p.id, f.slug);
+    }
+  }
+
+  // (物种, form 编号) → 形态两头。PokeAPI 的 form_order 比游戏内部
+  // 编号大 1（默认形态 order=1）。超极巨 variety 自己 order=1，和默认撞 ——
+  // 但默认形态不走这张表，撞不上。
+  // variety 那头是 /pokemon 的名（阿罗拉六尾这种），变体那头是 pokemon-form
+  // 自己的名（结草儿草木蓑衣）—— 名和 variety 不一样就是变体
+  const formOf = new Map<string, { varietySlug: string; variantSlug: string | null }>();
+  const duplicate = new Set<string>();
+  for (const f of formRows) {
+    const species = speciesOfVariety.get(f.pokemon.name);
+    if (species === undefined) continue;
+    const key = `${species} ${f.form_order - 1}`;
+    if (formOf.has(key)) duplicate.add(key);
+    formOf.set(key, {
+      varietySlug: f.pokemon.name,
+      variantSlug: f.name !== f.pokemon.name ? f.name : null,
+    });
+  }
+  if (duplicate.size) {
+    console.warn(`  ⚠ (物种, form) 编号撞了 ${duplicate.size} 个，跳过这些`);
+    for (const key of duplicate) formOf.delete(key);
+  }
+
+  /**
+   * from/to 的形态解析。返回 [variety slug, 变体 slug | null, form 编号]。
+   * form 编号是游戏内部的形态编号 —— to 端写 255（AnyForm，byte 满值）
+   * 表示「沿用 from 的形态」，南瓜怪人的大小就是这样继承的；
+   * 0 是默认形态，其余是形态编号
+   */
+  const resolve = (
+    entryId: number,
+    formIdx: number,
+    table: (typeof PKHEX_EVO_TABLES)[number],
+    personal: Buffer | null,
+  ): [string, string | null, number] | null => {
+    const species = entryId <= table.maxSpecies ? entryId : undefined;
+    if (species !== undefined) {
+      if (formIdx > 0 && formIdx < 255) {
+        // 物种条目 + 非默认 form 编号（to 端的常见形态）
+        const hit = formOf.get(`${species} ${formIdx}`);
+        return hit ? [hit.varietySlug, hit.variantSlug, formIdx] : null;
+      }
+      // 255（AnyForm）在消费端已经换成具体编号了，到这儿只剩默认
+      return [defaultVariety.get(species) ?? "", null, 0];
+    }
+
+    // 形态区条目：用 personal 表反查 (物种, form 编号)
+    if (!personal || !table.formStatsAt || !table.formCountAt) return null;
+    const size = table.personalSize!;
+    for (let dex = 1; dex <= table.maxSpecies; dex++) {
+      const b = personal.subarray(dex * size, (dex + 1) * size);
+      if (b.length < size) continue;
+      const fs = b.readUInt16LE(table.formStatsAt);
+      const count = b[table.formCountAt]!;
+      // formCount 含默认形态，所以非默认条目数是 count-1
+      if (fs > 0 && entryId >= fs && entryId < fs + count - 1) {
+        const idx = entryId - fs + 1;
+        const hit = formOf.get(`${dex} ${idx}`);
+        return hit ? [hit.varietySlug, hit.variantSlug, idx] : null;
+      }
+    }
+    return null;
+  };
+
+  const rows: PkhexEvolutionSnapshot[] = [];
+  for (const table of PKHEX_EVO_TABLES) {
+    const personal = table.personalFile ? await readFile(join(dir, table.personalFile)) : null;
+    const evo = readEvoPkl(await readFile(join(join(dir, "..", "evolve"), table.evoFile)));
+    let fromEntries = 0;
+    for (const methods of evo) {
+      for (const m of methods) {
+        if (m.from === 0 || m.to === 0) continue;
+        const from = resolve(m.from, 0, table, personal);
+        if (!from || !from[0]) continue;
+        // toForm=255 是 AnyForm：继承 from 的形态编号（各大小南瓜怪人）
+        const to = resolve(m.to, m.toForm === 255 ? from[2] : m.toForm, table, personal);
+        if (!to || !to[0]) continue;
+        fromEntries++;
+        for (const groupSlug of table.groupSlugs) {
+          rows.push({
+            groupSlug,
+            fromFormSlug: from[0],
+            fromVariantSlug: from[1],
+            toFormSlug: to[0],
+            toVariantSlug: to[1],
+            method: m.method,
+            arg: m.arg,
+            level: m.level,
+          });
+        }
+      }
+    }
+    console.log(
+      `  PKHeX ${table.evoFile}: ${fromEntries} 条方法 → ${rows.length} 行（含版本组展开）`,
+    );
+  }
+  rows.sort(
+    (a, b) =>
+      a.groupSlug.localeCompare(b.groupSlug) ||
+      a.fromFormSlug.localeCompare(b.fromFormSlug) ||
+      a.toFormSlug.localeCompare(b.toFormSlug) ||
+      a.method - b.method,
+  );
   return rows;
 }
 
@@ -1754,6 +2049,12 @@ if (only === "pkhex-pokemon") {
   await write("pkhex-pokemon", await pkhexPokemon());
   process.exit(0);
 }
+if (only === "pkhex-evolutions") {
+  // 主流程里有现成的 formRows，单跑这步只能重新拉（一千五百个请求，几分钟）
+  const formRows = await fetchAll<PokemonFormResponse>("pokemon-form", 10);
+  await write("pkhex-evolutions", await pkhexEvolutions(formRows));
+  process.exit(0);
+}
 
 // 版本组先算：说明按世代或版本组存，要靠它把 flavor text 的 version_group 换算过去
 const groupRows = await groups();
@@ -1811,6 +2112,7 @@ await write("berries", await berries());
 // PKHeX 的物种数值。PokeAPI 的颜色是手填的、错了一批，身高体重
 // 努力值那批它压根没有，全用 ROM 数据补和盖（clonePkhex 有缓存）
 await write("pkhex-pokemon", await pkhexPokemon());
+await write("pkhex-evolutions", await pkhexEvolutions(formRows));
 
 // 道具机制。形态变化那头也要 knownForms，不在的退成属性变化
 const triggers = await formTriggers(knownForms, formRows);
