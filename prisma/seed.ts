@@ -1170,24 +1170,14 @@ async function seedPokemon(
       await prisma.pokemon.updateMany({ where: { id: { in: ids } }, data: { [flag]: true } });
     }
   }
-  // 整表重建而不是 createMany + skipDuplicates：分类要拿百科的补上，
-  // 跳过重复的话库里那些空分类永远也更新不到
-  let genusFromWiki = 0;
   await prisma.pokemonI18n.deleteMany({});
   await prisma.pokemonI18n.createMany({
     data: rows.flatMap((p) =>
-      p.names.map((n) => {
-        const code = n.languageCode as LanguageCode;
-        // 数据源第九世代那批物种的中文分类是空的
-        const fromWiki = n.genus ? null : chinese.get(p.slug)?.genus?.[code];
-        if (fromWiki) genusFromWiki++;
-        return {
-          pokemonId: p.id,
-          languageCode: code,
-          name: n.name,
-          genus: n.genus || fromWiki || null,
-        };
-      }),
+      p.names.map((n) => ({
+        pokemonId: p.id,
+        languageCode: n.languageCode as LanguageCode,
+        name: n.name,
+      })),
     ),
   });
   await prisma.pokedexNumber.createMany({
@@ -1208,6 +1198,7 @@ async function seedPokemon(
       const data = {
         pokemonId: p.id,
         isDefault: f.isDefault,
+        isBattleOnly: f.isBattleOnly,
         fullImage: f.fullImage,
         detailImage: f.detailImage,
       };
@@ -1225,6 +1216,24 @@ async function seedPokemon(
     p.forms.map((f) => ({ id: formIds.get(f.slug)!, species: p.slug, form: f })),
   );
   const ids = [...formIds.values()];
+
+  // 分类。数据源只按物种给，同物种的每个形态都写一份 ——
+  // 游戏里阿罗拉六尾是冰狐宝可梦、关都六尾是狐狸宝可梦，位置摆在形态这一级，
+  // 将来有形态级的数据直接换上。第九世代那批物种的中文分类数据源是空的，
+  // 用百科补
+  let genusFromWiki = 0;
+  const genusRows = forms.flatMap(({ id, species, form }) => {
+    const byCode = new Map(form.genera.map((g) => [g.languageCode as LanguageCode, g.genus]));
+    for (const [code, genus] of Object.entries(chinese.get(species)?.genus ?? {})) {
+      if (!byCode.get(code as LanguageCode)) {
+        byCode.set(code as LanguageCode, genus);
+        genusFromWiki++;
+      }
+    }
+    return [...byCode].flatMap(([languageCode, genus]) =>
+      genus.trim() ? [{ formId: id, languageCode, genus }] : [],
+    );
+  });
 
   const zhForms = wikiForms();
   const nameRows = forms.flatMap(({ id, form }) => {
@@ -1299,6 +1308,8 @@ async function seedPokemon(
   await rebuild(async (tx) => {
     await tx.formI18n.deleteMany({ where: { formId: { in: ids } } });
     await insertInBatches(nameRows, (data) => tx.formI18n.createMany({ data }));
+    await tx.formGenusI18n.deleteMany({ where: { formId: { in: ids } } });
+    await insertInBatches(genusRows, (data) => tx.formGenusI18n.createMany({ data }));
     await tx.formType.deleteMany({ where: { formId: { in: ids } } });
     await insertInBatches(typeRows, (data) => tx.formType.createMany({ data }));
     await tx.formColor.deleteMany({ where: { formId: { in: ids } } });
@@ -1326,7 +1337,8 @@ async function seedPokemon(
   console.log(
     `宝可梦: ${rows.length} 只 / ${forms.length} 个形态，种族值 ${statRows.length} 行，` +
       `特性 ${abilityRows.length} 行，图鉴说明 ${descriptionRows.length} 行` +
-      `（其中来自百科的中文 ${chineseRows} 行），分类补了 ${genusFromWiki} 行`,
+      `（其中来自百科的中文 ${chineseRows} 行），` +
+      `分类 ${genusRows.length} 行（百科补了 ${genusFromWiki} 行）`,
   );
   return formIds;
 }
@@ -1359,6 +1371,7 @@ async function seedFormVariants(dict: {
     const data = {
       formId,
       isDefault: v.isDefault,
+      isBattleOnly: v.isBattleOnly,
       order: v.order,
       fullImage: v.fullImage,
       detailImage: v.detailImage,
@@ -1602,6 +1615,35 @@ async function seedEvolutions(dict: {
     if (ra !== rb) parent.set(rb, ra);
   };
   for (const e of data) union(e.fromFormId, e.toFormId);
+
+  // 没有任何进化关系的形态也要有链：不进化的宝可梦（百变怪、三圣鸟）、
+  // 超级形态和超极巨形态（它们不是靠进化来的）。前端因此不用为
+  // 「这只没有链」写一条特判，将来数据源给这只加了进化前后也不用改结构。
+  //
+  // 归到同物种默认形态那条链上 —— 超级喷火龙Ｘ跟小火龙一家；
+  // 整个物种都没有链的（袋兽和超级袋兽）自己合成一条
+  const allForms = await prisma.form.findMany({
+    select: { id: true, pokemonId: true, isDefault: true },
+  });
+  const bySpecies = new Map<number, typeof allForms>();
+  for (const f of allForms) {
+    const list = bySpecies.get(f.pokemonId);
+    if (list) list.push(f);
+    else bySpecies.set(f.pokemonId, [f]);
+  }
+  for (const speciesForms of bySpecies.values()) {
+    // 同物种里已经有链的那个当锚点，优先默认形态 ——
+    // 六尾那种地区形态各成一条线的，不该被并到一起
+    const anchor =
+      speciesForms.find((f) => f.isDefault && parent.has(f.id)) ??
+      speciesForms.find((f) => parent.has(f.id));
+    const orphans = speciesForms.filter((f) => !parent.has(f.id));
+    if (!orphans.length) continue;
+
+    const base = anchor?.id ?? orphans[0]!.id;
+    parent.set(base, parent.get(base) ?? base);
+    for (const f of orphans) union(base, f.id);
+  }
 
   const members = new Map<number, number[]>();
   for (const formId of parent.keys()) {

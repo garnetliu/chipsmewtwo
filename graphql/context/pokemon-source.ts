@@ -16,8 +16,8 @@ import type { Pokemon, PokemonI18n } from "@/prisma/generated/client";
 
 export type PokemonRow = Pokemon;
 
-/** 译名和分类。这个语言没收录时是别的语言的值，见 pickByLanguage */
-export type PokemonNameRow = Pick<PokemonI18n, "name" | "genus">;
+/** 译名。这个语言没收录时是别的语言的值，见 pickByLanguage */
+export type PokemonNameRow = Pick<PokemonI18n, "name">;
 
 type PageKey = { offset: number; limit: number };
 type NameKey = { pokemonId: number; language: string };
@@ -125,14 +125,13 @@ export class PokemonSource {
   });
 
   /**
-   * 译名。跟 createNameLoader 那批的区别是它还要带 genus，而且 name 和 genus
-   * 两个字段共用一次查询，所以单独写。查全部语言再挑的道理同 name-loader.ts
+   * 译名。查全部语言再挑的道理同 name-loader.ts
    */
   readonly #nameLoader = new DataLoader<NameKey, PokemonNameRow | null, string>(
     async (keys) => {
       const rows = await prisma.pokemonI18n.findMany({
         where: { pokemonId: { in: [...new Set(keys.map((k) => k.pokemonId))] } },
-        select: { pokemonId: true, languageCode: true, name: true, genus: true },
+        select: { pokemonId: true, languageCode: true, name: true },
       });
 
       const byPokemon = new Map<number, typeof rows>();

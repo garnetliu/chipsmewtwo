@@ -1019,6 +1019,7 @@ function formVariants(rows: PokemonFormResponse[], known: Set<string>): FormVari
       slug: form.name,
       formSlug,
       isDefault: form.is_default,
+      isBattleOnly: form.is_battle_only,
       order: form.form_order,
       fullImage: null,
       detailImage: fileNameOf(form.sprites.front_default),

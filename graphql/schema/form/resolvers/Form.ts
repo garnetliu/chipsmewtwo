@@ -13,6 +13,9 @@ export const Form: FormResolvers = {
   name: (parent, { language }, ctx) =>
     ctx.dataSources.form.nameOf(Number(parent.id), language ?? ctx.language),
 
+  genus: (parent, { language }, ctx) =>
+    ctx.dataSources.form.genusOf(Number(parent.id), language ?? ctx.language),
+
   fullImageUrl: (parent) => (parent.fullImage ? fullImageUrl(parent.fullImage) : null),
 
   detailImageUrl: (parent) => (parent.detailImage ? detailImageUrl(parent.detailImage) : null),

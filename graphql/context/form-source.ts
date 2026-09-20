@@ -56,6 +56,11 @@ export class FormSource {
     return this.#nameLoader.load({ id: formId, language });
   }
 
+  /** 分类（「狐狸宝可梦」）。跟形态名分开存，所以也是两个 loader */
+  genusOf(formId: number, language: string): Promise<string | null> {
+    return this.#genusLoader.load({ id: formId, language });
+  }
+
   /** 返回的数组顺序就是属性槽位：第一个是第一属性，单属性只有一个元素 */
   typesOf(formId: number, generationId: number): Promise<TypeRow[] | null> {
     return this.#typesLoader.load({ formId, generationId });
@@ -281,6 +286,14 @@ export class FormSource {
       select: { formId: true, languageCode: true, name: true },
     });
     return rows.map((r) => ({ id: r.formId, languageCode: r.languageCode, name: r.name }));
+  });
+
+  readonly #genusLoader = createNameLoader(async (ids) => {
+    const rows = await prisma.formGenusI18n.findMany({
+      where: { formId: { in: ids } },
+      select: { formId: true, languageCode: true, genus: true },
+    });
+    return rows.map((r) => ({ id: r.formId, languageCode: r.languageCode, name: r.genus }));
   });
 
   readonly #colorNameLoader = createNameLoader(async (ids) => {

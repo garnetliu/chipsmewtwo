@@ -9,10 +9,20 @@ type Form {
   slug: String!
   isDefault: Boolean!
   """
+  只在对战里存在的形态：超级进化、超极巨化、究极奈克洛兹玛。
+  跟阿罗拉形态那种平时就能带在身上的不是一回事
+  """
+  isBattleOnly: Boolean!
+  """
   形态名，例如「阿罗拉的样子」。原形态没有这一项。
   回退规则同 Pokemon.name
   """
   name(language: String): String
+  """
+  分类，例如「狐狸宝可梦」。回退规则同 name。
+  两个数据源现在都只按物种给，所以同物种的形态拿到的是同一份
+  """
+  genus(language: String): String
   """
   大图，475×475 的官方美术图，详情页用。
   数据源没收录这个形态的图时是 null

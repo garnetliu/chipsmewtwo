@@ -126,6 +126,7 @@ model Language {
   maxMoveEffects        MaxMoveEffectI18n[]
   maxMoveFlavors        MaxMoveFlavorI18n[]
   formVariantNames      FormVariantI18n[]
+  formGenusI18Ns        FormGenusI18n[]
 
   @@map("language")
 }
@@ -303,7 +304,6 @@ model PokemonI18n {
   languageCode String
   language     Language @relation(fields: [languageCode], references: [code])
   name         String
-  genus        String? // 「小鼠宝可梦」这种分类
 
   @@id([pokemonId, languageCode])
   @@index([name])
@@ -319,6 +319,10 @@ model Form {
   pokemon   Pokemon @relation(fields: [pokemonId], references: [id], onDelete: Cascade)
   slug      String  @unique // "vulpix-alola"
   isDefault Boolean @default(false)
+
+  /// 只在对战里存在的形态：超级进化、超极巨化、究极奈克洛兹玛、
+  /// 谜拟Ｑ露馅的样子。跟阿罗拉形态那种平时就能带在身上的不是一回事
+  isBattleOnly Boolean @default(false)
 
   /// 大图的文件名，例如 "10103.png"。475×475 的官方美术图，详情页用。
   ///
@@ -340,6 +344,7 @@ model Form {
   evolutionChain   EvolutionChain? @relation(fields: [evolutionChainId], references: [id])
 
   names        FormI18n[]
+  genera       FormGenusI18n[]
   types        FormType[]
   stats        FormStat[]
   abilities    FormAbility[]
@@ -439,9 +444,11 @@ model FormVariant {
   slug   String @unique // "burmy-plant"
 
   /// 这个形态默认显示的那个变体
-  isDefault Boolean @default(false)
+  isDefault    Boolean @default(false)
+  /// 只在对战里存在，跟 Form 上那列一个意思
+  isBattleOnly Boolean @default(false)
   /// 在同一形态下排第几个，数据源给的 form_order
-  order     Int
+  order        Int
 
   /// 图片文件名，跟 Form 上那两列一个意思
   fullImage   String?
@@ -474,6 +481,23 @@ model FormVariantI18n {
   @@id([variantId, languageCode])
   @@index([name])
   @@map("form_variant_i18n")
+}
+
+/// 形态的分类（「狐狸宝可梦」「冰狐宝可梦」）。
+///
+/// 挂在形态上而不是物种上：游戏里关都六尾是狐狸宝可梦、阿罗拉六尾是
+/// 冰狐宝可梦，同一个物种的两个形态分类不同。两个数据源现在都只按物种给，
+/// 所以同物种的形态暂时是同一份 —— 位置摆对了，将来有形态级的数据直接换上
+model FormGenusI18n {
+  formId       Int
+  form         Form     @relation(fields: [formId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  genus        String
+
+  @@id([formId, languageCode])
+  @@index([genus])
+  @@map("form_genus_i18n")
 }
 
 model FormI18n {

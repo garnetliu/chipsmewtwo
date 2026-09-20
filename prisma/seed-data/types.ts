@@ -371,6 +371,8 @@ export type FormVariantSnapshot = {
   /** 挂在哪个形态下 */
   formSlug: string;
   isDefault: boolean;
+  /** 只在对战里存在 */
+  isBattleOnly: boolean;
   order: number;
   fullImage: string | null;
   detailImage: string | null;
