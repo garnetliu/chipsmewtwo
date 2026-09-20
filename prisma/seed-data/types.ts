@@ -176,6 +176,20 @@ export type MachineSnapshot = {
   moveSlug: string;
 };
 
+/**
+ * PKHeX 的图鉴颜色，PokeAPI 那列的校对源。
+ *
+ * PokeAPI 的 species.color 是志愿者手填的，第八九世代错了十几只；
+ * PKHeX 直接读游戏 ROM。只盖默认形态 —— 地区形态和超极巨那些
+ * PokeAPI 目前没出过错，仍以它为准。generationId 是 8 或 9
+ * （PKHeX 有表的那两代），其他世代不产出行
+ */
+export type PkhexColorSnapshot = {
+  formSlug: string;
+  generationId: number;
+  colorSlug: string;
+};
+
 /** 树果自己那套数值。树果本身在 items 里也有一行 */
 export type BerrySnapshot = {
   itemSlug: string;
@@ -432,6 +446,7 @@ export type SeedData = {
   "item-natures": ItemNatureSnapshot[];
   machines: MachineSnapshot[];
   berries: BerrySnapshot[];
+  "pkhex-colors": PkhexColorSnapshot[];
   moves: MoveSnapshot[];
   "z-moves": ZMoveSnapshot[];
   "max-moves": MaxMoveSnapshot[];
