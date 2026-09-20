@@ -61,7 +61,16 @@ export class PokemonSource {
   readonly #byIdLoader = new DataLoader<number, PokemonRow | null>(async (ids) => {
     const rows = await prisma.pokemon.findMany({
       where: { id: { in: [...ids] } },
-      select: { id: true, slug: true, isBaby: true, isLegendary: true, isMythical: true },
+      select: {
+        id: true,
+        slug: true,
+        isBaby: true,
+        isLegendary: true,
+        isMythical: true,
+        genderCode: true,
+        growthRateId: true,
+        evoStage: true,
+      },
     });
 
     const byId = new Map<number, PokemonRow>();
@@ -75,7 +84,16 @@ export class PokemonSource {
   readonly #bySlugLoader = new DataLoader<string, PokemonRow | null>(async (slugs) => {
     const rows = await prisma.pokemon.findMany({
       where: { slug: { in: [...slugs] } },
-      select: { id: true, slug: true, isBaby: true, isLegendary: true, isMythical: true },
+      select: {
+        id: true,
+        slug: true,
+        isBaby: true,
+        isLegendary: true,
+        isMythical: true,
+        genderCode: true,
+        growthRateId: true,
+        evoStage: true,
+      },
     });
 
     const bySlug = new Map<string, PokemonRow>();
@@ -102,7 +120,16 @@ export class PokemonSource {
             orderBy: { id: "asc" },
             skip: offset,
             take: limit,
-            select: { id: true, slug: true, isBaby: true, isLegendary: true, isMythical: true },
+            select: {
+              id: true,
+              slug: true,
+              isBaby: true,
+              isLegendary: true,
+              isMythical: true,
+              genderCode: true,
+              growthRateId: true,
+              evoStage: true,
+            },
           });
 
           for (const row of rows) {

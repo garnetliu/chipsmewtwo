@@ -487,6 +487,70 @@ async function seedNatures() {
 }
 
 /**
+ * 成长速度，六条经验曲线。译名两个数据源都没有，照百科「经验值」页的写法手填。
+ *
+ * id 是游戏内部编号，0~5 那六条曲线升到 100 级分别要
+ * 100 万 / 60 万 / 164 万 / 106 万 / 80 万 / 125 万经验
+ */
+const GROWTH_RATES: { id: number; names: Localized }[] = [
+  { id: 0, names: { "zh-Hans": "普通", "zh-Hant": "普通", en: "Medium Fast" } },
+  { id: 1, names: { "zh-Hans": "先慢后快", "zh-Hant": "先慢後快", en: "Slow then Very Fast" } },
+  { id: 2, names: { "zh-Hans": "先快后慢", "zh-Hant": "先快後慢", en: "Fast then Very Slow" } },
+  { id: 3, names: { "zh-Hans": "稍慢", "zh-Hant": "稍慢", en: "Medium Slow" } },
+  { id: 4, names: { "zh-Hans": "快速", "zh-Hant": "快速", en: "Fast" } },
+  { id: 5, names: { "zh-Hans": "慢速", "zh-Hant": "慢速", en: "Slow" } },
+];
+
+async function seedGrowthRates() {
+  for (const g of GROWTH_RATES) {
+    await prisma.growthRate.upsert({ where: { id: g.id }, create: { id: g.id }, update: {} });
+    for (const { languageCode, value: name } of localized(g.names)) {
+      await prisma.growthRateI18n.upsert({
+        where: { growthRateId_languageCode: { growthRateId: g.id, languageCode } },
+        create: { growthRateId: g.id, languageCode, name },
+        update: { name },
+      });
+    }
+  }
+  console.log(`成长速度: ${GROWTH_RATES.length} 行`);
+}
+
+/**
+ * 蛋组，15 个。id 是游戏内部编号（1~15），译名照百科
+ */
+const EGG_GROUPS: { id: number; names: Localized }[] = [
+  { id: 1, names: { "zh-Hans": "怪兽", "zh-Hant": "怪獸", en: "Monster" } },
+  { id: 2, names: { "zh-Hans": "水中1", "zh-Hant": "水中1", en: "Water 1" } },
+  { id: 3, names: { "zh-Hans": "虫", "zh-Hant": "蟲", en: "Bug" } },
+  { id: 4, names: { "zh-Hans": "飞行", "zh-Hant": "飛行", en: "Flying" } },
+  { id: 5, names: { "zh-Hans": "陆上", "zh-Hant": "陸上", en: "Field" } },
+  { id: 6, names: { "zh-Hans": "妖精", "zh-Hant": "妖精", en: "Fairy" } },
+  { id: 7, names: { "zh-Hans": "植物", "zh-Hant": "植物", en: "Grass" } },
+  { id: 8, names: { "zh-Hans": "人形", "zh-Hant": "人形", en: "Human-Like" } },
+  { id: 9, names: { "zh-Hans": "水中3", "zh-Hant": "水中3", en: "Water 3" } },
+  { id: 10, names: { "zh-Hans": "矿物", "zh-Hant": "礦物", en: "Mineral" } },
+  { id: 11, names: { "zh-Hans": "不定形", "zh-Hant": "不定形", en: "Amorphous" } },
+  { id: 12, names: { "zh-Hans": "水中2", "zh-Hant": "水中2", en: "Water 2" } },
+  { id: 13, names: { "zh-Hans": "百变怪", "zh-Hant": "百變怪", en: "Ditto" } },
+  { id: 14, names: { "zh-Hans": "龙", "zh-Hant": "龍", en: "Dragon" } },
+  { id: 15, names: { "zh-Hans": "未发现", "zh-Hant": "未發現", en: "Undiscovered" } },
+];
+
+async function seedEggGroups() {
+  for (const g of EGG_GROUPS) {
+    await prisma.eggGroup.upsert({ where: { id: g.id }, create: { id: g.id }, update: {} });
+    for (const { languageCode, value: name } of localized(g.names)) {
+      await prisma.eggGroupI18n.upsert({
+        where: { eggGroupId_languageCode: { eggGroupId: g.id, languageCode } },
+        create: { eggGroupId: g.id, languageCode, name },
+        update: { name },
+      });
+    }
+  }
+  console.log(`蛋组: ${EGG_GROUPS.length} 行`);
+}
+
+/**
  * 四张只有 slug 和译名的字典表。
  *
  * 数据源一条中文都不给（招式元分类连 names 数组都是空的），译名全在 overrides.json。
@@ -1138,12 +1202,26 @@ async function seedPokemon(
     colors: Map<string, number>;
     versions: Map<string, number>;
     abilities: Map<string, number>;
+    groups: Map<string, number>;
   },
   manual: SeedOverrides["forms"],
 ) {
   const rows = read("pokemon");
   const descriptions = new Map(read("pokemon-descriptions").map((d) => [d.slug, d.descriptions]));
   const chinese = wikiDescriptions();
+
+  // PKHeX 的物种数值，按表序后写覆盖 —— 顺序就是表在 PKHEX_TABLES 里的
+  // 顺序（剑盾 → 阿尔宙斯 → 复刻 → 朱紫 → Z-A），最新的表最后落笔。
+  // 在场行才算数，非在场的没有行
+  const pkhex = read("pkhex-pokemon").filter((r) => r.present);
+  const latestOf = new Map<number, (typeof pkhex)[number]>();
+  for (const r of pkhex) latestOf.set(r.pokemonId, r);
+  // 努力值按（物种, 世代），FormStat 的行要逐代填
+  const evOf = new Map(pkhex.map((r) => [`${r.pokemonId} ${r.generationId}`, r.evs] as const));
+  // 捕获率/亲密度/孵化周期按版本组
+  const vitalOf = pkhex.flatMap((r) =>
+    r.groupSlugs.map((groupSlug) => ({ groupSlug, pokemonId: r.pokemonId, r })),
+  );
 
   // 传说标记会变（数据源修订过分类），所以不能只靠 skipDuplicates 建一次就不管
   await prisma.pokemon.createMany({
@@ -1170,6 +1248,30 @@ async function seedPokemon(
       await prisma.pokemon.updateMany({ where: { id: { in: ids } }, data: { [flag]: true } });
     }
   }
+
+  // 性别比、成长速度、进化阶段 —— 不随世代变，取最新在场表。
+  // 按（三项的组合值）分组批量置位，免得逐只打一千次库
+  const speciesFlags = new Map<
+    string,
+    { ids: number[]; genderCode: number; growthRateId: number; evoStage: number }
+  >();
+  for (const [id, r] of latestOf) {
+    const key = `${r.genderCode} ${r.growthRateId} ${r.evoStage}`;
+    const g = speciesFlags.get(key) ?? {
+      ids: [],
+      genderCode: r.genderCode,
+      growthRateId: r.growthRateId,
+      evoStage: r.evoStage,
+    };
+    g.ids.push(id);
+    speciesFlags.set(key, g);
+  }
+  for (const g of speciesFlags.values()) {
+    await prisma.pokemon.updateMany({
+      where: { id: { in: g.ids } },
+      data: { genderCode: g.genderCode, growthRateId: g.growthRateId, evoStage: g.evoStage },
+    });
+  }
   await prisma.pokemonI18n.deleteMany({});
   await prisma.pokemonI18n.createMany({
     data: rows.flatMap((p) =>
@@ -1194,11 +1296,16 @@ async function seedPokemon(
   /** 形态 slug → 自增 id。进化关系和招式学习表都靠它 */
   const formIds = new Map<string, number>();
   for (const p of rows) {
+    const latest = latestOf.get(p.id);
     for (const f of p.forms) {
       const data = {
         pokemonId: p.id,
         isDefault: f.isDefault,
         isBattleOnly: f.isBattleOnly,
+        // 身高体重只有 PKHeX 有，PokeAPI 压根不提供。只有物种表的
+        // 默认形态条目 —— 地区形态的在表里的形态区，还没解
+        height: f.isDefault ? (latest?.height ?? null) : null,
+        weight: f.isDefault ? (latest?.weight ?? null) : null,
         fullImage: f.fullImage,
         detailImage: f.detailImage,
       };
@@ -1213,7 +1320,7 @@ async function seedPokemon(
 
   /** 摊平成 (形态 id, 形态快照) 对，下面几张子表都按它展开 */
   const forms = rows.flatMap((p) =>
-    p.forms.map((f) => ({ id: formIds.get(f.slug)!, species: p.slug, form: f })),
+    p.forms.map((f) => ({ id: formIds.get(f.slug)!, species: p.slug, pokemonId: p.id, form: f })),
   );
   const ids = [...formIds.values()];
 
@@ -1269,19 +1376,34 @@ async function seedPokemon(
   // 图鉴颜色以 PKHeX 的 ROM 表为准 —— PokeAPI 的 species.color 是手填的，
   // 第八九世代错了十几只。PKHeX 只盖默认形态，其他形态仍按数据源的来
   const pkhexColors = new Map(
-    read("pkhex-colors").map((r) => [`${r.formSlug} ${r.generationId}`, r.colorSlug]),
+    pkhex.map((r) => [`${r.pokemonId} ${r.generationId}`, r.colorSlug] as const),
   );
-  const colorRows = forms.flatMap(({ id, form }) =>
+  const colorRows = forms.flatMap(({ id, pokemonId, form }) =>
     form.colors.flatMap((c) => {
       const slug = form.isDefault
-        ? (pkhexColors.get(`${form.slug} ${c.generationId}`) ?? c.colorSlug)
+        ? (pkhexColors.get(`${pokemonId} ${c.generationId}`) ?? c.colorSlug)
         : c.colorSlug;
       const colorId = dict.colors.get(slug);
       return colorId === undefined ? [] : [{ formId: id, generationId: c.generationId, colorId }];
     }),
   );
 
-  const statRows = forms.flatMap(({ id, form }) => form.stats.map((st) => ({ formId: id, ...st })));
+  // 努力值也是只有 PKHeX 有。同世代多张表时后解的覆盖先解的
+  const statRows = forms.flatMap(({ id, pokemonId, form }) =>
+    form.stats.map((st) => {
+      const evs = form.isDefault ? evOf.get(`${pokemonId} ${st.generationId}`) : undefined;
+      return {
+        formId: id,
+        ...st,
+        evHp: evs?.hp ?? null,
+        evAttack: evs?.attack ?? null,
+        evDefense: evs?.defense ?? null,
+        evSpecialAttack: evs?.specialAttack ?? null,
+        evSpecialDefense: evs?.specialDefense ?? null,
+        evSpeed: evs?.speed ?? null,
+      };
+    }),
+  );
   const abilityRows = forms.flatMap(({ id, form }) =>
     form.abilities.flatMap((a) => {
       const abilityId = dict.abilities.get(a.abilitySlug);
@@ -1342,11 +1464,59 @@ async function seedPokemon(
     console.log(`  清掉 ${stalePokemon.count} 只、${staleForms.count} 个不在快照里的形态`);
   }
 
+  // 蛋组、按版本组的物种数值、存在性 —— 三张都来自 PKHeX，纯派生，整表重建
+  const defaultFormIds = new Map<number, number>();
+  for (const { pokemonId, form, id } of forms) {
+    if (form.isDefault) defaultFormIds.set(pokemonId, id);
+  }
+
+  const eggGroupRows = [...latestOf].flatMap(([pokemonId, r]) =>
+    [...new Set(r.eggGroupIds)].flatMap((eggGroupId) =>
+      eggGroupId > 0 ? [{ pokemonId, eggGroupId }] : [],
+    ),
+  );
+
+  const vitalRows = vitalOf.flatMap(({ groupSlug, pokemonId, r }) => {
+    const groupId = dict.groups.get(groupSlug);
+    return groupId === undefined
+      ? []
+      : [
+          {
+            pokemonId,
+            groupId,
+            captureRate: r.captureRate,
+            baseHappiness: r.baseHappiness,
+            hatchCycles: r.hatchCycles,
+          },
+        ];
+  });
+
+  // 只有物种表在场条目的默认形态有行 —— 「这作图鉴」筛选取的就是这层
+  const presenceRows = pkhex.flatMap((r) => {
+    const formId = defaultFormIds.get(r.pokemonId);
+    if (formId === undefined) return [];
+    return r.groupSlugs.flatMap((groupSlug) => {
+      const groupId = dict.groups.get(groupSlug);
+      return groupId === undefined ? [] : [{ formId, groupId }];
+    });
+  });
+
+  await rebuild(async (tx) => {
+    await tx.pokemonEggGroup.deleteMany({});
+    await insertInBatches(eggGroupRows, (data) => tx.pokemonEggGroup.createMany({ data }));
+    await tx.pokemonVital.deleteMany({});
+    await insertInBatches(vitalRows, (data) => tx.pokemonVital.createMany({ data }));
+    await tx.formPresence.deleteMany({});
+    await insertInBatches(presenceRows, (data) => tx.formPresence.createMany({ data }));
+  });
+
   console.log(
     `宝可梦: ${rows.length} 只 / ${forms.length} 个形态，种族值 ${statRows.length} 行，` +
       `特性 ${abilityRows.length} 行，图鉴说明 ${descriptionRows.length} 行` +
       `（其中来自百科的中文 ${chineseRows} 行），` +
-      `分类 ${genusRows.length} 行（百科补了 ${genusFromWiki} 行）`,
+      `分类 ${genusRows.length} 行（百科补了 ${genusFromWiki} 行），` +
+      `蛋组 ${eggGroupRows.length} 行，数值 ${vitalRows.length} 行，` +
+      `在场 ${presenceRows.length} 行`,
   );
   return formIds;
 }
@@ -1911,6 +2081,8 @@ async function main() {
   await seedMoveLearnMethods(manual.moveLearnMethods);
   await seedEvolutionTriggers(manual.evolutionTriggers);
   await seedNatures();
+  await seedGrowthRates();
+  await seedEggGroups();
   await seedItemCategories(manual.itemCategories);
   await seedMoveDictionaries(manual);
   const pokedexIds = await seedPokedexes(regionIds, manual.pokedexes);
@@ -1929,6 +2101,7 @@ async function main() {
       colors: colorIds,
       versions: versionIds,
       abilities: abilityIds,
+      groups: groupIds,
     },
     manual.forms,
   );

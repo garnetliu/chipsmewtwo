@@ -127,6 +127,8 @@ model Language {
   maxMoveFlavors        MaxMoveFlavorI18n[]
   formVariantNames      FormVariantI18n[]
   formGenusI18Ns        FormGenusI18n[]
+  growthRateI18Ns       GrowthRateI18n[]
+  eggGroupI18Ns         EggGroupI18n[]
 
   @@map("language")
 }
@@ -153,6 +155,7 @@ model Generation {
   introducedTypes   Type[]
   typeEffectiveness TypeEffectiveness[]
   itemTypeBoosts    ItemTypeBoost[]
+  pokemonVitals     PokemonVital[]
 
   @@index([mainRegionId])
   @@map("generation")
@@ -220,6 +223,8 @@ model Group {
   itemFormChanges  ItemFormChange[]
   machines         Machine[]
   maxMoveFlavors   MaxMoveFlavorI18n[]
+  formPresences    FormPresence[]
+  pokemonVitals    PokemonVital[]
 
   @@index([generationId])
   @@index([order])
@@ -289,13 +294,102 @@ model Pokemon {
   /// 幻之宝可梦 —— 通常只能靠活动配信拿到（梦幻、玛纳霏、玛夏多）
   isMythical  Boolean @default(false)
 
+  /// 性别比，游戏内部的八档魔数：0 全雄 / 31 / 63 / 127 对半 / 191 / 225 /
+  /// 254 全雌 / 255 无性别。换算成百分比是应用层的事
+  genderCode   Int?
+  /// 成长速度（升到 100 级要多少经验那六条曲线）
+  growthRateId Int?
+  growthRate   GrowthRate? @relation(fields: [growthRateId], references: [id])
+  /// 进化阶段：0 没进化、1 进化过一次……对战里棱镜道具按它加成
+  evoStage     Int?
+
   names      PokemonI18n[]
   forms      Form[]
   dexNumbers PokedexNumber[]
+  vitals     PokemonVital[]
+  eggGroups  PokemonEggGroup[]
 
   @@index([isLegendary])
   @@index([isMythical])
   @@map("pokemon")
+}
+
+/// 成长速度，升到 100 级要多少经验的那六条曲线。
+/// id 沿用游戏内部的编号（0~5），不是自增
+model GrowthRate {
+  id       Int              @id
+  names    GrowthRateI18n[]
+  pokemons Pokemon[]
+
+  @@map("growth_rate")
+}
+
+model GrowthRateI18n {
+  growthRateId Int
+  growthRate   GrowthRate @relation(fields: [growthRateId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language   @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([growthRateId, languageCode])
+  @@map("growth_rate_i18n")
+}
+
+/// 蛋组，繁殖兼容性的分组。id 沿用游戏内部编号（1~15，0 是「无」不入库）
+model EggGroup {
+  id      Int               @id
+  names   EggGroupI18n[]
+  pokemon PokemonEggGroup[]
+
+  @@map("egg_group")
+}
+
+model EggGroupI18n {
+  eggGroupId   Int
+  eggGroup     EggGroup @relation(fields: [eggGroupId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([eggGroupId, languageCode])
+  @@map("egg_group_i18n")
+}
+
+/// 宝可梦 × 蛋组。最多两个（皮卡丘是陆上 + 妖精），单蛋组的只有一个
+model PokemonEggGroup {
+  pokemonId  Int
+  pokemon    Pokemon  @relation(fields: [pokemonId], references: [id], onDelete: Cascade)
+  eggGroupId Int
+  eggGroup   EggGroup @relation(fields: [eggGroupId], references: [id])
+
+  @@id([pokemonId, eggGroupId])
+  @@index([eggGroupId])
+  @@map("pokemon_egg_group")
+}
+
+/// 按版本组变的物种数值：捕获率（帕底亚的鲸钝头是历史最低 3）、
+/// 基础亲密度（第九世代统一改过一批）、孵化周期。
+///
+/// 挂版本组不挂世代，因为同一世代里复刻和正作的数值就不同 ——
+/// 钻珍复刻的捕获率按原版、阿尔宙斯有自己的亲密度体系。
+/// 不变的那些（性别比、成长速度、蛋组）直接在 Pokemon 上
+model PokemonVital {
+  pokemonId Int
+  pokemon   Pokemon @relation(fields: [pokemonId], references: [id], onDelete: Cascade)
+  groupId   Int
+  group     Group   @relation(fields: [groupId], references: [id])
+
+  captureRate   Int
+  /// 刚捕获时的亲密度，0~255
+  baseHappiness Int
+  /// 孵化要走的周期数，每个周期 255 步
+  hatchCycles   Int
+  generation    Generation? @relation(fields: [generationId], references: [id])
+  generationId  Int?
+
+  @@id([pokemonId, groupId])
+  @@index([groupId])
+  @@map("pokemon_vital")
 }
 
 model PokemonI18n {
@@ -323,6 +417,12 @@ model Form {
   /// 只在对战里存在的形态：超级进化、超极巨化、究极奈克洛兹玛、
   /// 谜拟Ｑ露馅的样子。跟阿罗拉形态那种平时就能带在身上的不是一回事
   isBattleOnly Boolean @default(false)
+
+  /// 身高，0.1 厘米为单位（60 = 6.0 米）。形态各有各的 ——
+  /// 超级喷火龙Ｘ 1105 公斤、喷火龙 905 公斤。数据源没收录的形态是 null
+  height Int?
+  /// 体重，0.1 公斤为单位
+  weight Int?
 
   /// 大图的文件名，例如 "10103.png"。475×475 的官方美术图，详情页用。
   ///
@@ -359,6 +459,8 @@ model Form {
   itemFormChanges ItemFormChange[]
   /// 这个形态下面的外观变体（霜奶仙的奶油、未知图腾的字母）
   variants        FormVariant[]
+  /// 哪些版本组里实际有这只（HOME 里躺着不算）
+  presence        FormPresence[]
 
   evolvesTo        Evolution[] @relation("EvolutionFrom")
   evolvesFrom      Evolution[] @relation("EvolutionTo")
@@ -500,6 +602,22 @@ model FormGenusI18n {
   @@map("form_genus_i18n")
 }
 
+/// 形态 × 版本组的存在性。
+///
+/// 「这作图鉴」筛选的依据：剑盾不含御三家以前的阿罗拉形态、
+/// 朱紫没有超级进化。数据源的 personal 表每作一份，不在本作的条目
+/// 填的是默认值，所以只有存在的才有行，不存在的「没有行」本身就是答案
+model FormPresence {
+  formId  Int
+  form    Form  @relation(fields: [formId], references: [id], onDelete: Cascade)
+  groupId Int
+  group   Group @relation(fields: [groupId], references: [id])
+
+  @@id([formId, groupId])
+  @@index([groupId])
+  @@map("form_presence")
+}
+
 model FormI18n {
   formId       Int
   form         Form     @relation(fields: [formId], references: [id], onDelete: Cascade)
@@ -530,6 +648,15 @@ model FormStat {
   speed          Int
   /// 只有 Gen1 用，那时特攻特防还是同一项
   special        Int?
+
+  // 打倒这只能拿到多少努力值，每项 0~3。第六世代以前的那些行
+  // 没有数据源，先空着 —— 努力值系统第三世代才有
+  evHp             Int?
+  evAttack         Int?
+  evDefense        Int?
+  evSpecialAttack  Int?
+  evSpecialDefense Int?
+  evSpeed          Int?
 
   @@id([formId, generationId])
   @@map("form_stat")

@@ -177,17 +177,47 @@ export type MachineSnapshot = {
 };
 
 /**
- * PKHeX 的图鉴颜色，PokeAPI 那列的校对源。
+ * PKHeX 物种表的条目，直接读游戏 ROM 的那批数值。
  *
- * PokeAPI 的 species.color 是志愿者手填的，第八九世代错了十几只；
- * PKHeX 直接读游戏 ROM。只盖默认形态 —— 地区形态和超极巨那些
- * PokeAPI 目前没出过错，仍以它为准。generationId 是 8 或 9
- * （PKHeX 有表的那两代），其他世代不产出行
+ * PokeAPI 的图鉴颜色是志愿者手填的（错了一批），身高体重、努力值、
+ * 捕获率、亲密度、孵化周期、性别比、成长速度、蛋组、进化阶段
+ * 它压根没有。世代是 8 或 9 —— PKHeX 的表只导了现代这几张，
+ * 更老的表布局不同，还没有
  */
-export type PkhexColorSnapshot = {
-  formSlug: string;
+export type PkhexPokemonSnapshot = {
+  /** 全国图鉴编号，跟 Pokemon.id 一致 */
+  pokemonId: number;
   generationId: number;
+  /** 这只在这张表对应的游戏里存在。false 时其余字段是表尾默认填充，不可信 */
+  present: boolean;
+  /** 身高，0.1 厘米为单位 */
+  height: number;
+  /** 体重，0.1 公斤为单位 */
+  weight: number;
+  /** 打倒这只能拿到的努力值，每项 0~3。注意键名是六项种族值本名 */
+  evs: {
+    hp: number;
+    attack: number;
+    defense: number;
+    speed: number;
+    specialAttack: number;
+    specialDefense: number;
+  };
+  captureRate: number;
+  baseHappiness: number;
+  /** 孵化周期数，每周期 255 步 */
+  hatchCycles: number;
+  /** 性别比八档：0 全雄 / 31 / 63 / 127 对半 / 191 / 225 / 254 全雌 / 255 无性别 */
+  genderCode: number;
+  /** 成长速度 0~5 */
+  growthRateId: number;
+  /** 蛋组 1~15，0 是「无」 */
+  eggGroupIds: [number, number];
+  /** 进化阶段 0~3 */
+  evoStage: number;
   colorSlug: string;
+  /** 这张表覆盖的版本组，存在性挂在这些组上 */
+  groupSlugs: string[];
 };
 
 /** 树果自己那套数值。树果本身在 items 里也有一行 */
@@ -446,7 +476,7 @@ export type SeedData = {
   "item-natures": ItemNatureSnapshot[];
   machines: MachineSnapshot[];
   berries: BerrySnapshot[];
-  "pkhex-colors": PkhexColorSnapshot[];
+  "pkhex-pokemon": PkhexPokemonSnapshot[];
   moves: MoveSnapshot[];
   "z-moves": ZMoveSnapshot[];
   "max-moves": MaxMoveSnapshot[];
