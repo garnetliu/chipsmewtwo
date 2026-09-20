@@ -9,7 +9,10 @@
  * 一万多个请求，半小时上下。不写数据库，所以不需要 DATABASE_URL。
  * 中文那部分抓不到，在 scripts/refresh-wiki-data.ts。
  */
-import { mkdir, writeFile } from "node:fs/promises";
+import { execSync } from "node:child_process";
+import { existsSync, rmSync } from "node:fs";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { gzipSync } from "node:zlib";
 
@@ -50,6 +53,7 @@ import {
   type MoveSnapshot,
   type NamedSnapshot,
   type NatureSnapshot,
+  type PkhexColorSnapshot,
   type PokedexSnapshot,
   type PokemonDescriptionSnapshot,
   type PokemonSnapshot,
@@ -190,6 +194,116 @@ async function writeGzip<K extends keyof GzipSeedData>(name: K, rows: GzipSeedDa
   console.log(
     `写入 ${path}：${rows.length} 条，${mb(json.length)} → ${mb((await import("node:fs")).statSync(path).size)}`,
   );
+}
+
+// ── PKHeX ─────────────────────────────────────────────────────
+
+const PKHEX_REPO = "https://github.com/kwsch/PKHeX.git";
+/** 缓存到系统临时目录，两次刷新之间复用；拉不动就删了重来 */
+const PKHEX_DIR = join(tmpdir(), "pkhex");
+
+/**
+ * 浅克隆 PKHeX（或复用已有缓存并快进）。
+ *
+ * PKHeX 是存档编辑器，表是从游戏 ROM 里直接扒的原始二进制，
+ * 拿它当 PokeAPI 手填字段（图鉴颜色、身高体重那批）的校对标准。
+ * 上游更新不频繁，缓存目录复用，刷新时 git pull 一下就跟上
+ */
+function clonePkhex(): string {
+  if (!existsSync(join(PKHEX_DIR, ".git"))) {
+    rmSync(PKHEX_DIR, { recursive: true, force: true });
+    execSync(`git clone --depth 1 --filter=blob:none --sparse ${PKHEX_REPO} ${PKHEX_DIR}`, {
+      stdio: "pipe",
+    });
+  }
+  execSync(`git -C ${PKHEX_DIR} sparse-checkout set PKHeX.Core/Resources/byte/personal`, {
+    stdio: "pipe",
+  });
+  try {
+    execSync(`git -C ${PKHEX_DIR} pull --ff-only`, { stdio: "pipe" });
+  } catch {
+    console.warn("  ⚠ PKHeX 拉不动，用本地缓存的版本");
+  }
+  return join(PKHEX_DIR, "PKHeX.Core/Resources/byte/personal");
+}
+
+/** PKHeX 颜色枚举的顺序，跟库里 Color 的 slug 一致 */
+const PKHEX_COLORS = [
+  "red",
+  "blue",
+  "yellow",
+  "green",
+  "black",
+  "brown",
+  "purple",
+  "gray",
+  "white",
+  "pink",
+] as const;
+
+/**
+ * 每张表的（每条字节数、颜色偏移、是否存在偏移、物种上限）。
+ *
+ * 存在性很关键：表里不在本作的物种填的是默认值，图鉴颜色那一列
+ * 不能信 —— 剑盾的表第 899 位往后全是垃圾，照抄会把整批洗成 yellow
+ */
+const PKHEX_TABLES: Record<
+  number,
+  { file: string; size: number; colorAt: number; presentAt: number; maxSpecies: number }
+> = {
+  8: { file: "personal_swsh", size: 0xb0, colorAt: 0x21, presentAt: -1, maxSpecies: 898 },
+  9: { file: "personal_sv", size: 0x50, colorAt: 0x1b, presentAt: 0x1c, maxSpecies: 1025 },
+};
+
+/** 一张表的默认形态颜色。颜色和存在性共用 0x21 那个字节时 presentAt 传 -1 */
+function colorsOfTable(
+  data: Buffer,
+  { size, colorAt, presentAt, maxSpecies }: (typeof PKHEX_TABLES)[number],
+): (string | null)[] {
+  const out: (string | null)[] = [];
+  for (let id = 0; id <= maxSpecies; id++) {
+    const b = data.subarray(id * size, (id + 1) * size);
+    if (b.length < size) {
+      out.push(null);
+      continue;
+    }
+    // 剑盾的颜色和存在性挤在同一个字节：低 6 位颜色、bit6 存在性
+    const present = presentAt === -1 ? ((b[colorAt]! >> 6) & 1) === 1 : b[presentAt]! !== 0;
+    const color = presentAt === -1 ? b[colorAt]! & 0x3f : b[colorAt]!;
+    out.push(present ? (PKHEX_COLORS[color] ?? null) : null);
+  }
+  return out;
+}
+
+/**
+ * 图鉴颜色，按 PKHeX 的表为准 —— PokeAPI 的 species.color 是志愿者
+ * 手填的，第八九世代那批填错了十几只（润水鸭写成白、赛富豪写成蓝），
+ * 而 PKHeX 直接读 ROM。只导物种表的默认形态，其他形态的颜色
+ * （超极巨、地区形态）PokeAPI 目前没出过错，仍以它为准
+ */
+async function pkhexColors(): Promise<PkhexColorSnapshot[]> {
+  const dir = clonePkhex();
+  const snap = JSON.parse(await readFile(join(SEED_DATA_DIR, "pokemon.json"), "utf8")) as {
+    id: number;
+    slug: string;
+    forms: { slug: string; isDefault: boolean }[];
+  }[];
+  const defaultFormOf = new Map(snap.map((p) => [p.id, p.forms.find((f) => f.isDefault)?.slug]));
+
+  const rows: PkhexColorSnapshot[] = [];
+  for (const [generation, table] of Object.entries(PKHEX_TABLES)) {
+    const data = await readFile(join(dir, table.file));
+    const colors = colorsOfTable(data, table);
+    const before = rows.length;
+    for (let id = 1; id < colors.length; id++) {
+      const color = colors[id];
+      const formSlug = defaultFormOf.get(id);
+      if (!color || !formSlug) continue;
+      rows.push({ formSlug, generationId: Number(generation), colorSlug: color });
+    }
+    console.log(`  PKHeX gen${generation} 颜色: ${rows.length - before} 条`);
+  }
+  return rows;
 }
 
 // ── 说明文本 ──────────────────────────────────────────────────
@@ -1503,6 +1617,14 @@ async function pokemon(machines: Map<string, string>): Promise<{
 
 await mkdir(SEED_DATA_DIR, { recursive: true });
 
+// 单步逃生口：只要一步的快照时不用整套重刷（一万多个请求、十几分钟）。
+// 依赖已有快照文件的步骤放这儿，不碰内存里的中间产物
+const only = process.argv[2];
+if (only === "pkhex-colors") {
+  await write("pkhex-colors", await pkhexColors());
+  process.exit(0);
+}
+
 // 版本组先算：说明按世代或版本组存，要靠它把 flavor text 的 version_group 换算过去
 const groupRows = await groups();
 const index = groupIndex(groupRows);
@@ -1555,6 +1677,10 @@ await write(
 );
 
 await write("berries", await berries());
+
+// PKHeX 的图鉴颜色。PokeAPI 的这列是手填的，错了一批，
+// 用 ROM 数据覆盖（clonePkhex 有缓存，第二次跑不重新下载）
+await write("pkhex-colors", await pkhexColors());
 
 // 道具机制。形态变化那头也要 knownForms，不在的退成属性变化
 const triggers = await formTriggers(knownForms, formRows);

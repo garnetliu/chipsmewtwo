@@ -1,0 +1,6987 @@
+[
+  {
+    "formSlug": "bulbasaur",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "ivysaur",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "venusaur",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "charmander",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "charmeleon",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "charizard",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "squirtle",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "wartortle",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "blastoise",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "caterpie",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "metapod",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "butterfree",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "pikachu",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "raichu",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "sandshrew",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "sandslash",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "nidoran-f",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "nidorina",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "nidoqueen",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "nidoran-m",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "nidorino",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "nidoking",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "clefairy",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "clefable",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "vulpix",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "ninetales",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "jigglypuff",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "wigglytuff",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "zubat",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "golbat",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "oddish",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "gloom",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "vileplume",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "diglett",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dugtrio",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "meowth",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "persian",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "psyduck",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "golduck",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "growlithe",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "arcanine",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "poliwag",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "poliwhirl",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "poliwrath",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "abra",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "kadabra",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "alakazam",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "machop",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "machoke",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "machamp",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "tentacool",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "tentacruel",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "ponyta",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "rapidash",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "slowpoke",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "slowbro",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "magnemite",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "magneton",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "farfetchd",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "shellder",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "cloyster",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gastly",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "haunter",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gengar",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "onix",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "krabby",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "kingler",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "exeggcute",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "exeggutor",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cubone",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "marowak",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "hitmonlee",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "hitmonchan",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "lickitung",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "koffing",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "weezing",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "rhyhorn",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "rhydon",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "chansey",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "tangela",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "kangaskhan",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "horsea",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "seadra",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "goldeen",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "seaking",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "staryu",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "starmie",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "mr-mime",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "scyther",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "jynx",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "electabuzz",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "magmar",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "pinsir",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "tauros",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "magikarp",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "gyarados",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lapras",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "ditto",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "eevee",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "vaporeon",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "jolteon",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "flareon",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "porygon",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "omanyte",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "omastar",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "kabuto",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "kabutops",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "aerodactyl",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "snorlax",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "articuno",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zapdos",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "moltres",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "dratini",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dragonair",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dragonite",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mewtwo",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "mew",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hoothoot",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "noctowl",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "crobat",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "chinchou",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lanturn",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "pichu",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cleffa",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "igglybuff",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "togepi",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "togetic",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "natu",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "xatu",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "bellossom",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "marill",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "azumarill",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sudowoodo",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "politoed",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "wooper",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "quagsire",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "espeon",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "umbreon",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "slowking",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "wobbuffet",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dunsparce",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "steelix",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "qwilfish",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "scizor",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "shuckle",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "heracross",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sneasel",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "swinub",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "piloswine",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "corsola",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "remoraid",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "octillery",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "delibird",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "mantine",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "skarmory",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "kingdra",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "porygon2",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "tyrogue",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "hitmontop",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "smoochum",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "elekid",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "magby",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "miltank",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "blissey",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "raikou",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "entei",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "suicune",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "larvitar",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "pupitar",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "tyranitar",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "lugia",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "ho-oh",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "celebi",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "treecko",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "grovyle",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sceptile",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "torchic",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "combusken",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "blaziken",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "mudkip",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "marshtomp",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "swampert",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zigzagoon",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "linoone",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "lotad",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "lombre",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "ludicolo",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "seedot",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "nuzleaf",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "shiftry",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "wingull",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "pelipper",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "ralts",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "kirlia",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "gardevoir",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "nincada",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "ninjask",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "shedinja",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "whismur",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "loudred",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "exploud",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "azurill",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sableye",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "mawile",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "aron",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "lairon",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "aggron",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "electrike",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "manectric",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "roselia",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "carvanha",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "sharpedo",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "wailmer",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "wailord",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "torkoal",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "trapinch",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "vibrava",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "flygon",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "swablu",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "altaria",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lunatone",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "solrock",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "barboach",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "whiscash",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "corphish",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "crawdaunt",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "baltoy",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "claydol",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "lileep",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "cradily",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "anorith",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "armaldo",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "feebas",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "milotic",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "duskull",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "dusclops",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "absol",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "wynaut",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "snorunt",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "glalie",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "spheal",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sealeo",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "walrein",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "relicanth",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "bagon",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "shelgon",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "salamence",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "beldum",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "metang",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "metagross",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "regirock",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "regice",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "registeel",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "latias",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "latios",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "kyogre",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "groudon",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "rayquaza",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "jirachi",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "shinx",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "luxio",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "luxray",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "budew",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "roserade",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "combee",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "vespiquen",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cherubi",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "cherrim",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "shellos",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gastrodon",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "drifloon",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "drifblim",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "buneary",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "lopunny",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "stunky",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "skuntank",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "bronzor",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "bronzong",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "bonsly",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mime-jr",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "happiny",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "spiritomb",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gible",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "gabite",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "garchomp",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "munchlax",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "riolu",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lucario",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "hippopotas",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "hippowdon",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "skorupi",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "drapion",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "croagunk",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "toxicroak",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mantyke",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "snover",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "abomasnow",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "weavile",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "magnezone",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "lickilicky",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "rhyperior",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "tangrowth",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "electivire",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "magmortar",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "togekiss",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "leafeon",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "glaceon",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mamoswine",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "porygon-z",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "gallade",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "dusknoir",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "froslass",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "rotom",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "uxie",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "mesprit",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "azelf",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dialga",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "palkia",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "heatran",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "regigigas",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "giratina-altered",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "cresselia",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "victini",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "lillipup",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "herdier",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "stoutland",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "purrloin",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "liepard",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "munna",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "musharna",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "pidove",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "tranquill",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "unfezant",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "roggenrola",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "boldore",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "gigalith",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "woobat",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "swoobat",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "drilbur",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "excadrill",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "audino",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "timburr",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "gurdurr",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "conkeldurr",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "tympole",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "palpitoad",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "seismitoad",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "throh",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "sawk",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "venipede",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "whirlipede",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "scolipede",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "cottonee",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "whimsicott",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "petilil",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "lilligant",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "basculin-red-striped",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sandile",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "krokorok",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "krookodile",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "darumaka",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "darmanitan-standard",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "maractus",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dwebble",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "crustle",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "scraggy",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "scrafty",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "sigilyph",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "yamask",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "cofagrigus",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "tirtouga",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "carracosta",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "archen",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "archeops",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "trubbish",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "garbodor",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "zorua",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "zoroark",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "minccino",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "cinccino",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "gothita",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gothorita",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gothitelle",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "solosis",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "duosion",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "reuniclus",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "vanillite",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "vanillish",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "vanilluxe",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "emolga",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "karrablast",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "escavalier",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "foongus",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "amoonguss",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "frillish-male",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "jellicent-male",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "joltik",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "galvantula",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "ferroseed",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "ferrothorn",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "klink",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "klang",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "klinklang",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "elgyem",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "beheeyem",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "litwick",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "lampent",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "chandelure",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "axew",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "fraxure",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "haxorus",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cubchoo",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "beartic",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "cryogonal",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "shelmet",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "accelgor",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "stunfisk",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mienfoo",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "mienshao",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "druddigon",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "golett",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "golurk",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "pawniard",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "bisharp",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "bouffalant",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "rufflet",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "braviary",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "vullaby",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mandibuzz",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "heatmor",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "durant",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "deino",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zweilous",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "hydreigon",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "larvesta",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "volcarona",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "cobalion",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "terrakion",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "virizion",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "tornadus-incarnate",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "thundurus-incarnate",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "reshiram",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "zekrom",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "landorus-incarnate",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "kyurem",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "keldeo-ordinary",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "genesect",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "bunnelby",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "diggersby",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "fletchling",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "fletchinder",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "talonflame",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "pancham",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "pangoro",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "espurr",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "meowstic-male",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "honedge",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "doublade",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "aegislash-shield",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "spritzee",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "aromatisse",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "swirlix",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "slurpuff",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "inkay",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "malamar",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "binacle",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "barbaracle",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "skrelp",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dragalge",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "clauncher",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "clawitzer",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "helioptile",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "heliolisk",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "tyrunt",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "tyrantrum",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "amaura",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "aurorus",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sylveon",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hawlucha",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dedenne",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "carbink",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "goomy",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "sliggoo",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "goodra",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "klefki",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "phantump",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "trevenant",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "pumpkaboo-average",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "gourgeist-average",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "bergmite",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "avalugg",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "noibat",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "noivern",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "xerneas",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "yveltal",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "zygarde-50",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "diancie",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "volcanion",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "rowlet",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dartrix",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "decidueye",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "litten",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "torracat",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "incineroar",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "popplio",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "brionne",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "primarina",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "grubbin",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "charjabug",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "vikavolt",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "cutiefly",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "ribombee",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "rockruff",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "lycanroc-midday",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "wishiwashi-solo",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mareanie",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "toxapex",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mudbray",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mudsdale",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dewpider",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "araquanid",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "fomantis",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "lurantis",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "morelull",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "shiinotic",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "salandit",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "salazzle",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "stufful",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "bewear",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "bounsweet",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "steenee",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "tsareena",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "comfey",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "oranguru",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "passimian",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "wimpod",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "golisopod",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "sandygast",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "palossand",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "pyukumuku",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "type-null",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "silvally",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "turtonator",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "togedemaru",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "mimikyu-disguised",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "drampa",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "dhelmise",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "jangmo-o",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "hakamo-o",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "kommo-o",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "tapu-koko",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "tapu-lele",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "tapu-bulu",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "tapu-fini",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "cosmog",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "cosmoem",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "solgaleo",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "lunala",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "nihilego",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "buzzwole",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "pheromosa",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "xurkitree",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "celesteela",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "kartana",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "guzzlord",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "necrozma",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "magearna",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "marshadow",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "poipole",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "naganadel",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "stakataka",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "blacephalon",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "zeraora",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "meltan",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "melmetal",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "grookey",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "thwackey",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "rillaboom",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "scorbunny",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "raboot",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "cinderace",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "sobble",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "drizzile",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "inteleon",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "skwovet",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "greedent",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "rookidee",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "corvisquire",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "corviknight",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "blipbug",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dottler",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "orbeetle",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "nickit",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "thievul",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "gossifleur",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "eldegoss",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "wooloo",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "dubwool",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "chewtle",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "drednaw",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "yamper",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "boltund",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "rolycoly",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "carkol",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "coalossal",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "applin",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "flapple",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "appletun",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "silicobra",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sandaconda",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "cramorant",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "arrokuda",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "barraskewda",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "toxel",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "toxtricity-amped",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "sizzlipede",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "centiskorch",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "clobbopus",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "grapploct",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sinistea",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "polteageist",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "hatenna",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hattrem",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hatterene",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "impidimp",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "morgrem",
+    "generationId": 8,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "grimmsnarl",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "obstagoon",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "perrserker",
+    "generationId": 8,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "cursola",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "sirfetchd",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "mr-rime",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "runerigus",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "milcery",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "alcremie",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "falinks",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "pincurchin",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "snom",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "frosmoth",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "stonjourner",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "eiscue-ice",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "indeedee-male",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "morpeko-full-belly",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cufant",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "copperajah",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dracozolt",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "arctozolt",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dracovish",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "arctovish",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "duraludon",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "dreepy",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "drakloak",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dragapult",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "zacian",
+    "generationId": 8,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zamazenta",
+    "generationId": 8,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "eternatus",
+    "generationId": 8,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "kubfu",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "urshifu-single-strike",
+    "generationId": 8,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "zarude",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "regieleki",
+    "generationId": 8,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "regidrago",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "glastrier",
+    "generationId": 8,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "spectrier",
+    "generationId": 8,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "calyrex",
+    "generationId": 8,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "bulbasaur",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "ivysaur",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "venusaur",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "charmander",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "charmeleon",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "charizard",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "squirtle",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "wartortle",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "blastoise",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "ekans",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "arbok",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "pikachu",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "raichu",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "sandshrew",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "sandslash",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "clefairy",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "clefable",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "vulpix",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "ninetales",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "jigglypuff",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "wigglytuff",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "oddish",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "gloom",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "vileplume",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "venonat",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "venomoth",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "diglett",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dugtrio",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "meowth",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "persian",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "psyduck",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "golduck",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mankey",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "primeape",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "growlithe",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "arcanine",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "poliwag",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "poliwhirl",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "poliwrath",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "bellsprout",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "weepinbell",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "victreebel",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "tentacool",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "tentacruel",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "geodude",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "graveler",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "golem",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "slowpoke",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "slowbro",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "magnemite",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "magneton",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "doduo",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dodrio",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "seel",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "dewgong",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "grimer",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "muk",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "shellder",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "cloyster",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gastly",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "haunter",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gengar",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "drowzee",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "hypno",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "voltorb",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "electrode",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "exeggcute",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "exeggutor",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "hitmonlee",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "hitmonchan",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "koffing",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "weezing",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "rhyhorn",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "rhydon",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "chansey",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "horsea",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "seadra",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "scyther",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "electabuzz",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "magmar",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "tauros",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "magikarp",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "gyarados",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lapras",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "ditto",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "eevee",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "vaporeon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "jolteon",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "flareon",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "porygon",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "snorlax",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "articuno",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zapdos",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "moltres",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "dratini",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dragonair",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dragonite",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mewtwo",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "mew",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "chikorita",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "bayleef",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "meganium",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "cyndaquil",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "quilava",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "typhlosion",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "totodile",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "croconaw",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "feraligatr",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sentret",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "furret",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "hoothoot",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "noctowl",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "spinarak",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "ariados",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "chinchou",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lanturn",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "pichu",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cleffa",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "igglybuff",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "mareep",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "flaaffy",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "ampharos",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "bellossom",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "marill",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "azumarill",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sudowoodo",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "politoed",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "hoppip",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "skiploom",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "jumpluff",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "aipom",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "sunkern",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "sunflora",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "yanma",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "wooper",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "quagsire",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "espeon",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "umbreon",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "murkrow",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "slowking",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "misdreavus",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "girafarig",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "pineco",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "forretress",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "dunsparce",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "gligar",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "snubbull",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "granbull",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "qwilfish",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "scizor",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "heracross",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sneasel",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "teddiursa",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "ursaring",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "slugma",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "magcargo",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "swinub",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "piloswine",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "delibird",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "skarmory",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "houndour",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "houndoom",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "kingdra",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "phanpy",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "donphan",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "porygon2",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "stantler",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "smeargle",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "tyrogue",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "hitmontop",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "elekid",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "magby",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "blissey",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "raikou",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "entei",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "suicune",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "larvitar",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "pupitar",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "tyranitar",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "lugia",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "ho-oh",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "treecko",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "grovyle",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sceptile",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "torchic",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "combusken",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "blaziken",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "mudkip",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "marshtomp",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "swampert",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "poochyena",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "mightyena",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "lotad",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "lombre",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "ludicolo",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "seedot",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "nuzleaf",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "shiftry",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "wingull",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "pelipper",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "ralts",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "kirlia",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "gardevoir",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "surskit",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "masquerain",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "shroomish",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "breloom",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "slakoth",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "vigoroth",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "slaking",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "makuhita",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "hariyama",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "azurill",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "nosepass",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "sableye",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "meditite",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "medicham",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "plusle",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "minun",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "volbeat",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "illumise",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gulpin",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "swalot",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "numel",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "camerupt",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "torkoal",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "spoink",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "grumpig",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "trapinch",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "vibrava",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "flygon",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "cacnea",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "cacturne",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "swablu",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "altaria",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zangoose",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "seviper",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "barboach",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "whiscash",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "corphish",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "crawdaunt",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "feebas",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "milotic",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "shuppet",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "banette",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "duskull",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "dusclops",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "tropius",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "chimecho",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "snorunt",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "glalie",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "luvdisc",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "bagon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "shelgon",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "salamence",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "beldum",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "metang",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "metagross",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "regirock",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "regice",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "registeel",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "latias",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "latios",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "kyogre",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "groudon",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "rayquaza",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "jirachi",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "deoxys-normal",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "turtwig",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "grotle",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "torterra",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "chimchar",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "monferno",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "infernape",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "piplup",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "prinplup",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "empoleon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "starly",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "staravia",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "staraptor",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "kricketot",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "kricketune",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "shinx",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "luxio",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "luxray",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "cranidos",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "rampardos",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "shieldon",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "bastiodon",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "combee",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "vespiquen",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "pachirisu",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "buizel",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "floatzel",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "shellos",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gastrodon",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "ambipom",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "drifloon",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "drifblim",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "mismagius",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "honchkrow",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "chingling",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "stunky",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "skuntank",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "bronzor",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "bronzong",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "bonsly",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "happiny",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "spiritomb",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gible",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "gabite",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "garchomp",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "munchlax",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "riolu",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lucario",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "hippopotas",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "hippowdon",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "croagunk",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "toxicroak",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "finneon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lumineon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "snover",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "abomasnow",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "weavile",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "magnezone",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "rhyperior",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "electivire",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "magmortar",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "yanmega",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "leafeon",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "glaceon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "gliscor",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "mamoswine",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "porygon-z",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "gallade",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "probopass",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "dusknoir",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "froslass",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "rotom",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "uxie",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "mesprit",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "azelf",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dialga",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "palkia",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "heatran",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "regigigas",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "giratina-altered",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "cresselia",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "phione",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "manaphy",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "darkrai",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "shaymin-land",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "arceus",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "snivy",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "servine",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "serperior",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "tepig",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "pignite",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "emboar",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "oshawott",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "dewott",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "samurott",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "blitzle",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "zebstrika",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "drilbur",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "excadrill",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "timburr",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "gurdurr",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "conkeldurr",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "sewaddle",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "swadloon",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "leavanny",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cottonee",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "whimsicott",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "petilil",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "lilligant",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "basculin-red-striped",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sandile",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "krokorok",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "krookodile",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "scraggy",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "scrafty",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "zorua",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "zoroark",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "minccino",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "cinccino",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "gothita",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gothorita",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "gothitelle",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "solosis",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "duosion",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "reuniclus",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "ducklett",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "swanna",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "deerling",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "sawsbuck",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "foongus",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "amoonguss",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "alomomola",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "joltik",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "galvantula",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "tynamo",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "eelektrik",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "eelektross",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "litwick",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "lampent",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "chandelure",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "axew",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "fraxure",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "haxorus",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cubchoo",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "beartic",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "cryogonal",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mienfoo",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "mienshao",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "golett",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "golurk",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "pawniard",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "bisharp",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "rufflet",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "braviary",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "vullaby",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mandibuzz",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "deino",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zweilous",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "hydreigon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "larvesta",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "volcarona",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "cobalion",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "terrakion",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "virizion",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "tornadus-incarnate",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "thundurus-incarnate",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "reshiram",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "zekrom",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "landorus-incarnate",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "kyurem",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "keldeo-ordinary",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "meloetta-aria",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "chespin",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "quilladin",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "chesnaught",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "fennekin",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "braixen",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "delphox",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "froakie",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "frogadier",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "greninja",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "fletchling",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "fletchinder",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "talonflame",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "scatterbug",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "spewpa",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "vivillon",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "litleo",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "pyroar-male",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "flabebe",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "floette",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "florges",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "skiddo",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "gogoat",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "espurr",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "meowstic-male",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "inkay",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "malamar",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "skrelp",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dragalge",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "clauncher",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "clawitzer",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "sylveon",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hawlucha",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dedenne",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "carbink",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "goomy",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "sliggoo",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "goodra",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "klefki",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "phantump",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "trevenant",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "bergmite",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "avalugg",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "noibat",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "noivern",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "diancie",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hoopa",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "volcanion",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "rowlet",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dartrix",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "decidueye",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "litten",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "torracat",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "incineroar",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "popplio",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "brionne",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "primarina",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "pikipek",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "trumbeak",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "toucannon",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "yungoos",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "gumshoos",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "grubbin",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "charjabug",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "vikavolt",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "crabrawler",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "crabominable",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "oricorio-baile",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "cutiefly",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "ribombee",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "rockruff",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "lycanroc-midday",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mareanie",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "toxapex",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mudbray",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mudsdale",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dewpider",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "araquanid",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "fomantis",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "lurantis",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "salandit",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "salazzle",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "bounsweet",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "steenee",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "tsareena",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "comfey",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "oranguru",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "passimian",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "sandygast",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "palossand",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "minior-red-meteor",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "komala",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "mimikyu-disguised",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "bruxish",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "jangmo-o",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "hakamo-o",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "kommo-o",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "cosmog",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "cosmoem",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "solgaleo",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "lunala",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "necrozma",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "magearna",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "grookey",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "thwackey",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "rillaboom",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "scorbunny",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "raboot",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "cinderace",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "sobble",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "drizzile",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "inteleon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "skwovet",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "greedent",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "rookidee",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "corvisquire",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "corviknight",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "chewtle",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "drednaw",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "rolycoly",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "carkol",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "coalossal",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "applin",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "flapple",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "appletun",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "silicobra",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sandaconda",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "cramorant",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "arrokuda",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "barraskewda",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "toxel",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "toxtricity-amped",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "sinistea",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "polteageist",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "hatenna",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hattrem",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "hatterene",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "impidimp",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "morgrem",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "grimmsnarl",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "perrserker",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "milcery",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "alcremie",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "falinks",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "pincurchin",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "snom",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "frosmoth",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "stonjourner",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "eiscue-ice",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "indeedee-male",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "morpeko-full-belly",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "cufant",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "copperajah",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "duraludon",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "dreepy",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "drakloak",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dragapult",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "zacian",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "zamazenta",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "eternatus",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "kubfu",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "urshifu-single-strike",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "zarude",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "regieleki",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "regidrago",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "glastrier",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "spectrier",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "calyrex",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "wyrdeer",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "kleavor",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "ursaluna",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "basculegion-male",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sneasler",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "overqwil",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "enamorus-incarnate",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "sprigatito",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "floragato",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "meowscarada",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "fuecoco",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "crocalor",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "skeledirge",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "quaxly",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "quaxwell",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "quaquaval",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "lechonk",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "oinkologne-male",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "tarountula",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "spidops",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "nymble",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "lokix",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "pawmi",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "pawmo",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "pawmot",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "tandemaus",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "maushold-family-of-four",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "fidough",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "dachsbun",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "smoliv",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dolliv",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "arboliva",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "squawkabilly-green-plumage",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "nacli",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "naclstack",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "garganacl",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "charcadet",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "armarouge",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "ceruledge",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "tadbulb",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "bellibolt",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "wattrel",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "kilowattrel",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "maschiff",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "mabosstiff",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "shroodle",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "grafaiai",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "bramblin",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "brambleghast",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "toedscool",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "toedscruel",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "klawf",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "capsakid",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "scovillain",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "rellor",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "rabsca",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "flittle",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "espathra",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "tinkatink",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "tinkatuff",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "tinkaton",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "wiglett",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "wugtrio",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "bombirdier",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "finizen",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "palafin-zero",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "varoom",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "revavroom",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "cyclizar",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "orthworm",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "glimmet",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "glimmora",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "greavard",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "houndstone",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "flamigo",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "cetoddle",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "cetitan",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "veluza",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "dondozo",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "tatsugiri-curly",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "annihilape",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "clodsire",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "farigiraf",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "dudunsparce-two-segment",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "kingambit",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "great-tusk",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "scream-tail",
+    "generationId": 9,
+    "colorSlug": "pink"
+  },
+  {
+    "formSlug": "brute-bonnet",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "flutter-mane",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "slither-wing",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "sandy-shocks",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "iron-treads",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "iron-bundle",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "iron-hands",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "iron-jugulis",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "iron-moth",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "iron-thorns",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "frigibax",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "arctibax",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "baxcalibur",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "gimmighoul",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "gholdengo",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "wo-chien",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "chien-pao",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "ting-lu",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "chi-yu",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "roaring-moon",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "iron-valiant",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "koraidon",
+    "generationId": 9,
+    "colorSlug": "red"
+  },
+  {
+    "formSlug": "miraidon",
+    "generationId": 9,
+    "colorSlug": "purple"
+  },
+  {
+    "formSlug": "walking-wake",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "iron-leaves",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "dipplin",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "poltchageist",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "sinistcha",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "okidogi",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "munkidori",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "fezandipiti",
+    "generationId": 9,
+    "colorSlug": "black"
+  },
+  {
+    "formSlug": "ogerpon",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "archaludon",
+    "generationId": 9,
+    "colorSlug": "white"
+  },
+  {
+    "formSlug": "hydrapple",
+    "generationId": 9,
+    "colorSlug": "green"
+  },
+  {
+    "formSlug": "gouging-fire",
+    "generationId": 9,
+    "colorSlug": "brown"
+  },
+  {
+    "formSlug": "raging-bolt",
+    "generationId": 9,
+    "colorSlug": "yellow"
+  },
+  {
+    "formSlug": "iron-boulder",
+    "generationId": 9,
+    "colorSlug": "gray"
+  },
+  {
+    "formSlug": "iron-crown",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "terapagos",
+    "generationId": 9,
+    "colorSlug": "blue"
+  },
+  {
+    "formSlug": "pecharunt",
+    "generationId": 9,
+    "colorSlug": "purple"
+  }
+]

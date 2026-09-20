@@ -1266,9 +1266,17 @@ async function seedPokemon(
     }),
   );
 
+  // 图鉴颜色以 PKHeX 的 ROM 表为准 —— PokeAPI 的 species.color 是手填的，
+  // 第八九世代错了十几只。PKHeX 只盖默认形态，其他形态仍按数据源的来
+  const pkhexColors = new Map(
+    read("pkhex-colors").map((r) => [`${r.formSlug} ${r.generationId}`, r.colorSlug]),
+  );
   const colorRows = forms.flatMap(({ id, form }) =>
     form.colors.flatMap((c) => {
-      const colorId = dict.colors.get(c.colorSlug);
+      const slug = form.isDefault
+        ? (pkhexColors.get(`${form.slug} ${c.generationId}`) ?? c.colorSlug)
+        : c.colorSlug;
+      const colorId = dict.colors.get(slug);
       return colorId === undefined ? [] : [{ formId: id, generationId: c.generationId, colorId }];
     }),
   );
