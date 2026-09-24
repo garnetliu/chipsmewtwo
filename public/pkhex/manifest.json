@@ -1,0 +1,32 @@
+{
+  "totalBytes": 20549322,
+  "files": {
+    "BouncyCastle.Cryptography.wasm": 21269,
+    "PKHeX.Core.wasm": 16036633,
+    "PkhexBridge.Wasm.wasm": 19221,
+    "PkhexBridge.wasm": 114965,
+    "System.Collections.Concurrent.wasm": 25365,
+    "System.Collections.wasm": 8469,
+    "System.ComponentModel.Annotations.wasm": 7445,
+    "System.ComponentModel.Primitives.wasm": 5909,
+    "System.ComponentModel.TypeConverter.wasm": 5397,
+    "System.Diagnostics.TraceSource.wasm": 11029,
+    "System.IO.Compression.wasm": 69397,
+    "System.IO.Pipelines.wasm": 5909,
+    "System.Linq.wasm": 30997,
+    "System.Memory.wasm": 14101,
+    "System.ObjectModel.wasm": 5909,
+    "System.Private.CoreLib.wasm": 1401621,
+    "System.Runtime.InteropServices.JavaScript.wasm": 40725,
+    "System.Runtime.Numerics.wasm": 78101,
+    "System.Security.Cryptography.wasm": 31509,
+    "System.Text.Encodings.Web.wasm": 29461,
+    "System.Text.Json.wasm": 200981,
+    "System.Text.RegularExpressions.wasm": 236821,
+    "System.Threading.Tasks.Parallel.wasm": 19733,
+    "dotnet.js": 45025,
+    "dotnet.native.js": 251842,
+    "dotnet.native.wasm": 1518483,
+    "dotnet.runtime.js": 313005
+  }
+}

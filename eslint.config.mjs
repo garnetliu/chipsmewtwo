@@ -43,6 +43,10 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Prisma Client 生成产物，schema.prisma 的 generator output 指到这里。
     "prisma/generated/**",
+    // PKHeX 的 C# 工程和它的 wasm 产物。里面的 dotnet*.js 是 .NET 运行时
+    // 压出来的，不是我们写的代码；产物由 `pnpm pkhex:build` 在 Docker 里生成。
+    "pkhex-wasm/**",
+    "public/pkhex/**",
   ]),
 ]);
 

@@ -1,0 +1,18 @@
+<Project>
+
+  <!--
+    四个工程共用的开关。PKHeX.Core 26.8.26 只发了 net10.0 的 lib，
+    所以整条链路锁死在 net10.0，换低版本会直接 NU1202。
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <!-- PKHeX.Core 是 GPL-3.0，包要求显式接受许可才让还原 -->
+    <NuGetAudit>false</NuGetAudit>
+  </PropertyGroup>
+
+</Project>
