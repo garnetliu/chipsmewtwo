@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "webstorm": {
+      "url": "http://127.0.0.1:64542/stream",
+      "type": "http"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--browser",
+        "chrome",
+        "--isolated",
+        "--output-dir",
+        "/tmp/claude-playwright-mcp",
+        "--viewport-size",
+        "1440x900",
+        "--caps",
+        "testing"
+      ]
+    }
+  }
+}
