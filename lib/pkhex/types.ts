@@ -252,6 +252,24 @@ export interface PkhexApi {
   /** PKHeX.Core 的程序集版本，出问题时贴进报告用 */
   readonly coreVersion: string;
   loadSave(bytes: Uint8Array): SaveSession;
+
+  /**
+   * 查一个**独立的个体文件**（.pk6 / .pk7 / .pk8 / .pk9 这类），不需要存档。
+   *
+   * 和 MonEditor.legality() 是同一套判定，区别只是数据从哪来。
+   * 存在的理由是能拿 PKHeX 自己那套合法/非法对照集来证伪 ——
+   * 裁剪把相遇表裁掉时的表现是「全都合法」而不是报错，只有已知答案的样本能抓到。
+   *
+   * @param extension 格式提示，传文件扩展名（"pk6" 和 ".pk6" 都行）。
+   *
+   * **不传会有一类文件被认错格式。** PK6/PK7、PK8/PB8、PK9/PA9 这三对的字节长度和
+   * 结构完全一样，光看字节分不出来 —— PKHeX 的 EntityFormat.GetFromBytes 在没有提示时
+   * 默认取新的那个，于是一只合法的 PK6 会被当成 PK7 去判，报出「持有人不能与初训家为
+   * 同一人」这种假非法。实测 207 个已知答案的样本：不传提示 197/207，传了 207/207。
+   *
+   * 所以 UI 上让用户拖文件进来时，**把文件名的扩展名一起传过去**。
+   */
+  checkEntity(bytes: Uint8Array, extension?: string): LegalityReport;
 }
 
 /** 运行时下载进度。字节数是解压后的，和产物清单里记的口径一致 */

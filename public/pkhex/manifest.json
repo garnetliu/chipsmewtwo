@@ -1,10 +1,10 @@
 {
-  "totalBytes": 20549322,
+  "totalBytes": 20555466,
   "files": {
     "BouncyCastle.Cryptography.wasm": 21269,
-    "PKHeX.Core.wasm": 16036633,
-    "PkhexBridge.Wasm.wasm": 19221,
-    "PkhexBridge.wasm": 114965,
+    "PKHeX.Core.wasm": 16041753,
+    "PkhexBridge.Wasm.wasm": 19733,
+    "PkhexBridge.wasm": 115477,
     "System.Collections.Concurrent.wasm": 25365,
     "System.Collections.wasm": 8469,
     "System.ComponentModel.Annotations.wasm": 7445,

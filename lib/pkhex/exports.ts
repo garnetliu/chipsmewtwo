@@ -32,6 +32,12 @@ export interface BridgeExports {
   GetMon(mon: number): string;
   /** JSON: LegalityReport。最重的一条，别频繁调 */
   GetLegality(mon: number): string;
+  /**
+   * JSON: LegalityReport。吃独立的个体文件字节，不经过存档。
+   * extension 是格式提示（"pk6" / ".pk6"），**空串表示不给提示** ——
+   * 那样 PK6/PK7、PK8/PB8、PK9/PA9 这三对会被认成后者，判出假非法
+   */
+  CheckEntity(data: Uint8Array, extension: string): string;
   GetIVs(mon: number): Int32Array;
   GetEVs(mon: number): Int32Array;
   GetMoves(mon: number): Int32Array;

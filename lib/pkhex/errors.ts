@@ -10,6 +10,8 @@ export const PKHEX_ERROR_CODES = [
   "PKHEX_NOT_INITIALIZED",
   /** SaveUtil 认不出这份字节 */
   "PKHEX_UNRECOGNIZED_SAVE",
+  /** checkEntity 拿到的字节不是任何一种已知的个体文件（长度就不对，或者解不出来） */
+  "PKHEX_UNRECOGNIZED_ENTITY",
   /** 认出来了，但不在第 6～9 世代的支持范围内 */
   "PKHEX_UNSUPPORTED_GENERATION",
   /** handle 已经 close 过，或者根本不是这个 runtime 发出去的 */

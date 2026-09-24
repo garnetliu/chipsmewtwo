@@ -47,6 +47,13 @@ public static partial class Exports
     [JSExport]
     internal static string GetLegality(int mon) => Bridge.GetLegality(mon);
 
+    /// <summary>
+    /// JSON: LegalityReport。吃独立的个体文件字节，不经过存档。
+    /// extension 是格式提示，空串表示不给 —— 那样字节同构的三对格式会被认成后者
+    /// </summary>
+    [JSExport]
+    internal static string CheckEntity(byte[] data, string extension) => Bridge.CheckEntity(data, extension);
+
     [JSExport]
     internal static int[] GetIVs(int mon) => Bridge.GetIVs(mon);
 

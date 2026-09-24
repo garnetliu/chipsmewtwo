@@ -19,9 +19,51 @@ public static partial class Bridge
     public static string GetLegality(int mon)
     {
         EnsureInitialized();
-        var entry = Handles.GetMon(mon);
-        var pk = entry.Entity;
+        return Analyze(Handles.GetMon(mon).Entity);
+    }
 
+    /// <summary>
+    /// 查一个独立的个体文件（.pk6 / .pk7 / .pk8 / .pk9 这类），不经过存档。
+    ///
+    /// 加载步骤照抄 PKHeX 自己跑对照集的那段（Tests/PKHeX.Core.Tests/Legality/LegalityTests.cs
+    /// 的 <c>VerifyAll</c>）：先用 <see cref="EntityDetection.IsSizePlausible"/> 筛长度，
+    /// 扩展名过 <see cref="EntityFileExtension.GetContextFromExtension"/> 转成格式提示，
+    /// 再 <see cref="EntityFormat.GetFromBytes"/>。
+    ///
+    /// 世代上**不设下限**。LoadSave 只收第 6～9 世代是因为编辑面板的字段对不上，
+    /// 而这里只出一份判定结果，和世代无关。
+    /// </summary>
+    /// <param name="extension">
+    /// 格式提示，传文件扩展名（"pk6" 和 ".pk6" 都行）。空串表示不给提示 ——
+    /// 后果见 <see cref="CheckEntity(byte[], EntityContext)"/>。
+    /// </param>
+    public static string CheckEntity(byte[] data, string extension)
+        // GetContextFromExtension 内部用 EndsWith，整个文件名丢进去也行，不用自己切；
+        // 空串和认不出来的扩展名都会退回它的 prefer 参数，这里就是 None
+        => CheckEntity(data, EntityFileExtension.GetContextFromExtension(extension));
+
+    /// <summary>
+    /// <paramref name="prefer"/> 只在三个「两种格式字节同构」的分支上起作用
+    /// （Format6or7 / Format8or8b / Format9or9a）—— PKHeX 在源码里直接写了
+    /// "Could be either; let other clues like extension/current save file format differentiate."。
+    /// 落到那里时它按 prefer 二选一，prefer 为 <see cref="EntityContext.None"/> 时
+    /// 取的默认是 PK7 / PK8 / PK9，于是一只合法的 PK6 会被当成 PK7 去判，报出假非法。
+    /// 实测 207 个已知答案的样本：不给提示 197/207，给了 207/207。
+    /// </summary>
+    internal static string CheckEntity(byte[] data, EntityContext prefer)
+    {
+        EnsureInitialized();
+
+        if (!EntityDetection.IsSizePlausible(data.Length))
+            throw BridgeException.UnrecognizedEntity(data.Length);
+
+        var pk = EntityFormat.GetFromBytes(data, prefer) ?? throw BridgeException.UnrecognizedEntity(data.Length);
+        return Analyze(pk);
+    }
+
+    /// <summary>句柄和裸字节两条入口汇到这里，判定和取 issues 的口径必须是同一份。</summary>
+    private static string Analyze(PKM pk)
+    {
         var analysis = new LegalityAnalysis(pk);
         var localizer = LegalityLocalizationContext.Create(analysis, ReportLanguage);
 

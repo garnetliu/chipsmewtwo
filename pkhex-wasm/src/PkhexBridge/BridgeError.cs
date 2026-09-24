@@ -9,6 +9,7 @@ public static class BridgeErrorCode
 {
     public const string NotInitialized = "PKHEX_NOT_INITIALIZED";
     public const string UnrecognizedSave = "PKHEX_UNRECOGNIZED_SAVE";
+    public const string UnrecognizedEntity = "PKHEX_UNRECOGNIZED_ENTITY";
     public const string UnsupportedGeneration = "PKHEX_UNSUPPORTED_GENERATION";
     public const string InvalidHandle = "PKHEX_INVALID_HANDLE";
     public const string OutOfRange = "PKHEX_OUT_OF_RANGE";
@@ -26,6 +27,9 @@ public sealed class BridgeException(string code, string detail) : Exception($"{c
 
     public static BridgeException UnrecognizedSave(int length)
         => new(BridgeErrorCode.UnrecognizedSave, $"认不出这份 {length} 字节的数据");
+
+    public static BridgeException UnrecognizedEntity(int length)
+        => new(BridgeErrorCode.UnrecognizedEntity, $"认不出这份 {length} 字节的个体数据");
 
     public static BridgeException UnsupportedGeneration(int generation)
         => new(BridgeErrorCode.UnsupportedGeneration, $"只支持第 6～9 世代，这份是第 {generation} 世代");

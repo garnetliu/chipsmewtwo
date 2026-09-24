@@ -179,5 +179,9 @@ export async function loadPkhex(options?: LoadPkhexOptions): Promise<PkhexApi> {
       const handle = call(() => bridge.exports.LoadSave(bytes));
       return new Session(bridge.exports, handle);
     },
+    checkEntity(bytes: Uint8Array, extension?: string): LegalityReport {
+      // 空串是「不给提示」的约定值，不是缺省参数 —— 边界那头是 C# 的 string，不收 undefined
+      return call(() => parse<LegalityReport>(bridge.exports.CheckEntity(bytes, extension ?? "")));
+    },
   };
 }
