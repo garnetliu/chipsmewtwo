@@ -34,6 +34,18 @@ export class PokemonSource {
       : this.#bySlugLoader.load(idOrSlug);
   }
 
+  /**
+   * 按一批全国图鉴编号取，顺序跟入参一致，查不到的位置是 null。
+   *
+   * 直接借 #byIdLoader —— 它本来就会把这一批并成一条 in 查询，还顺手
+   * prime 了 #bySlugLoader。loadMany 查不到时给的是 Error 实例（不 reject），
+   * 在这儿压成 null，调用方不用关心这层区别
+   */
+  async findMany(ids: number[]): Promise<(PokemonRow | null)[]> {
+    const rows = await this.#byIdLoader.loadMany(ids);
+    return rows.map((row) => (row instanceof Error ? null : row));
+  }
+
   /** 按全国图鉴编号翻页 */
   findPage(offset: number, limit: number): Promise<PokemonRow[]> {
     return this.#pageLoader.load({ offset, limit });

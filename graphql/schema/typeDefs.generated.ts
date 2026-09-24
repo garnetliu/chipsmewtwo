@@ -106,6 +106,39 @@ export const typeDefs = {
           ],
           type: { kind: "NamedType", name: { kind: "Name", value: "PokemonList" } },
         },
+        {
+          kind: "FieldDefinition",
+          description: {
+            kind: "StringValue",
+            value:
+              "按全国图鉴编号批量取，返回顺序跟入参一致，查不到的位置是 null。\n\n存在的理由是「一批散编号」这种取法 —— 存档里一箱 30 只的编号毫无规律，\npokemonList 那种 offset/limit 翻不出来，一只一只查又是 30 个往返",
+            block: true,
+          },
+          name: { kind: "Name", value: "pokemonByIds" },
+          arguments: [
+            {
+              kind: "InputValueDefinition",
+              name: { kind: "Name", value: "ids" },
+              type: {
+                kind: "NonNullType",
+                type: {
+                  kind: "ListType",
+                  type: {
+                    kind: "NonNullType",
+                    type: { kind: "NamedType", name: { kind: "Name", value: "ID" } },
+                  },
+                },
+              },
+            },
+          ],
+          type: {
+            kind: "NonNullType",
+            type: {
+              kind: "ListType",
+              type: { kind: "NamedType", name: { kind: "Name", value: "Pokemon" } },
+            },
+          },
+        },
       ],
       directives: [],
       interfaces: [],

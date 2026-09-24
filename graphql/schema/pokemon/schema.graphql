@@ -7,6 +7,14 @@ extend type Query {
 
   """按全国图鉴编号翻页。这一页在库里凑不满 limit 条时会尝试补数据"""
   pokemonList(offset: Int!, limit: Int!): PokemonList
+
+  """
+  按全国图鉴编号批量取，返回顺序跟入参一致，查不到的位置是 null。
+
+  存在的理由是「一批散编号」这种取法 —— 存档里一箱 30 只的编号毫无规律，
+  pokemonList 那种 offset/limit 翻不出来，一只一只查又是 30 个往返
+  """
+  pokemonByIds(ids: [ID!]!): [Pokemon]!
 }
 
 type PokemonList {

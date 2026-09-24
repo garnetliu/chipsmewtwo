@@ -301,12 +301,23 @@ export type Query = {
    * 库里没有时会尝试补数据（见 POKEMON_FETCH_MODE），两边都没有则报 NOT_FOUND。
    */
   pokemon?: Maybe<Pokemon>;
+  /**
+   * 按全国图鉴编号批量取，返回顺序跟入参一致，查不到的位置是 null。
+   *
+   * 存在的理由是「一批散编号」这种取法 —— 存档里一箱 30 只的编号毫无规律，
+   * pokemonList 那种 offset/limit 翻不出来，一只一只查又是 30 个往返
+   */
+  pokemonByIds: Array<Maybe<Pokemon>>;
   /** 按全国图鉴编号翻页。这一页在库里凑不满 limit 条时会尝试补数据 */
   pokemonList?: Maybe<PokemonList>;
 };
 
 export type QuerypokemonArgs = {
   id: Scalars["ID"]["input"];
+};
+
+export type QuerypokemonByIdsArgs = {
+  ids: Array<Scalars["ID"]["input"]>;
 };
 
 export type QuerypokemonListArgs = {
@@ -661,6 +672,12 @@ export type QueryResolvers<
     ParentType,
     ContextType,
     RequireFields<QuerypokemonArgs, "id">
+  >;
+  pokemonByIds?: Resolver<
+    Array<Maybe<ResolversTypes["Pokemon"]>>,
+    ParentType,
+    ContextType,
+    RequireFields<QuerypokemonByIdsArgs, "ids">
   >;
   pokemonList?: Resolver<
     Maybe<ResolversTypes["PokemonList"]>,

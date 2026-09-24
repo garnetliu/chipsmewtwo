@@ -11,12 +11,18 @@ import { FormStats } from "./form/resolvers/FormStats";
 import { Pokemon } from "./pokemon/resolvers/Pokemon";
 import { PokemonList } from "./pokemon/resolvers/PokemonList";
 import { pokemon as Query_pokemon } from "./pokemon/resolvers/Query/pokemon";
+import { pokemonByIds as Query_pokemonByIds } from "./pokemon/resolvers/Query/pokemonByIds";
 import { pokemonList as Query_pokemonList } from "./pokemon/resolvers/Query/pokemonList";
 import { Type } from "./type/resolvers/Type";
 import type { Resolvers } from "./types.generated";
 import { Version } from "./version/resolvers/Version";
 export const resolvers: Resolvers = {
-  Query: { checks: Query_checks, pokemon: Query_pokemon, pokemonList: Query_pokemonList },
+  Query: {
+    checks: Query_checks,
+    pokemon: Query_pokemon,
+    pokemonByIds: Query_pokemonByIds,
+    pokemonList: Query_pokemonList,
+  },
   Mutation: { check: Mutation_check },
 
   Ability: Ability,

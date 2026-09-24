@@ -28,7 +28,7 @@ import type { VersionRow } from "./version-source";
 /** 图片存的是文件名，前缀由 resolver 拼（lib/pokemon/sprites.ts） */
 export type FormRow = Pick<
   Form,
-  "id" | "pokemonId" | "slug" | "isDefault" | "fullImage" | "detailImage"
+  "id" | "pokemonId" | "slug" | "isDefault" | "isBattleOnly" | "fullImage" | "detailImage"
 >;
 
 /** 图鉴颜色，10 种，是全局字典，所以直接是 color 表的行 */
@@ -110,6 +110,7 @@ export class FormSource {
         pokemonId: true,
         slug: true,
         isDefault: true,
+        isBattleOnly: true,
         fullImage: true,
         detailImage: true,
       },
