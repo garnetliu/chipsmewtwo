@@ -21,7 +21,7 @@ services:
   pkhex-build:
     profiles: ["tools"]
     build:
-      context: ./pkhex-wasm
+      context: ./packages/pkhex-wasm
       dockerfile: Dockerfile
     image: chipsmewtwo-pkhex-build:net10
     working_dir: /repo
@@ -31,8 +31,9 @@ services:
       HOST_UID: ${HOST_UID:-1000}
       HOST_GID: ${HOST_GID:-1000}
     volumes:
-      - ./pkhex-wasm:/repo/pkhex-wasm
-      - ./public:/repo/public
+      # 容器里的布局保持 /repo/pkhex-wasm 和 /repo/public 不变，build.sh 不用跟着改
+      - ./packages/pkhex-wasm:/repo/pkhex-wasm
+      - ./apps/web/public:/repo/public
       # NuGet 缓存用命名卷：bind 到 macOS 文件系统上还原会慢好几倍
       - pkhex_nuget:/nuget
     command: ["bash", "/repo/pkhex-wasm/build.sh"]

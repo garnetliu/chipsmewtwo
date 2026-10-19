@@ -1,0 +1,32 @@
+{
+  "name": "@pkcw/prisma",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./client.ts",
+    "./generated/client": "./generated/client.ts",
+    "./pokemon/*": "./pokemon/*.ts"
+  },
+  "scripts": {
+    "postinstall": "prisma generate",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "seed": "prisma db seed",
+    "seed:refresh": "tsx scripts/refresh-seed-data.ts",
+    "wiki:refresh": "tsx scripts/refresh-wiki-data.ts",
+    "form-colors:refresh": "tsx scripts/refresh-form-colors.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "catalog:",
+    "@prisma/client": "catalog:",
+    "dataloader": "catalog:"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "@types/node": "catalog:",
+    "prisma": "catalog:",
+    "tsx": "^4.23.13",
+    "typescript": "catalog:"
+  }
+}

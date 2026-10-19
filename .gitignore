@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -14,7 +14,7 @@
 /coverage
 
 # next.js
-/.next/
+**/.next/
 /out/
 
 # production
@@ -41,13 +41,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/prisma/generated
+/packages/prisma/generated
 
 # Playwright MCP 的临时产物（截图、控制台日志、无障碍快照）。
 # 这东西是 MCP 自己往 cwd 里写的，不是谁手动放的，一律不进仓库。
 /.playwright-mcp/
 
 # PKHeX 的空白存档夹具，`pnpm pkhex:build` 里由 FixtureGen 现造，6 份共 3.6 MB。
-# 对面的 public/pkhex/ 反而要提交 —— 那是 wasm 产物，没装 dotnet 的人 clone 下来
+# 对面的 apps/web/public/pkhex/ 反而要提交 —— 那是 wasm 产物，没装 dotnet 的人 clone 下来
 # 也得能直接 `next dev`；夹具只有跑测试和烟测时才用得上，重新生成一条命令的事。
-/public/pkhex-fixtures/
+/apps/web/public/pkhex-fixtures/

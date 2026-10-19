@@ -1,0 +1,9 @@
+{
+  "name": "@pkcw/pkhex-wasm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "HOST_UID=$(id -u) HOST_GID=$(id -g) docker compose -f ../../docker-compose.yml --profile tools run --rm --build pkhex-build",
+    "shell": "HOST_UID=$(id -u) HOST_GID=$(id -g) docker compose -f ../../docker-compose.yml --profile tools run --rm --build --entrypoint bash pkhex-build"
+  }
+}
