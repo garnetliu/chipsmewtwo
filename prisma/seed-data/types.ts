@@ -536,7 +536,13 @@ export type GzipSeedData = {
  */
 export type SeedOverrides = {
   pokedexes?: Record<string, { names?: Localized; descriptions?: Localized }>;
-  groups?: Record<string, { names?: Localized }>;
+  /** regionSlugs 给了就整个替换数据源的：传说 Z-A 数据源没挂地区 */
+  groups?: Record<string, { names?: Localized; regionSlugs?: string[] }>;
+  /**
+   * DLC 和它所属的本体。数据源把 DLC 也当版本组，没有从属关系，
+   * 哪些版本组其实是 DLC 只能手写
+   */
+  dlcs?: Record<string, { groupSlug: string; names?: Localized }>;
   evolutionTriggers?: Record<string, { names?: Localized }>;
   moveLearnMethods?: Record<string, { names?: Localized }>;
   forms?: Record<string, { names?: Localized }>;

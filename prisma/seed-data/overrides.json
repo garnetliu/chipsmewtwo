@@ -435,18 +435,6 @@
         "zh-Hant": "綠寶石"
       }
     },
-    "colosseum": {
-      "names": {
-        "zh-Hans": "竞技场",
-        "zh-Hant": "競技場"
-      }
-    },
-    "xd": {
-      "names": {
-        "zh-Hans": "XD 暗之旋风 黑暗洛奇亚",
-        "zh-Hant": "XD 暗之旋風 黑暗洛奇亞"
-      }
-    },
     "firered-leafgreen": {
       "names": {
         "zh-Hans": "火红·叶绿",
@@ -519,18 +507,6 @@
         "zh-Hant": "劍·盾"
       }
     },
-    "the-isle-of-armor": {
-      "names": {
-        "zh-Hans": "铠之孤岛",
-        "zh-Hant": "鎧之孤島"
-      }
-    },
-    "the-crown-tundra": {
-      "names": {
-        "zh-Hans": "冠之雪原",
-        "zh-Hant": "冠之雪原"
-      }
-    },
     "brilliant-diamond-shining-pearl": {
       "names": {
         "zh-Hans": "晶灿钻石·明亮珍珠",
@@ -549,34 +525,54 @@
         "zh-Hant": "朱·紫"
       }
     },
+    "legends-za": {
+      "names": {
+        "zh-Hans": "传说 Z-A",
+        "zh-Hant": "傳說 Z-A"
+      },
+      "regionSlugs": ["kalos"]
+    },
+    "champions": {
+      "names": {
+        "zh-Hans": "冠军赛",
+        "zh-Hant": "冠軍賽"
+      }
+    }
+  },
+  "dlcs": {
+    "the-isle-of-armor": {
+      "groupSlug": "sword-shield",
+      "names": {
+        "zh-Hans": "铠之孤岛",
+        "zh-Hant": "鎧之孤島"
+      }
+    },
+    "the-crown-tundra": {
+      "groupSlug": "sword-shield",
+      "names": {
+        "zh-Hans": "冠之雪原",
+        "zh-Hant": "冠之雪原"
+      }
+    },
     "the-teal-mask": {
+      "groupSlug": "scarlet-violet",
       "names": {
         "zh-Hans": "碧之假面",
         "zh-Hant": "碧之假面"
       }
     },
     "the-indigo-disk": {
+      "groupSlug": "scarlet-violet",
       "names": {
         "zh-Hans": "蓝之圆盘",
         "zh-Hant": "藍之圓盤"
       }
     },
-    "legends-za": {
-      "names": {
-        "zh-Hans": "传说 Z-A",
-        "zh-Hant": "傳說 Z-A"
-      }
-    },
     "mega-dimension": {
+      "groupSlug": "legends-za",
       "names": {
         "zh-Hans": "超级次元",
         "zh-Hant": "超級次元"
-      }
-    },
-    "champions": {
-      "names": {
-        "zh-Hans": "冠军赛",
-        "zh-Hant": "冠軍賽"
       }
     }
   },
@@ -719,24 +715,6 @@
       "names": {
         "zh-Hans": "竞技场冲浪皮卡丘",
         "zh-Hant": "競技場衝浪皮卡丘"
-      }
-    },
-    "colosseum-purification": {
-      "names": {
-        "zh-Hans": "竞技场净化",
-        "zh-Hant": "競技場淨化"
-      }
-    },
-    "xd-shadow": {
-      "names": {
-        "zh-Hans": "XD 暗影",
-        "zh-Hant": "XD 暗影"
-      }
-    },
-    "xd-purification": {
-      "names": {
-        "zh-Hans": "XD 净化",
-        "zh-Hant": "XD 淨化"
       }
     },
     "zygarde-cube": {
@@ -1529,30 +1507,10 @@
         "zh-Hant": "藍（日版）"
       }
     },
-    "colosseum": {
-      "names": {
-        "zh-Hans": "竞技场",
-        "zh-Hant": "競技場"
-      }
-    },
-    "xd": {
-      "names": {
-        "zh-Hans": "XD 暗之旋风 黑暗洛奇亚",
-        "zh-Hant": "XD 暗之旋風 黑暗洛奇亞"
-      }
-    },
     "champions": {
       "names": {
         "zh-Hans": "冠军赛",
         "zh-Hant": "冠軍賽"
-      }
-    }
-  },
-  "regions": {
-    "orre": {
-      "names": {
-        "zh-Hans": "奥雷",
-        "zh-Hant": "奧雷"
       }
     }
   },
@@ -1881,18 +1839,6 @@
     }
   },
   "itemCategories": {
-    "stat-boosts": {
-      "names": {
-        "zh-Hans": "能力提升",
-        "zh-Hant": "能力提升"
-      }
-    },
-    "effort-drop": {
-      "names": {
-        "zh-Hans": "降低基础点数",
-        "zh-Hant": "降低基礎點數"
-      }
-    },
     "medicine": {
       "names": {
         "zh-Hans": "药品",
@@ -1923,12 +1869,6 @@
         "zh-Hant": "屬性防護"
       }
     },
-    "baking-only": {
-      "names": {
-        "zh-Hans": "仅用于烹饪",
-        "zh-Hant": "僅用於烹飪"
-      }
-    },
     "collectibles": {
       "names": {
         "zh-Hans": "收藏品",
@@ -1939,12 +1879,6 @@
       "names": {
         "zh-Hans": "进化道具",
         "zh-Hant": "進化道具"
-      }
-    },
-    "spelunking": {
-      "names": {
-        "zh-Hans": "洞窟探险",
-        "zh-Hant": "洞窟探險"
       }
     },
     "held-items": {
@@ -1971,12 +1905,6 @@
         "zh-Hant": "負面攜帶物"
       }
     },
-    "training": {
-      "names": {
-        "zh-Hans": "训练用品",
-        "zh-Hant": "訓練用品"
-      }
-    },
     "plates": {
       "names": {
         "zh-Hans": "石板",
@@ -1993,12 +1921,6 @@
       "names": {
         "zh-Hans": "属性强化",
         "zh-Hant": "屬性強化"
-      }
-    },
-    "event-items": {
-      "names": {
-        "zh-Hans": "活动道具",
-        "zh-Hant": "活動道具"
       }
     },
     "gameplay": {
@@ -2019,118 +1941,10 @@
         "zh-Hant": "未使用"
       }
     },
-    "loot": {
-      "names": {
-        "zh-Hans": "战利品",
-        "zh-Hant": "戰利品"
-      }
-    },
-    "all-mail": {
-      "names": {
-        "zh-Hans": "邮件",
-        "zh-Hant": "郵件"
-      }
-    },
-    "vitamins": {
-      "names": {
-        "zh-Hans": "营养饮料",
-        "zh-Hant": "營養飲料"
-      }
-    },
-    "healing": {
-      "names": {
-        "zh-Hans": "回复药",
-        "zh-Hant": "回復藥"
-      }
-    },
-    "pp-recovery": {
-      "names": {
-        "zh-Hans": "ＰＰ回复",
-        "zh-Hant": "ＰＰ回復"
-      }
-    },
-    "revival": {
-      "names": {
-        "zh-Hans": "复活道具",
-        "zh-Hant": "復活道具"
-      }
-    },
-    "status-cures": {
-      "names": {
-        "zh-Hans": "状态治疗",
-        "zh-Hant": "狀態治療"
-      }
-    },
-    "mulch": {
-      "names": {
-        "zh-Hans": "肥料",
-        "zh-Hant": "肥料"
-      }
-    },
-    "special-balls": {
-      "names": {
-        "zh-Hans": "特殊球",
-        "zh-Hant": "特殊球"
-      }
-    },
-    "standard-balls": {
-      "names": {
-        "zh-Hans": "常规球",
-        "zh-Hant": "常規球"
-      }
-    },
-    "dex-completion": {
-      "names": {
-        "zh-Hans": "图鉴辅助",
-        "zh-Hant": "圖鑑輔助"
-      }
-    },
-    "scarves": {
-      "names": {
-        "zh-Hans": "华丽围巾",
-        "zh-Hant": "華麗圍巾"
-      }
-    },
-    "all-machines": {
-      "names": {
-        "zh-Hans": "技能机器",
-        "zh-Hant": "技能機器"
-      }
-    },
-    "flutes": {
-      "names": {
-        "zh-Hans": "玻璃哨",
-        "zh-Hant": "玻璃哨"
-      }
-    },
-    "apricorn-balls": {
-      "names": {
-        "zh-Hans": "球果球",
-        "zh-Hant": "球果球"
-      }
-    },
-    "apricorn-box": {
-      "names": {
-        "zh-Hans": "球果盒",
-        "zh-Hant": "球果盒"
-      }
-    },
-    "data-cards": {
-      "names": {
-        "zh-Hans": "数据卡",
-        "zh-Hant": "資料卡"
-      }
-    },
     "jewels": {
       "names": {
         "zh-Hans": "宝石",
         "zh-Hant": "寶石"
-      }
-    },
-    "miracle-shooter": {
-      "names": {
-        "zh-Hans": "神奇发射器",
-        "zh-Hant": "神奇發射器"
       }
     },
     "mega-stones": {
@@ -2149,54 +1963,6 @@
       "names": {
         "zh-Hans": "Ｚ纯晶",
         "zh-Hant": "Ｚ純晶"
-      }
-    },
-    "species-candies": {
-      "names": {
-        "zh-Hans": "专属糖果",
-        "zh-Hant": "專屬糖果"
-      }
-    },
-    "catching-bonus": {
-      "names": {
-        "zh-Hans": "捕捉加成",
-        "zh-Hant": "捕捉加成"
-      }
-    },
-    "dynamax-crystals": {
-      "names": {
-        "zh-Hans": "极巨结晶",
-        "zh-Hant": "極巨結晶"
-      }
-    },
-    "nature-mints": {
-      "names": {
-        "zh-Hans": "性格薄荷",
-        "zh-Hant": "性格薄荷"
-      }
-    },
-    "curry-ingredients": {
-      "names": {
-        "zh-Hans": "咖喱食材",
-        "zh-Hant": "咖哩食材"
-      }
-    },
-    "tera-shard": {
-      "names": {
-        "zh-Hans": "太晶碎块",
-        "zh-Hant": "太晶碎塊"
-      }
-    },
-    "sandwich-ingredients": {
-      "names": {
-        "zh-Hans": "三明治食材",
-        "zh-Hant": "三明治食材"
-      }
-    },
-    "tm-materials": {
-      "names": {
-        "zh-Hans": "技能机器素材",
-        "zh-Hant": "技能機器素材"
       }
     },
     "picnic": {

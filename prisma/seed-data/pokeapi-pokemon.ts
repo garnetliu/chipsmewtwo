@@ -194,7 +194,9 @@ function toForm({ pokemon, form }: Variety, species: SpeciesResponse): FormSnaps
   return {
     slug: pokemon.name,
     isDefault: pokemon.is_default,
-    isBattleOnly: form?.is_battle_only ?? false,
+    // 默认形态不可能只在对战里存在。不能直接信 form 的标记：哲尔尼亚斯的
+    // forms[0] 是战斗中的 xerneas-active，照抄会把默认形态也标成战斗形态
+    isBattleOnly: !pokemon.is_default && (form?.is_battle_only ?? false),
     fullImage: fileNameOf(pokemon.sprites.other["official-artwork"].front_default),
     detailImage: fileNameOf(pokemon.sprites.front_default),
     names: toFormNames(form),

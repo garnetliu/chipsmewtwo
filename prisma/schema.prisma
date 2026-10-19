@@ -129,6 +129,7 @@ model Language {
   formGenusI18Ns        FormGenusI18n[]
   growthRateI18Ns       GrowthRateI18n[]
   eggGroupI18Ns         EggGroupI18n[]
+  dlcNames              DlcI18n[]
 
   @@map("language")
 }
@@ -210,6 +211,7 @@ model Group {
   generation   Generation @relation(fields: [generationId], references: [id])
 
   names            GroupI18n[]
+  dlcs             Dlc[]
   versions         Version[]
   moveLearns       MoveLearn[]
   evolutions       Evolution[]
@@ -229,6 +231,42 @@ model Group {
   @@index([generationId])
   @@index([order])
   @@map("group")
+}
+
+/// DLC。铠岛、冠之雪原、碧之假面、蓝之圆盘、超级次元。
+///
+/// 不进 Group：第八代之前的加强版（究极日月）是独立的游戏，有自己完整的一份数据，
+/// 所以是版本组；DLC 不是 —— 发售时随附的免费更新对没买 DLC 的人也生效，
+/// 招式表、在场、数值、进化、文案这些游戏数据都是本体那份的一部分，挂在本体上。
+/// 这里只记「这样东西是哪个 DLC 加入的」：DLC 图鉴、超级石这类形态变化道具。
+/// 也不挂地区 —— 北上乡、蓝莓学园算在本体的地区里
+model Dlc {
+  id    Int    @id @default(autoincrement())
+  slug  String @unique // "the-teal-mask"
+  /// 数据源的版本组排序，同一个本体下的 DLC 按它排
+  order Int
+
+  /// 所属的本体
+  groupId Int
+  group   Group @relation(fields: [groupId], references: [id])
+
+  names           DlcI18n[]
+  pokedexes       Pokedex[]
+  itemFormChanges ItemFormChange[]
+
+  @@index([groupId])
+  @@map("dlc")
+}
+
+model DlcI18n {
+  dlcId        Int
+  dlc          Dlc      @relation(fields: [dlcId], references: [id], onDelete: Cascade)
+  languageCode String
+  language     Language @relation(fields: [languageCode], references: [code])
+  name         String
+
+  @@id([dlcId, languageCode])
+  @@map("dlc_i18n")
 }
 
 model GroupI18n {
@@ -879,13 +917,17 @@ model ItemFormChange {
   formId Int
   form   Form @relation(fields: [formId], references: [id], onDelete: Cascade)
 
-  /// 这个机制哪个版本组引入的。超级石是 x-y 或 oras，传说 Z-A 那批是 mega-dimension
+  /// 这个机制哪个版本组引入的。超级石是 x-y 或 oras，传说 Z-A 那批是 legends-za
   groupId Int?
   group   Group? @relation(fields: [groupId], references: [id])
+  /// DLC 加入的再记是哪个：超级次元的那批超级石、碧之假面的面具
+  dlcId   Int?
+  dlc     Dlc?   @relation(fields: [dlcId], references: [id])
 
   @@id([itemId, formId])
   @@index([formId])
   @@index([groupId])
+  @@index([dlcId])
   @@map("item_form_change")
 }
 
@@ -1035,12 +1077,17 @@ model Pokedex {
   /// 是否正统系列。外传游戏（竞技场、XD）的图鉴为 false
   isMainSeries Boolean @default(true)
 
+  /// DLC 的图鉴（北上乡、蓝莓）记是哪个 DLC 加入的。本体的为空
+  dlcId Int?
+  dlc   Dlc? @relation(fields: [dlcId], references: [id])
+
   names        PokedexI18n[]
   descriptions PokedexDescriptionI18n[]
   groups       PokedexGroup[]
   numbers      PokedexNumber[]
 
   @@index([regionId])
+  @@index([dlcId])
   @@map("pokedex")
 }
 

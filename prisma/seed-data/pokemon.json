@@ -304403,7 +304403,7 @@
       {
         "slug": "xerneas",
         "isDefault": true,
-        "isBattleOnly": true,
+        "isBattleOnly": false,
         "fullImage": "716.png",
         "detailImage": "716.png",
         "names": [

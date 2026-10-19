@@ -252,7 +252,7 @@ const PKHEX_TABLES: {
   height: number;
   weight: number;
   maxSpecies: number;
-  /** 表覆盖的版本组，存在性挂在这些组上 */
+  /** 表覆盖的版本组，存在性挂在这些组上。DLC 不单列 —— 它的数据是本体那份的一部分 */
   groupSlugs: string[];
 }[] = [
   {
@@ -272,7 +272,7 @@ const PKHEX_TABLES: {
     height: 0x24,
     weight: 0x26,
     maxSpecies: 898,
-    groupSlugs: ["sword-shield", "isle-of-armor", "crown-tundra"],
+    groupSlugs: ["sword-shield"],
   },
   {
     generationId: 8,
@@ -329,7 +329,7 @@ const PKHEX_TABLES: {
     height: 0x20,
     weight: 0x22,
     maxSpecies: 1025,
-    groupSlugs: ["scarlet-violet", "the-teal-mask", "the-indigo-disk"],
+    groupSlugs: ["scarlet-violet"],
   },
   {
     generationId: 9,
@@ -523,7 +523,7 @@ const PKHEX_EVO_TABLES: {
     formStatsAt: 0x1e,
     formCountAt: 0x20,
     maxSpecies: 898,
-    groupSlugs: ["sword-shield", "isle-of-armor", "crown-tundra"],
+    groupSlugs: ["sword-shield"],
   },
   {
     evoFile: "evos_la.pkl",
@@ -550,7 +550,7 @@ const PKHEX_EVO_TABLES: {
     formStatsAt: 0x18,
     formCountAt: 0x1a,
     maxSpecies: 1025,
-    groupSlugs: ["scarlet-violet", "the-teal-mask", "the-indigo-disk"],
+    groupSlugs: ["scarlet-violet"],
   },
   {
     evoFile: "evos_za.pkl",

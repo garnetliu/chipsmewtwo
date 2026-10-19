@@ -83,7 +83,86 @@ const POKEMON_COLORS: Record<string, string> = {
 /** createMany 一次塞多少行。再大就顶到 Postgres 的参数上限了 */
 const BATCH = 5000;
 
+/** 不收的版本组：GameCube 上的两作外传。只要主系列、传说系列，外加 Champions。
+ *  快照里照旧留着，灌库时跳过 —— 版本组不进库，挂在它下面的数据都会因为查不到 id 被丢掉 */
+const EXCLUDED_GROUPS = new Set(["colosseum", "xd"]);
+
+/** 只在上面那两作里存在的学习方式（净化、黑暗招式） */
+const EXCLUDED_METHODS = new Set(["colosseum-purification", "xd-purification", "xd-shadow"]);
+
+/** 上面那两作的舞台，奥雷地区 */
+const EXCLUDED_REGIONS = new Set(["orre"]);
+
+/** 只收对战道具：携带着、在对战里生效的。以分类为准 */
+const BATTLE_ITEM_CATEGORIES = new Set([
+  "held-items",
+  "choice",
+  "bad-held-items",
+  "type-enhancement",
+  "species-specific",
+  "plates",
+  "memories",
+  "z-crystals",
+  "jewels",
+  "mega-stones",
+  "type-protection",
+  "in-a-pinch",
+  "picky-healing",
+  "medicine",
+  "other",
+  // 力量系列，携带时对战里速度减半
+  "effort-training",
+]);
+
+/** 数据源分错了类的对战道具：宝珠和宝玉在剧情道具、游戏功能道具里，
+ *  这 6 个专属Ｚ纯晶的携带版在「未使用」里 */
+const BATTLE_ITEMS_ELSEWHERE = new Set([
+  "red-orb",
+  "blue-orb",
+  "adamant-crystal",
+  "lustrous-globe",
+  "griseous-core",
+  "kommonium-z--held",
+  "lunalium-z--held",
+  "lycanium-z--held",
+  "mimikium-z--held",
+  "solganium-z--held",
+  "ultranecrozium-z--held",
+]);
+
+/** 混在对战分类里、其实不在对战里生效的：释出之玉是连接用的，
+ *  传说石板和净空石板只在传说 阿尔宙斯（那一作没有携带物），花蜜是喂了变形态 */
+const NON_BATTLE_ITEMS = new Set([
+  "pass-orb",
+  "legend-plate",
+  "blank-plate",
+  "pink-nectar",
+  "purple-nectar",
+  "red-nectar",
+  "yellow-nectar",
+]);
+
 // ── 快照读取 ──────────────────────────────────────────────────
+
+/**
+ * 要进库的道具：对战道具，加上进化条件用到的（进化石、通信进化道具这些
+ * 不在对战里生效，但删了进化条件就缺一半）
+ */
+function keptItems(): Map<string, string | null> {
+  const forEvolution = new Set(
+    read("evolutions").flatMap((e) => [e.itemSlug, e.heldItemSlug].filter((s) => s !== null)),
+  );
+  const kept = new Map<string, string | null>();
+  for (const item of read("items")) {
+    const battle =
+      (item.categorySlug !== null &&
+        BATTLE_ITEM_CATEGORIES.has(item.categorySlug) &&
+        !NON_BATTLE_ITEMS.has(item.slug)) ||
+      BATTLE_ITEMS_ELSEWHERE.has(item.slug);
+    if (battle || forEvolution.has(item.slug)) kept.set(item.slug, item.categorySlug);
+  }
+  return kept;
+}
 
 /** 路径相对项目根 —— seed 和刷新脚本都由 pnpm 从根目录启动 */
 function read<K extends keyof SeedData>(name: K): SeedData[K] {
@@ -107,6 +186,30 @@ function readWiki<K extends keyof WikiData>(name: K): WikiData[K] {
 function overrides(): SeedOverrides {
   const path = join(SEED_DATA_DIR, SEED_OVERRIDES_FILE);
   return JSON.parse(readFileSync(path, "utf8")) as SeedOverrides;
+}
+
+/**
+ * DLC → 所属的本体。数据源把 DLC 也当版本组（the-teal-mask 跟 scarlet-violet 平级），
+ * 哪些是 DLC 手写在 overrides.json 的 dlcs 里。它们不进 Group，进 Dlc
+ */
+const DLC_PARENT = new Map(
+  Object.entries(overrides().dlcs ?? {}).map(([slug, d]) => [slug, d.groupSlug] as const),
+);
+
+/**
+ * 游戏数据用的版本组 id：在 groupIds 上补一份「DLC slug → 本体 id」。
+ *
+ * DLC 随附的免费更新对没买的人也生效，招式表、在场、数值、进化、文案
+ * 都是本体那份数据的一部分。数据源有时把它们记在 DLC 上（百科的文案按 DLC 分栏、
+ * 形态变化道具记的是 DLC），灌库时一律并到本体
+ */
+function dataGroupIds(groupIds: Map<string, number>): Map<string, number> {
+  const out = new Map(groupIds);
+  for (const [dlc, parent] of DLC_PARENT) {
+    const id = groupIds.get(parent);
+    if (id !== undefined) out.set(dlc, id);
+  }
+  return out;
 }
 
 /**
@@ -198,13 +301,20 @@ function flavorRows(
   groupIds: Map<string, number>,
 ): { groupId: number; languageCode: LanguageCode; text: string }[] {
   const out: { groupId: number; languageCode: LanguageCode; text: string }[] = [];
-  const slugs = new Set([...Object.keys(flavors), ...Object.keys(chinese ?? {})]);
+  // DLC 的文案并到本体上（见 dataGroupIds），本体已经有的以本体为准，所以 DLC 排后面
+  const slugs = [...new Set([...Object.keys(flavors), ...Object.keys(chinese ?? {})])].sort(
+    (a, b) => Number(DLC_PARENT.has(a)) - Number(DLC_PARENT.has(b)),
+  );
+  const seen = new Set<string>();
   for (const slug of slugs) {
     const groupId = groupIds.get(slug);
     if (groupId === undefined) continue;
     const merged = { ...flavors[slug], ...chinese?.[slug] };
     // localized 已经把空串挡掉了
     for (const { languageCode, value: text } of localized(merged)) {
+      const key = `${groupId} ${languageCode}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
       out.push({ groupId, languageCode, text });
     }
   }
@@ -245,7 +355,7 @@ async function seedLanguages() {
 }
 
 async function seedRegions(manual: SeedOverrides["regions"]) {
-  const regions = read("regions");
+  const regions = read("regions").filter((r) => !EXCLUDED_REGIONS.has(r.slug));
 
   const ids = new Map<string, number>();
   for (const r of regions) {
@@ -417,7 +527,7 @@ async function seedColors() {
 
 /** 学习方式的译名数据源只有英法，中日韩靠 overrides.json 补 */
 async function seedMoveLearnMethods(manual: SeedOverrides["moveLearnMethods"]) {
-  const methods = read("move-learn-methods");
+  const methods = read("move-learn-methods").filter((m) => !EXCLUDED_METHODS.has(m.slug));
 
   for (const m of methods) {
     await prisma.moveLearnMethod.upsert({
@@ -569,7 +679,8 @@ function dictionaryRows(
 }
 
 async function seedItemCategories(manual: SeedOverrides["itemCategories"]) {
-  const rows = dictionaryRows("item-categories", manual);
+  const used = new Set(keptItems().values());
+  const rows = dictionaryRows("item-categories", manual).filter((r) => used.has(r.slug));
   for (const r of rows) {
     await prisma.itemCategory.upsert({
       where: { slug: r.slug },
@@ -584,6 +695,8 @@ async function seedItemCategories(manual: SeedOverrides["itemCategories"]) {
       });
     }
   }
+  // 不收的道具用的分类跟着清掉。道具那头是 SET NULL，删得动
+  await prisma.itemCategory.deleteMany({ where: { slug: { notIn: rows.map((r) => r.slug) } } });
   console.log(`道具分类: ${rows.length} 行`);
 }
 
@@ -698,7 +811,9 @@ async function seedGroups(
   pokedexIds: Map<string, number>,
   manual: SeedOverrides["groups"],
 ) {
-  const groups = read("groups");
+  const groups = read("groups").filter(
+    (g) => !EXCLUDED_GROUPS.has(g.slug) && !DLC_PARENT.has(g.slug),
+  );
 
   const ids = new Map<string, number>();
   for (const vg of groups) {
@@ -719,7 +834,7 @@ async function seedGroups(
       });
     }
 
-    for (const slug of vg.regionSlugs) {
+    for (const slug of manual?.[vg.slug]?.regionSlugs ?? vg.regionSlugs) {
       const regionId = regionIds.get(slug);
       if (regionId === undefined) continue;
       await prisma.regionGroup.upsert({
@@ -759,6 +874,8 @@ async function seedVersions(groupIds: Map<string, number>, manual: SeedOverrides
 
   const ids = new Map<string, number>();
   for (const v of versions) {
+    // DLC 不是单独的游戏，「朱：碧之假面」这种版本不收
+    if (DLC_PARENT.has(v.groupSlug)) continue;
     const groupId = groupIds.get(v.groupSlug);
     if (groupId === undefined) continue;
 
@@ -781,7 +898,62 @@ async function seedVersions(groupIds: Map<string, number>, manual: SeedOverrides
       });
     }
   }
-  console.log(`版本: ${versions.length} 行`);
+  // 不收的清掉。图鉴说明是 RESTRICT，DLC 版本下面一条都没有，删得动
+  await prisma.version.deleteMany({ where: { slug: { notIn: [...ids.keys()] } } });
+  console.log(`版本: ${ids.size} 行`);
+  return ids;
+}
+
+/**
+ * DLC。身份、排序、图鉴从数据源的版本组快照里取（它把 DLC 当版本组），
+ * 归属和名字是手写的。
+ *
+ * 之前当版本组进过库的 DLC 在这里清掉：它们的版本在 seedVersions 里已经清了，
+ * 剩下挂着的只有级联删除的译名、地区、图鉴关联，以及 SET NULL 的形态变化道具（后面重建）
+ */
+async function seedDlcs(
+  groupIds: Map<string, number>,
+  pokedexIds: Map<string, number>,
+  manual: SeedOverrides["dlcs"],
+) {
+  const snapshot = new Map(read("groups").map((g) => [g.slug, g]));
+
+  const ids = new Map<string, number>();
+  await prisma.pokedex.updateMany({ data: { dlcId: null } });
+  for (const [slug, d] of Object.entries(manual ?? {})) {
+    const groupId = groupIds.get(d.groupSlug);
+    const vg = snapshot.get(slug);
+    if (groupId === undefined || vg === undefined) {
+      console.warn(`⚠ overrides.json 的 DLC ${slug} 对不上快照或本体`);
+      continue;
+    }
+    const data = { slug, order: vg.order, groupId };
+    const dlc = await prisma.dlc.upsert({ where: { slug }, create: data, update: data });
+    ids.set(slug, dlc.id);
+
+    for (const { languageCode, value: name } of localized(d.names ?? {})) {
+      await prisma.dlcI18n.upsert({
+        where: { dlcId_languageCode: { dlcId: dlc.id, languageCode } },
+        create: { dlcId: dlc.id, languageCode, name },
+        update: { name },
+      });
+    }
+    // DLC 的图鉴照样属于本体那个版本组，再记一下是哪个 DLC 加入的
+    for (const pokedexSlug of vg.pokedexSlugs) {
+      const pokedexId = pokedexIds.get(pokedexSlug);
+      if (pokedexId === undefined) continue;
+      await prisma.pokedex.update({ where: { id: pokedexId }, data: { dlcId: dlc.id } });
+      await prisma.pokedexGroup.upsert({
+        where: { pokedexId_groupId: { pokedexId, groupId } },
+        create: { pokedexId, groupId },
+        update: {},
+      });
+    }
+  }
+  await prisma.dlc.deleteMany({ where: { slug: { notIn: [...ids.keys()] } } });
+  const stale = await prisma.group.deleteMany({ where: { slug: { in: [...DLC_PARENT.keys()] } } });
+  if (stale.count) console.log(`  清掉 ${stale.count} 个当成版本组进过库的 DLC`);
+  console.log(`DLC: ${ids.size} 行`);
   return ids;
 }
 
@@ -793,7 +965,8 @@ async function seedVersions(groupIds: Map<string, number>, manual: SeedOverrides
  * （从各语言版本 ROM 提取，10 种语言齐全）。两张表各自整表重建。
  */
 async function seedItems(groupIds: Map<string, number>) {
-  const items = read("items");
+  const kept = keptItems();
+  const items = read("items").filter((i) => kept.has(i.slug));
   const wiki = wikiEffects("wiki-items");
 
   const effects: (EffectRow & { itemId: number })[] = [];
@@ -834,7 +1007,7 @@ async function seedItems(groupIds: Map<string, number>) {
     await tx.itemFlavorI18n.deleteMany({});
     await insertInBatches(flavors, (data) => tx.itemFlavorI18n.createMany({ data }));
   });
-  // 快照里没有的清掉。数据源改过 slug 或者删掉条目时，upsert 不会动旧行。
+  // 快照里没有的、不收的清掉。数据源改过 slug 或者删掉条目时，upsert 不会动旧行。
   // 进化条件和Ｚ纯晶的引用都在后面重建，这里删得动
   const stale = await prisma.item.deleteMany({
     where: { slug: { notIn: items.map((i) => i.slug) } },
@@ -866,23 +1039,31 @@ async function seedItemMechanics(dict: {
   forms: Map<string, number>;
   types: Map<string, number>;
   groups: Map<string, number>;
+  dlcs: Map<string, number>;
   moves: Map<string, number>;
 }) {
   const itemId = (slug: string) => dict.items.get(slug);
+  // 没收的道具（技能机器、性格薄荷……）机制跟着不要，不算缺
+  const kept = keptItems();
   const missing = new Set<string>();
+  const miss = (slug: string) => {
+    if (kept.has(slug)) missing.add(slug);
+  };
 
   const formChanges = read("item-form-changes").flatMap((c) => {
     const item = itemId(c.itemSlug);
     const formId = dict.forms.get(c.formSlug);
     if (item === undefined || formId === undefined) {
-      missing.add(c.itemSlug);
+      miss(c.itemSlug);
       return [];
     }
     return [
       {
         itemId: item,
         formId,
+        // DLC 加入的记成本体，另记是哪个 DLC
         groupId: c.groupSlug ? (dict.groups.get(c.groupSlug) ?? null) : null,
+        dlcId: c.groupSlug ? (dict.dlcs.get(c.groupSlug) ?? null) : null,
       },
     ];
   });
@@ -891,7 +1072,7 @@ async function seedItemMechanics(dict: {
     const item = itemId(c.itemSlug);
     const typeId = dict.types.get(c.typeSlug);
     if (item === undefined || typeId === undefined) {
-      missing.add(c.itemSlug);
+      miss(c.itemSlug);
       return [];
     }
     return [{ itemId: item, typeId }];
@@ -908,7 +1089,7 @@ async function seedItemMechanics(dict: {
     const item = itemId(b.itemSlug);
     const typeId = dict.types.get(b.typeSlug);
     if (item === undefined || typeId === undefined) {
-      missing.add(b.itemSlug);
+      miss(b.itemSlug);
       continue;
     }
     boosts.set(`${item} ${typeId}`, {
@@ -923,7 +1104,7 @@ async function seedItemMechanics(dict: {
     const item = itemId(slug);
     const typeId = dict.types.get(row.boostTypeSlug);
     if (item === undefined || typeId === undefined) {
-      missing.add(slug);
+      miss(slug);
       continue;
     }
     const key = `${item} ${typeId}`;
@@ -936,18 +1117,19 @@ async function seedItemMechanics(dict: {
   const natures = read("item-natures").flatMap((n) => {
     const item = itemId(n.itemSlug);
     if (item === undefined) {
-      missing.add(n.itemSlug);
+      miss(n.itemSlug);
       return [];
     }
     return [{ itemId: item, natureSlug: n.natureSlug }];
   });
 
   const machines = read("machines").flatMap((m) => {
+    if (EXCLUDED_GROUPS.has(m.groupSlug)) return [];
     const item = itemId(m.itemSlug);
     const groupId = dict.groups.get(m.groupSlug);
     const moveId = dict.moves.get(m.moveSlug);
     if (item === undefined || groupId === undefined || moveId === undefined) {
-      missing.add(m.itemSlug);
+      miss(m.itemSlug);
       return [];
     }
     return [{ itemId: item, groupId, moveId }];
@@ -956,7 +1138,7 @@ async function seedItemMechanics(dict: {
   const berries = read("berries").flatMap((b) => {
     const item = itemId(b.itemSlug);
     if (item === undefined) {
-      missing.add(b.itemSlug);
+      miss(b.itemSlug);
       return [];
     }
     // 自然之恩数据源有几颗第六世代的新树果空着，用百科的补。
@@ -1075,7 +1257,10 @@ async function seedAbilities(groupIds: Map<string, number>) {
 
 /** 招式，937 个。数值每代一行 —— 喷射火焰 Gen1~5 威力 95、Gen6 起 90 */
 async function seedMoves(typeIds: Map<string, number>, groupIds: Map<string, number>) {
-  const moves = read("moves");
+  // 黑暗属性的招式（暗影突袭那批）只在竞技场和 XD 里有，跟着那两作一起不收
+  const moves = read("moves").filter(
+    (m) => !Object.values(m.generations).some((g) => g.typeSlug === "shadow"),
+  );
   const wiki = wikiEffects("wiki-moves");
 
   const generations: {
@@ -1502,13 +1687,21 @@ async function seedPokemon(
     });
   });
 
+  // DLC 并到本体之后同一只会出现两次（PKHeX 的朱紫表也算给了 DLC），按主键去重
+  const uniqueVitals = [
+    ...new Map(vitalRows.map((r) => [`${r.pokemonId} ${r.groupId}`, r])).values(),
+  ];
+  const uniquePresence = [
+    ...new Map(presenceRows.map((r) => [`${r.formId} ${r.groupId}`, r])).values(),
+  ];
+
   await rebuild(async (tx) => {
     await tx.pokemonEggGroup.deleteMany({});
     await insertInBatches(eggGroupRows, (data) => tx.pokemonEggGroup.createMany({ data }));
     await tx.pokemonVital.deleteMany({});
-    await insertInBatches(vitalRows, (data) => tx.pokemonVital.createMany({ data }));
+    await insertInBatches(uniqueVitals, (data) => tx.pokemonVital.createMany({ data }));
     await tx.formPresence.deleteMany({});
-    await insertInBatches(presenceRows, (data) => tx.formPresence.createMany({ data }));
+    await insertInBatches(uniquePresence, (data) => tx.formPresence.createMany({ data }));
   });
 
   console.log(
@@ -1516,8 +1709,8 @@ async function seedPokemon(
       `特性 ${abilityRows.length} 行，图鉴说明 ${descriptionRows.length} 行` +
       `（其中来自百科的中文 ${chineseRows} 行），` +
       `分类 ${genusRows.length} 行（百科补了 ${genusFromWiki} 行），` +
-      `蛋组 ${eggGroupRows.length} 行，数值 ${vitalRows.length} 行，` +
-      `在场 ${presenceRows.length} 行`,
+      `蛋组 ${eggGroupRows.length} 行，数值 ${uniqueVitals.length} 行，` +
+      `在场 ${uniquePresence.length} 行`,
   );
   return formIds;
 }
@@ -1621,9 +1814,14 @@ function wikiDescriptions(): Map<string, WikiPokemonDescriptionSnapshot> {
  * 而按 formId 逐批删再插会把删除也做一百万次。
  *
  * 流式处理：一边展开一边攒够 BATCH 就插，不把一百万个对象同时留在内存里
+ *
+ * 战斗形态（超级进化、原始回归、究极奈克洛兹玛……）不插：招式跟着变身前的形态走。
+ * 数据源给它们单列的那份不光冗余，还有错 —— 永恒花叶蒂的超级进化对的是
+ * 普通花叶蒂的表，飘浮泡泡的雨天形态比本体多出几招
  */
 async function seedMoveLearns(dict: {
   forms: Map<string, number>;
+  battleOnly: Set<string>;
   moves: Map<string, number>;
   groups: Map<string, number>;
   methods: Set<string>;
@@ -1653,6 +1851,7 @@ async function seedMoveLearns(dict: {
     };
 
     for (const entry of snapshot) {
+      if (dict.battleOnly.has(entry.formSlug)) continue;
       const formId = dict.forms.get(entry.formSlug);
       if (formId === undefined) continue;
       for (const [moveSlug, groupSlug, methodSlug, level, machineNumber] of entry.learns) {
@@ -1695,7 +1894,7 @@ async function seedEvolutions(dict: {
   const signature = (r: { fromFormId: number; toFormId: number; groupId: number }) =>
     `${r.fromFormId} ${r.toFormId} ${r.groupId}`;
 
-  const data = rows.flatMap((e) => {
+  const introRows = rows.flatMap((e) => {
     const fromFormId = dict.forms.get(e.fromFormSlug);
     const toFormId = dict.forms.get(e.toFormSlug);
     const groupId = dict.groups.get(e.groupSlug);
@@ -1749,6 +1948,8 @@ async function seedEvolutions(dict: {
       },
     ];
   });
+  // DLC 并到本体之后（见 dataGroupIds），本体和 DLC 各记了一次的同一条进化会重复
+  const data = [...new Map(introRows.map((r) => [JSON.stringify(r), r])).values()];
 
   // ── PKHeX 的版本组展开 ──
   //
@@ -2009,7 +2210,10 @@ async function seedZMoves(dict: {
       pp: z.pp,
       formId: link?.formSlug ? (dict.forms.get(link.formSlug) ?? null) : null,
       baseMoveId: link?.baseMoveSlug ? (dict.moves.get(link.baseMoveSlug) ?? null) : null,
-      itemId: link?.itemSlug ? (dict.items.get(link.itemSlug) ?? null) : null,
+      // 百科连的是背包版的Ｚ纯晶，只收了携带版
+      itemId: link?.itemSlug
+        ? (dict.items.get(link.itemSlug.replace(/--bag$/, "--held")) ?? null)
+        : null,
     };
     if (data.formId && data.baseMoveId) linked++;
 
@@ -2196,9 +2400,12 @@ async function main() {
   const pokedexIds = await seedPokedexes(regionIds, manual.pokedexes);
   const groupIds = await seedGroups(regionIds, pokedexIds, manual.groups);
   const versionIds = await seedVersions(groupIds, manual.versions);
-  const itemIds = await seedItems(groupIds);
-  const abilityIds = await seedAbilities(groupIds);
-  const moveIds = await seedMoves(typeIds, groupIds);
+  const dlcIds = await seedDlcs(groupIds, pokedexIds, manual.dlcs);
+  // 游戏数据用这份：数据源记在 DLC 上的换成本体
+  const dataGroups = dataGroupIds(groupIds);
+  const itemIds = await seedItems(dataGroups);
+  const abilityIds = await seedAbilities(dataGroups);
+  const moveIds = await seedMoves(typeIds, dataGroups);
 
   // 字典表全部就位之后才灌宝可梦 —— 它的属性、颜色、图鉴编号、图鉴说明、特性
   // 分别指向 type / color / pokedex / version / ability
@@ -2209,13 +2416,20 @@ async function main() {
       colors: colorIds,
       versions: versionIds,
       abilities: abilityIds,
-      groups: groupIds,
+      groups: dataGroups,
     },
     manual.forms,
   );
 
-  const methods = new Set(read("move-learn-methods").map((m) => m.slug));
-  await seedMoveLearns({ forms: formIds, moves: moveIds, groups: groupIds, methods });
+  const methods = new Set(
+    read("move-learn-methods")
+      .map((m) => m.slug)
+      .filter((slug) => !EXCLUDED_METHODS.has(slug)),
+  );
+  const battleOnly = new Set(
+    read("pokemon").flatMap((p) => p.forms.filter((f) => f.isBattleOnly).map((f) => f.slug)),
+  );
+  await seedMoveLearns({ forms: formIds, battleOnly, moves: moveIds, groups: dataGroups, methods });
 
   // Ｚ招式引用普通招式（原招式）和形态，所以排在两者之后
   await seedZMoves({
@@ -2223,16 +2437,17 @@ async function main() {
     forms: formIds,
     moves: moveIds,
     items: itemIds,
-    groups: groupIds,
+    groups: dataGroups,
   });
-  await seedMaxMoves({ types: typeIds, forms: formIds, groups: groupIds });
+  await seedMaxMoves({ types: typeIds, forms: formIds, groups: dataGroups });
 
   // 机制表两端都得先在：形态变化指向 Form、技能机器指向 Move
   await seedItemMechanics({
     items: itemIds,
     forms: formIds,
     types: typeIds,
-    groups: groupIds,
+    groups: dataGroups,
+    dlcs: dlcIds,
     moves: moveIds,
   });
 
@@ -2242,7 +2457,7 @@ async function main() {
   await seedEvolutions({
     forms: formIds,
     variants: variantIds,
-    groups: groupIds,
+    groups: dataGroups,
     items: itemIds,
     moves: moveIds,
     types: typeIds,
