@@ -6,6 +6,7 @@ import { type ChangeEvent, type DragEvent, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { toPkhexError } from "@/lib/pkhex/errors";
+import { openSaveFile } from "@/lib/pkhex/save-package";
 import type { PkhexLoadProgress } from "@/lib/pkhex/types";
 
 import { EditorAlert } from "./editor-alert";
@@ -37,6 +38,14 @@ function describeFailure(file: File, cause: unknown): string {
       return `${what}不是能识别的存档格式，支持第 6～9 世代`;
     case "PKHEX_UNSUPPORTED_GENERATION":
       return `${what}是能认出的存档，但不在支持范围内，只支持第 6～9 世代`;
+    case "PKHEX_ZIP_NO_MAIN":
+      return `${what}里没有找到 main —— 这个包不像是 JKSV 的存档备份`;
+    case "PKHEX_ZIP_MULTIPLE_MAIN":
+      return `${what}里有多个 main，不知道该改哪一个。${failure.message}`;
+    case "PKHEX_ZIP_CORRUPT":
+      return `${what}是个读不下去的压缩包：${failure.message}`;
+    case "PKHEX_ZIP_UNSUPPORTED":
+      return `${what}用了不支持的压缩包特性：${failure.message}`;
     default:
       return `${what}打开失败：${failure.message}`;
   }
@@ -88,8 +97,10 @@ export function SaveDropzone() {
     setParsingName(file.name);
     try {
       const api = await runtime.ensure();
-      const bytes = new Uint8Array(await file.arrayBuffer());
-      loadSave(api.loadSave(bytes), file.name);
+      // 拖进来的可能是 JKSV 的整个备份包。包里除 main 之外的条目要留着，
+      // 导出时原样打回去 —— 那几个文件 JKSV 还原时都要用
+      const opened = await openSaveFile(file);
+      loadSave(api.loadSave(opened.main), file.name, opened.package);
     } catch (cause) {
       raiseError(describeFailure(file, cause));
     } finally {
@@ -175,7 +186,7 @@ export function SaveDropzone() {
           {phase === "loading" && "约 6 MB，首次需要几秒，之后会走浏览器缓存"}
           {phase === "parsing" && "文件只在浏览器里处理，不会上传"}
           {phase === "error" && "换一个文件，或者点下面的重试"}
-          {phase === "idle" && "支持第 6～9 世代"}
+          {phase === "idle" && "JKSV 的 zip 备份包，或单独的 main 文件 · 第 6～9 世代"}
         </span>
 
         {phase === "loading" && (

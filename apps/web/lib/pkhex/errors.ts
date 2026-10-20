@@ -20,6 +20,14 @@ export const PKHEX_ERROR_CODES = [
   "PKHEX_OUT_OF_RANGE",
   /** 对空格子取 mon handle */
   "PKHEX_EMPTY_SLOT",
+  /** zip 的结构读不下去：EOCD 找不到、中央目录越界、条目被截断、解出来对不上 CRC */
+  "PKHEX_ZIP_CORRUPT",
+  /** 是个 zip，但用了我们不打算支持的特性：zip64、加密、deflate 以外的压缩方法 */
+  "PKHEX_ZIP_UNSUPPORTED",
+  /** 包里没有 main。滤掉 __MACOSX/ 和 ._ 之后一个都不剩也算 */
+  "PKHEX_ZIP_NO_MAIN",
+  /** 包里有多个 main，不敢替用户猜该改哪一个 */
+  "PKHEX_ZIP_MULTIPLE_MAIN",
   /** 其余一切。message 里有原文 */
   "PKHEX_INTERNAL",
 ] as const;

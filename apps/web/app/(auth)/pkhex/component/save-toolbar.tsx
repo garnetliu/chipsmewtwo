@@ -1,12 +1,14 @@
 "use client";
 
-import { Download, FileUp } from "lucide-react";
+import { Download, FileUp, Loader2 } from "lucide-react";
+import { useState } from "react";
 import { useShallow } from "zustand/react/shallow";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { downloadBytes } from "@/lib/pkhex/download";
 import { toPkhexError } from "@/lib/pkhex/errors";
+import { buildSaveFile } from "@/lib/pkhex/save-package";
 
 import { useEditorStore } from "./save-editor-context";
 import { blockingSlots, describeSlot } from "./save-editor-store";
@@ -24,10 +26,11 @@ export function SaveToolbar() {
    * session 整个拿着而不是只取 info：export() / close() 是实例方法，
    * 摘出来单独存就丢了 this，Session 那几个 # 私有字段会直接读不到
    */
-  const { session, fileName, hasUnexportedChanges, touched } = useEditorStore(
+  const { session, fileName, savePackage, hasUnexportedChanges, touched } = useEditorStore(
     useShallow((state) => ({
       session: state.session,
       fileName: state.fileName,
+      savePackage: state.savePackage,
       hasUnexportedChanges: state.hasUnexportedChanges,
       touched: state.touched,
     })),
@@ -36,6 +39,9 @@ export function SaveToolbar() {
   const markExported = useEditorStore((state) => state.markExported);
   const closeSave = useEditorStore((state) => state.closeSave);
   const raiseError = useEditorStore((state) => state.raiseError);
+
+  // 打包 8.8 MB 要几百毫秒，没有反馈用户会连点
+  const [packing, setPacking] = useState(false);
 
   if (!session) return null;
 
@@ -56,14 +62,20 @@ export function SaveToolbar() {
             "、",
           )}${blockers.length > NAMED_BLOCKERS ? ` 等 ${blockers.length} 处` : ""}不合法，改好才能导出`;
 
-  function handleExport() {
-    if (!session || blockers.length > 0) return;
+  async function handleExport() {
+    if (!session || blockers.length > 0 || packing) return;
+    setPacking(true);
     try {
+      // 进什么出什么：从备份包打开的就打回备份包，裸文件就还是裸文件 ——
+      // 裸文件那条路没有 backup 和 .nx_save_meta.bin，本来就凑不齐一个包
+      const bytes = await buildSaveFile(session.export(), savePackage);
       // 文件名沿用原名不加时间戳 —— 用户拿它去覆盖原存档
-      downloadBytes(session.export(), fileName);
+      downloadBytes(bytes, fileName, savePackage ? "application/zip" : "application/octet-stream");
       markExported();
     } catch (cause) {
       raiseError(toPkhexError(cause).message);
+    } finally {
+      setPacking(false);
     }
   }
 
@@ -118,11 +130,12 @@ export function SaveToolbar() {
         <Button
           data-testid="pkhex-export-button"
           size="sm"
-          disabled={blockers.length > 0}
-          onClick={handleExport}
+          disabled={blockers.length > 0 || packing}
+          onClick={() => void handleExport()}
         >
-          <Download />
-          导出存档
+          {packing ? <Loader2 className="animate-spin" /> : <Download />}
+          {/* 拿到手的东西确实不一样：一个能直接喂回 JKSV，一个是裸 main */}
+          {packing ? "正在打包…" : savePackage ? "导出备份包" : "导出存档"}
         </Button>
       </div>
     </div>

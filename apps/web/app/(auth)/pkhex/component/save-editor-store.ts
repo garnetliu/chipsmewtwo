@@ -10,6 +10,7 @@
 import { createStore, type StoreApi } from "zustand/vanilla";
 
 import { toPkhexError } from "@/lib/pkhex/errors";
+import type { SavePackage } from "@/lib/pkhex/save-package";
 import {
   applyDraft as writeDraftToSave,
   diffDraft,
@@ -83,6 +84,11 @@ export interface EditorState {
   session: SaveSession | null;
   fileName: string;
   /**
+   * 存档来自 zip 备份包时，包里其余条目原样留在这儿，导出要连它们一起打回去。
+   * null 表示用户拖进来的是裸 main 文件，那就只能吐裸文件
+   */
+  savePackage: SavePackage | null;
+  /**
    * 存档被改过多少次。箱子摘要是每次渲染从 session 现读的，而 wasm 改值是
    * 原地改、引用不换，只能靠这个计数把 useMemo 顶掉
    */
@@ -111,7 +117,7 @@ export interface EditorState {
 }
 
 export interface EditorActions {
-  loadSave: (session: SaveSession, fileName: string) => void;
+  loadSave: (session: SaveSession, fileName: string, savePackage: SavePackage | null) => void;
   closeSave: () => void;
   markExported: () => void;
 
@@ -136,6 +142,7 @@ export type EditorStoreApi = StoreApi<EditorStore>;
 const INITIAL_EDITOR_STATE: EditorState = {
   session: null,
   fileName: "",
+  savePackage: null,
   revision: 0,
   boxIndex: 0,
   selected: null,
@@ -218,13 +225,14 @@ export function createEditorStore(): EditorStoreApi {
   return createStore<EditorStore>()((set, get) => ({
     ...INITIAL_EDITOR_STATE,
 
-    loadSave: (session, fileName) =>
+    loadSave: (session, fileName, savePackage) =>
       set((state) => ({
         ...INITIAL_EDITOR_STATE,
         // 查过的种族资料跟存档无关，换文件不用重查
         species: state.species,
         session,
         fileName,
+        savePackage,
       })),
 
     closeSave: () => set((state) => ({ ...INITIAL_EDITOR_STATE, species: state.species })),
