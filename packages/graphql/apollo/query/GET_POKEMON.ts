@@ -6,6 +6,9 @@ export const GET_POKEMON = graphql(`
       id
       name
       slug
+      defaultForm {
+        fullImageUrl
+      }
     }
   }
 `);

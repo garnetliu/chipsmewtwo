@@ -19,7 +19,7 @@ type Documents = {
     "\n  fragment POKEMON_POKEMON_ITEM on Pokemon {\n    id\n    name\n    slug\n    defaultForm {\n      id\n      types {\n        id\n        slug\n        name\n        color\n      }\n      descriptions {\n        id\n        text\n      }\n      detailImageUrl\n    }\n  }\n": typeof types.Pokemon_Pokemon_ItemFragmentDoc,
     "\n  query GET_PKHEX_SPECIES_INDEX($limit: Int!) {\n    pokemonList(offset: 0, limit: $limit) {\n      data {\n        id\n        ...PKHEX_SPECIES_OPTION @unmask\n      }\n    }\n  }\n": typeof types.Get_Pkhex_Species_IndexDocument,
     "\n  query GET_PKHEX_SPRITES($ids: [ID!]!) {\n    pokemonByIds(ids: $ids) {\n      id\n      ...PKHEX_SPECIES_OPTION @unmask\n    }\n  }\n": typeof types.Get_Pkhex_SpritesDocument,
-    "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n    }\n  }\n": typeof types.Get_PokemonDocument,
+    "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n      defaultForm {\n        fullImageUrl\n      }\n    }\n  }\n": typeof types.Get_PokemonDocument,
     "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      data {\n        id\n        ...POKEMON_POKEMON_ITEM\n      }\n      pagination {\n        ...PAGINATION @unmask\n      }\n    }\n  }\n": typeof types.Get_Pokemon_ListDocument,
 };
 const documents: Documents = {
@@ -28,7 +28,7 @@ const documents: Documents = {
     "\n  fragment POKEMON_POKEMON_ITEM on Pokemon {\n    id\n    name\n    slug\n    defaultForm {\n      id\n      types {\n        id\n        slug\n        name\n        color\n      }\n      descriptions {\n        id\n        text\n      }\n      detailImageUrl\n    }\n  }\n": types.Pokemon_Pokemon_ItemFragmentDoc,
     "\n  query GET_PKHEX_SPECIES_INDEX($limit: Int!) {\n    pokemonList(offset: 0, limit: $limit) {\n      data {\n        id\n        ...PKHEX_SPECIES_OPTION @unmask\n      }\n    }\n  }\n": types.Get_Pkhex_Species_IndexDocument,
     "\n  query GET_PKHEX_SPRITES($ids: [ID!]!) {\n    pokemonByIds(ids: $ids) {\n      id\n      ...PKHEX_SPECIES_OPTION @unmask\n    }\n  }\n": types.Get_Pkhex_SpritesDocument,
-    "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n    }\n  }\n": types.Get_PokemonDocument,
+    "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n      defaultForm {\n        fullImageUrl\n      }\n    }\n  }\n": types.Get_PokemonDocument,
     "\n  query GET_POKEMON_LIST($offset: Int!, $limit: Int!) {\n    pokemonList(offset: $offset, limit: $limit) {\n      data {\n        id\n        ...POKEMON_POKEMON_ITEM\n      }\n      pagination {\n        ...PAGINATION @unmask\n      }\n    }\n  }\n": types.Get_Pokemon_ListDocument,
 };
 
@@ -69,7 +69,7 @@ export function graphql(source: "\n  query GET_PKHEX_SPRITES($ids: [ID!]!) {\n  
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n    }\n  }\n"): (typeof documents)["\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n    }\n  }\n"];
+export function graphql(source: "\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n      defaultForm {\n        fullImageUrl\n      }\n    }\n  }\n"): (typeof documents)["\n  query GET_POKEMON($id: ID!) {\n    pokemon(id: $id) {\n      id\n      name\n      slug\n      defaultForm {\n        fullImageUrl\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

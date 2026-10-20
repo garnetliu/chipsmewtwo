@@ -2,8 +2,10 @@
 
 import type { FragmentType } from "@apollo/client/masking";
 import { useFragment } from "@apollo/client/react";
-import { POKEMON_POKEMON_ITEM } from "@pkcw/graphql/apollo/fragment";
 import Image from "next/image";
+import Link from "next/link";
+
+import { POKEMON_POKEMON_ITEM } from "@pkcw/graphql/apollo/fragment";
 
 interface IProps {
   /**
@@ -29,11 +31,11 @@ export function PokemonCard(props: Readonly<IProps>) {
   if (!complete) return null;
 
   return (
-    <div className="flex items-center gap-2">
+    <Link href={`/pokemon/${data.slug}`} className="flex items-center gap-2">
       {data.defaultForm?.detailImageUrl && (
         <Image src={data.defaultForm.detailImageUrl} alt="" width={32} height={32} unoptimized />
       )}
       <span>{data.name ?? data.slug}</span>
-    </div>
+    </Link>
   );
 }
