@@ -8,10 +8,11 @@
  * GraphQL 的 ID 序列化收 string 和 number 两种（types.generated.ts 里
  * Scalars["ID"]["output"] 是 `string | number`），库里的自增 id 直接透出去就行
  */
+import DataLoader from "dataloader";
+
 import { prisma } from "@pkcw/prisma";
 import type { Pokemon, PokemonI18n } from "@pkcw/prisma/generated/client";
 import { pickByLanguage } from "@pkcw/prisma/pokemon/language";
-import DataLoader from "dataloader";
 
 export type PokemonRow = Pokemon;
 

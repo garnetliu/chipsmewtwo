@@ -1,6 +1,8 @@
 // 本项目唯一的 HTTP 数据入口（DEC-002：单端点 GraphQL，不做 REST）。
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
+import type { NextRequest } from "next/server";
+
 import {
   AbilitySource,
   FormSource,
@@ -13,7 +15,6 @@ import { resolvers } from "@pkcw/graphql/schema/resolvers.generated";
 import { typeDefs } from "@pkcw/graphql/schema/typeDefs.generated";
 import { DEFAULT_LANGUAGE } from "@pkcw/prisma/pokemon/defaults";
 import { LANGUAGE_COOKIE, resolveLanguageTag } from "@pkcw/prisma/pokemon/language";
-import type { NextRequest } from "next/server";
 
 const apolloServer = new ApolloServer<MyContext>({ typeDefs, resolvers });
 

@@ -9,6 +9,8 @@
  * 字段名即列名 —— form_stat 和 form_ability 在库里是复合主键、没有单列 id，
  * GraphQL 要的那个缓存键由各自的 resolver 拼
  */
+import DataLoader from "dataloader";
+
 import { prisma } from "@pkcw/prisma";
 import type {
   Ability,
@@ -19,7 +21,6 @@ import type {
   FormStat,
 } from "@pkcw/prisma/generated/client";
 import { createNameLoader, pickByLanguage } from "@pkcw/prisma/pokemon/language";
-import DataLoader from "dataloader";
 
 import type { TypeRow } from "./type-source";
 import type { VersionRow } from "./version-source";

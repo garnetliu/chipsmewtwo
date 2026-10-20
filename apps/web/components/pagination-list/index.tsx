@@ -1,10 +1,11 @@
 "use client";
 
-import { PAGINATION } from "@pkcw/graphql/apollo/fragment";
-import type { DocumentType } from "@pkcw/graphql/generated";
 import { cn } from "cn";
 import { usePathname, useSearchParams } from "next/navigation";
 import { ComponentProps, type PropsWithChildren } from "react";
+
+import { PAGINATION } from "@pkcw/graphql/apollo/fragment";
+import type { DocumentType } from "@pkcw/graphql/generated";
 
 import {
   Pagination,

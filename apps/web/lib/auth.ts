@@ -1,6 +1,7 @@
-import { prisma } from "@pkcw/prisma";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
+
+import { prisma } from "@pkcw/prisma";
 
 export const auth = betterAuth({
   emailAndPassword: { enabled: true },

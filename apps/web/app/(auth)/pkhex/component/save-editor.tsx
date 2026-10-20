@@ -1,10 +1,11 @@
 "use client";
 
 import { useApolloClient } from "@apollo/client/react";
-import { GET_PKHEX_SPRITES } from "@pkcw/graphql/apollo/query";
 import { useEffect, useMemo, useState } from "react";
 import { useStore } from "zustand/react";
 import { useShallow } from "zustand/react/shallow";
+
+import { GET_PKHEX_SPRITES } from "@pkcw/graphql/apollo/query";
 
 import { isEmptySlot, PARTY_BOX_INDEX } from "@/lib/pkhex/slot";
 

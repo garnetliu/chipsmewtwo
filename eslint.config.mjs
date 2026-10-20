@@ -38,7 +38,24 @@ const eslintConfig = defineConfig([
       "tailwindcss/classnames-order": "off",
       // Noisy with custom utilities and misfires on `cn()` helper definitions.
       "tailwindcss/no-custom-classname": "off",
-      "simple-import-sort/imports": "error",
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [
+            // 副作用 import、node 内置模块
+            ["^\\u0000"],
+            ["^node:"],
+            // 第三方包
+            ["^@?\\w"],
+            // 仓库里的包
+            ["^@pkcw/"],
+            // apps/web 内部的路径别名
+            ["^@/"],
+            // 相对路径
+            ["^\\."],
+          ],
+        },
+      ],
       "simple-import-sort/exports": "error",
     },
   },

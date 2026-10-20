@@ -1,8 +1,9 @@
 "use client";
 
 import { useSuspenseQuery } from "@apollo/client/react";
-import { GET_POKEMON_LIST } from "@pkcw/graphql/apollo/query";
 import { useSearchParams } from "next/navigation";
+
+import { GET_POKEMON_LIST } from "@pkcw/graphql/apollo/query";
 
 import { PokemonCard } from "@/app/pokemon/component/pokemon-card";
 import { PaginationList } from "@/components/pagination-list";

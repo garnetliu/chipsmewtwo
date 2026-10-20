@@ -1,8 +1,9 @@
 "use client";
 
 import { useLazyQuery } from "@apollo/client/react";
-import { GET_PKHEX_SPECIES_INDEX } from "@pkcw/graphql/apollo/query";
 import { useMemo, useRef, useState } from "react";
+
+import { GET_PKHEX_SPECIES_INDEX } from "@pkcw/graphql/apollo/query";
 
 import { Button } from "@/components/ui/button";
 import {
