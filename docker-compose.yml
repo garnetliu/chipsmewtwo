@@ -16,5 +16,28 @@ services:
       timeout: 5s
       retries: 10
 
+  # C# → wasm 的构建容器。本机装不了 .NET SDK，所有 dotnet 命令都从这里走。
+  # profiles 挡住它，`docker compose up` 不会把它一起拉起来。
+  pkhex-build:
+    profiles: ["tools"]
+    build:
+      context: ./packages/pkhex-wasm
+      dockerfile: Dockerfile
+    image: chipsmewtwo-pkhex-build:net10
+    working_dir: /repo
+    environment:
+      # 容器里是 root，产物落到 bind mount 上会变成 root 所有，
+      # 构建末尾按这两个值 chown 回宿主机用户
+      HOST_UID: ${HOST_UID:-1000}
+      HOST_GID: ${HOST_GID:-1000}
+    volumes:
+      # 容器里的布局保持 /repo/pkhex-wasm 和 /repo/public 不变，build.sh 不用跟着改
+      - ./packages/pkhex-wasm:/repo/pkhex-wasm
+      - ./apps/web/public:/repo/public
+      # NuGet 缓存用命名卷：bind 到 macOS 文件系统上还原会慢好几倍
+      - pkhex_nuget:/nuget
+    command: ["bash", "/repo/pkhex-wasm/build.sh"]
+
 volumes:
   postgres_data:
+  pkhex_nuget:

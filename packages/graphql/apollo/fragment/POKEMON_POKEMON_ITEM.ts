@@ -1,0 +1,23 @@
+import { graphql } from "../../generated";
+
+export const POKEMON_POKEMON_ITEM = graphql(`
+  fragment POKEMON_POKEMON_ITEM on Pokemon {
+    id
+    name
+    slug
+    defaultForm {
+      id
+      types {
+        id
+        slug
+        name
+        color
+      }
+      descriptions {
+        id
+        text
+      }
+      detailImageUrl
+    }
+  }
+`);

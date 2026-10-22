@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    造空白存档用的小工具。产物落到 public/pkhex-fixtures/，
+    给 xUnit 的 RoundTrip/Mutator 和浏览器烟测当输入。
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/PkhexBridge/PkhexBridge.csproj" />
+  </ItemGroup>
+
+</Project>

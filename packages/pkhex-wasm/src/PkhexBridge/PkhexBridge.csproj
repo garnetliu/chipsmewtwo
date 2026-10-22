@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    桥接逻辑全在这个普通类库里，wasm 工程只放 [JSExport] 转发壳。
+    这样拆是为了让 xUnit 能直接跑到逻辑 —— browser-wasm 的 RID 上跑不了测试。
+  -->
+  <PropertyGroup>
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PKHeX.Core" Version="26.8.26" />
+    <!-- 浏览器 wasm 上 System.Security.Cryptography 的 AES/MD5 直接抛
+         PlatformNotSupportedException，拿 BouncyCastle 的纯托管实现顶上 -->
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
+  </ItemGroup>
+
+</Project>

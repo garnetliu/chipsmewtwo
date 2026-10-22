@@ -1,0 +1,51 @@
+extend type Query {
+  """
+  按全国图鉴编号（37）或英文 slug（vulpix）查一只。
+  库里没有时会尝试补数据（见 POKEMON_FETCH_MODE），两边都没有则报 NOT_FOUND。
+  """
+  pokemon(id: ID!): Pokemon
+
+  """按全国图鉴编号翻页。这一页在库里凑不满 limit 条时会尝试补数据"""
+  pokemonList(offset: Int!, limit: Int!): PokemonList
+
+  """
+  按全国图鉴编号批量取，返回顺序跟入参一致，查不到的位置是 null。
+
+  存在的理由是「一批散编号」这种取法 —— 存档里一箱 30 只的编号毫无规律，
+  pokemonList 那种 offset/limit 翻不出来，一只一只查又是 30 个往返
+  """
+  pokemonByIds(ids: [ID!]!): [Pokemon]!
+}
+
+type PokemonList {
+  data: [Pokemon!]
+  pagination: PaginationMeta
+}
+
+"""
+物种。只有身份和译名 —— 属性、种族值、图片这些都是形态的属性，
+关都六尾和阿罗拉六尾是同一个物种的两个形态，值完全不同，所以全在 Form 上
+"""
+type Pokemon {
+  """全国图鉴编号"""
+  id: ID!
+  """英文标识，例如 vulpix"""
+  slug: String!
+  """
+  译名。这个语言没收录就回退：默认语言 → 剩下的按语言表的 sortOrder 取最靠前的。
+  所以拿到的可能是别的语种的文本，一条译名都没有才是 null
+  """
+  name(language: String): String
+  """
+  分类，例如「狐狸宝可梦」。回退规则同 name。
+  分类存在形态那一级，这里取的是默认形态的
+  """
+  genus(language: String): String
+  """默认形态。列表页缩略图和详情页主视图取这个。这只还没导入形态时是 null"""
+  defaultForm: Form
+  """
+  全部形态，默认形态排第一。
+  超级进化、地区形态、超极巨化都在这里，喵喵有三条
+  """
+  forms: [Form!]!
+}

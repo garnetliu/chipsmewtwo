@@ -1,0 +1,43 @@
+{
+  "name": "@pkcw/graphql",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./apollo/client": "./apollo/client.ts",
+    "./apollo/server": "./apollo/server.ts",
+    "./apollo/fragment": "./apollo/fragment/index.ts",
+    "./apollo/query": "./apollo/query/index.ts",
+    "./context": "./context/index.ts",
+    "./generated": "./generated/index.ts",
+    "./schema/resolvers.generated": "./schema/resolvers.generated.ts",
+    "./schema/typeDefs.generated": "./schema/typeDefs.generated.ts"
+  },
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "dependencies": {
+    "dataloader": "catalog:",
+    "@pkcw/prisma": "workspace:*"
+  },
+  "peerDependencies": {
+    "@apollo/client": "catalog:",
+    "@apollo/client-integration-nextjs": "catalog:",
+    "graphql": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:"
+  },
+  "devDependencies": {
+    "@apollo/client": "catalog:",
+    "@apollo/client-integration-nextjs": "catalog:",
+    "@eddeee888/gcg-typescript-resolver-files": "^0.19.0",
+    "@graphql-codegen/cli": "^7.4.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "graphql": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:",
+    "typescript": "catalog:"
+  }
+}

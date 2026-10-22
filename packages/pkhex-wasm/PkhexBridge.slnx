@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/PkhexBridge/PkhexBridge.csproj" />
+  <Project Path="src/PkhexBridge.Wasm/PkhexBridge.Wasm.csproj" />
+  <Project Path="tools/FixtureGen/FixtureGen.csproj" />
+  <Project Path="tests/PkhexBridge.Tests/PkhexBridge.Tests.csproj" />
+</Solution>

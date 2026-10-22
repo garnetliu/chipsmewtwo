@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+    <!-- JSExport 的源生成器 emit 的封送代码带 unsafe，不开这个编不过 -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- 文件名不带哈希：产物要进 git，带指纹每次构建都是一整批新文件 -->
+    <WasmFingerprintAssets>false</WasmFingerprintAssets>
+    <!-- AOT 会把体积翻一倍多，而这里是一次性的存档解析，启动更慢反而亏 -->
+    <RunAOTCompilation>false</RunAOTCompilation>
+    <!-- 开线程要配 COOP/COEP，跨源隔离会打断 Apollo 和外链图片，而且这里也没并行活 -->
+    <WasmEnableThreads>false</WasmEnableThreads>
+    <!-- 省掉 ~1.3 MB 的 icudt.dat。PKHeX 的字符串表是自带的，不吃 ICU -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- 刻意不开 UseSystemResourceKeys：开了异常消息会退化成短码，线上排错没法看 -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../PkhexBridge/PkhexBridge.csproj" />
+  </ItemGroup>
+
+</Project>

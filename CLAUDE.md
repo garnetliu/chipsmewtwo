@@ -1,4 +1,4 @@
-@AGENTS.md
+@apps/web/AGENTS.md
 
 ## 回答风格
 

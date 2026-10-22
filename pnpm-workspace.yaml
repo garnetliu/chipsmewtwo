@@ -1,6 +1,48 @@
+packages:
+  - apps/*
+  - packages/*
+
+# 多个包都用到的依赖，版本只在这里写一次，各包里写 "catalog:"。
+# 分开写的话迟早只升了一边，next / react / @apollo/client / graphql 装出两份，
+# 运行时 context、hooks 对不上
+catalog:
+  '@apollo/client': '^4.2.12'
+  '@apollo/client-integration-nextjs': '^0.14.5'
+  '@next/env': 16.4.2
+  '@prisma/adapter-pg': '^7.10.1'
+  '@prisma/client': '^7.10.1'
+  '@types/node': '^20'
+  '@types/react': '^19'
+  '@types/react-dom': '^19'
+  dataloader: '^2.2.3'
+  graphql: '^17.0.2'
+  next: 16.4.2
+  prisma: '^7.10.1'
+  react: 19.2.8
+  react-dom: 19.2.8
+  tailwindcss: '^4'
+  typescript: '^5'
+
+# better-auth 的 prisma 适配器把 prisma、@prisma/client 列为可选的 peer 依赖。
+# web 没声明它们，pnpm 会自动补装一份，版本不跟 @pkcw/prisma 走 ——
+# 升级 prisma 时那一份还停在旧版。这里强制全仓库只有一个版本
+overrides:
+  prisma: 'catalog:'
+  '@prisma/client': 'catalog:'
+
 allowBuilds:
   '@apollo/protobufjs': true
   '@prisma/engines': true
   esbuild: true
   prisma: true
   unrs-resolver: false
+
+minimumReleaseAgeExclude:
+  - '@better-auth/core@1.7.11'
+  - '@better-auth/drizzle-adapter@1.7.11'
+  - '@better-auth/kysely-adapter@1.7.11'
+  - '@better-auth/memory-adapter@1.7.11'
+  - '@better-auth/mongo-adapter@1.7.11'
+  - '@better-auth/prisma-adapter@1.7.11'
+  - '@better-auth/telemetry@1.7.11'
+  - better-auth@1.7.11
